@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="action_settings" translatable="false">الاعدادات</string>
+    <string name="app_name">الكيميائي الصغير</string>
+    <string name="action_sign_in_short">تسجيل الدخول</string>
+    <string name="arabic">العربيه</string>
+    <string name="don_t_have_an_acount">هل لديك حساب</string>
+    <string name="download_booklet">تحميل الملزمه</string>
+    <string name="english">الانجليزيه</string>
+    <string name="invalid_password">كلمه المرور يجب ان تكون اكثر من 5</string>
+    <string name="invalid_username">الاسم غير صحيح</string>
+    <string name="languages">اللغات</string>
+    <string name="little_chemist">الكيميائي الصغير</string>
+    <string name="login_failed">فشل تسجيل الدخول</string>
+</resources>
