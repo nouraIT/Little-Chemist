@@ -23,6 +23,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.little_chemist.Home;
 import com.example.little_chemist.R;
 import com.example.little_chemist.SignUp;
 import com.example.little_chemist.ui.login.LoginViewModel;
@@ -87,6 +88,8 @@ import com.example.little_chemist.ui.login.LoginViewModelFactory;
                 setResult(Activity.RESULT_OK);
 
                 //Complete and destroy login activity once successful
+                Intent Homepage = new Intent(Login.this, Home.class);
+                startActivity(Homepage);
                 finish();
             }
         });
