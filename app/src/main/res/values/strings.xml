@@ -18,5 +18,7 @@
     <string name="english">English</string>
     <string name="arabic">Arabic</string>
     <string name="download_booklet">Download Booklet</string>
+
+    <string name="little_chemist">Little Chemist</string>
     <string name="todo">TODO</string>
 </resources>

@@ -24,6 +24,7 @@ import android.widget.Toast;
 
 import com.example.little_chemist.R;
 import com.example.little_chemist.SignUp;
+import com.example.little_chemist.ui.login.Login;
 import com.example.little_chemist.ui.login.LoginViewModel;
 import com.example.little_chemist.ui.login.LoginViewModelFactory;
 import android.os.Bundle;
@@ -37,5 +38,7 @@ public class SignUp extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sign_up);
+
     }
+
 }
