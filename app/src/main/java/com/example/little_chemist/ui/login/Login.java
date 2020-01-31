@@ -33,6 +33,7 @@ import com.example.little_chemist.ui.login.LoginViewModelFactory;
 
     private LoginViewModel loginViewModel;
 
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,18 +42,22 @@ import com.example.little_chemist.ui.login.LoginViewModelFactory;
                 .get(LoginViewModel.class);
 
         final EditText usernameEditText = findViewById(R.id.username);
+
         final EditText passwordEditText = findViewById(R.id.password);
         final Button loginButton = findViewById(R.id.login);
         final Button signupButton = findViewById(R.id.button);
         final ProgressBar loadingProgressBar = findViewById(R.id.loading);
 
+        //String name = usernameEditText.getText().toString();
+
 
         signupButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent n = new Intent(Login.this, SignUp.class);
+                /*Intent n = new Intent(Login.this, SignUp.class);
                 startActivity(n);
-                finish();
+                finish();*/
+                setContentView(R.layout.sign_up);
             }
         });
 
@@ -111,6 +116,7 @@ import com.example.little_chemist.ui.login.LoginViewModelFactory;
                         passwordEditText.getText().toString());
             }
         };
+
         usernameEditText.addTextChangedListener(afterTextChangedListener);
         passwordEditText.addTextChangedListener(afterTextChangedListener);
         passwordEditText.setOnEditorActionListener(new TextView.OnEditorActionListener() {

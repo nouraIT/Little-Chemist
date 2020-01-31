@@ -2,7 +2,9 @@ package com.example.little_chemist.data;
 
 import com.example.little_chemist.data.model.LoggedInUser;
 
+
 import java.io.IOException;
+
 
 /**
  * Class that handles authentication w/ login credentials and retrieves user information.
@@ -16,7 +18,7 @@ public class LoginDataSource {
             LoggedInUser fakeUser =
                     new LoggedInUser(
                             java.util.UUID.randomUUID().toString(),
-                            "Jane Doe");
+                            username);
             return new Result.Success<>(fakeUser);
         } catch (Exception e) {
             return new Result.Error(new IOException("Error logging in", e));
