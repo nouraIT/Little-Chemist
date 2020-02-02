@@ -31,7 +31,7 @@ import com.example.little_chemist.ui.login.LoginViewModelFactory;
 import android.os.Bundle;
 
 public class SignUp extends AppCompatActivity {
-    final ProgressBar loadingProgressBar = findViewById(R.id.loading);
+    //final ProgressBar loadingProgressBar = findViewById(R.id.loading);
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -82,7 +82,7 @@ public class SignUp extends AppCompatActivity {
         signupButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                loadingProgressBar.setVisibility(View.VISIBLE);
+                //loadingProgressBar.setVisibility(View.VISIBLE);
                 if(isUserNameValid(un) && isPasswordValid(pass,passConf)){
                     setContentView(R.layout.activity_home);
                 }

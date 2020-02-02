@@ -29,7 +29,8 @@ import com.example.little_chemist.SignUp;
 import com.example.little_chemist.ui.login.LoginViewModel;
 import com.example.little_chemist.ui.login.LoginViewModelFactory;
 
- public class Login extends AppCompatActivity {
+
+public class Login extends AppCompatActivity {
 
     private LoginViewModel loginViewModel;
 
@@ -37,9 +38,11 @@ import com.example.little_chemist.ui.login.LoginViewModelFactory;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_login);
         loginViewModel = ViewModelProviders.of(this, new LoginViewModelFactory())
                 .get(LoginViewModel.class);
+
 
         final EditText usernameEditText = findViewById(R.id.username);
 
@@ -54,10 +57,11 @@ import com.example.little_chemist.ui.login.LoginViewModelFactory;
         signupButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                /*Intent n = new Intent(Login.this, SignUp.class);
+                Intent n = new Intent(Login.this, SignUp.class);
                 startActivity(n);
-                finish();*/
-                setContentView(R.layout.sign_up);
+               // finish();
+
+                //setContentView(R.layout.sign_up);
             }
         });
 
