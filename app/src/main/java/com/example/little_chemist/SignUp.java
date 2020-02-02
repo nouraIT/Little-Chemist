@@ -10,6 +10,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.util.Patterns;
+import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
@@ -64,14 +65,28 @@ public class SignUp extends AppCompatActivity {
             String ConfirmPasswordStr=ET_ConfirmPassword.getText().toString();
 
 
-            if(PasswordStr.equals(null))
-            {
-                Toast.makeText(getApplicationContext(), "Should not be Null", Toast.LENGTH_SHORT).show();
-            }
 
-            if(!PasswordStr.equals(ConfirmPasswordStr)){
-                Toast.makeText(getApplicationContext(), "Passwords dont match", Toast.LENGTH_SHORT).show();
-            }else {
+            if(UserNameStr.equals(null)){
+                Toast.makeText(getApplicationContext(), R.string.Error1, Toast.LENGTH_SHORT).show();
+
+            }
+            else if(UserNameStr.length( ) < 5)
+            {
+                Toast.makeText(getApplicationContext(), R.string.Error6, Toast.LENGTH_SHORT).show();
+            }
+            else if(PasswordStr.equals(null))
+            {
+                Toast.makeText(getApplicationContext(), R.string.Error2, Toast.LENGTH_SHORT).show();
+            }
+            else if(PasswordStr.length( ) < 5)
+            {
+                Toast.makeText(getApplicationContext(), R.string.Error4, Toast.LENGTH_SHORT).show();
+            }
+            else if(!PasswordStr.equals(ConfirmPasswordStr)){
+                Toast.makeText(getApplicationContext(), R.string.Error5, Toast.LENGTH_SHORT).show();
+
+            }
+           else {
                 //Insert into Database
                 User user = new User();
                 user.SetUserName(UserNameStr);
