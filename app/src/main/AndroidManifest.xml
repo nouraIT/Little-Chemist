@@ -22,6 +22,12 @@
         <activity
             android:name="Login"
             android:label="@string/title_activity_login" />
+        <activity android:name=".Chapters"></activity>
+        <activity android:name=".Chapters_dir.Ch1"></activity>
+        <activity android:name=".Chapters_dir.Ch2"></activity>
+        <activity android:name=".Chapters_dir.Ch3"></activity>
+        <activity android:name=".Chapters_dir.Ch4"></activity>
+        <activity android:name=".Chapters_dir.Ch5"></activity>
         <activity
             android:name=".SignUp"
             android:label="@string/sign_up" />
