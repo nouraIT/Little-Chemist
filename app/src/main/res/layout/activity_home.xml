@@ -24,7 +24,7 @@
         android:id="@+id/button3"
         android:layout_width="368dp"
         android:layout_height="178dp"
-        android:background="#B39FD8"
+        android:background="#F3CB4E"
         android:text="@string/little_chemist"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

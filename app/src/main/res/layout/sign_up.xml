@@ -61,6 +61,7 @@
         android:layout_marginTop="60dp"
         android:layout_marginBottom="268dp"
         android:text="@string/sign_up_button"
+        android:background="#F3CB4E"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -68,6 +69,7 @@
         app:layout_constraintTop_toBottomOf="@+id/password22"
         tools:layout_conversion_absoluteHeight="48dp"
         tools:layout_conversion_absoluteWidth="411dp" />
+
 
     <EditText
         android:id="@+id/password22"
