@@ -26,13 +26,14 @@
         android:layout_height="wrap_content"
 
         android:layout_marginTop="196dp"
+        android:clickable="false"
+
+        android:editable="false"
         android:elevation="20dp"
 
         android:importantForAutofill="no"
-        android:inputType="textPersonName"
         android:text="@string/little_chemist"
         android:textAlignment="center"
-
         android:textColor="@color/white"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
