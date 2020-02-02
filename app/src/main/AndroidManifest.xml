@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.little_chemist"> <!-- "AR Required" apps must declare minSdkVersion ≥ 24 -->
-    <uses-sdk android:minSdkVersion="24" />
-
+    package="com.example.little_chemist">
+    <!-- "AR Required" apps must declare minSdkVersion ≥ 24 -->
     <uses-permission android:name="android.permission.CAMERA" />
     <!--
  Indicates that the app requires ARCore ("AR Required"). Ensures the app is
@@ -17,17 +16,42 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Settings" ></activity>
+        <activity android:name=".Ch5_lessons.ch5_l5"></activity>
+        <activity android:name=".Ch5_lessons.ch5_l4" />
+        <activity android:name=".Ch5_lessons.ch5_l3" />
+        <activity android:name=".Ch5_lessons.ch5_l2" />
+        <activity android:name=".Ch5_lessons.ch5_l1" />
+        <activity android:name=".Ch4_lessons.ch4_l5" />
+        <activity android:name=".Ch4_lessons.ch4_l4" />
+        <activity android:name=".Ch4_lessons.ch4_l3" />
+        <activity android:name=".Ch4_lessons.ch4_l2" />
+        <activity android:name=".Ch4_lessons.ch4_l1" />
+        <activity android:name=".Ch3_lessons.ch3_l5" />
+        <activity android:name=".Ch3_lessons.ch3_l4" />
+        <activity android:name=".Ch3_lessons.ch3_l3" />
+        <activity android:name=".Ch3_lessons.ch3_l2" />
+        <activity android:name=".Ch3_lessons.ch3_l1" />
+        <activity android:name=".Ch2_lessons.ch2_l5" />
+        <activity android:name=".Ch2_lessons.ch2_l4" />
+        <activity android:name=".Ch2_lessons.ch2_l3" />
+        <activity android:name=".Ch2_lessons.ch2_l2" />
+        <activity android:name=".Ch2_lessons.ch2_l1" />
+        <activity android:name=".Ch1_lessons.ch1_l5" />
+        <activity android:name=".Ch1_lessons.ch1_l4" />
+        <activity android:name=".Ch1_lessons.ch1_l3" />
+        <activity android:name=".Ch1_lessons.ch1_l2" />
+        <activity android:name=".Ch1_lessons.ch1_l1" />
+        <activity android:name=".Settings" />
         <activity android:name=".Home" />
         <activity
-            android:name="Login"
+            android:name=".Login"
             android:label="@string/title_activity_login" />
-        <activity android:name=".Chapters"></activity>
-        <activity android:name=".Chapters_dir.Ch1"></activity>
-        <activity android:name=".Chapters_dir.Ch2"></activity>
-        <activity android:name=".Chapters_dir.Ch3"></activity>
-        <activity android:name=".Chapters_dir.Ch4"></activity>
-        <activity android:name=".Chapters_dir.Ch5"></activity>
+        <activity android:name=".Chapters" />
+        <activity android:name=".Chapters_dir.Ch1" />
+        <activity android:name=".Chapters_dir.Ch2" />
+        <activity android:name=".Chapters_dir.Ch3" />
+        <activity android:name=".Chapters_dir.Ch4" />
+        <activity android:name=".Chapters_dir.Ch5" />
         <activity
             android:name=".SignUp"
             android:label="@string/sign_up" />

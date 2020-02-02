@@ -1,6 +1,7 @@
 package com.example.little_chemist;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.os.Bundle;
 import java.lang.Object ;
@@ -26,10 +27,25 @@ public class Chapters extends AppCompatActivity {
   private Button button3 ;
   private Button button4 ;
   private Button button5 ;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chapters);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+
+
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent Homepage = new Intent(Chapters.this, Home.class);
+                startActivity(Homepage);
+                finish();
+            }
+        });
 
         button1 = findViewById(R.id.button1);
         button1.setOnClickListener(new View.OnClickListener() {
