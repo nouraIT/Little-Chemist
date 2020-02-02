@@ -26,7 +26,7 @@
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" tools:targetApi="o"/>
 
     <EditText
         android:id="@+id/password"
@@ -112,6 +112,7 @@
         android:layout_width="403dp"
         android:layout_height="277dp"
         android:layout_marginTop="9dp"
+        android:contentDescription="@string/app_name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

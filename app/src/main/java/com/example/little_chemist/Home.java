@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
-
+import android.widget.Toast;
 
 
 public class Home extends AppCompatActivity {
@@ -20,6 +20,8 @@ private ImageView set;
         String UserNameStr=getIntent().getStringExtra("UserName");
         String PasswordStr=getIntent().getStringExtra("Password");
 
+        String welcome = getString(R.string.welcome) + UserNameStr ;
+        Toast.makeText(getApplicationContext(), welcome, Toast.LENGTH_LONG).show();
 
         set = findViewById(R.id.settings);
         set.setOnClickListener(new View.OnClickListener() {
