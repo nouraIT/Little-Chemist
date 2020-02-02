@@ -25,21 +25,21 @@ import android.widget.Toast;
 
 import com.example.little_chemist.Home;
 import com.example.little_chemist.R;
+
+
 import com.example.little_chemist.SignUp;
-import com.example.little_chemist.ui.login.LoginViewModel;
-import com.example.little_chemist.ui.login.LoginViewModelFactory;
 
 
-public class Login extends AppCompatActivity {
+public class LoginOld extends AppCompatActivity {
 
     private LoginViewModel loginViewModel;
-
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_login);
+
+
         loginViewModel = ViewModelProviders.of(this, new LoginViewModelFactory())
                 .get(LoginViewModel.class);
 
@@ -57,7 +57,7 @@ public class Login extends AppCompatActivity {
         signupButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent n = new Intent(Login.this, SignUp.class);
+                Intent n = new Intent(LoginOld.this, SignUp.class);
                 startActivity(n);
                // finish();
 
@@ -97,7 +97,7 @@ public class Login extends AppCompatActivity {
                 setResult(Activity.RESULT_OK);
 
                 //Complete and destroy login activity once successful
-                Intent Homepage = new Intent(Login.this, Home.class);
+                Intent Homepage = new Intent(LoginOld.this, Home.class);
                 startActivity(Homepage);
                 finish();
             }
@@ -139,8 +139,11 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 loadingProgressBar.setVisibility(View.VISIBLE);
-                loginViewModel.login(usernameEditText.getText().toString(),
-                        passwordEditText.getText().toString());
+                String un =usernameEditText.getText().toString();
+                String pass = passwordEditText.getText().toString();
+                loginViewModel.login(un,pass);
+
+
             }
         });
     }
