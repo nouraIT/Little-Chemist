@@ -10,9 +10,11 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Room;
 
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.KeyEvent;
 import android.view.View;
@@ -24,6 +26,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.little_chemist.R;
+import com.example.little_chemist.RoomDB.AppDatabase;
+import com.example.little_chemist.RoomDB.User;
 import com.example.little_chemist.SignUp;
 import com.example.little_chemist.ui.login.Login;
 import com.example.little_chemist.ui.login.LoginViewModel;
@@ -31,11 +35,16 @@ import com.example.little_chemist.ui.login.LoginViewModelFactory;
 import android.os.Bundle;
 
 public class SignUp extends AppCompatActivity {
-    final ProgressBar loadingProgressBar = findViewById(R.id.loading);
+    //final ProgressBar loadingProgressBar = findViewById(R.id.loading);
+    AppDatabase db;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sign_up);
+
+
+         db = Room.databaseBuilder(getApplicationContext(),
+                AppDatabase.class, "LittleChemDB").build();
 
 
         final EditText username = findViewById(R.id.username2);
@@ -46,6 +55,8 @@ public class SignUp extends AppCompatActivity {
         final String un = username.getText().toString();
         final String pass = password.getText().toString();
         final String passConf = passwordConf.getText().toString();
+
+       // runroom("esraa","1234567");
 
 
         TextWatcher afterTextChangedListener = new TextWatcher() {
@@ -82,7 +93,7 @@ public class SignUp extends AppCompatActivity {
         signupButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                loadingProgressBar.setVisibility(View.VISIBLE);
+                //loadingProgressBar.setVisibility(View.VISIBLE);
                 if(isUserNameValid(un) && isPasswordValid(pass,passConf)){
                     setContentView(R.layout.activity_home);
                 }
@@ -93,6 +104,13 @@ public class SignUp extends AppCompatActivity {
 
     }
 
+    public void runroom(String un, String pass){
+        User us = new User(un , pass);
+        db.userDao().insertAll(us);
+
+        Log.i("db test", db.userDao().findByName(un).toString() );
+
+    }
     //public void onChanged(){
 
     //}

@@ -18,6 +18,7 @@ import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 
+
 public class MainActivity extends AppCompatActivity {
     private static int SPLASH_SCREEN = 5000;
     Animation topAnim, bottomAnim;
@@ -28,6 +29,21 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //realm init
+
+        /*
+        RealmConfiguration config = new RealmConfiguration.Builder()
+          .name("myrealm.realm")
+          .encryptionKey(getKey())
+          .schemaVersion(42)
+          .modules(new MySchemaModule())
+          .migration(new MyMigration())
+          .build();
+        // Use the config
+        Realm realm = Realm.getInstance(config);
+        */
+
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
