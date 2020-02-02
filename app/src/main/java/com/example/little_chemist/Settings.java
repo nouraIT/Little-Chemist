@@ -36,6 +36,7 @@ public class Settings extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
         Toolbar toolbar = findViewById(R.id.toolbar);
+        Button booklet = findViewById(R.id.button5);
         Button En = findViewById(R.id.button3);
         Button Ara = findViewById(R.id.button4);
 
@@ -64,6 +65,12 @@ public class Settings extends AppCompatActivity {
 
 
 
+            }
+        });
+        booklet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Direct to booklet
             }
         });
     }
