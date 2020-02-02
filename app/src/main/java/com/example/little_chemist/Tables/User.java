@@ -1,4 +1,4 @@
-package com.example.little_chemist;
+package com.example.little_chemist.Tables;
 
 public class User {
     int Id;
@@ -7,8 +7,6 @@ public class User {
 
     // public  void SetId(int id){this.Id=id; }
     //public  int GetId(){return Id;}
-
-
 
     public void SetUserName(String username){
         this.UserName=username;

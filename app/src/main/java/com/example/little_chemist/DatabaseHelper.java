@@ -7,6 +7,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.provider.BaseColumns;
 
+import com.example.little_chemist.Tables.User;
+
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
@@ -15,7 +17,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         private static final String TABLE_NAME = "users";
         private static final String COLUMN_ID = "Id";
         //private static final String COLUMN_NAME = "Name";
-        private static final String COLUMN_EMAIL = "Email";
+       // private static final String COLUMN_EMAIL = "Email";
         private static final String COLUMN_USERNAME = "UserName";
         private static final String COLUMN_PASSWORD = "Password";
     }
@@ -27,7 +29,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             "CREATE TABLE "+FeedEntry.TABLE_NAME +" ("+
                     FeedEntry.COLUMN_ID + "  INTEGER PRIMARY KEY," +
                     //FeedEntry.COLUMN_NAME + " TEXT," +
-                    FeedEntry.COLUMN_EMAIL + " TEXT," +
+                    //FeedEntry.COLUMN_EMAIL + " TEXT," +
                     FeedEntry.COLUMN_USERNAME + " TEXT,"+
                     FeedEntry.COLUMN_PASSWORD +" TEXT)";
 
