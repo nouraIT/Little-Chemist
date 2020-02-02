@@ -26,6 +26,9 @@
             android:name=".SignUp"
             android:label="@string/sign_up" />
         <activity
+            android:name=".LoginReal"
+            android:label="LoginReal" />
+        <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
