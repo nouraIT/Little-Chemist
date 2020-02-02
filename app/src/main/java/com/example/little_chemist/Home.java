@@ -15,6 +15,12 @@ private ImageView set;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        //the users info
+        String UserNameStr=getIntent().getStringExtra("UserName");
+        String PasswordStr=getIntent().getStringExtra("Password");
+
+
         set = findViewById(R.id.settings);
         set.setOnClickListener(new View.OnClickListener() {
 
