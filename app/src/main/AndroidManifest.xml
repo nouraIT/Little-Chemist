@@ -1,25 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.little_chemist">
-    <!-- "AR Required" apps must declare minSdkVersion ≥ 24 -->
+    package="com.example.little_chemist"> <!-- "AR Required" apps must declare minSdkVersion ≥ 24 -->
     <uses-sdk android:minSdkVersion="24" />
 
     <uses-permission android:name="android.permission.CAMERA" />
-
-    <!-- Indicates that the app requires ARCore ("AR Required"). Ensures the app is
+    <!--
+ Indicates that the app requires ARCore ("AR Required"). Ensures the app is
          visible only in the Google Play Store on devices that support ARCore.
     -->
     <uses-feature android:name="android.hardware.camera.ar" />
+
     <application
-
-
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Settings"></activity>
+        <activity android:name=".Settings" ></activity>
         <activity android:name=".Home" />
         <activity
             android:name="Login"
@@ -37,11 +35,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!-- Indicates that the app requires ARCore ("AR Required"). Causes the Google
+        <!--
+ Indicates that the app requires ARCore ("AR Required"). Causes the Google
          Play Store to download and install Google Play Services for AR when the
          app is installed.
-    -->
-        <meta-data android:name="com.google.ar.core" android:value="required" />
+        -->
+        <meta-data
+            android:name="com.google.ar.core"
+            android:value="required" />
     </application>
 
 </manifest>
