@@ -61,8 +61,17 @@ public class Login extends AppCompatActivity{
                 loginIntent.putExtra("Password",PasswordStr);
 
                 startActivity(loginIntent);
-            }else {
-                Toast.makeText(this, "UserName and Passwords dont match", Toast.LENGTH_SHORT).show();
+
+            }else if(UserNameStr.equals(null)){
+                Toast.makeText(getApplicationContext(), R.string.Error1, Toast.LENGTH_SHORT).show();
+
+            }
+            else if(PasswordStr.equals(null)){
+                Toast.makeText(getApplicationContext(), R.string.Error2, Toast.LENGTH_SHORT).show();
+
+            }
+            else {
+                Toast.makeText(this, R.string.Error3, Toast.LENGTH_SHORT).show();
             }
 
 

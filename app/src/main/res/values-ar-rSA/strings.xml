@@ -12,4 +12,18 @@
     <string name="languages">اللغات</string>
     <string name="little_chemist">الكيميائي الصغير</string>
     <string name="login_failed">فشل تسجيل الدخول</string>
+    <string name="welcome">مرحبا!</string>
+    <string name="title_activity_login">تسجيل الدخول</string>
+    <string name="sign_up_button">تسجيل</string>
+    <string name="sign_up">تسجيل</string>
+    <string name="settings">ألاعدادات</string>
+    <string name="prompt_username">اسم المستخدم</string>
+    <string name="prompt_passwordConf">تأكيد كلمه المرور</string>
+    <string name="prompt_password">كلمه المرور</string>
+    <string name="Error1">اسم المستخدم لا يمكن ان يكون فارغا</string>
+    <string name="Error2">كلمه المرور لا يمكن ان تكون فارغه</string>
+    <string name="Error3">اسم المستخدم او كلمه المرور غير صحيحه</string>
+    <string name="Error4">كلمه المرور يجب ان تكون اكثر من  5 احرف او ارقام</string>
+    <string name="Error5">كلمه المرور لا تتطابق</string>
+    <string name="Error6">اسم المستخدم يجب ان يكون اكثر من 5 احرف او ارقام</string>
 </resources>
