@@ -16,7 +16,7 @@
         android:layout_marginEnd="148dp"
         android:layout_marginRight="148dp"
         android:layout_marginBottom="437dp"
-        android:text="chapter 5"
+        android:text="@string/chapter_5"
         android:textSize="30sp"
         app:fontFamily="casual"
         app:layout_constraintBottom_toBottomOf="parent"

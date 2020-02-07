@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="SecurityQs">
+        <item>ما هو حيوانك المفضل؟</item>
+        <item>في اي سنه ولدت؟</item>
+        <item>ما هي مادتك المفضله في المدرسه؟</item>
+        <item>ما هي وجبتك المفضله؟</item>
+    </string-array>
+</resources>

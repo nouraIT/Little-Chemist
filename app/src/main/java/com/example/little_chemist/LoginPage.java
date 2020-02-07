@@ -22,12 +22,18 @@ public class LoginPage extends AppCompatActivity{
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_login);
         }
-        public void onBtnSignUpClick(View v){
-            if(v.getId()==R.id.button){
-                Intent SignUpIntent=new Intent(this,SignUp.class);
+        public void onBtnforgetpassClick(View v){
+            if(v.getId()==R.id.button8){
+                Intent SignUpIntent=new Intent(this,RecoverPassword.class);
                 startActivity(SignUpIntent);
             }
         }
+    public void onBtnSignUpClick(View v){
+        if(v.getId()==R.id.button){
+            Intent SignUpIntent=new Intent(this,SignUp.class);
+            startActivity(SignUpIntent);
+        }
+    }
         public  void onBtnLoginInClick(View v){
         if(v.getId()==R.id.login){
 

@@ -9,12 +9,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
+import android.widget.Spinner;
 
 import com.example.little_chemist.Tables.Student;
-import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
 public class SignUp extends AppCompatActivity {
@@ -23,10 +22,10 @@ public class SignUp extends AppCompatActivity {
 
 // TODO add a security question
 
-    TextInputLayout ET_UserName ,ET_Password ,ET_ConfirmPassword;
+    TextInputLayout ET_UserName ,ET_Password ,ET_ConfirmPassword,SecurityAn;
 
-    String UserNameStr, PasswordStr, ConfirmPasswordStr;
-
+    String UserNameStr, PasswordStr, ConfirmPasswordStr,SecurityA,spinnerSelected;
+     Spinner spinner;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,17 +34,23 @@ public class SignUp extends AppCompatActivity {
 
         final Button signupButton = findViewById(R.id.button2);
 
+        spinner = (Spinner) findViewById(R.id.security_questions);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.SecurityQs, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
 
 
     signupButton.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
 
-
+            spinnerSelected = spinner.getSelectedItem().toString();
             ET_UserName = findViewById(R.id.username2);
             ET_Password = findViewById(R.id.password2);
             ET_ConfirmPassword= findViewById(R.id.password22);
-
+            SecurityAn= findViewById(R.id.securityA);
+            SecurityA=SecurityAn.getEditText().getText().toString().trim();
             UserNameStr=ET_UserName.getEditText().getText().toString().trim();
             PasswordStr=ET_Password.getEditText().getText().toString().trim();
             ConfirmPasswordStr=ET_ConfirmPassword.getEditText().getText().toString().trim();
@@ -143,11 +148,13 @@ public class SignUp extends AppCompatActivity {
             //-------------------------------------------------
 
 
-            if(validateN() && validateName() && validatePass()) {
+            if(validateN() && validateName() && validatePass() && validateSecurity()) {
                 //Insert into Database
                 Student student = new Student();
                 student.SetUserName(UserNameStr);
                 student.SetPassword(PasswordStr);
+                student.SetSecQ(spinnerSelected);
+                student.SetSecA(SecurityA);
                 helper.InsertUsers(student);
 
 
@@ -155,6 +162,7 @@ public class SignUp extends AppCompatActivity {
                 //Send Data
                 loginIntent.putExtra("UserName",UserNameStr);
                 loginIntent.putExtra("Password",PasswordStr);
+
 
                 startActivity(loginIntent);
                 finish();
@@ -176,6 +184,27 @@ public class SignUp extends AppCompatActivity {
     }
     //TODO add the messages to the string thing
     //TODO we have to check the database for if the username is used
+
+    private Boolean validateSecurity(){
+
+        if (SecurityA.isEmpty()) {
+            SecurityAn.setError(getText(R.string.SecError2));
+            return false;
+        }
+        if (spinnerSelected.isEmpty()) {
+            SecurityAn.setError(getText(R.string.SecError1));
+            return false;
+        }
+        if (SecurityA.length() >= 3 ) {
+            SecurityAn.setError(null);
+            return true;
+
+        }else {
+            SecurityAn.setError(getText(R.string.SecError3));
+            return false;
+        }
+
+    }
 
     private Boolean validateName(){
 

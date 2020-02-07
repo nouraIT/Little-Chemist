@@ -39,7 +39,25 @@
     <string name="log_out">Log Out</string>
     <string name="forgot_password">Forgot Password?</string>
     <string name="security_question">Security Question</string>
+    <string name="answer">Answer</string>
+    <string name="recover_password">Recover Password</string>
 
+    <string name="new_password">New Password</string>
+    <string name="confirm_new_password">Confirm New Password</string>
+    <string name="answer2">Answer</string>
+    <string name="SecError1">You did not select a question</string>
+    <string name="SecError2">You did not write an answer</string>
+    <string name="SecError3">The answer must be at least 3 characters</string>
+    <string name="chapter1">Chapter 1</string>
+    <string name="chapter2">Chapter 2</string>
+    <string name="chapter3">Chapter 3</string>
+    <string name="chapter4">Chapter 4</string>
+    <string name="chapter5">Chapter 5</string>
+    <string name="chapter_1">Chapter 1</string>
+    <string name="chapter_2">Chapter 2</string>
+    <string name="chapter_3">Chapter 3</string>
+    <string name="chapter_4">Chapter 4</string>
+    <string name="chapter_5">Chapter 5</string>
 
 
 </resources>

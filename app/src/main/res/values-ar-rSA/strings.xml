@@ -34,12 +34,26 @@
     <string name="chapters">الفصول</string>
     <string name="chemistry_basics">مبادىء الكيمياء</string>
     <string name="delete_account">حذف الحساب</string>
-    <string name="elements">عناصر</string>
+    <string name="elements">العناصر</string>
     <string name="the_branches_of_chemistry">فروع الكيمياء</string>
     <string name="the_periodic_table">الجدول الدوري</string>
     <string name="the_study_of_atoms">دراسة الذرات</string>
     <string name="log_out">تسجيل الخروج</string>
     <string name="forgot_password">نسيت كلمه المرور؟</string>
     <string name="security_question">سؤال امني</string>
+    <string name="answer">الاجابه</string>
+    <string name="recover_password">تغيير كلمه المرور</string>
+
+    <string name="new_password">كلمه المرور الجديده</string>
+    <string name="confirm_new_password">تأكيد كلمه المرور الجديده</string>
+    <string name="answer2">الاجابه</string>
+    <string name="SecError1">لم تختر سؤلا</string>
+    <string name="SecError2">لا يمكن ان يكون حقل الاجابه فارغا</string>
+    <string name="SecError3">يجب ان تتكون الاجابه من 3 احرف على الاقل</string>
+    <string name="chapter_1">الفصل الاول</string>
+    <string name="chapter_2">الفصل الثاني</string>
+    <string name="chapter_3">الفصل الثالث</string>
+    <string name="chapter_4">الفصل الرابع</string>
+    <string name="chapter_5">الفصل الخامس</string>
 
 </resources>
