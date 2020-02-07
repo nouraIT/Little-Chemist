@@ -38,4 +38,5 @@
     <string name="the_branches_of_chemistry">فروع الكيمياء</string>
     <string name="the_periodic_table">الجدول الدوري</string>
     <string name="the_study_of_atoms">دراسة الذرات</string>
+    <string name="log_out">تسجيل الخروج</string>
 </resources>

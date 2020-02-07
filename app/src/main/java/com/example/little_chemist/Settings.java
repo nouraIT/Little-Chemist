@@ -62,7 +62,6 @@ public class Settings extends AppCompatActivity {
                 Configuration config = new Configuration();
                 config.locale = locale;
                 getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
-                //Toast.makeText(this, getResources().getString(R.string.lbl_langSelecURdu), Toast.LENGTH_SHORT).show();
                 recreate();
 
 
@@ -71,13 +70,11 @@ public class Settings extends AppCompatActivity {
         Ara.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               // Toast.makeText(getApplicationContext(), "working", Toast.LENGTH_SHORT).show();
                 Locale locale = new Locale("ar");
                 Locale.setDefault(locale);
                 Configuration config = new Configuration();
                 config.locale = locale;
                 getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
-                //Toast.makeText(this, getResources().getString(R.string.lbl_langSelecURdu), Toast.LENGTH_SHORT).show();
                 recreate();
                 String langPref = "Language";
                 SharedPreferences prefs = getSharedPreferences("CommonPrefs", Activity.MODE_PRIVATE);
