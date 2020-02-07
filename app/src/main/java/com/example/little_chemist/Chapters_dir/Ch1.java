@@ -5,6 +5,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.little_chemist.Ch1_lessons.ch1_l1;
+import com.example.little_chemist.Ch1_lessons.ch1_l2;
+import com.example.little_chemist.Ch1_lessons.ch1_l3;
+import com.example.little_chemist.Ch1_lessons.ch1_l4;
+import com.example.little_chemist.Ch1_lessons.ch1_l5;
 import com.example.little_chemist.Chapters;
 import com.example.little_chemist.Home;
 import com.example.little_chemist.R;
@@ -26,7 +31,7 @@ public class Ch1 extends AppCompatActivity {
         button1 = findViewById(R.id.button1);
         button1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                Intent n = new Intent(Ch1.this, Ch1.class);
+                Intent n = new Intent(Ch1.this, ch1_l1.class);
                 startActivity(n);
                 finish();
             }
@@ -36,7 +41,7 @@ public class Ch1 extends AppCompatActivity {
         button2.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Intent n = new Intent(Ch1.this, Ch2.class);
+                Intent n = new Intent(Ch1.this, ch1_l2.class);
                 startActivity(n);
                 finish();
             }
@@ -45,7 +50,7 @@ public class Ch1 extends AppCompatActivity {
         button3 = findViewById(R.id.button3);
         button3.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                Intent n = new Intent(Ch1.this, Ch3.class);
+                Intent n = new Intent(Ch1.this, ch1_l3.class);
                 startActivity(n);
                 finish();
             }
@@ -54,7 +59,7 @@ public class Ch1 extends AppCompatActivity {
         button4 = findViewById(R.id.button4);
         button4.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                Intent n = new Intent(Ch1.this, Ch4.class);
+                Intent n = new Intent(Ch1.this, ch1_l4.class);
                 startActivity(n);
                 finish();
             }
@@ -63,7 +68,7 @@ public class Ch1 extends AppCompatActivity {
         button5 = findViewById(R.id.button5);
         button5.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                Intent n = new Intent(Ch1.this, Ch5.class);
+                Intent n = new Intent(Ch1.this, ch1_l5.class);
                 startActivity(n);
                 finish();
             }

@@ -16,7 +16,7 @@
         android:layout_marginEnd="148dp"
         android:layout_marginRight="148dp"
         android:layout_marginBottom="437dp"
-        android:text="Chapter 5"
+        android:text="chapter 5"
         android:textSize="30sp"
         app:fontFamily="casual"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -34,7 +34,7 @@
         android:layout_marginEnd="164dp"
         android:layout_marginRight="164dp"
         android:layout_marginBottom="187dp"
-        android:text="Lesson 5" />
+        android:text="lesson 5" />
 
 
     <Button
@@ -47,7 +47,7 @@
         android:layout_marginEnd="230dp"
         android:layout_marginRight="230dp"
         android:layout_marginBottom="348dp"
-        android:text="Lesson 1" />
+        android:text="lesson 1" />
 
     <Button
         android:id="@+id/button4"
@@ -59,7 +59,7 @@
         android:layout_marginEnd="108dp"
         android:layout_marginRight="108dp"
         android:layout_marginBottom="261dp"
-        android:text="Lesson 4" />
+        android:text="lesson 4" />
 
     <Button
         android:id="@+id/button2"
@@ -71,7 +71,7 @@
         android:layout_marginEnd="108dp"
         android:layout_marginRight="108dp"
         android:layout_marginBottom="348dp"
-        android:text="Lesson 2" />
+        android:text="lesson 2" />
 
     <Button
         android:id="@+id/button3"
@@ -83,6 +83,6 @@
         android:layout_marginEnd="234dp"
         android:layout_marginRight="234dp"
         android:layout_marginBottom="263dp"
-        android:text="Lesson 3" />
+        android:text="lesson 3" />
 
 </RelativeLayout>

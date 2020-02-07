@@ -34,7 +34,7 @@
         android:layout_marginEnd="164dp"
         android:layout_marginRight="164dp"
         android:layout_marginBottom="187dp"
-        android:text="Lesson 5" />
+        android:text="LESSON 5" />
 
 
     <Button
@@ -47,7 +47,7 @@
         android:layout_marginEnd="230dp"
         android:layout_marginRight="230dp"
         android:layout_marginBottom="348dp"
-        android:text="Lesson 1" />
+        android:text="LESSON 1" />
 
     <Button
         android:id="@+id/button4"
@@ -83,6 +83,6 @@
         android:layout_marginEnd="234dp"
         android:layout_marginRight="234dp"
         android:layout_marginBottom="263dp"
-        android:text="Lesson 3" />
+        android:text="lesson 3" />
 
 </RelativeLayout>
