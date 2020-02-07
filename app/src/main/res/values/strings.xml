@@ -37,6 +37,14 @@
     <string name="the_study_of_atoms">the study of atoms</string>
     <string name="chapters">Chapters</string>
     <string name="log_out">Log Out</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="security_question">Security Question</string>
 
 
+    <string-array name="SQ">
+        <item>What's your favorite animal?</item>
+        <item>What year were you born?</item>
+        <item>What's your favorite subject at school?</item>
+        <item>What is your favorite meal?</item>
+    </string-array>
 </resources>

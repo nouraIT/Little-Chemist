@@ -39,4 +39,7 @@
     <string name="the_periodic_table">الجدول الدوري</string>
     <string name="the_study_of_atoms">دراسة الذرات</string>
     <string name="log_out">تسجيل الخروج</string>
+    <string name="forgot_password">نسيت كلمه المرور؟</string>
+    <string name="security_question">سؤال امني</string>
+
 </resources>
