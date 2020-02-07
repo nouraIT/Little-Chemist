@@ -8,91 +8,6 @@
     android:orientation="vertical">
 
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:background="@drawable/circle_btn"
-        android:text="@string/sign_up_button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password22"
-        app:layout_constraintVertical_bias="0.491"
-        tools:layout_conversion_absoluteHeight="48dp"
-        tools:layout_conversion_absoluteWidth="411dp" />
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/password2"
-        android:layout_width="312dp"
-        android:layout_height="57dp"
-
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
-        android:hint="@string/prompt_password"
-        android:imeOptions="actionNext"
-        android:importantForAutofill="no"
-        android:inputType="textPassword"
-        android:selectAllOnFocus="true"
-        android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.509"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/username2"
-        app:layout_constraintVertical_bias="0.0"
-        tools:layout_conversion_absoluteHeight="45dp"
-        tools:layout_conversion_absoluteWidth="363dp" />
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/username2"
-        android:layout_width="310dp"
-        android:layout_height="53dp"
-
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="212dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
-        android:autofillHints=""
-        android:hint="@string/prompt_username"
-        android:imeOptions="actionNext"
-        android:inputType="textPersonName"
-        android:selectAllOnFocus="true"
-        android:visibility="visible"
-        app:errorTextAppearance="@style/error_appearance"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.452"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_conversion_absoluteHeight="45dp"
-        tools:layout_conversion_absoluteWidth="363dp"
-
-        tools:targetApi="o"
-        tools:visibility="visible" />
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/password22"
-        android:layout_width="312dp"
-        android:layout_height="57dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
-        android:hint="@string/prompt_passwordConf"
-        android:imeOptions="actionDone"
-        android:importantForAutofill="no"
-        android:inputType="textPassword"
-        android:selectAllOnFocus="true"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.509"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password2" />
-
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="403dp"
@@ -102,6 +17,145 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/l" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/username2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+
+        android:layout_marginTop="212dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        app:errorEnabled="true"
+        app:errorTextAppearance="@style/error_appearance"
+
+        android:layout_marginTop="60dp"
+        android:background="@drawable/circle_btn"
+        android:text="@string/sign_up_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.452"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password22"
+        app:layout_constraintVertical_bias="0.491"
+        tools:layout_conversion_absoluteHeight="48dp"
+        tools:layout_conversion_absoluteWidth="411dp" />
+        app:layout_constraintTop_toTopOf="parent"
+
+        tools:layout_conversion_absoluteHeight="45dp"
+        tools:layout_conversion_absoluteWidth="363dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="304dp"
+            android:layout_height="50dp"
+
+
+            android:autofillHints=""
+            android:hint="@string/prompt_username"
+            android:inputType="textPersonName"
+            android:selectAllOnFocus="true"
+            android:visibility="visible"
+
+
+            tools:targetApi="o"
+            tools:visibility="visible" />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/password2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:errorTextAppearance="@style/error_appearance"
+        app:errorEnabled="true"
+
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+
+        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/username2"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_conversion_absoluteHeight="45dp"
+        tools:layout_conversion_absoluteWidth="363dp"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="304dp"
+            android:layout_height="50dp"
+
+
+            android:hint="@string/prompt_password"
+            android:importantForAutofill="no"
+            android:inputType="textPassword"
+            android:selectAllOnFocus="true"
+            android:visibility="visible"
+
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/password22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        app:errorTextAppearance="@style/error_appearance"
+        app:errorEnabled="true"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password2"
+    >
+
+        <com.google.android.material.textfield.TextInputEditText
+
+            android:layout_width="304dp"
+            android:layout_height="50dp"
+
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginRight="24dp"
+
+            android:hint="@string/prompt_passwordConf"
+            android:importantForAutofill="no"
+            android:inputType="textPassword"
+            android:selectAllOnFocus="true"
+
+
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+<!-- TODO add a security question -->
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="268dp"
+        android:background="@drawable/circle_btn"
+        android:text="@string/sign_up_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password22"
+        app:layout_constraintVertical_bias="0.138"
+        tools:layout_conversion_absoluteHeight="48dp"
+        tools:layout_conversion_absoluteWidth="411dp" />
 
     <TextView
         android:id="@+id/textView5"

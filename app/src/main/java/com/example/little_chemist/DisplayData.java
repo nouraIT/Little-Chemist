@@ -19,6 +19,7 @@ public class DisplayData extends AppCompatActivity {
 
         String UserNameStr=getIntent().getStringExtra("UserName");
         String PasswordStr=getIntent().getStringExtra("Password");
+
         //TextView UserNameTV=(TextView)findViewById(R.id.tvUserName);
         //TextView PasswordTV=(TextView)findViewById(R.id.tvPassword);
         //UserNameTV.setText(UserNameStr);

@@ -25,20 +25,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        //realm init
-
-        /*
-        RealmConfiguration config = new RealmConfiguration.Builder()
-          .name("myrealm.realm")
-          .encryptionKey(getKey())
-          .schemaVersion(42)
-          .modules(new MySchemaModule())
-          .migration(new MyMigration())
-          .build();
-        // Use the config
-        Realm realm = Realm.getInstance(config);
-        */
-
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -50,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
                                       @Override
                                       public void run() {
-                                          Intent intent = new Intent(MainActivity.this, Login.class);
+                                          Intent intent = new Intent(MainActivity.this, LoginPage.class);
                                           startActivity(intent);
                                           finish();
 

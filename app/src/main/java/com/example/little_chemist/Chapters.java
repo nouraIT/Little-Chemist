@@ -43,7 +43,7 @@ public class Chapters extends AppCompatActivity {
             public void onClick(View v) {
                 Intent Homepage = new Intent(Chapters.this, Home.class);
                 startActivity(Homepage);
-                finish();
+               // finish();
             }
         });
 
@@ -52,7 +52,7 @@ public class Chapters extends AppCompatActivity {
             public void onClick(View view) {
                 Intent n = new Intent(Chapters.this, Ch1.class);
                 startActivity(n);
-                finish();
+               // finish();
             }
         });
 
@@ -62,7 +62,7 @@ public class Chapters extends AppCompatActivity {
             public void onClick(View v) {
                 Intent n = new Intent(Chapters.this, Ch2.class);
                 startActivity(n);
-                finish();
+               // finish();
             }
         });
 
@@ -71,7 +71,7 @@ public class Chapters extends AppCompatActivity {
             public void onClick(View view) {
                 Intent n = new Intent(Chapters.this, Ch3.class);
                 startActivity(n);
-                finish();
+               // finish();
             }
         });
 
@@ -80,7 +80,7 @@ public class Chapters extends AppCompatActivity {
             public void onClick(View view) {
                 Intent n = new Intent(Chapters.this, Ch4.class);
                 startActivity(n);
-                finish();
+              //  finish();
             }
         });
 
@@ -89,7 +89,7 @@ public class Chapters extends AppCompatActivity {
             public void onClick(View view) {
                 Intent n = new Intent(Chapters.this, Ch5.class);
                 startActivity(n);
-                finish();
+               // finish();
             }
         });
 

@@ -9,43 +9,81 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="Login">
+    tools:context=".LoginPage">
 
-    <EditText
-        android:id="@+id/password"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="24dp"
 
-        android:hint="@string/prompt_password"
-        android:imeActionLabel="@string/action_sign_in_short"
-        android:imeOptions="actionDone"
-        android:importantForAutofill="no"
-        android:inputType="textPassword"
-        android:selectAllOnFocus="true"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/username" />
-
-    <EditText
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/username"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+
+        app:errorTextAppearance="@style/error_appearance"
+        app:errorEnabled="true"
+
         android:layout_marginStart="24dp"
         android:layout_marginTop="208dp"
         android:layout_marginEnd="24dp"
 
-        android:autofillHints=""
-        android:hint="@string/prompt_username"
-        android:inputType="textPersonName|text"
-        android:selectAllOnFocus="true"
-
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:targetApi="o" />
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+
+            android:layout_width="304dp"
+            android:layout_height="50dp"
+
+
+            android:autofillHints=""
+            android:hint="@string/prompt_username"
+            android:inputType="textPersonName|text"
+            android:selectAllOnFocus="true"
+
+
+            tools:targetApi="o"
+
+            />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        app:errorTextAppearance="@style/error_appearance"
+        app:errorEnabled="true"
+
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="24dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/username"
+
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="304dp"
+            android:layout_height="50dp"
+
+            android:hint="@string/prompt_password"
+            android:imeActionLabel="@string/action_sign_in_short"
+
+            android:imeOptions="actionDone"
+            android:importantForAutofill="no"
+            android:inputType="textPassword"
+            android:selectAllOnFocus="true"
+            />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
 
     <Button
         android:id="@+id/login"

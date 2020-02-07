@@ -26,11 +26,11 @@
     <string name="Error4">كلمه المرور يجب ان تكون اكثر من  5 احرف او ارقام</string>
     <string name="Error5">كلمه المرور لا تتطابق</string>
     <string name="Error6">اسم المستخدم يجب ان يكون اكثر من 5 احرف او ارقام</string>
-    <string name="chapter_1">الفصل الاول</string>
-    <string name="chapter_2">الفصل الثاني</string>
-    <string name="chapter_3">الفصل الثالث</string>
-    <string name="chapter_4">الفصل الرابع</string>
-    <string name="chapter_5">الفصل الخامس</string>
+    <string name="chapter1">الفصل الاول</string>
+    <string name="chapter2">الفصل الثاني</string>
+    <string name="chapter3">الفصل الثالث</string>
+    <string name="chapter4">الفصل الرابع</string>
+    <string name="chapter5">الفصل الخامس</string>
     <string name="chapters">الفصول</string>
     <string name="chemistry_basics">مبادىء الكيمياء</string>
     <string name="delete_account">حذف الحساب</string>

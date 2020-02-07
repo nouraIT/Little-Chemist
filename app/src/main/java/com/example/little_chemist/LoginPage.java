@@ -6,28 +6,15 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.util.Log;
-import android.util.Patterns;
-import android.view.KeyEvent;
 import android.view.View;
-import android.view.inputmethod.EditorInfo;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ProgressBar;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.little_chemist.R;
-
-import com.example.little_chemist.SignUp;
-
-import android.os.Bundle;
-
-public class Login extends AppCompatActivity{
+import com.example.little_chemist.Tables.Student;
+import com.google.android.material.textfield.TextInputLayout;
 
 
+public class LoginPage extends AppCompatActivity{
+
+        Student student = new Student();
         DatabaseHelper helper=new DatabaseHelper(this);
 
         @Override
@@ -43,16 +30,26 @@ public class Login extends AppCompatActivity{
         }
         public  void onBtnLoginInClick(View v){
         if(v.getId()==R.id.login){
+
+            TextInputLayout UserNameET, PasswordET;
             //Passing userName
-            EditText UserNameET=(EditText) findViewById(R.id.username);
-            String UserNameStr=UserNameET.getText().toString();
+            UserNameET= findViewById(R.id.username);
+            String UserNameStr=UserNameET.getEditText().getText().toString().trim();
             //Passing Password
-            EditText PasswordET=(EditText)findViewById(R.id.password);
-            String PasswordStr=PasswordET.getText().toString();
+            PasswordET= findViewById(R.id.password);
+            String PasswordStr=PasswordET.getEditText().getText().toString().trim();
+
+            if(UserNameStr.equals(null)){
+                UserNameET.setError("الرجاء ادخال اسم المستخدم");
+
+            }
+            else if(PasswordStr.equals(null)){
+                PasswordET.setError("الرجاء ادخال الرقم السري");
+            }
 
 
-            String dbPassword=helper.LoginIn(UserNameStr);
             //Send UserName to Database to find it, and return Password
+            String dbPassword= helper.checkPassword(UserNameStr);
             //To compare it with Current Password from user input
             if(dbPassword.equals(PasswordStr)){
                 Intent loginIntent=new Intent(this,Home.class);
@@ -62,16 +59,9 @@ public class Login extends AppCompatActivity{
 
                 startActivity(loginIntent);
 
-            }else if(UserNameStr.equals(null)){
-                Toast.makeText(getApplicationContext(), R.string.Error1, Toast.LENGTH_SHORT).show();
-
-            }
-            else if(PasswordStr.equals(null)){
-                Toast.makeText(getApplicationContext(), R.string.Error2, Toast.LENGTH_SHORT).show();
-
-            }
-            else {
-                Toast.makeText(this, R.string.Error3, Toast.LENGTH_SHORT).show();
+            }else {
+                UserNameET.setError("الاسم المستخدم او الرقم السري غير صحيح");
+                PasswordET.setError("الاسم المستخدم او الرقم السري غير صحيح");
             }
 
 
