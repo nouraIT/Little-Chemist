@@ -40,7 +40,7 @@
     <string name="forgot_password">Forgot Password?</string>
     <string name="security_question">Security Question</string>
     <string name="answer">Answer</string>
-    <string name="recover_password">Recover Password</string>
+    <string name="recover_password">Change Password</string>
 
     <string name="new_password">New Password</string>
     <string name="confirm_new_password">Confirm New Password</string>

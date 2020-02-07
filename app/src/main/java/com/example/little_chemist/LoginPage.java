@@ -7,6 +7,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.view.View;
+import android.widget.Button;
 
 import com.example.little_chemist.Tables.Student;
 import com.google.android.material.textfield.TextInputLayout;
@@ -21,13 +22,16 @@ public class LoginPage extends AppCompatActivity{
         protected void onCreate(@Nullable Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_login);
+            Button Recover = findViewById(R.id.button8);
+            Recover.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent recover=new Intent(LoginPage.this,RecoverPassword.class);
+                    startActivity(recover);
+                }
+            });
         }
-        public void onBtnforgetpassClick(View v){
-            if(v.getId()==R.id.button8){
-                Intent SignUpIntent=new Intent(this,RecoverPassword.class);
-                startActivity(SignUpIntent);
-            }
-        }
+
     public void onBtnSignUpClick(View v){
         if(v.getId()==R.id.button){
             Intent SignUpIntent=new Intent(this,SignUp.class);
