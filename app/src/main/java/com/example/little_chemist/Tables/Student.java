@@ -52,6 +52,52 @@ public class Student extends AppCompatActivity{
 
     //functions
 
+    public void signup(){
+
+    }
+
+    public void logOut(){
+
+    }
+
+
+    public void saveProgress(int lessonId){
+
+    }
+
+    public void submitQuiz(){
+
+    }
+
+
+    public void viewContent(){
+
+    }
+
+    public void takeQuiz(int id){
+
+    }
+
+
+    public void changeLang(){
+
+    }
+
+    public void viewScore(){
+
+    }
+    public void ViewLesson(int id){
+
+    }
+
+    public boolean deleteAccountReq(){
+        return false;
+    }
+
+    public void recoverPassword(){
+
+    }
+
    /* public boolean LogIn(String Username, String Password){
 
         String query ="SELECT UserName,Password FROM Student";
