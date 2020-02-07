@@ -5,8 +5,8 @@ import com.example.little_chemist.DatabaseHelper;
 
 public class Student extends AppCompatActivity{
     int Id, TotalScore;
-    String UserName,Password, QZLocks, CHLocks, LSNLocks;
-    DatabaseHelper helper=new DatabaseHelper(this);
+    String UserName,Password, QZLocks, CHLocks, LSNLocks, SecQ, SecA;
+    //DatabaseHelper helper=new DatabaseHelper(this);
 
     //static int i = 0 ;
 
@@ -43,6 +43,12 @@ public class Student extends AppCompatActivity{
     public void SetLSNLocks(String lsnlocks) { this.LSNLocks=lsnlocks;}
     public String GetLSNLocks() {return LSNLocks;}
 
+
+    public void SetSecQ(String secq) { this.SecQ=secq;}
+    public String GetSecQ() {return SecQ;}
+
+    public void SetSecA(String seca) { this.SecA=seca;}
+    public String GetSecA() {return SecA;}
 
     //functions
 

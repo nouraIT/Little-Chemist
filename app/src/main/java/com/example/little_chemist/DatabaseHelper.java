@@ -14,7 +14,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public static class FeedEntry implements BaseColumns {
 
-        private static final String TABLE_STUDENT = "Student";
+        private static final String TABLE_NAME = "Student";
         private static final String COLUMN_ID = "Id";
         private static final String COLUMN_SCORE = "TotalScore";
         private static final String COLUMN_QZLOCKS = "QZLocks";
@@ -22,23 +22,28 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         private static final String COLUMN_LSNLOCKS = "LSNLocks";
         private static final String COLUMN_USERNAME = "UserName";
         private static final String COLUMN_PASSWORD = "Password";
+        private static final String COLUMN_SECQ = "SecQ";
+        private static final String COLUMN_SECA = "SecA";
+
     }
     private static final int DATABASE_VERSION = 1;
     private static final String DATABASE_NAME = "LittleChemist.db";
     SQLiteDatabase db;
 
     private static final String SQL_CREATE_ENTRIES=
-            "CREATE TABLE "+FeedEntry.TABLE_STUDENT +" ("+
+            "CREATE TABLE "+FeedEntry.TABLE_NAME +" ("+
                     FeedEntry.COLUMN_ID + "  INTEGER PRIMARY KEY," +
                     FeedEntry.COLUMN_SCORE + " INTEGER," +
                     FeedEntry.COLUMN_QZLOCKS + " TEXT," +
                     FeedEntry.COLUMN_CHLOCKS + " TEXT," +
                     FeedEntry.COLUMN_LSNLOCKS + " TEXT," +
                     FeedEntry.COLUMN_USERNAME + " TEXT,"+
-                    FeedEntry.COLUMN_PASSWORD +" TEXT)";
+                    FeedEntry.COLUMN_PASSWORD +" TEXT,"+
+                    FeedEntry.COLUMN_SECQ +" TEXT,"+
+                    FeedEntry.COLUMN_SECA +" TEXT)" ;
 
     private static final String SQL_DELETE_ENTRIES =
-            "DROP TABLE IF EXISTS " + FeedEntry.TABLE_STUDENT;
+            "DROP TABLE IF EXISTS " + FeedEntry.TABLE_NAME;
 
 
     public DatabaseHelper(Context context){
@@ -67,7 +72,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         db=getWritableDatabase();
         //To get , how many column in ur table
-        String query="SELECT * FROM "+FeedEntry.TABLE_STUDENT;
+        String query="SELECT * FROM "+FeedEntry.TABLE_NAME;
         Cursor cursor=db.rawQuery(query,null);
         int count=cursor.getCount();
 
@@ -79,7 +84,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentvalues.put(FeedEntry.COLUMN_LSNLOCKS, student.GetLSNLocks());
         contentvalues.put(FeedEntry.COLUMN_USERNAME, student.GetUserName());
         contentvalues.put(FeedEntry.COLUMN_PASSWORD, student.GetPassword());
-        db.insert(FeedEntry.TABLE_STUDENT,null,contentvalues);
+        contentvalues.put(FeedEntry.COLUMN_SECQ, student.GetSecQ());
+        contentvalues.put(FeedEntry.COLUMN_SECA, student.GetSecA());
+
+
+
+        db.insert(FeedEntry.TABLE_NAME,null,contentvalues);
         db.close();
     }
 
@@ -87,7 +97,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public String checkPassword(String Username){
 
         db = this.getReadableDatabase();
-        //query="SELECT UserName,Password FROM  "+FeedEntry.TABLE_STUDENT;
+        //query="SELECT UserName,Password FROM  "+FeedEntry.TABLE_NAME;
         String query ="SELECT UserName,Password FROM Student";
 
         Cursor cursor=db.rawQuery(query,null);
