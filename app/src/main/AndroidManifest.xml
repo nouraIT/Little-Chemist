@@ -17,35 +17,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Ch5_lessons.ch5_l5"></activity>
-        <activity android:name=".Ch5_lessons.ch5_l4" />
-        <activity android:name=".Ch5_lessons.ch5_l3" />
-        <activity android:name=".Ch5_lessons.ch5_l2" />
-        <activity android:name=".Ch5_lessons.ch5_l1" />
-        <activity android:name=".Ch4_lessons.ch4_l5" />
-        <activity android:name=".Ch4_lessons.ch4_l4" />
-        <activity android:name=".Ch4_lessons.ch4_l3" />
-        <activity android:name=".Ch4_lessons.ch4_l2" />
-        <activity android:name=".Ch4_lessons.ch4_l1" />
-        <activity android:name=".Ch3_lessons.ch3_l5" />
-        <activity android:name=".Ch3_lessons.ch3_l4" />
-        <activity android:name=".Ch3_lessons.ch3_l3" />
-        <activity android:name=".Ch3_lessons.ch3_l2" />
-        <activity android:name=".Ch3_lessons.ch3_l1" />
-        <activity android:name=".Ch2_lessons.ch2_l5" />
-        <activity android:name=".Ch2_lessons.ch2_l4" />
-        <activity android:name=".Ch2_lessons.ch2_l3" />
-        <activity android:name=".Ch2_lessons.ch2_l2" />
-        <activity android:name=".Ch2_lessons.ch2_l1" />
-        <activity android:name=".Ch1_lessons.ch1_l5" />
-        <activity android:name=".Ch1_lessons.ch1_l4" />
-        <activity android:name=".Ch1_lessons.ch1_l3" />
-        <activity android:name=".Ch1_lessons.ch1_l2" />
-        <activity android:name=".Ch1_lessons.ch1_l1" />
+
         <activity android:name=".Settings" />
         <activity android:name=".Home" />
         <activity
-            android:name=".Login"
+            android:name=".LoginPage"
             android:label="@string/title_activity_login" />
         <activity android:name=".Chapters" />
         <activity android:name=".Chapters_dir.Ch1" />

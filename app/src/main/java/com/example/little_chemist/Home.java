@@ -25,7 +25,7 @@ private ImageView set;
         String UserNameStr=getIntent().getStringExtra("UserName");
         String PasswordStr=getIntent().getStringExtra("Password");
 
-        String welcome = getString(R.string.welcome) + UserNameStr ;
+        String welcome = getString(R.string.welcome) +" "+ UserNameStr ;
         Toast.makeText(getApplicationContext(), welcome, Toast.LENGTH_LONG).show();
 
         set = findViewById(R.id.settings);
@@ -58,7 +58,7 @@ private ImageView set;
                 editor.commit();
 
                 Intent intent = new Intent(Home.this,
-                        Login.class);
+                        LoginPage.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
                 finish();

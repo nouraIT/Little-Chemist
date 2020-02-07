@@ -7,17 +7,19 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.provider.BaseColumns;
 
-import com.example.little_chemist.Tables.User;
+import com.example.little_chemist.Tables.Student;
 
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     public static class FeedEntry implements BaseColumns {
 
-        private static final String TABLE_NAME = "users";
+        private static final String TABLE_STUDENT = "Student";
         private static final String COLUMN_ID = "Id";
-        //private static final String COLUMN_NAME = "Name";
-       // private static final String COLUMN_EMAIL = "Email";
+        private static final String COLUMN_SCORE = "TotalScore";
+        private static final String COLUMN_QZLOCKS = "QZLocks";
+        private static final String COLUMN_CHLOCKS = "CHLocks";
+        private static final String COLUMN_LSNLOCKS = "LSNLocks";
         private static final String COLUMN_USERNAME = "UserName";
         private static final String COLUMN_PASSWORD = "Password";
     }
@@ -26,15 +28,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     SQLiteDatabase db;
 
     private static final String SQL_CREATE_ENTRIES=
-            "CREATE TABLE "+FeedEntry.TABLE_NAME +" ("+
+            "CREATE TABLE "+FeedEntry.TABLE_STUDENT +" ("+
                     FeedEntry.COLUMN_ID + "  INTEGER PRIMARY KEY," +
-                    //FeedEntry.COLUMN_NAME + " TEXT," +
-                    //FeedEntry.COLUMN_EMAIL + " TEXT," +
+                    FeedEntry.COLUMN_SCORE + " INTEGER," +
+                    FeedEntry.COLUMN_QZLOCKS + " TEXT," +
+                    FeedEntry.COLUMN_CHLOCKS + " TEXT," +
+                    FeedEntry.COLUMN_LSNLOCKS + " TEXT," +
                     FeedEntry.COLUMN_USERNAME + " TEXT,"+
                     FeedEntry.COLUMN_PASSWORD +" TEXT)";
 
     private static final String SQL_DELETE_ENTRIES =
-            "DROP TABLE IF EXISTS " + FeedEntry.TABLE_NAME;
+            "DROP TABLE IF EXISTS " + FeedEntry.TABLE_STUDENT;
 
 
     public DatabaseHelper(Context context){
@@ -59,37 +63,46 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onUpgrade(db, oldVersion, newVersion);
     }
 
-    public void InsertUsers(User user){
+    public void InsertUsers(Student student){
+
         db=getWritableDatabase();
         //To get , how many column in ur table
-        String query="SELECT * FROM "+FeedEntry.TABLE_NAME;
+        String query="SELECT * FROM "+FeedEntry.TABLE_STUDENT;
         Cursor cursor=db.rawQuery(query,null);
         int count=cursor.getCount();
 
         ContentValues contentvalues=new ContentValues();
         contentvalues.put(FeedEntry.COLUMN_ID,count+1);
-        //contentvalues.put(FeedEntry.COLUMN_NAME, contact.GetName());
-        //contentvalues.put(FeedEntry.COLUMN_EMAIL, user.GetEmail());
-        contentvalues.put(FeedEntry.COLUMN_USERNAME, user.GetUserName());
-        contentvalues.put(FeedEntry.COLUMN_PASSWORD, user.GetPassword());
-        db.insert(FeedEntry.TABLE_NAME,null,contentvalues);
+        contentvalues.put(FeedEntry.COLUMN_SCORE, student.GetTotalScore());
+        contentvalues.put(FeedEntry.COLUMN_QZLOCKS, student.GetQZLocks());
+        contentvalues.put(FeedEntry.COLUMN_CHLOCKS, student.GetCHLocks());
+        contentvalues.put(FeedEntry.COLUMN_LSNLOCKS, student.GetLSNLocks());
+        contentvalues.put(FeedEntry.COLUMN_USERNAME, student.GetUserName());
+        contentvalues.put(FeedEntry.COLUMN_PASSWORD, student.GetPassword());
+        db.insert(FeedEntry.TABLE_STUDENT,null,contentvalues);
         db.close();
     }
 
-    public  String LoginIn(String Username){
-        db=this.getReadableDatabase();
-        String  query="SELECT UserName,Password FROM  "+FeedEntry.TABLE_NAME;
-        Cursor corsor=db.rawQuery(query,null);
+
+    public String checkPassword(String Username){
+
+        db = this.getReadableDatabase();
+        //query="SELECT UserName,Password FROM  "+FeedEntry.TABLE_STUDENT;
+        String query ="SELECT UserName,Password FROM Student";
+
+        Cursor cursor=db.rawQuery(query,null);
+
         String username,password;
         password="Not found";
-        if(corsor.moveToFirst()){
+
+        if(cursor.moveToFirst()){
             do{
-                username=corsor.getString(0);
+                username=cursor.getString(0);
                 if(username.contentEquals(Username)){
-                    password=corsor.getString(1);
+                    password=cursor.getString(1);
                     break;
                 }
-            }while (corsor.moveToNext());
+            }while (cursor.moveToNext());
         }
         return  password;
     }

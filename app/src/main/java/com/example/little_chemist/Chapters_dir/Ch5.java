@@ -28,7 +28,7 @@ public class Ch5 extends AppCompatActivity {
             public void onClick(View view) {
                 Intent n = new Intent(Ch5.this, Ch1.class);
                 startActivity(n);
-                finish();
+              //  finish();
             }
         });
 
@@ -38,7 +38,7 @@ public class Ch5 extends AppCompatActivity {
             public void onClick(View v) {
                 Intent n = new Intent(Ch5.this, Ch1.class);
                 startActivity(n);
-                finish();
+             //   finish();
             }
         });
 
@@ -47,7 +47,7 @@ public class Ch5 extends AppCompatActivity {
             public void onClick(View view) {
                 Intent n = new Intent(Ch5.this, Ch1.class);
                 startActivity(n);
-                finish();
+               // finish();
             }
         });
 
@@ -56,7 +56,7 @@ public class Ch5 extends AppCompatActivity {
             public void onClick(View view) {
                 Intent n = new Intent(Ch5.this, Ch1.class);
                 startActivity(n);
-                finish();
+              //  finish();
             }
         });
 
@@ -65,7 +65,7 @@ public class Ch5 extends AppCompatActivity {
             public void onClick(View view) {
                 Intent n = new Intent(Ch5.this, Ch1.class);
                 startActivity(n);
-                finish();
+              //  finish();
             }
         });
     }

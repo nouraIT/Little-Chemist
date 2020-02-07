@@ -13,7 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.little_chemist.Tables.User;
+import com.example.little_chemist.Tables.Student;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
@@ -21,8 +21,9 @@ public class SignUp extends AppCompatActivity {
 
     DatabaseHelper helper=new DatabaseHelper(this);
 
+// TODO add a security question
 
-    TextInputEditText ET_UserName ,ET_Password ,ET_ConfirmPassword;
+    TextInputLayout ET_UserName ,ET_Password ,ET_ConfirmPassword;
 
     String UserNameStr, PasswordStr, ConfirmPasswordStr;
 
@@ -45,9 +46,9 @@ public class SignUp extends AppCompatActivity {
             ET_Password = findViewById(R.id.password2);
             ET_ConfirmPassword= findViewById(R.id.password22);
 
-            UserNameStr=ET_UserName.getText().toString().trim();
-            PasswordStr=ET_Password.getText().toString().trim();
-            ConfirmPasswordStr=ET_ConfirmPassword.getText().toString().trim();
+            UserNameStr=ET_UserName.getEditText().getText().toString().trim();
+            PasswordStr=ET_Password.getEditText().getText().toString().trim();
+            ConfirmPasswordStr=ET_ConfirmPassword.getEditText().getText().toString().trim();
 
 
            // EditText ET_Name=(EditText) findViewById(R.id.ET_Name);
@@ -74,7 +75,7 @@ public class SignUp extends AppCompatActivity {
             if(UserNameStr.length()>=3)
                 validateName();
 
-            ET_UserName.addTextChangedListener(new TextWatcher() {
+            ET_UserName.getEditText().addTextChangedListener(new TextWatcher() {
                 @Override
                 public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
@@ -82,14 +83,14 @@ public class SignUp extends AppCompatActivity {
 
                 @Override
                 public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                    UserNameStr = ET_UserName.getText().toString().trim();
+                    UserNameStr = ET_UserName.getEditText().getText().toString().trim();
                     if(UserNameStr.length()>=3)
                         validateName();
                 }
 
                 @Override
                 public void afterTextChanged(Editable editable) {
-                    UserNameStr = ET_UserName.getText().toString().trim();
+                    UserNameStr = ET_UserName.getEditText().getText().toString().trim();
                     if (validateN()){
 
                         signupButton.setEnabled(true);
@@ -106,7 +107,7 @@ public class SignUp extends AppCompatActivity {
 
             //-------------------------------------------------
 
-            ET_Password.addTextChangedListener(new TextWatcher() {
+            ET_Password.getEditText().addTextChangedListener(new TextWatcher() {
                 @Override
                 public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
@@ -114,7 +115,7 @@ public class SignUp extends AppCompatActivity {
 
                 @Override
                 public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                    PasswordStr = ET_Password.getText().toString().trim();
+                    PasswordStr = ET_Password.getEditText().getText().toString().trim();
                     if(PasswordStr.length()>=7)
                         validatePass();
 
@@ -122,7 +123,7 @@ public class SignUp extends AppCompatActivity {
 
                 @Override
                 public void afterTextChanged(Editable editable) {
-                    PasswordStr = ET_Password.getText().toString().trim();
+                    PasswordStr = ET_Password.getEditText().getText().toString().trim();
                     if (validateN()){
                         signupButton.setEnabled(true);
                         signupButton.setAlpha(1f);
@@ -144,10 +145,10 @@ public class SignUp extends AppCompatActivity {
 
             if(validateN() && validateName() && validatePass()) {
                 //Insert into Database
-                User user = new User();
-                user.SetUserName(UserNameStr);
-                user.SetPassword(PasswordStr);
-                helper.InsertUsers(user);
+                Student student = new Student();
+                student.SetUserName(UserNameStr);
+                student.SetPassword(PasswordStr);
+                helper.InsertUsers(student);
 
 
                 Intent loginIntent=new Intent(SignUp.this,Home.class);
@@ -215,7 +216,8 @@ public class SignUp extends AppCompatActivity {
         return true;
     }
 }
-    /*
+
+/*
     //final ProgressBar loadingProgressBar = findViewById(R.id.loading);
     AppDatabase db;
 
