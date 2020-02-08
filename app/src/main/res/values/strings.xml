@@ -52,6 +52,9 @@
     <string name="chapter3">Chapter 3</string>
     <string name="chapter4">Chapter 4</string>
     <string name="chapter5">Chapter5</string>
+    <string name="SecurityQwrong">The security question does not match the one you choose at sign up</string>
+    <string name="SecurityAwrong">The security answer does not match the one you wrote at sign up</string>
+
 
 
     <!-- _______________ error msgs _______________ -->
