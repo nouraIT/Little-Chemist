@@ -22,9 +22,11 @@ private ImageView set;
         setContentView(R.layout.activity_home);
 
         //the users info
-        String UserNameStr=getIntent().getStringExtra("UserName");
+        String UserNameStr= getIntent().getStringExtra("UserName");
         String PasswordStr=getIntent().getStringExtra("Password");
 
+        //static String name = UserNameStr;
+    //TODO fix the welcome sign
         String welcome = getString(R.string.welcome) +" "+ UserNameStr ;
         Toast.makeText(getApplicationContext(), welcome, Toast.LENGTH_LONG).show();
 

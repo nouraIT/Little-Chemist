@@ -22,12 +22,8 @@
 
     <string name="little_chemist">Little Chemist</string>
     <string name="todo" translatable="false">TODO</string>
-    <string name="Error1">Username should not be Null</string>
-    <string name="Error2">Password should not be Null</string>
-    <string name="Error3">UserName or Passwords is not correct</string>
-    <string name="Error4">Password should be more than 5 characters</string>
-    <string name="Error5">Passwords do not match</string>
-    <string name="Error6">Username should be more than 5 characters</string>
+
+
     <string name="welcome">Welcome </string>
     <string name="delete_account">Delete Account</string>
     <string name="the_periodic_table">The periodic table</string>
@@ -39,9 +35,8 @@
     <string name="log_out">Log Out</string>
     <string name="forgot_password">Forgot Password?</string>
     <string name="security_question">Security Question</string>
-    <string name="SecError1">You did not select a question</string>
-    <string name="SecError2">You did not write an answer</string>
-    <string name="SecError3">The answer must be at least 3 characters</string>
+
+
     <string name="recover_password">Change Password</string>
     <string name="answer">Answer</string>
     <string name="new_password">New Password</string>
@@ -59,6 +54,21 @@
     <string name="chapter5">Chapter5</string>
     <string name="SecurityQwrong">The security question does not match the one you choose at sign up</string>
     <string name="SecurityAwrong">The security answer does not match the one you wrote at sign up</string>
+
+
+
+    <!-- _______________ error msgs _______________ -->
+
+    <string name="Error1">Username should not be Null</string>
+    <string name="Error2">Password should not be Null</string>
+    <string name="Error3">UserName or Passwords is not correct</string>
+    <string name="Error4">Password should be more than 5 characters</string>
+    <string name="Error5">Passwords do not match</string>
+    <string name="Error6">Username should be more than 4 characters</string>
+
+    <string name="SecError1">You did not select a question</string>
+    <string name="SecError2">You did not write an answer</string>
+    <string name="SecError3">The answer must be at least 3 characters</string>
 
 
 

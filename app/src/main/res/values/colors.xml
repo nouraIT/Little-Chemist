@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#5F6AB9</color>
+    <color name="primaryYellow">#F3CB4E</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
     <color name="darkRed">#CD0000</color>
     <color name="white">#ffffff</color>
+
+    <color name="Locked">#949494</color>
+    <color name="UnlockedLsn">#FDCE54</color>
+    <color name="Completed">#44E38D</color>
+    <color name="UnlockedQuiz">#FA3038</color>
 
 </resources>

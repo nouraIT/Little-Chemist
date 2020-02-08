@@ -25,7 +25,7 @@
     <string name="Error3">اسم المستخدم او كلمه المرور غير صحيحه</string>
     <string name="Error4">كلمه المرور يجب ان تكون اكثر من  5 احرف او ارقام</string>
     <string name="Error5">كلمه المرور لا تتطابق</string>
-    <string name="Error6">اسم المستخدم يجب ان يكون اكثر من 5 احرف او ارقام</string>
+    <string name="Error6">اسم المستخدم يجب ان يكون اكثر من 4 احرف او ارقام</string>
     <string name="chapter1">الفصل الاول</string>
     <string name="chapter2">الفصل الثاني</string>
     <string name="chapter3">الفصل الثالث</string>
@@ -55,5 +55,11 @@
     <string name="chapter_3">الفصل الثالث</string>
     <string name="chapter_4">الفصل الرابع</string>
     <string name="chapter_5">الفصل الخامس</string>
+
+
+    <!-- _______________ error msgs _______________ -->
+
+
+
 
 </resources>

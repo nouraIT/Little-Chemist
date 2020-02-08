@@ -46,10 +46,13 @@ public class SignUp extends AppCompatActivity {
         public void onClick(View view) {
 
             spinnerSelected = spinner.getSelectedItem().toString();
+
             ET_UserName = findViewById(R.id.username2);
             ET_Password = findViewById(R.id.password2);
             ET_ConfirmPassword= findViewById(R.id.password22);
             SecurityAn= findViewById(R.id.securityA);
+
+
             SecurityA=SecurityAn.getEditText().getText().toString().trim();
             UserNameStr=ET_UserName.getEditText().getText().toString().trim();
             PasswordStr=ET_Password.getEditText().getText().toString().trim();
@@ -209,15 +212,15 @@ public class SignUp extends AppCompatActivity {
     private Boolean validateName(){
 
         if (UserNameStr.isEmpty()) {
-            ET_UserName.setError("الرجاء ادخال اسم المستخدم");
+            ET_UserName.setError(getText(R.string.Error1));
             return false;
         }
-        if (UserNameStr.length() >= 3 ) {
+        if (UserNameStr.length() >= 5 ) {
             ET_UserName.setError(null);
             return true;
 
         }else {
-            ET_UserName.setError("أدخل اسم مستخدم مكون من 3 خانات أو اكثر");
+            ET_UserName.setError(getText(R.string.Error6));
             return false;
         }
 
@@ -226,16 +229,16 @@ public class SignUp extends AppCompatActivity {
     private Boolean validatePass() {
 
         if (PasswordStr.isEmpty()) {
-            ET_Password.setError("الرجاء ادخال كلمة المرور");
+            ET_Password.setError(getText(R.string.Error2));
             return false;
         }
 
         else if (PasswordStr.length() < 6) {
-            ET_Password.setError("أدخل كلمة مرور من 6 خانات أو اكثر");
+            ET_Password.setError(getText(R.string.Error4));
             return false;
         }
         else if (!PasswordStr.equals(ConfirmPasswordStr)) {
-            ET_Password.setError("كلمه المرور لا تطابق");
+            ET_Password.setError(getText(R.string.Error5));
             return false;
         }
         else
