@@ -61,7 +61,7 @@
     <string name="Error3">UserName or Passwords is not correct</string>
     <string name="Error4">Password should be more than 5 characters</string>
     <string name="Error5">Passwords do not match</string>
-    <string name="Error6">Username should be more than 5 characters</string>
+    <string name="Error6">Username should be more than 4 characters</string>
 
     <string name="SecError1">You did not select a question</string>
     <string name="SecError2">You did not write an answer</string>

@@ -197,7 +197,7 @@
 
             android:hint="@string/answer"
             android:importantForAutofill="no"
-            android:inputType="textPassword"
+            android:inputType="text"
             android:selectAllOnFocus="true"
             android:textSize="14sp"
             android:visibility="visible"

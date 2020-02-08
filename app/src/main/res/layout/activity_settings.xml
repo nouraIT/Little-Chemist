@@ -8,11 +8,20 @@
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
+
         android:layout_width="409dp"
         android:layout_height="wrap_content"
-        android:background="#F3CB4E"
+
+        android:background="@color/primaryYellow"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
+
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginRight="1dp"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -89,7 +98,7 @@
         android:layout_height="59dp"
         android:layout_marginTop="73dp"
         android:layout_marginBottom="112dp"
-        android:background="#e3492e"
+        android:background="#E4E9674F"
         android:text="@string/delete_account"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

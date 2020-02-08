@@ -33,13 +33,9 @@ public class LoginPage extends AppCompatActivity{
                 }
             });
 
-            UserNameET= findViewById(R.id.username);
-            UserNameStr=UserNameET.getEditText().getText().toString().trim();
-            //Passing Password
-            PasswordET= findViewById(R.id.password);
-            PasswordStr=PasswordET.getEditText().getText().toString().trim();
 
-            UserNameET.setError(null);
+
+           // UserNameET.setError(null);
         }
 
     public void onBtnSignUpClick(View v){
@@ -53,9 +49,15 @@ public class LoginPage extends AppCompatActivity{
 
             if(v.getId()==R.id.login){
 
+                UserNameET= findViewById(R.id.username);
+                UserNameStr=UserNameET.getEditText().getText().toString().trim();
+                //Passing Password
+                PasswordET= findViewById(R.id.password);
+                PasswordStr=PasswordET.getEditText().getText().toString().trim();
+
                // UserNameET.setError(null);
 
-            if(UserNameStr.equals("")) {
+            if(UserNameStr.isEmpty()) {
                 UserNameET.setError(getText(R.string.Error1));
                 return;
             }

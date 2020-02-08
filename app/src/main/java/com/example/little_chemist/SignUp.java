@@ -215,7 +215,7 @@ public class SignUp extends AppCompatActivity {
             ET_UserName.setError(getText(R.string.Error1));
             return false;
         }
-        if (UserNameStr.length() > 5 ) {
+        if (UserNameStr.length() >= 5 ) {
             ET_UserName.setError(null);
             return true;
 
