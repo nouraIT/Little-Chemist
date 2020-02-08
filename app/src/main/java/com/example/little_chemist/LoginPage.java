@@ -17,6 +17,8 @@ public class LoginPage extends AppCompatActivity{
 
         Student student = new Student();
         DatabaseHelper helper=new DatabaseHelper(this);
+        TextInputLayout UserNameET, PasswordET;
+        String UserNameStr,PasswordStr;
 
         @Override
         protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -30,6 +32,14 @@ public class LoginPage extends AppCompatActivity{
                     startActivity(recover);
                 }
             });
+
+            UserNameET= findViewById(R.id.username);
+            UserNameStr=UserNameET.getEditText().getText().toString().trim();
+            //Passing Password
+            PasswordET= findViewById(R.id.password);
+            PasswordStr=PasswordET.getEditText().getText().toString().trim();
+
+            UserNameET.setError(null);
         }
 
     public void onBtnSignUpClick(View v){
@@ -39,22 +49,20 @@ public class LoginPage extends AppCompatActivity{
         }
     }
         public  void onBtnLoginInClick(View v){
-        if(v.getId()==R.id.login){
 
-            TextInputLayout UserNameET, PasswordET;
-            //Passing userName
-            UserNameET= findViewById(R.id.username);
-            String UserNameStr=UserNameET.getEditText().getText().toString().trim();
-            //Passing Password
-            PasswordET= findViewById(R.id.password);
-            String PasswordStr=PasswordET.getEditText().getText().toString().trim();
 
-            if(UserNameStr.equals(null)){
-                UserNameET.setError("الرجاء ادخال اسم المستخدم");
+            if(v.getId()==R.id.login){
 
+               // UserNameET.setError(null);
+
+            if(UserNameStr.equals("")) {
+                UserNameET.setError(getText(R.string.Error1));
+                return;
             }
-            else if(PasswordStr.equals(null)){
-                PasswordET.setError("الرجاء ادخال الرقم السري");
+
+            if(PasswordStr.isEmpty()){
+                PasswordET.setError(getText(R.string.Error2));
+                return;
             }
 
 
@@ -70,8 +78,8 @@ public class LoginPage extends AppCompatActivity{
                 startActivity(loginIntent);
 
             }else {
-                UserNameET.setError("الاسم المستخدم او الرقم السري غير صحيح");
-                PasswordET.setError("الاسم المستخدم او الرقم السري غير صحيح");
+                UserNameET.setError(getText(R.string.Error3));
+                PasswordET.setError(getText(R.string.Error3));
             }
 
 
