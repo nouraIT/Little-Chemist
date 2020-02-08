@@ -53,7 +53,7 @@ public class SignUp extends AppCompatActivity {
             SecurityAn= findViewById(R.id.securityA);
 
 
-            SecurityA=SecurityAn.getEditText().getText().toString().trim();
+            SecurityA=SecurityAn.getEditText().getText().toString().trim().toLowerCase();
             UserNameStr=ET_UserName.getEditText().getText().toString().trim();
             PasswordStr=ET_Password.getEditText().getText().toString().trim();
             ConfirmPasswordStr=ET_ConfirmPassword.getEditText().getText().toString().trim();

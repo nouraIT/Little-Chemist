@@ -13,8 +13,8 @@ import com.example.little_chemist.Tables.Student;
 import com.google.android.material.textfield.TextInputLayout;
 
 public class RecoverPassword extends AppCompatActivity {
-    TextInputLayout ET_Password ,ET_ConfirmPassword,SecurityAn;
-    String PasswordStr, ConfirmPasswordStr,SecurityA,spinnerSelected;
+    TextInputLayout ET_Password ,ET_ConfirmPassword,SecurityAn,ET_UserName;
+    String PasswordStr, ConfirmPasswordStr,SecurityA,spinnerSelected,UserNameStr;
     Spinner spinner;
     Student student = new Student();
     DatabaseHelper helper=new DatabaseHelper(this);
@@ -30,11 +30,13 @@ public class RecoverPassword extends AppCompatActivity {
         spinner.setAdapter(adapter);
         spinnerSelected = spinner.getSelectedItem().toString();
         ET_Password = findViewById(R.id.newpass);
+        ET_UserName = findViewById(R.id.username2);
         ET_ConfirmPassword= findViewById(R.id.confirmpass);
         SecurityAn= findViewById(R.id.Answer);
         SecurityA=SecurityAn.getEditText().getText().toString().trim();
         PasswordStr=ET_Password.getEditText().getText().toString().trim();
         ConfirmPasswordStr=ET_ConfirmPassword.getEditText().getText().toString().trim();
+        UserNameStr=ET_UserName.getEditText().getText().toString().trim();
 
         Recover.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,14 +44,14 @@ public class RecoverPassword extends AppCompatActivity {
             if(validateSecurity() && validatePass())
             {
                 //Send UserName to Database to find it, and return Password
-                String [] question= helper.checkquestion(student.GetUserName());
+                String [] question= helper.checkquestion(UserNameStr);
                 if(!question[0].equals(spinnerSelected))
                     SecurityAn.setError(getText(R.string.SecurityQwrong));
                 else
                     if(!!question[1].equals(SecurityA))
                         SecurityAn.setError(getText(R.string.SecurityAwrong));
                     else {
-                        helper.recoverPassword(PasswordStr, student.GetUserName());
+                        helper.recoverPassword(PasswordStr, UserNameStr);
                         Intent loginIntent=new Intent(RecoverPassword.this,Home.class);
 
                         startActivity(loginIntent);
