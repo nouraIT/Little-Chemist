@@ -48,10 +48,14 @@ public class RecoverPassword extends AppCompatActivity {
                 else
                     if(!!question[1].equals(SecurityA))
                         SecurityAn.setError(getText(R.string.SecurityAwrong));
-                    else
-                        helper.recoverPassword(PasswordStr,student.GetUserName());
+                    else {
+                        helper.recoverPassword(PasswordStr, student.GetUserName());
+                        Intent loginIntent=new Intent(RecoverPassword.this,Home.class);
 
+                        startActivity(loginIntent);
+                        finish();
 
+                    }
             }
             }
         });
