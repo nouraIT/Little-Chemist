@@ -39,7 +39,10 @@ public class RecoverPassword extends AppCompatActivity {
         Recover.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+            if(validateSecurity() && validatePass())
+            {
 
+            }
             }
         });
     }
@@ -54,6 +57,7 @@ public class RecoverPassword extends AppCompatActivity {
         }
 
     }*/
+
     private Boolean validateSecurity(){
 
         if (SecurityA.isEmpty()) {
