@@ -116,5 +116,46 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
         return  password;
     }
+    public String[] checkquestion(String Username){
+
+        db = this.getReadableDatabase();
+        //query="SELECT UserName,Password FROM  "+FeedEntry.TABLE_NAME;
+        String query ="SELECT UserName,SecQ,SecA FROM Student";
+
+        Cursor cursor=db.rawQuery(query,null);
+        String[] sec = new String[2];
+        String username,secQ,secA;
+
+
+        if(cursor.moveToFirst()){
+            do{
+                username=cursor.getString(0);
+                if(username.contentEquals(Username)){
+                    secQ=cursor.getString(1);
+                    secA=cursor.getString(1);
+                    sec[0]=secQ;
+                    sec[1]=secA;
+
+                    break;
+
+                }
+
+            }while (cursor.moveToNext());
+
+
+        }
+
+
+        return  sec;
+    }
+    public void recoverPassword(String Password,String username){
+        db = this.getReadableDatabase();
+        //query="SELECT UserName,Password FROM  "+FeedEntry.TABLE_NAME;
+        String query =" UPDATE Student SET Password = Password  WHERE UserName = username";
+
+        Cursor cursor=db.rawQuery(query,null);
+
+
+    }
 
 }

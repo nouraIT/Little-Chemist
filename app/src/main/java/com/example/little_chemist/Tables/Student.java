@@ -96,6 +96,7 @@ public class Student extends AppCompatActivity{
 
     public void recoverPassword(){
 
+
     }
 
    /* public boolean LogIn(String Username, String Password){
