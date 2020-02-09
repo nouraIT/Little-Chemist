@@ -148,13 +148,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         return  sec;
     }
-    public void recoverPassword(String Password,String username){
-        db = this.getReadableDatabase();
+    public void recoverPassword(String password,String username){
+        db = this.getWritableDatabase();
         //query="SELECT UserName,Password FROM  "+FeedEntry.TABLE_NAME;
-        String query =" UPDATE Student SET Password = Password  WHERE UserName = username";
+        String query =" UPDATE Student SET Password = '"+password +"' WHERE UserName = '"+username+"' ";
 
-        Cursor cursor=db.rawQuery(query,null);
+        db.execSQL(query);
 
+        //Cursor cursor=db.rawQuery(query,null);
+        //return cursor.moveToFirst();
 
     }
 

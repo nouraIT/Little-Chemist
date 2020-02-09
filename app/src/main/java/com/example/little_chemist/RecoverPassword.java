@@ -18,10 +18,12 @@ public class RecoverPassword extends AppCompatActivity {
     Spinner spinner;
     Student student = new Student();
     DatabaseHelper helper=new DatabaseHelper(this);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recover_password);
+
         final Button Recover = findViewById(R.id.button2);
         spinner = (Spinner) findViewById(R.id.security_questions);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
@@ -29,20 +31,24 @@ public class RecoverPassword extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         spinnerSelected = spinner.getSelectedItem().toString();
-        ET_Password = findViewById(R.id.newpass);
-        ET_UserName = findViewById(R.id.username2);
-        ET_ConfirmPassword= findViewById(R.id.confirmpass);
-        SecurityAn= findViewById(R.id.Answer);
-        SecurityA=SecurityAn.getEditText().getText().toString().trim();
-        PasswordStr=ET_Password.getEditText().getText().toString().trim();
-        ConfirmPasswordStr=ET_ConfirmPassword.getEditText().getText().toString().trim();
-        UserNameStr=ET_UserName.getEditText().getText().toString().trim();
+
+
 
         Recover.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                ET_Password = findViewById(R.id.newpass);
+                ET_UserName = findViewById(R.id.username2);
+                ET_ConfirmPassword= findViewById(R.id.confirmpass);
+                SecurityAn= findViewById(R.id.Answer);
+                SecurityA=SecurityAn.getEditText().getText().toString().trim();
+                PasswordStr=ET_Password.getEditText().getText().toString().trim();
+                ConfirmPasswordStr=ET_ConfirmPassword.getEditText().getText().toString().trim();
+                UserNameStr=ET_UserName.getEditText().getText().toString().trim();
+
             if(validateSecurity() && validatePass())
             {
+
                 //Send UserName to Database to find it, and return Password
                 String [] question= helper.checkquestion(UserNameStr);
                 if(!question[0].equals(spinnerSelected))
@@ -97,16 +103,16 @@ public class RecoverPassword extends AppCompatActivity {
     private Boolean validatePass() {
 
         if (PasswordStr.isEmpty()) {
-            ET_Password.setError("الرجاء ادخال كلمة المرور");
+            ET_Password.setError(getText(R.string.Error2));
             return false;
         }
 
         else if (PasswordStr.length() < 6) {
-            ET_Password.setError("أدخل كلمة مرور من 6 خانات أو اكثر");
+            ET_Password.setError(getText(R.string.Error4));
             return false;
         }
         else if (!PasswordStr.equals(ConfirmPasswordStr)) {
-            ET_Password.setError("كلمه المرور لا تطابق");
+            ET_Password.setError(getText(R.string.Error5));
             return false;
         }
         else
