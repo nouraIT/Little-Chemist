@@ -9,16 +9,17 @@
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="151dp"
-        android:layout_height="62dp"
+        android:layout_width="wrap_content"
+        android:layout_height="51dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginTop="81dp"
-        android:layout_marginEnd="137dp"
-        android:layout_marginRight="137dp"
-        android:layout_marginBottom="588dp"
+
+        android:layout_marginTop="53dp"
+        android:layout_marginEnd="102dp"
+        android:layout_marginRight="102dp"
+        android:layout_marginBottom="463dp"
         android:text="@string/chapter_3"
         android:textSize="30sp"
         app:fontFamily="casual"
@@ -27,7 +28,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
     <Button
         android:id="@+id/button5"
         android:layout_width="306dp"
@@ -35,30 +35,28 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="58dp"
-        android:layout_marginRight="58dp"
-        android:layout_marginBottom="169dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="66dp"
         android:background="@color/Locked"
-        android:text="Lesson 5" />
+        android:text="@string/Lesson5" />
 
     <Button
         android:id="@+id/button1"
         android:layout_width="148dp"
         android:layout_height="100dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
+
+
+        android:layout_above="@+id/button3"
         android:layout_alignParentTop="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="45dp"
-        android:layout_marginLeft="45dp"
-        android:layout_marginTop="206dp"
-        android:layout_marginEnd="17dp"
-        android:layout_marginRight="17dp"
-        android:layout_marginBottom="425dp"
+        android:layout_marginTop="166dp"
+        android:layout_marginEnd="11dp"
+        android:layout_marginRight="11dp"
+        android:layout_marginBottom="5dp"
         android:layout_toStartOf="@+id/button2"
         android:layout_toLeftOf="@+id/button2"
         android:background="@color/Locked"
-        android:text="LESSON 1" />
+        android:text="@string/Lesson1" />
 
     <Button
         android:id="@+id/button4"
@@ -67,11 +65,11 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="55dp"
-        android:layout_marginRight="55dp"
-        android:layout_marginBottom="301dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="195dp"
         android:background="@color/Locked"
-        android:text="Lesson 4" />
+        android:text="@string/Lesson4" />
 
     <Button
         android:id="@+id/button2"
@@ -80,11 +78,11 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="53dp"
-        android:layout_marginRight="53dp"
-        android:layout_marginBottom="424dp"
+        android:layout_marginEnd="27dp"
+        android:layout_marginRight="27dp"
+        android:layout_marginBottom="299dp"
         android:background="@color/Locked"
-        android:text="Lesson 2" />
+        android:text="@string/Lesson2" />
 
     <Button
         android:id="@+id/button3"
@@ -93,9 +91,9 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="218dp"
-        android:layout_marginRight="218dp"
-        android:layout_marginBottom="302dp"
+        android:layout_marginEnd="185dp"
+        android:layout_marginRight="185dp"
+        android:layout_marginBottom="196dp"
         android:background="@color/Locked"
-        android:text="Lesson 3" />
+        android:text="@string/Lesson3" />
 </RelativeLayout>

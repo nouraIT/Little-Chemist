@@ -8,7 +8,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -52,6 +51,7 @@ public class SignUp extends AppCompatActivity {
         UserNameStr=ET_UserName.getEditText().getText().toString().trim();
         PasswordStr=ET_Password.getEditText().getText().toString().trim();
         ConfirmPasswordStr=ET_ConfirmPassword.getEditText().getText().toString().trim();
+        SecurityA=SecurityAn.getEditText().getText().toString().trim().toLowerCase();
 
 
 
@@ -206,12 +206,10 @@ public class SignUp extends AppCompatActivity {
 
                 spinnerSelected = spinner.getSelectedItem().toString();
 
-
-
-                SecurityA=SecurityAn.getEditText().getText().toString().trim().toLowerCase();
                 UserNameStr=ET_UserName.getEditText().getText().toString().trim();
                 PasswordStr=ET_Password.getEditText().getText().toString().trim();
                 ConfirmPasswordStr=ET_ConfirmPassword.getEditText().getText().toString().trim();
+                SecurityA=SecurityAn.getEditText().getText().toString().trim().toLowerCase();
 
 
                 //-------------------------------------------------
@@ -224,7 +222,7 @@ public class SignUp extends AppCompatActivity {
                     student.SetPassword(PasswordStr);
                     student.SetSecQ(spinnerSelected);
                     student.SetSecA(SecurityA);
-                    helper.InsertUsers(student);
+                    helper.InsertStudents(student);
 
 
                     Intent loginIntent=new Intent(SignUp.this,Home.class);
@@ -247,10 +245,10 @@ public class SignUp extends AppCompatActivity {
 
     private boolean validateN(){
         if (UserNameStr.isEmpty() || PasswordStr.isEmpty() || ConfirmPasswordStr.isEmpty() || SecurityA.isEmpty()) {
-            ET_UserName.setError(getText(R.string.null_username));
-            ET_Password.setError(getText(R.string.null_password));
-            ET_ConfirmPassword.setError(getText(R.string.null_password));
-            SecurityAn.setError(getText(R.string.nullSecAnswer));
+           // ET_UserName.setError(getText(R.string.null_username));
+            //ET_Password.setError(getText(R.string.null_password));
+           // ET_ConfirmPassword.setError(getText(R.string.null_password));
+            //SecurityAn.setError(getText(R.string.nullSecAnswer));
             return false;
         }
         return true;
@@ -299,8 +297,6 @@ public class SignUp extends AppCompatActivity {
         else
             ET_UserName.setError(null);
         return true;
-
-
 
     }
 

@@ -33,6 +33,12 @@
     <string name="chapter4">Chapter 4</string>
     <string name="chapter5">Chapter5</string>
 
+    <string name="Lesson1">Lesson 1</string>
+    <string name="Lesson2">Lesson 2</string>
+    <string name="Lesson3">Lesson 3</string>
+    <string name="Lesson4">Lesson 4</string>
+    <string name="Lesson5">Lesson 5</string>
+
     <string name="the_periodic_table">The periodic table</string>
     <string name="elements">Elements</string>
     <string name="chemistry_basics">Chemistry basics</string>
@@ -72,20 +78,21 @@
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
 
-    <string name="null_username">Username should not be Null</string>
-    <string name="null_password">Password should not be Null</string>
+    <string name="null_username">Username should not be empty</string>
+    <string name="null_password">Password should not be empty</string>
     <string name="IncorrectAccount">UserName or Passwords is not correct</string>
     <string name="shortPass">Password should be more than 5 characters</string>
     <string name="passNotMatch">Passwords do not match</string>
     <string name="shortName">Username should be more than 4 characters</string>
     <string name="nameExist">Username exist, please choose another username</string>
-
+    <string name="nameNotExist">Username does not exist</string>
 
     <string name="nullSecQuestion">You did not select a question</string>
     <string name="nullSecAnswer">You did not write an answer</string>
     <string name="shortAnswer">The answer must be at least 3 characters</string>
 
-    <string name="SecurityQwrong">The security question does not match the one you choose at sign up</string>
+    <string name="SecurityQwrong">The security question does not match the one you chose at sign up</string>
+<!--    TODO fix this error-->
     <string name="SecurityAwrong">The security answer does not match the one you wrote at sign up</string>
 
 
