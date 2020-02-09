@@ -41,20 +41,25 @@ public class RecoverPassword extends AppCompatActivity {
         Recover.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                if(UserNameStr.equals(""))
+                    ET_UserName.setError(getText(R.string.Error1));
+
             if(validateSecurity() && validatePass())
             {
-                //Send UserName to Database to find it, and return Password
+
                 String [] question= helper.checkquestion(UserNameStr);
                 if(!question[0].equals(spinnerSelected))
                     SecurityAn.setError(getText(R.string.SecurityQwrong));
                 else
-                    if(!!question[1].equals(SecurityA))
+                    if(!question[1].equals(SecurityA))
                         SecurityAn.setError(getText(R.string.SecurityAwrong));
                     else {
                         helper.recoverPassword(PasswordStr, UserNameStr);
                         Intent loginIntent=new Intent(RecoverPassword.this,Home.class);
 
                         startActivity(loginIntent);
+
                         finish();
 
                     }
@@ -79,6 +84,7 @@ public class RecoverPassword extends AppCompatActivity {
         if (SecurityA.isEmpty()) {
             SecurityAn.setError(getText(R.string.SecError2));
             return false;
+
         }
         if (spinnerSelected.isEmpty()) {
             SecurityAn.setError(getText(R.string.SecError1));

@@ -55,5 +55,7 @@
     <string name="chapter3">الفصل الثالث</string>
     <string name="chapter4">الفصل الرابع</string>
     <string name="chapter5">الفصل الخامس</string>
+    <string name="SecurityAwrong">السؤال الامني الذي اخترته لا يطابق الذي اخترته عند التسجيل</string>
+    <string name="SecurityQwrong">الجواب غير صحيح</string>
 
 </resources>
