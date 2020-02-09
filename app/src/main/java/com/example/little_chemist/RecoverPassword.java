@@ -83,11 +83,11 @@ public class RecoverPassword extends AppCompatActivity {
     private Boolean validateSecurity(){
 
         if (SecurityA.isEmpty()) {
-            SecurityAn.setError(getText(R.string.SecError2));
+            SecurityAn.setError(getText(R.string.nullSecAnswer));
             return false;
         }
         if (spinnerSelected.isEmpty()) {
-            SecurityAn.setError(getText(R.string.SecError1));
+            SecurityAn.setError(getText(R.string.nullSecQuestion));
             return false;
         }
         if (SecurityA.length() >= 3 ) {
@@ -95,7 +95,7 @@ public class RecoverPassword extends AppCompatActivity {
             return true;
 
         }else {
-            SecurityAn.setError(getText(R.string.SecError3));
+            SecurityAn.setError(getText(R.string.shortAnswer));
             return false;
         }
 
@@ -103,16 +103,16 @@ public class RecoverPassword extends AppCompatActivity {
     private Boolean validatePass() {
 
         if (PasswordStr.isEmpty()) {
-            ET_Password.setError(getText(R.string.Error2));
+            ET_Password.setError(getText(R.string.null_password));
             return false;
         }
 
         else if (PasswordStr.length() < 6) {
-            ET_Password.setError(getText(R.string.Error4));
+            ET_Password.setError(getText(R.string.shortPass));
             return false;
         }
         else if (!PasswordStr.equals(ConfirmPasswordStr)) {
-            ET_Password.setError(getText(R.string.Error5));
+            ET_Password.setError(getText(R.string.passNotMatch));
             return false;
         }
         else

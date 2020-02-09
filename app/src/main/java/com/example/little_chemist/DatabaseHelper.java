@@ -116,6 +116,27 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
         return  password;
     }
+
+    public boolean usernameExist(String Username){
+        db = this.getReadableDatabase();
+        //query="SELECT UserName,Password FROM  "+FeedEntry.TABLE_NAME;
+        String query ="SELECT UserName FROM Student";
+
+        Cursor cursor=db.rawQuery(query,null);
+
+        String username;
+
+        if(cursor.moveToFirst()){
+            do{
+                username=cursor.getString(0);
+                if(username.contentEquals(Username)){
+                    return true;
+                }
+            }while (cursor.moveToNext());
+        }
+        return false;
+    }
+
     public String[] checkquestion(String Username){
 
         db = this.getReadableDatabase();

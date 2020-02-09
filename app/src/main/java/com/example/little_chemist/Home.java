@@ -26,9 +26,7 @@ private ImageView set;
         String PasswordStr=getIntent().getStringExtra("Password");
 
         //static String name = UserNameStr;
-    //TODO fix the welcome sign
-        String welcome = getString(R.string.welcome) +" "+ UserNameStr ;
-        Toast.makeText(getApplicationContext(), welcome, Toast.LENGTH_LONG).show();
+
 
         set = findViewById(R.id.settings);
         set.setOnClickListener(new View.OnClickListener() {
@@ -41,8 +39,8 @@ private ImageView set;
         });
 
 
-        button = findViewById(R.id.button3) ;
-        Button logout = findViewById(R.id.button7);
+        button = findViewById(R.id.contentBtn) ;
+        Button logout = findViewById(R.id.logoutBtn);
         button.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
                 Intent n = new Intent(Home.this, Chapters.class);

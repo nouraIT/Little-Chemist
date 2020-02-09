@@ -55,16 +55,16 @@
 
     <!-- _______________ error msgs _______________ -->
 
-    <string name="Error1">Username should not be Null</string>
-    <string name="Error2">Password should not be Null</string>
-    <string name="Error3">UserName or Passwords is not correct</string>
-    <string name="Error4">Password should be more than 5 characters</string>
-    <string name="Error5">Passwords do not match</string>
-    <string name="Error6">Username should be more than 4 characters</string>
+    <string name="null_username">Username should not be Null</string>
+    <string name="null_password">Password should not be Null</string>
+    <string name="IncorrectAccount">UserName or Passwords is not correct</string>
+    <string name="shortPass">Password should be more than 5 characters</string>
+    <string name="passNotMatch">Passwords do not match</string>
+    <string name="shortName">Username should be more than 4 characters</string>
 
-    <string name="SecError1">You did not select a question</string>
-    <string name="SecError2">You did not write an answer</string>
-    <string name="SecError3">The answer must be at least 3 characters</string>
+    <string name="nullSecQuestion">You did not select a question</string>
+    <string name="nullSecAnswer">You did not write an answer</string>
+    <string name="shortAnswer">The answer must be at least 3 characters</string>
 
 
 </resources>

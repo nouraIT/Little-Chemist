@@ -93,7 +93,6 @@
         android:layout_marginBottom="64dp"
         android:background="@drawable/circle_btn"
         android:enabled="true"
-        android:onClick="onBtnLoginInClick"
         android:text="@string/title_activity_login"
 
         app:layout_constraintBottom_toBottomOf="parent"

@@ -13,7 +13,6 @@ public class Student extends AppCompatActivity{
 
     // public  void SetId(int id){this.Id=id; }
     //public  int GetId(){return Id;}
-    //TODO add security question field
 
     public void SetUserName(String username){
         this.UserName=username;
