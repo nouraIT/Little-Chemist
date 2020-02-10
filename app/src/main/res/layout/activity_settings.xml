@@ -8,14 +8,34 @@
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
-        android:layout_width="409dp"
-        android:layout_height="wrap_content"
-        android:background="#F3CB4E"
+
+        android:layout_width="384dp"
+        android:layout_height="58dp"
+
+        android:background="@color/primaryYellow"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" >
+
+        <TextView
+            android:id="@+id/toolbarTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:gravity="start"
+            android:maxLines="1"
+            android:text="@string/app_name"
+            android:textAppearance="@android:style/TextAppearance.WindowTitle"
+            android:textColor="#FC050505"
+            android:textSize="22sp"
+            android:visibility="visible"
+            tools:layout_editor_absoluteX="147dp"
+            tools:layout_editor_absoluteY="19dp" />
+
+    </androidx.appcompat.widget.Toolbar>
 
     <TextView
         android:id="@+id/textView2"
@@ -89,7 +109,7 @@
         android:layout_height="59dp"
         android:layout_marginTop="73dp"
         android:layout_marginBottom="112dp"
-        android:background="#e3492e"
+        android:background="#E4E9674F"
         android:text="@string/delete_account"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

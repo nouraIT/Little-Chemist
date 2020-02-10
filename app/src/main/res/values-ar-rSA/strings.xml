@@ -20,12 +20,12 @@
     <string name="prompt_username">اسم المستخدم</string>
     <string name="prompt_passwordConf">تأكيد كلمه المرور</string>
     <string name="prompt_password">كلمه المرور</string>
-    <string name="Error1">اسم المستخدم لا يمكن ان يكون فارغا</string>
-    <string name="Error2">كلمه المرور لا يمكن ان تكون فارغه</string>
-    <string name="Error3">اسم المستخدم او كلمه المرور غير صحيحه</string>
-    <string name="Error4">كلمه المرور يجب ان تكون اكثر من  5 احرف او ارقام</string>
-    <string name="Error5">كلمه المرور لا تتطابق</string>
-    <string name="Error6">اسم المستخدم يجب ان يكون اكثر من 5 احرف او ارقام</string>
+    <string name="null_username">اسم المستخدم لا يمكن ان يكون فارغا</string>
+    <string name="null_password">كلمه المرور لا يمكن ان تكون فارغه</string>
+    <string name="IncorrectAccount">اسم المستخدم او كلمه المرور غير صحيحه</string>
+    <string name="shortPass">كلمه المرور يجب ان تكون اكثر من  5 احرف او ارقام</string>
+    <string name="passNotMatch">كلمه المرور لا تتطابق</string>
+    <string name="shortName">اسم المستخدم يجب ان يكون اكثر من 4 احرف او ارقام</string>
     <string name="chapter1">الفصل الاول</string>
     <string name="chapter2">الفصل الثاني</string>
     <string name="chapter3">الفصل الثالث</string>
@@ -47,9 +47,9 @@
     <string name="new_password">كلمه المرور الجديده</string>
     <string name="confirm_new_password">تأكيد كلمه المرور الجديده</string>
     <string name="answer2">الاجابه</string>
-    <string name="SecError1">لم تختر سؤلا</string>
-    <string name="SecError2">لا يمكن ان يكون حقل الاجابه فارغا</string>
-    <string name="SecError3">يجب ان تتكون الاجابه من 3 احرف على الاقل</string>
+    <string name="nullSecQuestion">لم تختر سؤلا</string>
+    <string name="nullSecAnswer">لا يمكن ان يكون حقل الاجابه فارغا</string>
+    <string name="shortAnswer">يجب ان تتكون الاجابه من 3 احرف على الاقل</string>
     <string name="chapter_1">الفصل الاول</string>
     <string name="chapter_2">الفصل الثاني</string>
     <string name="chapter_3">الفصل الثالث</string>
@@ -66,5 +66,11 @@
     <string name="isotopes">نظائر</string>
     <string name="nuclearfission">الانشطار النووي</string>
     <string name="Quiz">أختبار</string>
+
+
+    <!-- _______________ error msgs _______________ -->
+
+
+
 
 </resources>

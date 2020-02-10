@@ -22,11 +22,11 @@ private ImageView set;
         setContentView(R.layout.activity_home);
 
         //the users info
-        String UserNameStr=getIntent().getStringExtra("UserName");
+        String UserNameStr= getIntent().getStringExtra("UserName");
         String PasswordStr=getIntent().getStringExtra("Password");
 
-        String welcome = getString(R.string.welcome) +" "+ UserNameStr ;
-        Toast.makeText(getApplicationContext(), welcome, Toast.LENGTH_LONG).show();
+        //static String name = UserNameStr;
+
 
         set = findViewById(R.id.settings);
         set.setOnClickListener(new View.OnClickListener() {
@@ -40,7 +40,7 @@ private ImageView set;
 
 
         button = findViewById(R.id.cardviewchapters) ;
-        Button logout = findViewById(R.id.button7);
+        Button logout = findViewById(R.id.logoutBtn);
         button.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
                 Intent n = new Intent(Home.this, Chapters.class);
