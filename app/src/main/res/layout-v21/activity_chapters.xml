@@ -83,7 +83,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:fontFamily="casual"
-                        android:text="@string/the_study_of_atoms"
+                        android:text="@string/Ch1Name"
                         android:textSize="22sp"
 
                         />
@@ -94,7 +94,7 @@
                     android:layout_height="80dp"
                     android:layout_gravity="bottom"
                     android:background="@drawable/atom"
-                    android:contentDescription="@string/the_study_of_atoms" />
+                    android:contentDescription="@string/Ch1Name" />
 
                 <ImageView
                     android:layout_width="35dp"
@@ -141,7 +141,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:fontFamily="casual"
-                        android:text="@string/elements"
+                        android:text="@string/Ch2Name"
                         android:textSize="22sp"
 
                         />
@@ -152,7 +152,7 @@
                     android:layout_height="80dp"
                     android:layout_gravity="bottom"
                     android:background="@drawable/element"
-                    android:contentDescription="@string/elements" />
+                    android:contentDescription="@string/Ch2Name" />
 
                 <ImageView
                     android:layout_width="35dp"
@@ -199,7 +199,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:fontFamily="casual"
-                        android:text="@string/chemistry_basics"
+                        android:text="@string/Ch3Name"
                         android:textSize="22sp"
 
                         />
@@ -210,7 +210,7 @@
                     android:layout_height="80dp"
                     android:layout_gravity="bottom"
                     android:background="@drawable/flask"
-                    android:contentDescription="@string/chemistry_basics" />
+                    android:contentDescription="@string/Ch3Name" />
 
                 <ImageView
                     android:layout_width="35dp"
@@ -257,7 +257,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:fontFamily="casual"
-                        android:text="@string/the_branches_of_chemistry"
+                        android:text="@string/Ch4Name"
                         android:textSize="22sp"
 
                         />
@@ -268,7 +268,7 @@
                     android:layout_height="80dp"
                     android:layout_gravity="bottom"
                     android:background="@drawable/dry_tree"
-                    android:contentDescription="@string/the_branches_of_chemistry" />
+                    android:contentDescription="@string/Ch4Name" />
 
                 <ImageView
                     android:layout_width="35dp"
@@ -316,7 +316,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:fontFamily="casual"
-                        android:text="@string/the_periodic_table"
+                        android:text="@string/Ch5Name"
                         android:textSize="22sp"
 
                         />
@@ -327,7 +327,7 @@
                     android:layout_height="60dp"
                     android:layout_gravity="bottom"
                     android:background="@drawable/periodictable"
-                    android:contentDescription="@string/the_periodic_table" />
+                    android:contentDescription="@string/Ch5Name" />
 
                 <ImageView
                     android:layout_width="35dp"

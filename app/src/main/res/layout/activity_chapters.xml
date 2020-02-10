@@ -7,5 +7,340 @@
     android:layout_height="fill_parent" >
 
 
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="1" >
 
-    </ScrollView>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/ConstraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".Chapters">
+
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:background="#F3CB4E"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="?attr/actionBarTheme"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/toolbarTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:ellipsize="end"
+                    android:gravity="start"
+                    android:maxLines="1"
+                    android:text="@string/app_name"
+                    android:textAppearance="@android:style/TextAppearance.WindowTitle"
+                    android:textColor="#FC050505"
+                    android:textSize="22sp"
+                    android:visibility="visible"
+                    tools:layout_editor_absoluteX="147dp"
+                    tools:layout_editor_absoluteY="19dp" />
+
+            </androidx.appcompat.widget.Toolbar>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardviewch1"
+                android:layout_width="282dp"
+                android:layout_height="125dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="16dp"
+
+                app:cardBackgroundColor="@color/sky"
+                app:cardCornerRadius="25dp"
+                app:layout_constraintBottom_toTopOf="@+id/cardviewch2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+
+                        android:text="@string/chapter1"
+                        android:textSize="25sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+
+                        android:text="@string/Ch1Name"
+                        android:textSize="22sp"
+
+                        />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="bottom"
+                    android:background="@drawable/atom"
+                    android:contentDescription="@string/Ch1Name" />
+
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="10dp"
+
+                    android:background="@drawable/padlock"
+                    android:contentDescription="@string/chapter_Unlocked" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardviewch2"
+                android:layout_width="282dp"
+                android:layout_height="125dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+
+                app:cardBackgroundColor="@color/lightgreen"
+                app:cardCornerRadius="25dp"
+                app:layout_constraintBottom_toTopOf="@+id/cardviewch3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardviewch1">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+
+                        android:text="@string/chapter2"
+                        android:textSize="25sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+
+                        android:text="@string/Ch2Name"
+                        android:textSize="22sp"
+
+                        />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="bottom"
+                    android:background="@drawable/element"
+                    android:contentDescription="@string/Ch2Name" />
+
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="10dp"
+
+                    android:background="@drawable/lock"
+                    android:contentDescription="@string/chapter_Locked" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardviewch3"
+                android:layout_width="282dp"
+                android:layout_height="125dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+
+                app:cardBackgroundColor="@color/red"
+                app:cardCornerRadius="50dp"
+                app:layout_constraintBottom_toTopOf="@+id/cardviewch4"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardviewch2">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+
+                        android:text="@string/chapter_3"
+                        android:textSize="25sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+
+                        android:text="@string/Ch3Name"
+                        android:textSize="22sp"
+
+                        />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="bottom"
+                    android:background="@drawable/flask"
+                    android:contentDescription="@string/Ch3Name" />
+
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="10dp"
+
+                    android:background="@drawable/lock"
+                    android:contentDescription="@string/chapter_Locked" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardviewch4"
+                android:layout_width="282dp"
+                android:layout_height="125dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+
+                app:cardBackgroundColor="@color/purple"
+                app:cardCornerRadius="50dp"
+                app:layout_constraintBottom_toTopOf="@+id/cardviewch5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardviewch3">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+
+                        android:text="@string/chapter_4"
+                        android:textSize="25sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+
+                        android:text="@string/Ch4Name"
+                        android:textSize="22sp"
+
+                        />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="bottom"
+                    android:background="@drawable/dry_tree"
+                    android:contentDescription="@string/Ch4Name" />
+
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="10dp"
+
+                    android:background="@drawable/lock"
+                    android:contentDescription="@string/chapter_Locked" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardviewch5"
+                android:layout_width="282dp"
+                android:layout_height="125dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+
+                app:cardBackgroundColor="@color/yellow"
+                app:cardCornerRadius="50dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardviewch4">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+
+                        android:text="@string/chapter_5"
+                        android:textSize="25sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+
+                        android:text="@string/Ch5Name"
+                        android:textSize="22sp"
+
+                        />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="bottom"
+                    android:background="@drawable/periodictable"
+                    android:contentDescription="@string/Ch5Name" />
+
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="10dp"
+
+                    android:background="@drawable/lock"
+                    android:contentDescription="@string/chapter_Locked" />
+
+            </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </TableLayout>
+
+</ScrollView>

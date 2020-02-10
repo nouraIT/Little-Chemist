@@ -8,4 +8,73 @@
     tools:context=".Home">
 
 
+    <ImageView
+        android:id="@+id/logoHome"
+        android:layout_width="251dp"
+        android:layout_height="133dp"
+        android:layout_marginTop="56dp"
+        android:contentDescription="@string/todo"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logocropped" />
+
+    <ImageView
+        android:id="@+id/settings"
+        android:layout_width="42dp"
+        android:layout_height="36dp"
+
+        android:layout_marginTop="44dp"
+        android:contentDescription="@string/settings"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_gear" />
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardviewchapters"
+        android:layout_width="282dp"
+        android:layout_height="125dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="192dp"
+        app:cardBackgroundColor="@color/colorPrimary"
+        app:cardCornerRadius="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logoHome">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+
+            android:text="@string/little_chemist"
+            android:textColor="@color/white"
+            android:textSize="25sp" />
+
+
+        <ProgressBar
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="220dp"
+            android:layout_height="72dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:progress="50" />
+
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_gravity="end"
+            android:layout_marginTop="70dp"
+
+            android:contentDescription="@string/progressBar"
+            android:src="@drawable/testtube" />
+
+
+    </androidx.cardview.widget.CardView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

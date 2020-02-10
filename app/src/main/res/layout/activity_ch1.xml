@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/relativeLayout"
+    android:id="@+id/CRL"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Chapters_dir.Ch1">
@@ -16,7 +16,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/linearLayout2"
+            android:id="@+id/constraintLayout2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:baselineAligned="false"
@@ -40,16 +40,17 @@
                     android:id="@+id/toolbarTextView"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:ellipsize="end"
-                    android:gravity="start"
+                    android:fontFamily="casual"
+                    android:gravity="center"
                     android:maxLines="1"
-                    android:text="@string/app_name"
+                    android:text="@string/chapter1"
                     android:textAppearance="@android:style/TextAppearance.WindowTitle"
                     android:textColor="#FC050505"
                     android:textSize="22sp"
                     android:visibility="visible"
                     tools:layout_editor_absoluteX="147dp"
-                    tools:layout_editor_absoluteY="19dp" />
+                    tools:layout_editor_absoluteY="19dp"
+                    tools:targetApi="jelly_bean" />
 
             </androidx.appcompat.widget.Toolbar>
 
@@ -60,7 +61,7 @@
                 android:layout_marginTop="8dp"
                 android:fontFamily="casual"
                 android:gravity="center"
-                android:text="@string/historyoftheatom"
+                android:text="@string/Ch1Lsn1"
                 android:textSize="30sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -77,7 +78,7 @@
                 android:layout_marginEnd="16dp"
                 android:layout_marginRight="16dp"
                 android:elevation="100sp"
-                app:cardBackgroundColor="@color/orange"
+                app:cardBackgroundColor="@color/Unlocked"
                 app:cardCornerRadius="20dp"
                 app:layout_constraintEnd_toStartOf="@+id/cardviewlLSN2"
                 app:layout_constraintStart_toStartOf="parent"
@@ -105,7 +106,7 @@
                         android:layout_gravity="center"
                         android:fontFamily="casual"
                         android:gravity="center"
-                        android:text="@string/historyoftheatom"
+                        android:text="@string/Ch1Lsn1"
                         android:textSize="20sp"
 
                         />
@@ -116,7 +117,7 @@
                     android:layout_height="80dp"
                     android:layout_gravity="bottom"
                     android:background="@drawable/atom"
-                    android:contentDescription="@string/the_study_of_atoms" />
+                    android:contentDescription="@string/Ch1Name" />
 
 
             </androidx.cardview.widget.CardView>
@@ -159,7 +160,7 @@
                         android:layout_gravity="center"
                         android:fontFamily="casual"
                         android:gravity="center"
-                        android:text="@string/electrons"
+                        android:text="@string/Ch1Lsn2"
                         android:textSize="20sp"
 
                         />
@@ -170,7 +171,7 @@
                     android:layout_height="80dp"
                     android:layout_gravity="bottom"
                     android:background="@drawable/flash"
-                    android:contentDescription="@string/electrons" />
+                    android:contentDescription="@string/Ch1Lsn2" />
 
 
             </androidx.cardview.widget.CardView>
@@ -214,7 +215,7 @@
                         android:layout_gravity="center"
                         android:fontFamily="casual"
                         android:gravity="center"
-                        android:text="@string/isotopes"
+                        android:text="@string/Ch1Lsn3"
                         android:textSize="20sp"
 
                         />
@@ -225,7 +226,7 @@
                     android:layout_height="80dp"
                     android:layout_gravity="bottom"
                     android:background="@drawable/twins"
-                    android:contentDescription="@string/isotopes"/>
+                    android:contentDescription="@string/Ch1Lsn3"/>
 
 
             </androidx.cardview.widget.CardView>
@@ -270,7 +271,7 @@
                         android:layout_gravity="center"
                         android:fontFamily="casual"
                         android:gravity="center"
-                        android:text="@string/heisenberguncertaintyprinciple"
+                        android:text="@string/Ch1Lsn4"
                         android:textSize="17sp"
 
                         />
@@ -281,7 +282,7 @@
                     android:layout_height="80dp"
                     android:layout_gravity="bottom"
                     android:background="@drawable/uncertainty"
-                    android:contentDescription="@string/heisenberguncertaintyprinciple" />
+                    android:contentDescription="@string/Ch1Lsn4" />
 
 
             </androidx.cardview.widget.CardView>
@@ -319,7 +320,7 @@
                         android:layout_gravity="center"
                         android:fontFamily="casual"
                         android:gravity="center"
-                        android:text="@string/nuclearfission"
+                        android:text="@string/Ch1Lsn5"
                         android:textSize="20sp"
 
                         />
@@ -330,7 +331,7 @@
                     android:layout_height="80dp"
                     android:layout_gravity="bottom"
                     android:background="@drawable/fission"
-                    android:contentDescription="@string/nuclearfission" />
+                    android:contentDescription="@string/Ch1Lsn5" />
 
 
             </androidx.cardview.widget.CardView>

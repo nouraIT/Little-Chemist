@@ -22,37 +22,46 @@
 
 <!--   _______________ chapters names and lessons _______________-->
 
-    <string name="chapters">Chapters</string>
-    <string name="chapter_1">Chapter 1</string>
     <string name="chapter_2">Chapter 2</string>
     <string name="chapter_3">Chapter 3</string>
     <string name="chapter_5">chapter 5</string>
     <string name="chapter_4">chapter 4</string>
     <string name="chapter1">Chapter 1</string>
     <string name="chapter2">Chapter 2</string>
-    <string name="chapter3">Chapter 3</string>
-    <string name="chapter4">Chapter 4</string>
-    <string name="chapter5">Chapter5</string>
 
-    <string name="the_periodic_table">The periodic table</string>
-    <string name="elements">Elements</string>
-    <string name="chemistry_basics">Chemistry basics</string>
-    <string name="the_branches_of_chemistry">The Branches of chemistry</string>
-    <string name="the_study_of_atoms">the study of atoms</string>
+    <string name="Ch5Name">The periodic table</string>
+    <string name="Ch2Name">Elements</string>
+    <string name="Ch3Name">Chemistry basics</string>
+    <string name="Ch4Name">The Branches of chemistry</string>
+    <string name="Ch1Name">the study of atoms</string>
+
+    <string name="lesson1">Lesson 1</string>
+    <string name="lesson2">Lesson 2</string>
+    <string name="lesson3">Lesson 3</string>
+    <string name="lesson4">Lesson 4</string>
+    <string name="lesson5">Lesson 5</string>
+
+    <string name="Ch1Lsn1">History of the Atom</string>
+    <string name="Ch1Lsn2">Electrons</string>
+    <string name="Ch1Lsn3">Isotopes</string>
+    <string name="Ch1Lsn4">Heisenberg Uncertainty Principle</string>
+    <string name="Ch1Lsn5">Nuclear Fission</string>
+
+    <string name="Ch2Lsn1">Heterogeneous Mixture</string>
+    <string name="Ch2Lsn2">Polymers</string>
+    <string name="Ch2Lsn3">Chemical Bonds</string>
+    <string name="Ch2Lsn4">Chemical Equations</string>
+    <string name="Ch2Lsn5">pH Scale</string>
+
+    <string name="Quiz">Quiz</string>
+
+
 
     <!--   _______________ chapters, quizzes and lessons's symbols _______________-->
 
 
     <string name="chapter_Unlocked">Unlocked Chapter</string>
     <string name="chapter_Locked">Locked Chapter</string>
-    <string name="chapter_Comp">Completed Chapter</string>
-
-    <string name="lesson_Unlocked">Unlocked Lesson</string>
-    <string name="lesson_Locked">Locked Lesson</string>
-    <string name="lesson_Comp">Completed Lesson</string>
-
-    <string name="quiz_Unlocked">Unlocked Quiz</string>
-    <string name="quiz_Comp">Completed Quiz</string>
 
     <string name="progressBar">Progress Bar</string>
 
@@ -64,20 +73,15 @@
     <string name="prompt_username">Username</string>
     <string name="prompt_password">Password</string>
     <string name="prompt_passwordConf">Confirm Password</string>
-    <string name="security_question">Security Question</string>
-    <string name="answer2">Answer</string>
     <string name="answer">Answer</string>
     <string name="new_password">New Password</string>
 
-
-    <string name="action_sign_in">Sign in or register</string>
 
     <string name="don_t_have_an_acount">Don\'t have an account?</string>
     <string name="sign_up">Sign Up</string>
     <string name="sign_up_button">Sign Up</string>
 
     <string name="recover_password">Change Password</string>
-    <string name="confirm_new_password">Confirm New Password</string>
     <string name="forgot_password">Forgot Password?</string>
 
     <string name="log_out">Log Out</string>
@@ -87,10 +91,6 @@
 
 
     <!-- _______________ error msgs _______________ -->
-
-    <string name="invalid_username">Not a valid username</string>
-    <string name="invalid_password">Password must be >5 characters</string>
-    <string name="login_failed">"Login failed"</string>
 
     <string name="null_username">Username should not be empty</string>
     <string name="null_password">Password should not be empty</string>
@@ -108,17 +108,8 @@
     <string name="SecurityQwrong">The security question does not match the one you chose at sign up</string>
 <!--    TODO fix this error-->
     <string name="SecurityAwrong">The security answer does not match the one you wrote at sign up</string>
-    <string name="heisenberguncertaintyprinciple">Heisenberg Uncertainty Principle</string>
-    <string name="historyoftheatom">History of the Atom</string>
-    <string name="isotopes">Isotopes</string>
-    <string name="lesson1">Lesson 1</string>
-    <string name="lesson2">Lesson 2</string>
-    <string name="lesson3">Lesson 3</string>
-    <string name="lesson4">Lesson 4</string>
-    <string name="lesson5">Lesson 5</string>
-    <string name="nuclearfission">Nuclear Fission</string>
-    <string name="electrons">Electrons</string>
-    <string name="Quiz">Quiz</string>
+
+
     <string name="todo" translatable="false">TODO</string>
 
 
