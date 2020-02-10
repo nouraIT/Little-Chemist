@@ -33,19 +33,29 @@
     <string name="chapter4">Chapter 4</string>
     <string name="chapter5">Chapter5</string>
 
-    <string name="Lesson1">Lesson 1</string>
-    <string name="Lesson2">Lesson 2</string>
-    <string name="Lesson3">Lesson 3</string>
-    <string name="Lesson4">Lesson 4</string>
-    <string name="Lesson5">Lesson 5</string>
-
     <string name="the_periodic_table">The periodic table</string>
     <string name="elements">Elements</string>
     <string name="chemistry_basics">Chemistry basics</string>
     <string name="the_branches_of_chemistry">The Branches of chemistry</string>
     <string name="the_study_of_atoms">the study of atoms</string>
 
-<!-- _______________ registeration _______________ -->
+    <!--   _______________ chapters, quizzes and lessons's symbols _______________-->
+
+
+    <string name="chapter_Unlocked">Unlocked Chapter</string>
+    <string name="chapter_Locked">Locked Chapter</string>
+    <string name="chapter_Comp">Completed Chapter</string>
+
+    <string name="lesson_Unlocked">Unlocked Lesson</string>
+    <string name="lesson_Locked">Locked Lesson</string>
+    <string name="lesson_Comp">Completed Lesson</string>
+
+    <string name="quiz_Unlocked">Unlocked Quiz</string>
+    <string name="quiz_Comp">Completed Quiz</string>
+
+    <string name="progressBar">Progress Bar</string>
+
+    <!-- _______________ registeration _______________ -->
 
     <string name="title_activity_login">Sign in</string>
     <string name="action_sign_in_short">Sign in</string>
@@ -59,7 +69,7 @@
     <string name="new_password">New Password</string>
 
 
-    <string name="action_sign_in" translatable="false">Sign in or register</string>
+    <string name="action_sign_in">Sign in or register</string>
 
     <string name="don_t_have_an_acount">Don\'t have an account?</string>
     <string name="sign_up">Sign Up</string>
@@ -94,7 +104,18 @@
     <string name="SecurityQwrong">The security question does not match the one you chose at sign up</string>
 <!--    TODO fix this error-->
     <string name="SecurityAwrong">The security answer does not match the one you wrote at sign up</string>
-
+    <string name="heisenberguncertaintyprinciple">Heisenberg Uncertainty Principle</string>
+    <string name="historyoftheatom">History of the Atom</string>
+    <string name="isotopes">Isotopes</string>
+    <string name="lesson1">Lesson 1</string>
+    <string name="lesson2">Lesson 2</string>
+    <string name="lesson3">Lesson 3</string>
+    <string name="lesson4">Lesson 4</string>
+    <string name="lesson5">Lesson 5</string>
+    <string name="nuclearfission">Nuclear Fission</string>
+    <string name="electrons">Electrons</string>
+    <string name="Quiz">Quiz</string>
+    <string name="todo" translatable="false">TODO</string>
 
 
 </resources>

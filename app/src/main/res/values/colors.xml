@@ -11,5 +11,12 @@
     <color name="UnlockedLsn">#FDCE54</color>
     <color name="Completed">#44E38D</color>
     <color name="UnlockedQuiz">#FA3038</color>
+    <color name="sky">#42adf5</color>
+    <color name="lightgreen">#98db81</color>
+    <color name="red">#f0072f</color>
+    <color name="purple">#8806b8</color>
+    <color name="yellow">#faf25a</color>
+    <color name="gray">#a6a6a6</color>
+    <color name="orange">#ffc75e</color>
 
 </resources>

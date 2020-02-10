@@ -1,6 +1,7 @@
 package com.example.little_chemist;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -14,7 +15,8 @@ import android.widget.Toast;
 
 public class Home extends AppCompatActivity {
 private ImageView set;
-    private Button button ;
+    //private Button button ;
+    private CardView cv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,10 +40,11 @@ private ImageView set;
             }
         });
 
-
-        button = findViewById(R.id.contentBtn) ;
+        cv = findViewById(R.id.cardviewchapters);
+       // cv.setOnClickListener();
+        //button = findViewById(R.id.cardviewchapters);
         Button logout = findViewById(R.id.logoutBtn);
-        button.setOnClickListener(new View.OnClickListener(){
+        cv.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
                 Intent n = new Intent(Home.this, Chapters.class);
                 startActivity(n);
