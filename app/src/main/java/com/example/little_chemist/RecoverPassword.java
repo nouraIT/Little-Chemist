@@ -214,6 +214,7 @@ public class RecoverPassword extends AppCompatActivity {
                 if(!question[0].equals(spinnerSelected))
                     //TODO make the error under the spinner
                     //TODO translate the q to english if it's arabic
+
                     SecurityAn.setError(getText(R.string.SecurityQwrong));
                 else
                     if(!question[1].equals(SecurityA))

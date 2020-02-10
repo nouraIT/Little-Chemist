@@ -11,6 +11,7 @@
 
     <string name="download_booklet">Download Booklet</string>
     <string name="delete_account">Delete Account</string>
+    <string name="confirmDeleteAcc">Are you sure you want to Delete your account forever ?</string>
 
     <!--  _______________  app name and genral  _______________-->
 
@@ -81,6 +82,8 @@
 
     <string name="log_out">Log Out</string>
     <string name="confirmLogginOut">Are you sure you want to log out?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
 
 
     <!-- _______________ error msgs _______________ -->

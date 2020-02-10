@@ -2,25 +2,16 @@ package com.example.little_chemist;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
-
 import java.sql.SQLException;
 import java.util.Locale;
-
-
 import android.app.Activity;
-
-
 import android.content.res.Configuration;
-
-
-
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -46,8 +37,8 @@ public class Settings extends AppCompatActivity {
         }
 
         TextView profileName = findViewById(R.id.profileName);
-        String userName = loginData.getUserName("UserName");
-        //String user = loginData.getUserName(userName);
+        String userName = loginData.getLoggedInStudent("UserName");
+        //String user = loginData.getLoggedInStudent(userName);
 
         profileName.setText(userName);
 
@@ -105,6 +96,8 @@ public class Settings extends AppCompatActivity {
             }
         });
 
+
+
         Button logout = findViewById(R.id.logoutBtn);
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -113,7 +106,7 @@ public class Settings extends AppCompatActivity {
                 new AlertDialog.Builder(Settings.this)
                         .setTitle(getText(R.string.log_out))
                         .setMessage(getText(R.string.confirmLogginOut))
-                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                        .setPositiveButton(getText(R.string.yes), new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
                                 SharedPreferences myPrefs = getSharedPreferences("Activity",
                                         MODE_PRIVATE);
@@ -128,18 +121,13 @@ public class Settings extends AppCompatActivity {
                                 finish();
                             }
                         })
-                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                        .setNegativeButton(getText(R.string.no), new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
                                 // user doesn't want to logout
-                                Intent n = new Intent(Settings.this, Settings.class);
-                                startActivity(n);
+//
                             }
                         })
                         .show();
-
-
-
-
 
             }
         });
@@ -157,6 +145,29 @@ public class Settings extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //TODO Delete account
+
+                new AlertDialog.Builder(Settings.this)
+                        .setTitle(getText(R.string.delete_account))
+                        .setMessage(getText(R.string.confirmDeleteAcc))
+                        .setPositiveButton(getText(R.string.yes), new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                // user want to delete
+
+
+//                                Intent intent = new Intent(Settings.this,
+//                                        LoginPage.class);
+//                                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//                                startActivity(intent);
+//                                finish();
+                            }
+                        })
+                        .setNegativeButton(getText(R.string.no), new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                // user doesn't want to delete
+//
+                            }
+                        })
+                        .show();
             }
         });
 

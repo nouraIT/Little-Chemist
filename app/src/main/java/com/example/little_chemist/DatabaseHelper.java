@@ -281,7 +281,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-    public String getUserName(String userName) {
+    public String getLoggedInStudent(String userName) {
 
         Cursor cursor=db.query("Student", new String[]{userName}, null, null, null, null, null);
 

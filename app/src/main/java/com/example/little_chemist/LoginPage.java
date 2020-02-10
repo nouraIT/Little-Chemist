@@ -140,7 +140,7 @@ public class LoginPage extends AppCompatActivity{
 
                 }//on click
             });
-        }//on crate
+        }//on create
 
     public void onBtnSignUpClick(View v){
         if(v.getId()==R.id.button){
