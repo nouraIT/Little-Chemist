@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.example.little_chemist.Tables.Student;
 import com.google.android.material.textfield.TextInputLayout;
@@ -230,6 +231,8 @@ public class SignUp extends AppCompatActivity {
                     loginIntent.putExtra("UserName",UserNameStr);
                     loginIntent.putExtra("Password",PasswordStr);
 
+                    String welcome = getString(R.string.welcome) +" "+ UserNameStr ;
+                    Toast.makeText(getApplicationContext(), welcome, Toast.LENGTH_LONG).show();
 
                     startActivity(loginIntent);
                     finish();

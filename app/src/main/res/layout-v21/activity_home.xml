@@ -9,7 +9,7 @@
 
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/logoHome"
         android:layout_width="251dp"
         android:layout_height="133dp"
         android:layout_marginTop="56dp"
@@ -33,16 +33,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_gear" />
 
-    <Button
-        android:id="@+id/logoutBtn"
-        android:layout_width="42dp"
-        android:layout_height="36dp"
-        android:layout_marginTop="44dp"
-        android:layout_marginEnd="16dp"
-
-        android:background="@drawable/logout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardviewchapters"
@@ -55,7 +45,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4">
+        app:layout_constraintTop_toBottomOf="@+id/logoHome">
 
         <TextView
             android:layout_width="wrap_content"

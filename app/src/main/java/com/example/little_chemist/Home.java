@@ -35,38 +35,41 @@ private ImageView set;
 
             public void onClick(View view) {
                 Intent n = new Intent(Home.this, Settings.class);
+                //n.putExtra("username",UserNameStr);
                 startActivity(n);
-                finish();
+                //finish();
             }
         });
 
         cv = findViewById(R.id.cardviewchapters);
        // cv.setOnClickListener();
         //button = findViewById(R.id.cardviewchapters);
-        Button logout = findViewById(R.id.logoutBtn);
+
         cv.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
                 Intent n = new Intent(Home.this, Chapters.class);
                 startActivity(n);
-                finish();
+                //finish();
             }
         });
-        logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                SharedPreferences myPrefs = getSharedPreferences("Activity",
-                        MODE_PRIVATE);
-                SharedPreferences.Editor editor = myPrefs.edit();
-                editor.clear();
-                editor.commit();
 
-                Intent intent = new Intent(Home.this,
-                        LoginPage.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(intent);
-                finish();
-            }
-        });
+//        Button logout = findViewById(R.id.logoutBtn);
+//        logout.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                SharedPreferences myPrefs = getSharedPreferences("Activity",
+//                        MODE_PRIVATE);
+//                SharedPreferences.Editor editor = myPrefs.edit();
+//                editor.clear();
+//                editor.commit();
+//
+//                Intent intent = new Intent(Home.this,
+//                        LoginPage.class);
+//                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//                startActivity(intent);
+//                finish();
+//            }
+//        });
 
     }
 

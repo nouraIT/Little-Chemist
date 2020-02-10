@@ -3,33 +3,26 @@ package com.example.little_chemist;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import android.content.Context;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 
+import java.sql.SQLException;
 import java.util.Locale;
 
-import android.os.Bundle;
 
 import android.app.Activity;
 
-import android.content.Intent;
 
 import android.content.res.Configuration;
 
-import android.content.res.Resources;
 
-import android.util.DisplayMetrics;
-
-import android.view.View;
-
-import android.widget.AdapterView;
 
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 
 public class Settings extends AppCompatActivity {
@@ -42,6 +35,21 @@ public class Settings extends AppCompatActivity {
         //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarCustom);
 
         //setSupportActionBar(toolbar);
+        //final String UserNameStr= getIntent().getStringExtra("UserName");
+        DatabaseHelper loginData;
+
+        loginData=new DatabaseHelper(this);
+        try {
+            loginData=loginData.open();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        TextView profileName = findViewById(R.id.profileName);
+        String userName = loginData.getUserName("UserName");
+        //String user = loginData.getUserName(userName);
+
+        profileName.setText(userName);
 
 
 
@@ -97,11 +105,50 @@ public class Settings extends AppCompatActivity {
             }
         });
 
+        Button logout = findViewById(R.id.logoutBtn);
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                new AlertDialog.Builder(Settings.this)
+                        .setTitle(getText(R.string.log_out))
+                        .setMessage(getText(R.string.confirmLogginOut))
+                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                SharedPreferences myPrefs = getSharedPreferences("Activity",
+                                        MODE_PRIVATE);
+                                SharedPreferences.Editor editor = myPrefs.edit();
+                                editor.clear();
+                                editor.commit();
+
+                                Intent intent = new Intent(Settings.this,
+                                        LoginPage.class);
+                                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                startActivity(intent);
+                                finish();
+                            }
+                        })
+                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                // user doesn't want to logout
+                                Intent n = new Intent(Settings.this, Settings.class);
+                                startActivity(n);
+                            }
+                        })
+                        .show();
+
+
+
+
+
+            }
+        });
+
 
         booklet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Direct to booklet
+                //TODO Direct to booklet
             }
         });
 
@@ -109,7 +156,7 @@ public class Settings extends AppCompatActivity {
         Delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                //TODO Delete account
             }
         });
 

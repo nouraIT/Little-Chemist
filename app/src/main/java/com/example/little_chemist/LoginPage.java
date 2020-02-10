@@ -37,7 +37,7 @@ public class LoginPage extends AppCompatActivity{
             });
 
             final Button loginButton = findViewById(R.id.login);
-            UserNameET= findViewById(R.id.username);
+            UserNameET= findViewById(R.id.profileName);
             PasswordET= findViewById(R.id.password);
 
             //UserNameET.setError(null);

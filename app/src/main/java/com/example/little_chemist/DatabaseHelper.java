@@ -11,6 +11,8 @@ import com.example.little_chemist.Tables.Chapter;
 import com.example.little_chemist.Tables.Lesson;
 import com.example.little_chemist.Tables.Student;
 
+import java.sql.SQLException;
+
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
@@ -51,6 +53,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
     private static final String DATABASE_NAME = "LittleChemist.db";
     SQLiteDatabase db;
+
+
+    public DatabaseHelper open() throws SQLException
+    {
+        db = getWritableDatabase();
+        return this;
+    }
 
 
     //---------------------- create, add and delete tables ------------------------
@@ -269,6 +278,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         //Cursor cursor=db.rawQuery(query,null);
         //return cursor.moveToFirst();
 
+    }
+
+
+    public String getUserName(String userName) {
+
+        Cursor cursor=db.query("Student", new String[]{userName}, null, null, null, null, null);
+
+        cursor.moveToFirst();
+        String user = cursor.getString(cursor.getColumnIndex("UserName"));
+        cursor.close();
+        return user;
     }
 
 }
