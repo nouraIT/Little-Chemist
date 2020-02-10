@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="action_settings" translatable="false">الاعدادات</string>
     <string name="app_name">الكيميائي الصغير</string>
     <string name="action_sign_in_short">تسجيل الدخول</string>
     <string name="arabic">العربيه</string>
@@ -66,5 +65,11 @@
     <string name="isotopes">نظائر</string>
     <string name="nuclearfission">الانشطار النووي</string>
     <string name="Quiz">أختبار</string>
+    <string name="nameExist">اسم المستخدم موجود ، يرجى اختيار اسم مستخدم آخر</string>
+    <string name="nameNotExist">اسم المستخدم غير موجود</string>
+    <string name="SecurityAwrong">الإجابة الأمنية لا تتطابق مع الإجابة التي كتبتها عند التسجيل</string>
+    <string name="SecurityQwrong">السؤال الامني لا يطابق السؤال الذي اخترته عند التسجيل</string>
+    <string name="action_settings">الإعدادات</string>
+    <string name="action_sign_in">تسجيل الدخول أو التسجيل</string>
 
 </resources>
