@@ -55,5 +55,16 @@
     <string name="chapter3">الفصل الثالث</string>
     <string name="chapter4">الفصل الرابع</string>
     <string name="chapter5">الفصل الخامس</string>
+    <string name="lesson1">الدرس الاول</string>
+    <string name="historyoftheatom">تاريخ الذرة</string>
+    <string name="lesson2">الدرس الثاني</string>
+    <string name="lesson3">الدرس الثالث</string>
+    <string name="lesson4">الدرس الرابع</string>
+    <string name="lesson5">الدرس الخامس</string>
+    <string name="heisenberguncertaintyprinciple">مبدأ عدم اليقين في هايزنبرغ</string>
+    <string name="electrons">الإلكترونات</string>
+    <string name="isotopes">نظائر</string>
+    <string name="nuclearfission">الانشطار النووي</string>
+    <string name="Quiz">أختبار</string>
 
 </resources>

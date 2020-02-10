@@ -58,6 +58,17 @@
     <string name="chapter_3">Chapter 3</string>
     <string name="chapter_4">Chapter 4</string>
     <string name="chapter_5">Chapter 5</string>
+    <string name="lesson1">Lesson 1</string>
+    <string name="lesson2">Lesson 2</string>
+    <string name="lesson3">Lesson 3</string>
+    <string name="lesson4">Lesson 4</string>
+    <string name="lesson5">Lesson 5</string>
+    <string name="historyoftheatom">History of the Atom</string>
+    <string name="electrons">Electrons</string>
+    <string name="isotopes">Isotopes</string>
+    <string name="heisenberguncertaintyprinciple">Heisenberg Uncertainty Principle</string>
+    <string name="nuclearfission">Nuclear Fission</string>
+    <string name="Quiz">Quiz</string>
 
 
 </resources>

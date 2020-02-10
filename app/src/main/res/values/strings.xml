@@ -34,7 +34,7 @@
     <string name="elements">Elements</string>
     <string name="chemistry_basics">Chemistry basics</string>
     <string name="the_branches_of_chemistry">The Branches of chemistry</string>
-    <string name="the_study_of_atoms">the study of atoms</string>
+    <string name="the_study_of_atoms">The Study of Atoms</string>
     <string name="chapters">Chapters</string>
     <string name="log_out">Log Out</string>
     <string name="forgot_password">Forgot Password?</string>
@@ -57,6 +57,17 @@
     <string name="chapter3">Chapter 3</string>
     <string name="chapter4">Chapter 4</string>
     <string name="chapter5">Chapter5</string>
+    <string name="lesson1">Lesson 1</string>
+    <string name="historyoftheatom">History of the Atom</string>
+    <string name="lesson2">Lesson 2</string>
+    <string name="lesson3">Lesson 3</string>
+    <string name="lesson4">Lesson 4</string>
+    <string name="lesson5">Lesson 5</string>
+    <string name="electrons">Electrons</string>
+    <string name="heisenberguncertaintyprinciple">Heisenberg Uncertainty Principle</string>
+    <string name="isotopes">Isotopes</string>
+    <string name="nuclearfission">Nuclear Fission</string>
+    <string name="Quiz">Quiz</string>
 
 
 </resources>
