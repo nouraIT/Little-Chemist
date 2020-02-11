@@ -112,9 +112,6 @@
     <string name="shortAnswer">The answer must be at least 3 characters</string>
 
     <string name="SecurityQwrong">The security question does not match the one you chose at sign up</string>
-
-
-    <!--    TODO fix this error-->
     <string name="SecurityAwrong">The security answer does not match the one you wrote at sign up</string>
 
 
