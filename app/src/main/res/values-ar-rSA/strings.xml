@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="action_settings" translatable="false">الاعدادات</string>
     <string name="app_name">الكيميائي الصغير</string>
     <string name="action_sign_in_short">تسجيل الدخول</string>
     <string name="arabic">العربيه</string>
     <string name="don_t_have_an_acount">هل لديك حساب</string>
     <string name="download_booklet">تحميل الملزمه</string>
     <string name="english">الانجليزيه</string>
-    <string name="invalid_password">كلمه المرور يجب ان تكون اكثر من 5</string>
-    <string name="invalid_username">الاسم غير صحيح</string>
     <string name="languages">اللغات</string>
     <string name="little_chemist">الكيميائي الصغير</string>
-    <string name="login_failed">فشل تسجيل الدخول</string>
     <string name="welcome">مرحبا!</string>
     <string name="title_activity_login">تسجيل الدخول</string>
     <string name="sign_up_button">تسجيل</string>
@@ -20,43 +16,49 @@
     <string name="prompt_username">اسم المستخدم</string>
     <string name="prompt_passwordConf">تأكيد كلمه المرور</string>
     <string name="prompt_password">كلمه المرور</string>
-    <string name="Error1">اسم المستخدم لا يمكن ان يكون فارغا</string>
-    <string name="Error2">كلمه المرور لا يمكن ان تكون فارغه</string>
-    <string name="Error3">اسم المستخدم او كلمه المرور غير صحيحه</string>
-    <string name="Error4">كلمه المرور يجب ان تكون اكثر من  5 احرف او ارقام</string>
-    <string name="Error5">كلمه المرور لا تتطابق</string>
-    <string name="Error6">اسم المستخدم يجب ان يكون اكثر من 4 احرف او ارقام</string>
+    <string name="null_username">اسم المستخدم لا يمكن ان يكون فارغا</string>
+    <string name="null_password">كلمه المرور لا يمكن ان تكون فارغه</string>
+    <string name="IncorrectAccount">اسم المستخدم او كلمه المرور غير صحيحه</string>
+    <string name="shortPass">كلمه المرور يجب ان تكون اكثر من  5 احرف او ارقام</string>
+    <string name="passNotMatch">كلمه المرور لا تتطابق</string>
+    <string name="shortName">اسم المستخدم يجب ان يكون اكثر من 4 احرف او ارقام</string>
     <string name="chapter1">الفصل الاول</string>
     <string name="chapter2">الفصل الثاني</string>
-    <string name="chapter3">الفصل الثالث</string>
-    <string name="chapter4">الفصل الرابع</string>
-    <string name="chapter5">الفصل الخامس</string>
-    <string name="chapters">الفصول</string>
-    <string name="chemistry_basics">مبادىء الكيمياء</string>
+    <string name="Ch3Name">مبادىء الكيمياء</string>
     <string name="delete_account">حذف الحساب</string>
-    <string name="elements">العناصر</string>
-    <string name="the_branches_of_chemistry">فروع الكيمياء</string>
-    <string name="the_periodic_table">الجدول الدوري</string>
-    <string name="the_study_of_atoms">دراسة الذرات</string>
+    <string name="Ch2Name">العناصر</string>
+    <string name="Ch4Name">فروع الكيمياء</string>
+    <string name="Ch5Name">الجدول الدوري</string>
+    <string name="Ch1Name">دراسة الذرات</string>
     <string name="log_out">تسجيل الخروج</string>
     <string name="forgot_password">نسيت كلمه المرور؟</string>
-    <string name="security_question">سؤال امني</string>
     <string name="answer">الاجابه</string>
     <string name="recover_password">تغيير كلمه المرور</string>
 
     <string name="new_password">كلمه المرور الجديده</string>
-    <string name="confirm_new_password">تأكيد كلمه المرور الجديده</string>
-    <string name="answer2">الاجابه</string>
-    <string name="SecError1">لم تختر سؤلا</string>
-    <string name="SecError2">لا يمكن ان يكون حقل الاجابه فارغا</string>
-    <string name="SecError3">يجب ان تتكون الاجابه من 3 احرف على الاقل</string>
-    <string name="chapter_1">الفصل الاول</string>
+    <string name="nullSecQuestion">لم تختر سؤلا</string>
+    <string name="nullSecAnswer">لا يمكن ان يكون حقل الاجابه فارغا</string>
+    <string name="shortAnswer">يجب ان تتكون الاجابه من 3 احرف على الاقل</string>
     <string name="chapter_2">الفصل الثاني</string>
     <string name="chapter_3">الفصل الثالث</string>
     <string name="chapter_4">الفصل الرابع</string>
     <string name="chapter_5">الفصل الخامس</string>
-    <string name="SecurityAwrong">السؤال الامني الذي اخترته لا يطابق الذي اخترته عند التسجيل</string>
-    <string name="SecurityQwrong">الجواب غير صحيح</string>
+    <string name="lesson1">الدرس الاول</string>
+    <string name="Ch1Lsn1">تاريخ الذرة</string>
+    <string name="lesson2">الدرس الثاني</string>
+    <string name="lesson3">الدرس الثالث</string>
+    <string name="lesson4">الدرس الرابع</string>
+    <string name="lesson5">الدرس الخامس</string>
+    <string name="Ch1Lsn4">مبدأ عدم اليقين في هايزنبرغ</string>
+    <string name="Ch1Lsn2">الإلكترونات</string>
+    <string name="Ch1Lsn3">نظائر</string>
+    <string name="Ch1Lsn5">الانشطار النووي</string>
+    <string name="Quiz">أختبار</string>
+    <string name="nameExist">اسم المستخدم موجود ، يرجى اختيار اسم مستخدم آخر</string>
+    <string name="nameNotExist">اسم المستخدم غير موجود</string>
+    <string name="SecurityAwrong">الإجابة الأمنية لا تتطابق مع الإجابة التي كتبتها عند التسجيل</string>
+    <string name="SecurityQwrong">السؤال الامني لا يطابق السؤال الذي اخترته عند التسجيل</string>
+    <string name="action_settings">الإعدادات</string>
 
 
     <!-- _______________ error msgs _______________ -->

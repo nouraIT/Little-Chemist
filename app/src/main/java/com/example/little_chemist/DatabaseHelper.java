@@ -7,14 +7,20 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.provider.BaseColumns;
 
+import com.example.little_chemist.Tables.Chapter;
+import com.example.little_chemist.Tables.Lesson;
 import com.example.little_chemist.Tables.Student;
+
+import java.sql.SQLException;
 
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     public static class FeedEntry implements BaseColumns {
 
-        private static final String TABLE_NAME = "Student";
+        //---------------------- Initialise tables ------------------------
+
+        private static final String TABLE_STUDENT = "Student";
         private static final String COLUMN_ID = "Id";
         private static final String COLUMN_SCORE = "TotalScore";
         private static final String COLUMN_QZLOCKS = "QZLocks";
@@ -25,13 +31,41 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         private static final String COLUMN_SECQ = "SecQ";
         private static final String COLUMN_SECA = "SecA";
 
+        //-----------------------------------------------
+
+        private static final String TABLE_CHAPTER = "Chapter";
+        private static final String COLUMN_CHID = "chapterID";
+        private static final String COLUMN_CHNAME = "chapterName";
+        private static final String COLUMN_CHLOCK = "lockChapter";
+
+        //-----------------------------------------------
+
+        private static final String TABLE_LESSON = "Lesson";
+        private static final String COLUMN_LSNID = "lessonID";
+        private static final String COLUMN_LSNNAME = "lessonName";
+        private static final String COLUMN_LSNLOCK = "lockLesson";
+        private static final String COLUMN_EXERCISE = "exercise";
+        private static final String COLUMN_CONTENT = "content";
+
+        //-----------------------------------------------
+
     }
     private static final int DATABASE_VERSION = 1;
     private static final String DATABASE_NAME = "LittleChemist.db";
     SQLiteDatabase db;
 
-    private static final String SQL_CREATE_ENTRIES=
-            "CREATE TABLE "+FeedEntry.TABLE_NAME +" ("+
+
+    public DatabaseHelper open() throws SQLException
+    {
+        db = getWritableDatabase();
+        return this;
+    }
+
+
+    //---------------------- create, add and delete tables ------------------------
+
+    private static final String SQL_CREATE_STUDENT=
+            "CREATE TABLE "+FeedEntry.TABLE_STUDENT +" ("+
                     FeedEntry.COLUMN_ID + "  INTEGER PRIMARY KEY," +
                     FeedEntry.COLUMN_SCORE + " INTEGER," +
                     FeedEntry.COLUMN_QZLOCKS + " TEXT," +
@@ -42,8 +76,24 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     FeedEntry.COLUMN_SECQ +" TEXT,"+
                     FeedEntry.COLUMN_SECA +" TEXT)" ;
 
+    private static final String SQL_CREATE_CHAPTER=
+            "CREATE TABLE "+FeedEntry.TABLE_CHAPTER +" ("+
+                    FeedEntry.COLUMN_CHID + "  INTEGER PRIMARY KEY," +
+                    FeedEntry.COLUMN_CHNAME + " TEXT," +
+                    FeedEntry.COLUMN_CHLOCK + " TEXT)" ;
+
+    private static final String SQL_CREATE_LESSON=
+            "CREATE TABLE "+FeedEntry.TABLE_LESSON +" ("+
+                    FeedEntry.COLUMN_LSNID + "  INTEGER PRIMARY KEY," +
+                    FeedEntry.COLUMN_LSNNAME + " TEXT," +
+                    FeedEntry.COLUMN_LSNLOCK + " TEXT," +
+                    FeedEntry.COLUMN_EXERCISE + " TEXT," +
+                    FeedEntry.COLUMN_CONTENT + " TEXT)" ;
+
+
+
     private static final String SQL_DELETE_ENTRIES =
-            "DROP TABLE IF EXISTS " + FeedEntry.TABLE_NAME;
+            "DROP TABLE IF EXISTS " + FeedEntry.TABLE_STUDENT;
 
 
     public DatabaseHelper(Context context){
@@ -51,9 +101,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
+
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL(SQL_CREATE_ENTRIES);
+        db.execSQL(SQL_CREATE_STUDENT);
+        db.execSQL(SQL_CREATE_CHAPTER);
+        db.execSQL(SQL_CREATE_LESSON);
+
 
     }
 
@@ -68,11 +122,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onUpgrade(db, oldVersion, newVersion);
     }
 
-    public void InsertUsers(Student student){
+
+    //-------------------------- inserts  ----------------------
+
+
+
+    public void InsertStudents(Student student){
 
         db=getWritableDatabase();
         //To get , how many column in ur table
-        String query="SELECT * FROM "+FeedEntry.TABLE_NAME;
+        String query="SELECT * FROM "+FeedEntry.TABLE_STUDENT;
         Cursor cursor=db.rawQuery(query,null);
         int count=cursor.getCount();
 
@@ -89,15 +148,55 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
 
-        db.insert(FeedEntry.TABLE_NAME,null,contentvalues);
+        db.insert(FeedEntry.TABLE_STUDENT,null,contentvalues);
         db.close();
     }
+
+    public void InsertChapters(Chapter chapter){
+
+        db=getWritableDatabase();
+        //To get , how many column in ur table
+        String query="SELECT * FROM "+FeedEntry.TABLE_CHAPTER;
+        Cursor cursor=db.rawQuery(query,null);
+        int count=cursor.getCount();
+
+        ContentValues contentvalues=new ContentValues();
+        contentvalues.put(FeedEntry.COLUMN_CHID,count+1);
+        contentvalues.put(FeedEntry.COLUMN_CHNAME, chapter.GetChapterName());
+        contentvalues.put(FeedEntry.COLUMN_CHLOCK, chapter.GetLockChapter());
+
+        db.insert(FeedEntry.TABLE_CHAPTER,null,contentvalues);
+        db.close();
+    }
+
+    public void InsertLessons(Lesson lesson){
+
+        db=getWritableDatabase();
+        //To get , how many column in ur table
+        String query="SELECT * FROM "+FeedEntry.TABLE_LESSON;
+        Cursor cursor=db.rawQuery(query,null);
+        int count=cursor.getCount();
+
+        ContentValues contentvalues=new ContentValues();
+        contentvalues.put(FeedEntry.COLUMN_LSNID,count+1);
+        contentvalues.put(FeedEntry.COLUMN_LSNNAME, lesson.GetLessonName());
+        contentvalues.put(FeedEntry.COLUMN_LSNLOCK, lesson.GetLockLesson());
+        contentvalues.put(FeedEntry.COLUMN_EXERCISE, lesson.GetExercise());
+        contentvalues.put(FeedEntry.COLUMN_CONTENT, lesson.GetContent());
+
+        db.insert(FeedEntry.TABLE_LESSON,null,contentvalues);
+        db.close();
+    }
+
+
+
+    //-------------------------- outer methods ----------------------
 
 
     public String checkPassword(String Username){
 
         db = this.getReadableDatabase();
-        //query="SELECT UserName,Password FROM  "+FeedEntry.TABLE_NAME;
+        //query="SELECT UserName,Password FROM  "+FeedEntry.TABLE_STUDENT;
         String query ="SELECT UserName,Password FROM Student";
 
         Cursor cursor=db.rawQuery(query,null);
@@ -116,11 +215,32 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
         return  password;
     }
+
+    public boolean usernameExist(String Username){
+        db = this.getReadableDatabase();
+        //query="SELECT UserName,Password FROM  "+FeedEntry.TABLE_NAME;
+        String query ="SELECT UserName FROM Student";
+
+        Cursor cursor=db.rawQuery(query,null);
+
+        String username;
+
+        if(cursor.moveToFirst()){
+            do{
+                username=cursor.getString(0);
+                if(username.contentEquals(Username)){
+                    return true;
+                }
+            }while (cursor.moveToNext());
+        }
+        return false;
+    }
+
     public String[] checkquestion(String Username){
 
         db = this.getReadableDatabase();
         //query="SELECT UserName,Password FROM  "+FeedEntry.TABLE_NAME;
-        String query ="SELECT UserName,SecQ,SecA FROM Student";
+        String query ="SELECT UserName,SecQ,SecA FROM Student"; //TODO add where
 
         Cursor cursor=db.rawQuery(query,null);
         String[] sec = new String[2];
@@ -145,17 +265,30 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         }
 
-
         return  sec;
     }
-    public void recoverPassword(String Password,String username){
-        db = this.getReadableDatabase();
+
+    public void recoverPassword(String password,String username){
+        db = this.getWritableDatabase();
         //query="SELECT UserName,Password FROM  "+FeedEntry.TABLE_NAME;
-        String query =" UPDATE Student SET Password = Password  WHERE UserName = username";
+        String query =" UPDATE Student SET Password = '"+password +"' WHERE UserName = '"+username+"' ";
 
-        Cursor cursor=db.rawQuery(query,null);
+        db.execSQL(query);
+
+        //Cursor cursor=db.rawQuery(query,null);
+        //return cursor.moveToFirst();
+
+    }
 
 
+    public String getLoggedInStudent(String userName) {
+
+        Cursor cursor=db.query("Student", new String[]{userName}, null, null, null, null, null);
+
+        cursor.moveToFirst();
+        String user = cursor.getString(cursor.getColumnIndex("UserName"));
+        cursor.close();
+        return user;
     }
 
 }

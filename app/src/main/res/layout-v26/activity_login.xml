@@ -13,7 +13,7 @@
 
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/username"
+        android:id="@+id/profileName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
@@ -61,7 +61,7 @@
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/username"
+        app:layout_constraintTop_toBottomOf="@+id/profileName"
 
         >
 
@@ -93,7 +93,6 @@
         android:layout_marginBottom="64dp"
         android:background="@drawable/circle_btn"
         android:enabled="true"
-        android:onClick="onBtnLoginInClick"
         android:text="@string/title_activity_login"
 
         app:layout_constraintBottom_toBottomOf="parent"
