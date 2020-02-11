@@ -23,7 +23,7 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
+                android:layout_marginTop="0dp"
                 android:background="#F3CB4E"
                 android:minHeight="?attr/actionBarSize"
                 android:theme="?attr/actionBarTheme"
@@ -67,6 +67,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center_horizontal"
+                    android:alpha="0.8"
                     android:elevation="20dp"
                     android:orientation="vertical">
 
@@ -76,7 +77,9 @@
                         android:layout_gravity="center_horizontal"
                         android:fontFamily="casual"
                         android:text="@string/chapter1"
-                        android:textSize="25sp" />
+                        android:textColor="#FD061955"
+                        android:textSize="25sp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -84,15 +87,17 @@
                         android:layout_gravity="center"
                         android:fontFamily="casual"
                         android:text="@string/Ch1Name"
-                        android:textSize="22sp"
+                        android:textColor="#FD061955"
 
-                        />
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
                 </LinearLayout>
 
                 <ImageView
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_gravity="bottom"
+                    android:alpha="0.5"
                     android:background="@drawable/atom"
                     android:contentDescription="@string/Ch1Name" />
 
@@ -113,6 +118,7 @@
                 android:layout_height="125dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="16dp"
+                android:alpha="0.8"
                 android:elevation="100dp"
                 app:cardBackgroundColor="@color/lightgreen"
                 app:cardCornerRadius="25dp"
@@ -125,6 +131,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center_horizontal"
+                    android:alpha="1"
                     android:elevation="20dp"
                     android:orientation="vertical">
 
@@ -132,25 +139,31 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
+                        android:alpha="1"
                         android:fontFamily="casual"
                         android:text="@string/chapter2"
-                        android:textSize="25sp" />
+                        android:textColor="#1B5F07"
+                        android:textSize="25sp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
+                        android:alpha="1"
                         android:fontFamily="casual"
                         android:text="@string/Ch2Name"
-                        android:textSize="22sp"
 
-                        />
+                        android:textColor="#1B5F07"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
                 </LinearLayout>
 
                 <ImageView
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_gravity="bottom"
+                    android:alpha="0.5"
                     android:background="@drawable/element"
                     android:contentDescription="@string/Ch2Name" />
 
@@ -171,9 +184,10 @@
                 android:layout_height="125dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="16dp"
+                android:alpha="0.8"
                 android:elevation="100dp"
                 app:cardBackgroundColor="@color/red"
-                app:cardCornerRadius="50dp"
+                app:cardCornerRadius="25dp"
                 app:layout_constraintBottom_toTopOf="@+id/cardviewch4"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -190,25 +204,31 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
+                        android:alpha="1"
                         android:fontFamily="casual"
                         android:text="@string/chapter_3"
-                        android:textSize="25sp" />
+                        android:textColor="#4E1111"
+                        android:textSize="25sp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
+                        android:alpha="1"
                         android:fontFamily="casual"
                         android:text="@string/Ch3Name"
-                        android:textSize="22sp"
+                        android:textColor="#4E1111"
 
-                        />
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
                 </LinearLayout>
 
                 <ImageView
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_gravity="bottom"
+                    android:alpha="0.5"
                     android:background="@drawable/flask"
                     android:contentDescription="@string/Ch3Name" />
 
@@ -229,9 +249,10 @@
                 android:layout_height="125dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="16dp"
+                android:alpha="0.8"
                 android:elevation="100dp"
                 app:cardBackgroundColor="@color/purple"
-                app:cardCornerRadius="50dp"
+                app:cardCornerRadius="25dp"
                 app:layout_constraintBottom_toTopOf="@+id/cardviewch5"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -250,23 +271,27 @@
                         android:layout_gravity="center_horizontal"
                         android:fontFamily="casual"
                         android:text="@string/chapter_4"
-                        android:textSize="25sp" />
+                        android:textColor="#F7250249"
+                        android:textSize="25sp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
+                        android:alpha="1"
                         android:fontFamily="casual"
                         android:text="@string/Ch4Name"
-                        android:textSize="22sp"
-
-                        />
+                        android:textColor="#F7250249"
+                        android:textSize="21sp"
+                        android:textStyle="bold" />
                 </LinearLayout>
 
                 <ImageView
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_gravity="bottom"
+                    android:alpha="0.5"
                     android:background="@drawable/dry_tree"
                     android:contentDescription="@string/Ch4Name" />
 
@@ -287,9 +312,10 @@
                 android:layout_height="125dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="16dp"
+                android:alpha="1"
                 android:elevation="100dp"
-                app:cardBackgroundColor="@color/yellow"
-                app:cardCornerRadius="50dp"
+                app:cardBackgroundColor="#F2EE62"
+                app:cardCornerRadius="25dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -300,8 +326,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center_horizontal"
+                    android:alpha="1"
                     android:elevation="20dp"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:visibility="visible">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -309,7 +337,9 @@
                         android:layout_gravity="center_horizontal"
                         android:fontFamily="casual"
                         android:text="@string/chapter_5"
-                        android:textSize="25sp" />
+                        android:textColor="#FDAFAD14"
+                        android:textSize="25sp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -317,15 +347,17 @@
                         android:layout_gravity="center"
                         android:fontFamily="casual"
                         android:text="@string/Ch5Name"
-                        android:textSize="22sp"
+                        android:textColor="#FDAFAD14"
 
-                        />
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
                 </LinearLayout>
 
                 <ImageView
                     android:layout_width="80dp"
                     android:layout_height="60dp"
                     android:layout_gravity="bottom"
+                    android:alpha="0.6"
                     android:background="@drawable/periodictable"
                     android:contentDescription="@string/Ch5Name" />
 
@@ -335,6 +367,7 @@
                     android:layout_gravity="end"
                     android:layout_marginTop="10dp"
                     android:layout_marginEnd="10dp"
+                    android:alpha="1"
                     android:background="@drawable/lock"
                     android:contentDescription="@string/chapter_Locked" />
 

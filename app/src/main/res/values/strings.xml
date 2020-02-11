@@ -53,6 +53,12 @@
     <string name="Ch2Lsn4">Chemical Equations</string>
     <string name="Ch2Lsn5">pH Scale</string>
 
+    <string name="Ch3Lsn1">Salt Facts</string>
+    <string name="Ch3Lsn2">Matter</string>
+    <string name="Ch3Lsn3">Chemical Reactions</string>
+    <string name="Ch3Lsn4">Liquids & Gases</string>
+    <string name="Ch3Lsn5">Biochemistry</string>
+
     <string name="Quiz">Quiz</string>
 
 
@@ -106,7 +112,9 @@
     <string name="shortAnswer">The answer must be at least 3 characters</string>
 
     <string name="SecurityQwrong">The security question does not match the one you chose at sign up</string>
-<!--    TODO fix this error-->
+
+
+    <!--    TODO fix this error-->
     <string name="SecurityAwrong">The security answer does not match the one you wrote at sign up</string>
 
 
