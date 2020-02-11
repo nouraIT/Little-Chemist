@@ -49,6 +49,7 @@ public class RecoverPassword extends AppCompatActivity {
             {
 
                 String [] question= helper.checkquestion(UserNameStr);
+              //  System.out.println(question[0]);
                 if(!question[0].equals(spinnerSelected))
                     SecurityAn.setError(getText(R.string.SecurityQwrong));
                 else
