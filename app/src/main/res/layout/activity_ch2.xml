@@ -168,8 +168,8 @@
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_gravity="bottom"
-                    android:background="@drawable/flash"
-                    android:contentDescription="@string/Ch1Lsn2" />
+                    android:background="@drawable/polymer"
+                    android:contentDescription="@string/Ch2Lsn2" />
 
 
             </androidx.cardview.widget.CardView>
@@ -223,8 +223,8 @@
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_gravity="bottom"
-                    android:background="@drawable/twins"
-                    android:contentDescription="@string/Ch1Lsn3"/>
+                    android:background="@drawable/bond"
+                    android:contentDescription="@string/Ch2Lsn3"/>
 
 
             </androidx.cardview.widget.CardView>
@@ -279,8 +279,8 @@
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_gravity="bottom"
-                    android:background="@drawable/uncertainty"
-                    android:contentDescription="@string/Ch1Lsn4" />
+                    android:background="@drawable/balance"
+                    android:contentDescription="@string/Ch2Lsn4" />
 
 
             </androidx.cardview.widget.CardView>
@@ -328,8 +328,8 @@
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_gravity="bottom"
-                    android:background="@drawable/fission"
-                    android:contentDescription="@string/Ch1Lsn5" />
+                    android:background="@drawable/ph"
+                    android:contentDescription="@string/Ch2Lsn5" />
 
 
             </androidx.cardview.widget.CardView>
