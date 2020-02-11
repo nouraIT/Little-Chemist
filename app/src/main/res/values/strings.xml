@@ -59,6 +59,18 @@
     <string name="Ch3Lsn4">Liquids and Gases</string>
     <string name="Ch3Lsn5">Biochemistry</string>
 
+    <string name="Ch4Lsn1">Water Chemistry</string>
+    <string name="Ch4Lsn2">Organic Chemistry</string>
+    <string name="Ch4Lsn3">Food Chemistry</string>
+    <string name="Ch4Lsn4">Polymer Chemistry</string>
+    <string name="Ch4Lsn5">Forensic Chemistry</string>
+
+    <string name="Ch5Lsn1">What Is the Periodic Table</string>
+    <string name="Ch5Lsn2">Group 1</string>
+    <string name="Ch5Lsn3">Group 2</string>
+    <string name="Ch5Lsn5">Group 18</string>
+    <string name="Ch5Lsn4">Group 17</string>
+
     <string name="Quiz">Quiz</string>
 
 
@@ -116,6 +128,18 @@
 
 
     <string name="todo" translatable="false">TODO</string>
+    <string name="security_question">Security Question</string>
+    <string name="chapters">Chapters</string>
+    <string name="confirm_new_password">Confirm New Password</string>
+    <string name="Error1">Username should not be Null</string>
+    <string name="Error2">Password should not be Null</string>
+    <string name="Error3">UserName or Passwords is not correct</string>
+    <string name="Error4">Password should be more than 5 characters</string>
+    <string name="Error5">Passwords do not match</string>
+    <string name="Error6">Username should be more than 4 characters</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="login_failed">Login failed</string>
 
 
 </resources>

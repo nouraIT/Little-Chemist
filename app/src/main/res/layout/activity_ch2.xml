@@ -114,6 +114,7 @@
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_gravity="bottom"
+                    android:alpha="0.5"
                     android:background="@drawable/atom"
                     android:contentDescription="@string/Ch1Name" />
 
@@ -168,6 +169,7 @@
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_gravity="bottom"
+                    android:alpha="0.5"
                     android:background="@drawable/polymer"
                     android:contentDescription="@string/Ch2Lsn2" />
 
@@ -223,6 +225,7 @@
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_gravity="bottom"
+                    android:alpha="0.5"
                     android:background="@drawable/bond"
                     android:contentDescription="@string/Ch2Lsn3"/>
 
@@ -279,6 +282,7 @@
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_gravity="bottom"
+                    android:alpha="0.5"
                     android:background="@drawable/balance"
                     android:contentDescription="@string/Ch2Lsn4" />
 
@@ -328,6 +332,7 @@
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_gravity="bottom"
+                    android:alpha="0.5"
                     android:background="@drawable/ph"
                     android:contentDescription="@string/Ch2Lsn5" />
 
@@ -361,6 +366,7 @@
                     android:layout_width="80dp"
                     android:layout_height="70dp"
                     android:layout_gravity="bottom"
+                    android:alpha="0.5"
                     android:background="@drawable/grade"
                     android:contentDescription="@string/Quiz"
                      />
