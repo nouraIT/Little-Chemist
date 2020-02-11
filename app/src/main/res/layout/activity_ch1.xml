@@ -108,6 +108,7 @@
                         android:gravity="center"
                         android:text="@string/Ch1Lsn1"
                         android:textSize="20sp"
+                        android:textStyle="bold"
 
                         />
                 </LinearLayout>
@@ -163,6 +164,7 @@
                         android:gravity="center"
                         android:text="@string/Ch1Lsn2"
                         android:textSize="20sp"
+                        android:textStyle="bold"
 
                         />
                 </LinearLayout>
@@ -219,6 +221,7 @@
                         android:gravity="center"
                         android:text="@string/Ch1Lsn3"
                         android:textSize="20sp"
+                        android:textStyle="bold"
 
                         />
                 </LinearLayout>
@@ -276,6 +279,7 @@
                         android:gravity="center"
                         android:text="@string/Ch1Lsn4"
                         android:textSize="17sp"
+                        android:textStyle="bold"
 
                         />
                 </LinearLayout>
@@ -326,6 +330,7 @@
                         android:gravity="center"
                         android:text="@string/Ch1Lsn5"
                         android:textSize="20sp"
+                        android:textStyle="bold"
 
                         />
                 </LinearLayout>
@@ -362,6 +367,7 @@
                     android:gravity="center"
                     android:text="@string/Quiz"
                     android:textSize="20sp"
+                    android:textStyle="bold"
 
                     />
 
