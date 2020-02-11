@@ -282,6 +282,7 @@
                         android:alpha="1"
                         android:fontFamily="casual"
                         android:text="@string/Ch4Name"
+                        android:textAlignment="center"
                         android:textColor="#F7250249"
                         android:textSize="21sp"
                         android:textStyle="bold" />
