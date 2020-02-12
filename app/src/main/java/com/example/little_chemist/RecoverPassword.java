@@ -167,7 +167,7 @@ public class RecoverPassword extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 spinnerSelected = spinner.getSelectedItem().toString();
-                SecurityA = SecurityAn.getEditText().getText().toString().trim();
+                SecurityA = SecurityAn.getEditText().getText().toString().trim().toLowerCase();
                 validateSecurity();
 
 
@@ -176,7 +176,7 @@ public class RecoverPassword extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable editable) {
                 spinnerSelected = spinner.getSelectedItem().toString();
-                SecurityA = SecurityAn.getEditText().getText().toString().trim();
+                SecurityA = SecurityAn.getEditText().getText().toString().trim().toLowerCase();
                 if (validateSecurity()){
 
                     Recover.setEnabled(true);
@@ -200,7 +200,7 @@ public class RecoverPassword extends AppCompatActivity {
             public void onClick(View view) {
                 SecurityAn.setError(null);
 
-                SecurityA=SecurityAn.getEditText().getText().toString().trim();
+                SecurityA=SecurityAn.getEditText().getText().toString().trim().toLowerCase();
                 PasswordStr=ET_Password.getEditText().getText().toString().trim();
                 ConfirmPasswordStr=ET_ConfirmPassword.getEditText().getText().toString().trim();
                 UserNameStr=ET_UserName.getEditText().getText().toString().trim();
@@ -210,7 +210,8 @@ public class RecoverPassword extends AppCompatActivity {
 
                 //Send UserName to Database to find it, and return Password
                 String [] question= helper.checkquestion(UserNameStr);
-
+                System.out.println(question[1]);
+                System.out.println(question[0]);
                 if(!question[0].equals(spinnerSelected))
                     //TODO make the error under the spinner
                     //TODO translate the q to english if it's arabic

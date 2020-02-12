@@ -252,7 +252,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 username=cursor.getString(0);
                 if(username.contentEquals(Username)){
                     secQ=cursor.getString(1);
-                    secA=cursor.getString(1);
+                    secA=cursor.getString(2);
                     sec[0]=secQ;
                     sec[1]=secA;
 

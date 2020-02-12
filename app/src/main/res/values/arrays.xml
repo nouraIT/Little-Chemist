@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="SecurityQs">
-        <item>What is your favorite animal?</item>
-        <item>What year were you born?</item>
-        <item>What is your favorite subject at school?</item>
-        <item>What is your favorite meal?</item>
+        <item name="Q0">What is your favorite animal?</item>
+        <item name="Q1">What year were you born?</item>
+        <item name="Q2">What is your favorite subject at school?</item>
+        <item name="Q3">What is your favorite meal?</item>
     </string-array>
 </resources>

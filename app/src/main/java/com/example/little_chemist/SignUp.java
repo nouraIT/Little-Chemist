@@ -20,8 +20,7 @@ import com.google.android.material.textfield.TextInputLayout;
 public class SignUp extends AppCompatActivity {
 
     DatabaseHelper helper=new DatabaseHelper(this);
-
-
+    int pos;
 
     TextInputLayout ET_UserName ,ET_Password ,ET_ConfirmPassword,SecurityAn;
 
@@ -167,14 +166,18 @@ public class SignUp extends AppCompatActivity {
         SecurityAn.getEditText().addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                spinnerSelected = spinner.getSelectedItem().toString();
+                pos = spinner.getSelectedItemPosition();
+                SecurityAn.setError(null);
+
 
             }
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                spinnerSelected = spinner.getSelectedItem().toString();
-                SecurityA = SecurityAn.getEditText().getText().toString().trim();
+                pos = spinner.getSelectedItemPosition();
+
+                //spinnerSelected = spinner.getSelectedItem().toString();
+                SecurityA = SecurityAn.getEditText().getText().toString().trim().toLowerCase();
                 validateSecurity();
 
 
@@ -182,8 +185,10 @@ public class SignUp extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable editable) {
-                spinnerSelected = spinner.getSelectedItem().toString();
-                SecurityA = SecurityAn.getEditText().getText().toString().trim();
+                pos = spinner.getSelectedItemPosition();
+
+                //spinnerSelected = spinner.getSelectedItem().toString();
+                SecurityA = SecurityAn.getEditText().getText().toString().trim().toLowerCase();
                 if (validateSecurity()){
 
                     signupButton.setEnabled(true);
@@ -205,7 +210,10 @@ public class SignUp extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                spinnerSelected = spinner.getSelectedItem().toString();
+                //System.out.println("heeeeeeeeeeeeeeeeere "+pos);
+                //spinnerSelected = spinner.getSelectedItem().toString();
+
+                pos = spinner.getSelectedItemPosition();
 
                 UserNameStr=ET_UserName.getEditText().getText().toString().trim();
                 PasswordStr=ET_Password.getEditText().getText().toString().trim();
@@ -221,7 +229,8 @@ public class SignUp extends AppCompatActivity {
                     Student student = new Student();
                     student.SetUserName(UserNameStr);
                     student.SetPassword(PasswordStr);
-                    student.SetSecQ(spinnerSelected);
+
+                    student.SetSecQ(String.valueOf(pos));
                     student.SetSecA(SecurityA);
                     helper.InsertStudents(student);
 

@@ -106,7 +106,6 @@ public class LoginPage extends AppCompatActivity{
             loginButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
                     UserNameStr=UserNameET.getEditText().getText().toString().trim();
                     //Passing Password
 
