@@ -53,6 +53,6 @@ protected void Quiz(Bundle savedInstanceState)
         }
     });
 }
-
+//call database
 }
 
