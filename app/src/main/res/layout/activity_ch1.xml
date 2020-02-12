@@ -26,9 +26,9 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="3dp"
-                android:layout_marginEnd="1dp"
-                android:layout_marginRight="1dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+
                 android:background="#F3CB4E"
                 android:minHeight="?attr/actionBarSize"
                 android:theme="?attr/actionBarTheme"
@@ -73,10 +73,10 @@
                 android:layout_width="150dp"
                 android:layout_height="125dp"
                 android:layout_marginStart="40dp"
-                android:layout_marginLeft="40dp"
+
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="16dp"
-                android:layout_marginRight="16dp"
+
                 android:elevation="100sp"
                 app:cardBackgroundColor="@color/Unlocked"
                 app:cardCornerRadius="20dp"
@@ -129,10 +129,10 @@
                 android:layout_width="150dp"
                 android:layout_height="125dp"
                 android:layout_marginStart="16dp"
-                android:layout_marginLeft="16dp"
+
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="40dp"
-                android:layout_marginRight="40dp"
+
                 android:elevation="100dp"
                 app:cardBackgroundColor="@color/gray"
                 app:cardCornerRadius="20dp"
@@ -185,10 +185,10 @@
                 android:layout_width="150dp"
                 android:layout_height="125dp"
                 android:layout_marginStart="40dp"
-                android:layout_marginLeft="40dp"
+
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
-                android:layout_marginRight="16dp"
+
                 android:elevation="100dp"
                 app:cardBackgroundColor="@color/gray"
                 app:cardCornerRadius="20dp"
@@ -242,10 +242,10 @@
                 android:layout_width="150dp"
                 android:layout_height="125dp"
                 android:layout_marginStart="16dp"
-                android:layout_marginLeft="16dp"
+
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="40dp"
-                android:layout_marginRight="40dp"
+
                 android:elevation="100dp"
                 app:cardBackgroundColor="@color/gray"
                 app:cardCornerRadius="20dp"

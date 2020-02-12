@@ -21,7 +21,7 @@
 
     <string name="welcome">Welcome </string>
 
-<!--   _______________ chapters names and lessons _______________-->
+<!--   _______________ chapters  _______________-->
 
     <string name="chapter_2">Chapter 2</string>
     <string name="chapter_3">Chapter 3</string>
@@ -32,6 +32,7 @@
 
     <string name="chapters">Chapters</string>
 
+    <!--   _______________ chapters  lessons _______________-->
 
     <string name="Ch5Name">The periodic table</string>
     <string name="Ch2Name">Elements</string>
@@ -75,7 +76,14 @@
     <string name="Ch5Lsn5">Group 18</string>
     <string name="Ch5Lsn4">Group 17</string>
 
+    <!--   _______________ quizzes _______________-->
+
+
     <string name="Quiz">Quiz</string>
+
+    <string name="nextQ">Next Question</string>
+    <string name="previous_question">Previous Question</string>
+
 
 
 
@@ -131,14 +139,11 @@
     <string name="SecurityQwrong">The security question does not match the one you chose at sign up</string>
     <string name="SecurityAwrong">The security answer does not match the one you wrote at sign up</string>
 
+    <string name="login_failed">Login failed</string>
 
     <string name="todo" translatable="false">TODO</string>
 
 
-    <string name="login_failed">Login failed</string>
-    <string name="quiz">Quiz</string>
-    <string name="nextQ">Next Question</string>
-    <string name="previous_question">Previous Question</string>
 
 
 </resources>
