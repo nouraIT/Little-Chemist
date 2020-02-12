@@ -254,7 +254,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/quiz"
+                android:id="@+id/preQ"
                 android:layout_width="127dp"
                 android:layout_height="62dp"
                 android:layout_marginStart="32dp"

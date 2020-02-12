@@ -13,7 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 public class Ch2 extends AppCompatActivity {
-    private CardView lsn1, lsn2, lsn3, lsn4, lsn5;
+    private CardView lsn1, lsn2, lsn3, lsn4, lsn5,quiz;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,7 +70,7 @@ public class Ch2 extends AppCompatActivity {
         quiz.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Intent n = new Intent(Ch2.this, Quiz.class);
-                n.putExtra("ChapterNumber",1);
+                n.putExtra("ChapterNumber",2);
                 startActivity(n);
                 //  finish();
             }

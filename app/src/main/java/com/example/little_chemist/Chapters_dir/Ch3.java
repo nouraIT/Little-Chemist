@@ -7,6 +7,7 @@ import androidx.cardview.widget.CardView;
 
 import com.example.little_chemist.Home;
 import com.example.little_chemist.R;
+import com.example.little_chemist.Tables.Quiz;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,7 +15,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class Ch3 extends AppCompatActivity {
-    private CardView button1 , button2 , button3 , button4 ,button5 ;
+    private CardView button1 , button2 , button3 , button4 ,button5,quiz ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,6 +65,15 @@ public class Ch3 extends AppCompatActivity {
                 Intent n = new Intent(Ch3.this, Ch1.class);
                 startActivity(n);
             //    finish();
+            }
+        });
+        quiz = findViewById(R.id.quiz);
+        quiz.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent n = new Intent(Ch3.this, Quiz.class);
+                n.putExtra("ChapterNumber",3);
+                startActivity(n);
+                //  finish();
             }
         });
     }

@@ -46,7 +46,7 @@ public class Ch1 extends AppCompatActivity {
             }
         });
 
-        lsn2 = findViewById(R.id.cardviewA3);
+        lsn2 = findViewById(R.id.cardviewlLSN2);
         lsn2.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -56,7 +56,7 @@ public class Ch1 extends AppCompatActivity {
             }
         });
 
-        lsn3 = findViewById(R.id.cardviewA1);
+        lsn3 = findViewById(R.id.cardviewlLSN3);
         lsn3.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Intent n = new Intent(Ch1.this, Ch1.class);
@@ -65,7 +65,7 @@ public class Ch1 extends AppCompatActivity {
             }
         });
 
-        lsn4 = findViewById(R.id.cardviewA2);
+        lsn4 = findViewById(R.id.cardviewlLSN4);
         lsn4.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Intent n = new Intent(Ch1.this, Ch1.class);
@@ -74,7 +74,7 @@ public class Ch1 extends AppCompatActivity {
             }
         });
 
-        lsn5 = findViewById(R.id.cardviewA4);
+        lsn5 = findViewById(R.id.cardviewlLSN5);
         lsn5.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Intent n = new Intent(Ch1.this, Ch1.class);

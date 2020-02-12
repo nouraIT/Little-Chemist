@@ -80,7 +80,7 @@
                 android:elevation="100sp"
                 app:cardBackgroundColor="@color/Unlocked"
                 app:cardCornerRadius="20dp"
-                app:layout_constraintEnd_toStartOf="@+id/cardviewA3"
+                app:layout_constraintEnd_toStartOf="@+id/cardviewlLSN2"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/question"
                 tools:targetApi="lollipop">
@@ -125,7 +125,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/cardviewA3"
+                android:id="@+id/cardviewlLSN2"
                 android:layout_width="150dp"
                 android:layout_height="125dp"
                 android:layout_marginStart="16dp"
@@ -181,7 +181,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/cardviewA1"
+                android:id="@+id/cardviewlLSN3"
                 android:layout_width="150dp"
                 android:layout_height="125dp"
                 android:layout_marginStart="40dp"
@@ -192,7 +192,7 @@
                 android:elevation="100dp"
                 app:cardBackgroundColor="@color/gray"
                 app:cardCornerRadius="20dp"
-                app:layout_constraintEnd_toStartOf="@+id/cardviewA2"
+                app:layout_constraintEnd_toStartOf="@+id/cardviewlLSN4"
                 app:layout_constraintHorizontal_bias="0.8"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/cardviewlLSN1"
@@ -238,7 +238,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/cardviewA2"
+                android:id="@+id/cardviewlLSN4"
                 android:layout_width="150dp"
                 android:layout_height="125dp"
                 android:layout_marginStart="16dp"
@@ -250,8 +250,8 @@
                 app:cardBackgroundColor="@color/gray"
                 app:cardCornerRadius="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/cardviewA1"
-                app:layout_constraintTop_toBottomOf="@+id/cardviewA3"
+                app:layout_constraintStart_toEndOf="@+id/cardviewlLSN3"
+                app:layout_constraintTop_toBottomOf="@+id/cardviewlLSN2"
                 tools:targetApi="lollipop">
 
                 <LinearLayout
@@ -296,7 +296,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/cardviewA4"
+                android:id="@+id/cardviewlLSN5"
                 android:layout_width="150dp"
                 android:layout_height="125dp"
                 android:layout_marginTop="16dp"
@@ -305,7 +305,7 @@
                 app:cardCornerRadius="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cardviewA2" tools:targetApi="lollipop">
+                app:layout_constraintTop_toBottomOf="@+id/cardviewlLSN4" tools:targetApi="lollipop">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -356,7 +356,7 @@
                 app:cardCornerRadius="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cardviewA4"
+                app:layout_constraintTop_toBottomOf="@+id/cardviewlLSN5"
                 tools:targetApi="lollipop">
 
                 <TextView
