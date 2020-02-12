@@ -59,25 +59,18 @@
     <string name="SecurityAwrong">الإجابة الأمنية لا تتطابق مع الإجابة التي كتبتها عند التسجيل</string>
     <string name="SecurityQwrong">السؤال الامني لا يطابق السؤال الذي اخترته عند التسجيل</string>
     <string name="action_settings">الإعدادات</string>
-    <string name="the_study_of_atoms">دراسه الذرات</string>
-    <string name="the_periodic_table">الجدول الدوري</string>
-    <string name="the_branches_of_chemistry">فروع الكيمياء</string>
     <string name="security_question">السؤال الامني</string>
     <string name="progressBar">مقياس التقدم</string>
     <string name="no">لا</string>
     <string name="login_failed">فشل تسجيل الدخول</string>
     <string name="invalid_username">اسم المستخدم غير صحيح</string>
     <string name="invalid_password">كلمه المرور يجب ان تكون اكبر من 5 حروف او ارقام</string>
-    <string name="elements">العناصر</string>
     <string name="confirm_new_password">تأكيد كلمه المرور</string>
     <string name="confirmLogginOut">هل انت متأكد انك تريد تسجيل الخروج</string>
     <string name="confirmDeleteAcc">هل انت متأكد انك تريد حذف حسابك للأبد</string>
-    <string name="chemistry_basics">مبادىء الكيمياء</string>
     <string name="chapters">الفصول</string>
     <string name="chapter_Unlocked">الفصل مفتوح</string>
     <string name="chapter_Locked">الفصل مغلق</string>
-    <string name="chapter_1">الفصل الاول</string>
-    <string name="answer2">الاجابه</string>
     <string name="Ch2Lsn1">المخاليط الغير متجانسه</string>
     <string name="Ch2Lsn2">البوليمرات</string>
     <string name="Ch2Lsn3">الروابط كيميائية</string>
@@ -94,9 +87,16 @@
     <string name="Error4">يجب أن تكون كلمة المرور أكثر من 5 أحرف</string>
     <string name="Error5">كلمة المرور غير مطابقة</string>
     <string name="Error6">يجب أن يكون اسم المستخدم أكثر من 4 أحرف</string>
-    <string name="SecError1">لم تختر سؤالا</string>
-    <string name="SecError2">لم تكتب اجابه</string>
-    <string name="SecError3">يجب أن يكون الجواب 3 أحرف على الأقل</string>
+    <string name="Ch4Lsn1">كيمياء المياه</string>
+    <string name="Ch4Lsn2">الكيمياء العضوية</string>
+    <string name="Ch4Lsn3">كيمياء الغذاء</string>
+    <string name="Ch4Lsn4">كيمياء البوليمرات</string>
+    <string name="Ch4Lsn5">كيمياء الطب الشرعي</string>
+    <string name="Ch5Lsn1">ما هو الجدول الدوري</string>
+    <string name="Ch5Lsn2">المجموعة الاولى</string>
+    <string name="Ch5Lsn3">المجموعة الثانية</string>
+    <string name="Ch5Lsn4">المجموعة السابعة عشر</string>
+    <string name="Ch5Lsn5">المجموعة الثامنة عشر</string>
 
 
     <!-- _______________ error msgs _______________ -->
