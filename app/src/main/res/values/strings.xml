@@ -11,8 +11,10 @@
 
     <string name="download_booklet">Download Booklet</string>
     <string name="delete_account">Delete Account</string>
+    <string name="confirmDeleteAcc">Are you sure you want to Delete your account forever ?</string>
 
-    <!--  _______________  app name and genral  _______________-->
+
+    <!--  _______________  app name and general  _______________-->
 
     <string name="little_chemist">Little Chemist</string>
     <string name="app_name">"Little Chemist"</string>
@@ -20,24 +22,84 @@
     <string name="welcome">Welcome </string>
 
     <!--   _______________ chapters names and lessons _______________-->
+<!--   _______________ chapters  _______________-->
 
-    <string name="chapters">Chapters</string>
-    <string name="chapter_1">Chapter 1</string>
     <string name="chapter_2">Chapter 2</string>
     <string name="chapter_3">Chapter 3</string>
     <string name="chapter_5">chapter 5</string>
     <string name="chapter_4">chapter 4</string>
     <string name="chapter1">Chapter 1</string>
     <string name="chapter2">Chapter 2</string>
-    <string name="chapter3">Chapter 3</string>
-    <string name="chapter4">Chapter 4</string>
-    <string name="chapter5">Chapter5</string>
+
+    <string name="chapters">Chapters</string>
+
+    <!--   _______________ chapters  lessons _______________-->
+
+    <string name="Ch5Name">The periodic table</string>
+    <string name="Ch2Name">Elements</string>
+    <string name="Ch3Name">Chemistry basics</string>
+    <string name="Ch4Name">The Branches of chemistry</string>
+    <string name="Ch1Name">the study of atoms</string>
+
+    <string name="lesson1">Lesson 1</string>
+    <string name="lesson2">Lesson 2</string>
+    <string name="lesson3">Lesson 3</string>
+    <string name="lesson4">Lesson 4</string>
+    <string name="lesson5">Lesson 5</string>
+
+    <string name="Ch1Lsn1">History of the Atom</string>
+    <string name="Ch1Lsn2">Electrons</string>
+    <string name="Ch1Lsn3">Isotopes</string>
+    <string name="Ch1Lsn4">Heisenberg Uncertainty Principle</string>
+    <string name="Ch1Lsn5">Nuclear Fission</string>
+
+    <string name="Ch2Lsn1">Heterogeneous Mixture</string>
+    <string name="Ch2Lsn2">Polymers</string>
+    <string name="Ch2Lsn3">Chemical Bonds</string>
+    <string name="Ch2Lsn4">Chemical Equations</string>
+    <string name="Ch2Lsn5">pH Scale</string>
 
     <string name="the_periodic_table">The periodic table</string>
     <string name="elements">Elements</string>
     <string name="chemistry_basics">Chemistry basics</string>
     <string name="the_branches_of_chemistry">The Branches of chemistry</string>
     <string name="the_study_of_atoms">The study of atoms</string>
+    <string name="Ch3Lsn1">Salt Facts</string>
+    <string name="Ch3Lsn2">Matter</string>
+    <string name="Ch3Lsn3">Chemical Reactions</string>
+    <string name="Ch3Lsn4">Liquids and Gases</string>
+    <string name="Ch3Lsn5">Biochemistry</string>
+
+    <string name="Ch4Lsn1">Water Chemistry</string>
+    <string name="Ch4Lsn2">Organic Chemistry</string>
+    <string name="Ch4Lsn3">Food Chemistry</string>
+    <string name="Ch4Lsn4">Polymer Chemistry</string>
+    <string name="Ch4Lsn5">Forensic Chemistry</string>
+
+    <string name="Ch5Lsn1">What Is the Periodic Table</string>
+    <string name="Ch5Lsn2">Group 1</string>
+    <string name="Ch5Lsn3">Group 2</string>
+    <string name="Ch5Lsn5">Group 18</string>
+    <string name="Ch5Lsn4">Group 17</string>
+
+    <!--   _______________ quizzes _______________-->
+
+
+    <string name="Quiz">Quiz</string>
+
+    <string name="nextQ">Next Question</string>
+    <string name="previous_question">Previous Question</string>
+
+
+
+
+    <!--   _______________ chapters, quizzes and lessons's symbols _______________-->
+
+
+    <string name="chapter_Unlocked">Unlocked Chapter</string>
+    <string name="chapter_Locked">Locked Chapter</string>
+
+    <string name="progressBar">Progress Bar</string>
 
     <!-- _______________ registeration _______________ -->
 
@@ -47,30 +109,25 @@
     <string name="prompt_username">Username</string>
     <string name="prompt_password">Password</string>
     <string name="prompt_passwordConf">Confirm Password</string>
-    <string name="security_question">Security Question</string>
-    <string name="answer2">Answer</string>
     <string name="answer">Answer</string>
     <string name="new_password">New Password</string>
-
-
-    <string name="action_sign_in">Sign in or register</string>
 
     <string name="don_t_have_an_acount">Don\'t have an account?</string>
     <string name="sign_up">Sign Up</string>
     <string name="sign_up_button">Sign Up</string>
 
     <string name="recover_password">Change Password</string>
-    <string name="confirm_new_password">Confirm New Password</string>
     <string name="forgot_password">Forgot Password?</string>
 
     <string name="log_out">Log Out</string>
+    <string name="confirmLogginOut">Are you sure you want to log out?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
+    <string name="security_question">Security Question</string>
 
 
     <!-- _______________ error msgs _______________ -->
-
-    <string name="invalid_username">Not a valid username</string>
-    <string name="invalid_password">Password must be >5 characters</string>
-    <string name="login_failed">"Login failed"</string>
 
     <string name="null_username">Username should not be empty</string>
     <string name="null_password">Password should not be empty</string>
@@ -100,7 +157,12 @@
     <string name="electrons">Electrons</string>
     <string name="QuizScore">Quize score</string>
     <string name="Quiz">Quiz</string>
+
+    <string name="login_failed">Login failed</string>
+
     <string name="todo" translatable="false">TODO</string>
+
+
 
 
 </resources>

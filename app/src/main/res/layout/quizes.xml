@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/CRL"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Chapters_dir.Ch1">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+
+                android:background="#F3CB4E"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="?attr/actionBarTheme"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/toolbarTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="casual"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="@string/Quiz"
+                    android:textAppearance="@android:style/TextAppearance.WindowTitle"
+                    android:textColor="#FC050505"
+                    android:textSize="22sp"
+                    android:visibility="visible"
+                    tools:layout_editor_absoluteX="147dp"
+                    tools:layout_editor_absoluteY="19dp"
+                    tools:targetApi="jelly_bean" />
+
+            </androidx.appcompat.widget.Toolbar>
+
+            <TextView
+                android:id="@+id/question"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="casual"
+                android:gravity="center"
+                android:text="question_here"
+                android:textSize="30sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/toolbar"
+                tools:targetApi="jelly_bean" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardviewA1"
+                android:layout_width="150dp"
+                android:layout_height="125dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:elevation="100dp"
+                app:cardBackgroundColor="@color/gray"
+                app:cardCornerRadius="20dp"
+                app:layout_constraintBottom_toTopOf="@+id/cardviewA3"
+                app:layout_constraintEnd_toStartOf="@+id/cardviewA2"
+                app:layout_constraintHorizontal_bias="0.8"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/question"
+                app:layout_constraintVertical_bias="0.0"
+                tools:targetApi="lollipop">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:elevation="20dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="casual"
+                        android:gravity="center"
+                        android:text="Answer 1"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+
+                        />
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardviewA2"
+                android:layout_width="150dp"
+                android:layout_height="125dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="40dp"
+                android:elevation="100dp"
+                app:cardBackgroundColor="@color/gray"
+                app:cardCornerRadius="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/cardviewA1"
+                app:layout_constraintTop_toBottomOf="@+id/question"
+                tools:targetApi="lollipop">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:elevation="20dp"
+                    android:orientation="vertical"
+                    tools:targetApi="lollipop">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="casual"
+                        android:gravity="center"
+                        android:text="Answer 2"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+
+                        />
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardviewA3"
+                android:layout_width="150dp"
+                android:layout_height="125dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:elevation="100dp"
+                app:cardBackgroundColor="@color/gray"
+                app:cardCornerRadius="20dp"
+                app:layout_constraintEnd_toStartOf="@+id/cardviewA4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardviewA1"
+                tools:targetApi="lollipop">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:elevation="20dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="casual"
+                        android:gravity="center"
+                        android:text="answer3"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+
+                        />
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardviewA4"
+                android:layout_width="150dp"
+                android:layout_height="125dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="40dp"
+                android:elevation="100dp"
+                app:cardBackgroundColor="@color/gray"
+                app:cardCornerRadius="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/cardviewA3"
+                app:layout_constraintTop_toBottomOf="@+id/cardviewA2"
+                tools:targetApi="lollipop">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:elevation="20dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="casual"
+                        android:gravity="center"
+                        android:text="Answer 4"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+
+                        />
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/preQ"
+                android:layout_width="127dp"
+                android:layout_height="62dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="24dp"
+                android:elevation="100dp"
+                app:cardBackgroundColor="#4CAF50"
+                app:cardCornerRadius="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardviewA3"
+                tools:targetApi="lollipop">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="casual"
+                    android:gravity="center"
+                    android:text="@string/previous_question"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+
+                    tools:text="Previous Question" />
+
+
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/nextQ"
+                android:layout_width="127dp"
+                android:layout_height="62dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="32dp"
+                android:elevation="100dp"
+                app:cardBackgroundColor="#4CAF50"
+                app:cardCornerRadius="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardviewA4"
+                tools:targetApi="lollipop">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="casual"
+                    android:gravity="center"
+                    android:text="@string/nextQ"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+
+                    />
+
+
+            </androidx.cardview.widget.CardView>
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

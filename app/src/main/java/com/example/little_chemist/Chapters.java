@@ -23,11 +23,8 @@ import com.example.little_chemist.Chapters_dir.Ch5;
 
 
 public class Chapters extends AppCompatActivity {
-    private Button buttonch1 ;
-  private Button buttonch2 ;
-  private Button buttonch3 ;
-  private Button buttonch4 ;
-  private Button buttonch5 ;
+
+  private CardView buttonch1,buttonch2, buttonch3,buttonch4,buttonch5 ;
 
   private CardView  card1 ;
     private CardView  card2 ;
@@ -41,9 +38,8 @@ public class Chapters extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chapters);
+
         Toolbar toolbar = findViewById(R.id.toolbar);
-
-
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -53,7 +49,7 @@ public class Chapters extends AppCompatActivity {
             public void onClick(View v) {
                 Intent Homepage = new Intent(Chapters.this, Home.class);
                 startActivity(Homepage);
-               // finish();
+                //finish();
             }
         });
 

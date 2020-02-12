@@ -9,22 +9,26 @@
 
 
     <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="403dp"
-        android:layout_height="277dp"
+        android:id="@+id/logoHome"
+        android:layout_width="251dp"
+        android:layout_height="133dp"
+        android:layout_marginTop="56dp"
         android:contentDescription="@string/todo"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.414"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/l" />
+        app:srcCompat="@drawable/logocropped" />
 
     <ImageView
         android:id="@+id/settings"
         android:layout_width="42dp"
         android:layout_height="36dp"
         android:layout_marginStart="16dp"
+
+        android:layout_marginTop="44dp"
+        android:contentDescription="@string/settings"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="24dp"
         android:contentDescription="@string/todo"
@@ -32,30 +36,21 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_gear" />
 
-    <Button
-        android:id="@+id/logoutBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:background="#e3492e"
-        android:text="@string/log_out"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardviewchapters"
         android:layout_width="282dp"
         android:layout_height="125dp"
-        android:layout_marginTop="27dp"
-        android:layout_marginBottom="356dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="192dp"
         app:cardBackgroundColor="@color/colorPrimary"
-        app:cardCornerRadius="50dp"
+        app:cardCornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4">
+        app:layout_constraintTop_toBottomOf="@+id/logoHome"
+        app:layout_constraintVertical_bias="0.24">
 
         <TextView
             android:layout_width="wrap_content"
@@ -79,9 +74,10 @@
         <ImageView
             android:layout_width="35dp"
             android:layout_height="35dp"
-            android:layout_gravity="right"
+            android:layout_gravity="end"
             android:layout_marginTop="70dp"
-            android:layout_marginRight="10dp"
+            android:layout_marginEnd="10dp"
+            android:contentDescription="@string/progressBar"
             android:src="@drawable/testtube" />
 
 

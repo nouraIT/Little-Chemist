@@ -9,7 +9,10 @@ import android.provider.BaseColumns;
 
 import com.example.little_chemist.Tables.Chapter;
 import com.example.little_chemist.Tables.Lesson;
+import com.example.little_chemist.Tables.Quiz;
 import com.example.little_chemist.Tables.Student;
+
+import java.sql.SQLException;
 
 
 public class DatabaseHelper extends SQLiteOpenHelper {
@@ -47,10 +50,26 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         //-----------------------------------------------
 
+        private static final String TABLE_QUIZ = "Quiz" ;//quizIC quizName LockQuiz
+        private static final String COLUMN_QUIZID = "quizID";
+        private static final String COLUMN_QUIZNAME = "quizName";
+        private static final String COLUMN_LOCKQUIZ = "LockQuiz";
+
+
+
+        //-----------------------------------------------
+
     }
     private static final int DATABASE_VERSION = 1;
     private static final String DATABASE_NAME = "LittleChemist.db";
     SQLiteDatabase db;
+
+
+    public DatabaseHelper open() throws SQLException
+    {
+        db = getWritableDatabase();
+        return this;
+    }
 
 
     //---------------------- create, add and delete tables ------------------------
@@ -82,6 +101,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     FeedEntry.COLUMN_CONTENT + " TEXT)" ;
 
 
+    private static final String SQL_CREATE_QUIZ=
+            "CREATE TABLE "+FeedEntry.TABLE_QUIZ +" ("+
+                    FeedEntry.COLUMN_QUIZID + "  INTEGER PRIMARY KEY," +
+                    FeedEntry.COLUMN_QUIZNAME + " TEXT," +
+                    FeedEntry.COLUMN_LOCKQUIZ + " TEXT)" ;
+
+
 
     private static final String SQL_DELETE_ENTRIES =
             "DROP TABLE IF EXISTS " + FeedEntry.TABLE_STUDENT;
@@ -98,6 +124,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(SQL_CREATE_STUDENT);
         db.execSQL(SQL_CREATE_CHAPTER);
         db.execSQL(SQL_CREATE_LESSON);
+        db.execSQL(SQL_CREATE_QUIZ);
 
 
     }
@@ -179,6 +206,23 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.close();
     }
 
+    public void InsertQuizzes(Quiz quiz){
+
+        db=getWritableDatabase();
+        //To get , how many column in ur table
+        String query="SELECT * FROM "+FeedEntry.TABLE_QUIZ;
+        Cursor cursor=db.rawQuery(query,null);
+        int count=cursor.getCount();
+
+        ContentValues contentvalues=new ContentValues();
+        contentvalues.put(FeedEntry.COLUMN_QUIZID,count+1);
+        contentvalues.put(FeedEntry.COLUMN_QUIZNAME, quiz.GetQuizName());
+        contentvalues.put(FeedEntry.COLUMN_LOCKQUIZ, quiz.GetLockQuiz());
+
+        db.insert(FeedEntry.TABLE_QUIZ,null,contentvalues);
+        db.close();
+    }
+
 
 
     //-------------------------- outer methods ----------------------
@@ -243,7 +287,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 username=cursor.getString(0);
                 if(username.contentEquals(Username)){
                     secQ=cursor.getString(1);
-                    secA=cursor.getString(1);
+                    secA=cursor.getString(2);
                     sec[0]=secQ;
                     sec[1]=secA;
 
@@ -269,6 +313,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         //Cursor cursor=db.rawQuery(query,null);
         //return cursor.moveToFirst();
 
+    }
+
+
+    public String getLoggedInStudent(String userName) {
+
+        Cursor cursor=db.query("Student", new String[]{userName}, null, null, null, null, null);
+
+        cursor.moveToFirst();
+        String user = cursor.getString(cursor.getColumnIndex("UserName"));
+        cursor.close();
+        return user;
     }
 
 }

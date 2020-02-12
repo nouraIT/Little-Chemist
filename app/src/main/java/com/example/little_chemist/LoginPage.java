@@ -15,8 +15,10 @@ import android.widget.Toast;
 import com.example.little_chemist.Tables.Student;
 import com.google.android.material.textfield.TextInputLayout;
 
+import java.io.Serializable;
 
-public class LoginPage extends AppCompatActivity{
+
+public class LoginPage extends AppCompatActivity implements Serializable {
 
         Student student = new Student();
         DatabaseHelper helper=new DatabaseHelper(this);
@@ -37,7 +39,7 @@ public class LoginPage extends AppCompatActivity{
             });
 
             final Button loginButton = findViewById(R.id.login);
-            UserNameET= findViewById(R.id.username);
+            UserNameET= findViewById(R.id.profileName);
             PasswordET= findViewById(R.id.password);
 
             //UserNameET.setError(null);
@@ -106,14 +108,13 @@ public class LoginPage extends AppCompatActivity{
             loginButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
                     UserNameStr=UserNameET.getEditText().getText().toString().trim();
                     //Passing Password
 
                     PasswordStr=PasswordET.getEditText().getText().toString().trim();
 
-                    UserNameET.setError(null);
-                    PasswordET.setError(null);
+                    //UserNameET.setError(null);
+                    //PasswordET.setError(null);
 
 
 
@@ -122,10 +123,15 @@ public class LoginPage extends AppCompatActivity{
                     String dbPassword= helper.checkPassword(UserNameStr);
                     //To compare it with Current Password from user input
                     if(dbPassword.equals(PasswordStr)){
+
+                        student.SetUserName(UserNameStr);
+                        student.SetPassword(PasswordStr);
+
                         Intent loginIntent=new Intent(LoginPage.this,Home.class);
                         //Send Data
-                        loginIntent.putExtra("UserName",UserNameStr);
-                        loginIntent.putExtra("Password",PasswordStr);
+                        //loginIntent.stu
+                        loginIntent.putExtra("student", student);
+                        //loginIntent.putExtra("Password",PasswordStr);
                         //loginIntent.putExtra("Welcome",)
                         String welcome = getString(R.string.welcome) +" "+ UserNameStr ;
                         Toast.makeText(getApplicationContext(), welcome, Toast.LENGTH_LONG).show();
@@ -140,7 +146,7 @@ public class LoginPage extends AppCompatActivity{
 
                 }//on click
             });
-        }//on crate
+        }//on create
 
     public void onBtnSignUpClick(View v){
         if(v.getId()==R.id.button){

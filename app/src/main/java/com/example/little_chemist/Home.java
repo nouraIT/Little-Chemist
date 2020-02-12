@@ -12,6 +12,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.little_chemist.Tables.Student;
+
 
 public class Home extends AppCompatActivity {
 private ImageView set;
@@ -19,6 +21,8 @@ private ImageView set;
     private Button buttonQuiz ;
     private CardView cv ;
     private pl.droidsonroids.gif.GifImageView  g ;
+    //private Button button ;
+    private CardView chapters;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,8 +30,9 @@ private ImageView set;
         setContentView(R.layout.activity_home);
 
         //the users info
-        String UserNameStr= getIntent().getStringExtra("UserName");
-        String PasswordStr=getIntent().getStringExtra("Password");
+        Student student = (Student) getIntent().getSerializableExtra("student");
+
+        //Student student = new Student (getIntent().getStringExtra("UserName") , getIntent().getStringExtra("Password"));
 
         //static String name = UserNameStr;
 
@@ -37,30 +42,28 @@ private ImageView set;
 
             public void onClick(View view) {
                 Intent n = new Intent(Home.this, Settings.class);
+                n.putExtra("student",student);
                 startActivity(n);
-                finish();
+                //finish();
             }
         });
 
+        chapters = findViewById(R.id.cardviewchapters);
+       // cv.setOnClickListener();
+        //button = findViewById(R.id.cardviewchapters);
 
         cv = findViewById(R.id.cardviewchapters) ;
         Button logout = findViewById(R.id.logoutBtn);
 
         cv.setOnClickListener(new View.OnClickListener(){
+        chapters.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
                 Intent n = new Intent(Home.this, Chapters.class);
                 startActivity(n);
 
+                //finish();
             }
         });
-        logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                SharedPreferences myPrefs = getSharedPreferences("Activity",
-                        MODE_PRIVATE);
-                SharedPreferences.Editor editor = myPrefs.edit();
-                editor.clear();
-                editor.commit();
 
                 Intent intent = new Intent(Home.this,
                         LoginPage.class);
@@ -79,6 +82,23 @@ private ImageView set;
                 finish();
             }
         });
+//        Button logout = findViewById(R.id.logoutBtn);
+//        logout.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                SharedPreferences myPrefs = getSharedPreferences("Activity",
+//                        MODE_PRIVATE);
+//                SharedPreferences.Editor editor = myPrefs.edit();
+//                editor.clear();
+//                editor.commit();
+//
+//                Intent intent = new Intent(Home.this,
+//                        LoginPage.class);
+//                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//                startActivity(intent);
+//                finish();
+//            }
+//        });
 
     }
 
