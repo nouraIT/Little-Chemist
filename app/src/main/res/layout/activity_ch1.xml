@@ -351,6 +351,7 @@
                 android:layout_width="200dp"
                 android:layout_height="70dp"
                 android:layout_marginTop="16dp"
+                android:alpha="0.8"
                 android:elevation="100dp"
                 app:cardBackgroundColor="@color/red"
                 app:cardCornerRadius="20dp"
@@ -366,10 +367,11 @@
                     android:fontFamily="casual"
                     android:gravity="center"
                     android:text="@string/Quiz"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
+                    android:textAlignment="textEnd"
+                    android:textColor="#050505"
 
-                    />
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
                 <ImageView
                     android:layout_width="80dp"
@@ -377,7 +379,7 @@
                     android:layout_gravity="bottom"
                     android:alpha="0.5"
                     android:background="@drawable/grade"
-                    android:contentDescription="@string/Quiz"/>
+                    android:contentDescription="@string/Quiz" />
 
 
             </androidx.cardview.widget.CardView>

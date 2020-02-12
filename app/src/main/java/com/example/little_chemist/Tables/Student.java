@@ -5,7 +5,7 @@ import com.example.little_chemist.DatabaseHelper;
 import java.io.Serializable;
 
 
-public class Student extends AppCompatActivity implements Serializable {
+public class Student implements Serializable {
     int Id, TotalScore;
     String UserName,Password, QZLocks, CHLocks, LSNLocks, SecQ, SecA;
     //DatabaseHelper helper=new DatabaseHelper(this);
@@ -88,7 +88,7 @@ public class Student extends AppCompatActivity implements Serializable {
 
 
     public void changeLang(){
-
+        //TODO save the language setting here ?
     }
 
     public void viewScore(){
@@ -99,6 +99,7 @@ public class Student extends AppCompatActivity implements Serializable {
     }
 
     public boolean deleteAccountReq(){
+
         return false;
     }
 

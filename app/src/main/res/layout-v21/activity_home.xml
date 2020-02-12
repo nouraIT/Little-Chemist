@@ -13,7 +13,7 @@
         android:layout_width="251dp"
         android:layout_height="133dp"
         android:layout_marginTop="56dp"
-        android:contentDescription="@string/todo"
+        android:contentDescription="@string/app_name"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"

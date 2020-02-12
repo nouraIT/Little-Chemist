@@ -251,7 +251,7 @@
                 android:layout_marginBottom="16dp"
                 android:alpha="0.8"
                 android:elevation="100dp"
-                app:cardBackgroundColor="@color/purple"
+                app:cardBackgroundColor="#B531E4"
                 app:cardCornerRadius="25dp"
                 app:layout_constraintBottom_toTopOf="@+id/cardviewch5"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -315,7 +315,7 @@
                 android:layout_marginBottom="16dp"
                 android:alpha="1"
                 android:elevation="100dp"
-                app:cardBackgroundColor="#F2EE62"
+                app:cardBackgroundColor="#8BFFF500"
                 app:cardCornerRadius="25dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -358,7 +358,7 @@
                     android:layout_width="80dp"
                     android:layout_height="60dp"
                     android:layout_gravity="bottom"
-                    android:alpha="0.6"
+                    android:alpha="1"
                     android:background="@drawable/periodictable"
                     android:contentDescription="@string/Ch5Name" />
 
