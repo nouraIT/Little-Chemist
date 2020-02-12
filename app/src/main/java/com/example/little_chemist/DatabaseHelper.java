@@ -9,6 +9,7 @@ import android.provider.BaseColumns;
 
 import com.example.little_chemist.Tables.Chapter;
 import com.example.little_chemist.Tables.Lesson;
+import com.example.little_chemist.Tables.Quiz;
 import com.example.little_chemist.Tables.Student;
 
 import java.sql.SQLException;
@@ -100,6 +101,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     FeedEntry.COLUMN_CONTENT + " TEXT)" ;
 
 
+    private static final String SQL_CREATE_QUIZ=
+            "CREATE TABLE "+FeedEntry.TABLE_QUIZ +" ("+
+                    FeedEntry.COLUMN_QUIZID + "  INTEGER PRIMARY KEY," +
+                    FeedEntry.COLUMN_QUIZNAME + " TEXT," +
+                    FeedEntry.COLUMN_LOCKQUIZ + " TEXT)" ;
+
+
 
     private static final String SQL_DELETE_ENTRIES =
             "DROP TABLE IF EXISTS " + FeedEntry.TABLE_STUDENT;
@@ -116,6 +124,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(SQL_CREATE_STUDENT);
         db.execSQL(SQL_CREATE_CHAPTER);
         db.execSQL(SQL_CREATE_LESSON);
+        db.execSQL(SQL_CREATE_QUIZ);
 
 
     }
@@ -194,6 +203,23 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentvalues.put(FeedEntry.COLUMN_CONTENT, lesson.GetContent());
 
         db.insert(FeedEntry.TABLE_LESSON,null,contentvalues);
+        db.close();
+    }
+
+    public void InsertQuizzes(Quiz quiz){
+
+        db=getWritableDatabase();
+        //To get , how many column in ur table
+        String query="SELECT * FROM "+FeedEntry.TABLE_QUIZ;
+        Cursor cursor=db.rawQuery(query,null);
+        int count=cursor.getCount();
+
+        ContentValues contentvalues=new ContentValues();
+        contentvalues.put(FeedEntry.COLUMN_QUIZID,count+1);
+        contentvalues.put(FeedEntry.COLUMN_QUIZNAME, quiz.GetQuizName());
+        contentvalues.put(FeedEntry.COLUMN_LOCKQUIZ, quiz.GetLockQuiz());
+
+        db.insert(FeedEntry.TABLE_QUIZ,null,contentvalues);
         db.close();
     }
 
