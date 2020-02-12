@@ -226,9 +226,9 @@ public class SignUp extends AppCompatActivity {
 
                 if(validateN() && validateName() && validatePass() && validateSecurity() && validateExistence()) {
                     //Insert into Database
-                    Student student = new Student();
-                    student.SetUserName(UserNameStr);
-                    student.SetPassword(PasswordStr);
+                    Student student = new Student(UserNameStr,PasswordStr);
+                    //student.SetUserName(UserNameStr);
+                    //student.SetPassword(PasswordStr);
 
                     student.SetSecQ(String.valueOf(pos));
                     student.SetSecA(SecurityA);
@@ -237,8 +237,8 @@ public class SignUp extends AppCompatActivity {
 
                     Intent loginIntent=new Intent(SignUp.this,Home.class);
                     //Send Data
-                    loginIntent.putExtra("UserName",UserNameStr);
-                    loginIntent.putExtra("Password",PasswordStr);
+                    loginIntent.putExtra("student",student);
+                    //loginIntent.putExtra("Password",PasswordStr);
 
                     String welcome = getString(R.string.welcome) +" "+ UserNameStr ;
                     Toast.makeText(getApplicationContext(), welcome, Toast.LENGTH_LONG).show();

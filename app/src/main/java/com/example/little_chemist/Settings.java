@@ -15,6 +15,8 @@ import android.content.res.Configuration;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.little_chemist.Tables.Student;
+
 
 public class Settings extends AppCompatActivity {
 
@@ -27,6 +29,7 @@ public class Settings extends AppCompatActivity {
 
         //setSupportActionBar(toolbar);
         //final String UserNameStr= getIntent().getStringExtra("UserName");
+        Student student = (Student) getIntent().getSerializableExtra("student");
         DatabaseHelper loginData;
 
         loginData=new DatabaseHelper(this);
@@ -40,7 +43,7 @@ public class Settings extends AppCompatActivity {
         String userName = loginData.getLoggedInStudent("UserName");
         //String user = loginData.getLoggedInStudent(userName);
 
-        profileName.setText(userName);
+        profileName.setText(student.GetUserName());
 
 
 

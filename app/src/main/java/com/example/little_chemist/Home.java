@@ -12,11 +12,13 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.little_chemist.Tables.Student;
+
 
 public class Home extends AppCompatActivity {
 private ImageView set;
     //private Button button ;
-    private CardView cv;
+    private CardView chapters;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,8 +26,9 @@ private ImageView set;
         setContentView(R.layout.activity_home);
 
         //the users info
-        String UserNameStr= getIntent().getStringExtra("UserName");
-        String PasswordStr=getIntent().getStringExtra("Password");
+        Student student = (Student) getIntent().getSerializableExtra("student");
+
+        //Student student = new Student (getIntent().getStringExtra("UserName") , getIntent().getStringExtra("Password"));
 
         //static String name = UserNameStr;
 
@@ -35,17 +38,17 @@ private ImageView set;
 
             public void onClick(View view) {
                 Intent n = new Intent(Home.this, Settings.class);
-                //n.putExtra("username",UserNameStr);
+                n.putExtra("student",student);
                 startActivity(n);
                 //finish();
             }
         });
 
-        cv = findViewById(R.id.cardviewchapters);
+        chapters = findViewById(R.id.cardviewchapters);
        // cv.setOnClickListener();
         //button = findViewById(R.id.cardviewchapters);
 
-        cv.setOnClickListener(new View.OnClickListener(){
+        chapters.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
                 Intent n = new Intent(Home.this, Chapters.class);
                 startActivity(n);
