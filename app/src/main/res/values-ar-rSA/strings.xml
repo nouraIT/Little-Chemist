@@ -63,9 +63,6 @@
     <string name="progressBar">مقياس التقدم</string>
     <string name="no">لا</string>
     <string name="login_failed">فشل تسجيل الدخول</string>
-    <string name="invalid_username">اسم المستخدم غير صحيح</string>
-    <string name="invalid_password">كلمه المرور يجب ان تكون اكبر من 5 حروف او ارقام</string>
-    <string name="confirm_new_password">تأكيد كلمه المرور</string>
     <string name="confirmLogginOut">هل انت متأكد انك تريد تسجيل الخروج</string>
     <string name="confirmDeleteAcc">هل انت متأكد انك تريد حذف حسابك للأبد</string>
     <string name="chapters">الفصول</string>
@@ -81,12 +78,7 @@
     <string name="Ch3Lsn3">التفاعلات الكيميائية</string>
     <string name="Ch3Lsn4">السوائل والغازات</string>
     <string name="Ch3Lsn5">الكيمياء الحيوية</string>
-    <string name="Error1">يجب ألا يكون اسم المستخدم فارغًا</string>
-    <string name="Error2">يجب ألا تكون كلمة المرور خالية</string>
-    <string name="Error3">اسم المستخدم أو كلمه المرور غير صحيحة</string>
-    <string name="Error4">يجب أن تكون كلمة المرور أكثر من 5 أحرف</string>
-    <string name="Error5">كلمة المرور غير مطابقة</string>
-    <string name="Error6">يجب أن يكون اسم المستخدم أكثر من 4 أحرف</string>
+
     <string name="Ch4Lsn1">كيمياء المياه</string>
     <string name="Ch4Lsn2">الكيمياء العضوية</string>
     <string name="Ch4Lsn3">كيمياء الغذاء</string>

@@ -13,7 +13,8 @@
     <string name="delete_account">Delete Account</string>
     <string name="confirmDeleteAcc">Are you sure you want to Delete your account forever ?</string>
 
-    <!--  _______________  app name and genral  _______________-->
+
+    <!--  _______________  app name and general  _______________-->
 
     <string name="little_chemist">Little Chemist</string>
     <string name="app_name">"Little Chemist"</string>
@@ -28,6 +29,9 @@
     <string name="chapter_4">chapter 4</string>
     <string name="chapter1">Chapter 1</string>
     <string name="chapter2">Chapter 2</string>
+
+    <string name="chapters">Chapters</string>
+
 
     <string name="Ch5Name">The periodic table</string>
     <string name="Ch2Name">Elements</string>
@@ -94,7 +98,6 @@
     <string name="answer">Answer</string>
     <string name="new_password">New Password</string>
 
-
     <string name="don_t_have_an_acount">Don\'t have an account?</string>
     <string name="sign_up">Sign Up</string>
     <string name="sign_up_button">Sign Up</string>
@@ -106,6 +109,8 @@
     <string name="confirmLogginOut">Are you sure you want to log out?</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
+
+    <string name="security_question">Security Question</string>
 
 
     <!-- _______________ error msgs _______________ -->
@@ -128,17 +133,8 @@
 
 
     <string name="todo" translatable="false">TODO</string>
-    <string name="security_question">Security Question</string>
-    <string name="chapters">Chapters</string>
-    <string name="confirm_new_password">Confirm New Password</string>
-    <string name="Error1">Username should not be Null</string>
-    <string name="Error2">Password should not be Null</string>
-    <string name="Error3">UserName or Passwords is not correct</string>
-    <string name="Error4">Password should be more than 5 characters</string>
-    <string name="Error5">Passwords do not match</string>
-    <string name="Error6">Username should be more than 4 characters</string>
-    <string name="invalid_password">Password must be >5 characters</string>
-    <string name="invalid_username">Not a valid username</string>
+
+
     <string name="login_failed">Login failed</string>
 
 
