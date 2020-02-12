@@ -49,6 +49,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         //-----------------------------------------------
 
+        private static final String TABLE_QUIZ = "Quiz" ;//quizIC quizName LockQuiz
+        private static final String COLUMN_QUIZID = "quizID";
+        private static final String COLUMN_QUIZNAME = "quizName";
+        private static final String COLUMN_LOCKQUIZ = "LockQuiz";
+
+
+
+        //-----------------------------------------------
+
     }
     private static final int DATABASE_VERSION = 1;
     private static final String DATABASE_NAME = "LittleChemist.db";
