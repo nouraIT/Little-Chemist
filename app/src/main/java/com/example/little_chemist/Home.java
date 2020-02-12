@@ -1,6 +1,7 @@
 package com.example.little_chemist;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -15,6 +16,9 @@ import android.widget.Toast;
 public class Home extends AppCompatActivity {
 private ImageView set;
     private Button button ;
+    private Button buttonQuiz ;
+    private CardView cv ;
+    private pl.droidsonroids.gif.GifImageView  g ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,13 +43,14 @@ private ImageView set;
         });
 
 
-        button = findViewById(R.id.cardviewchapters) ;
+        cv = findViewById(R.id.cardviewchapters) ;
         Button logout = findViewById(R.id.logoutBtn);
-        button.setOnClickListener(new View.OnClickListener(){
+
+        cv.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
                 Intent n = new Intent(Home.this, Chapters.class);
                 startActivity(n);
-                finish();
+
             }
         });
         logout.setOnClickListener(new View.OnClickListener() {
@@ -61,6 +66,16 @@ private ImageView set;
                         LoginPage.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
+                finish();
+            }
+        });
+
+        g = findViewById(R.id.gif);
+        g.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View view) {
+                Intent n = new Intent(Home.this, Quiz_score.class);
+                startActivity(n);
                 finish();
             }
         });

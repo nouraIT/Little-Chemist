@@ -64,6 +64,7 @@
     <string name="electrons">الإلكترونات</string>
     <string name="isotopes">نظائر</string>
     <string name="nuclearfission">الانشطار النووي</string>
+    <string name="QuizScore">درجة الاختبار</string>
     <string name="Quiz">أختبار</string>
     <string name="nameExist">اسم المستخدم موجود ، يرجى اختيار اسم مستخدم آخر</string>
     <string name="nameNotExist">اسم المستخدم غير موجود</string>
