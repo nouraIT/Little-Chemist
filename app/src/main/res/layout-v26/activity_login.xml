@@ -5,6 +5,8 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:alpha="0.9"
+    android:background="#FDFDFD"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -21,6 +23,7 @@
         android:layout_marginTop="148dp"
 
         android:layout_marginEnd="24dp"
+        android:textColorHint="#E4592E"
         app:errorEnabled="false"
         app:errorTextAppearance="@style/error_appearance"
 
@@ -40,10 +43,10 @@
             android:inputType="textPersonName|text"
             android:selectAllOnFocus="true"
 
-
-            tools:targetApi="o"
-
-            />
+            android:textColor="#E4592E"
+            android:textColorHint="#E4592E"
+            android:textColorLink="#E4592E"
+            tools:targetApi="o" />
 
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -56,12 +59,16 @@
         android:layout_marginStart="24dp"
 
         android:layout_marginEnd="24dp"
+        android:textColorHint="#E4592E"
+        android:textColorLink="#E4592E"
+
         app:errorEnabled="true"
         app:errorTextAppearance="@style/error_appearance"
-
         app:layout_constraintEnd_toEndOf="parent"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/profileName"
+
 
         >
 
@@ -74,8 +81,11 @@
 
             android:imeOptions="actionDone"
             android:importantForAutofill="no"
+
             android:inputType="textPassword"
-            android:selectAllOnFocus="true" />
+
+            android:selectAllOnFocus="true"
+            android:textColor="#E4592E" />
 
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -84,17 +94,18 @@
     <!-- TODO Add a gif loading thing -->
     <Button
         android:id="@+id/login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="102dp"
+        android:layout_height="60dp"
         android:layout_gravity="start"
         android:layout_marginStart="48dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="48dp"
         android:layout_marginBottom="64dp"
+        android:alpha="0.8"
         android:background="@drawable/circle_btn"
         android:enabled="true"
-        android:text="@string/title_activity_login"
 
+        android:text="@string/title_activity_login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -139,7 +150,7 @@
         android:background="#00FFFFFF"
         android:onClick="onBtnSignUpClick"
         android:text="@string/sign_up"
-        android:textColor="@color/colorPrimary"
+        android:textColor="#F5454D"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -164,7 +175,7 @@
         android:layout_height="35dp"
         android:background="#0000"
         android:text="@string/forgot_password"
-        android:textColor="@color/colorPrimary"
+        android:textColor="#F5454D"
         app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"

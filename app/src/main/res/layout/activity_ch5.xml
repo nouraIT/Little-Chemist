@@ -8,8 +8,8 @@
     tools:context=".Chapters_dir.Ch2">
 
     <ScrollView
-        android:layout_width="409dp"
-        android:layout_height="657dp">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/CL"
