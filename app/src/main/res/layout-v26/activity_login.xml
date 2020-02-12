@@ -5,7 +5,8 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/primaryYellow"
+    android:alpha="0.9"
+    android:background="#FDFDFD"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -58,15 +59,15 @@
         android:layout_marginStart="24dp"
 
         android:layout_marginEnd="24dp"
-        app:errorEnabled="true"
-        app:errorTextAppearance="@style/error_appearance"
-
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profileName"
-
         android:textColorHint="#E4592E"
         android:textColorLink="#E4592E"
+
+        app:errorEnabled="true"
+        app:errorTextAppearance="@style/error_appearance"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profileName"
 
 
         >
@@ -81,11 +82,10 @@
             android:imeOptions="actionDone"
             android:importantForAutofill="no"
 
-            android:textColor="#E4592E"
-
             android:inputType="textPassword"
+
             android:selectAllOnFocus="true"
-             />
+            android:textColor="#E4592E" />
 
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -102,7 +102,7 @@
         android:layout_marginEnd="48dp"
         android:layout_marginBottom="64dp"
         android:alpha="0.8"
-        android:background="@drawable/circle_btn2"
+        android:background="@drawable/circle_btn"
         android:enabled="true"
 
         android:text="@string/title_activity_login"
