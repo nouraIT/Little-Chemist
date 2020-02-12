@@ -9,6 +9,7 @@ import android.widget.Button;
 import com.example.little_chemist.Chapters;
 import com.example.little_chemist.Home;
 import com.example.little_chemist.R;
+import com.example.little_chemist.Tables.Quiz;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -18,7 +19,7 @@ public class Ch2 extends AppCompatActivity {
     private Button button2 ;
     private Button button3 ;
     private Button button4 ;
-    private Button button5 ;
+    private Button button5,quiz ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,6 +69,15 @@ public class Ch2 extends AppCompatActivity {
                 Intent n = new Intent(Ch2.this, Ch1.class);
                 startActivity(n);
               //  finish();
+            }
+        });
+        quiz = findViewById(R.id.quiz);
+        quiz.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent n = new Intent(Ch2.this, Quiz.class);
+                n.putExtra("ChapterNumber",1);
+                startActivity(n);
+                //  finish();
             }
         });
     }

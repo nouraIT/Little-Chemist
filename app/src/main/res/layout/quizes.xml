@@ -26,9 +26,9 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="3dp"
-                android:layout_marginEnd="1dp"
-                android:layout_marginRight="1dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+
                 android:background="#F3CB4E"
                 android:minHeight="?attr/actionBarSize"
                 android:theme="?attr/actionBarTheme"
@@ -43,7 +43,7 @@
                     android:fontFamily="casual"
                     android:gravity="center"
                     android:maxLines="1"
-                    android:text="@string/chapter1"
+                    android:text="@string/quiz"
                     android:textAppearance="@android:style/TextAppearance.WindowTitle"
                     android:textColor="#FC050505"
                     android:textSize="22sp"
@@ -61,7 +61,7 @@
                 android:layout_marginTop="8dp"
                 android:fontFamily="casual"
                 android:gravity="center"
-                android:text="@string/Ch1Lsn1"
+                android:text="Question Here"
                 android:textSize="30sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -69,133 +69,22 @@
                 tools:targetApi="jelly_bean" />
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/cardviewlLSN1"
-                android:layout_width="150dp"
-                android:layout_height="125dp"
-                android:layout_marginStart="40dp"
-                android:layout_marginLeft="40dp"
-                android:layout_marginTop="32dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginRight="16dp"
-                android:elevation="100sp"
-                app:cardBackgroundColor="@color/Unlocked"
-                app:cardCornerRadius="20dp"
-                app:layout_constraintEnd_toStartOf="@+id/cardviewA3"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/question"
-                tools:targetApi="lollipop">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center_horizontal"
-                    android:elevation="20dp"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:fontFamily="casual"
-                        android:text="@string/lesson1"
-                        android:textSize="16sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:fontFamily="casual"
-                        android:gravity="center"
-                        android:text="@string/Ch1Lsn1"
-                        android:textSize="20sp"
-                        android:textStyle="bold"
-
-                        />
-                </LinearLayout>
-
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_gravity="bottom"
-                    android:alpha="0.5"
-                    android:background="@drawable/atom"
-                    android:contentDescription="@string/Ch1Name" />
-
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cardviewA3"
-                android:layout_width="150dp"
-                android:layout_height="125dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="32dp"
-                android:layout_marginEnd="40dp"
-                android:layout_marginRight="40dp"
-                android:elevation="100dp"
-                app:cardBackgroundColor="@color/gray"
-                app:cardCornerRadius="20dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/cardviewlLSN1"
-                app:layout_constraintTop_toBottomOf="@+id/question"
-                tools:targetApi="lollipop">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center_horizontal"
-                    android:elevation="20dp"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:fontFamily="casual"
-                        android:text="@string/lesson2"
-                        android:textSize="16sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:fontFamily="casual"
-                        android:gravity="center"
-                        android:text="@string/Ch1Lsn2"
-                        android:textSize="20sp"
-                        android:textStyle="bold"
-
-                        />
-                </LinearLayout>
-
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_gravity="bottom"
-                    android:alpha="0.5"
-                    android:background="@drawable/flash"
-                    android:contentDescription="@string/Ch1Lsn2" />
-
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
                 android:id="@+id/cardviewA1"
                 android:layout_width="150dp"
                 android:layout_height="125dp"
                 android:layout_marginStart="40dp"
-                android:layout_marginLeft="40dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
-                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
                 android:elevation="100dp"
                 app:cardBackgroundColor="@color/gray"
                 app:cardCornerRadius="20dp"
+                app:layout_constraintBottom_toTopOf="@+id/cardviewA3"
                 app:layout_constraintEnd_toStartOf="@+id/cardviewA2"
                 app:layout_constraintHorizontal_bias="0.8"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cardviewlLSN1"
+                app:layout_constraintTop_toBottomOf="@+id/question"
+                app:layout_constraintVertical_bias="0.0"
                 tools:targetApi="lollipop">
 
                 <LinearLayout
@@ -208,31 +97,15 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:fontFamily="casual"
-                        android:text="@string/lesson3"
-                        android:textSize="16sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:fontFamily="casual"
                         android:gravity="center"
-                        android:text="@string/Ch1Lsn3"
+                        android:text="Answer 1"
                         android:textSize="20sp"
                         android:textStyle="bold"
 
                         />
                 </LinearLayout>
-
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_gravity="bottom"
-                    android:alpha="0.5"
-                    android:background="@drawable/twins"
-                    android:contentDescription="@string/Ch1Lsn3"/>
 
 
             </androidx.cardview.widget.CardView>
@@ -242,16 +115,14 @@
                 android:layout_width="150dp"
                 android:layout_height="125dp"
                 android:layout_marginStart="16dp"
-                android:layout_marginLeft="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="40dp"
-                android:layout_marginRight="40dp"
                 android:elevation="100dp"
                 app:cardBackgroundColor="@color/gray"
                 app:cardCornerRadius="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/cardviewA1"
-                app:layout_constraintTop_toBottomOf="@+id/cardviewA3"
+                app:layout_constraintTop_toBottomOf="@+id/question"
                 tools:targetApi="lollipop">
 
                 <LinearLayout
@@ -265,47 +136,33 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:fontFamily="casual"
-                        android:text="@string/lesson4"
-                        android:textSize="16sp"
-                        tools:targetApi="jelly_bean" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:fontFamily="casual"
                         android:gravity="center"
-                        android:text="@string/Ch1Lsn4"
+                        android:text="Answer 2"
                         android:textSize="17sp"
                         android:textStyle="bold"
 
                         />
                 </LinearLayout>
 
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_gravity="bottom"
-                    android:alpha="0.5"
-                    android:background="@drawable/uncertainty"
-                    android:contentDescription="@string/Ch1Lsn4" />
-
 
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/cardviewA4"
+                android:id="@+id/cardviewA3"
                 android:layout_width="150dp"
                 android:layout_height="125dp"
+                android:layout_marginStart="40dp"
                 android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
                 android:elevation="100dp"
                 app:cardBackgroundColor="@color/gray"
                 app:cardCornerRadius="20dp"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/cardviewA4"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cardviewA2" tools:targetApi="lollipop">
+                app:layout_constraintTop_toBottomOf="@+id/cardviewA1"
+                tools:targetApi="lollipop">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -317,10 +174,40 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
+                        android:layout_gravity="center"
                         android:fontFamily="casual"
-                        android:text="@string/lesson5"
-                        android:textSize="16sp" />
+                        android:gravity="center"
+                        android:text="Answer 3"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+
+                        />
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardviewA4"
+                android:layout_width="150dp"
+                android:layout_height="125dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="40dp"
+                android:elevation="100dp"
+                app:cardBackgroundColor="@color/gray"
+                app:cardCornerRadius="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/cardviewA3"
+                app:layout_constraintTop_toBottomOf="@+id/cardviewA2"
+                tools:targetApi="lollipop">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:elevation="20dp"
+                    android:orientation="vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -328,34 +215,26 @@
                         android:layout_gravity="center"
                         android:fontFamily="casual"
                         android:gravity="center"
-                        android:text="@string/Ch1Lsn5"
+                        android:text="Answer 4"
                         android:textSize="20sp"
                         android:textStyle="bold"
 
                         />
                 </LinearLayout>
 
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_gravity="bottom"
-                    android:alpha="0.5"
-                    android:background="@drawable/fission"
-                    android:contentDescription="@string/Ch1Lsn5" />
-
 
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/quiz"
-                android:layout_width="200dp"
-                android:layout_height="70dp"
-                android:layout_marginTop="16dp"
+                android:id="@+id/nextQ"
+                android:layout_width="127dp"
+                android:layout_height="62dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="32dp"
                 android:elevation="100dp"
-                app:cardBackgroundColor="@color/red"
+                app:cardBackgroundColor="#4CAF50"
                 app:cardCornerRadius="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/cardviewA4"
                 tools:targetApi="lollipop">
 
@@ -365,19 +244,39 @@
                     android:layout_gravity="center"
                     android:fontFamily="casual"
                     android:gravity="center"
-                    android:text="@string/Quiz"
+                    android:text="@string/nextQ"
                     android:textSize="20sp"
                     android:textStyle="bold"
 
                     />
 
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="70dp"
-                    android:layout_gravity="bottom"
-                    android:alpha="0.5"
-                    android:background="@drawable/grade"
-                    android:contentDescription="@string/Quiz"/>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/quiz"
+                android:layout_width="127dp"
+                android:layout_height="62dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="24dp"
+                android:elevation="100dp"
+                app:cardBackgroundColor="#4CAF50"
+                app:cardCornerRadius="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardviewA3"
+                tools:targetApi="lollipop">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="casual"
+                    android:gravity="center"
+                    android:text="@string/previous_question"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+
+                    tools:text="Previous Question" />
 
 
             </androidx.cardview.widget.CardView>
