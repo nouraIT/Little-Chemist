@@ -2,17 +2,26 @@ package com.example.little_chemist.Tables;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.little_chemist.DatabaseHelper;
 
+import java.io.Serializable;
 
-public class Student extends AppCompatActivity{
+
+public class Student extends AppCompatActivity implements Serializable {
     int Id, TotalScore;
     String UserName,Password, QZLocks, CHLocks, LSNLocks, SecQ, SecA;
     //DatabaseHelper helper=new DatabaseHelper(this);
 
     //static int i = 0 ;
+    public Student(String name, String pass){
+        UserName = name;
+        Password = pass;
+    }
 
+    public Student(){
+
+    }
 
     // public  void SetId(int id){this.Id=id; }
-    //public  int GetId(){return Id;}
+    public  int GetId(){return Id;}
 
     public void SetUserName(String username){
         this.UserName=username;

@@ -6,27 +6,22 @@ import android.view.View;
 import android.widget.Button;
 
 
-import com.example.little_chemist.Chapters;
-import com.example.little_chemist.Home;
 import com.example.little_chemist.R;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
+import androidx.cardview.widget.CardView;
 
 public class Ch2 extends AppCompatActivity {
-    private Button button1 ;
-    private Button button2 ;
-    private Button button3 ;
-    private Button button4 ;
-    private Button button5 ;
+    private CardView lsn1, lsn2, lsn3, lsn4, lsn5;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ch2);
 
 
-        button1 = findViewById(R.id.button1);
-        button1.setOnClickListener(new View.OnClickListener() {
+        lsn1 = findViewById(R.id.cardviewlLSN1);
+        lsn1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Intent n = new Intent(Ch2.this, Ch1.class);
                 startActivity(n);
@@ -34,8 +29,8 @@ public class Ch2 extends AppCompatActivity {
             }
         });
 
-        button2 = findViewById(R.id.button2);
-        button2.setOnClickListener(new View.OnClickListener(){
+        lsn2 = findViewById(R.id.cardviewlLSN2);
+        lsn2.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 Intent n = new Intent(Ch2.this, Ch1.class);
@@ -44,8 +39,8 @@ public class Ch2 extends AppCompatActivity {
             }
         });
 
-        button3 = findViewById(R.id.button3);
-        button3.setOnClickListener(new View.OnClickListener() {
+        lsn3 = findViewById(R.id.cardviewlLSN3);
+        lsn3.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Intent n = new Intent(Ch2.this, Ch1.class);
                 startActivity(n);
@@ -53,8 +48,8 @@ public class Ch2 extends AppCompatActivity {
             }
         });
 
-        button4 = findViewById(R.id.button4);
-        button4.setOnClickListener(new View.OnClickListener() {
+        lsn4 = findViewById(R.id.cardviewlLSN4);
+        lsn4.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Intent n = new Intent(Ch2.this, Ch1.class);
                 startActivity(n);
@@ -62,8 +57,8 @@ public class Ch2 extends AppCompatActivity {
             }
         });
 
-        button5 = findViewById(R.id.button5);
-        button5.setOnClickListener(new View.OnClickListener() {
+        lsn5 = findViewById(R.id.cardviewlLSN5);
+        lsn5.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Intent n = new Intent(Ch2.this, Ch1.class);
                 startActivity(n);

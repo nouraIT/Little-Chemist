@@ -15,8 +15,10 @@ import android.widget.Toast;
 import com.example.little_chemist.Tables.Student;
 import com.google.android.material.textfield.TextInputLayout;
 
+import java.io.Serializable;
 
-public class LoginPage extends AppCompatActivity{
+
+public class LoginPage extends AppCompatActivity implements Serializable {
 
         Student student = new Student();
         DatabaseHelper helper=new DatabaseHelper(this);
@@ -111,8 +113,8 @@ public class LoginPage extends AppCompatActivity{
 
                     PasswordStr=PasswordET.getEditText().getText().toString().trim();
 
-                    UserNameET.setError(null);
-                    PasswordET.setError(null);
+                    //UserNameET.setError(null);
+                    //PasswordET.setError(null);
 
 
 
@@ -121,10 +123,15 @@ public class LoginPage extends AppCompatActivity{
                     String dbPassword= helper.checkPassword(UserNameStr);
                     //To compare it with Current Password from user input
                     if(dbPassword.equals(PasswordStr)){
+
+                        student.SetUserName(UserNameStr);
+                        student.SetPassword(PasswordStr);
+
                         Intent loginIntent=new Intent(LoginPage.this,Home.class);
                         //Send Data
-                        loginIntent.putExtra("UserName",UserNameStr);
-                        loginIntent.putExtra("Password",PasswordStr);
+                        //loginIntent.stu
+                        loginIntent.putExtra("student", student);
+                        //loginIntent.putExtra("Password",PasswordStr);
                         //loginIntent.putExtra("Welcome",)
                         String welcome = getString(R.string.welcome) +" "+ UserNameStr ;
                         Toast.makeText(getApplicationContext(), welcome, Toast.LENGTH_LONG).show();
