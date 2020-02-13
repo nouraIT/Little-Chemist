@@ -30,8 +30,7 @@
         android:layout_marginTop="44dp"
         android:contentDescription="@string/settings"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="24dp"
-        android:contentDescription="@string/todo"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_gear" />
@@ -84,23 +83,23 @@
     </androidx.cardview.widget.CardView>
 
 
-    <pl.droidsonroids.gif.GifImageView
-        android:id="@+id/gif"
-        android:layout_width="111dp"
-        android:layout_height="57dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginEnd="19dp"
-        android:layout_marginRight="19dp"
-        android:background="@color/white"
-        android:elevation="30dp"
-        android:src="@drawable/star"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintHorizontal_bias="0.625"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.507" />
+<!--    <pl.droidsonroids.gif.GifImageView-->
+<!--        android:id="@+id/gif"-->
+<!--        android:layout_width="111dp"-->
+<!--        android:layout_height="57dp"-->
+<!--        android:layout_marginStart="25dp"-->
+<!--        android:layout_marginLeft="25dp"-->
+<!--        android:layout_marginEnd="19dp"-->
+<!--        android:layout_marginRight="19dp"-->
+<!--        android:background="@color/white"-->
+<!--        android:elevation="30dp"-->
+<!--        android:src="@drawable/star"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/imageView"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/imageView"-->
+<!--        app:layout_constraintHorizontal_bias="0.625"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/imageView"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/imageView"-->
+<!--        app:layout_constraintVertical_bias="0.507" />-->
 
     <ImageView
         android:id="@+id/imageView"
@@ -115,8 +114,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardviewchapters"
-        app:srcCompat="@drawable/button" />
+        app:layout_constraintTop_toBottomOf="@+id/cardviewchapters"/>
+<!--        app:srcCompat="@drawable/button" -->
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

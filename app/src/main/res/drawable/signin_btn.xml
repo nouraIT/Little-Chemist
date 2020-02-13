@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<shape xmlns:android="http://schemas.android.com/apk/res/android">-->
+
+<!--    <solid android:color="@color/logoDarkRed"></solid>-->
+<!--    <corners android:radius="25dp"></corners>-->
+
+<!--    <stroke-->
+<!--        android:color="@color/logoLightRed"-->
+<!--        android:width="@dimen/cardview_default_radius"-->
+
+<!--        ></stroke>-->
+<!--</shape>-->
+
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+<!-- Bottom 2dp Shadow -->
+<item >
+    <shape  android:shape="rectangle">
+
+        <solid android:color="#DD2332"></solid>
+        <corners android:radius="30dp"></corners>
+
+    </shape>
+</item>
+<!--    8D000C-->
+
+<!-- White Top color -->
+<item android:top="10px" android:end="10px"
+    android:bottom="10px" android:start="10px">
+
+    <shape  android:shape="rectangle">
+
+        <solid android:color="@color/logoDarkRed"></solid>
+        <corners android:radius="30dp"></corners>
+
+
+    </shape>
+
+</item>
+
+
+</layer-list>

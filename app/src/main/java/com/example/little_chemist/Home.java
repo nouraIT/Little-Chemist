@@ -20,7 +20,7 @@ private ImageView set;
     private Button button ;
     private Button buttonQuiz ;
     private CardView cv ;
-    private pl.droidsonroids.gif.GifImageView  g ;
+    //private pl.droidsonroids.gif.GifImageView  g ;
     //private Button button ;
     private CardView chapters;
 
@@ -52,10 +52,8 @@ private ImageView set;
        // cv.setOnClickListener();
         //button = findViewById(R.id.cardviewchapters);
 
-        cv = findViewById(R.id.cardviewchapters) ;
         Button logout = findViewById(R.id.logoutBtn);
 
-        cv.setOnClickListener(new View.OnClickListener(){
         chapters.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
                 Intent n = new Intent(Home.this, Chapters.class);
@@ -65,23 +63,25 @@ private ImageView set;
             }
         });
 
-                Intent intent = new Intent(Home.this,
-                        LoginPage.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(intent);
-                finish();
-            }
-        });
+//                Intent intent = new Intent(Home.this,
+//                        LoginPage.class);
+//                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//                startActivity(intent);
+//                finish();
 
-        g = findViewById(R.id.gif);
-        g.setOnClickListener(new View.OnClickListener() {
 
-            public void onClick(View view) {
-                Intent n = new Intent(Home.this, Quiz_score.class);
-                startActivity(n);
-                finish();
-            }
-        });
+
+//        g = findViewById(R.id.gif);
+//        g.setOnClickListener(new View.OnClickListener() {
+//
+//            public void onClick(View view) {
+//                Intent n = new Intent(Home.this, Quiz_score.class);
+//                startActivity(n);
+//                finish();
+//            }
+//        });
+
+
 //        Button logout = findViewById(R.id.logoutBtn);
 //        logout.setOnClickListener(new View.OnClickListener() {
 //            @Override

@@ -3,9 +3,10 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/primaryYellow</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">@color/logoLightRed</item>
+        <item name="colorPrimaryDark">@color/logoDarkRed</item>
+        <item name="colorAccent">@color/textRegister</item>
+
     </style>
 
     <style name="AppTheme.NoActionBar">
@@ -16,11 +17,32 @@
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="error_appearance" parent="@android:style/TextAppearance">
-        <item name="android:textColor">@color/darkRed</item>
+        <item name="android:textColor">#BEFCF1</item>
         <item name="android:textSize">12sp</item>
         <item name="android:gravity">right</item>
         <item name="android:layout_gravity">right</item>
 
     </style>
+
+    <style name="TextLabel" parent="TextAppearance.AppCompat">
+        <!-- Hint color and label color in FALSE state -->
+        <item name="android:textSize">16sp</item>
+        <!-- Label color in TRUE state and bar color FALSE and TRUE State -->
+        <item name="colorAccent">#BEFCF1</item>
+        <item name="colorControlNormal">#BEFCF1</item>
+        <item name="colorControlActivated">#BEFCF1</item>
+    </style>
+
+    <style name="TextLabel2" parent="Widget.Design.TextInputLayout">
+        <!-- Hint color and label color in FALSE state -->
+        <!-- <item name="android:textSize">20sp</item>-->
+        <!-- Label color in TRUE state and bar color FALSE and TRUE State -->
+        <item name="colorAccent">#BEFCF1</item>
+        <item name="colorControlNormal">#BEFCF1</item>
+        <item name="colorControlActivated">#BEFCF1</item>
+    </style>
+
+
+
 
 </resources>

@@ -29,7 +29,7 @@ public class LoginPage extends AppCompatActivity implements Serializable {
         protected void onCreate(@Nullable Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_login);
-            Button Recover = findViewById(R.id.button8);
+            Button Recover = findViewById(R.id.forgotPassBtn);
             Recover.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -39,7 +39,7 @@ public class LoginPage extends AppCompatActivity implements Serializable {
             });
 
             final Button loginButton = findViewById(R.id.login);
-            UserNameET= findViewById(R.id.profileName);
+            UserNameET= findViewById(R.id.userName);
             PasswordET= findViewById(R.id.password);
 
             //UserNameET.setError(null);
@@ -149,7 +149,9 @@ public class LoginPage extends AppCompatActivity implements Serializable {
         }//on create
 
     public void onBtnSignUpClick(View v){
-        if(v.getId()==R.id.button){
+        UserNameET.setError(null);
+        PasswordET.setError(null);
+        if(v.getId()==R.id.signupBtn){
             Intent SignUpIntent=new Intent(this,SignUp.class);
             startActivity(SignUpIntent);
         }

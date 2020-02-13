@@ -176,7 +176,7 @@ public class SignUp extends AppCompatActivity {
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 pos = spinner.getSelectedItemPosition();
 
-                //spinnerSelected = spinner.getSelectedItem().toString();
+                spinnerSelected = spinner.getSelectedItem().toString();
                 SecurityA = SecurityAn.getEditText().getText().toString().trim().toLowerCase();
                 validateSecurity();
 
@@ -187,7 +187,7 @@ public class SignUp extends AppCompatActivity {
             public void afterTextChanged(Editable editable) {
                 pos = spinner.getSelectedItemPosition();
 
-                //spinnerSelected = spinner.getSelectedItem().toString();
+                spinnerSelected = spinner.getSelectedItem().toString();
                 SecurityA = SecurityAn.getEditText().getText().toString().trim().toLowerCase();
                 if (validateSecurity()){
 
@@ -211,7 +211,7 @@ public class SignUp extends AppCompatActivity {
             public void onClick(View view) {
 
                 //System.out.println("heeeeeeeeeeeeeeeeere "+pos);
-                //spinnerSelected = spinner.getSelectedItem().toString();
+                spinnerSelected = spinner.getSelectedItem().toString();
 
                 pos = spinner.getSelectedItemPosition();
 

@@ -11,7 +11,7 @@ import android.view.View;
 import android.widget.ProgressBar;
 
 
-import me.itangqi.waveloadingview.WaveLoadingView;
+//import me.itangqi.waveloadingview.WaveLoadingView;
 
 
 public class Quiz_score extends AppCompatActivity {
@@ -45,7 +45,7 @@ public class Quiz_score extends AppCompatActivity {
             }
         });
 
-         progressBar1 = (ProgressBar) findViewById(R.id.progressBar);
+         progressBar1 = (ProgressBar) findViewById(R.id.progressBar6);
 
         progressBar2 = (ProgressBar) findViewById(R.id.progressBar2);
         progressBar3 = (ProgressBar) findViewById(R.id.progressBar3);
