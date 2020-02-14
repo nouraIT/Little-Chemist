@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -35,6 +36,13 @@ public class Home extends AppCompatActivity {
 
         //Student student = new Student (getIntent().getStringExtra("UserName") , getIntent().getStringExtra("Password"));
         //static String name = UserNameStr;
+
+
+
+
+
+
+
 
 
 

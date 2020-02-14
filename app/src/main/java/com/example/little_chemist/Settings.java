@@ -36,15 +36,24 @@ public class Settings extends AppCompatActivity {
 
         //setSupportActionBar(toolbar);
         //final String UserNameStr= getIntent().getStringExtra("UserName");
-        Student student = (Student) getIntent().getSerializableExtra("student");
-        DatabaseHelper loginData;
+        //Student student = (Student) getIntent().getSerializableExtra("student");
+//        DatabaseHelper loginData;
+//
+//        loginData=new DatabaseHelper(this);
+//        try {
+//            loginData=loginData.open();
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
 
-        loginData=new DatabaseHelper(this);
-        try {
-            loginData=loginData.open();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+
+        SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
+        SharedPreferences.Editor editor = pref.edit();
+
+
+        String name = pref.getString("username", null); // getting String
+        //pref.getInt("password", -1); // getting Integer
+
 
         TextView profileName = findViewById(R.id.profileName);
         //String userName = loginData.getLoggedInStudent("UserName");
@@ -52,7 +61,7 @@ public class Settings extends AppCompatActivity {
 //        static String name;
 //        name = student.GetUserName();
 
-        profileName.setText(student.GetUserName());
+        profileName.setText(name);
 
 
 

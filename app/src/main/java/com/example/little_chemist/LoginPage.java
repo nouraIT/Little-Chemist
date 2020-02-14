@@ -1,6 +1,7 @@
 package com.example.little_chemist;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -131,6 +132,17 @@ public class LoginPage extends AppCompatActivity implements Serializable {
 
                         student.SetUserName(UserNameStr);
                         student.SetPassword(PasswordStr);
+
+                        SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
+                        SharedPreferences.Editor editor = pref.edit();
+
+                        editor.putString("username", UserNameStr); // Storing string
+                        editor.putString("password", PasswordStr); // Storing string
+
+                        editor.commit();
+
+
+
 
                         Intent loginIntent=new Intent(LoginPage.this,Home.class);
                         //Send Data
