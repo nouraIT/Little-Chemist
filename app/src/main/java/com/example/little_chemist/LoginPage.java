@@ -137,7 +137,8 @@ public class LoginPage extends AppCompatActivity implements Serializable {
                         SharedPreferences.Editor editor = pref.edit();
 
                         editor.putString("username", UserNameStr); // Storing string
-                        editor.putString("password", PasswordStr); // Storing string
+                        //editor.putString("password", PasswordStr); // Storing string
+
 
                         editor.commit();
 
@@ -147,11 +148,11 @@ public class LoginPage extends AppCompatActivity implements Serializable {
                         Intent loginIntent=new Intent(LoginPage.this,Home.class);
                         //Send Data
                         //loginIntent.stu
-                        loginIntent.putExtra("student", student);
+                        //loginIntent.putExtra("student", student);
                         //loginIntent.putExtra("Password",PasswordStr);
                         //loginIntent.putExtra("Welcome",)
-                        String welcome = getString(R.string.welcome) +" "+ UserNameStr ;
-                        Toast.makeText(getApplicationContext(), welcome, Toast.LENGTH_LONG).show();
+//                        String welcome = getString(R.string.welcome) +" "+ UserNameStr ;
+//                        Toast.makeText(getApplicationContext(), welcome, Toast.LENGTH_LONG).show();
 
                         startActivity(loginIntent);
 

@@ -123,7 +123,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/enBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
@@ -132,16 +132,16 @@
         android:layout_marginBottom="4dp"
         android:background="@drawable/circle_btn_empty"
         android:backgroundTint="#00FFFFFF"
-        android:text="@string/english"
+        android:text="English"
         android:textColor="#F0BA1A"
         app:layout_constraintBottom_toTopOf="@+id/button5"
-        app:layout_constraintEnd_toStartOf="@+id/button4"
+        app:layout_constraintEnd_toStartOf="@+id/arBtn"
         app:layout_constraintStart_toEndOf="@+id/textView3"
         app:layout_constraintTop_toBottomOf="@+id/profileName"
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/arBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -149,11 +149,11 @@
         android:layout_marginBottom="16dp"
         android:background="@drawable/circle_btn_empty"
         android:backgroundTint="#00BDB6B6"
-        android:text="@string/arabic"
+        android:text="العربية"
         android:textColor="#F0BA1A"
         app:layout_constraintBottom_toTopOf="@+id/button5"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button3"
+        app:layout_constraintStart_toEndOf="@+id/enBtn"
         app:layout_constraintTop_toBottomOf="@+id/profileName"
         app:layout_constraintVertical_bias="0.0" />
 
@@ -173,7 +173,7 @@
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/button5"
-        app:layout_constraintEnd_toStartOf="@+id/button3"
+        app:layout_constraintEnd_toStartOf="@+id/enBtn"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/profileName"

@@ -27,6 +27,26 @@ import com.example.little_chemist.Tables.Student;
 
 public class Settings extends AppCompatActivity {
 
+    SharedPreferences pref;
+    SharedPreferences.Editor editor ;
+    DatabaseHelper helper = new DatabaseHelper(Settings.this);
+    boolean arabicFlag ;
+
+
+//    public void onResume(){
+//        super.onResume();
+//        //setContentView(R.layout.activity_settings);
+////        String name = pref.getString("username", null);
+////        System.out.println("name is hrnejknfjrfj "+name);
+//
+//        //pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
+//        //editor = pref.edit();
+//        //boolean arabicFlag = pref.getBoolean("arabic",false);
+//
+//
+//
+//    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,7 +56,7 @@ public class Settings extends AppCompatActivity {
 
         //setSupportActionBar(toolbar);
         //final String UserNameStr= getIntent().getStringExtra("UserName");
-        //Student student = (Student) getIntent().getSerializableExtra("student");
+        Student student = (Student) getIntent().getSerializableExtra("student");
 //        DatabaseHelper loginData;
 //
 //        loginData=new DatabaseHelper(this);
@@ -47,12 +67,13 @@ public class Settings extends AppCompatActivity {
 //        }
 
 
-        SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
-        SharedPreferences.Editor editor = pref.edit();
 
+        pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
+        editor = pref.edit();
 
         String name = pref.getString("username", null); // getting String
         //pref.getInt("password", -1); // getting Integer
+        //arabicFlag = helper.checkLang(name);
 
 
         TextView profileName = findViewById(R.id.profileName);
@@ -73,8 +94,8 @@ public class Settings extends AppCompatActivity {
 
 
         Button booklet = findViewById(R.id.button5);
-        Button En = findViewById(R.id.button3);
-        Button Ara = findViewById(R.id.button4);
+        Button En = findViewById(R.id.enBtn);
+        Button Ara = findViewById(R.id.arBtn);
         CardView Delete = findViewById(R.id.deleteBtn);
 
         setSupportActionBar(toolbar);
@@ -102,6 +123,10 @@ public class Settings extends AppCompatActivity {
                 getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
                 recreate();
 
+                editor.putBoolean("arabic",false);
+                helper.changeLang(name,0);
+                editor.commit();
+
 
             }
         });
@@ -114,10 +139,14 @@ public class Settings extends AppCompatActivity {
                 config.locale = locale;
                 getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
                 recreate();
-                String langPref = "Language";
-                SharedPreferences prefs = getSharedPreferences("CommonPrefs", Activity.MODE_PRIVATE);
-                SharedPreferences.Editor editor = prefs.edit();
-                editor.putString(langPref, "ar");
+
+//                String langPref = "Language";
+//                SharedPreferences prefs = getSharedPreferences("CommonPrefs", Activity.MODE_PRIVATE);
+//                SharedPreferences.Editor editor = prefs.edit();
+//                editor.putString(langPref, "ar");
+//                editor.commit();
+                editor.putBoolean("arabic",true);
+                helper.changeLang(name,1);
                 editor.commit();
 
             }
@@ -138,6 +167,7 @@ public class Settings extends AppCompatActivity {
                                 SharedPreferences myPrefs = getSharedPreferences("Activity",
                                         MODE_PRIVATE);
                                 SharedPreferences.Editor editor = myPrefs.edit();
+                                Home.alreadyRecreated = false;
                                 editor.clear();
                                 editor.commit();
 

@@ -4,14 +4,17 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/logoLightRed</item>
-        <item name="colorPrimaryDark">@color/primaryYellow</item>
         <item name="colorAccent">@color/colorAccent</item>
 
     </style>
 
+<!--            <item name="colorPrimaryDark">@color/primaryYellow</item>
+-->
+
     <style name="MyApp.ActionBarTheme" parent="@style/ThemeOverlay.AppCompat.ActionBar">
         <!-- THIS is where you can color the arrow! -->
         <item name="colorControlNormal">@color/white</item>
+        <item name="android:subMenuArrow">"30dp"</item>
     </style>
 
     <style name="MyApp.ActionBarTheme2" parent="@style/ThemeOverlay.AppCompat.ActionBar">
