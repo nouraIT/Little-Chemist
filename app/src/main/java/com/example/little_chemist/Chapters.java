@@ -9,6 +9,8 @@ import java.lang.Object ;
 import java.security.AccessController;
 
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.TextView;
 import android.widget.Button;
 import android.app.Activity;
@@ -26,9 +28,20 @@ public class Chapters extends AppCompatActivity {
 
   private CardView buttonch1,buttonch2, buttonch3,buttonch4,buttonch5 ;
 
+  private CardView  card1 ;
+    private CardView  card2 ;
+    private CardView  card3 ;
+    private CardView  card4 ;
+    private CardView  card5 ;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         setContentView(R.layout.activity_chapters);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -45,8 +58,8 @@ public class Chapters extends AppCompatActivity {
             }
         });
 
-        buttonch1 = findViewById(R.id.cardviewch1);
-        buttonch1.setOnClickListener(new View.OnClickListener() {
+        card1 = findViewById(R.id.cardviewch1);
+        card1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Intent n = new Intent(Chapters.this, Ch1.class);
                 startActivity(n);
@@ -54,8 +67,8 @@ public class Chapters extends AppCompatActivity {
             }
         });
 
-        buttonch2 = findViewById(R.id.cardviewch2);
-        buttonch2.setOnClickListener(new View.OnClickListener(){
+        card2 = findViewById(R.id.cardviewch2);
+        card2.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 Intent n = new Intent(Chapters.this, Ch2.class);
@@ -64,8 +77,8 @@ public class Chapters extends AppCompatActivity {
             }
         });
 
-        buttonch3 = findViewById(R.id.cardviewch3);
-        buttonch3.setOnClickListener(new View.OnClickListener() {
+        card3 = findViewById(R.id.cardviewch3);
+        card3.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Intent n = new Intent(Chapters.this, Ch3.class);
                 startActivity(n);
@@ -73,8 +86,8 @@ public class Chapters extends AppCompatActivity {
             }
         });
 
-        buttonch4 = findViewById(R.id.cardviewch4);
-        buttonch4.setOnClickListener(new View.OnClickListener() {
+        card4 = findViewById(R.id.cardviewch4);
+        card4.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Intent n = new Intent(Chapters.this, Ch4.class);
                 startActivity(n);
@@ -82,8 +95,8 @@ public class Chapters extends AppCompatActivity {
             }
         });
 
-        buttonch5 = findViewById(R.id.cardviewch5);
-        buttonch5.setOnClickListener(new View.OnClickListener() {
+        card5 = findViewById(R.id.cardviewch5);
+        card5.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Intent n = new Intent(Chapters.this, Ch5.class);
                 startActivity(n);

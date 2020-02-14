@@ -8,8 +8,9 @@
     tools:context=".Chapters_dir.Ch2">
 
     <ScrollView
-        android:layout_width="409dp"
-        android:layout_height="657dp">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/CL"
@@ -53,7 +54,7 @@
             </androidx.appcompat.widget.Toolbar>
 
             <TextView
-                android:id="@+id/question"
+                android:id="@+id/chapterName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -80,7 +81,7 @@
                 app:cardCornerRadius="20dp"
                 app:layout_constraintEnd_toStartOf="@+id/cardviewlLSN2"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/question"
+                app:layout_constraintTop_toBottomOf="@+id/chapterName"
                 tools:targetApi="lollipop">
 
                 <LinearLayout
@@ -135,7 +136,7 @@
                 app:cardCornerRadius="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/cardviewlLSN1"
-                app:layout_constraintTop_toBottomOf="@+id/question"
+                app:layout_constraintTop_toBottomOf="@+id/chapterName"
                 tools:targetApi="lollipop">
 
                 <LinearLayout

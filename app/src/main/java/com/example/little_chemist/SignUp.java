@@ -36,7 +36,8 @@ public class SignUp extends AppCompatActivity {
 
         spinner = (Spinner) findViewById(R.id.security_questions);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.SecurityQs, android.R.layout.simple_spinner_item);
+                R.array.SecurityQs, R.layout.spinner_text);
+
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
 
@@ -176,7 +177,7 @@ public class SignUp extends AppCompatActivity {
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 pos = spinner.getSelectedItemPosition();
 
-                //spinnerSelected = spinner.getSelectedItem().toString();
+                spinnerSelected = spinner.getSelectedItem().toString();
                 SecurityA = SecurityAn.getEditText().getText().toString().trim().toLowerCase();
                 validateSecurity();
 
@@ -187,7 +188,7 @@ public class SignUp extends AppCompatActivity {
             public void afterTextChanged(Editable editable) {
                 pos = spinner.getSelectedItemPosition();
 
-                //spinnerSelected = spinner.getSelectedItem().toString();
+                spinnerSelected = spinner.getSelectedItem().toString();
                 SecurityA = SecurityAn.getEditText().getText().toString().trim().toLowerCase();
                 if (validateSecurity()){
 
@@ -211,7 +212,7 @@ public class SignUp extends AppCompatActivity {
             public void onClick(View view) {
 
                 //System.out.println("heeeeeeeeeeeeeeeeere "+pos);
-                //spinnerSelected = spinner.getSelectedItem().toString();
+                spinnerSelected = spinner.getSelectedItem().toString();
 
                 pos = spinner.getSelectedItemPosition();
 
@@ -226,7 +227,7 @@ public class SignUp extends AppCompatActivity {
 
                 if(validateN() && validateName() && validatePass() && validateSecurity() && validateExistence()) {
                     //Insert into Database
-                    Student student = new Student(UserNameStr,PasswordStr);
+                    Student student = new Student(UserNameStr,PasswordStr,0);
                     //student.SetUserName(UserNameStr);
                     //student.SetPassword(PasswordStr);
 
@@ -239,9 +240,6 @@ public class SignUp extends AppCompatActivity {
                     //Send Data
                     loginIntent.putExtra("student",student);
                     //loginIntent.putExtra("Password",PasswordStr);
-
-                    String welcome = getString(R.string.welcome) +" "+ UserNameStr ;
-                    Toast.makeText(getApplicationContext(), welcome, Toast.LENGTH_LONG).show();
 
                     startActivity(loginIntent);
                     finish();

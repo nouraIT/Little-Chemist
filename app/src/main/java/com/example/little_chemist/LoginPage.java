@@ -1,6 +1,7 @@
 package com.example.little_chemist;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -9,6 +10,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -28,8 +31,11 @@ public class LoginPage extends AppCompatActivity implements Serializable {
         @Override
         protected void onCreate(@Nullable Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
+            requestWindowFeature(Window.FEATURE_NO_TITLE);
+            this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
             setContentView(R.layout.activity_login);
-            Button Recover = findViewById(R.id.button8);
+            Button Recover = findViewById(R.id.forgotPassBtn);
             Recover.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -39,7 +45,7 @@ public class LoginPage extends AppCompatActivity implements Serializable {
             });
 
             final Button loginButton = findViewById(R.id.login);
-            UserNameET= findViewById(R.id.profileName);
+            UserNameET= findViewById(R.id.userName);
             PasswordET= findViewById(R.id.password);
 
             //UserNameET.setError(null);
@@ -127,14 +133,26 @@ public class LoginPage extends AppCompatActivity implements Serializable {
                         student.SetUserName(UserNameStr);
                         student.SetPassword(PasswordStr);
 
+                        SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
+                        SharedPreferences.Editor editor = pref.edit();
+
+                        editor.putString("username", UserNameStr); // Storing string
+                        //editor.putString("password", PasswordStr); // Storing string
+
+
+                        editor.commit();
+
+
+
+
                         Intent loginIntent=new Intent(LoginPage.this,Home.class);
                         //Send Data
                         //loginIntent.stu
-                        loginIntent.putExtra("student", student);
+                        //loginIntent.putExtra("student", student);
                         //loginIntent.putExtra("Password",PasswordStr);
                         //loginIntent.putExtra("Welcome",)
-                        String welcome = getString(R.string.welcome) +" "+ UserNameStr ;
-                        Toast.makeText(getApplicationContext(), welcome, Toast.LENGTH_LONG).show();
+//                        String welcome = getString(R.string.welcome) +" "+ UserNameStr ;
+//                        Toast.makeText(getApplicationContext(), welcome, Toast.LENGTH_LONG).show();
 
                         startActivity(loginIntent);
 
@@ -149,7 +167,9 @@ public class LoginPage extends AppCompatActivity implements Serializable {
         }//on create
 
     public void onBtnSignUpClick(View v){
-        if(v.getId()==R.id.button){
+        UserNameET.setError(null);
+        PasswordET.setError(null);
+        if(v.getId()==R.id.signupBtn){
             Intent SignUpIntent=new Intent(this,SignUp.class);
             startActivity(SignUpIntent);
         }

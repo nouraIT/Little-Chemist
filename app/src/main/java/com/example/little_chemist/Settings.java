@@ -2,14 +2,21 @@ package com.example.little_chemist;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.cardview.widget.CardView;
+
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.ColorFilter;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.view.View;
 import java.sql.SQLException;
 import java.util.Locale;
+import java.util.Objects;
+
 import android.app.Activity;
 import android.content.res.Configuration;
 import android.widget.Button;
@@ -19,6 +26,26 @@ import com.example.little_chemist.Tables.Student;
 
 
 public class Settings extends AppCompatActivity {
+
+    SharedPreferences pref;
+    SharedPreferences.Editor editor ;
+    DatabaseHelper helper = new DatabaseHelper(Settings.this);
+    boolean arabicFlag ;
+
+
+//    public void onResume(){
+//        super.onResume();
+//        //setContentView(R.layout.activity_settings);
+////        String name = pref.getString("username", null);
+////        System.out.println("name is hrnejknfjrfj "+name);
+//
+//        //pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
+//        //editor = pref.edit();
+//        //boolean arabicFlag = pref.getBoolean("arabic",false);
+//
+//
+//
+//    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,28 +57,46 @@ public class Settings extends AppCompatActivity {
         //setSupportActionBar(toolbar);
         //final String UserNameStr= getIntent().getStringExtra("UserName");
         Student student = (Student) getIntent().getSerializableExtra("student");
-        DatabaseHelper loginData;
+//        DatabaseHelper loginData;
+//
+//        loginData=new DatabaseHelper(this);
+//        try {
+//            loginData=loginData.open();
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
 
-        loginData=new DatabaseHelper(this);
-        try {
-            loginData=loginData.open();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+
+
+        pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
+        editor = pref.edit();
+
+        String name = pref.getString("username", null); // getting String
+        //pref.getInt("password", -1); // getting Integer
+        //arabicFlag = helper.checkLang(name);
+
 
         TextView profileName = findViewById(R.id.profileName);
-        String userName = loginData.getLoggedInStudent("UserName");
+        //String userName = loginData.getLoggedInStudent("UserName");
         //String user = loginData.getLoggedInStudent(userName);
+//        static String name;
+//        name = student.GetUserName();
 
-        profileName.setText(student.GetUserName());
+        profileName.setText(name);
 
 
 
         Toolbar toolbar = findViewById(R.id.toolbar);
+
+//        ColorFilter colorf = new ColorFilter(R.color.white);
+//
+//        toolbar.getNavigationIcon().setColorFilter(R.color.white);
+
+
         Button booklet = findViewById(R.id.button5);
-        Button En = findViewById(R.id.button3);
-        Button Ara = findViewById(R.id.button4);
-        Button Delete = findViewById(R.id.button6);
+        Button En = findViewById(R.id.enBtn);
+        Button Ara = findViewById(R.id.arBtn);
+        CardView Delete = findViewById(R.id.deleteBtn);
 
         setSupportActionBar(toolbar);
         //TextView textView = (TextView)toolbar.findViewById(R.id.toolbarTextView);
@@ -78,6 +123,10 @@ public class Settings extends AppCompatActivity {
                 getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
                 recreate();
 
+                editor.putBoolean("arabic",false);
+                helper.changeLang(name,0);
+                editor.commit();
+
 
             }
         });
@@ -90,10 +139,14 @@ public class Settings extends AppCompatActivity {
                 config.locale = locale;
                 getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
                 recreate();
-                String langPref = "Language";
-                SharedPreferences prefs = getSharedPreferences("CommonPrefs", Activity.MODE_PRIVATE);
-                SharedPreferences.Editor editor = prefs.edit();
-                editor.putString(langPref, "ar");
+
+//                String langPref = "Language";
+//                SharedPreferences prefs = getSharedPreferences("CommonPrefs", Activity.MODE_PRIVATE);
+//                SharedPreferences.Editor editor = prefs.edit();
+//                editor.putString(langPref, "ar");
+//                editor.commit();
+                editor.putBoolean("arabic",true);
+                helper.changeLang(name,1);
                 editor.commit();
 
             }
@@ -114,6 +167,7 @@ public class Settings extends AppCompatActivity {
                                 SharedPreferences myPrefs = getSharedPreferences("Activity",
                                         MODE_PRIVATE);
                                 SharedPreferences.Editor editor = myPrefs.edit();
+                                Home.alreadyRecreated = false;
                                 editor.clear();
                                 editor.commit();
 

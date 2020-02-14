@@ -31,6 +31,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         private static final String COLUMN_PASSWORD = "Password";
         private static final String COLUMN_SECQ = "SecQ";
         private static final String COLUMN_SECA = "SecA";
+        private static final String COLUMN_LANG = "Arabic";
 
         //-----------------------------------------------
 
@@ -84,7 +85,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     FeedEntry.COLUMN_USERNAME + " TEXT,"+
                     FeedEntry.COLUMN_PASSWORD +" TEXT,"+
                     FeedEntry.COLUMN_SECQ +" TEXT,"+
-                    FeedEntry.COLUMN_SECA +" TEXT)" ;
+                    FeedEntry.COLUMN_SECA +" TEXT,"+
+                    FeedEntry.COLUMN_LANG +" INTEGER)" ;
 
     private static final String SQL_CREATE_CHAPTER=
             "CREATE TABLE "+FeedEntry.TABLE_CHAPTER +" ("+
@@ -163,6 +165,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentvalues.put(FeedEntry.COLUMN_PASSWORD, student.GetPassword());
         contentvalues.put(FeedEntry.COLUMN_SECQ, student.GetSecQ());
         contentvalues.put(FeedEntry.COLUMN_SECA, student.GetSecA());
+        contentvalues.put(FeedEntry.COLUMN_LANG, student.GetLang());
+
 
 
 
@@ -290,14 +294,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     secA=cursor.getString(2);
                     sec[0]=secQ;
                     sec[1]=secA;
-
                     break;
-
                 }
-
             }while (cursor.moveToNext());
-
-
         }
 
         return  sec;
@@ -315,15 +314,54 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
+    public boolean checkLang(String Username){
+        db = this.getReadableDatabase();
+        //query="SELECT UserName,Password FROM  "+FeedEntry.TABLE_NAME;
+        String query ="SELECT UserName,Arabic FROM Student";
 
-    public String getLoggedInStudent(String userName) {
+        Cursor cursor=db.rawQuery(query,null);
 
-        Cursor cursor=db.query("Student", new String[]{userName}, null, null, null, null, null);
+        String username;
+        int arabic;
 
-        cursor.moveToFirst();
-        String user = cursor.getString(cursor.getColumnIndex("UserName"));
-        cursor.close();
-        return user;
+        if(cursor.moveToFirst()){
+            do{
+                username=cursor.getString(0);
+                if(username.contentEquals(Username)){
+                    arabic =cursor.getInt(1);
+                    System.out.println("name is "+username+" and the arabic is "+arabic);
+                    if(arabic == 1)
+                        return true;
+                    break;
+                }
+            }while (cursor.moveToNext());
+        }
+
+        return false;
     }
+
+    public void changeLang(String username, int arabic){
+        db = this.getWritableDatabase();
+        //query="SELECT UserName,Password FROM  "+FeedEntry.TABLE_NAME;
+        String query =" UPDATE Student SET Arabic = '"+arabic +"' WHERE UserName = '"+username+"' ";
+
+        db.execSQL(query);
+        db.close();
+
+        //Cursor cursor=db.rawQuery(query,null);
+        //return cursor.moveToFirst();
+
+    }
+
+
+//    public String getLoggedInStudent(String userName) {
+//
+//        Cursor cursor=db.query("Student", new String[]{userName}, null, null, null, null, null);
+//
+//        cursor.moveToFirst();
+//        String user = cursor.getString(cursor.getColumnIndex("UserName"));
+//        cursor.close();
+//        return user;
+//    }
 
 }

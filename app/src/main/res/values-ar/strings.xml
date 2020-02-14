@@ -49,6 +49,11 @@
     <string name="lesson3">الدرس الثالث</string>
     <string name="lesson4">الدرس الرابع</string>
     <string name="lesson5">الدرس الخامس</string>
+    <string name="heisenberguncertaintyprinciple">مبدأ عدم اليقين في هايزنبرغ</string>
+    <string name="electrons">الإلكترونات</string>
+    <string name="isotopes">نظائر</string>
+    <string name="nuclearfission">الانشطار النووي</string>
+    <string name="QuizScore">درجة الاختبار</string>
     <string name="Ch1Lsn4">مبدأ عدم اليقين في هايزنبرغ</string>
     <string name="Ch1Lsn2">الإلكترونات</string>
     <string name="Ch1Lsn3">نظائر</string>

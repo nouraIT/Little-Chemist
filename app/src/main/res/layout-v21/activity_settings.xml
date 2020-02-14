@@ -2,9 +2,12 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Settings">
+    android:background="@drawable/setting_background"
+    android:visibility="visible"
+    tools:context=".Settings"
+    tools:visibility="visible">
 
 
     <androidx.appcompat.widget.Toolbar
@@ -13,9 +16,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
-        android:background="@color/primaryYellow"
         android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
+        android:theme="@style/MyApp.ActionBarTheme"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -24,44 +26,51 @@
 
         >
 
-        <RelativeLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/CL"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="13dp">
 
             <TextView
                 android:id="@+id/toolbarTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
-                android:layout_centerInParent="true"
-                android:layout_alignParentStart="true"
-
+                android:layout_marginEnd="50dp"
                 android:text="@string/settings"
+
                 android:textAppearance="@android:style/TextAppearance.WindowTitle"
-                android:textColor="#FC050505"
+                android:textColor="#FCFFFFFF"
                 android:textSize="22sp"
                 android:visibility="visible"
-
-                />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/logoutBtn"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
 
             <Button
                 android:id="@+id/logoutBtn"
                 android:layout_width="25dp"
                 android:layout_height="23dp"
 
+                android:layout_marginStart="90dp"
+
+
+                android:layout_marginEnd="24dp"
+                android:background="@drawable/logoutwhite_icon"
                 android:elevation="7dp"
-                android:layout_alignParentEnd="true"
-
-                android:layout_marginStart="200dp"
-                android:layout_marginEnd="20dp"
-
-
-                android:background="@drawable/logout"
                 android:visibility="visible"
-                tools:visibility="visible"
-                 />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/toolbarTextView"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:visibility="visible" />
 
-        </RelativeLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.appcompat.widget.Toolbar>
 
@@ -71,12 +80,10 @@
         android:layout_height="113dp"
 
         android:layout_marginStart="174dp"
-        android:layout_marginLeft="174dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="178dp"
 
 
-        android:layout_marginRight="178dp"
         android:src="@drawable/profile"
         app:civ_border_color="#FF000000"
         app:civ_border_width="1dp"
@@ -85,40 +92,92 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
+    <TextView
+        android:id="@+id/profileName"
+        android:layout_width="135dp"
+        android:layout_height="63dp"
+        android:fontFamily="@font/roboto_bold"
+        android:gravity="center"
+        android:text="@string/prompt_username"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_image" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="326dp"
+        android:layout_height="110dp"
+
+        android:layout_marginBottom="36dp"
+
+        android:alpha="0.9"
+
+        android:outlineAmbientShadowColor="@color/gray"
+        app:cardBackgroundColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/button5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.483"
+
+        app:layout_constraintStart_toStartOf="parent" />
+
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/enBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="64dp"
-        android:text="@string/english"
-        app:layout_constraintEnd_toStartOf="@+id/button4"
+
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="4dp"
+        android:background="@drawable/circle_btn_empty"
+        android:backgroundTint="#00FFFFFF"
+        android:text="English"
+        android:textColor="#F0BA1A"
+        app:layout_constraintBottom_toTopOf="@+id/button5"
+        app:layout_constraintEnd_toStartOf="@+id/arBtn"
         app:layout_constraintStart_toEndOf="@+id/textView3"
-        app:layout_constraintTop_toBottomOf="@+id/profile_image" />
+        app:layout_constraintTop_toBottomOf="@+id/profileName"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/arBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/circle_btn_empty"
+        android:backgroundTint="#00BDB6B6"
+        android:text="العربية"
+        android:textColor="#F0BA1A"
+        app:layout_constraintBottom_toTopOf="@+id/button5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/enBtn"
+        app:layout_constraintTop_toBottomOf="@+id/profileName"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="76dp"
-        android:text="@string/languages"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toStartOf="@+id/button3"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profile_image" />
+        android:layout_marginStart="36dp"
 
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
-        android:text="@string/arabic"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button3"
-        app:layout_constraintTop_toBottomOf="@+id/profile_image" />
+        android:layout_marginTop="32dp"
+
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:elevation="9dp"
+        android:text="@string/languages"
+        android:textColor="#F0BA1A"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/button5"
+        app:layout_constraintEnd_toStartOf="@+id/enBtn"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profileName"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/button5"
@@ -127,40 +186,51 @@
         android:layout_marginTop="16dp"
         android:background="@drawable/circle_btn"
         android:text="@string/download_booklet"
-        android:textColor="#0E0000"
+        android:textColor="#FFFFFF"
+        android:fontFamily="@font/roboto_bold"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.48"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/toolbar"
-        app:layout_constraintVertical_bias="0.646"
+        app:layout_constraintVertical_bias="0.772"
         tools:ignore="MissingConstraints" />
 
-    <Button
-        android:id="@+id/button6"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/deleteBtn"
         android:layout_width="129dp"
         android:layout_height="56dp"
+        android:layout_gravity="center_horizontal"
         android:layout_marginTop="73dp"
+
         android:layout_marginBottom="112dp"
-        android:background="#E4E9674F"
-        android:text="@string/delete_account"
+        android:textAlignment="center"
+
+        app:cardBackgroundColor="@color/logoDarkRed"
+        app:cardCornerRadius="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button5"
-        app:layout_constraintVertical_bias="0.606" />
 
-    <TextView
-        android:id="@+id/profileName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="24dp"
-        android:text="@string/prompt_username"
-        android:textColor="@color/colorPrimary"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/button3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profile_image" />
+        app:layout_constraintVertical_bias="0.505">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+
+            android:layout_gravity="center"
+
+
+            android:fontFamily="@font/roboto_bold"
+            android:text="@string/delete_account"
+            android:textColor="@color/textRegister"
+            android:textSize="15sp" />
+
+    </androidx.cardview.widget.CardView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

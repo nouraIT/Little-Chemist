@@ -1,23 +1,26 @@
 package com.example.little_chemist.Tables;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.little_chemist.DatabaseHelper;
+import com.example.little_chemist.MainActivity;
 
 import java.io.Serializable;
 
 
-public class Student extends AppCompatActivity implements Serializable {
+public class Student implements Serializable {
     int Id, TotalScore;
     String UserName,Password, QZLocks, CHLocks, LSNLocks, SecQ, SecA;
-    //DatabaseHelper helper=new DatabaseHelper(this);
+    int Arabic;
+    DatabaseHelper helper;// = new DatabaseHelper();
 
     //static int i = 0 ;
-    public Student(String name, String pass){
+    public Student(String name, String pass, int arabic){
         UserName = name;
         Password = pass;
+        Arabic = arabic;
     }
 
     public Student(){
-
+        Arabic = 0;
     }
 
     // public  void SetId(int id){this.Id=id; }
@@ -87,8 +90,16 @@ public class Student extends AppCompatActivity implements Serializable {
     }
 
 
-    public void changeLang(){
+    public void changeLang(int arabic){
+        //TODO save the language setting here ?
+        Arabic = arabic;
+        helper.changeLang(UserName,arabic);
 
+    }
+
+    public int GetLang(){
+
+        return Arabic;
     }
 
     public void viewScore(){
@@ -99,6 +110,7 @@ public class Student extends AppCompatActivity implements Serializable {
     }
 
     public boolean deleteAccountReq(){
+
         return false;
     }
 

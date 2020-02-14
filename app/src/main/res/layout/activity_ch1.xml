@@ -5,6 +5,7 @@
     android:id="@+id/CRL"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/app_home_bg"
     tools:context=".Chapters_dir.Ch1">
 
     <ScrollView
@@ -29,9 +30,8 @@
                 android:layout_marginTop="0dp"
                 android:layout_marginEnd="0dp"
 
-                android:background="#F3CB4E"
                 android:minHeight="?attr/actionBarSize"
-                android:theme="?attr/actionBarTheme"
+                android:theme="@style/MyApp.ActionBarTheme2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
@@ -40,12 +40,12 @@
                     android:id="@+id/toolbarTextView"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:fontFamily="casual"
-                    android:gravity="center"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="start"
                     android:maxLines="1"
                     android:text="@string/chapter1"
                     android:textAppearance="@android:style/TextAppearance.WindowTitle"
-                    android:textColor="#FC050505"
+                    android:textColor="@color/OrangeText"
                     android:textSize="22sp"
                     android:visibility="visible"
                     tools:layout_editor_absoluteX="147dp"
@@ -55,11 +55,12 @@
             </androidx.appcompat.widget.Toolbar>
 
             <TextView
-                android:id="@+id/question"
+                android:id="@+id/chapterName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:fontFamily="casual"
+                android:fontFamily="@font/roboto_bold"
+                android:textColor="@color/OrangeText"
                 android:gravity="center"
                 android:text="@string/Ch1Lsn1"
                 android:textSize="30sp"
@@ -82,7 +83,7 @@
                 app:cardCornerRadius="20dp"
                 app:layout_constraintEnd_toStartOf="@+id/cardviewlLSN2"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/question"
+                app:layout_constraintTop_toBottomOf="@+id/chapterName"
                 tools:targetApi="lollipop">
 
                 <LinearLayout
@@ -138,7 +139,7 @@
                 app:cardCornerRadius="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/cardviewlLSN1"
-                app:layout_constraintTop_toBottomOf="@+id/question"
+                app:layout_constraintTop_toBottomOf="@+id/chapterName"
                 tools:targetApi="lollipop">
 
                 <LinearLayout
@@ -351,6 +352,7 @@
                 android:layout_width="200dp"
                 android:layout_height="70dp"
                 android:layout_marginTop="16dp"
+                android:alpha="0.8"
                 android:elevation="100dp"
                 app:cardBackgroundColor="@color/red"
                 app:cardCornerRadius="20dp"
@@ -366,10 +368,10 @@
                     android:fontFamily="casual"
                     android:gravity="center"
                     android:text="@string/Quiz"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
+                    android:textColor="#050505"
 
-                    />
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
                 <ImageView
                     android:layout_width="80dp"
@@ -377,7 +379,7 @@
                     android:layout_gravity="bottom"
                     android:alpha="0.5"
                     android:background="@drawable/grade"
-                    android:contentDescription="@string/Quiz"/>
+                    android:contentDescription="@string/Quiz" />
 
 
             </androidx.cardview.widget.CardView>
