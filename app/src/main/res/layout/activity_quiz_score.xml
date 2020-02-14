@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/app_home_bg"
     tools:context=".Quiz_score">
 
 
@@ -14,7 +15,6 @@
         android:layout_marginTop="0dp"
         android:layout_marginEnd="0dp"
 
-        android:background="#F3CB4E"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,10 +24,11 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:fontFamily="casual"
+            android:layout_gravity="start"
+            android:fontFamily="@font/roboto_bold"
             android:text="@string/QuizScore"
-            android:textSize="25dp" />
+            android:textSize="25sp"
+            />
 
     </androidx.appcompat.widget.Toolbar>
 
@@ -169,15 +170,26 @@
         app:wlv_waveAmplitude="70"
         app:wlv_waveColor="@color/colorAccent" />
 
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="348dp"
+        android:layout_height="279dp"
+        android:alpha="0.5"
+        android:background="@color/white"
+        tools:layout_editor_absoluteX="29dp"
+        tools:layout_editor_absoluteY="328dp" />
+
     <TextView
         android:id="@+id/textView5"
         android:layout_width="183dp"
         android:layout_height="26dp"
+
         android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
         android:layout_marginTop="25dp"
         android:layout_marginEnd="178dp"
-        android:layout_marginRight="178dp"
+
+        android:elevation="10dp"
+
         android:text="@string/the_study_of_atoms"
         android:textColor="#030303"
         android:textSize="18sp"
@@ -186,15 +198,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView8" />
 
+
     <TextView
         android:id="@+id/textView7"
         android:layout_width="227dp"
         android:layout_height="24dp"
+
         android:layout_marginStart="33dp"
-        android:layout_marginLeft="33dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="133dp"
-        android:layout_marginRight="133dp"
+
+        android:elevation="10dp"
+
         android:text="@string/the_branches_of_chemistry"
         android:textColor="#050505"
         android:textSize="18sp"
@@ -208,10 +223,12 @@
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="318dp"
         android:layout_height="19dp"
+
         android:layout_marginStart="42dp"
-        android:layout_marginLeft="42dp"
         android:layout_marginEnd="51dp"
-        android:layout_marginRight="51dp"
+
+        android:elevation="10dp"
+
         android:progress="20"
         android:progressTint="@color/colorAccent"
         app:layout_constraintBottom_toTopOf="@+id/textView7"
@@ -224,10 +241,12 @@
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="318dp"
         android:layout_height="19dp"
+
         android:layout_marginStart="42dp"
-        android:layout_marginLeft="42dp"
         android:layout_marginEnd="51dp"
-        android:layout_marginRight="51dp"
+
+        android:elevation="10dp"
+
         android:background="#00030303"
         android:progress="15"
         android:progressTint="@color/purple"
@@ -240,11 +259,13 @@
         android:id="@+id/textView8"
         android:layout_width="170dp"
         android:layout_height="23dp"
+
         android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="191dp"
-        android:layout_marginRight="191dp"
+
+        android:elevation="10dp"
+
         android:text="@string/the_periodic_table"
         android:textColor="#050505"
         android:textSize="18sp"
@@ -257,10 +278,12 @@
         android:id="@+id/textView9"
         android:layout_width="126dp"
         android:layout_height="23dp"
+
         android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
         android:layout_marginEnd="235dp"
-        android:layout_marginRight="235dp"
+
+        android:elevation="10dp"
+
         android:text="@string/elements"
         android:textColor="#020202"
         android:textSize="18sp"
@@ -273,11 +296,13 @@
         android:id="@+id/textView6"
         android:layout_width="151dp"
         android:layout_height="23dp"
+
         android:layout_marginStart="33dp"
-        android:layout_marginLeft="33dp"
         android:layout_marginEnd="209dp"
-        android:layout_marginRight="209dp"
         android:layout_marginBottom="2dp"
+
+        android:elevation="10dp"
+
         android:text="@string/chemistry_basics"
         android:textColor="#020202"
         android:textSize="18sp"
@@ -291,11 +316,13 @@
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="318dp"
         android:layout_height="19dp"
+
         android:layout_marginStart="42dp"
-        android:layout_marginLeft="42dp"
         android:layout_marginEnd="51dp"
-        android:layout_marginRight="51dp"
         android:layout_marginBottom="10dp"
+
+        android:elevation="10dp"
+
         android:background="#00000000"
         android:progress="40"
         android:progressTint="@color/lightgreen"
@@ -309,11 +336,13 @@
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="318dp"
         android:layout_height="19dp"
+
         android:layout_marginStart="42dp"
-        android:layout_marginLeft="42dp"
         android:layout_marginEnd="51dp"
-        android:layout_marginRight="51dp"
         android:layout_marginBottom="8dp"
+
+        android:elevation="10dp"
+
         android:progress="90"
         android:progressTint="@color/sky"
         app:layout_constraintBottom_toTopOf="@+id/textView9"
@@ -326,11 +355,13 @@
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="318dp"
         android:layout_height="19dp"
+
         android:layout_marginStart="42dp"
-        android:layout_marginLeft="42dp"
         android:layout_marginEnd="51dp"
-        android:layout_marginRight="51dp"
         android:layout_marginBottom="78dp"
+
+        android:elevation="10dp"
+
         android:background="#00020202"
         android:progress="70"
         android:progressTint="@color/primaryYellow"

@@ -2,14 +2,21 @@ package com.example.little_chemist;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.cardview.widget.CardView;
+
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.ColorFilter;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.view.View;
 import java.sql.SQLException;
 import java.util.Locale;
+import java.util.Objects;
+
 import android.app.Activity;
 import android.content.res.Configuration;
 import android.widget.Button;
@@ -40,18 +47,26 @@ public class Settings extends AppCompatActivity {
         }
 
         TextView profileName = findViewById(R.id.profileName);
-        String userName = loginData.getLoggedInStudent("UserName");
+        //String userName = loginData.getLoggedInStudent("UserName");
         //String user = loginData.getLoggedInStudent(userName);
+//        static String name;
+//        name = student.GetUserName();
 
         profileName.setText(student.GetUserName());
 
 
 
         Toolbar toolbar = findViewById(R.id.toolbar);
+
+//        ColorFilter colorf = new ColorFilter(R.color.white);
+//
+//        toolbar.getNavigationIcon().setColorFilter(R.color.white);
+
+
         Button booklet = findViewById(R.id.button5);
         Button En = findViewById(R.id.button3);
         Button Ara = findViewById(R.id.button4);
-        Button Delete = findViewById(R.id.button6);
+        CardView Delete = findViewById(R.id.deleteBtn);
 
         setSupportActionBar(toolbar);
         //TextView textView = (TextView)toolbar.findViewById(R.id.toolbarTextView);

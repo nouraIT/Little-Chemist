@@ -36,7 +36,8 @@ public class SignUp extends AppCompatActivity {
 
         spinner = (Spinner) findViewById(R.id.security_questions);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.SecurityQs, android.R.layout.simple_spinner_item);
+                R.array.SecurityQs, R.layout.spinner_text);
+
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
 

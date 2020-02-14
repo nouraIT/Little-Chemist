@@ -1,213 +1,215 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/linearLayout"
+    android:id="@+id/scrol"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:alpha="1"
+    tools:context=".SignUp">
 
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="295dp"
-        android:layout_height="96dp"
-        android:layout_marginTop="40dp"
-        android:contentDescription="@string/app_name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.534"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logocropped" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/username2"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/signupbackground4"
+        android:orientation="horizontal">
 
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/username2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
 
-        android:layout_marginTop="152dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
-        app:errorEnabled="true"
-        app:errorTextAppearance="@style/error_appearance"
+            android:layout_marginStart="24dp"
 
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="364dp"
+            android:layout_marginEnd="24dp"
+            android:textColorHint="@color/white"
 
-        tools:layout_conversion_absoluteHeight="45dp"
-        tools:layout_conversion_absoluteWidth="363dp">
+            android:theme="@style/TextLabel"
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="245dp"
-            android:layout_height="40dp"
+            app:errorEnabled="true"
+            app:errorTextAppearance="@style/error_appearance"
 
 
-            android:autofillHints="true"
-            android:hint="@string/prompt_username"
-            android:inputType="textPersonName"
-            android:selectAllOnFocus="true"
-            android:textSize="14sp"
-
-
-            android:visibility="visible"
-            tools:targetApi="o"
-            tools:visibility="visible" />
-
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/password2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        app:errorTextAppearance="@style/error_appearance"
-        app:errorEnabled="true"
-
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
-
-        app:layout_constraintBottom_toTopOf="@+id/button2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.509"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/username2"
-        app:layout_constraintVertical_bias="0.0"
-        tools:layout_conversion_absoluteHeight="45dp"
-        tools:layout_conversion_absoluteWidth="363dp"
-        >
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="245dp"
-            android:layout_height="40dp"
-
-
-            android:hint="@string/prompt_password"
-            android:importantForAutofill="no"
-            android:inputType="textPassword"
-            android:selectAllOnFocus="true"
-            android:textSize="14sp"
-
-            android:visibility="visible" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/password22"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-
-        android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
-        app:errorEnabled="true"
-        app:errorTextAppearance="@style/error_appearance"
-
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.509"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password2">
-
-        <com.google.android.material.textfield.TextInputEditText
-
-            android:layout_width="245dp"
-            android:layout_height="40dp"
-
-
-            android:hint="@string/prompt_passwordConf"
-            android:importantForAutofill="no"
-            android:inputType="textPassword"
-            android:selectAllOnFocus="true"
-
-
-            android:textSize="14sp"
-            android:visibility="visible" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-
-    <Spinner
-        android:id="@+id/security_questions"
-        android:layout_width="282dp"
-        android:layout_height="41dp"
-        android:layout_marginStart="54dp"
-        android:layout_marginLeft="54dp"
-        android:layout_marginEnd="54dp"
-        android:layout_marginRight="54dp"
-
-        android:entries="@array/SecurityQs"
-        android:forceDarkAllowed="false"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.476"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password22" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_marginBottom="36dp"
-        android:background="@drawable/circle_btn"
-        android:text="@string/sign_up_button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/securityA"
-        app:layout_constraintVertical_bias="0.0"
-        tools:layout_conversion_absoluteHeight="48dp"
-        tools:layout_conversion_absoluteWidth="411dp" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/securityA"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        android:layout_marginStart="59dp"
-        android:layout_marginLeft="59dp"
-
-        android:layout_marginTop="8dp"
-
-
-        android:layout_marginEnd="59dp"
-        android:layout_marginRight="59dp"
-
-        app:errorEnabled="true"
-        app:errorTextAppearance="@style/error_appearance"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/security_questions">
-
-        <com.google.android.material.textfield.TextInputEditText
-
-            android:layout_width="245dp"
-            android:layout_height="40dp"
-
-
-            android:hint="@string/answer"
-            android:importantForAutofill="no"
-            android:inputType="text"
-            android:selectAllOnFocus="true"
-            android:textSize="14sp"
-            android:visibility="visible"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.545"
+            app:layout_constraintHorizontal_bias="0.507"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/security_questions" />
+            app:layout_constraintTop_toTopOf="parent">
 
-    </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="245dp"
+                android:layout_height="40dp"
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+                android:autofillHints="true"
+                android:hint="@string/prompt_username"
+                android:inputType="textPersonName"
+                android:selectAllOnFocus="true"
+                android:textSize="16sp"
 
+
+                android:visibility="visible"
+                tools:targetApi="o"
+                tools:visibility="visible" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/password2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+
+            android:layout_marginEnd="24dp"
+            android:layout_marginRight="24dp"
+            android:textColorHint="@color/white"
+            android:theme="@style/TextLabel2"
+
+            app:errorEnabled="true"
+
+            app:errorTextAppearance="@style/error_appearance"
+            app:layout_constraintBottom_toTopOf="@+id/button2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.509"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/username2"
+            app:layout_constraintVertical_bias="0.0"
+            tools:layout_conversion_absoluteHeight="45dp"
+            tools:layout_conversion_absoluteWidth="363dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="245dp"
+                android:layout_height="40dp"
+
+
+                android:hint="@string/prompt_password"
+                android:importantForAutofill="no"
+                android:inputType="textPassword"
+                android:selectAllOnFocus="true"
+                android:textSize="16sp"
+
+                android:visibility="visible" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/password22"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+
+            android:textColorHint="@color/white"
+            android:theme="@style/TextLabel2"
+
+            app:errorEnabled="true"
+            app:errorTextAppearance="@style/error_appearance"
+
+            app:layout_constraintBottom_toTopOf="@+id/security_questions"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.509"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/password2">
+
+            <com.google.android.material.textfield.TextInputEditText
+
+                android:layout_width="245dp"
+                android:layout_height="40dp"
+
+
+                android:hint="@string/prompt_passwordConf"
+                android:importantForAutofill="no"
+                android:inputType="textPassword"
+                android:selectAllOnFocus="true"
+
+
+                android:textSize="14sp"
+                android:visibility="visible" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <Spinner
+            android:id="@+id/security_questions"
+            android:layout_width="282dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="54dp"
+            android:layout_marginEnd="54dp"
+
+            android:entries="@array/SecurityQs"
+            android:forceDarkAllowed="false"
+
+            app:layout_constraintBottom_toTopOf="@+id/securityA"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.476"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/password22" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/securityA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="59dp"
+            android:layout_marginLeft="59dp"
+
+            android:layout_marginTop="8dp"
+
+            android:layout_marginEnd="59dp"
+            android:layout_marginRight="59dp"
+
+            android:textColorHint="@color/white"
+            android:theme="@style/TextLabel"
+
+            app:errorEnabled="true"
+            app:errorTextAppearance="@style/error_appearance"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/security_questions">
+
+            <com.google.android.material.textfield.TextInputEditText
+
+                android:layout_width="245dp"
+                android:layout_height="40dp"
+
+
+                android:hint="@string/answer"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:selectAllOnFocus="true"
+                android:textSize="16sp"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/security_questions" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/circle_btn"
+            android:text="@string/sign_up_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/securityA"
+            app:layout_constraintVertical_bias="0.0"
+            tools:layout_conversion_absoluteHeight="48dp"
+            tools:layout_conversion_absoluteWidth="411dp" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
 
