@@ -15,7 +15,7 @@ import com.example.little_chemist.Tables.Student;
 
 public class Home extends AppCompatActivity {
 
-    private ImageView set;
+    private ImageView set, testScore;
     private CardView cv ;
     //private pl.droidsonroids.gif.GifImageView  g ;
     private CardView chapters;
@@ -59,16 +59,18 @@ public class Home extends AppCompatActivity {
             }
         });
 
+        testScore = findViewById(R.id.imageView);
+
 //        g = findViewById(R.id.gif);
-//        g.setOnClickListener(new View.OnClickListener() {
-//
-//            public void onClick(View view) {
-//                Intent n = new Intent(Home.this, Quiz_score.class);
-//                n.putExtra("student",student);
-//                startActivity(n);
-//                finish();
-//            }
-//        });
+        testScore.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View view) {
+                Intent n = new Intent(Home.this, Quiz_score.class);
+                n.putExtra("student",student);
+                startActivity(n);
+                finish();
+            }
+        });
 
 
 

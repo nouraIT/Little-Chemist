@@ -16,7 +16,7 @@
         android:layout_marginEnd="0dp"
 
         android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
+        android:theme="@style/MyApp.ActionBarTheme2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -28,6 +28,7 @@
             android:fontFamily="@font/roboto_bold"
             android:text="@string/QuizScore"
             android:textSize="25sp"
+            android:textColor="@color/OrangeText"
             />
 
     </androidx.appcompat.widget.Toolbar>
@@ -120,7 +121,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
         app:layout_constraintVertical_bias="0.483"
-        app:srcCompat="@drawable/scorepic" />
+        app:srcCompat="@drawable/scorepic"
+        android:contentDescription="@string/scores" />
 
 
     <me.itangqi.waveloadingview.WaveLoadingView
@@ -174,10 +176,13 @@
     <androidx.cardview.widget.CardView
         android:layout_width="348dp"
         android:layout_height="279dp"
+        android:layout_marginBottom="52dp"
         android:alpha="0.5"
         android:background="@color/white"
-        tools:layout_editor_absoluteX="29dp"
-        tools:layout_editor_absoluteY="328dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView8" />
 
     <TextView
         android:id="@+id/textView5"
