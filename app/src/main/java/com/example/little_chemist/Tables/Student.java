@@ -16,9 +16,11 @@ public class Student implements Serializable {
         Password = pass;
     }
 
-    public Student(){
+   /* public Student(String name,){
 
-    }
+    }*/
+
+    public Student(){}
 
     // public  void SetId(int id){this.Id=id; }
     public  int GetId(){return Id;}

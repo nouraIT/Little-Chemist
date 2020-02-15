@@ -50,23 +50,22 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         //-----------------------------------------------
 
-        private static final String TABLE_QUIZ = "Quiz" ;//quizIC quizName LockQuiz
+        private static final String TABLE_QUIZ = "Quiz";//quizIC quizName LockQuiz
         private static final String COLUMN_QUIZID = "quizID";
         private static final String COLUMN_QUIZNAME = "quizName";
         private static final String COLUMN_LOCKQUIZ = "LockQuiz";
 
 
-
         //-----------------------------------------------
 
     }
+
     private static final int DATABASE_VERSION = 1;
     private static final String DATABASE_NAME = "LittleChemist.db";
     SQLiteDatabase db;
 
 
-    public DatabaseHelper open() throws SQLException
-    {
+    public DatabaseHelper open() throws SQLException {
         db = getWritableDatabase();
         return this;
     }
@@ -74,49 +73,47 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     //---------------------- create, add and delete tables ------------------------
 
-    private static final String SQL_CREATE_STUDENT=
-            "CREATE TABLE "+FeedEntry.TABLE_STUDENT +" ("+
+    private static final String SQL_CREATE_STUDENT =
+            "CREATE TABLE " + FeedEntry.TABLE_STUDENT + " (" +
                     FeedEntry.COLUMN_ID + "  INTEGER PRIMARY KEY," +
                     FeedEntry.COLUMN_SCORE + " INTEGER," +
                     FeedEntry.COLUMN_QZLOCKS + " TEXT," +
                     FeedEntry.COLUMN_CHLOCKS + " TEXT," +
                     FeedEntry.COLUMN_LSNLOCKS + " TEXT," +
-                    FeedEntry.COLUMN_USERNAME + " TEXT,"+
-                    FeedEntry.COLUMN_PASSWORD +" TEXT,"+
-                    FeedEntry.COLUMN_SECQ +" TEXT,"+
-                    FeedEntry.COLUMN_SECA +" TEXT)" ;
+                    FeedEntry.COLUMN_USERNAME + " TEXT," +
+                    FeedEntry.COLUMN_PASSWORD + " TEXT," +
+                    FeedEntry.COLUMN_SECQ + " TEXT," +
+                    FeedEntry.COLUMN_SECA + " TEXT)";
 
-    private static final String SQL_CREATE_CHAPTER=
-            "CREATE TABLE "+FeedEntry.TABLE_CHAPTER +" ("+
+    private static final String SQL_CREATE_CHAPTER =
+            "CREATE TABLE " + FeedEntry.TABLE_CHAPTER + " (" +
                     FeedEntry.COLUMN_CHID + "  INTEGER PRIMARY KEY," +
                     FeedEntry.COLUMN_CHNAME + " TEXT," +
-                    FeedEntry.COLUMN_CHLOCK + " TEXT)" ;
+                    FeedEntry.COLUMN_CHLOCK + " TEXT)";
 
-    private static final String SQL_CREATE_LESSON=
-            "CREATE TABLE "+FeedEntry.TABLE_LESSON +" ("+
+    private static final String SQL_CREATE_LESSON =
+            "CREATE TABLE " + FeedEntry.TABLE_LESSON + " (" +
                     FeedEntry.COLUMN_LSNID + "  INTEGER PRIMARY KEY," +
                     FeedEntry.COLUMN_LSNNAME + " TEXT," +
                     FeedEntry.COLUMN_LSNLOCK + " TEXT," +
                     FeedEntry.COLUMN_EXERCISE + " TEXT," +
-                    FeedEntry.COLUMN_CONTENT + " TEXT)" ;
+                    FeedEntry.COLUMN_CONTENT + " TEXT)";
 
 
-    private static final String SQL_CREATE_QUIZ=
-            "CREATE TABLE "+FeedEntry.TABLE_QUIZ +" ("+
+    private static final String SQL_CREATE_QUIZ =
+            "CREATE TABLE " + FeedEntry.TABLE_QUIZ + " (" +
                     FeedEntry.COLUMN_QUIZID + "  INTEGER PRIMARY KEY," +
                     FeedEntry.COLUMN_QUIZNAME + " TEXT," +
-                    FeedEntry.COLUMN_LOCKQUIZ + " TEXT)" ;
-
+                    FeedEntry.COLUMN_LOCKQUIZ + " TEXT)";
 
 
     private static final String SQL_DELETE_ENTRIES =
             "DROP TABLE IF EXISTS " + FeedEntry.TABLE_STUDENT;
 
 
-    public DatabaseHelper(Context context){
-        super(context,DATABASE_NAME,null,DATABASE_VERSION);
+    public DatabaseHelper(Context context) {
+        super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
-
 
 
     @Override
@@ -136,6 +133,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(SQL_DELETE_ENTRIES);
         onCreate(db);
     }
+
     public void onDowngrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         onUpgrade(db, oldVersion, newVersion);
     }
@@ -144,17 +142,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     //-------------------------- inserts  ----------------------
 
 
+    public void InsertStudents(Student student) {
 
-    public void InsertStudents(Student student){
-
-        db=getWritableDatabase();
+        db = getWritableDatabase();
         //To get , how many column in ur table
-        String query="SELECT * FROM "+FeedEntry.TABLE_STUDENT;
-        Cursor cursor=db.rawQuery(query,null);
-        int count=cursor.getCount();
+        String query = "SELECT * FROM " + FeedEntry.TABLE_STUDENT;
+        Cursor cursor = db.rawQuery(query, null);
+        int count = cursor.getCount();
 
-        ContentValues contentvalues=new ContentValues();
-        contentvalues.put(FeedEntry.COLUMN_ID,count+1);
+        ContentValues contentvalues = new ContentValues();
+        contentvalues.put(FeedEntry.COLUMN_ID, count + 1);
         contentvalues.put(FeedEntry.COLUMN_SCORE, student.GetTotalScore());
         contentvalues.put(FeedEntry.COLUMN_QZLOCKS, student.GetQZLocks());
         contentvalues.put(FeedEntry.COLUMN_CHLOCKS, student.GetCHLocks());
@@ -165,148 +162,154 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentvalues.put(FeedEntry.COLUMN_SECA, student.GetSecA());
 
 
-
-        db.insert(FeedEntry.TABLE_STUDENT,null,contentvalues);
+        db.insert(FeedEntry.TABLE_STUDENT, null, contentvalues);
         db.close();
     }
 
-    public void InsertChapters(Chapter chapter){
+    public void InsertChapters(Chapter chapter) {
 
-        db=getWritableDatabase();
+        db = getWritableDatabase();
         //To get , how many column in ur table
-        String query="SELECT * FROM "+FeedEntry.TABLE_CHAPTER;
-        Cursor cursor=db.rawQuery(query,null);
-        int count=cursor.getCount();
+        String query = "SELECT * FROM " + FeedEntry.TABLE_CHAPTER;
+        Cursor cursor = db.rawQuery(query, null);
+        int count = cursor.getCount();
 
-        ContentValues contentvalues=new ContentValues();
-        contentvalues.put(FeedEntry.COLUMN_CHID,count+1);
+        ContentValues contentvalues = new ContentValues();
+        contentvalues.put(FeedEntry.COLUMN_CHID, count + 1);
         contentvalues.put(FeedEntry.COLUMN_CHNAME, chapter.GetChapterName());
         contentvalues.put(FeedEntry.COLUMN_CHLOCK, chapter.GetLockChapter());
 
-        db.insert(FeedEntry.TABLE_CHAPTER,null,contentvalues);
+        db.insert(FeedEntry.TABLE_CHAPTER, null, contentvalues);
         db.close();
     }
 
-    public void InsertLessons(Lesson lesson){
+    public void InsertLessons(Lesson lesson) {
 
-        db=getWritableDatabase();
+        db = getWritableDatabase();
         //To get , how many column in ur table
-        String query="SELECT * FROM "+FeedEntry.TABLE_LESSON;
-        Cursor cursor=db.rawQuery(query,null);
-        int count=cursor.getCount();
+        String query = "SELECT * FROM " + FeedEntry.TABLE_LESSON;
+        Cursor cursor = db.rawQuery(query, null);
+        int count = cursor.getCount();
 
-        ContentValues contentvalues=new ContentValues();
-        contentvalues.put(FeedEntry.COLUMN_LSNID,count+1);
+        ContentValues contentvalues = new ContentValues();
+        contentvalues.put(FeedEntry.COLUMN_LSNID, count + 1);
         contentvalues.put(FeedEntry.COLUMN_LSNNAME, lesson.GetLessonName());
         contentvalues.put(FeedEntry.COLUMN_LSNLOCK, lesson.GetLockLesson());
         contentvalues.put(FeedEntry.COLUMN_EXERCISE, lesson.GetExercise());
         contentvalues.put(FeedEntry.COLUMN_CONTENT, lesson.GetContent());
 
-        db.insert(FeedEntry.TABLE_LESSON,null,contentvalues);
+        db.insert(FeedEntry.TABLE_LESSON, null, contentvalues);
         db.close();
     }
 
-    public void InsertQuizzes(Quiz quiz){
+    public void InsertQuizzes(Quiz quiz) {
 
-        db=getWritableDatabase();
+        db = getWritableDatabase();
         //To get , how many column in ur table
-        String query="SELECT * FROM "+FeedEntry.TABLE_QUIZ;
-        Cursor cursor=db.rawQuery(query,null);
-        int count=cursor.getCount();
+        String query = "SELECT * FROM " + FeedEntry.TABLE_QUIZ;
+        Cursor cursor = db.rawQuery(query, null);
+        int count = cursor.getCount();
 
-        ContentValues contentvalues=new ContentValues();
-        contentvalues.put(FeedEntry.COLUMN_QUIZID,count+1);
+        ContentValues contentvalues = new ContentValues();
+        contentvalues.put(FeedEntry.COLUMN_QUIZID, count + 1);
         contentvalues.put(FeedEntry.COLUMN_QUIZNAME, quiz.GetQuizName());
         contentvalues.put(FeedEntry.COLUMN_LOCKQUIZ, quiz.GetLockQuiz());
 
-        db.insert(FeedEntry.TABLE_QUIZ,null,contentvalues);
+        db.insert(FeedEntry.TABLE_QUIZ, null, contentvalues);
         db.close();
     }
 
+    //-------------------------- Delete ----------------------
+
+    public void DeleteStudent(String id) {
+
+        db = getWritableDatabase();
+        db.delete(FeedEntry.TABLE_STUDENT,   "Id = ?" , new String[] {id});
+    }
 
 
     //-------------------------- outer methods ----------------------
 
 
-    public String checkPassword(String Username){
+    public String checkPassword(String Username) {
 
         db = this.getReadableDatabase();
         //query="SELECT UserName,Password FROM  "+FeedEntry.TABLE_STUDENT;
-        String query ="SELECT UserName,Password FROM Student";
+        String query = "SELECT UserName,Password FROM Student";
 
-        Cursor cursor=db.rawQuery(query,null);
+        Cursor cursor = db.rawQuery(query, null);
 
-        String username,password;
-        password="Not found";
+        String username, password;
+        password = "Not found";
 
-        if(cursor.moveToFirst()){
-            do{
-                username=cursor.getString(0);
-                if(username.contentEquals(Username)){
-                    password=cursor.getString(1);
+        if (cursor.moveToFirst()) {
+            do {
+                username = cursor.getString(0);
+                if (username.contentEquals(Username)) {
+                    password = cursor.getString(1);
                     break;
                 }
-            }while (cursor.moveToNext());
+            } while (cursor.moveToNext());
         }
-        return  password;
+        return password;
     }
 
-    public boolean usernameExist(String Username){
+    public boolean usernameExist(String Username) {
         db = this.getReadableDatabase();
         //query="SELECT UserName,Password FROM  "+FeedEntry.TABLE_NAME;
-        String query ="SELECT UserName FROM Student";
+        String query = "SELECT UserName FROM Student";
 
-        Cursor cursor=db.rawQuery(query,null);
+        Cursor cursor = db.rawQuery(query, null);
 
         String username;
 
-        if(cursor.moveToFirst()){
-            do{
-                username=cursor.getString(0);
-                if(username.contentEquals(Username)){
+        if (cursor.moveToFirst()) {
+            do {
+                username = cursor.getString(0);
+                if (username.contentEquals(Username)) {
                     return true;
                 }
-            }while (cursor.moveToNext());
+            } while (cursor.moveToNext());
         }
         return false;
     }
 
-    public String[] checkquestion(String Username){
+    public String[] checkquestion(String Username) {
 
         db = this.getReadableDatabase();
         //query="SELECT UserName,Password FROM  "+FeedEntry.TABLE_NAME;
-        String query ="SELECT UserName,SecQ,SecA FROM Student"; //TODO add where
+        String query = "SELECT UserName,SecQ,SecA FROM Student"; //TODO add where
 
-        Cursor cursor=db.rawQuery(query,null);
+        Cursor cursor = db.rawQuery(query, null);
         String[] sec = new String[2];
-        String username,secQ,secA;
+        String username, secQ, secA;
 
 
-        if(cursor.moveToFirst()){
-            do{
-                username=cursor.getString(0);
-                if(username.contentEquals(Username)){
-                    secQ=cursor.getString(1);
-                    secA=cursor.getString(2);
-                    sec[0]=secQ;
-                    sec[1]=secA;
+        if (cursor.moveToFirst()) {
+            do {
+                username = cursor.getString(0);
+                if (username.contentEquals(Username)) {
+                    secQ = cursor.getString(1);
+                    secA = cursor.getString(2);
+                    sec[0] = secQ;
+                    sec[1] = secA;
 
                     break;
 
                 }
 
-            }while (cursor.moveToNext());
+            } while (cursor.moveToNext());
 
 
         }
 
-        return  sec;
+        return sec;
     }
 
-    public void recoverPassword(String password,String username){
+    public void recoverPassword(String password, String username) {
         db = this.getWritableDatabase();
         //query="SELECT UserName,Password FROM  "+FeedEntry.TABLE_NAME;
-        String query =" UPDATE Student SET Password = '"+password +"' WHERE UserName = '"+username+"' ";
+        String query = " UPDATE Student SET Password = '" + password + "' WHERE UserName = '" + username + "' ";
 
         db.execSQL(query);
 
@@ -318,7 +321,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public String getLoggedInStudent(String userName) {
 
-        Cursor cursor=db.query("Student", new String[]{userName}, null, null, null, null, null);
+        Cursor cursor = db.query("Student", new String[]{userName}, null, null, null, null, null);
 
         cursor.moveToFirst();
         String user = cursor.getString(cursor.getColumnIndex("UserName"));
@@ -326,4 +329,30 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return user;
     }
 
-}
+    public String getStudentId(String username) {
+
+        db = this.getReadableDatabase();
+
+        String query = "SELECT UserName,Id FROM Student";
+        String currentStudent=null;
+
+        Cursor cursor = db.rawQuery(query, null);
+
+        String Username, Id;
+        Id = "Not found";
+
+        if (cursor.moveToFirst()) {
+            do {
+                Username = cursor.getString(0);
+                if (Username.contentEquals(username)) {
+                    Id = cursor.getString(1);
+                    break;
+                }
+            } while (cursor.moveToNext());
+        }
+
+            return Id;
+        }
+
+
+    }

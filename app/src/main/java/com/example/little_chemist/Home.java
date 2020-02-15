@@ -29,7 +29,7 @@ public class Home extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         //the users info
-        Student student = (Student) getIntent().getSerializableExtra("student");
+        final Student student = (Student) getIntent().getSerializableExtra("student");
         set = findViewById(R.id.settings);
         chapters = findViewById(R.id.cardviewchapters);
 

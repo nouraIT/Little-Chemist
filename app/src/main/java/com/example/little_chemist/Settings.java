@@ -12,6 +12,8 @@ import android.graphics.Color;
 import android.graphics.ColorFilter;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.View;
 import java.sql.SQLException;
 import java.util.Locale;
@@ -26,6 +28,8 @@ import com.example.little_chemist.Tables.Student;
 
 
 public class Settings extends AppCompatActivity {
+
+    DatabaseHelper helper=new DatabaseHelper(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +58,9 @@ public class Settings extends AppCompatActivity {
         String name = pref.getString("username", null); // getting String
         //pref.getInt("password", -1); // getting Integer
 
+        String studentId=helper.getStudentId(name);
+
+        //Log.v("00000000000000",studentId);
 
         TextView profileName = findViewById(R.id.profileName);
         //String userName = loginData.getLoggedInStudent("UserName");
@@ -167,7 +174,8 @@ public class Settings extends AppCompatActivity {
             }
         });
 
-
+        //SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        //String userName=preferences.getString("username","");
         Delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -180,12 +188,12 @@ public class Settings extends AppCompatActivity {
                             public void onClick(DialogInterface dialog, int which) {
                                 // user want to delete
 
-
-//                                Intent intent = new Intent(Settings.this,
-//                                        LoginPage.class);
-//                                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-//                                startActivity(intent);
-//                                finish();
+                                helper.DeleteStudent(studentId);
+                                Intent intent = new Intent(Settings.this,
+                                        LoginPage.class);
+                                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                startActivity(intent);
+                                finish();
                             }
                         })
                         .setNegativeButton(getText(R.string.no), new DialogInterface.OnClickListener() {
