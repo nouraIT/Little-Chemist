@@ -47,6 +47,7 @@ protected void Quiz(Bundle savedInstanceState)
     toolbar.setNavigationOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
+            //switch to go back to chapter
             Intent Homepage = new Intent(Quiz.this, Chapters.class);
             startActivity(Homepage);
             //finish();

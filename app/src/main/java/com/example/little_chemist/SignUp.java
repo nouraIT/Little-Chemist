@@ -227,7 +227,7 @@ public class SignUp extends AppCompatActivity {
 
                 if(validateN() && validateName() && validatePass() && validateSecurity() && validateExistence()) {
                     //Insert into Database
-                    Student student = new Student(UserNameStr,PasswordStr);
+                    Student student = new Student(UserNameStr,PasswordStr,0);
                     //student.SetUserName(UserNameStr);
                     //student.SetPassword(PasswordStr);
 
@@ -240,9 +240,6 @@ public class SignUp extends AppCompatActivity {
                     //Send Data
                     loginIntent.putExtra("student",student);
                     //loginIntent.putExtra("Password",PasswordStr);
-
-                    String welcome = getString(R.string.welcome) +" "+ UserNameStr ;
-                    Toast.makeText(getApplicationContext(), welcome, Toast.LENGTH_LONG).show();
 
                     startActivity(loginIntent);
                     finish();

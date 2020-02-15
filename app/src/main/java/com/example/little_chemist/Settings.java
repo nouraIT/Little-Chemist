@@ -12,8 +12,6 @@ import android.graphics.Color;
 import android.graphics.ColorFilter;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
-import android.util.Log;
 import android.view.View;
 import java.sql.SQLException;
 import java.util.Locale;
@@ -29,7 +27,25 @@ import com.example.little_chemist.Tables.Student;
 
 public class Settings extends AppCompatActivity {
 
-    DatabaseHelper helper=new DatabaseHelper(this);
+    SharedPreferences pref;
+    SharedPreferences.Editor editor ;
+    DatabaseHelper helper = new DatabaseHelper(Settings.this);
+    boolean arabicFlag ;
+
+
+//    public void onResume(){
+//        super.onResume();
+//        //setContentView(R.layout.activity_settings);
+////        String name = pref.getString("username", null);
+////        System.out.println("name is hrnejknfjrfj "+name);
+//
+//        //pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
+//        //editor = pref.edit();
+//        //boolean arabicFlag = pref.getBoolean("arabic",false);
+//
+//
+//
+//    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +56,7 @@ public class Settings extends AppCompatActivity {
 
         //setSupportActionBar(toolbar);
         //final String UserNameStr= getIntent().getStringExtra("UserName");
-        //Student student = (Student) getIntent().getSerializableExtra("student");
+        Student student = (Student) getIntent().getSerializableExtra("student");
 //        DatabaseHelper loginData;
 //
 //        loginData=new DatabaseHelper(this);
@@ -51,16 +67,14 @@ public class Settings extends AppCompatActivity {
 //        }
 
 
-        SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
-        SharedPreferences.Editor editor = pref.edit();
 
+        pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
+        editor = pref.edit();
 
         String name = pref.getString("username", null); // getting String
         //pref.getInt("password", -1); // getting Integer
+        //arabicFlag = helper.checkLang(name);
 
-        String studentId=helper.getStudentId(name);
-
-        //Log.v("00000000000000",studentId);
 
         TextView profileName = findViewById(R.id.profileName);
         //String userName = loginData.getLoggedInStudent("UserName");
@@ -80,8 +94,8 @@ public class Settings extends AppCompatActivity {
 
 
         Button booklet = findViewById(R.id.button5);
-        Button En = findViewById(R.id.button3);
-        Button Ara = findViewById(R.id.button4);
+        Button En = findViewById(R.id.enBtn);
+        Button Ara = findViewById(R.id.arBtn);
         CardView Delete = findViewById(R.id.deleteBtn);
 
         setSupportActionBar(toolbar);
@@ -109,6 +123,10 @@ public class Settings extends AppCompatActivity {
                 getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
                 recreate();
 
+                editor.putBoolean("arabic",false);
+                helper.changeLang(name,0);
+                editor.commit();
+
 
             }
         });
@@ -121,10 +139,14 @@ public class Settings extends AppCompatActivity {
                 config.locale = locale;
                 getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
                 recreate();
-                String langPref = "Language";
-                SharedPreferences prefs = getSharedPreferences("CommonPrefs", Activity.MODE_PRIVATE);
-                SharedPreferences.Editor editor = prefs.edit();
-                editor.putString(langPref, "ar");
+
+//                String langPref = "Language";
+//                SharedPreferences prefs = getSharedPreferences("CommonPrefs", Activity.MODE_PRIVATE);
+//                SharedPreferences.Editor editor = prefs.edit();
+//                editor.putString(langPref, "ar");
+//                editor.commit();
+                editor.putBoolean("arabic",true);
+                helper.changeLang(name,1);
                 editor.commit();
 
             }
@@ -145,6 +167,7 @@ public class Settings extends AppCompatActivity {
                                 SharedPreferences myPrefs = getSharedPreferences("Activity",
                                         MODE_PRIVATE);
                                 SharedPreferences.Editor editor = myPrefs.edit();
+                                Home.alreadyRecreated = false;
                                 editor.clear();
                                 editor.commit();
 
@@ -174,8 +197,7 @@ public class Settings extends AppCompatActivity {
             }
         });
 
-        //SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
-        //String userName=preferences.getString("username","");
+
         Delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -188,12 +210,12 @@ public class Settings extends AppCompatActivity {
                             public void onClick(DialogInterface dialog, int which) {
                                 // user want to delete
 
-                                helper.DeleteStudent(studentId);
-                                Intent intent = new Intent(Settings.this,
-                                        LoginPage.class);
-                                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                                startActivity(intent);
-                                finish();
+
+//                                Intent intent = new Intent(Settings.this,
+//                                        LoginPage.class);
+//                                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//                                startActivity(intent);
+//                                finish();
                             }
                         })
                         .setNegativeButton(getText(R.string.no), new DialogInterface.OnClickListener() {

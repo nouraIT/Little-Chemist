@@ -54,3 +54,9 @@ dependencies {
 
 
 }
+
+
+sceneform.asset('sampledata/model.obj',
+        'default',
+        'sampledata/model.sfa',
+        'src/main/assets/model')

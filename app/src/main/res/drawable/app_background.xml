@@ -1,38 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item >
-        <shape android:shape="rectangle"  >
 
-            <solid android:color="#FFFFFF"></solid>
-<!--            <corners android:radius="40dp"></corners>-->
+    <item>
+
+        <shape android:shape="rectangle" >
+
+            <gradient
+                android:angle="45"
+                android:endColor="#CBE3EE"
+                android:centerColor="#ADD1E2"
+                android:startColor="#75A9B1"
+
+                >
+            </gradient>
 
         </shape>
+
     </item>
 
 
-    <item android:bottom="500px">
-
-        <shape  >
-
-                <gradient
-                    android:angle="90"
-                    android:endColor="#F35278"
-                    android:centerColor="#CC585F"
-                    android:startColor="#DF7D5F"
-
-                    >
-                </gradient>
-<!--                <corners-->
-<!--                    android:bottomLeftRadius="40dp"-->
-<!--                    android:bottomRightRadius="40dp">-->
-
-<!--                </corners>-->
 
 
-        </shape>
 
-        </item>
+
+
+
+<!--    <item >-->
+<!--        <shape android:shape="rectangle"  >-->
+
+<!--            <solid android:color="#FFFFFF"></solid>-->
+<!--&lt;!&ndash;            <corners android:radius="40dp"></corners>&ndash;&gt;-->
+
+<!--        </shape>-->
+<!--    </item>-->
+
+
+<!--    <item android:bottom="500px">-->
+
+<!--        <shape  >-->
+
+<!--                <gradient-->
+<!--                    android:angle="90"-->
+<!--                    android:endColor="#F35278"-->
+<!--                    android:centerColor="#CC585F"-->
+<!--                    android:startColor="#DF7D5F"-->
+
+<!--                    >-->
+<!--                </gradient>-->
+<!--&lt;!&ndash;                <corners&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:bottomLeftRadius="40dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:bottomRightRadius="40dp">&ndash;&gt;-->
+
+<!--&lt;!&ndash;                </corners>&ndash;&gt;-->
+
+
+<!--        </shape>-->
+
+<!--        </item>-->
 
         <!-- Bottom 2dp Shadow -->
 
