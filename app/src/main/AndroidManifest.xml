@@ -34,6 +34,8 @@
         <activity android:name=".Chapters_dir.Ch3" />
         <activity android:name=".Chapters_dir.Ch4" />
         <activity android:name=".Chapters_dir.Ch5" />
+        <activity android:name=".quizQ" />
+
         <activity
             android:name=".SignUp"
             android:label="@string/sign_up" />

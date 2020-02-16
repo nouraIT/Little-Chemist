@@ -41,7 +41,7 @@
     <string name="nullSecQuestion">لم تختر سؤلا</string>
     <string name="nullSecAnswer">لا يمكن ان يكون حقل الاجابه فارغا</string>
     <string name="shortAnswer">يجب ان تتكون الاجابه من 3 احرف على الاقل</string>
-    <string name="chapter1">الفصل الاول</string>
+    <string name="chapter_1">الفصل الاول</string>
     <string name="chapter2">الفصل الثاني</string>
     <string name="lesson1">الدرس الاول</string>
     <string name="Ch1Lsn1">تاريخ الذرة</string>

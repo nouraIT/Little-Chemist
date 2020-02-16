@@ -18,11 +18,7 @@ import android.widget.ProgressBar;
 
 public class Quiz_score extends AppCompatActivity {
 
-    ProgressBar progressBar1 ;
-    ProgressBar progressBar2 ;
-    ProgressBar progressBar3 ;
-    ProgressBar progressBar4 ;
-    ProgressBar progressBar5 ;
+    ProgressBar progressBar1,progressBar2, progressBar3 ,progressBar4 ,progressBar5 ;
 
 
     @Override

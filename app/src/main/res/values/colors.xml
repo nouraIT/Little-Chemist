@@ -3,6 +3,7 @@
     <color name="colorPrimary">#5F6AB9</color>
     <color name="primaryYellow">#F3CB4E</color>
     <color name="colorAccent">#D81B60</color>
+<!--  D81B60  42ADF5-->
     <color name="darkRed">#CD0000</color>
     <color name="white">#FFFFFF</color>
 
@@ -29,6 +30,11 @@
     <color name="textRegister">#BEFCF1</color>
 
     <color name="magenta">#F72A5A</color>
+
+
+<!--   ________________________________ -->
+    <color name="colorIcons">#FFFFFF</color>
+
 
 
 </resources>
