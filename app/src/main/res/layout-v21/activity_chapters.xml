@@ -90,8 +90,6 @@
                         android:layout_height="wrap_content"
 
                         android:layout_gravity="center_horizontal"
-                        android:fontFamily="@font/roboto_bold"
-
                         android:layout_marginTop="15dp"
 
                         android:text="@string/chapter_1"
@@ -236,8 +234,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
-                        android:alpha="1"
                         android:layout_marginTop="15dp"
+                        android:alpha="1"
 
                         android:fontFamily="roboto_bold"
                         android:text="@string/chapter_3"
@@ -383,11 +381,11 @@
                     android:visibility="visible">
 
                     <TextView
-                        android:layout_marginTop="15dp"
-
                         android:layout_width="wrap_content"
+
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="15dp"
                         android:fontFamily="roboto_bold"
                         android:text="@string/chapter_5"
                         android:textColor="#631A01"

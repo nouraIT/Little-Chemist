@@ -22,7 +22,7 @@
     <string name="welcome">Welcome </string>
 
     <!--   _______________ chapters names and lessons _______________-->
-<!--   _______________ chapters  _______________-->
+    <!--   _______________ chapters  _______________-->
 
     <string name="chapter_1">Chapter 1</string>
     <string name="chapter_2">Chapter 2</string>
@@ -85,8 +85,6 @@
     <string name="previous_question">Previous Question</string>
 
 
-
-
     <!--   _______________ chapters, quizzes and lessons's symbols _______________-->
 
 
@@ -141,9 +139,6 @@
 
 
     <string name="login_failed">Login failed</string>
-
-
-
 
 
 </resources>

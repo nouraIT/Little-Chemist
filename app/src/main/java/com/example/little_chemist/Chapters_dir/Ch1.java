@@ -1,6 +1,5 @@
 package com.example.little_chemist.Chapters_dir;
 
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -48,7 +47,7 @@ public class Ch1 extends AppCompatActivity {
         lsn1 = findViewById(R.id.cardviewlLSN1);
         lsn1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                Intent n = new Intent(Ch1.this, Ch1.class);
+                Intent n = new Intent(Ch1.this, Lessons.class);
                 startActivity(n);
                 // finish();
             }
