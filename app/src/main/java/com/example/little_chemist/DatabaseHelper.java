@@ -228,6 +228,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
+    //-------------------------- Delete ----------------------
+
+    public void DeleteStudent(String id) {
+
+        db = getWritableDatabase();
+        db.delete(FeedEntry.TABLE_STUDENT,   "Id = ?" , new String[] {id});
+    }
+
 
     //-------------------------- outer methods ----------------------
 
@@ -363,5 +371,32 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 //        cursor.close();
 //        return user;
 //    }
+
+    public String getStudentId(String username) {
+
+        db = this.getReadableDatabase();
+
+        String query = "SELECT UserName,Id FROM Student";
+        String currentStudent=null;
+
+        Cursor cursor = db.rawQuery(query, null);
+
+        String Username, Id;
+        Id = "Not found";
+
+        if (cursor.moveToFirst()) {
+            do {
+                Username = cursor.getString(0);
+                if (Username.contentEquals(username)) {
+                    Id = cursor.getString(1);
+                    break;
+                }
+            } while (cursor.moveToNext());
+        }
+
+        return Id;
+    }
+
+
 
 }

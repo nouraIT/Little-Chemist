@@ -16,6 +16,8 @@
         <item name="colorControlNormal">@color/white</item>
     </style>
 
+
+
     <style name="MyApp.ActionBarTheme2" parent="@style/ThemeOverlay.AppCompat.ActionBar">
         <!-- THIS is where you can color the arrow! -->
         <item name="colorControlNormal">@color/OrangeText</item>

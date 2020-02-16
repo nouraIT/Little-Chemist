@@ -137,7 +137,7 @@ public class LoginPage extends AppCompatActivity implements Serializable {
                         SharedPreferences.Editor editor = pref.edit();
 
                         editor.putString("username", UserNameStr); // Storing string
-                        //editor.putString("password", PasswordStr); // Storing string
+                        editor.putString("password", PasswordStr); // Storing string
 
 
                         editor.commit();
