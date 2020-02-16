@@ -195,7 +195,7 @@
 
         android:elevation="10dp"
 
-        android:text="@string/the_study_of_atoms"
+        android:text="@string/Ch1Name"
         android:textColor="#030303"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/progressBar2"
@@ -215,7 +215,7 @@
 
         android:elevation="10dp"
 
-        android:text="@string/the_branches_of_chemistry"
+        android:text="@string/Ch4Name"
         android:textColor="#050505"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/progressBar4"
@@ -271,7 +271,7 @@
 
         android:elevation="10dp"
 
-        android:text="@string/the_periodic_table"
+        android:text="@string/Ch5Name"
         android:textColor="#050505"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/progressBar3"
@@ -289,7 +289,7 @@
 
         android:elevation="10dp"
 
-        android:text="@string/elements"
+        android:text="@string/Ch2Name"
         android:textColor="#020202"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/progressBar6"
@@ -308,7 +308,7 @@
 
         android:elevation="10dp"
 
-        android:text="@string/chemistry_basics"
+        android:text="@string/Ch3Name"
         android:textColor="#020202"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/progressBar5"

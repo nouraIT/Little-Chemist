@@ -10,12 +10,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.example.little_chemist.Tables.Student;
 
 import java.util.Locale;
+
+import pl.droidsonroids.gif.GifImageView;
 
 
 public class Home extends AppCompatActivity {
@@ -27,6 +30,7 @@ public class Home extends AppCompatActivity {
     boolean arabicFlag;
     DatabaseHelper helper = new DatabaseHelper(Home.this);
     public static boolean alreadyRecreated = false;
+    public static boolean AlreadyGreeted = false;
 
 
     @Override
@@ -35,6 +39,7 @@ public class Home extends AppCompatActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_home);
+
 
 
         SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
@@ -51,8 +56,11 @@ public class Home extends AppCompatActivity {
         chapters = findViewById(R.id.cardviewchapters);
 
         //welcome
-        String welcome = getString(R.string.welcome) +" "+ name ;
-        Toast.makeText(getApplicationContext(), welcome, Toast.LENGTH_LONG).show();
+        if(!AlreadyGreeted) {
+            String welcome = getString(R.string.welcome) + " " + name;
+            Toast.makeText(getApplicationContext(), welcome, Toast.LENGTH_LONG).show();
+            AlreadyGreeted = true;
+        }
 
 
         //check the lang
@@ -117,7 +125,9 @@ public class Home extends AppCompatActivity {
 
 
 
-
     }
+
+
+
 
 }

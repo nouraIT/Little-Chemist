@@ -24,22 +24,21 @@
     <!--   _______________ chapters names and lessons _______________-->
 <!--   _______________ chapters  _______________-->
 
+    <string name="chapter_1">Chapter 1</string>
     <string name="chapter_2">Chapter 2</string>
     <string name="chapter_3">Chapter 3</string>
     <string name="chapter_5">chapter 5</string>
     <string name="chapter_4">chapter 4</string>
-    <string name="chapter1">Chapter 1</string>
-    <string name="chapter2">Chapter 2</string>
 
     <string name="chapters">Chapters</string>
 
     <!--   _______________ chapters  lessons _______________-->
 
-    <string name="Ch5Name">The periodic table</string>
+    <string name="Ch5Name">The Periodic Table</string>
     <string name="Ch2Name">Elements</string>
-    <string name="Ch3Name">Chemistry basics</string>
-    <string name="Ch4Name">The Branches of chemistry</string>
-    <string name="Ch1Name">the study of atoms</string>
+    <string name="Ch3Name">Chemistry Casics</string>
+    <string name="Ch4Name">The Branches Of Chemistry</string>
+    <string name="Ch1Name">The Study Of Atoms</string>
 
     <string name="lesson1">Lesson 1</string>
     <string name="lesson2">Lesson 2</string>
@@ -59,11 +58,6 @@
     <string name="Ch2Lsn4">Chemical Equations</string>
     <string name="Ch2Lsn5">pH Scale</string>
 
-    <string name="the_periodic_table">The periodic table</string>
-    <string name="elements">Elements</string>
-    <string name="chemistry_basics">Chemistry basics</string>
-    <string name="the_branches_of_chemistry">The Branches of chemistry</string>
-    <string name="the_study_of_atoms">The study of atoms</string>
     <string name="Ch3Lsn1">Salt Facts</string>
     <string name="Ch3Lsn2">Matter</string>
     <string name="Ch3Lsn3">Chemical Reactions</string>

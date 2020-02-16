@@ -75,7 +75,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
 
-                        android:text="@string/chapter1"
+                        android:text="@string/chapter_1"
                         android:textSize="25sp" />
 
                     <TextView

@@ -1,26 +1,34 @@
 package com.example.little_chemist.Chapters_dir;
 
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 
 
 import com.example.little_chemist.Chapters;
 import com.example.little_chemist.R;
-import com.example.little_chemist.Tables.Quiz;
+import com.example.little_chemist.quizQ;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
 
+
 public class Ch1 extends AppCompatActivity {
     private CardView lsn1, lsn2, lsn3, lsn4, lsn5,quiz;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_ch1);
+
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -42,17 +50,17 @@ public class Ch1 extends AppCompatActivity {
             public void onClick(View view) {
                 Intent n = new Intent(Ch1.this, Ch1.class);
                 startActivity(n);
-               // finish();
+                // finish();
             }
         });
 
         lsn2 = findViewById(R.id.cardviewlLSN2);
-        lsn2.setOnClickListener(new View.OnClickListener(){
+        lsn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent n = new Intent(Ch1.this, Ch1.class);
                 startActivity(n);
-              //  finish();
+                //  finish();
             }
         });
 
@@ -61,7 +69,7 @@ public class Ch1 extends AppCompatActivity {
             public void onClick(View view) {
                 Intent n = new Intent(Ch1.this, Ch1.class);
                 startActivity(n);
-               // finish();
+                // finish();
             }
         });
 
@@ -70,7 +78,7 @@ public class Ch1 extends AppCompatActivity {
             public void onClick(View view) {
                 Intent n = new Intent(Ch1.this, Ch1.class);
                 startActivity(n);
-               // finish();
+                // finish();
             }
         });
 
@@ -79,18 +87,22 @@ public class Ch1 extends AppCompatActivity {
             public void onClick(View view) {
                 Intent n = new Intent(Ch1.this, Ch1.class);
                 startActivity(n);
-              //  finish();
+                //  finish();
             }
         });
         quiz = findViewById(R.id.quiz);
         quiz.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                Intent n = new Intent(Ch1.this, Quiz.class);
-                n.putExtra("ChapterNumber",1);
+
+
+                Intent n = new Intent(Ch1.this, quizQ.class);
+                n.putExtra("ChapterNumber", 1);
                 startActivity(n);
                 //  finish();
             }
         });
 
     }
+
+
 }

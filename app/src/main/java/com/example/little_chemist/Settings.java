@@ -168,6 +168,7 @@ public class Settings extends AppCompatActivity {
                                         MODE_PRIVATE);
                                 SharedPreferences.Editor editor = myPrefs.edit();
                                 Home.alreadyRecreated = false;
+                                Home.AlreadyGreeted = false;
                                 editor.clear();
                                 editor.commit();
 
