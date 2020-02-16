@@ -225,8 +225,10 @@ public class Settings extends AppCompatActivity {
                             startActivity(intent);
                             finish();
                         }
+
                         else{
                             //error masg
+                            //TODO
                         }
                     }
                 });
