@@ -134,6 +134,8 @@ public class Home extends AppCompatActivity {
 
         mPieChart.startAnimation();
 
+
+
     }
 
 }

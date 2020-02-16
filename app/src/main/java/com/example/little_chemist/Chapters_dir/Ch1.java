@@ -9,6 +9,7 @@ import android.view.WindowManager;
 
 import com.example.little_chemist.Chapters;
 import com.example.little_chemist.R;
+import com.example.little_chemist.View_lesson.Lessons;
 import com.example.little_chemist.quizQ;
 
 import androidx.appcompat.app.AppCompatActivity;
