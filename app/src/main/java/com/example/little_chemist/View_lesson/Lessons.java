@@ -44,8 +44,8 @@ public class Lessons extends AppCompatActivity {
 
         mSlidsView.addOnPageChangeListener(viewListener);
 
-        exercise = (Button)findViewById(R.id.ex) ;
-        nextBtn = (Button)findViewById(R.id.nextBtn) ;
+        exercise = findViewById(R.id.ex) ;
+        nextBtn = findViewById(R.id.nextBtn) ;
         preBtn =(Button) findViewById(R.id.preBtn) ;
 
 //        exercise.setOnClickListener(new View.OnClickListener() {
@@ -57,13 +57,13 @@ public class Lessons extends AppCompatActivity {
 //        });
 
 
-        nextBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                mSlidsView.setCurrentItem(mCurrent+1);
-            }
-        });
+//        nextBtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//                mSlidsView.setCurrentItem(mCurrent+1);
+//            }
+//        });
 
         preBtn.setOnClickListener(new View.OnClickListener() {
             @Override
