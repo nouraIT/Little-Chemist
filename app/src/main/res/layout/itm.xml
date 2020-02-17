@@ -5,8 +5,10 @@
     android:id="@+id/ll"
     android:layout_width="250dp"
     android:layout_height="match_parent"
+    android:background="@color/white"
     >
 
+<!--        TODO maybe add a card view ? -->
 
         <TextView
             android:id="@+id/item_text"

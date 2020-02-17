@@ -17,7 +17,7 @@ import android.widget.Toast;
 
 import com.example.little_chemist.Tables.Student;
 import com.google.android.material.textfield.TextInputLayout;
-import com.scwang.wave.MultiWaveHeader;
+//import com.scwang.wave.MultiWaveHeader;
 
 import java.io.Serializable;
 
