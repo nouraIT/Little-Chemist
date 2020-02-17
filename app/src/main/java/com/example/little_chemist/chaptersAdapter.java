@@ -1,9 +1,6 @@
 package com.example.little_chemist;
 
 import android.content.Context;
-import android.content.res.*;
-
-import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -85,7 +82,7 @@ public class chaptersAdapter extends PagerAdapter {
         //chNum
         TextView SlidechapterNum = view.findViewById(R.id.chNum) ;
         //chapterName
-        TextView SlidechapterName = view.findViewById(R.id.chapterName) ;
+        //TextView SlidechapterName = view.findViewById(R.id.chapterName) ;
         //chapterDrawing
         ImageView SlidechapterDraw = view.findViewById(R.id.chapterDrawing) ;
         //chapterCard
@@ -100,7 +97,7 @@ public class chaptersAdapter extends PagerAdapter {
 
 
         SlidechapterNum.setText(chapter_num[position]);
-        SlidechapterName.setText(chapter_name[position]);
+//        SlidechapterName.setText(chapter_name[position]);
         SlidechapterDraw.setImageResource(chapter_drawings[position]);
         SlideChapterCard.setBackgroundResource(chapter_bg[position]);
         SlideLockImg.setImageResource(chapter_Lock[position]);

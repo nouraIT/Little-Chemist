@@ -29,8 +29,7 @@ import com.example.little_chemist.Chapters_dir.Ch5;
 
 public class Chapters extends AppCompatActivity {
 
-  private CardView  card0,card00 ;
-
+    private CardView  card00 ;
     private ViewPager mSlidsView ;
     private LinearLayout mCardShower ;
     private LinearLayout mDots ;
@@ -48,24 +47,23 @@ public class Chapters extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         setContentView(R.layout.activity_chapters);
 
         Context con = Chapters.this;
         //ViewGroup container = (ViewGroup) new View(con);
 
-        layoutInflater = (LayoutInflater) con.getSystemService(Chapters.LAYOUT_INFLATER_SERVICE) ;
-        View view = layoutInflater.inflate(R.layout.chapters_slider,null,false) ;
+        layoutInflater = (LayoutInflater) con.getSystemService(Chapters.LAYOUT_INFLATER_SERVICE);
+        View view = layoutInflater.inflate(R.layout.chapters_slider, null, false);
 
         card00 = view.findViewById(R.id.cardviewch1);
-        card0 = findViewById(R.id.cardviewch1);
-        mSlidsView = findViewById(R.id.chaptersSlidePage) ;
-        mDots = findViewById(R.id.dots) ;
-        mCardShower = findViewById(R.id.cardShower) ;
+        mSlidsView = findViewById(R.id.chaptersSlidePage);
+        mDots = findViewById(R.id.dots);
+        mCardShower = findViewById(R.id.cardShower);
 
 
-        adapter = new chaptersAdapter(this) ;
+        adapter = new chaptersAdapter(this);
 
         mSlidsView.setAdapter(adapter);
 
@@ -87,7 +85,7 @@ public class Chapters extends AppCompatActivity {
                 //finish();
             }
         });
-
+    }//on create
 
 //        card00.setOnClickListener(new View.OnClickListener() {
 //            public void onClick(View view) {
@@ -134,10 +132,54 @@ public class Chapters extends AppCompatActivity {
 //                });
 
 
+//mSlidsView
+/*
+
+ */
+
+    ViewPager.OnPageChangeListener viewListener = new ViewPager.OnPageChangeListener(){
+        @Override
+        public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+        }
+
+        @Override
+        public void onPageSelected(int position) {
+
+            addDotsIndicator(position);
+            mCurrent = position ;
+            System.out.println(position);
+            switch(position){
+                case 0:
+                    card00.setId(R.id.cardviewch1);
+                    //card0.setId(R.id.cardviewch1);
+                    break;
+                case 1:
+                    card00.setId(R.id.cardviewch2);
+//                    card0.setId(R.id.cardviewch2);
+                    break;
+                case 2:
+                    card00.setId(R.id.cardviewch3);
+//                    card0.setId(R.id.cardviewch3);
+                    break;
+                case 3:
+                    card00.setId(R.id.cardviewch4);
+//                    card0.setId(R.id.cardviewch4);
+                    break;
+                case 4:
+                    card00.setId(R.id.cardviewch5);
+//                    card0.setId(R.id.cardviewch5);
+                    break;
+            }
 
 
+        };
 
-    }
+        @Override
+        public void onPageScrollStateChanged(int state) {
+
+        }
+    };
 
     public void addDotsIndicator(int position ){
 
@@ -152,90 +194,36 @@ public class Chapters extends AppCompatActivity {
 
             mDots.addView(mDotsText[i]);
 
-            switch(i){
-                case 1:
-                    card00.setId(R.id.cardviewch1);
-                    card0.setId(R.id.cardviewch1);
-                    break;
-                case 2:
-                    card00.setId(R.id.cardviewch2);
-                    card0.setId(R.id.cardviewch2);
-                    break;
-                case 3:
-                    card00.setId(R.id.cardviewch3);
-                    card0.setId(R.id.cardviewch3);
-                    break;
-                case 4:
-                    card00.setId(R.id.cardviewch4);
-                    card0.setId(R.id.cardviewch4);
-                    break;
-                case 5:
-                    card00.setId(R.id.cardviewch5);
-                    card0.setId(R.id.cardviewch5);
-                    break;
-            }
+
 
         }
         if (mDotsText.length>0){
             mDotsText[position].setTextColor(getResources().getColor(R.color.Black));
         }
-
-
-
-
     }
 
-    ViewPager.OnPageChangeListener viewListener = new ViewPager.OnPageChangeListener(){
-        @Override
-        public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-        }
-
-        @Override
-        public void onPageSelected(int position) {
-
-            addDotsIndicator(position);
-            mCurrent = position ;
-
-            if(position==0){
-
-
-            }else if (position == mDotsText.length - 1){
-
-            }else{
-            }
-
-        };
-
-        @Override
-        public void onPageScrollStateChanged(int state) {
-
-        }
-    };
 
     public void onBtnChapterClick(View v){
 
         Intent n ;
-        //System.out.println("id is over here "+v.getId() +"and "+R.id.cardviewch1);
+        //System.out.println(card00.getId()+" id is over here "+v.getId() +" and "+R.id.cardviewch1);
 
-        if(v.getId()==R.id.cardviewch1){
+
+        if(R.id.cardviewch1==card00.getId()){
             n = new Intent(Chapters.this, Ch1.class);
-        }else
 
-        if(v.getId()==R.id.cardviewch2){
+        }else if(R.id.cardviewch2==card00.getId()){
             n = new Intent(Chapters.this, Ch2.class);
-        }else
 
-        if(v.getId()==R.id.cardviewch3){
+        }else if(R.id.cardviewch3==card00.getId()){
             n = new Intent(Chapters.this, Ch3.class);
-        }else
 
-        if(v.getId()==R.id.cardviewch4){
+        }else if(R.id.cardviewch1==card00.getId()){
             n = new Intent(Chapters.this, Ch4.class);
-        }else
 
-        if(v.getId()==R.id.cardviewch5){
+        }else if(R.id.cardviewch1==card00.getId()){
             n = new Intent(Chapters.this, Ch5.class);
+
         }
         else{
             n = new Intent(Chapters.this, Chapters.class);

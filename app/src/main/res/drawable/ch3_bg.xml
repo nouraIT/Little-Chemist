@@ -6,9 +6,8 @@
 
             <gradient
 
-                android:endColor="#F35278"
-                android:centerColor="#CC585F"
-                android:startColor="#DF7D5F">
+                android:endColor="#FFAA00"
+                android:startColor="@color/primaryYellow">
 <!--                android:startColor="#EB4A80"-->
 
 <!--                android:endColor="#F44336"-->

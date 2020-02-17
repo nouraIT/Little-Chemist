@@ -36,7 +36,7 @@
 
     <string name="Ch5Name">The Periodic Table</string>
     <string name="Ch2Name">Elements</string>
-    <string name="Ch3Name">Chemistry Casics</string>
+    <string name="Ch3Name">Chemistry Basics</string>
     <string name="Ch4Name">The Branches Of Chemistry</string>
     <string name="Ch1Name">The Study Of Atoms</string>
 
@@ -62,7 +62,7 @@
     <string name="Ch3Lsn2">Matter</string>
     <string name="Ch3Lsn3">Chemical Reactions</string>
     <string name="Ch3Lsn4">Liquids and Gases</string>
-    <string name="Ch3Lsn5">Biochemistry</string>
+    <string name="Ch3Lsn5">Bio  chemistry</string>
 
     <string name="Ch4Lsn1">Water Chemistry</string>
     <string name="Ch4Lsn2">Organic Chemistry</string>
@@ -152,7 +152,7 @@
 
         <item name="Ch1Name">The Study Of Atoms</item>
         <item name="Ch2Name">Elements</item>
-        <item name="Ch3Name">Chemistry Casics</item>
+        <item name="Ch3Name">Chemistry Basics</item>
         <item name="Ch4Name">The Branches Of Chemistry</item>
         <item name="Ch5Name">The Periodic Table</item>
 
@@ -164,8 +164,8 @@
         <item name="chapter_1">Chapter 1</item>
         <item name="chapter_2">Chapter 2</item>
         <item name="chapter_3">Chapter 3</item>
-        <item name="chapter_4">chapter 4</item>
-        <item name="chapter_5">chapter 5</item>
+        <item name="chapter_4">Chapter 4</item>
+        <item name="chapter_5">Chapter 5</item>
 
     </string-array>
 
