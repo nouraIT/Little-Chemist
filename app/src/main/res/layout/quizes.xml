@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="fill_horizontal"
-    android:background="@drawable/app_background"
+    android:background="@drawable/backgroundhome"
     android:orientation="vertical"
     tools:context=".quizQ">
 
@@ -68,7 +68,7 @@
 
         android:fontFamily="@font/roboto_bold"
         android:text="Next"
-        android:textColor="@color/white"
+        android:textColor="@color/primaryYellow"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -88,7 +88,7 @@
         android:fontFamily="@font/roboto_bold"
 
         android:text="Previous"
-        android:textColor="@color/white"
+        android:textColor="@color/primaryYellow"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/button4"

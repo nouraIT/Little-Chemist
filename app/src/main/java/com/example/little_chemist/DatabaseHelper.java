@@ -337,7 +337,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 username=cursor.getString(0);
                 if(username.contentEquals(Username)){
                     arabic =cursor.getInt(1);
-                    System.out.println("name is "+username+" and the arabic is "+arabic);
+                    //System.out.println("name is "+username+" and the arabic is "+arabic);
                     if(arabic == 1)
                         return true;
                     break;

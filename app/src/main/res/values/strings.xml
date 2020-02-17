@@ -21,7 +21,7 @@
 
     <string name="welcome">Welcome </string>
 
-    <!--   _______________ chapters names and lessons _______________-->
+
     <!--   _______________ chapters  _______________-->
 
     <string name="chapter_1">Chapter 1</string>
@@ -76,6 +76,11 @@
     <string name="Ch5Lsn5">Group 18</string>
     <string name="Ch5Lsn4">Group 17</string>
 
+
+
+    <string name="backBtn">Back</string>
+    <string name="nextBtn">Next</string>
+
     <!--   _______________ quizzes _______________-->
 
 
@@ -93,7 +98,7 @@
     <string name="scores">Scores</string>
     <string name="progressBar">Progress Bar</string>
 
-    <!-- _______________ registeration _______________ -->
+    <!-- _______________ registration _______________ -->
 
     <string name="title_activity_login">Sign in</string>
     <string name="action_sign_in_short">Sign in</string>
@@ -139,6 +144,30 @@
 
 
     <string name="login_failed">Login failed</string>
+
+    <!-- _______________ Arrays  _______________ -->
+
+
+    <string-array name="chapter_names">
+
+        <item name="Ch1Name">The Study Of Atoms</item>
+        <item name="Ch2Name">Elements</item>
+        <item name="Ch3Name">Chemistry Casics</item>
+        <item name="Ch4Name">The Branches Of Chemistry</item>
+        <item name="Ch5Name">The Periodic Table</item>
+
+    </string-array>
+
+
+    <string-array name="chapters_numbers">
+
+        <item name="chapter_1">Chapter 1</item>
+        <item name="chapter_2">Chapter 2</item>
+        <item name="chapter_3">Chapter 3</item>
+        <item name="chapter_4">chapter 4</item>
+        <item name="chapter_5">chapter 5</item>
+
+    </string-array>
 
 
 </resources>

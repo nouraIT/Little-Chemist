@@ -30,6 +30,7 @@
         <activity
             android:name=".LoginPage"
             android:label="@string/title_activity_login" />
+        <activity android:name=".chaptersAdapter"></activity>
         <activity android:name=".Chapters" />
         <activity android:name=".Chapters_dir.Ch1" />
         <activity android:name=".Chapters_dir.Ch2" />

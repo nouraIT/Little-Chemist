@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <item name="cardviewch1" type="id"/>
+    <item name="cardviewch2" type="id"/>
+    <item name="cardviewch3" type="id"/>
+    <item name="cardviewch4" type="id"/>
+    <item name="cardviewch5" type="id"/>
+
+</resources>

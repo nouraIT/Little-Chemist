@@ -12,6 +12,8 @@ public class Student implements Serializable {
     int Arabic;
     DatabaseHelper helper;// = new DatabaseHelper();
 
+    //TODO save the score of each chapter in the DB but the total score will be saved here
+
     //static int i = 0 ;
     public Student(String name, String pass, int arabic){
         UserName = name;

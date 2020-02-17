@@ -35,10 +35,12 @@
         android:id="@+id/cardviewchapters"
         android:layout_width="298dp"
         android:layout_height="134dp"
+
         android:layout_marginTop="16dp"
         android:layout_marginBottom="192dp"
         app:cardBackgroundColor="#E4F3F1F1"
         app:cardCornerRadius="20dp"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
@@ -125,13 +127,12 @@
         android:id="@+id/settings"
         android:layout_width="61dp"
         android:layout_height="35dp"
-        android:layout_marginStart="334dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="184dp"
-        app:layout_constraintBottom_toTopOf="@+id/cardviewchapters"
+
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+
+
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/gear_icon_orange2" />
 

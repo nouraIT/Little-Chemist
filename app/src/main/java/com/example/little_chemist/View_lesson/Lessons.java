@@ -1,16 +1,31 @@
 package com.example.little_chemist.View_lesson;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.little_chemist.Chapters;
+import com.example.little_chemist.Chapters_dir.Ch1;
+import com.example.little_chemist.Chapters_dir.Ch2;
+import com.example.little_chemist.Chapters_dir.Ch3;
+import com.example.little_chemist.Chapters_dir.Ch4;
+import com.example.little_chemist.Chapters_dir.Ch5;
+import com.example.little_chemist.Home;
 import com.example.little_chemist.R;
+import com.example.little_chemist.Tables.Lesson;
 
 public class Lessons extends AppCompatActivity {
 
@@ -24,16 +39,40 @@ public class Lessons extends AppCompatActivity {
     private int mCurrent ;
     private Button exercise ;
 
+    LayoutInflater layoutInflater;
+
     @Override
 
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_lessons);
 
+//        Toolbar toolbar = findViewById(R.id.toolbar);
+//        setSupportActionBar(toolbar);
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//        getSupportActionBar().setDisplayShowHomeEnabled(true);
+//
+//        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent Homepage = new Intent(Lessons.this, getClass()); TODO get the name of the prevoius class
+//                startActivity(Homepage);
+//                //finish();
+//            }
+//        });
 
-        mSlidsView = (ViewPager) findViewById(R.id.slidePage) ;
-        mDots = (LinearLayout) findViewById(R.id.dots) ;
+        Context con = Lessons.this;
+
+        layoutInflater = (LayoutInflater) con.getSystemService(Chapters.LAYOUT_INFLATER_SERVICE) ;
+        View view = layoutInflater.inflate(R.layout.chapters_slider,null,false) ;
+        exercise = view.findViewById(R.id.ex) ;
+
+
+        mSlidsView =  findViewById(R.id.slidePage) ;
+        mDots = findViewById(R.id.dots) ;
 
 
         slideAdapter = new slideAdapter(this) ;
@@ -44,30 +83,25 @@ public class Lessons extends AppCompatActivity {
 
         mSlidsView.addOnPageChangeListener(viewListener);
 
-        exercise = findViewById(R.id.ex) ;
         nextBtn = findViewById(R.id.nextBtn) ;
         preBtn =(Button) findViewById(R.id.preBtn) ;
 
-//        exercise.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//                Toast.makeText(getApplicationContext(),"The text you want to display", Toast.LENGTH_LONG) ;
-//            }
-//        });
 
 
-//        nextBtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//                mSlidsView.setCurrentItem(mCurrent+1);
-//            }
-//        });
+
+        nextBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                System.out.println("next btn");
+                mSlidsView.setCurrentItem(mCurrent+1);
+            }
+        });
 
         preBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                System.out.println("back btn");
+
                 mSlidsView.setCurrentItem(mCurrent-1);
 
             }
@@ -141,6 +175,16 @@ public class Lessons extends AppCompatActivity {
         }
     };
 
+    public void onBtnExClick(View v){
 
+        if(v.getId()==R.id.ex) {
+            System.out.println("yes");
+            Toast.makeText(getApplicationContext(), "The text you want to display", Toast.LENGTH_LONG);
+        }else
+        Toast.makeText(getApplicationContext(),"Not working", Toast.LENGTH_LONG) ;
+
+
+
+    }
 
 }

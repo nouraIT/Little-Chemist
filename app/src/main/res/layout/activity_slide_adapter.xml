@@ -53,6 +53,7 @@
         app:layout_constraintTop_toBottomOf="@+id/slide_header" />
 
     <Button
+        android:onClick="onBtnExClick"
         android:id="@+id/ex"
         android:layout_width="119dp"
         android:layout_height="54dp"
