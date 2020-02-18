@@ -9,6 +9,7 @@ import android.content.Context;
 import android.os.Bundle;
 
 import android.text.Html;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -50,6 +51,19 @@ public class Chapters extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         setContentView(R.layout.activity_chapters);
+
+
+//        final int layoutDirection = getLayoutDirection();
+//        final int absoluteGravity =
+//                Gravity.getAbsoluteGravity(gravity, layoutDirection);
+//        switch (absoluteGravity & Gravity.HORIZONTAL_GRAVITY_MASK) {
+//            case Gravity.LEFT:
+//                // Handle objects that are left-aligned.
+//                break;
+//            case Gravity.RIGHT:
+//                // Handle objects that are right-aligned.
+//                break;
+//        }
 
         Context con = Chapters.this;
         //ViewGroup container = (ViewGroup) new View(con);
