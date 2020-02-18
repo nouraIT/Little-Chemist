@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import com.example.little_chemist.Tables.Student;
 import com.google.android.material.textfield.TextInputLayout;
+//import com.scwang.wave.MultiWaveHeader;
 
 import java.io.Serializable;
 
@@ -24,7 +25,7 @@ import java.io.Serializable;
 public class LoginPage extends AppCompatActivity implements Serializable {
 
         Student student = new Student();
-        DatabaseHelper helper=new DatabaseHelper(this);
+       DatabaseHelper helper=new DatabaseHelper(this);
         TextInputLayout UserNameET, PasswordET;
         String UserNameStr,PasswordStr;
 
@@ -126,7 +127,7 @@ public class LoginPage extends AppCompatActivity implements Serializable {
 
 
 
-                    String dbPassword= helper.checkPassword(UserNameStr);
+                   String dbPassword= helper.checkPassword(UserNameStr);
                     //To compare it with Current Password from user input
                     if(dbPassword.equals(PasswordStr)){
 
@@ -137,7 +138,7 @@ public class LoginPage extends AppCompatActivity implements Serializable {
                         SharedPreferences.Editor editor = pref.edit();
 
                         editor.putString("username", UserNameStr); // Storing string
-                        //editor.putString("password", PasswordStr); // Storing string
+                        editor.putString("password", PasswordStr); // Storing string
 
 
                         editor.commit();
@@ -164,6 +165,7 @@ public class LoginPage extends AppCompatActivity implements Serializable {
 
                 }//on click
             });
+
         }//on create
 
     public void onBtnSignUpClick(View v){

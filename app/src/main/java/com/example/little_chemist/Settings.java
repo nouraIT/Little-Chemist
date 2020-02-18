@@ -19,7 +19,10 @@ import java.util.Objects;
 
 import android.app.Activity;
 import android.content.res.Configuration;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.little_chemist.Tables.Student;
@@ -50,6 +53,9 @@ public class Settings extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         setContentView(R.layout.activity_settings);
 
         //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarCustom);
@@ -74,7 +80,11 @@ public class Settings extends AppCompatActivity {
         String name = pref.getString("username", null); // getting String
         //pref.getInt("password", -1); // getting Integer
         //arabicFlag = helper.checkLang(name);
+        String pass = pref.getString("password",null);
 
+        String studentId=helper.getStudentId(name);
+
+        //Log.v("00000000000000",studentId);
 
         TextView profileName = findViewById(R.id.profileName);
         //String userName = loginData.getLoggedInStudent("UserName");
@@ -203,20 +213,58 @@ public class Settings extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //TODO Delete account
+                AlertDialog.Builder alert = new AlertDialog.Builder(Settings.this);
+                final EditText edittext = new EditText(Settings.this);
+                alert.setMessage(getText(R.string.confirmDeleteAcc));
+                alert.setTitle(getText(R.string.delete_account));
+                alert.setView(edittext);
+                alert.setPositiveButton(getText(R.string.yes), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        String password = edittext.getText().toString();
+                        if (password.equals(pass)){
+                            helper.DeleteStudent(studentId);
+                            Intent intent = new Intent(Settings.this,
+                                    LoginPage.class);
+                            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            startActivity(intent);
+                            finish();
+                        }
 
-                new AlertDialog.Builder(Settings.this)
+                        else{
+                            //error masg
+                            //TODO
+                        }
+                    }
+                });
+
+                alert.setNegativeButton(getText(R.string.no), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                    }
+                });
+                alert.show();
+
+                /*new AlertDialog.Builder(Settings.this)
                         .setTitle(getText(R.string.delete_account))
                         .setMessage(getText(R.string.confirmDeleteAcc))
+                        //.setView(edittext)
                         .setPositiveButton(getText(R.string.yes), new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
                                 // user want to delete
+                                //String password = edittext.getText().toString();
+                                //if (password.equals()){
 
+                                //}
 
-//                                Intent intent = new Intent(Settings.this,
-//                                        LoginPage.class);
-//                                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-//                                startActivity(intent);
-//                                finish();
+                                helper.DeleteStudent(studentId);
+
+                                Intent intent = new Intent(Settings.this,
+                                        LoginPage.class);
+                                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                startActivity(intent);
+                                finish();
                             }
                         })
                         .setNegativeButton(getText(R.string.no), new DialogInterface.OnClickListener() {
@@ -225,7 +273,7 @@ public class Settings extends AppCompatActivity {
 //
                             }
                         })
-                        .show();
+                        .show();*/
             }
         });
 

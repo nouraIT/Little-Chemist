@@ -21,8 +21,8 @@
 
     <string name="welcome">Welcome </string>
 
-    <!--   _______________ chapters names and lessons _______________-->
-<!--   _______________ chapters  _______________-->
+
+    <!--   _______________ chapters  _______________-->
 
     <string name="chapter_1">Chapter 1</string>
     <string name="chapter_2">Chapter 2</string>
@@ -36,7 +36,7 @@
 
     <string name="Ch5Name">The Periodic Table</string>
     <string name="Ch2Name">Elements</string>
-    <string name="Ch3Name">Chemistry Casics</string>
+    <string name="Ch3Name">Chemistry Basics</string>
     <string name="Ch4Name">The Branches Of Chemistry</string>
     <string name="Ch1Name">The Study Of Atoms</string>
 
@@ -62,7 +62,7 @@
     <string name="Ch3Lsn2">Matter</string>
     <string name="Ch3Lsn3">Chemical Reactions</string>
     <string name="Ch3Lsn4">Liquids and Gases</string>
-    <string name="Ch3Lsn5">Biochemistry</string>
+    <string name="Ch3Lsn5">Bio  chemistry</string>
 
     <string name="Ch4Lsn1">Water Chemistry</string>
     <string name="Ch4Lsn2">Organic Chemistry</string>
@@ -76,6 +76,11 @@
     <string name="Ch5Lsn5">Group 18</string>
     <string name="Ch5Lsn4">Group 17</string>
 
+
+
+    <string name="backBtn">Back</string>
+    <string name="nextBtn">Next</string>
+
     <!--   _______________ quizzes _______________-->
 
 
@@ -83,8 +88,6 @@
     <string name="QuizScore">Quiz score</string>
     <string name="nextQ">Next Question</string>
     <string name="previous_question">Previous Question</string>
-
-
 
 
     <!--   _______________ chapters, quizzes and lessons's symbols _______________-->
@@ -95,7 +98,7 @@
     <string name="scores">Scores</string>
     <string name="progressBar">Progress Bar</string>
 
-    <!-- _______________ registeration _______________ -->
+    <!-- _______________ registration _______________ -->
 
     <string name="title_activity_login">Sign in</string>
     <string name="action_sign_in_short">Sign in</string>
@@ -142,8 +145,29 @@
 
     <string name="login_failed">Login failed</string>
 
+    <!-- _______________ Arrays  _______________ -->
 
 
+    <string-array name="chapter_names">
+
+        <item name="Ch1Name">The Study Of Atoms</item>
+        <item name="Ch2Name">Elements</item>
+        <item name="Ch3Name">Chemistry Basics</item>
+        <item name="Ch4Name">The Branches Of Chemistry</item>
+        <item name="Ch5Name">The Periodic Table</item>
+
+    </string-array>
+
+
+    <string-array name="chapters_numbers">
+
+        <item name="chapter_1">Chapter 1</item>
+        <item name="chapter_2">Chapter 2</item>
+        <item name="chapter_3">Chapter 3</item>
+        <item name="chapter_4">Chapter 4</item>
+        <item name="chapter_5">Chapter 5</item>
+
+    </string-array>
 
 
 </resources>

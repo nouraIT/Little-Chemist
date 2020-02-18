@@ -6,6 +6,7 @@ import androidx.cardview.widget.CardView;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -15,6 +16,10 @@ import android.view.animation.Animation;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.little_chemist.Tables.Student;
+
+import org.eazegraph.lib.charts.PieChart;
+import org.eazegraph.lib.models.PieModel;
 
 import java.util.Locale;
 
@@ -25,8 +30,8 @@ public class Home extends AppCompatActivity {
 
     private ImageView set, testScore;
     private CardView cv ;
-    //private pl.droidsonroids.gif.GifImageView  g ;
     private CardView chapters;
+    private  org.eazegraph.lib.charts.PieChart pie ;
     boolean arabicFlag;
     DatabaseHelper helper = new DatabaseHelper(Home.this);
     public static boolean alreadyRecreated = false;
@@ -105,29 +110,32 @@ public class Home extends AppCompatActivity {
                 Intent n = new Intent(Home.this, Chapters.class);
                 //n.putExtra("student",student);
                 startActivity(n);
-
                 //finish();
             }
         });
 
-        testScore = findViewById(R.id.imageView);
-
-//        g = findViewById(R.id.gif);
-        testScore.setOnClickListener(new View.OnClickListener() {
+        pie = findViewById(R.id.piechart) ;
+        pie.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View view) {
                 Intent n = new Intent(Home.this, Quiz_score.class);
-                //n.putExtra("student",student);
                 startActivity(n);
-                finish();
             }
         });
+
+        PieChart mPieChart = (PieChart) findViewById(R.id.piechart);
+
+        mPieChart.addPieSlice(new PieModel("The study of atoms", 15, Color.parseColor("#F5545C")));
+        mPieChart.addPieSlice(new PieModel("The Branches of chemistry", 25, Color.parseColor("#56B7F1")));
+        mPieChart.addPieSlice(new PieModel("Chemistry basics", 35, Color.parseColor("#CDA67F")));
+        mPieChart.addPieSlice(new PieModel("Elements", 9, Color.parseColor("#FED70E")));
+        mPieChart.addPieSlice(new PieModel("The periodic table", 9, Color.parseColor("#98db81")));
+
+
+        mPieChart.startAnimation();
 
 
 
     }
-
-
-
 
 }

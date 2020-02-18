@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/app_home_bg"
+    android:background="@drawable/backgroundhome"
     tools:context=".Quiz_score">
 
 
@@ -27,353 +27,119 @@
             android:layout_gravity="start"
             android:fontFamily="@font/roboto_bold"
             android:text="@string/QuizScore"
-            android:textSize="25sp"
             android:textColor="@color/OrangeText"
-            />
+            android:textSize="25sp" />
 
     </androidx.appcompat.widget.Toolbar>
 
-    <me.itangqi.waveloadingview.WaveLoadingView
-        android:id="@+id/waveLoadingView5"
-        android:layout_width="31dp"
-        android:layout_height="130dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView8"
-        app:layout_constraintEnd_toEndOf="@+id/imageView8"
-        app:layout_constraintHorizontal_bias="0.963"
-        app:layout_constraintStart_toStartOf="@+id/imageView8"
-        app:layout_constraintTop_toTopOf="@+id/imageView8"
-        app:layout_constraintVertical_bias="0.587"
-        app:wlv_borderColor="@color/primaryYellow"
-        app:wlv_borderWidth="0dp"
-        app:wlv_progressValue="70"
-        app:wlv_round_rectangle="true"
-        app:wlv_shapeType="rectangle"
-        app:wlv_titleCenter="70%"
-        app:wlv_titleCenterColor="#000000"
-        app:wlv_titleCenterSize="10dp"
-        app:wlv_titleCenterStrokeColor="#000000"
-        app:wlv_titleCenterStrokeWidth="0dp"
-        app:wlv_triangle_direction="north"
-        app:wlv_waveAmplitude="70"
-        app:wlv_waveColor="@color/primaryYellow" />
-
-    <me.itangqi.waveloadingview.WaveLoadingView
-        android:id="@+id/waveLoadingView4"
-        android:layout_width="32dp"
-        android:layout_height="136dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView8"
-        app:layout_constraintEnd_toEndOf="@+id/imageView8"
-        app:layout_constraintHorizontal_bias="0.735"
-        app:layout_constraintStart_toStartOf="@+id/imageView8"
-        app:layout_constraintTop_toTopOf="@+id/imageView8"
-        app:layout_constraintVertical_bias="0.556"
-        app:wlv_borderColor="@color/purple"
-        app:wlv_borderWidth="0dp"
-        app:wlv_progressValue="15"
-        app:wlv_round_rectangle="true"
-        app:wlv_shapeType="rectangle"
-        app:wlv_titleCenter="15%"
-        app:wlv_titleCenterColor="#000000"
-        app:wlv_titleCenterSize="10dp"
-        app:wlv_titleCenterStrokeColor="#000000"
-        app:wlv_titleCenterStrokeWidth="0dp"
-        app:wlv_triangle_direction="north"
-        app:wlv_waveAmplitude="70"
-        app:wlv_waveColor="@color/purple" />
-
-    <me.itangqi.waveloadingview.WaveLoadingView
-        android:id="@+id/waveLoadingView3"
-        android:layout_width="34dp"
-        android:layout_height="134dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView8"
-        app:layout_constraintEnd_toEndOf="@+id/imageView8"
-        app:layout_constraintHorizontal_bias="0.039"
-        app:layout_constraintStart_toStartOf="@+id/imageView8"
-        app:layout_constraintTop_toTopOf="@+id/imageView8"
-        app:layout_constraintVertical_bias="0.556"
-        app:wlv_borderColor="@color/sky"
-        app:wlv_borderWidth="0dp"
-        app:wlv_progressValue="90"
-        app:wlv_round_rectangle="true"
-        app:wlv_shapeType="rectangle"
-        app:wlv_titleCenter="90%"
-        app:wlv_titleCenterColor="#000000"
-        app:wlv_titleCenterSize="10dp"
-        app:wlv_titleCenterStrokeColor="#000000"
-        app:wlv_titleCenterStrokeWidth="0dp"
-        app:wlv_triangle_direction="north"
-        app:wlv_waveAmplitude="70"
-        app:wlv_waveColor="@color/sky" />
-
-    <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="255dp"
-        android:layout_height="232dp"
-        android:layout_marginStart="39dp"
-        android:layout_marginLeft="39dp"
-        android:layout_marginTop="18dp"
-        android:layout_marginEnd="39dp"
-        android:layout_marginRight="39dp"
-        android:layout_marginBottom="306dp"
-        android:elevation="30dp"
+    <com.daimajia.numberprogressbar.NumberProgressBar
+        android:id="@+id/numberbar3"
+        style="@style/NumberProgressBar_Relax_Blue"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="71dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        app:layout_constraintVertical_bias="0.483"
-        app:srcCompat="@drawable/scorepic"
-        android:contentDescription="@string/scores" />
+        app:layout_constraintTop_toBottomOf="@+id/numberbar2"
+        app:progress_current="9"
+        app:progress_reached_bar_height="6dp"
+        app:progress_reached_color="#98db81"
+        app:progress_text_color="#98db81" />
 
-
-    <me.itangqi.waveloadingview.WaveLoadingView
-        android:id="@+id/waveLoadingView2"
-        android:layout_width="31dp"
-        android:layout_height="139dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView8"
-        app:layout_constraintEnd_toEndOf="@+id/imageView8"
-        app:layout_constraintHorizontal_bias="0.267"
-        app:layout_constraintStart_toStartOf="@+id/imageView8"
-        app:layout_constraintTop_toTopOf="@+id/imageView8"
-        app:layout_constraintVertical_bias="0.556"
-        app:wlv_borderColor="@color/lightgreen"
-        app:wlv_borderWidth="0dp"
-        app:wlv_progressValue="40"
-        app:wlv_round_rectangle="true"
-        app:wlv_shapeType="rectangle"
-        app:wlv_titleCenter="40%"
-        app:wlv_titleCenterColor="#000000"
-        app:wlv_titleCenterSize="10dp"
-        app:wlv_titleCenterStrokeColor="#000000"
-        app:wlv_titleCenterStrokeWidth="0dp"
-        app:wlv_triangle_direction="north"
-        app:wlv_waveAmplitude="70"
-        app:wlv_waveColor="@color/lightgreen" />
-
-    <me.itangqi.waveloadingview.WaveLoadingView
-        android:id="@+id/waveLoadingView8"
-        android:layout_width="31dp"
-        android:layout_height="137dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView8"
-        app:layout_constraintEnd_toEndOf="@+id/imageView8"
-        app:layout_constraintStart_toStartOf="@+id/imageView8"
-        app:layout_constraintTop_toTopOf="@+id/imageView8"
-        app:layout_constraintVertical_bias="0.549"
-        app:wlv_borderColor="@color/colorAccent"
-        app:wlv_borderWidth="0dp"
-        app:wlv_progressValue="20"
-        app:wlv_round_rectangle="true"
-        app:wlv_shapeType="rectangle"
-        app:wlv_titleCenter="20%"
-        app:wlv_titleCenterColor="#000000"
-        app:wlv_titleCenterSize="10dp"
-        app:wlv_titleCenterStrokeColor="#000000"
-        app:wlv_titleCenterStrokeWidth="0dp"
-        app:wlv_triangle_direction="north"
-        app:wlv_waveAmplitude="70"
-        app:wlv_waveColor="@color/colorAccent" />
-
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="348dp"
-        android:layout_height="279dp"
-        android:layout_marginBottom="52dp"
-        android:alpha="0.5"
-        android:background="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView8" />
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="183dp"
-        android:layout_height="26dp"
-
-        android:layout_marginStart="32dp"
+    <com.daimajia.numberprogressbar.NumberProgressBar
+        android:id="@+id/numberbar2"
+        style="@style/NumberProgressBar_Relax_Blue"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="25dp"
-        android:layout_marginEnd="178dp"
-
-        android:elevation="10dp"
-
-        android:text="@string/Ch1Name"
-        android:textColor="#030303"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/progressBar2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView8" />
-
-
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="227dp"
-        android:layout_height="24dp"
-
-        android:layout_marginStart="33dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="133dp"
-
-        android:elevation="10dp"
-
-        android:text="@string/Ch4Name"
-        android:textColor="#050505"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/progressBar4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/progressBar5" />
-
-    <ProgressBar
-        android:id="@+id/progressBar5"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="318dp"
-        android:layout_height="19dp"
-
-        android:layout_marginStart="42dp"
-        android:layout_marginEnd="51dp"
-
-        android:elevation="10dp"
-
-        android:progress="20"
-        android:progressTint="@color/colorAccent"
-        app:layout_constraintBottom_toTopOf="@+id/textView7"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
-
-    <ProgressBar
-        android:id="@+id/progressBar4"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="318dp"
-        android:layout_height="19dp"
-
-        android:layout_marginStart="42dp"
-        android:layout_marginEnd="51dp"
-
-        android:elevation="10dp"
-
-        android:background="#00030303"
-        android:progress="15"
-        android:progressTint="@color/purple"
-        app:layout_constraintBottom_toTopOf="@+id/textView8"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView7" />
-
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="170dp"
-        android:layout_height="23dp"
-
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="191dp"
-
-        android:elevation="10dp"
-
-        android:text="@string/Ch5Name"
-        android:textColor="#050505"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/progressBar3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/progressBar4" />
-
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="126dp"
-        android:layout_height="23dp"
-
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="235dp"
-
-        android:elevation="10dp"
-
-        android:text="@string/Ch2Name"
-        android:textColor="#020202"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/progressBar6"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/progressBar2" />
-
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="151dp"
-        android:layout_height="23dp"
-
-        android:layout_marginStart="33dp"
-        android:layout_marginEnd="209dp"
-        android:layout_marginBottom="2dp"
-
-        android:elevation="10dp"
-
-        android:text="@string/Ch3Name"
-        android:textColor="#020202"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/progressBar5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/progressBar6" />
-
-    <ProgressBar
-        android:id="@+id/progressBar6"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="318dp"
-        android:layout_height="19dp"
-
-        android:layout_marginStart="42dp"
-        android:layout_marginEnd="51dp"
+        android:layout_marginEnd="20dp"
         android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/numberbar3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/numberbar4"
+        app:progress_current="9"
+        app:progress_reached_bar_height="6dp"
+        app:progress_reached_color="#FED70E"
+        app:progress_text_color="#FED70E" />
 
-        android:elevation="10dp"
-
-        android:background="#00000000"
-        android:progress="40"
-        android:progressTint="@color/lightgreen"
-        app:layout_constraintBottom_toTopOf="@+id/textView6"
+    <com.daimajia.numberprogressbar.NumberProgressBar
+        android:id="@+id/numberbar4"
+        style="@style/NumberProgressBar_Relax_Blue"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="21dp"
+        app:layout_constraintBottom_toTopOf="@+id/numberbar2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+        app:layout_constraintTop_toBottomOf="@+id/numberbar5"
+        app:progress_current="35"
+        app:progress_reached_bar_height="6dp"
+        app:progress_reached_color="#CDA67F"
+        app:progress_text_color="#CDA67F" />
 
-    <ProgressBar
-        android:id="@+id/progressBar2"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="318dp"
-        android:layout_height="19dp"
-
-        android:layout_marginStart="42dp"
-        android:layout_marginEnd="51dp"
-        android:layout_marginBottom="8dp"
-
-        android:elevation="10dp"
-
-        android:progress="90"
-        android:progressTint="@color/sky"
-        app:layout_constraintBottom_toTopOf="@+id/textView9"
+    <com.daimajia.numberprogressbar.NumberProgressBar
+        android:id="@+id/numberbar5"
+        style="@style/NumberProgressBar_Relax_Blue"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/numberbar4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintTop_toBottomOf="@+id/numberbar6"
+        app:progress_current="25"
+        app:progress_reached_bar_height="6dp"
+        app:progress_reached_color="#56B7F1"
+        app:progress_text_color="#56B7F1" />
 
-    <ProgressBar
-        android:id="@+id/progressBar3"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="318dp"
-        android:layout_height="19dp"
+    <com.daimajia.numberprogressbar.NumberProgressBar
+        android:id="@+id/numberbar6"
+        style="@style/NumberProgressBar_Relax_Blue"
+        android:layout_height="10dp"
+        android:layout_margin="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="29dp"
+        app:layout_constraintBottom_toTopOf="@+id/numberbar5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/piechart"
+        app:progress_current="15"
+        app:progress_reached_bar_height="6dp"
+        app:progress_reached_color="#F5545C"
+        app:progress_text_color="#F5545C"
+        app:progress_text_visibility="visible" />
 
-        android:layout_marginStart="42dp"
-        android:layout_marginEnd="51dp"
-        android:layout_marginBottom="78dp"
-
-        android:elevation="10dp"
-
-        android:background="#00020202"
-        android:progress="70"
-        android:progressTint="@color/primaryYellow"
+    <org.eazegraph.lib.charts.PieChart
+        android:id="@+id/piechart"
+        android:layout_width="379dp"
+        android:layout_height="233dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="69dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="300dp"
+        android:padding="8dp"
+        app:egLegendTextSize="18sp"
+        app:egUsePieRotation="true"
+        app:egValueTextSize="36sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView8"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,9 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/scrol"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:alpha="1"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/signupbackground4"
     tools:context=".SignUp">
 
 
@@ -13,7 +13,6 @@
         android:id="@+id/constraint"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/signupbackground4"
         android:orientation="horizontal">
 
         <com.google.android.material.textfield.TextInputLayout

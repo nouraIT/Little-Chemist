@@ -24,7 +24,6 @@ public class adapter extends CarouselAdapter {
 
 // ------------------------------------------------------------------------------------
 
-
     public interface OnClick {
         void click(@NonNull model var1);
     }

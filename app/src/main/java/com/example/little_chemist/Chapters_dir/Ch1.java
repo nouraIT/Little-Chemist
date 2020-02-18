@@ -1,6 +1,5 @@
 package com.example.little_chemist.Chapters_dir;
 
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -10,6 +9,7 @@ import android.view.WindowManager;
 
 import com.example.little_chemist.Chapters;
 import com.example.little_chemist.R;
+import com.example.little_chemist.View_lesson.Lessons;
 import com.example.little_chemist.quizQ;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -32,6 +32,7 @@ public class Ch1 extends AppCompatActivity {
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -48,7 +49,7 @@ public class Ch1 extends AppCompatActivity {
         lsn1 = findViewById(R.id.cardviewlLSN1);
         lsn1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                Intent n = new Intent(Ch1.this, Ch1.class);
+                Intent n = new Intent(Ch1.this, Lessons.class);
                 startActivity(n);
                 // finish();
             }

@@ -12,6 +12,9 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ProgressBar;
 
+import org.eazegraph.lib.charts.PieChart;
+import org.eazegraph.lib.models.PieModel;
+
 
 //import me.itangqi.waveloadingview.WaveLoadingView;
 
@@ -46,20 +49,18 @@ public class Quiz_score extends AppCompatActivity {
             }
         });
 
-         progressBar1 = (ProgressBar) findViewById(R.id.progressBar6);
-
-        progressBar2 = (ProgressBar) findViewById(R.id.progressBar2);
-        progressBar3 = (ProgressBar) findViewById(R.id.progressBar3);
-        progressBar4 = (ProgressBar) findViewById(R.id.progressBar4);
-        progressBar5 = (ProgressBar) findViewById(R.id.progressBar5);
 
 
+        PieChart mPieChart = (PieChart) findViewById(R.id.piechart);
 
-        //progressBar1.setProgress(90);
-       // progressBar2.setProgress(40);
-       // progressBar5.setProgress(20);
-      //  progressBar4.setProgress(15);
-      //  progressBar3.setProgress(70);
+        mPieChart.addPieSlice(new PieModel("The study of atoms", 15, Color.parseColor("#F5545C")));
+        mPieChart.addPieSlice(new PieModel("The Branches of chemistry", 25, Color.parseColor("#56B7F1")));
+        mPieChart.addPieSlice(new PieModel("Chemistry basics", 35, Color.parseColor("#CDA67F")));
+        mPieChart.addPieSlice(new PieModel("Elements", 9, Color.parseColor("#FED70E")));
+        mPieChart.addPieSlice(new PieModel("The periodic table", 9, Color.parseColor("#98db81")));
+
+
+        mPieChart.startAnimation();
 
 
     }

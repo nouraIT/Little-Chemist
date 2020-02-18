@@ -9,6 +9,8 @@ apply plugin: 'com.google.ar.sceneform.plugin'
 
 android {
     compileSdkVersion 29
+
+
     defaultConfig {
         applicationId "com.example.little_chemist"
         minSdkVersion >= 24
@@ -49,8 +51,15 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     implementation 'me.itangqi.waveloadingview:library:0.3.5'
 
-    implementation 'de.hdodenhof:circleimageview:3.1.0'
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.19'
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    implementation 'com.scwang.wave:MultiWaveHeader:1.0.0-alpha-1'
+
+
+    //slider view
+    implementation 'com.github.blackfizz:eazegraph:1.2.2@aar'
+    implementation 'com.nineoldandroids:library:2.4.0'
+    implementation 'com.daimajia.numberprogressbar:library:1.4@aar'
 
 
     implementation 'androidx.cardview:cardview:1.0.0'
@@ -72,5 +81,13 @@ dependencies {
     implementation 'com.github.alirezat775:carousel-view:1.0.0'
 
 
+
+
 }
+
+
+//sceneform.asset('sampledata/model.obj',
+//        'default',
+//        'sampledata/model.sfa',
+//        'src/main/assets/model')
 

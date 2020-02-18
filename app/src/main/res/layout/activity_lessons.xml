@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/lessonbackground"
+    tools:context=".View_lesson.Lessons">
+
+    <Button
+        android:id="@+id/preBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/circle_btn_empty"
+        android:elevation="20dp"
+        android:text="@string/backBtn"
+
+        android:textColor="@color/Black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/slidePage" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/slidePage"
+        android:layout_width="410dp"
+        android:layout_height="545dp"
+        android:layout_marginBottom="70dp"
+        android:elevation="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/dots"
+        android:layout_width="36dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="97dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginBottom="60dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/nextBtn"
+        app:layout_constraintStart_toEndOf="@+id/preBtn"
+        app:layout_constraintTop_toBottomOf="@+id/slidePage">
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/nextBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/circle_btn_empty"
+
+        android:elevation="20dp"
+        android:text="@string/nextBtn"
+        android:textColor="@color/design_default_color_on_secondary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/slidePage" />
+
+<!--    <Button-->
+<!--        android:id="@+id/ex"-->
+<!--        android:layout_width="119dp"-->
+<!--        android:layout_height="54dp"-->
+<!--        android:layout_marginStart="163dp"-->
+<!--        android:layout_marginTop="26dp"-->
+<!--        android:layout_marginEnd="158dp"-->
+<!--        android:layout_marginBottom="106dp"-->
+
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/slide_description" />-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

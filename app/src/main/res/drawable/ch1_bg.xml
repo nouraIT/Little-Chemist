@@ -3,14 +3,14 @@
     <item>
 
         <shape android:shape="rectangle">
+            <solid android:color="#01BEAA"></solid>
+<!--            <gradient-->
+<!--                android:startColor="#D5299990"-->
+<!--                android:centerColor="#D53AC0B5"-->
+<!--                android:endColor="#52F3E6"-->
 
-            <gradient
-                android:startColor="#52F3E6"
-
-                android:endColor="#2196F3"
-
-                >
-            </gradient>
+<!--                >-->
+<!--            </gradient>-->
         <corners android:radius="25dp"></corners>
 
         </shape>
@@ -19,3 +19,7 @@
 
 </layer-list>
 
+<!--android:startColor="#D5299990"
+                android:centerColor="#D53AC0B5"
+                android:endColor="#52F3E6"
+-->

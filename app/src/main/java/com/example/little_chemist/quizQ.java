@@ -60,7 +60,7 @@ public class quizQ extends AppCompatActivity {
 
 
         final adapter adapter = new adapter();
-        AppCompatActivity appcomp = (AppCompatActivity)this;
+        AppCompatActivity appcomp = this;
         CarouselView carouselview = findViewById(R.id.carousel_view1);
         final Carousel carousel = new Carousel(appcomp,carouselview,adapter);
 
@@ -89,11 +89,12 @@ public class quizQ extends AppCompatActivity {
         }));
 
 //        carousel.add(EmptySampleModel("empty list"))
-        carousel.add((CarouselModel)(new model(1)));
-        carousel.add((CarouselModel)(new model(2)));
-        carousel.add((CarouselModel)(new model(3)));
-        carousel.add((CarouselModel)(new model(4)));
-        carousel.add((CarouselModel)(new model(5)));
+        carousel.add((new model(1)));
+        carousel.add((new model(2)));
+        carousel.add((new model(3)));
+        carousel.add((new model(4)));
+        carousel.add((new model(5)));
+
 //        carousel.add((CarouselModel)(new model(6)));
 //        carousel.add((CarouselModel)(new model(7)));
 //        carousel.add((CarouselModel)(new model(8)));
