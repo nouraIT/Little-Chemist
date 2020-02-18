@@ -35,10 +35,12 @@ public class MainActivity extends AppCompatActivity {
         image.setAnimation(topAnim);
         new Handler().postDelayed(new Runnable() {
                                       @Override
+
                                       public void run() {
                                           Intent intent = new Intent(MainActivity.this, LoginPage.class);
                                           startActivity(intent);
                                           finish();
+
 
                                       }
                                   }, //Pass time here
