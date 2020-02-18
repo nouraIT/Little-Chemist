@@ -6,4 +6,24 @@
         <item>What is your favorite subject at school?</item>
         <item>What is your favorite meal?</item>
     </string-array>
+    <string-array name="chapter_names">
+
+        <item name="Ch1Name">The Study Of Atoms</item>
+        <item name="Ch2Name">Elements</item>
+        <item name="Ch3Name">Chemistry Basics</item>
+        <item name="Ch4Name">The Branches Of Chemistry</item>
+        <item name="Ch5Name">The Periodic Table</item>
+
+    </string-array>
+
+
+    <string-array name="chapters_numbers">
+
+        <item name="chapter_1">Chapter 1</item>
+        <item name="chapter_2">Chapter 2</item>
+        <item name="chapter_3">Chapter 3</item>
+        <item name="chapter_4">Chapter 4</item>
+        <item name="chapter_5">Chapter 5</item>
+
+    </string-array>
 </resources>

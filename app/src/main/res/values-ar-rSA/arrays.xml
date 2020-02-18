@@ -6,4 +6,25 @@
         <item>ما هي مادتك المفضله في المدرسه؟</item>
         <item>ما هي وجبتك المفضله؟</item>
     </string-array>
+
+    <string-array name="chapter_names">
+
+        <item name="Ch1Name">دراسة الذرات</item>
+        <item name="Ch2Name">العناصر</item>
+        <item name="Ch3Name">مبادىء الكيمياء</item>
+        <item name="Ch4Name">فروع الكيمياء</item>
+        <item name="Ch5Name">الجدول الدوري</item>
+
+    </string-array>
+
+
+    <string-array name="chapters_numbers">
+
+        <item name="chapter_1">الفصل الاول</item>
+        <item name="chapter_2">الفصل الثاني</item>
+        <item name="chapter_3">الفصل الثالث</item>
+        <item name="chapter_4">الفصل الرابع</item>
+        <item name="chapter_5">الفصل الخامس</item>
+
+    </string-array>
 </resources>
