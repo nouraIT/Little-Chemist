@@ -125,11 +125,11 @@ public class Home extends AppCompatActivity {
 
         PieChart mPieChart = (PieChart) findViewById(R.id.piechart);
 
-        mPieChart.addPieSlice(new PieModel("The study of atoms", 15, Color.parseColor("#F5545C")));
-        mPieChart.addPieSlice(new PieModel("The Branches of chemistry", 25, Color.parseColor("#56B7F1")));
-        mPieChart.addPieSlice(new PieModel("Chemistry basics", 35, Color.parseColor("#CDA67F")));
-        mPieChart.addPieSlice(new PieModel("Elements", 9, Color.parseColor("#FED70E")));
-        mPieChart.addPieSlice(new PieModel("The periodic table", 9, Color.parseColor("#98db81")));
+        mPieChart.addPieSlice(new PieModel(getString(R.string.Ch1Name), 15, Color.parseColor("#F5545C")));
+        mPieChart.addPieSlice(new PieModel(getString(R.string.Ch2Name), 25, Color.parseColor("#56B7F1")));
+        mPieChart.addPieSlice(new PieModel(getString(R.string.Ch3Name), 35, Color.parseColor("#CDA67F")));
+        mPieChart.addPieSlice(new PieModel(getString(R.string.Ch4Name), 9, Color.parseColor("#FED70E")));
+        mPieChart.addPieSlice(new PieModel(getString(R.string.Ch5Name), 9, Color.parseColor("#98db81")));
 
 
         mPieChart.startAnimation();

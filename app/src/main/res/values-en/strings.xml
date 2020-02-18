@@ -103,6 +103,8 @@
     <string name="previous_question">Previous Question</string>
     <string name="nextBtn">Next</string>
     <string name="scores">Scores</string>
+    <string name="backBtn">Back</string>
+    <string name="QuizScore">Quiz score</string>
 
 
 </resources>

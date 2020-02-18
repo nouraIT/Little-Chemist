@@ -92,6 +92,8 @@
     <string name="nextBtn">التالي</string>
     <string name="previous_question">السؤال السابق</string>
     <string name="scores">مجموع النقاط</string>
+    <string name="backBtn">الخلف</string>
+    <string name="QuizScore">درجة الاختبار</string>
 
 
     <!-- _______________ error msgs _______________ -->
