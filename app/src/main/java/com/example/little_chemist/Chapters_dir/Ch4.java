@@ -5,6 +5,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
 
 
+import com.example.little_chemist.Chapters;
 import com.example.little_chemist.Home;
 import com.example.little_chemist.R;
 import com.example.little_chemist.Tables.Quiz;
@@ -12,6 +13,8 @@ import com.example.little_chemist.Tables.Quiz;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 
 public class Ch4 extends AppCompatActivity {
@@ -19,8 +22,24 @@ public class Ch4 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         setContentView(R.layout.activity_ch4);
 
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent Homepage = new Intent(Ch4.this, Chapters.class);
+                startActivity(Homepage);
+                finish();
+            }
+        });
 
         button1 = findViewById(R.id.cardviewlLSN1);
         button1.setOnClickListener(new View.OnClickListener() {
