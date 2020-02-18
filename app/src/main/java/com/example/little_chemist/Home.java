@@ -104,20 +104,33 @@ public class Home extends AppCompatActivity {
         set.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View view) {
+                Thread thread = new Thread(new Runnable(){
+                    @Override
+                    public void run(){
                 Intent n = new Intent(Home.this, Settings.class);
                 //n.putExtra("student",student);
                 startActivity(n);
                 //finish();
+                    }
+                });
+                thread.start();
             }
         });
 
 
         chapters.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
+                Thread thread = new Thread(new Runnable(){
+                    @Override
+                    public void run(){
+
                 Intent n = new Intent(Home.this, Chapters.class);
                 //n.putExtra("student",student);
                 startActivity(n);
                 //finish();
+                    }
+                });
+                thread.start();
             }
         });
 
@@ -125,8 +138,14 @@ public class Home extends AppCompatActivity {
         pie.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View view) {
+                Thread thread = new Thread(new Runnable(){
+                    @Override
+                    public void run(){
                 Intent n = new Intent(Home.this, Quiz_score.class);
                 startActivity(n);
+                    }
+                });
+                thread.start();
             }
         });
 

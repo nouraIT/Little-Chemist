@@ -40,14 +40,14 @@ public class LoginPage extends AppCompatActivity implements Serializable {
             Recover.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-//                    Thread thread = new Thread(new Runnable(){
-//                        @Override
-//                        public void run(){
+                   Thread thread = new Thread(new Runnable(){
+                       @Override
+                       public void run(){
                             Intent recover=new Intent(LoginPage.this,RecoverPassword.class);
                             startActivity(recover);
-                       // }
-//                    });
-//                    thread.start();
+                        }
+                   });
+                   thread.start();
 
                 }
             });

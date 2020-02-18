@@ -118,9 +118,15 @@ public class Settings extends AppCompatActivity {
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Thread thread = new Thread(new Runnable(){
+                    @Override
+                    public void run(){
                 Intent Homepage = new Intent(Settings.this, Home.class);
                 startActivity(Homepage);
                 //finish();
+                    }
+                });
+                thread.start();
             }
         });
         En.setOnClickListener(new View.OnClickListener() {
