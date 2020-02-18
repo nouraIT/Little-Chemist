@@ -14,11 +14,14 @@ import android.widget.Spinner;
 import com.example.little_chemist.Tables.Student;
 import com.google.android.material.textfield.TextInputLayout;
 
+import static java.lang.Integer.parseInt;
+
 public class RecoverPassword extends AppCompatActivity {
     TextInputLayout ET_Password ,ET_ConfirmPassword,SecurityAn,ET_UserName;
-    String PasswordStr, ConfirmPasswordStr,SecurityA,spinnerSelected,UserNameStr;
+    String PasswordStr, ConfirmPasswordStr,SecurityA,UserNameStr;
     Spinner spinner;
     Student student = new Student();
+    int spinnerSelected;
     DatabaseHelper helper=new DatabaseHelper(this);
 
     @Override
@@ -33,7 +36,7 @@ public class RecoverPassword extends AppCompatActivity {
                 R.array.SecurityQs, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
-        spinnerSelected = spinner.getSelectedItem().toString();
+        spinnerSelected = spinner.getSelectedItemPosition();
 
 
 
@@ -160,13 +163,13 @@ public class RecoverPassword extends AppCompatActivity {
         SecurityAn.getEditText().addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                spinnerSelected = spinner.getSelectedItem().toString();
+                spinnerSelected = spinner.getSelectedItemPosition();
 
             }
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                spinnerSelected = spinner.getSelectedItem().toString();
+                spinnerSelected = spinner.getSelectedItemPosition();
                 SecurityA = SecurityAn.getEditText().getText().toString().trim().toLowerCase();
                 validateSecurity();
 
@@ -175,7 +178,7 @@ public class RecoverPassword extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable editable) {
-                spinnerSelected = spinner.getSelectedItem().toString();
+                spinnerSelected = spinner.getSelectedItemPosition();
                 SecurityA = SecurityAn.getEditText().getText().toString().trim().toLowerCase();
                 if (validateSecurity()){
 
@@ -210,11 +213,12 @@ public class RecoverPassword extends AppCompatActivity {
 
                 //Send UserName to Database to find it, and return Password
                 String [] question= helper.checkquestion(UserNameStr);
-                System.out.println(question[1]);
-                System.out.println(question[0]);
-                if(!question[0].equals(spinnerSelected))
+               // System.out.println(question[1]);
+               // System.out.println(question[0]);
+               // System.out.println(spinnerSelected);
+                int q = parseInt(question[0]);
+                if(!(q == spinnerSelected))
                     //TODO make the error under the spinner
-                    //TODO translate the q to english if it's arabic
 
                     SecurityAn.setError(getText(R.string.SecurityQwrong));
                 else
@@ -255,7 +259,7 @@ public class RecoverPassword extends AppCompatActivity {
             SecurityAn.setError(getText(R.string.nullSecAnswer));
             return false;
         }
-        if (spinnerSelected.isEmpty()) {
+        if (spinnerSelected ==-1) {
             SecurityAn.setError(getText(R.string.nullSecQuestion));
             return false;
         }
