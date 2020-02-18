@@ -101,6 +101,8 @@
     <string name="Ch5Lsn5">Group 4</string>
     <string name="nextQ">Next Question</string>
     <string name="previous_question">Previous Question</string>
+    <string name="nextBtn">Next</string>
+    <string name="scores">Scores</string>
 
 
 </resources>

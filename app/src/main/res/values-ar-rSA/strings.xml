@@ -4,7 +4,7 @@
     <string name="action_sign_in_short">تسجيل الدخول</string>
     <string name="arabic">العربيه</string>
     <string name="don_t_have_an_acount">هل لديك حساب</string>
-    <string name="download_booklet">تحميل الملزمه</string>
+    <string name="download_booklet">تحميل الملزمة</string>
     <string name="english">الانجليزيه</string>
     <string name="languages">اللغات</string>
     <string name="little_chemist">الكيميائي الصغير</string>
@@ -89,6 +89,9 @@
     <string name="Ch5Lsn4">المجموعة السابعة عشر</string>
     <string name="Ch5Lsn5">المجموعة الثامنة عشر</string>
     <string name="nextQ">السؤال التالي</string>
+    <string name="nextBtn">التالي</string>
+    <string name="previous_question">السؤال السابق</string>
+    <string name="scores">مجموع النقاط</string>
 
 
     <!-- _______________ error msgs _______________ -->
