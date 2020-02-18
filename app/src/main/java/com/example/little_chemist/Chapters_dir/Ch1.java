@@ -44,8 +44,6 @@ public class Ch1 extends AppCompatActivity {
             }
         });
 
-//TODO fix the intent
-
         lsn1 = findViewById(R.id.cardviewlLSN1);
         lsn1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {

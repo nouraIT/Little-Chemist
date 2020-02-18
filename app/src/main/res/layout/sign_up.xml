@@ -5,7 +5,7 @@
     android:id="@+id/scrol"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@drawable/signupbackground4"
+    android:background="@drawable/signup_bg_new"
     tools:context=".SignUp">
 
 
