@@ -499,7 +499,47 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
-    public void updateLesson(String username, int Lid,String status) {
+    public void updateLesson(String username, int Lid,String status,int CHid) {
+
+
+        String [] ch = new String[5];
+        String Username;
+        String LLOCKS= "";
+
+        db = this.getReadableDatabase();
+        boolean flag=false;
+
+        String q = "SELECT UserName,CHLOCKS,LSNLOCKS FROM Student";
+        Cursor cursor = db.rawQuery(q, null);
+
+        if (cursor.moveToFirst()) {
+            do {
+                Username = cursor.getString(0);
+                if (Username.contentEquals(username)) {
+                    LLOCKS = cursor.getString(1);
+                    break;
+                }
+            } while (cursor.moveToNext());
+        }
+
+
+        cursor.close();
+
+        if(flag) {
+
+            ch = LLOCKS.split(",");
+            Lid--;
+            ch[Lid] = status;
+            LLOCKS = String.join("", ch);
+
+            db = getWritableDatabase();
+            String query = " UPDATE Student SET LSNLOCKS = '" + LLOCKS + "' WHERE UserName = '" + username + "' ";
+
+            db.execSQL(query);
+        }
+
+        db.close();
+
 
 
 
