@@ -252,8 +252,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 username=cursor.getString(0);
                 if(username.contentEquals(Username)){
                     password=cursor.getString(1);
-                    db.close();
-                    cursor.close();
                     break;
                 }
             }while (cursor.moveToNext());
@@ -414,6 +412,126 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.close();
         cursor.close();
         return Id;
+    }
+
+    public Student getStudent(String username){
+        Student student = new Student();
+        db = this.getReadableDatabase();
+
+        String query = "SELECT * FROM Student";
+        //String currentStudent=null;
+
+        Cursor cursor = db.rawQuery(query, null);
+        String un,QLocks,Chlocks,LesLocks,Pass,SQ,SA;
+        int id,score,lang;
+
+
+        if (cursor.moveToFirst()) {
+            do {
+                un = cursor.getString(0);
+                if (un.contentEquals(username)) {
+                    id = cursor.getInt(1);
+                    score= cursor.getInt(1);
+                    QLocks= cursor.getString(1);
+                    Chlocks= cursor.getString(1);
+                    LesLocks= cursor.getString(1);
+                    un= cursor.getString(1);
+                    Pass= cursor.getString(1);
+                    SQ= cursor.getString(1);
+                    SA= cursor.getString(1);
+                    lang = cursor.getInt(1);
+                    student= new Student(id,score,QLocks,Chlocks,LesLocks,un,Pass,SQ,SA,lang);
+
+
+                    break;
+                }
+            } while (cursor.moveToNext());
+        }
+        db.close();
+        cursor.close();
+
+        return student;
+
+    }
+    public void updateChapter(String username,int CHID,String status)
+    {
+        String [] ch = new String[5];
+        String Username;
+        String CHLOCKS= "";
+        db = this.getWritableDatabase();
+        String q = "SELECT UserName,CHLOCKS FROM Student";
+        Cursor cursor = db.rawQuery(q, null);
+
+        if (cursor.moveToFirst()) {
+            do {
+                Username = cursor.getString(0);
+                if (Username.contentEquals(username)) {
+                    CHLOCKS = cursor.getString(1);
+                    break;
+                }
+            } while (cursor.moveToNext());
+        }
+
+
+        cursor.close();
+
+        ch = CHLOCKS.split(",");
+        CHID--;
+        ch[CHID] = status;
+        CHLOCKS = String.join("",ch);
+
+
+        String query =" UPDATE Student SET CHLOCKS = '"+ CHLOCKS +"' WHERE UserName = '"+username+"' ";
+
+        db.execSQL(query);
+
+        db.close();
+
+
+
+
+    }
+    public void updateLesson(String username, int Lid,String status)
+    {
+
+
+
+    }
+    public void updateQuiz(String username,int Qid,String status)
+    {
+
+        String [] ch = new String[5];
+        String Username;
+        String QZLOCKS= "";
+        db = this.getWritableDatabase();
+        String q = "SELECT UserName,QZLOCKS FROM Student";
+        Cursor cursor = db.rawQuery(q, null);
+
+        if (cursor.moveToFirst()) {
+            do {
+                Username = cursor.getString(0);
+                if (Username.contentEquals(username)) {
+                    QZLOCKS = cursor.getString(1);
+                    break;
+                }
+            } while (cursor.moveToNext());
+        }
+
+
+        cursor.close();
+
+        ch = QZLOCKS.split(",");
+        Qid--;
+        ch[Qid] = status;
+        QZLOCKS = String.join("",ch);
+
+
+        String query =" UPDATE Student SET QZLOCKS = '"+ QZLOCKS +"' WHERE UserName = '"+username+"' ";
+
+        db.execSQL(query);
+
+        db.close();
+
     }
 
 

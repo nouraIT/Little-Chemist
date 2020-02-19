@@ -239,7 +239,7 @@ public class Settings extends AppCompatActivity {
 
                         else{
                             //error masg
-                            //TODO
+                            //TODO Add ELSE IN CASE NO ID
                         }
                     }
                 });
