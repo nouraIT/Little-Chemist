@@ -36,7 +36,7 @@ public class Home extends AppCompatActivity {
     DatabaseHelper helper = new DatabaseHelper(Home.this);
     public static boolean alreadyRecreated = false;
     public static boolean AlreadyGreeted = false;
-    Student student = new Student();
+    static Student student = new Student();
 
 
     @Override
@@ -57,7 +57,7 @@ public class Home extends AppCompatActivity {
 
         SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
         String name = pref.getString("username", null); // getting String
-        //student = helper.getStudent(name);
+        student = helper.getStudent(name);
         //SharedPreferences.Editor editor = pref.edit();
 
         //the users info

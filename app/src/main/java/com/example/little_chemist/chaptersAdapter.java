@@ -9,6 +9,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.little_chemist.Tables.Student;
+
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewpager.widget.PagerAdapter;
@@ -39,17 +41,19 @@ public class chaptersAdapter extends PagerAdapter {
             R.drawable.ch5_bg
     };
 
-//    SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0);
-//    String name = pref.getString("username", null);
-//    DatabaseHelper helper = new DatabaseHelper(chaptersAdapter.this);
-//    helper.getStudent(name);
     public int[] chapter_Lock={
+
             R.drawable.padlock,
             R.drawable.lock,
             R.drawable.lock,
             R.drawable.lock,
             R.drawable.lock,
     };
+//    SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0);
+//    String name = pref.getString("username", null);
+//    DatabaseHelper helper = new DatabaseHelper(chaptersAdapter.this);
+//    getStudent(name);
+    Student s = Home.student;
 
     public int[] chapter_drawings={
             R.drawable.atom,
