@@ -2,7 +2,7 @@ package com.example.little_chemist.Tables;
 
 public class Lesson {
 
-    int lessonID;
+    int lessonID, ChId;
     String lessonName, lockLesson, exercise, content;
 
     //public  void SetId(int id){this.lessonID=id; }
@@ -28,6 +28,9 @@ public class Lesson {
     public String GetExercise(){
         return exercise;
     }
+
+    public int GetChID(){   return ChId;}
+    public void SetChID(int id){ChId = id;  }
 
     public void SetContent(String content){
         this.content=content;

@@ -19,9 +19,13 @@ public class Student implements Serializable {
         UserName = name;
         Password = pass;
         Arabic = arabic;
+        QZLocks = "1:unlocked,2:locked,3:locked,4:locked,5:locked";
+        CHLocks ="1:unlocked,2:locked,3:locked,4:locked,5:locked";
+        LSNLocks ="1:unlocked,2:locked,3:locked,4:locked,5:locked";
     }
 
     public Student(){
+
         Arabic = 0;
     }
 

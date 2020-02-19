@@ -47,6 +47,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         private static final String COLUMN_LSNNAME = "lessonName";
         private static final String COLUMN_LSNLOCK = "lockLesson";
         private static final String COLUMN_EXERCISE = "exercise";
+        private static final String COLUMN_CH = "ChId";
         private static final String COLUMN_CONTENT = "content";
 
         //-----------------------------------------------
@@ -65,12 +66,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "LittleChemist.db";
     SQLiteDatabase db;
 
-
-    public DatabaseHelper open() throws SQLException
-    {
-        db = getWritableDatabase();
-        return this;
-    }
 
 
     //---------------------- create, add and delete tables ------------------------
@@ -100,8 +95,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     FeedEntry.COLUMN_LSNNAME + " TEXT," +
                     FeedEntry.COLUMN_LSNLOCK + " TEXT," +
                     FeedEntry.COLUMN_EXERCISE + " TEXT," +
-                    FeedEntry.COLUMN_CONTENT + " TEXT)" ;
-
+                    FeedEntry.COLUMN_CONTENT + " TEXT,"+
+                    FeedEntry.COLUMN_CH + " INTEGER, FOREIGN KEY ("+FeedEntry.COLUMN_CH+") REFERENCES "+FeedEntry.TABLE_CHAPTER+"("+FeedEntry.COLUMN_CHID+"))";
 
     private static final String SQL_CREATE_QUIZ=
             "CREATE TABLE "+FeedEntry.TABLE_QUIZ +" ("+
@@ -127,7 +122,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(SQL_CREATE_CHAPTER);
         db.execSQL(SQL_CREATE_LESSON);
         db.execSQL(SQL_CREATE_QUIZ);
-        db.close();
+        //db.close();
 
     }
 
@@ -144,7 +139,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
     //-------------------------- inserts  ----------------------
-
 
 
     public void InsertStudents(Student student){
@@ -204,6 +198,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentvalues.put(FeedEntry.COLUMN_LSNNAME, lesson.GetLessonName());
         contentvalues.put(FeedEntry.COLUMN_LSNLOCK, lesson.GetLockLesson());
         contentvalues.put(FeedEntry.COLUMN_EXERCISE, lesson.GetExercise());
+        contentvalues.put(FeedEntry.COLUMN_CH, lesson.GetChID());
         contentvalues.put(FeedEntry.COLUMN_CONTENT, lesson.GetContent());
 
         db.insert(FeedEntry.TABLE_LESSON,null,contentvalues);
@@ -376,8 +371,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         //Cursor cursor=db.rawQuery(query,null);
         //return cursor.moveToFirst();
+//        String s = "1:comp,2lock";
+//        s.split(",");
 
     }
+
+
 
 
 //    public String getLoggedInStudent(String userName) {

@@ -179,9 +179,11 @@ public class Lessons extends AppCompatActivity {
 
         if(v.getId()==R.id.ex) {
             System.out.println("yes");
-            Toast.makeText(getApplicationContext(), "The text you want to display", Toast.LENGTH_LONG);
+            //Toast.makeText(getApplicationContext(), "The text you want to display", Toast.LENGTH_LONG);
         }else
-        Toast.makeText(getApplicationContext(),"Not working", Toast.LENGTH_LONG) ;
+            System.out.println("no");
+
+//        Toast.makeText(getApplicationContext(),"Not working", Toast.LENGTH_LONG) ;
 
 
 

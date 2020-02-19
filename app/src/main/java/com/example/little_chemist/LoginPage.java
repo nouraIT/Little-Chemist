@@ -131,9 +131,6 @@ public class LoginPage extends AppCompatActivity implements Serializable {
                     //PasswordET.setError(null);
 
 
-
-
-
                    String dbPassword= helper.checkPassword(UserNameStr);
                     //To compare it with Current Password from user input
                     if(dbPassword.equals(PasswordStr)){
