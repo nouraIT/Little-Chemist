@@ -78,7 +78,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String SQL_CREATE_STUDENT=
             "CREATE TABLE "+FeedEntry.TABLE_STUDENT +" ("+
                     FeedEntry.COLUMN_ID + "  INTEGER PRIMARY KEY," +
-                    FeedEntry.COLUMN_SCORE + " INTEGER," +
+                    FeedEntry.COLUMN_SCORE + " INTEGER," +   //TODO fix this
                     FeedEntry.COLUMN_QZLOCKS + " TEXT," +
                     FeedEntry.COLUMN_CHLOCKS + " TEXT," +
                     FeedEntry.COLUMN_LSNLOCKS + " TEXT," +
@@ -127,7 +127,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(SQL_CREATE_CHAPTER);
         db.execSQL(SQL_CREATE_LESSON);
         db.execSQL(SQL_CREATE_QUIZ);
-
+        db.close();
 
     }
 
@@ -234,6 +234,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         db = getWritableDatabase();
         db.delete(FeedEntry.TABLE_STUDENT,   "Id = ?" , new String[] {id});
+        db.close();
     }
 
 
@@ -260,6 +261,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 }
             }while (cursor.moveToNext());
         }
+        db.close();
+        cursor.close();
         return  password;
     }
 
@@ -276,10 +279,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             do{
                 username=cursor.getString(0);
                 if(username.contentEquals(Username)){
+                    db.close();
+                    cursor.close();
                     return true;
                 }
             }while (cursor.moveToNext());
         }
+
+        db.close();
+        cursor.close();
         return false;
     }
 
@@ -300,13 +308,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 if(username.contentEquals(Username)){
                     secQ=cursor.getString(1);
                     secA=cursor.getString(2);
+
                     sec[0]=secQ;
                     sec[1]=secA;
                     break;
                 }
             }while (cursor.moveToNext());
         }
-
+        db.close();
+        cursor.close();
         return  sec;
     }
 
@@ -316,6 +326,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String query =" UPDATE Student SET Password = '"+password +"' WHERE UserName = '"+username+"' ";
 
         db.execSQL(query);
+        db.close();
 
         //Cursor cursor=db.rawQuery(query,null);
         //return cursor.moveToFirst();
@@ -398,6 +409,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 }
             } while (cursor.moveToNext());
         }
+
         db.close();
         cursor.close();
         return Id;
