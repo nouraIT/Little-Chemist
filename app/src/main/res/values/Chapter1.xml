@@ -1,15 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <!--         LESSON 1            -->
-<string name="L1S1_1" >Matter is composed of indivisible building blocks.</string>
-  <string name="L1S1_2" >Atom is the smallest possible amount of matter that still counts as a chemical element.</string>
+<string name="L1S1_1" ><b>Matter</b> is composed of indivisible building blocks.</string>
+  <string name="L1S1_2" ><b>Atom</b> is the smallest possible amount of matter that still counts as a chemical element.</string>
   <string name="L1E1">Organize these building blocks in any shape to create an atom</string>
-  <string name="L1S2">The Atom consists of:
+  <string name="L1S2_1"><b>The Atom</b> consists of:
 one Nucleus
 Multiple Protons
 Multiple Neutrons
 Multiple Electrons
 </string>
+<string name="L1S2_2"><b>The Nucleus</b> is the center of the atom
+ It is made up of protons and neutrons and is surrounded by the electron cloud.
+</string>
+  <string name="L1E2">Drag and drop the elements to their right place</string>
+  <string name="L1S3_1">The concept of <b>The Atom</b> was studied by many scientists, including Newton, Dalton.</string>
+  <string name="L1S3_2"><b>Isaac Newton</b> suggested that atoms are held together with attractions, otherwise known as forces.</string>
+  <string name="L1S3_3"><b>John Dalton</b> proposed the atomic theory.
+<b>atomic theory</b>is a scientific theory of the nature of matter, which states that matter is composed of discrete units called atoms.</string>
+<string name="L1E3">Match each scientist with his discovery</string>
 
 
 
@@ -18,28 +27,59 @@ Multiple Electrons
 
 
 
-    <!--         LESSON 2            -->
 
-
-    <!--         LESSON 2            -->
 
 
     <!--         LESSON 3            -->
+  <string name="L3S1_1">What Are<b>Isotopes</b> </string>
+  <string name="L3S1_2" ><b>Isotopes</b>  are atoms with the same number of protons and electrons, but a different number of neutrons.
+For example, imagine a piece of wood, every piece has different patterns but it’s all wood.
+</string>
+  <string name="L3S1_3">That means that if we had two pieces of wood, their atoms would be<b>Isotopes</b> </string>
+  <string name="L3E1">What part of the atom determines if its an Isotope or not?
+1- Protons
+2- Electrons
+3- Neutrons
+</string>
+  <string name="L3S2"><b>Atomic mass</b> is calculated by adding the number of protons and neutrons in the atom.
+
+</string>
+
+  <string name="L3E2">Calculate the mass of helium</string>
 
 
     <!--         LESSON 3            -->
 
 
     <!--         LESSON 4            -->
+  <string name="L4S1" ><b>Heisenberg Uncertainty Principle</b> Which states that you cannot measure everything exactly.
+For example:
+Imagine that you’re throwing a ball in the air, and you want to measure how fast it\'s going and its altitude - it\'s not possible to know both the exact speed and exact location. In order to know exactly how high the ball are, it would have to stop. However, if it stops, then you can\'t measure how fast its flying because at that moment it's not actually moving. That's what the Heisenberg Uncertainty Principle is saying - sometimes we can't measure one thing without making it impossible to measure another.
+</string>
+
+  <string name="L4E1">According to the Heisenberg Uncertainty Principle, what can\'t you know?
+•Where you are
+•How fast you are going.
+•Your exact age
+•Where you are and how fast you are going at the same time.
+</string>
+  <string name="L4S2">Well, let\'s go back to you throwing the ball and compare the ball to the smallest part of an atom. You can\'t even see an atom, so you can\'t really see the smallest part of an atom without some pretty serious equipment. But let\'s pretend anyway that the ball is the smallest piece of a particle, a quantum. It\'s difficult to find exactly where the ball is because its moving, but we can sort of guess.
+We also want to see how fast the ball, the quantum, is flying. We can guess that pretty close. However, we can't find how fast the quantum, or smallest piece, is going if we're also trying to find out exactly where it is.
+
+</string>
+
+  <string name="L4E2">What is the smallest particle of any substance called?
+•Atom
+•Molecule
+•Quantum
+•Quazer
+</string>
 
 
     <!--         LESSON 4            -->
 
 
-    <!--         LESSON 5            -->
 
-
-    <!--         LESSON 5            -->
 
 
 </resources>
