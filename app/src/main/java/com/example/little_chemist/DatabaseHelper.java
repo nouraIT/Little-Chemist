@@ -460,7 +460,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String [] ch = new String[5];
         String Username;
         String CHLOCKS= "";
-        db = this.getWritableDatabase();
+
+        db = this.getReadableDatabase();
+        boolean flag=false;
+
         String q = "SELECT UserName,CHLOCKS FROM Student";
         Cursor cursor = db.rawQuery(q, null);
 
@@ -477,15 +480,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         cursor.close();
 
-        ch = CHLOCKS.split(",");
-        CHID--;
-        ch[CHID] = status;
-        CHLOCKS = String.join("",ch);
+        if(flag) {
 
-        db = this.getWritableDatabase();
-        String query =" UPDATE Student SET CHLOCKS = '"+ CHLOCKS +"' WHERE UserName = '"+username+"' ";
+            ch = CHLOCKS.split(",");
+            CHID--;
+            ch[CHID] = status;
+            CHLOCKS = String.join("", ch);
 
-        db.execSQL(query);
+            db = getWritableDatabase();
+            String query = " UPDATE Student SET CHLOCKS = '" + CHLOCKS + "' WHERE UserName = '" + username + "' ";
+
+            db.execSQL(query);
+        }
 
         db.close();
 
@@ -532,8 +538,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             QZLOCKS = String.join("", ch);
 
 
-        db = this.getWritableDatabase();
-        String query =" UPDATE Student SET QZLOCKS = '"+ QZLOCKS +"' WHERE UserName = '"+username+"' ";
+            db = this.getWritableDatabase();
+            String query =" UPDATE Student SET QZLOCKS = '"+ QZLOCKS +"' WHERE UserName = '"+username+"' ";
 
             db.execSQL(query);
         }
