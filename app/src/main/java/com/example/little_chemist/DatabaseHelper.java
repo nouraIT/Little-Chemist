@@ -453,8 +453,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return student;
 
     }
-    public void updateChapter(String username,int CHID,String status)
-    {
+
+
+    public void updateChapter(String username,int CHID,String status) {
+
         String [] ch = new String[5];
         String Username;
         String CHLOCKS= "";
@@ -491,19 +493,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
     }
-    public void updateLesson(String username, int Lid,String status)
-    {
+
+    public void updateLesson(String username, int Lid,String status) {
 
 
 
     }
-    public void updateQuiz(String username,int Qid,String status)
-    {
+    public void updateQuiz(String username,int Qid,String status) {
 
-        String [] ch = new String[5];
-        String Username;
-        String QZLOCKS= "";
-        db = this.getWritableDatabase();
+        String [] ch ;//= new String[5];
+        String Username, QZLOCKS = "";
+        boolean flag=false;
+
+        db = getWritableDatabase();
+
         String q = "SELECT UserName,QZLOCKS FROM Student";
         Cursor cursor = db.rawQuery(q, null);
 
@@ -512,6 +515,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 Username = cursor.getString(0);
                 if (Username.contentEquals(username)) {
                     QZLOCKS = cursor.getString(1);
+                    flag = true;
                     break;
                 }
             } while (cursor.moveToNext());
@@ -520,15 +524,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         cursor.close();
 
-        ch = QZLOCKS.split(",");
-        Qid--;
-        ch[Qid] = status;
-        QZLOCKS = String.join("",ch);
+        if(flag) {
+            ch = QZLOCKS.split(","); //[1:unlocked,
+            Qid--;
+            ch[Qid] = status;
+            QZLOCKS = String.join("", ch);
 
 
-        String query =" UPDATE Student SET QZLOCKS = '"+ QZLOCKS +"' WHERE UserName = '"+username+"' ";
+            String query = " UPDATE Student SET QZLOCKS = '" + QZLOCKS + "' WHERE UserName = '" + username + "' ";
 
-        db.execSQL(query);
+            db.execSQL(query);
+        }
 
         db.close();
 
