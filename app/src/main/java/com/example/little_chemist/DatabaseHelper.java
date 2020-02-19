@@ -398,8 +398,49 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 }
             } while (cursor.moveToNext());
         }
-
+        db.close();
+        cursor.close();
         return Id;
+    }
+
+    public Student getStudent(String username){
+        Student student = new Student();
+        db = this.getReadableDatabase();
+
+        String query = "SELECT * FROM Student";
+        String currentStudent=null;
+
+        Cursor cursor = db.rawQuery(query, null);
+        String un,QLocks,Chlocks,LesLocks,Pass,SQ,SA;
+        int id,score,lang;
+
+
+        if (cursor.moveToFirst()) {
+            do {
+                un = cursor.getString(0);
+                if (un.contentEquals(username)) {
+                    id = cursor.getInt(1);
+                    score= cursor.getInt(1);
+                    QLocks= cursor.getString(1);
+                    Chlocks= cursor.getString(1);
+                    LesLocks= cursor.getString(1);
+                    un= cursor.getString(1);
+                    Pass= cursor.getString(1);
+                    SQ= cursor.getString(1);
+                    SA= cursor.getString(1);
+                    lang = cursor.getInt(1);
+                    student= new Student(id,score,QLocks,Chlocks,LesLocks,un,Pass,SQ,SA,lang);
+
+
+                    break;
+                }
+            } while (cursor.moveToNext());
+        }
+        db.close();
+        cursor.close();
+
+        return student;
+
     }
 
 

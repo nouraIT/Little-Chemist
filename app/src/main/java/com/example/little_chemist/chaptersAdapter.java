@@ -1,6 +1,7 @@
 package com.example.little_chemist;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,6 +39,10 @@ public class chaptersAdapter extends PagerAdapter {
             R.drawable.ch5_bg
     };
 
+//    SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0);
+//    String name = pref.getString("username", null);
+//    DatabaseHelper helper = new DatabaseHelper(chaptersAdapter.this);
+//    helper.getStudent(name);
     public int[] chapter_Lock={
             R.drawable.padlock,
             R.drawable.lock,

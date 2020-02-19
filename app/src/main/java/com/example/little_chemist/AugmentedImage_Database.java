@@ -16,17 +16,31 @@
 //public class AugmentedImage_Database {
 //
 //
-//    public boolean setupAugmentedImagesDb(Config config, Session session) {
-//        AugmentedImageDatabase augmentedImageDatabase;
-//        Bitmap bitmap = loadAugmentedImage();
-//        if (bitmap == null) {
-//            return false;
+//    public boolean loadDataBase(Session session){
+//        try{
+//        InputStream inputStream = context.getAssets().open("example.imgdb");
+//        AugmentedImageDatabase imageDatabase = AugmentedImageDatabase.deserialize(session,inputStream);}
+//        catch(IOException e){
+//
+//            System.out.println(e);
 //        }
-//        augmentedImageDatabase = new AugmentedImageDatabase(session);
-//        augmentedImageDatabase.addImage("tiger", bitmap);
-//        config.setAugmentedImageDatabase(augmentedImageDatabase);
+//
 //        return true;
+//        return false;
 //    }
+//
+//
+////    public boolean setupAugmentedImagesDb(Config config, Session session) {
+////        AugmentedImageDatabase augmentedImageDatabase;
+////        Bitmap bitmap = loadAugmentedImage();
+////        if (bitmap == null) {
+////            return false;
+////        }
+////        augmentedImageDatabase = new AugmentedImageDatabase(session);
+////        augmentedImageDatabase.addImage("tiger", bitmap);
+////        config.setAugmentedImageDatabase(augmentedImageDatabase);
+////        return true;
+////    }
 ////    private Bitmap loadAugmentedImage() {
 ////        try (InputStream is = getAssets().open("blanket.jpeg")) {
 ////            return BitmapFactory.decodeStream(is);

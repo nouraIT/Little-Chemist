@@ -20,6 +20,21 @@ public class Student implements Serializable {
         Password = pass;
         Arabic = arabic;
     }
+    public Student(int id,int score,String QL,String CHl,String LL,String username,String Pass,String SQ,String SA,int lang)
+    {
+        this.Id=id;
+        this.TotalScore =score;
+        this.UserName = username;
+        this.Password= Pass;
+        this.QZLocks=QL;
+        this.CHLocks=CHl;
+        this.LSNLocks=LL;
+        this.SecQ=SQ;
+        this.SecA=SA;
+        this.Arabic= lang;
+
+
+    }
 
     public Student(){
         Arabic = 0;
