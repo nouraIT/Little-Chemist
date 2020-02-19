@@ -79,6 +79,56 @@ We also want to see how fast the ball, the quantum, is flying. We can guess that
     <!--         LESSON 4            -->
 
 
+  <!--        Quiz Questions           -->
+  <string-array name="Quiz_Questions">
+
+    <item name="Q1">The nucleus of an atom is?</item>
+    <item name="Q2">Electrons?</item>
+    <item name="Q3">How many electrons are in an atom?</item>
+    <item name="Q4">How do atoms bond together?</item>
+    <item name="Q5">Isotopes of an element differ in _____.</item>
+    <item name="Q5">What is the atomic mass of this x isotope?</item>
+
+
+  </string-array>
+  <!--         Quiz Total Answers          -->
+  <string-array name="Quiz_Q1">
+
+    <item name="A1">Split apart.</item>
+    <item name="A2">Made larger.</item>
+    <item name="A3">Frozen.</item>
+    <item name="A4">Weighed.</item>
+
+
+  </string-array>
+  <string-array name="Quiz_Q2">
+
+    <item name="A1">The Study Of Atoms</item>
+    <item name="A2">Elements</item>
+    <item name="A3">Chemistry Basics</item>
+    <item name="A4">The Branches Of Chemistry</item>
+
+
+  </string-array>
+  <string-array name="Quiz_Q3">
+
+    <item name="A1">The Study Of Atoms</item>
+    <item name="A2">Elements</item>
+    <item name="A3">Chemistry Basics</item>
+    <item name="A4">The Branches Of Chemistry</item>
+
+
+  </string-array>
+  <!--         Quiz correct Answers          -->
+  <string-array name="Quiz_Correct">
+
+    <item name="CA1">Split apart.</item>
+    <item name="CA2">Elements</item>
+    <item name="CA3">Chemistry Basics</item>
+    <item name="CA4">The Branches Of Chemistry</item>
+    <item name="CA5">The Periodic Table</item>
+
+  </string-array>
 
 
 
