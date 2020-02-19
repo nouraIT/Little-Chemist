@@ -458,8 +458,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void updateChapter(String username,int CHID,String status) {
 
         String [] ch = new String[5];
-        String Username;
-        String CHLOCKS= "";
+        String Username, CHLOCKS= "";
 
         db = this.getReadableDatabase();
         boolean flag=false;
@@ -508,8 +507,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void updateQuiz(String username,int Qid,String status) {
 
         String [] ch = new String[5];
-        String Username;
-        String QZLOCKS= "";
+        String Username,QZLOCKS= "";
         db = this.getReadableDatabase();
 
         boolean flag=false;
