@@ -459,7 +459,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String [] ch = new String[5];
         String Username;
         String CHLOCKS= "";
-        db = this.getWritableDatabase();
+        db = this.getReadableDatabase();
+
         String q = "SELECT UserName,CHLOCKS FROM Student";
         Cursor cursor = db.rawQuery(q, null);
 
@@ -481,7 +482,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ch[CHID] = status;
         CHLOCKS = String.join("",ch);
 
-
+        db = this.getWritableDatabase();
         String query =" UPDATE Student SET CHLOCKS = '"+ CHLOCKS +"' WHERE UserName = '"+username+"' ";
 
         db.execSQL(query);
@@ -492,7 +493,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
     }
-    public void updateLesson(String username, int Lid,String status)
+    public void updateLesson(String username, int Lid,String status,int CHid)
     {
 
 
@@ -504,7 +505,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String [] ch = new String[5];
         String Username;
         String QZLOCKS= "";
-        db = this.getWritableDatabase();
+        db = this.getReadableDatabase();
+
         String q = "SELECT UserName,QZLOCKS FROM Student";
         Cursor cursor = db.rawQuery(q, null);
 
@@ -526,7 +528,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ch[Qid] = status;
         QZLOCKS = String.join("",ch);
 
-
+        db = this.getWritableDatabase();
         String query =" UPDATE Student SET QZLOCKS = '"+ QZLOCKS +"' WHERE UserName = '"+username+"' ";
 
         db.execSQL(query);
