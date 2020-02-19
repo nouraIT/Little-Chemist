@@ -454,7 +454,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return student;
 
     }
-    public boolean updateChapter(String username,int CHID,String status)
+    public void updateChapter(String username,int CHID,String status)
     {
         String [] ch = new String[5];
         String Username;
@@ -488,20 +488,50 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         db.close();
 
-        return true;
+
+
+
+    }
+    public void updateLesson(String username, int Lid,String status)
+    {
+
 
 
     }
-    public boolean updateLesson(String username, int Lid,String status)
+    public void updateQuiz(String username,int Qid,String status)
     {
 
-        return true;
+        String [] ch = new String[5];
+        String Username;
+        String QZLOCKS= "";
+        db = this.getWritableDatabase();
+        String q = "SELECT UserName,QZLOCKS FROM Student";
+        Cursor cursor = db.rawQuery(q, null);
 
-    }
-    public boolean updateQuiz(String username,int Qid,String status)
-    {
+        if (cursor.moveToFirst()) {
+            do {
+                Username = cursor.getString(0);
+                if (Username.contentEquals(username)) {
+                    QZLOCKS = cursor.getString(1);
+                    break;
+                }
+            } while (cursor.moveToNext());
+        }
 
-        return true;
+
+        cursor.close();
+
+        ch = QZLOCKS.split(",");
+        Qid--;
+        ch[Qid] = status;
+        QZLOCKS = String.join("",ch);
+
+
+        String query =" UPDATE Student SET QZLOCKS = '"+ QZLOCKS +"' WHERE UserName = '"+username+"' ";
+
+        db.execSQL(query);
+
+        db.close();
 
     }
 
