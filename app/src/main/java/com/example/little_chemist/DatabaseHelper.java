@@ -454,6 +454,25 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return student;
 
     }
+    public boolean updateChapter(String username,String CHID,String status)
+    {
+
+        return true;
+
+
+    }
+    public boolean updateLesson(String username, String Lid,String status)
+    {
+
+        return true;
+
+    }
+    public boolean updateQuiz(String username,String Qid,String status)
+    {
+
+        return true;
+
+    }
 
 
 
