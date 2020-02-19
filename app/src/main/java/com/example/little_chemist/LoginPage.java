@@ -36,6 +36,7 @@ public class LoginPage extends AppCompatActivity implements Serializable {
             this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
             setContentView(R.layout.activity_login);
+
             Button Recover = findViewById(R.id.forgotPassBtn);
             Recover.setOnClickListener(new View.OnClickListener() {
                 @Override

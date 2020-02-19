@@ -420,7 +420,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db = this.getReadableDatabase();
 
         String query = "SELECT * FROM Student";
-        String currentStudent=null;
+        //String currentStudent=null;
 
         Cursor cursor = db.rawQuery(query, null);
         String un,QLocks,Chlocks,LesLocks,Pass,SQ,SA;
@@ -454,20 +454,51 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return student;
 
     }
-    public boolean updateChapter(String username,String CHID,String status)
+    public boolean updateChapter(String username,int CHID,String status)
     {
+        String [] ch = new String[5];
+        String Username;
+        String CHLOCKS= "";
+        db = this.getWritableDatabase();
+        String q = "SELECT UserName,CHLOCKS FROM Student";
+        Cursor cursor = db.rawQuery(q, null);
+
+        if (cursor.moveToFirst()) {
+            do {
+                Username = cursor.getString(0);
+                if (Username.contentEquals(username)) {
+                    CHLOCKS = cursor.getString(1);
+                    break;
+                }
+            } while (cursor.moveToNext());
+        }
+
+
+        cursor.close();
+
+        ch = CHLOCKS.split(",");
+        CHID--;
+        ch[CHID] = status;
+        CHLOCKS = String.join("",ch);
+
+
+        String query =" UPDATE Student SET CHLOCKS = '"+ CHLOCKS +"' WHERE UserName = '"+username+"' ";
+
+        db.execSQL(query);
+
+        db.close();
 
         return true;
 
 
     }
-    public boolean updateLesson(String username, String Lid,String status)
+    public boolean updateLesson(String username, int Lid,String status)
     {
 
         return true;
 
     }
-    public boolean updateQuiz(String username,String Qid,String status)
+    public boolean updateQuiz(String username,int Qid,String status)
     {
 
         return true;
