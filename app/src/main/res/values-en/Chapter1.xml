@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <!--         LESSON 1            -->
-
+  <string name="L1S1_1" >Matter is composed of indivisible building blocks.</string>
+  <string name="L1S1_2" >Atom is the smallest possible amount of matter that still counts as a chemical element.</string>
+  <string name="L1E1">Organize these building blocks in any shape to create an atom</string>
+  <string name="L1S2_1">The Atom consists of:
+one Nucleus
+Multiple Protons
+Multiple Neutrons
+Multiple Electrons
+</string>
 
   <!--         LESSON 1            -->
 
