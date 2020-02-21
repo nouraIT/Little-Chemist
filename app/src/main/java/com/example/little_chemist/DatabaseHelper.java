@@ -7,10 +7,13 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.provider.BaseColumns;
 
+
 import com.example.little_chemist.Tables.Chapter;
 import com.example.little_chemist.Tables.Lesson;
 import com.example.little_chemist.Tables.Quiz;
 import com.example.little_chemist.Tables.Student;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
 
 import java.sql.SQLException;
 
@@ -105,7 +108,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     FeedEntry.COLUMN_LOCKQUIZ + " TEXT)" ;
 
 
-
     private static final String SQL_DELETE_ENTRIES =
             "DROP TABLE IF EXISTS " + FeedEntry.TABLE_STUDENT;
 
@@ -161,6 +163,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentvalues.put(FeedEntry.COLUMN_SECA, student.GetSecA());
         contentvalues.put(FeedEntry.COLUMN_LANG, student.GetLang());
 
+        //JsonObject(Chapter,)
 
 
 
