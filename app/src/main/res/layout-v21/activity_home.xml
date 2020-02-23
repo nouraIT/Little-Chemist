@@ -5,12 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/backgroundhome"
-    android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen"
     tools:context=".Home"
 
     >
 <!--    android:background="@drawable/sand_bg"-->
-
+<!--    android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen" -->
 
     <ImageView
         android:id="@+id/logoHome"
@@ -29,7 +28,7 @@
 
 
 
-<!--   blue >>> 008DFF Orange >> E06E4A    white E4F3F1F1-->
+<!--  [purple 4a47a7 ] blue >>> 008DFF Orange >> E06E4A    white E4F3F1F1-->
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardviewchapters"
@@ -38,7 +37,7 @@
 
         android:layout_marginTop="16dp"
         android:layout_marginBottom="192dp"
-        app:cardBackgroundColor="#E4F3F1F1"
+        app:cardBackgroundColor="#4a47a7"
         app:cardCornerRadius="20dp"
 
         app:layout_constraintBottom_toBottomOf="parent"
@@ -55,7 +54,7 @@
             android:layout_marginTop="10dp"
             android:elevation="2dp"
             android:text="@string/little_chemist"
-            android:textColor="@color/OrangeText"
+            android:textColor="@color/white"
             android:textSize="25sp" />
 
 

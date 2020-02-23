@@ -23,6 +23,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".View_lesson.slideAdapter"></activity>
         <activity android:name=".View_lesson.Lessons" />
+        <activity android:name=".View_lesson.lab" />
         <activity android:name=".Quiz_score" />
         <activity android:name=".RecoverPassword" />
         <activity android:name=".Settings" />

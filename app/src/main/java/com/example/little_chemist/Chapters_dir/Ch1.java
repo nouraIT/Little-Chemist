@@ -10,6 +10,7 @@ import android.view.WindowManager;
 import com.example.little_chemist.Chapters;
 import com.example.little_chemist.R;
 import com.example.little_chemist.View_lesson.Lessons;
+import com.example.little_chemist.View_lesson.lab;
 import com.example.little_chemist.quizQ;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -57,7 +58,7 @@ public class Ch1 extends AppCompatActivity {
         lsn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent n = new Intent(Ch1.this, Ch1.class);
+                Intent n = new Intent(Ch1.this, lab.class);
                 startActivity(n);
                 //  finish();
             }
