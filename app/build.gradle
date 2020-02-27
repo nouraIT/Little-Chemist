@@ -1,3 +1,5 @@
+//noinspection GradleCompatible
+//noinspection GradleCompatible
 apply plugin: 'com.android.application'
 apply plugin: 'com.google.ar.sceneform.plugin'
 
@@ -55,6 +57,10 @@ dependencies {
     implementation 'de.hdodenhof:circleimageview:3.1.0'
     implementation 'com.scwang.wave:MultiWaveHeader:1.0.0-alpha-1'
 
+    //recyclerview
+    implementation "androidx.recyclerview:recyclerview:1.1.0"
+
+
 
     //slider view
     implementation 'com.github.blackfizz:eazegraph:1.2.2@aar'
@@ -79,6 +85,9 @@ dependencies {
 
     //carousel-view
     implementation 'com.github.alirezat775:carousel-view:1.0.0'
+
+
+
 
 
 
