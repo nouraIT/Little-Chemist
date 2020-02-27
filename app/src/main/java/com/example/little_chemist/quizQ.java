@@ -1,6 +1,5 @@
 package com.example.little_chemist;
 
-import android.app.AppComponentFactory;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -14,19 +13,22 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.example.little_chemist.Chapters_dir.Ch1;
 import com.example.little_chemist.kotlin.Intrinsics;
-import com.google.gson.annotations.SerializedName;
-
-import java.util.HashMap;
+import java.util.ArrayList;
 
 import alirezat775.lib.carouselview.Carousel;
 import alirezat775.lib.carouselview.CarouselListener;
 import alirezat775.lib.carouselview.CarouselModel;
 import alirezat775.lib.carouselview.CarouselView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 public class quizQ extends AppCompatActivity {
 
     //private Boolean hasNextPage = true;
     private static final String TAG = quizQ.class.getSimpleName();
+
+    private ArrayList<Integer> mImage = new ArrayList<Integer>();
+
 
     public quizQ(){
         Intrinsics.checkExpressionValueIsNotNull(TAG, "quizQ.class.getSimpleName()");
@@ -56,9 +58,11 @@ public class quizQ extends AppCompatActivity {
                 finish();
             }
         });
+// RecyclerView
+        recyclerimage();
 
 
-
+//CarouselView
         final adapter adapter = new adapter();
         AppCompatActivity appcomp = this;
         CarouselView carouselview = findViewById(R.id.carousel_view1);
@@ -78,8 +82,26 @@ public class quizQ extends AppCompatActivity {
        // carousel.enableSlider(true);
 
         carousel.addCarouselListener((CarouselListener)(new CarouselListener() {
+            boolean positioneqfive = false;
             public void onPositionChange(int position) {
                 Log.d(quizQ.this.getTAG(), "currentPosition : " + position);
+
+
+                if(position != 0 ) {
+                    int count = position - 1;
+                    mImage.set(count, R.drawable.tick_mark);
+                    initRecyclerView();
+                    if (position == 4){
+                        positioneqfive = true;
+                    }
+                }
+
+                if (position != 4 && positioneqfive){
+                        mImage.set(4, R.drawable.tick_mark);
+                        initRecyclerView();
+
+                }
+
             }
 
             public void onScroll(int dx, int dy) {
@@ -95,11 +117,44 @@ public class quizQ extends AppCompatActivity {
         carousel.add((new model(4)));
         carousel.add((new model(5)));
 
+
+
 //        carousel.add((CarouselModel)(new model(6)));
 //        carousel.add((CarouselModel)(new model(7)));
 //        carousel.add((CarouselModel)(new model(8)));
 //        carousel.add((CarouselModel)(new model(9)));
 //        carousel.add((CarouselModel)(new model(10)));
+
+    }
+
+    private void recyclerimage(){
+
+        Log.d(TAG, "initImageBitmaps: preparing bitmaps.");
+
+        mImage.add(R.drawable.ques_mark);
+        mImage.add(R.drawable.ques_mark);
+        mImage.add(R.drawable.ques_mark);
+        mImage.add(R.drawable.ques_mark);
+        mImage.add(R.drawable.ques_mark);
+//        mImage.add(R.drawable.graycircle);
+//        mImage.add(R.drawable.graycircle);
+//        mImage.add(R.drawable.graycircle);
+//        mImage.add(R.drawable.graycircle);
+//        mImage.add(R.drawable.graycircle);
+
+        initRecyclerView();
+
+    }
+
+    private void initRecyclerView(){
+
+        Log.d(TAG, "initRecyclerView: init recyclerview");
+
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+        RecyclerView recyclerView = findViewById(R.id.recyclerView);
+        recyclerView.setLayoutManager(layoutManager);
+        RecyclerViewAdapter adapter = new RecyclerViewAdapter(this,  mImage);
+        recyclerView.setAdapter(adapter);
 
     }
 

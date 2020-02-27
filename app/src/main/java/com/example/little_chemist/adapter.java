@@ -115,8 +115,9 @@ public class adapter extends CarouselAdapter {
                     e.printStackTrace();
                 }
             }
-
+// here change item color
             ((adapter.MyViewHolder)var5).getTitle().setText((CharSequence)String.valueOf(model.getId()));
+
         } else {
             this.vh = holder;
             holder2 = this.getItems().get(position);
