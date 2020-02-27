@@ -37,7 +37,7 @@
 
         android:layout_marginTop="16dp"
         android:layout_marginBottom="192dp"
-        app:cardBackgroundColor="#4a47a7"
+        app:cardBackgroundColor="#E4F3F1F1"
         app:cardCornerRadius="20dp"
 
         app:layout_constraintBottom_toBottomOf="parent"
@@ -54,7 +54,7 @@
             android:layout_marginTop="10dp"
             android:elevation="2dp"
             android:text="@string/little_chemist"
-            android:textColor="@color/white"
+            android:textColor="@color/OrangeText"
             android:textSize="25sp" />
 
 
