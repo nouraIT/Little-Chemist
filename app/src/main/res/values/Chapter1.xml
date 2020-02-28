@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <!--         LESSON 1            -->
-<string name="C1L1S1_1" ><b>Matter</b> is composed of indivisible building blocks.</string>
-  <string name="C1L1S1_2" ><b>Atom</b> is the smallest possible amount of matter that still counts as a chemical element.</string>
+<string name="C1L1S1" ><b>Matter</b> is composed of indivisible building blocks.</string>
+  <string name="C1L1S2" ><b>Atom</b> is the smallest possible amount of matter that still counts as a chemical element.</string>
   <string name="C1L1E1">Organize these building blocks in any shape to create an atom</string>
-  <string name="C1L1S2_1"><b>The Atom</b> consists of:
+  <string name="C1L1S3"><b>The Atom</b> consists of:
 one Nucleus
 Multiple Protons
 Multiple Neutrons
 Multiple Electrons
 </string>
-<string name="C1L1S2_2"><b>The Nucleus</b> is the center of the atom
+<string name="C1L1S4"><b>The Nucleus</b> is the center of the atom
  It is made up of protons and neutrons and is surrounded by the electron cloud.
 </string>
   <string name="C1L1E2">Drag and drop the elements to their right place</string>
-  <string name="C1L1S3_1">The concept of <b>The Atom</b> was studied by many scientists, including Newton, Dalton.</string>
-  <string name="C1L1S3_2"><b>Isaac Newton</b> suggested that atoms are held together with attractions, otherwise known as forces.</string>
-  <string name="C1L1S3_3"><b>John Dalton</b> proposed the atomic theory.
+  <string name="C1L1S5">The concept of <b>The Atom</b> was studied by many scientists, including Newton, Dalton.</string>
+  <string name="C1L1S6"><b>Isaac Newton</b> suggested that atoms are held together with attractions, otherwise known as forces.</string>
+  <string name="C1L1S7"><b>John Dalton</b> proposed the atomic theory.
 <b>atomic theory</b>is a scientific theory of the nature of matter, which states that matter is composed of discrete units called atoms.</string>
 <string name="C1L1E3">Match each scientist with his discovery</string>
 
@@ -31,17 +31,17 @@ Multiple Electrons
 
 
     <!--         LESSON 3            -->
-  <string name="L3S1_1">What Are<b>Isotopes</b> </string>
-  <string name="L3S1_2" ><b>Isotopes</b>  are atoms with the same number of protons and electrons, but a different number of neutrons.
+  <string name="L3S1">What Are<b>Isotopes</b> </string>
+  <string name="L3S2" ><b>Isotopes</b>  are atoms with the same number of protons and electrons, but a different number of neutrons.
 For example, imagine a piece of wood, every piece has different patterns but it\’s all wood.
 </string>
-  <string name="L3S1_3">That means that if we had two pieces of wood, their atoms would be<b>Isotopes</b> </string>
+  <string name="L3S3">That means that if we had two pieces of wood, their atoms would be<b>Isotopes</b> </string>
   <string name="L3E1">What part of the atom determines if its an Isotope or not?
 1- Protons
 2- Electrons
 3- Neutrons
 </string>
-  <string name="L3S2"><b>Atomic mass</b> is calculated by adding the number of protons and neutrons in the atom.
+  <string name="L3S4"><b>Atomic mass</b> is calculated by adding the number of protons and neutrons in the atom.
 
 </string>
 
