@@ -14,7 +14,7 @@ Multiple Electrons
  It is made up of protons and neutrons and is surrounded by the electron cloud.
 </string>
   <string name="C1L1E2">Drag and drop the elements to their right place</string>
-  <string name="C1L1S5">The concept of <b>The Atom</b> was studied by many scientists, including Newton, Dalton.</string>
+  <string name="C1L1S5">The concept of <b>The Atom</b> was studied by many scientists, including Newton and Dalton.</string>
   <string name="C1L1S6"><b>Isaac Newton</b> suggested that atoms are held together with attractions, otherwise known as forces.</string>
   <string name="C1L1S7"><b>John Dalton</b> proposed the atomic theory.
 <b>atomic theory</b>is a scientific theory of the nature of matter, which states that matter is composed of discrete units called atoms.</string>
@@ -86,7 +86,7 @@ We also want to see how fast the ball, the quantum, is flying. We can guess that
     <item name="Q3">How many electrons are in an atom?</item>
     <item name="Q4">How do atoms bond together?</item>
     <item name="Q5">Isotopes of an element differ in _____.</item>
-    <item name="Q6">What is the atomic mass of this x isotope?</item>
+    <item name="Q6">What is the atomic mass of this isotope?</item>
 
 
   </string-array>
