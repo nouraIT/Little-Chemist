@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!--         LESSON 1            -->
+<!--    &lt;!&ndash;         LESSON 1            &ndash;&gt;-->
 
-    <string name="L1S1_1" ><b>Heterogeneous mixture</b>  is a substance that can be easily separated into its parts, and those parts retain their original properties.
-For example, have you ever tried mixing oil and water? They stay separate no matter how hard you try to mix them.
-</string>
+<!--    <string name="L1S1_1" ><b>Heterogeneous mixture</b>  is a substance that can be easily separated into its parts, and those parts retain their original properties.-->
+<!--For example, have you ever tried mixing oil and water? They stay separate no matter how hard you try to mix them.-->
+<!--</string>-->
 
-    <string name="L1S1_2" >There are more examples of<b>Heterogeneous mixture</b> such as:
-•Mixed nuts
-•Fruit salad
-•Pizza
-•Chocolate chip cookies
+<!--    <string name="L1S1_2" >There are more examples of<b>Heterogeneous mixture</b> such as:-->
+<!--•Mixed nuts-->
+<!--•Fruit salad-->
+<!--•Pizza-->
+<!--•Chocolate chip cookies-->
 
-</string>
+<!--</string>-->
 
-    <string name="L1E1"> Which of the following is a Heterogeneous mixture?
-•Chicken noodle soup
-•Chocolate Milk
-•Sand and water
-•Fruit Juice
+<!--    <string name="L1E1"> Which of the following is a Heterogeneous mixture?-->
+<!--•Chicken noodle soup-->
+<!--•Chocolate Milk-->
+<!--•Sand and water-->
+<!--•Fruit Juice-->
 
-</string>
+<!--</string>-->
     <!--         LESSON 1            -->
 
 

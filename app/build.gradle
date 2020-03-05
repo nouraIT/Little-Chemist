@@ -35,6 +35,9 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    ndkVersion "21.0.6113669" // <<==== Here
+
 }
 
 dependencies {
@@ -86,8 +89,7 @@ dependencies {
 
     //carousel-view
     implementation 'com.github.alirezat775:carousel-view:1.0.0'
-
-
+    implementation 'com.github.dmytrodanylyk.circular-progress-button:library:1.1.3'
 
 
 

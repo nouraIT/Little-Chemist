@@ -21,7 +21,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".View_lesson.slideAdapter"></activity>
+        <activity android:name=".View_lesson.ex_multiple_choice"></activity>
+        <activity android:name=".View_lesson.slideAdapter" />
         <activity android:name=".View_lesson.Lessons" />
         <activity android:name=".View_lesson.lab" />
         <activity android:name=".Quiz_score" />
@@ -31,7 +32,7 @@
         <activity
             android:name=".LoginPage"
             android:label="@string/title_activity_login" />
-        <activity android:name=".chaptersAdapter"></activity>
+        <activity android:name=".chaptersAdapter" />
         <activity android:name=".Chapters" />
         <activity android:name=".Chapters_dir.Ch1" />
         <activity android:name=".Chapters_dir.Ch2" />
@@ -39,7 +40,6 @@
         <activity android:name=".Chapters_dir.Ch4" />
         <activity android:name=".Chapters_dir.Ch5" />
         <activity android:name=".quizQ" />
-
         <activity
             android:name=".SignUp"
             android:label="@string/sign_up" />
