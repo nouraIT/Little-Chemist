@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="fill_horizontal"
-    android:background="@drawable/backgroundhome"
+    android:background="@drawable/quizbackground"
     android:orientation="vertical"
     tools:context=".quizQ">
 
@@ -79,7 +79,7 @@
 
     <Button
 
-        android:id="@+id/button4"
+        android:id="@+id/nextBtn"
         android:layout_width="wrap_content"
 
         android:layout_height="wrap_content"
@@ -90,17 +90,17 @@
         android:layout_marginEnd="40dp"
         android:background="#00FFFFFF"
 
-        android:fontFamily="@font/roboto_bold"
-        android:text="Next"
-        android:textColor="@color/primaryYellow"
+        android:fontFamily="@font/dk_sugary_pancake"
+        android:text="@string/nextBtn"
+        android:textColor="@color/Black"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button3"
+        app:layout_constraintStart_toEndOf="@+id/preBtn"
         app:layout_constraintTop_toBottomOf="@+id/carousel_view1" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/preBtn"
         android:layout_width="wrap_content"
 
         android:layout_height="wrap_content"
@@ -109,13 +109,13 @@
         android:layout_marginTop="2dp"
         android:layout_marginEnd="16dp"
         android:background="#00FFFFFF"
-        android:fontFamily="@font/roboto_bold"
+        android:fontFamily="@font/east_djakarta"
 
-        android:text="Previous"
-        android:textColor="@color/primaryYellow"
+        android:text="@string/backBtn"
+        android:textColor="@color/Black"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button4"
+        app:layout_constraintEnd_toStartOf="@+id/nextBtn"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/carousel_view1" />
 

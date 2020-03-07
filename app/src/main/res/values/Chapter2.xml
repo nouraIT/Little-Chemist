@@ -1,50 +1,156 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!--         LESSON 1            -->
+<!--    &lt;!&ndash;         LESSON 1            &ndash;&gt;-->
 
-    <string name="L1S1_1" ><b>Heterogeneous mixture</b>  is a substance that can be easily separated into its parts, and those parts retain their original properties.
-For example, have you ever tried mixing oil and water? They stay separate no matter how hard you try to mix them.
-</string>
+<!--    <string name="C2L1S1_1" translatable="false"><b>Heterogeneous mixture</b>  is a substance that can be easily separated into its parts, and those parts retain their original properties.-->
+<!--For example, have you ever tried mixing oil and water? They stay separate no matter how hard you try to mix them.-->
+<!--</string>-->
 
-    <string name="L1S1_2" >There are more examples of<b>Heterogeneous mixture</b> such as:
-•Mixed nuts
-•Fruit salad
-•Pizza
-•Chocolate chip cookies
+<!--    <string name="C2L1S1_2" >There are more examples of<b>Heterogeneous mixture</b> such as:-->
+<!--•Mixed nuts-->
+<!--•Fruit salad-->
+<!--•Pizza-->
+<!--•Chocolate chip cookies-->
 
-</string>
+<!--</string>-->
 
-    <string name="L1E1"> Which of the following is a Heterogeneous mixture?
-•Chicken noodle soup
-•Chocolate Milk
-•Sand and water
-•Fruit Juice
+<!--    <string name="C2L1E1"> Which of the following is a Heterogeneous mixture?-->
+<!--•Chicken noodle soup-->
+<!--•Chocolate Milk-->
+<!--•Sand and water-->
+<!--•Fruit Juice-->
 
-</string>
-    <!--         LESSON 1            -->
-
-
+<!--</string>-->
+<!--    &lt;!&ndash;         LESSON 1            &ndash;&gt;-->
 
 
 
-
-    <!--         LESSON 3            -->
-
-
-    <!--         LESSON 3            -->
+<!--    &lt;!&ndash;         LESSON 3            &ndash;&gt;-->
 
 
-    <!--         LESSON 4            -->
+<!--    &lt;!&ndash;         LESSON 3            &ndash;&gt;-->
 
 
-    <!--         LESSON 4            -->
+<!--    &lt;!&ndash;         LESSON 4            &ndash;&gt;-->
+<!--    <string name="C2L4S1">-->
+<!--        A <b>chemical equation</b> is a way to represent a chemical reaction using element symbols. <b>Chemical equations</b> have two sides: the <b>reactant side</b> and the <b>product side.</b>-->
+
+<!--    </string>-->
+<!--    <string name="C2L4E1">-->
+<!--        &lt;!&ndash; drag and drop &ndash;&gt;-->
+<!--        which one is the reactant side and which one the product side?-->
+<!--    </string>-->
+
+<!--    <string name="C2L4S2">-->
+<!--        There is only one atom of each element in the equation, unless the element has a <b>coefficient</b> or a <b>subscript</b> with it.-->
+<!--    </string>-->
+<!--    <string name="C2L4E2">-->
+<!--        &lt;!&ndash;Multiple choice&ndash;&gt;-->
+<!--        How many atoms for each element in the equation?-->
+<!--        TOW atoms-->
+<!--        THREE atoms-->
+<!--        ONE atom-->
+<!--        FOUR atoms-->
+<!--    </string>-->
+
+<!--    <string name="C2L4S3">-->
+<!--        A subscript tells how many atoms of that element there are. The <b>coefficients</b> are multiplied by every element or its <b>subscript</b> to determine the number of atoms.-->
+<!--    </string>-->
+<!--    <string name="C2L4E3">-->
+<!--        &lt;!&ndash;Image&ndash;&gt;-->
+<!--        &lt;!&ndash;Multiple choice&ndash;&gt;-->
+<!--        Is there a <b>coefficients</b> in this equation?-->
+<!--        YES-->
+<!--        NO-->
+<!--    </string>-->
+
+<!--    <string name="C2L4S4">-->
+<!--        So how do we balance an equation? To start, we count the number of atoms of each element. Once we know the total number of atoms of each element, we can change or add <b>coefficients</b> to make the sides balance. Important: We can <b>NEVER</b> change or add <b>subscripts</b>!-->
+<!--    </string>-->
+<!--    <string name="C2L4E4">-->
+<!--        &lt;!&ndash;Multiple choice&ndash;&gt;-->
+<!--        To balance an equation we have to-->
+<!--        Change or add subscripts-->
+<!--        Change or add coefficients-->
+<!--    </string>-->
+
+<!--    <string name="C2L4S5">-->
+<!--        Let's take a look for an equation before after balancing-->
+<!--    </string>-->
+<!--    <string name="C2L4E5">-->
+<!--        &lt;!&ndash;Multiple choice&ndash;&gt;-->
+<!--        What did we do in previous equation?-->
+<!--        We add coefficients-->
+<!--        We add subscripts-->
+<!--    </string>-->
+
+<!--    <string name="C2L4S6">-->
+<!--        C2H6 + O → CO2 +H2O-->
+<!--        First let’s count the atoms on the reactant and product side separately in the original equation-->
+
+<!--    </string>-->
+<!--    <string name="C2L4E6">-->
+<!--        &lt;!&ndash;Multiple choice&ndash;&gt;-->
+<!--        We have to balance this equation-->
+<!--        YES, of course!-->
+<!--        NO, we don't have to balance it-->
+<!--    </string>-->
+
+<!--    <string name="C2L4S7">-->
+<!--        C2H6 + O → CO2 +H2O-->
+<!--        Second based on the previous step determine what coefficients need to be added or changed to make the products and reactants balanced-->
+<!--    </string>-->
+<!--    <string name="C2L4E7">-->
+<!--        We need to be add or change coefficients to make the products and reactants balanced-->
+<!--        True-->
+<!--        False-->
+<!--    </string>-->
+
+<!--    <string name="C2L4S8">-->
+<!--        Third after determining your coefficients, recount the atoms to make sure that they balance-->
+
+<!--        2C2H6 + 7O → 4CO2 +6H2O-->
+<!--        Both sides have the same number of atoms of each element so the equation is balanced-->
+
+<!--    </string>-->
+<!--    <string name="C2L4E8">-->
+<!--        When we change on the coefficients we have to make sure that-->
+<!--        The products and the reactants are equals-->
+<!--        The products and the reactants are different-->
+<!--    </string>-->
+
+<!--    <string name="C2L4S9">-->
+<!--        Another Example-->
+<!--        &lt;!&ndash; gif &ndash;&gt;-->
+<!--    </string>-->
+<!--    <string name="C2L4E9">-->
+<!--        &lt;!&ndash;Multiple choice&ndash;&gt;-->
+<!--        In the previous equation we add coefficients to-->
+<!--        The products side-->
+<!--        The reactants side-->
+<!--        Both sides-->
+<!--    </string>-->
+
+<!--    &lt;!&ndash;         LESSON 4            &ndash;&gt;-->
 
 
-    <!--         LESSON 5            -->
+<!--    &lt;!&ndash;         LESSON 5            &ndash;&gt;-->
 
 
-    <!--         LESSON 5            -->
+<!--    &lt;!&ndash;         LESSON 5            &ndash;&gt;-->
+
+
+<!--    &lt;!&ndash;        Quiz Questions           &ndash;&gt;-->
+
+
+
+<!--    &lt;!&ndash;         Quiz Total Answers          &ndash;&gt;-->
+
+
+
+<!--    &lt;!&ndash;         Quiz correct Answers          &ndash;&gt;-->
+
 
 
 </resources>

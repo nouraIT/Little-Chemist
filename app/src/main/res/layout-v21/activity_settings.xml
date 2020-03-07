@@ -176,6 +176,7 @@
                     android:backgroundTint="#00BDB6B6"
                     android:text="العربية"
                     android:textColor="#F0BA1A"
+                    android:fontFamily="@font/aref_menna"
                     />
 
 

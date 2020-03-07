@@ -6,13 +6,13 @@
 
             <gradient
                 android:angle="180"
-                android:endColor="#AA2A34"
-                android:startColor="#AA2A34">
+                android:endColor="#be7177"
+                android:startColor="#be7177">
                 <!--                android:startColor="#EB4A80"-->
 
                 <!--                android:endColor="#F44336"-->
 
-
+<!--#AA2A34-->
             </gradient>
             <corners android:radius="25dp"></corners>
 

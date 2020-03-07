@@ -56,7 +56,7 @@ public class chaptersAdapter extends PagerAdapter {
     Student s = Home.student;
 
     public int[] chapter_drawings={
-            R.drawable.atom,
+            R.drawable.chapteronegirl,
             R.drawable.element,
             R.drawable.flask,
             R.drawable.dry_tree,
@@ -124,6 +124,8 @@ public class chaptersAdapter extends PagerAdapter {
         container.addView(view);
         return view ;
     }
+
+
 
     @Override
     public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {

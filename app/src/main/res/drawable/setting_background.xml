@@ -32,7 +32,7 @@
     <item android:bottom="600px">
 
         <shape  >
-            <solid android:color="@color/primaryYellow"></solid>
+            <solid android:color="@color/anotherpruple"></solid>
 
 
         </shape>

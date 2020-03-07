@@ -238,7 +238,7 @@ public class Settings extends AppCompatActivity {
                         }
 
                         else{
-                            //error masg
+                            //error msg
                             //TODO Add ELSE IN CASE NO ID
                         }
                     }

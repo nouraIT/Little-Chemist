@@ -9,8 +9,10 @@ import android.view.WindowManager;
 
 import com.example.little_chemist.Chapters;
 import com.example.little_chemist.R;
+import com.example.little_chemist.Tables.Lesson;
 import com.example.little_chemist.View_lesson.Lessons;
 import com.example.little_chemist.View_lesson.lab;
+import com.example.little_chemist.View_lesson.ex_multiple_choice;
 import com.example.little_chemist.quizQ;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -39,8 +41,8 @@ public class Ch1 extends AppCompatActivity {
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent Homepage = new Intent(Ch1.this, Chapters.class);
-                startActivity(Homepage);
+                Intent n = new Intent(Ch1.this, Chapters.class);
+                startActivity(n);
                 finish();
             }
         });
@@ -49,6 +51,7 @@ public class Ch1 extends AppCompatActivity {
         lsn1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Intent n = new Intent(Ch1.this, Lessons.class);
+                n.putExtra("lesson",11);
                 startActivity(n);
                 // finish();
             }
@@ -59,6 +62,7 @@ public class Ch1 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent n = new Intent(Ch1.this, lab.class);
+                n.putExtra("lesson",12);
                 startActivity(n);
                 //  finish();
             }
@@ -67,7 +71,8 @@ public class Ch1 extends AppCompatActivity {
         lsn3 = findViewById(R.id.cardviewlLSN3);
         lsn3.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                Intent n = new Intent(Ch1.this, Ch1.class);
+                Intent n = new Intent(Ch1.this, Lessons.class);
+                n.putExtra("lesson",13);
                 startActivity(n);
                 // finish();
             }
@@ -76,7 +81,8 @@ public class Ch1 extends AppCompatActivity {
         lsn4 = findViewById(R.id.cardviewlLSN4);
         lsn4.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                Intent n = new Intent(Ch1.this, Ch1.class);
+                Intent n = new Intent(Ch1.this, Lessons.class);
+                n.putExtra("lesson",14);
                 startActivity(n);
                 // finish();
             }
@@ -85,7 +91,8 @@ public class Ch1 extends AppCompatActivity {
         lsn5 = findViewById(R.id.cardviewlLSN5);
         lsn5.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                Intent n = new Intent(Ch1.this, Ch1.class);
+                Intent n = new Intent(Ch1.this, Lessons.class);
+                n.putExtra("lesson",15);
                 startActivity(n);
                 //  finish();
             }
