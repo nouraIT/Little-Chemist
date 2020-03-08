@@ -1,36 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:visibility="visible"
-    tools:context=".Settings"
-    tools:visibility="visible">
+    android:background="@drawable/homebackgroundnew"
+
+    tools:context=".Settings">
 
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
-        android:elevation="1dp"
-        android:background="@color/primaryYellow"
-
         android:layout_width="match_parent"
+
         android:layout_height="wrap_content"
+        android:elevation="1dp"
+
 
         android:minHeight="?attr/actionBarSize"
         android:theme="@style/MyApp.ActionBarTheme"
 
-
-        >
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:id="@+id/CL"
-            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:elevation="10dp"
+            android:orientation="horizontal"
             android:weightSum="2"
-            >
+            android:baselineAligned="false">
+
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -38,20 +41,21 @@
                 android:gravity="center"
                 android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/toolbarTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                <TextView
+                    android:id="@+id/toolbarTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
 
-                android:text="@string/settings"
-                android:elevation="10dp"
+                    android:layout_gravity="start"
+                    android:elevation="10dp"
+                    android:fontFamily="@font/aref_menna"
 
-                android:layout_gravity="start"
-                android:textAppearance="@android:style/TextAppearance.WindowTitle"
-                android:textColor="#FCFFFFFF"
-                android:textSize="22sp"
+                    android:text="@string/settings"
+                    android:textAppearance="@android:style/TextAppearance.WindowTitle"
+                    android:textColor="@color/darkpruple"
+                    android:textSize="22sp"
 
-                />
+                    />
 
             </LinearLayout>
 
@@ -61,14 +65,15 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:orientation="vertical">
-                    <Button
+
+                <Button
                     android:id="@+id/logoutBtn"
                     android:layout_width="25dp"
                     android:layout_height="23dp"
                     android:layout_gravity="end"
                     android:layout_marginEnd="24dp"
-                    android:background="@drawable/logoutwhite_icon"
-                    android:elevation="10dp"/>
+                    android:background="@drawable/logoutpurple"
+                    android:elevation="10dp" />
             </LinearLayout>
 
 
@@ -80,10 +85,10 @@
         android:id="@+id/linear"
         android:layout_width="match_parent"
         android:layout_height="310dp"
-        android:layout_marginTop="20dp"
-        android:background="@color/primaryYellow"
         android:orientation="vertical"
-        >
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/profile_image"
@@ -104,63 +109,73 @@
 
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="20dp"
-            android:fontFamily="@font/roboto_bold"
+            android:fontFamily="@font/aref_menna"
 
             android:text="@string/prompt_username"
-            android:textColor="#FFF"
+            android:textColor="@color/darkpruple"
             android:textSize="20sp" />
 
     </LinearLayout>
 
-
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
-        android:layout_width="329dp"
-        android:layout_height="91dp"
+        android:layout_width="330dp"
+        android:layout_height="470dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="6dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linear">
 
-        android:layout_marginTop="275dp"
-        android:alpha="0.9"
-        android:layout_centerHorizontal="true"
-        app:cardBackgroundColor="@color/white"
-        >
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:weightSum="3">
 
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="329dp"
+            android:layout_height="91dp"
 
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginTop="17dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="27dp"
+            android:alpha="0.9"
+            app:cardBackgroundColor="@color/white">
 
-                android:elevation="9dp"
-                android:text="@string/languages"
-                android:textColor="#F0BA1A"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="17dp"
+                    android:layout_marginEnd="16dp"
+
+                    android:elevation="9dp"
+                    android:fontFamily="@font/aref_menna"
+                    android:text="@string/languages"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
 
                 <Button
                     android:id="@+id/enBtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/aref_menna"
 
 
                     android:layout_marginStart="8dp"
-                    android:layout_marginEnd="16dp"
                     android:layout_marginTop="17dp"
+                    android:layout_marginEnd="16dp"
 
                     android:background="@drawable/circle_btn_empty"
                     android:backgroundTint="#00FFFFFF"
                     android:text="English"
-                    android:textColor="#F0BA1A"
-                    />
+                    android:textColor="@color/colorAccent" />
 
                 <Button
                     android:id="@+id/arBtn"
@@ -168,82 +183,83 @@
                     android:layout_height="wrap_content"
 
                     android:layout_marginStart="8dp"
-                    android:layout_marginEnd="16dp"
                     android:layout_marginTop="17dp"
+                    android:layout_marginEnd="16dp"
 
-                    android:textSize="20sp"
                     android:background="@drawable/circle_btn_empty"
                     android:backgroundTint="#00BDB6B6"
+                    android:fontFamily="@font/aref_menna"
                     android:text="العربية"
-                    android:textColor="#F0BA1A"
-                    />
+                    android:textColor="@color/colorAccent"
+                    android:textSize="20sp" />
 
 
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:layout_gravity="center"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/button5"
+                android:layout_width="161dp"
+                android:layout_height="55dp"
+
+
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"
+                android:elevation="1dp"
+
+                android:background="@drawable/circle_btn"
+                android:fontFamily="@font/aref_menna"
+                android:text="@string/download_booklet"
+                android:textColor="@color/darkpruple" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/deleteBtn"
+                android:layout_width="129dp"
+                android:layout_height="56dp"
+
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="24dp"
+
+                android:textAlignment="center"
+                app:cardBackgroundColor="@color/logoDarkRed"
+                app:cardCornerRadius="25dp"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.502"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button5"
+                app:layout_constraintVertical_bias="0.505">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+
+                    android:layout_gravity="center"
+
+
+                    android:fontFamily="@font/aref_menna"
+                    android:text="@string/delete_account"
+                    android:textColor="@color/white"
+                    android:textSize="15sp" />
+
+            </androidx.cardview.widget.CardView>
 
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
 
 
-    <LinearLayout
-        android:layout_width="360dp"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center_horizontal"
-        android:layout_marginTop="390dp"
-        android:layout_marginStart="23dp">
-
-    <Button
-        android:id="@+id/button5"
-        android:layout_width="161dp"
-        android:layout_height="55dp"
-
-
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="8dp"
-
-        android:background="@drawable/circle_btn"
-        android:fontFamily="@font/roboto_bold"
-        android:text="@string/download_booklet"
-        android:textColor="#FFFFFF"
-        />
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/deleteBtn"
-        android:layout_width="129dp"
-        android:layout_height="56dp"
-
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="24dp"
-
-        android:textAlignment="center"
-        app:cardBackgroundColor="@color/logoDarkRed"
-        app:cardCornerRadius="25dp"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button5"
-        app:layout_constraintVertical_bias="0.505">
-
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-
-            android:layout_gravity="center"
-
-
-            android:fontFamily="@font/roboto_bold"
-            android:text="@string/delete_account"
-            android:textColor="@color/textRegister"
-            android:textSize="15sp" />
-
-    </androidx.cardview.widget.CardView>
-
-    </LinearLayout>
-
-
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

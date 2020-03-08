@@ -56,7 +56,7 @@ public class chaptersAdapter extends PagerAdapter {
     Student s = Home.student;
 
     public int[] chapter_drawings={
-            R.drawable.atom,
+            R.drawable.chapteronegirl,
             R.drawable.element,
             R.drawable.flask,
             R.drawable.dry_tree,

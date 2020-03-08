@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -28,6 +29,8 @@ public class quizQ extends AppCompatActivity {
     private static final String TAG = quizQ.class.getSimpleName();
 
     private ArrayList<Integer> mImage = new ArrayList<Integer>();
+    private Button nextbtn, prebtn;
+    private int slidcount;
 
 
     public quizQ(){
@@ -81,9 +84,25 @@ public class quizQ extends AppCompatActivity {
 //        carousel.scrollSpeed(100f)
        // carousel.enableSlider(true);
 
+        nextbtn = findViewById(R.id.nextBtn);
+        prebtn = findViewById(R.id.preBtn);
+
         carousel.addCarouselListener((CarouselListener)(new CarouselListener() {
             boolean positioneqfive = false;
             public void onPositionChange(int position) {
+                slidcount = position;
+                if (position == 0){
+                    nextbtn.setEnabled(true);
+                    prebtn.setEnabled(false);
+                    prebtn.setVisibility(View.INVISIBLE);
+                    prebtn.setText("");
+                }
+                else {
+                    nextbtn.setEnabled(true);
+                    prebtn.setEnabled(true);
+                    prebtn.setVisibility(View.VISIBLE);
+                    prebtn.setText(getText(R.string.backBtn));
+                }
                 Log.d(quizQ.this.getTAG(), "currentPosition : " + position);
 
 
@@ -116,6 +135,27 @@ public class quizQ extends AppCompatActivity {
         carousel.add((new model(3)));
         carousel.add((new model(4)));
         carousel.add((new model(5)));
+
+
+
+
+        nextbtn.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+                carousel.setCurrentPosition(slidcount+1);
+
+            }
+        });
+
+        prebtn.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+                carousel.setCurrentPosition(slidcount-1);
+
+            }
+        });
 
 
 

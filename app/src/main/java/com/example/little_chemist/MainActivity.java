@@ -36,16 +36,17 @@ public class MainActivity extends AppCompatActivity {
         bottomAnim = AnimationUtils.loadAnimation(this, R.anim.bottom);
         image.setAnimation(topAnim);
         new Handler().postDelayed(new Runnable() {
-                                      @Override
+            @Override
 
-                                      public void run() {
-                                          Intent intent = new Intent(MainActivity.this, LoginPage.class);
-                                          startActivity(intent);
-                                          finish();
+            public void run() {
+                Intent intent = new Intent(MainActivity.this, LoginPage.class);
+                startActivity(intent);
+                finish();
 
 
-                                      }
-                                  }, //Pass time here
+            }
+            }, //Pass time here
+
                 SPLASH_SCREEN);
         /*FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.+OnClickListener() {

@@ -2,6 +2,7 @@
 <resources>
     <color name="colorPrimary">#5F6AB9</color>
     <color name="primaryYellow">#F3CB4E</color>
+    <color name="primaryPurple">#b7c5ff</color>
     <color name="colorAccent">#D81B60</color>
 <!--  D81B60  42ADF5-->
     <color name="darkRed">#CD0000</color>
@@ -30,6 +31,9 @@
     <color name="textRegister">#BEFCF1</color>
 
     <color name="magenta">#F72A5A</color>
+    <color name="lightpruple">#b7c5ff</color>
+    <color name="anotherpruple">#ced7fe</color>
+    <color name="darkpruple">#4a47a7</color>
 
 
 <!--   ________________________________ -->

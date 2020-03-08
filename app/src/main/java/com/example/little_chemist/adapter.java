@@ -70,7 +70,7 @@ public class adapter extends CarouselAdapter {
         } else {
             v = inflater.inflate(R.layout.empty_itm, parent, false);
             Intrinsics.checkExpressionValueIsNotNull(v, "v");
-            this.vh = (new adapter.EmptyMyViewHolder(v));
+//            this.vh = (new adapter.EmptyMyViewHolder(v));
             holder = this.vh;
             if (holder == null) {
                 try {
@@ -121,6 +121,7 @@ public class adapter extends CarouselAdapter {
         } else {
             this.vh = holder;
             holder2 = this.getItems().get(position);
+
             if (holder2 == null) {
                 try {
                     throw new Exception("null cannot be cast to non-null type alirezat775.carouselview.EmptySampleModel");
@@ -130,17 +131,17 @@ public class adapter extends CarouselAdapter {
             }
 
 
-            EmptyModel model = (EmptyModel)holder2;
-            var5 = this.vh;
-            if (var5 == null) {
-                try {
-                    throw new Exception("null cannot be cast to non-null type alirezat775.carouselview.SampleAdapter.EmptyMyViewHolder");
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-
-            ((adapter.EmptyMyViewHolder)var5).getTitleEmpty().setText((CharSequence)model.getText());
+//            EmptyModel model = (EmptyModel)holder2;
+//            var5 = this.vh;
+//            if (var5 == null) {
+//                try {
+//                    throw new Exception("null cannot be cast to non-null type alirezat775.carouselview.SampleAdapter.EmptyMyViewHolder");
+//                } catch (Exception e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//
+//            ((adapter.EmptyMyViewHolder)var5).getTitleEmpty().setText((CharSequence)model.getText());
 
 
         }
@@ -201,28 +202,28 @@ public class adapter extends CarouselAdapter {
 
 
 
-    public final class EmptyMyViewHolder extends CarouselViewHolder {
-        @NonNull
-        private TextView titleEmpty;
-
-        @NonNull
-        public final TextView getTitleEmpty() {
-            return this.titleEmpty;
-        }
-
-        public final void setTitleEmpty(@NonNull TextView var1) {
-            Intrinsics.checkParameterIsNotNull(var1, "<set-?>");
-            this.titleEmpty = var1;
-        }
-
-        public EmptyMyViewHolder(@NonNull View itemView) {
-            super(itemView);
-            Intrinsics.checkParameterIsNotNull(itemView, "itemView");
-            TextView empty = (TextView)itemView.findViewById(R.id.item_empty_text);
-            Intrinsics.checkExpressionValueIsNotNull(empty, "itemView.item_empty_text");
-            this.titleEmpty = empty;
-        }
-    }
+//    public final class EmptyMyViewHolder extends CarouselViewHolder {
+//        @NonNull
+//        private TextView titleEmpty;
+//
+//        @NonNull
+//        public final TextView getTitleEmpty() {
+//            return this.titleEmpty;
+//        }
+//
+//        public final void setTitleEmpty(@NonNull TextView var1) {
+//            Intrinsics.checkParameterIsNotNull(var1, "<set-?>");
+//            this.titleEmpty = var1;
+//        }
+//
+//        public EmptyMyViewHolder(@NonNull View itemView) {
+//            super(itemView);
+//            Intrinsics.checkParameterIsNotNull(itemView, "itemView");
+//            TextView empty = (TextView)itemView.findViewById(R.id.item_empty_text);
+//            Intrinsics.checkExpressionValueIsNotNull(empty, "itemView.item_empty_text");
+//            this.titleEmpty = empty;
+//        }
+//    }
 
     //    ------------------------------------------------------------------------------------
 

@@ -6,14 +6,15 @@
 
             <gradient
 
-                android:endColor="#FFAA00"
-                android:startColor="@color/primaryYellow">
+                android:endColor="#fad791"
+                android:startColor="#fad791">
 <!--                android:startColor="#EB4A80"-->
 
 <!--                android:endColor="#F44336"-->
 
 
             </gradient>
+<!--            #FFAA00-->
             <corners android:radius="25dp"></corners>
 
         </shape>
