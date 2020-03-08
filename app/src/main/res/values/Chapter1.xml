@@ -6,7 +6,7 @@
   <string name="C1L1S1" ><b>Matter</b> is composed of indivisible building blocks.</string>
   <string name="C1L1S2"><b>Atom</b> is the smallest possible amount of matter that still counts as a chemical element.</string>
 
-  <string name="C1L1S1ED">Organize these building blocks in any shape to create an atom</string>
+  <string name="C1L1S1E">Organize these building blocks in any shape to create an atom</string>
 
   <string name="C1L1S3" ><b>The Atom</b> consists of: \n
 - one Nucleus \n
@@ -18,7 +18,7 @@
   </string>
 
 
-  <string name="C1L1S2ED">Drag and drop the elements to their right place</string>
+  <string name="C1L1S2E">Drag and drop the elements to their right place</string>
 
   <string name="C1L1S5">The concept of <b>The Atom</b> was studied by many scientists, including Newton, Dalton.</string>
   <string name="C1L1S6"><b>Isaac Newton</b> suggested that atoms are held together with attractions, otherwise known as forces.
@@ -27,7 +27,7 @@
 <b>Atomic theory</b>is a scientific theory of the nature of matter, which states that matter is composed of discrete units called atoms.
 </string>
 
-  <string name="C1L1S4ED">Match each scientist with his discovery</string>
+  <string name="C1L1S4E">Match each scientist with his discovery</string>
 
   <!--         LESSON 1            -->
 
