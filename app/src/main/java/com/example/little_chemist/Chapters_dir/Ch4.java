@@ -11,6 +11,7 @@ import com.example.little_chemist.R;
 import com.example.little_chemist.Tables.Lesson;
 import com.example.little_chemist.Tables.Quiz;
 import com.example.little_chemist.View_lesson.Lessons;
+import com.example.little_chemist.View_lesson.lab;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -46,7 +47,7 @@ public class Ch4 extends AppCompatActivity {
         button1 = findViewById(R.id.cardviewlLSN1);
         button1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                Intent n = new Intent(Ch4.this, Lessons.class);
+                Intent n = new Intent(Ch4.this, lab.class);
                 n.putExtra("lesson",41);
                 startActivity(n);
               //  finish();
@@ -57,7 +58,7 @@ public class Ch4 extends AppCompatActivity {
         button2.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Intent n = new Intent(Ch4.this, Lessons.class);
+                Intent n = new Intent(Ch4.this, lab.class);
                 n.putExtra("lesson",42);
                 startActivity(n);
               //  finish();
@@ -77,7 +78,7 @@ public class Ch4 extends AppCompatActivity {
         button4 = findViewById(R.id.cardviewlLSN4);
         button4.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                Intent n = new Intent(Ch4.this, Lessons.class);
+                Intent n = new Intent(Ch4.this, lab.class);
                 n.putExtra("lesson",44);
                 startActivity(n);
               //  finish();
@@ -88,7 +89,7 @@ public class Ch4 extends AppCompatActivity {
         button5.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Intent n = new Intent(Ch4.this, Lessons.class);
-                n.putExtra("lesson",46);
+                n.putExtra("lesson",45);
                 startActivity(n);
               //  finish();
             }

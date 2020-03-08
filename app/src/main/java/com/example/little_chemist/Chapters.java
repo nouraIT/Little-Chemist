@@ -232,10 +232,10 @@ public class Chapters extends AppCompatActivity {
         }else if(R.id.cardviewch3==card00.getId()){
             n = new Intent(Chapters.this, Ch3.class);
 
-        }else if(R.id.cardviewch1==card00.getId()){
+        }else if(R.id.cardviewch4==card00.getId()){
             n = new Intent(Chapters.this, Ch4.class);
 
-        }else if(R.id.cardviewch1==card00.getId()){
+        }else if(R.id.cardviewch5==card00.getId()){
             n = new Intent(Chapters.this, Ch5.class);
 
         }

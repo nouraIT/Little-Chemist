@@ -13,7 +13,8 @@
     <!--         LESSON 2            -->
 <string name="C4L2S1">Everything in the world, even the world itself, is composed of elements. There are four major elements that make up the majority of living things: carbon, oxygen, nitrogen and hydrogen.</string>
 <string name="C4L2S2">These four elements enjoy linking up through chemical bonds. A <b> chemical bond</b> is a bond that holds two or more elements together to form a molecule. </string>
-<string name="C4L2S3">Capital letters are used to represent the elements. For example, N for nitrogen and C for carbon. Lines are used to represent the bonds.</string>
+    <string name="C4L2S3">Organic chemistry is the study of elements made of carbon-containing molecules and the bonds between the elements within a molecule. </string>
+<string name="C4L2S4">Capital letters are used to represent the elements. For example, N for nitrogen and C for carbon. Lines are used to represent the bonds.</string>
 
     <!--         LESSON 2            -->
 
@@ -21,9 +22,9 @@
     <!--         LESSON 3            -->
 <string name="C4L3S1">Food chemistry involves studying the chemicals that are inside food, how they contribute to our nutrition, and how different foods can be combined or changed to make new foods. </string>
 <string name="C4L3S2">
-    <item><b>Food Chemistry Applications</b> Through food chemistry we can understand a lot about the foods we eat. Here are a few ways that food scientists may use food chemistry:</item>
-    <item>To understand nutritional values of food. For example, are apples a healthy food to eat?</item>
-    <item>To make new foods, like snacks, yogurt, gum, ice cream, cereal, soft drinks, juices, and more.</item>
+    <b>Food Chemistry Applications</b> Through food chemistry we can understand a lot about the foods we eat. Here are a few ways that food scientists may use food chemistry: \n
+    To understand nutritional values of food. For example, are apples a healthy food to eat? \n
+    To make new foods, like snacks, yogurt, gum, ice cream, cereal, soft drinks, juices, and more.
 </string>
     <string name="C4L3S3">Carbohydrates are great energy sources for humans and animals too.Table sugar is an example of a carbohydrate. Pizza, bread, and pasta are all examples of foods that are high in carbohydrates.</string>
     <string name="C4L3S4">Lipids are the fats and oils that come from plants and animals.Fats usually come from animals like beef, chicken, and fish; while oils come from plants like olives and sunflower seeds.</string>
@@ -41,7 +42,26 @@
     <!--         LESSON 5            -->
 <string name="C4L5S1"><b>Forensic</b> chemistry is the use of chemistry to help solve crimes. When a crime is committed, clues are always left behind . All the clues, either seen or unseen, can be analyzed by a forensic chemist, usually in a laboratory.</string>
     <string name="C4L5S2">Forensic chemists can analyze one strand of hair and tell whether it is human or animal, and the color or chemical composition of it. Sometimes the hair will even reveal the <b>DNA</b>, a large molecule whose information is unique to each person, of the individual whose head it came from! This type of evidence is called <b>trace evidence</b> .</string>
-    <string name="C4L5S3"> Chemists would test the unknown liquid using chromatography, or separating out the mixture of chemicals within the liquid or gas to identify it.</string>
+    <string name="C4L5S3">Sometimes the hair will even reveal the <b>DNA</b>, a large molecule whose information is unique to each person, of the individual whose head it came from! This type of evidence is called <b>trace evidence</b> .</string>
+    <string name="C4L5S4">Chemists would test the unknown liquid using chromatography, or separating out the mixture of chemicals within the liquid or gas to identify it.</string>
+    <string-array name="C4L5S1E1M">
+       <item>Forensic chemistry analyze only unseen clues.</item>
+       <item>True</item>
+       <item>False</item>
+   </string-array>
+
+    <string-array name="C4L5S3E2M">
+        <item>Chemists would test the unknown liquid using ___?</item>
+        <item>Chromatography</item>
+        <item>Glowmatography</item>
+        <item>Affinity chromatography</item>
+    </string-array>
+
+    <string-array name="C4L5A">
+        <item>False</item>
+        <item>Chromatography</item>
+    </string-array>
+
     <!--         LESSON 5            -->
 
 

@@ -43,7 +43,7 @@ For example, imagine a piece of wood, every piece has different patterns but it\
 </string>
   <string name="C1L3S3">That means that if we had two pieces of wood, their atoms would be<b>Isotopes</b> </string>
 
-  <string-array name="C1L3S3EM">
+  <string-array name="C1L3S3E1M">
     <item>What part of the atom determines if its an Isotope or not?</item>
     <item> Protons</item>
     <item>Electrons</item>
@@ -54,7 +54,7 @@ For example, imagine a piece of wood, every piece has different patterns but it\
 
 </string>
 
-  <string name="C1L3S4EM">Calculate the mass of helium</string>
+  <string name="C1L3S4E2M">Calculate the mass of helium</string>
 
   <string-array name="C1L3A">
     <item>Protons</item>
@@ -72,7 +72,7 @@ For example, imagine a piece of wood, every piece has different patterns but it\
     That\'s what the Heisenberg Uncertainty Principle is saying - sometimes we can\'t measure one thing without making it impossible to measure another.
 </string>
 
-  <string-array name="C1L4S1EM">
+  <string-array name="C1L4S1E1M">
     <item>According to the Heisenberg Uncertainty Principle, what can\'t you know?</item>
     <item>Where you are </item>
     <item>How fast you are going.</item>
@@ -85,7 +85,7 @@ We also want to see how fast the ball, the quantum, is flying. We can guess that
 
 </string>
 
-  <string-array name="C1L4S2EM">
+  <string-array name="C1L4S2E2M">
     <item>What is the smallest particle of any substance called?</item>
     <item>Atom</item>
     <item>Molecule</item>
