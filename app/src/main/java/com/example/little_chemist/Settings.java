@@ -55,7 +55,6 @@ public class Settings extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
         setContentView(R.layout.activity_settings);
 
         //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarCustom);
@@ -97,7 +96,10 @@ public class Settings extends AppCompatActivity {
 
 
         Toolbar toolbar = findViewById(R.id.toolbar);
-
+        setSupportActionBar(toolbar);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayShowTitleEnabled(false);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
 //        ColorFilter colorf = new ColorFilter(R.color.white);
 //
 //        toolbar.getNavigationIcon().setColorFilter(R.color.white);
@@ -108,12 +110,9 @@ public class Settings extends AppCompatActivity {
         Button Ara = findViewById(R.id.arBtn);
         CardView Delete = findViewById(R.id.deleteBtn);
 
-        setSupportActionBar(toolbar);
-        //TextView textView = (TextView)toolbar.findViewById(R.id.toolbarTextView);
 
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
