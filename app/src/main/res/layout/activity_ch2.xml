@@ -98,23 +98,24 @@
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cardviewlLSN1"
+                    app:cardCornerRadius="25dp"
+                    android:layout_marginEnd="5dp"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+
+                    >
 
                     <LinearLayout
                         android:orientation="vertical"
                         android:layout_width="match_parent"
-                        android:layout_height="120dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
-                        android:background="@drawable/unlocked_lsn"
-
+                        android:layout_height="135dp"
                         >
 
 
 
                         <ImageView
-                            android:layout_marginEnd="12dp"
+                            android:id="@+id/lockicon1"
+                            android:layout_marginEnd="5dp"
                             android:layout_marginTop="12dp"
                             android:layout_marginStart="0dp"
                             android:layout_gravity="end"
@@ -126,20 +127,21 @@
                             />
 
                         <TextView
-                            android:layout_width="97dp"
+                            android:layout_width="98dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="start"
                             android:layout_marginStart="2dp"
-                            android:layout_marginTop="-2dp"
+                            android:layout_marginTop="-16dp"
+
+                            android:fontFamily="@font/aref_menna"
 
                             android:alpha="0.5"
                             android:text="@string/Ch2Lsn1"
                             android:textColor="@color/Black"
-                            android:textSize="13sp"
-
+                            android:textSize="16sp"
 
                             />
-<!-- TODO not sure of the image src -->
+
                         <ImageView
                             android:layout_width="70dp"
                             android:layout_height="70dp"
@@ -163,21 +165,23 @@
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cardviewlLSN2"
+                    app:cardCornerRadius="25dp"
+                    android:layout_marginEnd="1dp"
+                    android:layout_marginStart="1dp"
+
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <LinearLayout
                         android:orientation="vertical"
                         android:layout_width="match_parent"
-                        android:layout_height="120dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
-                        android:background="@drawable/locked_lsn"
+                        android:layout_height="135dp"
 
                         >
 
                         <ImageView
+                            android:id="@+id/lockicon2"
+                            android:layout_marginEnd="5dp"
                             android:elevation="5dp"
-                            android:layout_marginEnd="12dp"
                             android:layout_marginTop="12dp"
                             android:layout_gravity="end"
                             android:layout_width="24dp"
@@ -192,9 +196,10 @@
                             android:layout_gravity="start"
                             android:layout_marginTop="-15dp"
                             android:layout_marginStart="2dp"
+                            android:fontFamily="@font/aref_menna"
 
                             android:text="@string/Ch2Lsn2"
-                            android:textSize="15sp"
+                            android:textSize="19sp"
                             android:textColor="@color/Black"
                             android:alpha="0.5"
 
@@ -203,7 +208,7 @@
                         <ImageView
                             android:layout_width="70dp"
                             android:layout_height="70dp"
-                            android:layout_marginTop="15dp"
+                            android:layout_marginTop="10dp"
                             android:alpha="0.5"
                             android:background="@drawable/polymer"
                             android:contentDescription="@string/Ch2Lsn2" />
@@ -226,21 +231,22 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cardviewlLSN3"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    app:cardCornerRadius="25dp"
+
+                    >
 
                     <LinearLayout
                         android:orientation="vertical"
                         android:layout_width="match_parent"
-                        android:layout_height="120dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
-                        android:background="@drawable/locked_lsn"
+                        android:layout_height="135dp"
 
                         >
 
                         <ImageView
-
-                            android:layout_marginEnd="12dp"
+                            android:id="@+id/lockicon3"
+                            android:layout_marginEnd="5dp"
                             android:layout_marginTop="12dp"
                             android:layout_gravity="end"
                             android:layout_width="24dp"
@@ -256,9 +262,10 @@
                             android:layout_gravity="start"
                             android:layout_marginTop="-15dp"
                             android:layout_marginStart="2dp"
+                            android:fontFamily="@font/aref_menna"
 
                             android:text="@string/Ch2Lsn3"
-                            android:textSize="15sp"
+                            android:textSize="19sp"
                             android:textColor="@color/Black"
                             android:alpha="0.5"
 
@@ -268,6 +275,8 @@
                         <ImageView
                             android:layout_width="70dp"
                             android:layout_height="70dp"
+                            android:layout_marginTop="10dp"
+
                             android:alpha="0.5"
                             android:background="@drawable/bond"
                             android:contentDescription="@string/Ch2Lsn3" />
@@ -306,22 +315,23 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cardviewlLSN4"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="25dp"
+                    android:layout_marginEnd="5dp"    >
 
                     <LinearLayout
                         android:orientation="vertical"
                         android:layout_width="match_parent"
-                        android:layout_height="120dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
+                        android:layout_height="135dp"
+
                         android:background="@drawable/locked_lsn"
 
                         >
 
                         <ImageView
                             android:elevation="5dp"
-
-                            android:layout_marginEnd="12dp"
+                            android:id="@+id/lockicon4"
+                            android:layout_marginEnd="5dp"
                             android:layout_marginTop="12dp"
                             android:layout_gravity="end"
                             android:layout_width="24dp"
@@ -371,22 +381,25 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cardviewlLSN5"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="25dp"
+                    android:layout_marginEnd="5dp"
+                    >
 
 
                     <LinearLayout
                         android:orientation="vertical"
                         android:layout_width="match_parent"
-                        android:layout_height="120dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
+                        android:layout_height="135dp"
                         android:background="@drawable/locked_lsn"
 
                         >
 
                         <ImageView
                             android:elevation="5dp"
-                            android:layout_marginEnd="12dp"
+                            android:id="@+id/lockicon5"
+                            android:layout_marginEnd="5dp"
+
                             android:layout_marginTop="12dp"
                             android:layout_gravity="end"
                             android:layout_width="24dp"
@@ -435,14 +448,15 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/quiz"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="25dp"
+                    android:layout_marginStart="5dp"
+                    >
 
                     <LinearLayout
                         android:orientation="vertical"
                         android:layout_width="match_parent"
-                        android:layout_height="120dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
+                        android:layout_height="135dp"
                         android:background="@drawable/unfinished_quiz"
 
                         >

@@ -145,26 +145,30 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public void InsertStudents(Student student){
 
+
+
         db=getWritableDatabase();
         //To get , how many column in ur table
         String query="SELECT * FROM "+FeedEntry.TABLE_STUDENT;
         Cursor cursor=db.rawQuery(query,null);
         int count=cursor.getCount();
 
+        student = new Student( (count+1), (student.GetTotalScore())
+                ,("1:unlocked,2:locked,3:locked,4:locked,5:locked,"),("1:unlocked,2:locked,3:locked,4:locked,5:locked,"),
+                ("1:unlocked,2:locked,3:locked,4:locked,5:locked,"),(student.GetUserName()),(student.GetPassword()),
+                (student.GetSecQ()),(student.GetSecA()),(student.GetLang()) );
+
         ContentValues contentvalues=new ContentValues();
         contentvalues.put(FeedEntry.COLUMN_ID,count+1);
         contentvalues.put(FeedEntry.COLUMN_SCORE, student.GetTotalScore());
-        contentvalues.put(FeedEntry.COLUMN_QZLOCKS, student.GetQZLocks());
-        contentvalues.put(FeedEntry.COLUMN_CHLOCKS, student.GetCHLocks());
-        contentvalues.put(FeedEntry.COLUMN_LSNLOCKS, student.GetLSNLocks());
+        contentvalues.put(FeedEntry.COLUMN_QZLOCKS, "1:unlocked,2:unlocked,3:unlocked,4:unlocked,5:unlocked,");
+        contentvalues.put(FeedEntry.COLUMN_CHLOCKS, "1:unlocked,2:locked,3:locked,4:locked,5:locked,");
+        contentvalues.put(FeedEntry.COLUMN_LSNLOCKS, "1:unlocked,2:locked,3:locked,4:locked,5:locked,");
         contentvalues.put(FeedEntry.COLUMN_USERNAME, student.GetUserName());
         contentvalues.put(FeedEntry.COLUMN_PASSWORD, student.GetPassword());
         contentvalues.put(FeedEntry.COLUMN_SECQ, student.GetSecQ());
         contentvalues.put(FeedEntry.COLUMN_SECA, student.GetSecA());
         contentvalues.put(FeedEntry.COLUMN_LANG, student.GetLang());
-
-        //JsonObject(Chapter,)
-
 
 
         db.insert(FeedEntry.TABLE_STUDENT,null,contentvalues);
@@ -419,6 +423,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public Student getStudent(String username){
         Student student = new Student();
+
         db = this.getReadableDatabase();
 
         String query = "SELECT * FROM Student";
@@ -431,20 +436,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         if (cursor.moveToFirst()) {
             do {
-                un = cursor.getString(0);
+                un = cursor.getString(cursor.getColumnIndex("UserName"));
                 if (un.contentEquals(username)) {
-                    id = cursor.getInt(1);
-                    score= cursor.getInt(1);
-                    QLocks= cursor.getString(1);
-                    Chlocks= cursor.getString(1);
-                    LesLocks= cursor.getString(1);
-                    un= cursor.getString(1);
-                    Pass= cursor.getString(1);
-                    SQ= cursor.getString(1);
-                    SA= cursor.getString(1);
-                    lang = cursor.getInt(1);
-                    student= new Student(id,score,QLocks,Chlocks,LesLocks,un,Pass,SQ,SA,lang);
 
+                    id = cursor.getInt(0);
+                    score= cursor.getInt(1);
+                    QLocks= cursor.getString(2);
+                    Chlocks= cursor.getString(3);
+                    LesLocks= cursor.getString(4);
+                    un= cursor.getString(5);
+                    Pass= cursor.getString(6);
+                    SQ= cursor.getString(7);
+                    SA= cursor.getString(8);
+                    lang = cursor.getInt(9);
+                    student= new Student(id,score,QLocks,Chlocks,LesLocks,un,Pass,SQ,SA,lang);
 
                     break;
                 }
@@ -547,6 +552,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
     }
+
     public void updateQuiz(String username,int Qid,String status) {
 
         String [] ch = new String[5];

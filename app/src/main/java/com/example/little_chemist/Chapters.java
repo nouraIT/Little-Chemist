@@ -6,6 +6,7 @@ import androidx.cardview.widget.CardView;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import android.text.Html;
@@ -19,13 +20,14 @@ import android.content.Intent;
 import android.widget.LinearLayout;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.little_chemist.Chapters_dir.Ch1;
 import com.example.little_chemist.Chapters_dir.Ch2;
 import com.example.little_chemist.Chapters_dir.Ch3;
 import com.example.little_chemist.Chapters_dir.Ch4;
 import com.example.little_chemist.Chapters_dir.Ch5;
-
+import com.example.little_chemist.Tables.Student;
 
 
 public class Chapters extends AppCompatActivity {
@@ -40,9 +42,11 @@ public class Chapters extends AppCompatActivity {
     private TextView[] mDotsText ;
     private com.example.little_chemist.chaptersAdapter adapter ;
 
-//    public static Context getcontext(){
-//        return this;
-//    }
+    SharedPreferences pref;
+    DatabaseHelper helper = new DatabaseHelper(Chapters.this);
+    String statue;
+    Student student;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +56,9 @@ public class Chapters extends AppCompatActivity {
 
         setContentView(R.layout.activity_chapters);
 
+        pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
+        String name = pref.getString("username", null); // getting String
+        student = helper.getStudent(name);
 
 //        final int layoutDirection = getLayoutDirection();
 //        final int absoluteGravity =
@@ -99,6 +106,12 @@ public class Chapters extends AppCompatActivity {
                 //finish();
             }
         });
+
+
+
+
+
+
     }//on create
 
 //        card00.setOnClickListener(new View.OnClickListener() {
@@ -219,31 +232,54 @@ public class Chapters extends AppCompatActivity {
 
     public void onBtnChapterClick(View v){
 
-        Intent n ;
+        Intent n ;//= new Intent(Chapters.this, Chapters.class);;
         //System.out.println(card00.getId()+" id is over here "+v.getId() +" and "+R.id.cardviewch1);
 
 
         if(R.id.cardviewch1==card00.getId()){
             n = new Intent(Chapters.this, Ch1.class);
+            startActivity(n);
 
         }else if(R.id.cardviewch2==card00.getId()){
-            n = new Intent(Chapters.this, Ch2.class);
+            statue = student.getChLock("2");
+            if (statue.equals("unlocked") || statue.equals("completed") ) {
+                n = new Intent(Chapters.this, Ch2.class);
+                startActivity(n);
+            }
+            else
+                Toast.makeText(getApplicationContext(), "Locked", Toast.LENGTH_LONG).show();
 
         }else if(R.id.cardviewch3==card00.getId()){
-            n = new Intent(Chapters.this, Ch3.class);
+            statue = student.getChLock("3");
+            if (statue.equals("unlocked") || statue.equals("completed") ) {
+                n = new Intent(Chapters.this, Ch3.class);
+                startActivity(n);
+            }
+            else
+                Toast.makeText(getApplicationContext(), "Locked", Toast.LENGTH_LONG).show();
 
         }else if(R.id.cardviewch1==card00.getId()){
-            n = new Intent(Chapters.this, Ch4.class);
+            statue = student.getChLock("4");
+            if (statue.equals("unlocked") || statue.equals("completed") ) {
+                n = new Intent(Chapters.this, Ch4.class);
+                startActivity(n);
+            }else
+                Toast.makeText(getApplicationContext(), "Locked", Toast.LENGTH_LONG).show();
+
 
         }else if(R.id.cardviewch1==card00.getId()){
-            n = new Intent(Chapters.this, Ch5.class);
+            statue = student.getChLock("5");
+            if (statue.equals("unlocked") || statue.equals("completed") ) {
+                n = new Intent(Chapters.this, Ch5.class);
+                startActivity(n);
+            }else
+                Toast.makeText(getApplicationContext(), "Locked", Toast.LENGTH_LONG).show();
 
         }
-        else{
-            n = new Intent(Chapters.this, Chapters.class);
-        }
+//        else{
+//            n = new Intent(Chapters.this, Chapters.class);
+//        }
 
-        startActivity(n);
 
     }
 

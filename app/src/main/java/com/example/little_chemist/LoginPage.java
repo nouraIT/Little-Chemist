@@ -146,7 +146,7 @@ public class LoginPage extends AppCompatActivity implements Serializable {
                         editor.putString("password", PasswordStr); // Storing string
 
 
-                        editor.commit();
+                        editor.apply();
 
 
 

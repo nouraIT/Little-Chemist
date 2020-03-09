@@ -19,12 +19,11 @@ public class Student implements Serializable {
         UserName = name;
         Password = pass;
         Arabic = arabic;
-        QZLocks = "1:unlocked,2:locked,3:locked,4:locked,5:locked";
-        CHLocks ="1:unlocked,2:locked,3:locked,4:locked,5:locked";
-        LSNLocks ="1:unlocked,2:locked,3:locked,4:locked,5:locked";
+        QZLocks = "1:unlocked,2:unlocked,3:unlocked,4:unlocked,5:unlocked,";
+        CHLocks ="1:unlocked,2:locked,3:locked,4:locked,5:locked,";
+        LSNLocks ="1:unlocked,2:locked,3:locked,4:locked,5:locked,";
     }
-    public Student(int id,int score,String QL,String CHl,String LL,String username,String Pass,String SQ,String SA,int lang)
-    {
+    public Student(int id,int score,String QL,String CHl,String LL,String username,String Pass,String SQ,String SA,int lang) {
         this.Id=id;
         this.TotalScore =score;
         this.UserName = username;
@@ -84,31 +83,31 @@ public class Student implements Serializable {
 
     //functions
 
-    public void signup(){
-
-    }
-
-    public void logOut(){
-
-    }
-
-
-    public void saveProgress(int lessonId){
-
-    }
-
-    public void submitQuiz(){
-
-    }
-
-
-    public void viewContent(){
-
-    }
-
-    public void takeQuiz(int id){
-
-    }
+//    public void signup(){
+//
+//    }
+//
+//    public void logOut(){
+//
+//    }
+//
+//
+//    public void saveProgress(int lessonId){
+//
+//    }
+//
+//    public void submitQuiz(){
+//
+//    }
+//
+//
+//    public void viewContent(){
+//
+//    }
+//
+//    public void takeQuiz(int id){
+//
+//    }
 
 
     public void changeLang(int arabic){
@@ -122,21 +121,74 @@ public class Student implements Serializable {
 
         return Arabic;
     }
+//
+//    public void viewScore(){
+//
+//    }
+//    public void ViewLesson(int id){
+//
+//    }
+//
+//    public boolean deleteAccountReq(){
+//
+//        return false;
+//    }
+//
+//    public void recoverPassword(){
+//
+//
+//    }
 
-    public void viewScore(){
+    public String getLsnLock(String num){
+        //completed
+//        LSNLocks ="1:unlocked,2:locked,3:locked,4:locked,5:locked";
 
+        System.out.println(LSNLocks+ " " );
+
+
+        int lsnIndex = LSNLocks.indexOf(num);
+        int endIndex = LSNLocks.indexOf(",",lsnIndex);
+
+        System.out.println(lsnIndex+ " " + endIndex);
+
+        String statue = LSNLocks.substring(lsnIndex+2,endIndex);
+//        if(statue!=null)
+            return statue;
+
+
+//        return null;
     }
-    public void ViewLesson(int id){
 
+    public String getChLock(String num) {
+//        System.out.println(LSNLocks+ " " );
+
+
+        int lsnIndex = CHLocks.indexOf(num);
+        int endIndex = CHLocks.indexOf(",",lsnIndex);
+
+        System.out.println(lsnIndex+ " " + endIndex);
+
+        String statue = CHLocks.substring(lsnIndex+2,endIndex);
+//        if(statue!=null)
+            return statue;
+
+
+//        return null;
     }
 
-    public boolean deleteAccountReq(){
+    public String getQzLock(String num) {
+//        System.out.println(LSNLocks+ " " );
 
-        return false;
-    }
+         //statue = null;
 
-    public void recoverPassword(){
+        int lsnIndex = QZLocks.indexOf(num);
+        int endIndex = QZLocks.indexOf(",",lsnIndex);
 
+        System.out.println(lsnIndex+ " " + endIndex);
+
+        String statue = QZLocks.substring(lsnIndex+2,endIndex);
+
+        return statue;
 
     }
 

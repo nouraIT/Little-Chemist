@@ -140,7 +140,7 @@ public class Settings extends AppCompatActivity {
 
                 editor.putBoolean("arabic",false);
                 helper.changeLang(name,0);
-                editor.commit();
+                editor.apply();
 
 
             }
