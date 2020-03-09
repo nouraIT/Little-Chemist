@@ -11,6 +11,7 @@ import com.example.little_chemist.R;
 import com.example.little_chemist.Tables.Quiz;
 import com.example.little_chemist.Tables.Student;
 import com.example.little_chemist.View_lesson.Lessons;
+import com.example.little_chemist.View_lesson.lab;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -164,7 +165,7 @@ public class Ch4 extends AppCompatActivity {
 
         lsn1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                Intent n = new Intent(Ch4.this, Lessons.class);
+                Intent n = new Intent(Ch4.this, lab.class);
                 n.putExtra("lesson",41);
                 startActivity(n);
               //  finish();
@@ -218,7 +219,7 @@ public class Ch4 extends AppCompatActivity {
                 statue = student.getLsnLock("5");
                 if (statue.equals("unlocked") || statue.equals("completed") ) {
                     Intent n = new Intent(Ch4.this, Lessons.class);
-                n.putExtra("lesson",46);
+                n.putExtra("lesson",45);
                 startActivity(n);
                 }else
                     Toast.makeText(getApplicationContext(), "Locked", Toast.LENGTH_LONG).show();

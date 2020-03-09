@@ -73,10 +73,14 @@ public class slideAdapter extends PagerAdapter {
 
     public String[] content ={
             "C1L1S1","C1L1S2","C1L1S3","C1L1S4","C1L1S5","C1L1S6","C1L1S7","C1L3S1","C1L3S2","C1L3S3","C1L3S4","C1L4S1","C1L4S2"
+            ,"C4L3S1","C4L3S2","C4L3S3","C4L3S4","C4L3S5"
+            ,"C4L5S1","C4L5S2","C4L5S3","C4L5S4"
+
     };
 
     public String[] ex ={
-            "C1L1S1ED","C1L1S2ED","C1L1S4ED","C1L3S3EM", "C1L3S4EM" , "C1L4S1EM","C1L4S2EM"
+            "C1L1S1ED","C1L1S2ED","C1L1S4ED","C1L3S3E1M", "C1L3S4E2M" , "C1L4S1E1M","C1L4S2E2M"
+            ,"C4L5S1E1M","C4L5S3E2M"
     };
 
 
@@ -117,7 +121,8 @@ public class slideAdapter extends PagerAdapter {
         //set the button ex visible
         int index=0 ;
         for(int i=0;i<ex.length;i++){
-           tempEx = ex[i].substring(0,ex.length-1) ;
+           tempEx = ex[i].substring(0,ex.length-3) ;
+            System.out.println(tempEx) ;
             if (cleanContent[position].equals(tempEx)){
                 tempEx=ex[i] ;
                 AcEx[index] = new Intent(view.getContext(), ex_multiple_choice.class);
@@ -134,6 +139,7 @@ public class slideAdapter extends PagerAdapter {
 
                 System.out.println(tempEx);
                 slideEx.setVisibility(View.VISIBLE);
+
                 slideEx.setAnimation(btnAmim) ;
 
                 index++ ;

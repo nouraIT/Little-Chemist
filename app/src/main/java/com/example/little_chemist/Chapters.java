@@ -232,7 +232,7 @@ public class Chapters extends AppCompatActivity {
 
     public void onBtnChapterClick(View v){
 
-        Intent n ;//= new Intent(Chapters.this, Chapters.class);;
+        Intent n ;
         //System.out.println(card00.getId()+" id is over here "+v.getId() +" and "+R.id.cardviewch1);
 
 

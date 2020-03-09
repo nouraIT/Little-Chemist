@@ -20,11 +20,9 @@ public class ex_multiple_choice extends AppCompatActivity {
 
 
     public int segmentN ;
+    public int ex ;
     public TextView Q;
-    public Button a1 ;
-    public Button a2 ;
-    public Button a3 ;
-    public Button a4 ;
+    public Button[] a ;
     public TextView exNum ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,59 +45,56 @@ public class ex_multiple_choice extends AppCompatActivity {
 
         Bundle bundle=getIntent().getExtras();
         String exKey=bundle.getString("exKey");
-        segmentN = Integer.parseInt(String.valueOf(exKey.charAt(5))) ;
-
-        Q = findViewById(R.id.Q) ;
-        a1 = findViewById(R.id.a1) ;
-        a2 = findViewById(R.id.a2) ;
-        a3 = findViewById(R.id.a3) ;
-        a4 = findViewById(R.id.a4) ;
+        String temp = String.valueOf(exKey.charAt(5)) ;
+        segmentN = Integer.parseInt(temp) ;
+        temp = String.valueOf(exKey.charAt(7)) ;
+        ex = Integer.parseInt(temp) ;
 
         String[] QItems = getResources().getStringArray(getResources().getIdentifier(exKey, "array", getPackageName()));
+        int len = getResources().getStringArray(getResources().getIdentifier(exKey, "array", getPackageName())).length ;
+
+        Q = findViewById(R.id.Q) ;
+        a=new Button[4];
         Q.setText(QItems[0]);
-        a1.setText(QItems[1]);
-        a2.setText(QItems[2]);
-        a3.setText(QItems[3]);
-        a4.setText(QItems[4]);
+
+        for(int i=1 ; i<5;i++){
+            if(i>len-1){
+                for(int j=i;j<5;j++){
+                int re = getResources().getIdentifier("a"+j , "id", getPackageName()) ;
+                a[j-1]=findViewById(re) ;
+                a[j-1].setVisibility(View.INVISIBLE);}
+                break;}
+            int re = getResources().getIdentifier("a"+i , "id", getPackageName()) ;
+            a[i-1]=findViewById(re) ;
+            a[i-1].setText(QItems[i]);
+
+        }
+
+//        for (int i=len-2; i<4 ;i++){
+//            System.out.println(i) ;
+//            int re = getResources().getIdentifier("a"+i+1 , "id", getPackageName()) ;
+//            a[i]=findViewById(re) ;
+//            if(a[i]==null)
+//                System.out.println("eeee") ;
+//            a[i].setVisibility(View.INVISIBLE);}
 
 
         exNum = findViewById(R.id.exNum) ;
-            exNum.setText("Exercise "+segmentN);
+        exNum.setText("Exercise "+ex);
 
-        String temp = exKey.substring(0,4);
-        temp=temp+"A";
-        System.out.println(temp);
-        String[] An =getResources().getStringArray(getResources().getIdentifier(temp, "array", getPackageName()));
-        String ExtractA = An[segmentN-1] ;
+
+        String temp1 = exKey.substring(0,4);
+        temp1=temp1+"A";
+        System.out.println(temp1);
+        String[] An =getResources().getStringArray(getResources().getIdentifier(temp1, "array", getPackageName()));
+        String ExtractA = An[ex-1] ;
         for(int i=1 ;i<QItems.length;i++){
             if(QItems[i].equals(ExtractA)){
-                if(i==1)
-                a1.setOnClickListener(new View.OnClickListener() {
+                Button b = a[i-1] ;
+                b.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        a1.setBackgroundColor(Color.GREEN);
-                    }
-                });
-
-            if(i==2)
-                a2.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        a2.setBackgroundColor(Color.GREEN);
-                    }
-                });
-            if(i==3)
-                a3.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        a3.setBackgroundColor(Color.GREEN);
-                    }
-                });
-            if(i==4)
-                a4.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        a4.setBackgroundColor(Color.GREEN);
+                      b.setBackgroundColor(Color.GREEN);
                     }
                 });break;}}
 
