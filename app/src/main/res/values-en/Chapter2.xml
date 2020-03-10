@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <item type="id" name="ch2" />
 
     <!--         LESSON 1            -->
 
@@ -87,7 +88,7 @@ For example, have you ever tried mixing oil and water? They stay separate no mat
 
     <string name="C2L4S6">
         C2H6 + O → CO2 +H2O
-        First let’s count the atoms on the reactant and product side separately in the original equation
+        First let\'s count the atoms on the reactant and product side separately in the original equation
 
     </string>
     <string-array name="C2L4E6M">
@@ -108,7 +109,7 @@ For example, have you ever tried mixing oil and water? They stay separate no mat
     </string-array>
 
     <string name="C2L4S8">
-        Thirdو after determining your coefficients, recount the atoms to make sure that they balance
+        Third after determining your coefficients, recount the atoms to make sure that they balance
 
         2C2H6 + 7O → 4CO2 +6H2O
         Both sides have the same number of atoms of each element so the equation is balanced
@@ -147,13 +148,13 @@ For example, have you ever tried mixing oil and water? They stay separate no mat
     </string>
 
     <string name="C2L5S3">
-        The <b>pH scale</b> goes from 0 to 14: 0 is the most acidic and 14 is the most <b>basic</b>, or <b>alkaline</b>.
+        The <b>pH scale</b> goes from 0 to 14 0 is the most acidic and 14 is the most <b>basic</b>, or <b>alkaline</b>.
         Plain water is right in the middle of the scale with a pH of 7. This is called a neutral pH
     </string>
 
     <string name="C2L5S4">
         If you want to try things with high <b>acidic pH</b>, first take a cup of milk, milke has a pH between 6 and 7,so it\'s just a little more <b>acidic</b> than water.
-        If you drank some coffee, you'd be down to a pH of 5. Also if you had some orange juice, you'd be looking at a pH around 3, and lemon juice has a pH of 2
+        If you drank some coffee, you\'d be down to a pH of 5. Also if you had some orange juice, you\'d be looking at a pH around 3, and lemon juice has a pH of 2
     </string>
 
     <string name="C2L5S5">
