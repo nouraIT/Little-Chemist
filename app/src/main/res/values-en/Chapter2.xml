@@ -1,17 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <item type="id" name="ch2" />
 
     <!--         LESSON 1            -->
 
+    <string name="C2L1S1_1" translatable="false"><b>Heterogeneous mixture</b>  is a substance that can be easily separated into its parts, and those parts retain their original properties.
+For example, have you ever tried mixing oil and water? They stay separate no matter how hard you try to mix them.
+</string>
 
+    <string name="C2L1S1_2" >There are more examples of<b>Heterogeneous mixture</b> such as:
+•Mixed nuts
+•Fruit salad
+•Pizza
+•Chocolate chip cookies
+
+</string>
+
+    <string-array name="C2L1E1M"> <item>Which of the following is a Heterogeneous mixture?</item>
+        <item>Chicken noodle soup</item>
+        <item>Chocolate Milk</item>
+        <item>Sand and water</item>
+        <item>Fruit Juice</item>
+
+    </string-array>
     <!--         LESSON 1            -->
 
-
-
-    <!--         LESSON 2            -->
-
-
-    <!--         LESSON 2            -->
 
 
     <!--         LESSON 3            -->
@@ -21,15 +34,147 @@
 
 
     <!--         LESSON 4            -->
+    <string name="C2L4S1">
+        A <b>chemical equation</b> is a way to represent a chemical reaction using element symbols. <b>Chemical equations</b> have two sides: the <b>reactant side</b> and the <b>product side.</b>
 
+    </string>
+    <string name="C2L4E1">
+        <!-- drag and drop -->
+        which side is the reactant side and which side is the product side?
+    </string>
+
+    <string name="C2L4S2">
+        There is only one atom of each element in the equation, unless the element has a <b>coefficient</b> or a <b>subscript</b> with it.
+    </string>
+    <string-array name="C2L4E2M">
+        <!--Multiple choice-->
+        <item>How many atoms for each element in this equation?</item>
+        <item>TOW atoms</item>
+        <item>THREE atoms</item>
+        <item>ONE atom</item>
+        <item>FOUR atoms</item>
+    </string-array>
+
+    <string name="C2L4S3">
+        A subscript tells how many atoms of that element there are. The <b>coefficients</b> are multiplied by every element or its <b>subscript</b> to determine the number of atoms.
+    </string>
+    <string-array name="C2L4E3M">
+        <!--Image-->
+        <!--Multiple choice-->
+        <item>Is there a <b>coefficients</b> in this equation?</item>
+        <item>YES</item>
+        <item>NO</item>
+    </string-array>
+
+    <string name="C2L4S4">
+        So how do we balance an equation? To start, we count the number of atoms of each element. Once we know the total number of atoms of each element, we can change or add <b>coefficients</b> to make the sides balance. Important: We can <b>NEVER</b> change or add <b>subscripts</b>!
+    </string>
+    <string-array name="C2L4E4M">
+        <!--Multiple choice-->
+        <item>To balance an equation we have to</item>
+        <item>Change or add subscripts</item>
+        <item>Change or add coefficients</item>
+    </string-array>
+
+    <string name="C2L4S5">
+        Let\'s take a look for an equation before and after balancing
+    </string>
+    <string-array name="C2L4E5M">
+        <!--Multiple choice-->
+        <item>What did we do in previous equation?</item>
+        <item>We added coefficients</item>
+        <item>We added subscripts</item>
+    </string-array>
+
+    <string name="C2L4S6">
+        C2H6 + O → CO2 +H2O
+        First let\'s count the atoms on the reactant and product side separately in the original equation
+
+    </string>
+    <string-array name="C2L4E6M">
+        <!--Multiple choice-->
+        <item>We have to balance this equation</item>
+        <item>YES, of course!</item>
+        <item>NO, it is already balanced</item>
+    </string-array>
+
+    <string name="C2L4S7">
+        C2H6 + O → CO2 +H2O
+        Second based on the previous step determine what coefficients need to be added or changed to make the products and reactants balanced
+    </string>
+    <string-array name="C2L4E7M">
+        <item>We need to be add or change coefficients to make the products and reactants balanced</item>
+        <item>True</item>
+        <item>False</item>
+    </string-array>
+
+    <string name="C2L4S8">
+        Third after determining your coefficients, recount the atoms to make sure that they balance
+
+        2C2H6 + 7O → 4CO2 +6H2O
+        Both sides have the same number of atoms of each element so the equation is balanced
+
+    </string>
+    <string-array name="C2L4E8M">
+        <item>When we change on the coefficients we have to make sure that</item>
+        <item>The products and the reactants are equals</item>
+        <item>The products and the reactants are different</item>
+    </string-array>
+
+<!--    &lt;!&ndash; REMOVE THIS SEGMENT&ndash;&gt;-->
+<!--    <string name="C2L4S9">-->
+<!--        Another Example-->
+<!--        &lt;!&ndash; gif &ndash;&gt;-->
+<!--    </string>-->
+<!--    <string-array name="C2L4E9M">-->
+<!--        &lt;!&ndash;Multiple choice&ndash;&gt;-->
+<!--        <item>In the previous equation we add coefficients to</item>-->
+<!--        <item>The products side</item>-->
+<!--        <item>The reactants side</item>-->
+<!--        <item>Both sides</item>-->
+<!--    </string-array>-->
 
     <!--         LESSON 4            -->
 
 
     <!--         LESSON 5            -->
+    <string name="C2L5S1">
+        We can use the <b>pH Scale</b> to measure how basic (<b>alkaline</b>) or <b>acidic</b> things are.
+    </string>
 
+    <string name="C2L5S2">
+        Have you ever tasted a lemon and puckered up? Lemons have that puckery taste because they\'re <b>acidic</b>, just like vinegar and some other foods.
+        Scientists use the <b>pH scale</b> to describe whether something is <b>acidic</b> or <b>basic</b>. <b>Basic</b> is the opposite of <b>acidic</b>.
+    </string>
+
+    <string name="C2L5S3">
+        The <b>pH scale</b> goes from 0 to 14 0 is the most acidic and 14 is the most <b>basic</b>, or <b>alkaline</b>.
+        Plain water is right in the middle of the scale with a pH of 7. This is called a neutral pH
+    </string>
+
+    <string name="C2L5S4">
+        If you want to try things with high <b>acidic pH</b>, first take a cup of milk, milke has a pH between 6 and 7,so it\'s just a little more <b>acidic</b> than water.
+        If you drank some coffee, you\'d be down to a pH of 5. Also if you had some orange juice, you\'d be looking at a pH around 3, and lemon juice has a pH of 2
+    </string>
+
+    <string name="C2L5S5">
+        Now let\'s take a look at things that are more basic or alkaline than water. The first step up from tap water is…sea water! the pH would be about 8.
+        Moving on up the pH scale, baking soda is next at a pH around 9.5. Moving on up the pH scale, we start moving into dangerous cleaning chemicals, like bleach. Bleach has a pH of around 13.5.
+    </string>
 
     <!--         LESSON 5            -->
+
+
+    <!--        Quiz Questions           -->
+
+
+
+    <!--         Quiz Total Answers          -->
+
+
+
+    <!--         Quiz correct Answers          -->
+
 
 
 </resources>

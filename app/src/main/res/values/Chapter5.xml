@@ -3,6 +3,22 @@
 
 
     <!--         LESSON 1            -->
+    <string name="C5L1S1">
+        Different atoms make up different elements. An element is a substance that is made of only one kind of atom. All of the elements that we know in the universe are put together on a chart called the Periodic Table.
+        There are less than 100 elements that occur naturally on Earth.
+    </string>
+
+    <string name="C5L1S2">
+        Many scientists attempted to arrange the elements, but Dmitri Mendeleev is given credit for creating the first chart. However, although his chart was not complete.
+    </string>
+
+    <string name="C5L1S3">
+        A property is a specific characteristic that helps us identify something. For example, the color of gold is property. Dmitri Mendeleev used the properties of elements and their weights (or masses) to arrange a table of all the elements.
+    </string>
+
+    <string name="C5L1S4">
+        The periodic table tells us what elements will combine to make molecules, how much they weigh, how many protons, electrons and neutrons they contain and whether they are solid, liquid or gas at room temperature.
+    </string>
 
 
     <!--         LESSON 1            -->
