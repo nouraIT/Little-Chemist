@@ -130,11 +130,12 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView"
-            android:layout_width="329dp"
+            android:layout_width="wrap_content"
             android:layout_height="91dp"
 
             android:layout_centerHorizontal="true"
             android:layout_marginTop="27dp"
+            android:layout_marginStart="20dp"
             android:alpha="0.9"
             app:cardBackgroundColor="@color/white">
 

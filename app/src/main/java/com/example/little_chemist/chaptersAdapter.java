@@ -20,17 +20,7 @@ public class chaptersAdapter extends PagerAdapter {
     Context context ;
     LayoutInflater layoutInflater ;
 
-    public chaptersAdapter(Context context) {
-
-        this.context = context;
-        chapter_num = this.context.getResources().getStringArray(R.array.chapters_numbers);
-        chapter_name = this.context.getResources().getStringArray(R.array.chapter_names);
-    }
-
-
-    //String n = context.getResources().getString(R.string.chapter_1);
-    //    = context.getResources().getStringArray(R.array.chapter_names);
-
+    int chapter_Lock[] = new int[5];
     String[] chapter_num,chapter_name ;
 
     public int[] chapter_bg={
@@ -40,26 +30,6 @@ public class chaptersAdapter extends PagerAdapter {
             R.drawable.ch4_bg,
             R.drawable.ch5_bg
     };
-
-    //TODO fix these locks
-
-    int [] locks;
-
-
-
-    public int[] chapter_Lock={
-
-            R.drawable.padlock,
-            R.drawable.lock,
-            R.drawable.lock,
-            R.drawable.lock,
-            R.drawable.lock,
-    };
-//    SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0);
-//    String name = pref.getString("username", null);
-//    DatabaseHelper helper = new DatabaseHelper(chaptersAdapter.this);
-//    getStudent(name);
-    Student s = Home.student;
 
     public int[] chapter_drawings={
             R.drawable.chapteronegirl,
@@ -76,6 +46,55 @@ public class chaptersAdapter extends PagerAdapter {
             R.drawable.dry_tree,
             R.drawable.periodictable
     };
+
+    SharedPreferences pref;
+    DatabaseHelper helper ;//= new DatabaseHelper(chaptersAdapter.this);
+    String statue;
+    Student student;
+
+    public chaptersAdapter(Context context) {
+        helper = new DatabaseHelper(context);
+
+        pref = context.getSharedPreferences("MyPref", 0); // 0 - for private mode
+        String name = pref.getString("username", null); // getting String
+        student = helper.getStudent(name);
+
+        this.context = context;
+        chapter_num = this.context.getResources().getStringArray(R.array.chapters_numbers);
+        chapter_name = this.context.getResources().getStringArray(R.array.chapter_names);
+
+
+        for(int i =0;i<5;i++){
+            String lock = student.getChLock(String.valueOf(i+1));
+            if(lock.equals("unlocked"))
+                chapter_Lock[i] = R.drawable.padlock;
+            else if(lock.equals("locked"))
+                chapter_Lock[i] = R.drawable.lock;
+            else
+                chapter_Lock[i] = R.drawable.padlock; //TODO check symbol
+        }
+
+
+//        locks;
+
+    }
+
+
+    //String n = context.getResources().getString(R.string.chapter_1);
+    //    = context.getResources().getStringArray(R.array.chapter_names);
+
+//    public int[] chapter_Lock={
+//
+//            R.drawable.padlock,
+//            R.drawable.lock,
+//            R.drawable.lock,
+//            R.drawable.lock,
+//            R.drawable.lock,
+//    };
+
+
+
+    Student s = Home.student;
 
     @Override
     public int getCount() {
