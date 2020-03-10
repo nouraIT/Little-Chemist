@@ -4,13 +4,15 @@
 
         <shape android:shape="rectangle">
 
-            <gradient
-                android:startColor="#f2a07f"
-                android:endColor="#f2a07f"
+            <solid android:color="#FB8252"></solid>
+<!--F1895F-->
+<!--            <gradient-->
+<!--                android:startColor="#f2a07f"-->
+<!--                android:endColor="#f2a07f"-->
 
-                >
-<!--               #C75E34 -->
-            </gradient>
+<!--                >-->
+<!--&lt;!&ndash;               #C75E34 &ndash;&gt;-->
+<!--            </gradient>-->
             <corners android:radius="25dp"></corners>
 
         </shape>

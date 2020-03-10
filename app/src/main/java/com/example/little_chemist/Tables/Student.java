@@ -162,7 +162,6 @@ public class Student implements Serializable {
     public String getChLock(String num) {
 //        System.out.println(LSNLocks+ " " );
 
-
         int lsnIndex = CHLocks.indexOf(num);
         int endIndex = CHLocks.indexOf(",",lsnIndex);
 
@@ -170,7 +169,7 @@ public class Student implements Serializable {
 
         String statue = CHLocks.substring(lsnIndex+2,endIndex);
 //        if(statue!=null)
-            return statue;
+        return statue;
 
 
 //        return null;

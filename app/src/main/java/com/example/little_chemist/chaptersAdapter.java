@@ -41,6 +41,12 @@ public class chaptersAdapter extends PagerAdapter {
             R.drawable.ch5_bg
     };
 
+    //TODO fix these locks
+
+    int [] locks;
+
+
+
     public int[] chapter_Lock={
 
             R.drawable.padlock,

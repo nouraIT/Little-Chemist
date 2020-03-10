@@ -153,17 +153,27 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Cursor cursor=db.rawQuery(query,null);
         int count=cursor.getCount();
 
+        String ch,ls,qz;
+        qz="1:unlocked,2:unlocked,3:unlocked,4:unlocked,5:unlocked,";
+        ch="1:unlocked,2:locked,3:locked,4:locked,5:locked,";
+        ls="1:unlocked,2:locked,3:locked,4:locked,5:locked,";
+
+        if(student.GetUserName().equals("admin")){
+            qz="1:unlocked,2:unlocked,3:unlocked,4:unlocked,5:unlocked,";
+            ch="1:unlocked,2:unlocked,3:unlocked,4:unlocked,5:unlocked,";
+            ls="1:unlocked,2:unlocked,3:unlocked,4:unlocked,5:unlocked,";
+        }
+
         student = new Student( (count+1), (student.GetTotalScore())
-                ,("1:unlocked,2:locked,3:locked,4:locked,5:locked,"),("1:unlocked,2:locked,3:locked,4:locked,5:locked,"),
-                ("1:unlocked,2:locked,3:locked,4:locked,5:locked,"),(student.GetUserName()),(student.GetPassword()),
+                ,(qz),(ch),(ls),(student.GetUserName()),(student.GetPassword()),
                 (student.GetSecQ()),(student.GetSecA()),(student.GetLang()) );
 
         ContentValues contentvalues=new ContentValues();
         contentvalues.put(FeedEntry.COLUMN_ID,count+1);
         contentvalues.put(FeedEntry.COLUMN_SCORE, student.GetTotalScore());
-        contentvalues.put(FeedEntry.COLUMN_QZLOCKS, "1:unlocked,2:unlocked,3:unlocked,4:unlocked,5:unlocked,");
-        contentvalues.put(FeedEntry.COLUMN_CHLOCKS, "1:unlocked,2:locked,3:locked,4:locked,5:locked,");
-        contentvalues.put(FeedEntry.COLUMN_LSNLOCKS, "1:unlocked,2:locked,3:locked,4:locked,5:locked,");
+        contentvalues.put(FeedEntry.COLUMN_QZLOCKS, qz);
+        contentvalues.put(FeedEntry.COLUMN_CHLOCKS, ch);
+        contentvalues.put(FeedEntry.COLUMN_LSNLOCKS, ls);
         contentvalues.put(FeedEntry.COLUMN_USERNAME, student.GetUserName());
         contentvalues.put(FeedEntry.COLUMN_PASSWORD, student.GetPassword());
         contentvalues.put(FeedEntry.COLUMN_SECQ, student.GetSecQ());

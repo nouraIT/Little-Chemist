@@ -3,17 +3,20 @@
     <item>
 
         <shape android:shape="rectangle">
+        <solid android:color="#F3868F"></solid>
+<!--         be7177
 
-            <gradient
-                android:angle="180"
-                android:endColor="#be7177"
-                android:startColor="#be7177">
-                <!--                android:startColor="#EB4A80"-->
 
-                <!--                android:endColor="#F44336"-->
+ <gradient-->
+<!--                android:angle="180"-->
+<!--                android:endColor="#be7177"-->
+<!--                android:startColor="#be7177">-->
+<!--                &lt;!&ndash;                android:startColor="#EB4A80"&ndash;&gt;-->
 
-<!--#AA2A34-->
-            </gradient>
+<!--                &lt;!&ndash;                android:endColor="#F44336"&ndash;&gt;-->
+
+<!--&lt;!&ndash;#AA2A34&ndash;&gt;-->
+<!--            </gradient>-->
             <corners android:radius="25dp"></corners>
 
         </shape>

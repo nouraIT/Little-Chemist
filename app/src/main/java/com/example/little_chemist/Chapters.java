@@ -17,6 +17,7 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.content.Intent;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -83,6 +84,36 @@ public class Chapters extends AppCompatActivity {
         mDots = findViewById(R.id.dots);
         mCardShower = findViewById(R.id.cardShower);
 
+        //=============================================
+
+//        int i ;
+//        CardView[] chptrs = {lsn1,lsn2,lsn3,lsn4,lsn5};
+//        ImageView[] locks = {findViewById(R.id.lockicon1) , findViewById(R.id.lockicon2), findViewById(R.id.lockicon3), findViewById(R.id.lockicon4), findViewById(R.id.lockicon5)};
+//
+//        for(i =0;i<5;i++){
+//
+//            statue = student.getLsnLock(String.valueOf(i+1));
+//            if(statue.equals("unlocked")) {
+//                lsns[i].setCardBackgroundColor(getResources().getColor((R.color.primaryYellow)));
+//                locks[i].setImageDrawable(getResources().getDrawable(R.drawable.padlock));
+////            lin.setBackgroundResource(R.drawable.unlocked_lsn);
+//            }
+//            else if(statue.equals("completed")) {
+//                lsns[i].setCardBackgroundColor((R.drawable.completed_lsn));
+//                //TODO change this to a check symbol
+//                locks[i].setImageDrawable(getResources().getDrawable(R.drawable.padlock));
+//            }
+//            else {
+//                lsns[i].setCardBackgroundColor(getResources().getColor((R.color.Locked)));
+//                locks[i].setImageDrawable(getResources().getDrawable(R.drawable.lock));
+//
+//            }
+//
+//        }
+
+
+
+        //=============================================
 
         adapter = new chaptersAdapter(this);
 
@@ -212,12 +243,13 @@ public class Chapters extends AppCompatActivity {
 
         mDotsText = new TextView[5] ;
         mDots.removeAllViews();
+//        mDots.setBackground(R.color.TransparentWhite);
 
         for(int i=0;i<mDotsText.length;i++){
             mDotsText[i] = new TextView(this) ;
             mDotsText[i].setText(Html.fromHtml("&#8226"));
             mDotsText[i].setTextSize(35);
-            mDotsText[i].setTextColor(getResources().getColor(R.color.TransparentWhite));
+            mDotsText[i].setTextColor(getResources().getColor(R.color.Locked));
 
             mDots.addView(mDotsText[i]);
 
@@ -251,23 +283,23 @@ public class Chapters extends AppCompatActivity {
 
         }else if(R.id.cardviewch3==card00.getId()){
             statue = student.getChLock("3");
-            if (statue.equals("unlocked") || statue.equals("completed") ) {
+           // if (statue.equals("unlocked") || statue.equals("completed") ) {
                 n = new Intent(Chapters.this, Ch3.class);
                 startActivity(n);
-            }
-            else
+           // }
+           // else
                 Toast.makeText(getApplicationContext(), "Locked", Toast.LENGTH_LONG).show();
 
-        }else if(R.id.cardviewch1==card00.getId()){
+        }else if(R.id.cardviewch4==card00.getId()){
             statue = student.getChLock("4");
-            if (statue.equals("unlocked") || statue.equals("completed") ) {
+            //if (statue.equals("unlocked") || statue.equals("completed") ) {
                 n = new Intent(Chapters.this, Ch4.class);
                 startActivity(n);
-            }else
+            //}else
                 Toast.makeText(getApplicationContext(), "Locked", Toast.LENGTH_LONG).show();
 
 
-        }else if(R.id.cardviewch1==card00.getId()){
+        }else if(R.id.cardviewch5==card00.getId()){
             statue = student.getChLock("5");
             if (statue.equals("unlocked") || statue.equals("completed") ) {
                 n = new Intent(Chapters.this, Ch5.class);
