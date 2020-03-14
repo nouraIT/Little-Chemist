@@ -1,0 +1,189 @@
+{
+  animations: [
+    {
+      clips: [
+        {
+          name: 'Base stack',
+        },
+      ],
+      path: 'sampledata/sodium.fbx',
+    },
+    {
+      clips: [
+        {
+          name: 'Base stack',
+        },
+      ],
+      path: 'sampledata/sodium.fbx',
+    },
+  ],
+  materials: [
+    {
+      name: 'd118be',
+      parameters: [
+        {
+          baseColor: [
+            0.819608,
+            0.094117999999999993,
+            0.74509800000000004,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: '378c19',
+      parameters: [
+        {
+          baseColor: [
+            0.21568599999999999,
+            0.54901999999999995,
+            0.098039000000000001,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'e2b411',
+      parameters: [
+        {
+          baseColor: [
+            0.88627500000000003,
+            0.70588200000000001,
+            0.066667000000000004,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'b0b0b0',
+      parameters: [
+        {
+          baseColor: [
+            0.69019600000000003,
+            0.69019600000000003,
+            0.69019600000000003,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'TexCoord',
+      'Orientation',
+      'BoneIndices',
+      'BoneWeights',
+    ],
+    collision: {},
+    file: 'sampledata/sodium.fbx',
+    name: 'sodium',
+    recenter: 'root',
+    scale: 0.066378000000000006,
+  },
+  version: '0.54:2',
+}

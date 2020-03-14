@@ -4,16 +4,12 @@
     package="com.example.little_chemist">
     <!-- "AR Required" apps must declare minSdkVersion ≥ 24 -->
     <uses-permission android:name="android.permission.CAMERA" /> <!-- Sceneform requires OpenGL ES 3.0 or later. -->
-
     <uses-feature
         android:glEsVersion="0x00030000"
         android:required="true" />
     <uses-feature
         android:name="android.hardware.camera.ar"
         android:required="true" />
-
-
-
 
     <application
         android:allowBackup="true"
@@ -22,7 +18,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".View_lesson.ex_multiple_choice"></activity>
+        <activity android:name=".ARCards"></activity>
+        <activity android:name=".View_lesson.ex_multiple_choice" />
         <activity android:name=".View_lesson.slideAdapter" />
         <activity android:name=".View_lesson.Lessons" />
         <activity android:name=".View_lesson.lab" />
@@ -54,8 +51,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
         <!--
  Indicates that the app requires ARCore ("AR Required"). Causes the Google
          Play Store to download and install Google Play Services for AR when the
@@ -67,8 +62,6 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
-
-
     </application>
 
 </manifest>

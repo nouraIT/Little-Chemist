@@ -148,4 +148,12 @@
     <!-- _______________ Arrays  _______________ -->
 
 
+    <!-- _______________ AR MSGs  _______________ -->
+    <string name="scan" >Scan The Card!</string>
+    <string name="tryAgain" >Try Again!</string>
+    <string name="problem" >If You Could Not Find It Please Press Reset</string>
+    <string name="Look" >A wild Atom Has Appeared! Look For It!</string>
+    <string name="reset">Reset</string>
+
+
 </resources>

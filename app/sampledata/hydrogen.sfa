@@ -1,0 +1,154 @@
+{
+  animations: [
+    {
+      path: 'sampledata/hydrogen.fbx',
+    },
+    {
+      path: 'sampledata/hydrogen.fbx',
+    },
+  ],
+  materials: [
+    {
+      name: 'Material_56',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: '150',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Material_35',
+      parameters: [
+        {
+          baseColor: [
+            0.91764699999999999,
+            0.105882,
+            0.105882,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Material_36',
+      parameters: [
+        {
+          baseColor: [
+            0.12548999999999999,
+            0.109804,
+            0.87843099999999996,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'Color',
+      'TexCoord',
+      'Orientation',
+      'BoneIndices',
+      'BoneWeights',
+    ],
+    collision: {},
+    file: 'sampledata/hydrogen.fbx',
+    name: 'hydrogen',
+    recenter: 'root',
+    scale: 28.521187000000001,
+  },
+  samplers: [
+    {
+      file: 'sampledata\\hydrogen.fbm\\150.png',
+      name: '150',
+      pipeline_name: 'hydrogen.fbm\\150.png',
+    },
+    {
+      file: 'sampledata\\hydrogen.fbm\\154.png',
+      name: '154',
+      pipeline_name: 'hydrogen.fbm\\154.png',
+    },
+  ],
+  version: '0.54:2',
+}

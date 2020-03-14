@@ -5,6 +5,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
 
 
+import com.example.little_chemist.ARCards;
 import com.example.little_chemist.Chapters;
 import com.example.little_chemist.DatabaseHelper;
 import com.example.little_chemist.R;
@@ -161,8 +162,15 @@ public class Ch5 extends AppCompatActivity {
 
         lsn1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                Intent n = new Intent(Ch5.this, Ch1.class);
+                Thread thread = new Thread(new Runnable(){
+
+                    public void run(){
+
+                Intent n = new Intent(Ch5.this, ARCards.class);
                 startActivity(n);
+                    }
+                });
+                thread.start();
               //  finish();
             }
         });
@@ -172,9 +180,14 @@ public class Ch5 extends AppCompatActivity {
             public void onClick(View v) {
                 statue = student.getLsnLock("2");
                 if (statue.equals("unlocked") || statue.equals("completed") ) {
+                    Thread thread = new Thread(new Runnable(){
 
-                    Intent n = new Intent(Ch5.this, Ch1.class);
+                        public void run(){
+                    Intent n = new Intent(Ch5.this, ARCards.class);
                 startActivity(n);
+                        }
+                    });
+                    thread.start();
                 } else
                     Toast.makeText(getApplicationContext(), "Locked", Toast.LENGTH_LONG).show();
             }
@@ -184,9 +197,14 @@ public class Ch5 extends AppCompatActivity {
             public void onClick(View view) {
                 statue = student.getLsnLock("3");
                 if (statue.equals("unlocked") || statue.equals("completed") ) {
+                    Thread thread = new Thread(new Runnable(){
 
-                    Intent n = new Intent(Ch5.this, Ch1.class);
+                        public void run(){
+                    Intent n = new Intent(Ch5.this, ARCards.class);
                 startActivity(n);
+                        }
+                    });
+                    thread.start();
                 }else
                     Toast.makeText(getApplicationContext(), "Locked", Toast.LENGTH_LONG).show();
             }
@@ -196,8 +214,14 @@ public class Ch5 extends AppCompatActivity {
             public void onClick(View view) {
                 statue = student.getLsnLock("4");
                 if (statue.equals("unlocked") || statue.equals("completed") ) {
-                    Intent n = new Intent(Ch5.this, Ch1.class);
+                    Thread thread = new Thread(new Runnable(){
+
+                        public void run(){
+                    Intent n = new Intent(Ch5.this, ARCards.class);
                 startActivity(n);
+                        }
+                    });
+                    thread.start();
                 }else
                     Toast.makeText(getApplicationContext(), "Locked", Toast.LENGTH_LONG).show();
             }
@@ -207,9 +231,14 @@ public class Ch5 extends AppCompatActivity {
             public void onClick(View view) {
                 statue = student.getLsnLock("5");
                 if (statue.equals("unlocked") || statue.equals("completed") ) {
+                    Thread thread = new Thread(new Runnable(){
 
-                    Intent n = new Intent(Ch5.this, Ch1.class);
+                        public void run(){
+                    Intent n = new Intent(Ch5.this, ARCards.class);
                 startActivity(n);
+                        }
+                    });
+                    thread.start();
                 }else
                     Toast.makeText(getApplicationContext(), "Locked", Toast.LENGTH_LONG).show();
             }
