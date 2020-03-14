@@ -156,12 +156,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String ch,ls,qz;
         qz="1:unlocked,2:unlocked,3:unlocked,4:unlocked,5:unlocked,";
         ch="1:unlocked,2:locked,3:locked,4:locked,5:locked,";
-        ls="1:unlocked,2:locked,3:locked,4:locked,5:locked,";
+        ls="1:unlocked,2:locked,3:locked,4:locked,5:locked,6:locked,7:locked,8:locked,9:locked,10:locked," +
+                "11:locked,12:locked,13:locked,14:locked,15:locked,16:locked,17:locked,18:locked,19:locked,20:locked," +
+                "21:locked,22:locked,23:locked,24:locked,25:locked,";;
 
-        if(student.GetUserName().equals("admin")){
-            qz="1:unlocked,2:unlocked,3:unlocked,4:unlocked,5:unlocked,";
-            ch="1:unlocked,2:unlocked,3:unlocked,4:unlocked,5:unlocked,";
-            ls="1:unlocked,2:unlocked,3:unlocked,4:unlocked,5:unlocked,";
+        if(student.GetUserName().equals("admin") ||student.GetUserName().equals("Admin") ){
+            qz="1:completed,2:unlocked,3:unlocked,4:unlocked,5:unlocked,";
+            ch="1:completed,2:unlocked,3:unlocked,4:unlocked,5:unlocked,";
+            ls="1:completed,2:unlocked,3:unlocked,4:unlocked,5:unlocked,6:ununlocked,7:unlocked,8:unlocked,9:unlocked,10:unlocked," +
+                    "11:unlocked,12:unlocked,13:unlocked,14:unlocked,15:unlocked,16:unlocked,17:unlocked,18:unlocked,19:unlocked,20:unlocked," +
+                    "21:unlocked,22:unlocked,23:unlocked,24:unlocked,25:unlocked,";;
         }
 
         student = new Student( (count+1), (student.GetTotalScore())

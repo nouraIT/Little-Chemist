@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/scrol"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:background="@drawable/signup_bg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background1"
     tools:context=".SignUp">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraint"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/username2"
@@ -22,11 +27,10 @@
 
             android:layout_marginStart="24dp"
 
-            android:layout_marginTop="236dp"
+            android:layout_marginTop="180dp"
             android:layout_marginEnd="24dp"
-            android:textColorHint="@color/white"
+            android:textColorHint="@color/darkpruple"
 
-            android:theme="@style/TextLabel"
 
             app:errorEnabled="true"
             app:errorTextAppearance="@style/error_appearance"
@@ -41,11 +45,12 @@
                 android:layout_width="245dp"
                 android:layout_height="40dp"
 
-
                 android:autofillHints="true"
+
                 android:hint="@string/prompt_username"
                 android:inputType="textPersonName"
                 android:selectAllOnFocus="true"
+                android:textColor="@color/purple"
                 android:textSize="16sp"
 
 
@@ -66,8 +71,7 @@
 
             android:layout_marginEnd="24dp"
             android:layout_marginRight="24dp"
-            android:textColorHint="@color/white"
-            android:theme="@style/TextLabel2"
+            android:textColorHint="@color/darkpruple"
 
             app:errorEnabled="true"
 
@@ -84,12 +88,13 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="245dp"
                 android:layout_height="40dp"
-
-
                 android:hint="@string/prompt_password"
+
+
                 android:importantForAutofill="no"
                 android:inputType="textPassword"
                 android:selectAllOnFocus="true"
+                android:textColor="@color/purple"
                 android:textSize="16sp"
 
                 android:visibility="visible" />
@@ -105,8 +110,7 @@
             android:layout_marginStart="24dp"
             android:layout_marginEnd="24dp"
 
-            android:textColorHint="@color/white"
-            android:theme="@style/TextLabel2"
+            android:textColorHint="@color/darkpruple"
 
             app:errorEnabled="true"
             app:errorTextAppearance="@style/error_appearance"
@@ -127,9 +131,10 @@
                 android:importantForAutofill="no"
                 android:inputType="textPassword"
                 android:selectAllOnFocus="true"
+                android:textColor="@color/purple"
 
 
-                android:textSize="14sp"
+                android:textSize="16sp"
                 android:visibility="visible" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -144,11 +149,13 @@
 
             android:entries="@array/SecurityQs"
 
+
             app:layout_constraintBottom_toTopOf="@+id/securityA"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.476"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/password22" tools:targetApi="q"/>
+            app:layout_constraintTop_toBottomOf="@+id/password22"
+            tools:targetApi="q" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/securityA"
@@ -163,8 +170,7 @@
             android:layout_marginEnd="59dp"
             android:layout_marginRight="59dp"
 
-            android:textColorHint="@color/white"
-            android:theme="@style/TextLabel"
+            android:textColorHint="@color/darkpruple"
 
             app:errorEnabled="true"
             app:errorTextAppearance="@style/error_appearance"
@@ -182,8 +188,10 @@
                 android:importantForAutofill="no"
                 android:inputType="text"
                 android:selectAllOnFocus="true"
+                android:textColor="@color/purple"
                 android:textSize="16sp"
                 android:visibility="visible"
+
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/security_questions" />
@@ -198,16 +206,16 @@
             android:layout_marginBottom="24dp"
             android:background="@drawable/circle_btn"
             android:text="@string/sign_up_button"
+            android:textColor="@color/darkpruple"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/securityA"
-            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintVertical_bias="0.75"
             tools:layout_conversion_absoluteHeight="48dp"
             tools:layout_conversion_absoluteWidth="411dp" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
 

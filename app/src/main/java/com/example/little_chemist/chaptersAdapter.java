@@ -74,23 +74,8 @@ public class chaptersAdapter extends PagerAdapter {
                 chapter_Lock[i] = R.drawable.padlock; //TODO check symbol
         }
 
-
-//        locks;
-
     }
 
-
-    //String n = context.getResources().getString(R.string.chapter_1);
-    //    = context.getResources().getStringArray(R.array.chapter_names);
-
-//    public int[] chapter_Lock={
-//
-//            R.drawable.padlock,
-//            R.drawable.lock,
-//            R.drawable.lock,
-//            R.drawable.lock,
-//            R.drawable.lock,
-//    };
 
 
 

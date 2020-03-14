@@ -37,6 +37,7 @@ public class Home extends AppCompatActivity {
     public static boolean alreadyRecreated = false;
     public static boolean AlreadyGreeted = false;
     static Student student = new Student();
+
 //TODO *Add reset button to lab
 
     @Override
@@ -143,8 +144,11 @@ public class Home extends AppCompatActivity {
                 Thread thread = new Thread(new Runnable(){
                     @Override
                     public void run(){
-                Intent n = new Intent(Home.this, Quiz_score.class);
-                startActivity(n);
+                        Intent n = new Intent(Home.this, Quiz_score.class);
+//                        n.putExtra("anim id in", R.anim.down_in);
+//                        n.putExtra("anim id out", R.anim.down_out);
+                        startActivity(n);
+//                        overridePendingTransition(R.anim.up_in, R.anim.up_out);
                     }
                 });
                 thread.start();
@@ -153,11 +157,43 @@ public class Home extends AppCompatActivity {
 
         PieChart mPieChart = (PieChart) findViewById(R.id.piechart);
 
-        mPieChart.addPieSlice(new PieModel(getString(R.string.Ch1Name), 15, Color.parseColor("#F5545C")));
-        mPieChart.addPieSlice(new PieModel(getString(R.string.Ch2Name), 25, Color.parseColor("#56B7F1")));
-        mPieChart.addPieSlice(new PieModel(getString(R.string.Ch3Name), 35, Color.parseColor("#CDA67F")));
-        mPieChart.addPieSlice(new PieModel(getString(R.string.Ch4Name), 9, Color.parseColor("#FED70E")));
-        mPieChart.addPieSlice(new PieModel(getString(R.string.Ch5Name), 9, Color.parseColor("#98db81")));
+
+        String progress = student.getProgress();
+        //"1:0,2:0,3:0,4:0,5:0,"
+        int []chvalue = new int[5];
+
+//        System.out.println(progress);
+
+        for(int i =0;i<5;i++){
+
+            int startIndex = progress.indexOf("c"+String.valueOf(i+1));
+            int endIndex = progress.indexOf(",",startIndex);
+
+//            System.out.println(startIndex+" and "+endIndex);
+
+            chvalue[i] = Integer.parseInt( progress.substring(startIndex + 3 , endIndex ));
+
+
+            if(chvalue[i] == 0) {
+                chvalue[i] = 1;
+//                System.out.println(i+" "+chvalue[i]);
+
+            }
+
+        }
+
+
+        mPieChart.addPieSlice(new PieModel(getString(R.string.Ch1Name), chvalue[0], Color.parseColor("#ff0099cc") ));
+        mPieChart.addPieSlice(new PieModel(getString(R.string.Ch2Name), chvalue[1], Color.parseColor("#ff99cc00") ));
+        mPieChart.addPieSlice(new PieModel(getString(R.string.Ch3Name), chvalue[2], Color.parseColor("#F3CB4E") ));
+        mPieChart.addPieSlice(new PieModel(getString(R.string.Ch4Name), chvalue[3], Color.parseColor("#E36F3A")  ));
+        mPieChart.addPieSlice(new PieModel(getString(R.string.Ch5Name), chvalue[4], Color.parseColor("#DF3241") ));
+
+//        mPieChart.addPieSlice(new PieModel(getString(R.string.Ch1Name), chvalue[0], (R.color.cpb_blue) ));
+//        mPieChart.addPieSlice(new PieModel(getString(R.string.Ch2Name), chvalue[1], (R.color.cpb_green) ));
+//        mPieChart.addPieSlice(new PieModel(getString(R.string.Ch3Name), chvalue[2], (R.color.primaryYellow) ));
+//        mPieChart.addPieSlice(new PieModel(getString(R.string.Ch4Name), chvalue[3], (R.color.OrangeText) ));
+//        mPieChart.addPieSlice(new PieModel(getString(R.string.Ch5Name), chvalue[4], (R.color.cpb_red) ));
 
 
         mPieChart.startAnimation();

@@ -3,6 +3,7 @@ package com.example.little_chemist;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Context;
@@ -39,6 +40,7 @@ public class Chapters extends AppCompatActivity {
     private LinearLayout mDots ;
     private int mCurrent ;
     LayoutInflater layoutInflater;
+    ConstraintLayout cl;
 
     private TextView[] mDotsText ;
     private com.example.little_chemist.chaptersAdapter adapter ;
@@ -61,17 +63,6 @@ public class Chapters extends AppCompatActivity {
         String name = pref.getString("username", null); // getting String
         student = helper.getStudent(name);
 
-//        final int layoutDirection = getLayoutDirection();
-//        final int absoluteGravity =
-//                Gravity.getAbsoluteGravity(gravity, layoutDirection);
-//        switch (absoluteGravity & Gravity.HORIZONTAL_GRAVITY_MASK) {
-//            case Gravity.LEFT:
-//                // Handle objects that are left-aligned.
-//                break;
-//            case Gravity.RIGHT:
-//                // Handle objects that are right-aligned.
-//                break;
-//        }
 
         Context con = Chapters.this;
         //ViewGroup container = (ViewGroup) new View(con);
@@ -80,36 +71,10 @@ public class Chapters extends AppCompatActivity {
         View view = layoutInflater.inflate(R.layout.chapters_slider, null, false);
 
         card00 = view.findViewById(R.id.cardviewch1);
+//        cl = view.findViewById(R.id.clslider);
         mSlidsView = findViewById(R.id.chaptersSlidePage);
         mDots = findViewById(R.id.dots);
         mCardShower = findViewById(R.id.cardShower);
-
-        //=============================================
-
-//        int i ;
-//        CardView[] chptrs = {lsn1,lsn2,lsn3,lsn4,lsn5};
-//        ImageView[] locks = {findViewById(R.id.lockicon1) , findViewById(R.id.lockicon2), findViewById(R.id.lockicon3), findViewById(R.id.lockicon4), findViewById(R.id.lockicon5)};
-//
-//        for(i =0;i<5;i++){
-//
-//            statue = student.getLsnLock(String.valueOf(i+1));
-//            if(statue.equals("unlocked")) {
-//                lsns[i].setCardBackgroundColor(getResources().getColor((R.color.primaryYellow)));
-//                locks[i].setImageDrawable(getResources().getDrawable(R.drawable.padlock));
-////            lin.setBackgroundResource(R.drawable.unlocked_lsn);
-//            }
-//            else if(statue.equals("completed")) {
-//                lsns[i].setCardBackgroundColor((R.drawable.completed_lsn));
-//                //TODO change this to a check symbol
-//                locks[i].setImageDrawable(getResources().getDrawable(R.drawable.padlock));
-//            }
-//            else {
-//                lsns[i].setCardBackgroundColor(getResources().getColor((R.color.Locked)));
-//                locks[i].setImageDrawable(getResources().getDrawable(R.drawable.lock));
-//
-//            }
-//
-//        }
 
 
 
@@ -118,6 +83,15 @@ public class Chapters extends AppCompatActivity {
         adapter = new chaptersAdapter(this);
 
         mSlidsView.setAdapter(adapter);
+//        mSlidsView.setRotationY(540);
+
+//        if(student.GetLang() == 1) {
+////            mSlidsView.setRotationY(180);
+//
+//            mSlidsView.setRotationY(180);
+//            cl.setRotationY(180);
+//
+//        }
 
         addDotsIndicator(0);
 
@@ -138,75 +112,28 @@ public class Chapters extends AppCompatActivity {
             }
         });
 
-
-
-
-
-
     }//on create
 
-//        card00.setOnClickListener(new View.OnClickListener() {
-//            public void onClick(View view) {
-//            Intent n = new Intent(Chapters.this, Ch1.class);
-//            startActivity(n);
-//            // finish();
-//            }
-//            });
-//
-//
-//        card00.setOnClickListener(new View.OnClickListener(){
-//        public void onClick(View v) {
-//                Intent n = new Intent(Chapters.this, Ch2.class);
-//                startActivity(n);
-//                // finish();
-//                }
-//                });
-//
-//
-//        card00.setOnClickListener(new View.OnClickListener() {
-//        public void onClick(View view) {
-//                Intent n = new Intent(Chapters.this, Ch3.class);
-//                startActivity(n);
-//                // finish();
-//                }
-//                });
-//
-//
-//        card00.setOnClickListener(new View.OnClickListener() {
-//        public void onClick(View view) {
-//                Intent n = new Intent(Chapters.this, Ch4.class);
-//                startActivity(n);
-//                //  finish();
-//                }
-//                });
-//
-//
-//        card00.setOnClickListener(new View.OnClickListener() {
-//        public void onClick(View view) {
-//                Intent n = new Intent(Chapters.this, Ch5.class);
-//                startActivity(n);
-//                // finish();
-//                }
-//                });
 
 
-//mSlidsView
-/*
 
- */
 
     ViewPager.OnPageChangeListener viewListener = new ViewPager.OnPageChangeListener(){
+
         @Override
         public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+//            if(student.GetLang() == 1)
+//                cl.setRotationY(180);
 
         }
 
         @Override
         public void onPageSelected(int position) {
 
+
             addDotsIndicator(position);
             mCurrent = position ;
-            System.out.println(position);
+//            System.out.println(position);
             switch(position){
                 case 0:
                     card00.setId(R.id.cardviewch1);
@@ -240,6 +167,7 @@ public class Chapters extends AppCompatActivity {
     };
 
     public void addDotsIndicator(int position ){
+
 
         mDotsText = new TextView[5] ;
         mDots.removeAllViews();
@@ -311,6 +239,11 @@ public class Chapters extends AppCompatActivity {
 //        else{
 //            n = new Intent(Chapters.this, Chapters.class);
 //        }
+
+
+    }
+
+    public void dirc (View v){
 
 
     }

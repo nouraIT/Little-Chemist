@@ -21,7 +21,9 @@ public class Student implements Serializable {
         Arabic = arabic;
         QZLocks = "1:unlocked,2:unlocked,3:unlocked,4:unlocked,5:unlocked,";
         CHLocks ="1:unlocked,2:locked,3:locked,4:locked,5:locked,";
-        LSNLocks ="1:unlocked,2:locked,3:locked,4:locked,5:locked,";
+        LSNLocks ="1:unlocked,2:locked,3:locked,4:locked,5:locked,6:locked,7:locked,8:locked,9:locked,10:locked," +
+                "11:locked,12:locked,13:locked,14:locked,15:locked,16:locked,17:locked,18:locked,19:locked,20:locked," +
+                "21:locked,22:locked,23:locked,24:locked,25:locked,";
     }
     public Student(int id,int score,String QL,String CHl,String LL,String username,String Pass,String SQ,String SA,int lang) {
         this.Id=id;
@@ -119,7 +121,7 @@ public class Student implements Serializable {
 
     public int GetLang(){
 
-        return Arabic;
+        return Arabic; //1 means arabic
     }
 //
 //    public void viewScore(){
@@ -140,16 +142,19 @@ public class Student implements Serializable {
 //    }
 
     public String getLsnLock(String num){
+
+        //TODO fix this, this doesn't tell us which lsn belong to which chapter
+
         //completed
 //        LSNLocks ="1:unlocked,2:locked,3:locked,4:locked,5:locked";
 
-        System.out.println(LSNLocks+ " " );
+//        System.out.println(LSNLocks+ " " );
 
 
         int lsnIndex = LSNLocks.indexOf(num);
         int endIndex = LSNLocks.indexOf(",",lsnIndex);
 
-        System.out.println(lsnIndex+ " " + endIndex);
+//        System.out.println(lsnIndex+ " " + endIndex);
 
         String statue = LSNLocks.substring(lsnIndex+2,endIndex);
 //        if(statue!=null)
@@ -165,7 +170,7 @@ public class Student implements Serializable {
         int lsnIndex = CHLocks.indexOf(num);
         int endIndex = CHLocks.indexOf(",",lsnIndex);
 
-        System.out.println(lsnIndex+ " " + endIndex);
+//        System.out.println(lsnIndex+ " " + endIndex);
 
         String statue = CHLocks.substring(lsnIndex+2,endIndex);
 //        if(statue!=null)
@@ -183,12 +188,56 @@ public class Student implements Serializable {
         int lsnIndex = QZLocks.indexOf(num);
         int endIndex = QZLocks.indexOf(",",lsnIndex);
 
-        System.out.println(lsnIndex+ " " + endIndex);
+//        System.out.println(lsnIndex+ " " + endIndex);
 
         String statue = QZLocks.substring(lsnIndex+2,endIndex);
 
         return statue;
 
+    }
+
+    public String getProgress() {
+
+        //these are chapters
+        String progress ;//= "c1:0,c2:0,c3:0,c4:0,c5:0,";
+        int ch[] = new int[5];
+
+        int lsnPro[] = new int[25];
+        int qzPro[] =new int [5];
+
+        int chpaterCounter=0;
+        int chapterNumber=0;
+
+        //there are 25 lesson, 5 lessons for each chapter
+        for(int i =0;i<25;i++){
+
+            //count each completed lesson with 1 point
+            if(getLsnLock(String.valueOf(i+1)).equals("completed")){
+                lsnPro[i]++;
+            }
+            chpaterCounter++;
+//            System.out.println("i is "+i);
+            if(chpaterCounter==5) {
+//                System.out.println("i is "+i+" the rest is "+lsnPro[i]+" "+lsnPro[i-4]+" "+lsnPro[i-3]+" "+lsnPro[i-2]+" "+lsnPro[i-1]);
+                ch[chapterNumber++]= lsnPro[i]+lsnPro[i-4]+lsnPro[i-3]+lsnPro[i-2]+lsnPro[i-1] ;
+                chpaterCounter=0;
+            }
+        }
+
+
+        chapterNumber=0;
+        //there 5 quizzes, one in each chapter
+        for(int i =0;i<5;i++){
+            if(getQzLock(String.valueOf(i+1)).equals("completed")){
+                qzPro[i]+=5;
+                ch[chapterNumber++]= qzPro[i] ;
+
+            }
+        }
+        //"1:0,2:0,3:0,4:0,5:0,"
+        progress = "c1:"+ch[0]+",c2:"+ch[1]+",c3:"+ch[2]+",c4:"+ch[3]+",c5:"+ch[4]+",";
+
+        return progress;
     }
 
    /* public boolean LogIn(String Username, String Password){

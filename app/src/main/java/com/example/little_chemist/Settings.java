@@ -62,16 +62,7 @@ public class Settings extends AppCompatActivity {
         //setSupportActionBar(toolbar);
         //final String UserNameStr= getIntent().getStringExtra("UserName");
         Student student = (Student) getIntent().getSerializableExtra("student");
-//        DatabaseHelper loginData;
 //
-//        loginData=new DatabaseHelper(this);
-//        try {
-//            loginData=loginData.open();
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
-
-
 
         pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
         editor = pref.edit();

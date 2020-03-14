@@ -122,6 +122,8 @@
         android:layout_height="470dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="6dp"
+        android:layout_marginStart="6dp"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -130,19 +132,23 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView"
-            android:layout_width="wrap_content"
+            android:layout_width="300dp"
             android:layout_height="91dp"
 
             android:layout_centerHorizontal="true"
             android:layout_marginTop="27dp"
             android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+
             android:alpha="0.9"
-            app:cardBackgroundColor="@color/white">
+            app:cardBackgroundColor="@color/white"
+            >
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
+                android:elevation="4dp"
                 android:weightSum="3">
 
                 <TextView
@@ -150,9 +156,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
-                    android:layout_marginStart="8dp"
+                    android:layout_marginStart="16dp"
                     android:layout_marginTop="17dp"
-                    android:layout_marginEnd="16dp"
+                    android:layout_marginEnd="8dp"
 
                     android:elevation="9dp"
                     android:fontFamily="@font/aref_menna"
@@ -171,12 +177,13 @@
 
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="17dp"
-                    android:layout_marginEnd="16dp"
+                    android:layout_marginEnd="8dp"
 
                     android:background="@drawable/circle_btn_empty"
                     android:backgroundTint="#00FFFFFF"
                     android:text="English"
-                    android:textColor="@color/colorAccent" />
+                    android:textColor="@color/colorAccent"
+                    tools:ignore="HardcodedText" />
 
                 <Button
                     android:id="@+id/arBtn"
@@ -185,12 +192,13 @@
 
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="17dp"
-                    android:layout_marginEnd="16dp"
+                    android:layout_marginEnd="8dp"
 
                     android:background="@drawable/circle_btn_empty"
                     android:backgroundTint="#00BDB6B6"
                     android:fontFamily="@font/aref_menna"
                     android:text="العربية"
+                    tools:ignore="HardcodedText"
                     android:textColor="@color/colorAccent"
                     android:textSize="20sp" />
 

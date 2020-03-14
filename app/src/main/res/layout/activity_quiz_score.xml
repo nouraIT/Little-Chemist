@@ -32,15 +32,17 @@
 
     </androidx.appcompat.widget.Toolbar>
 
+
     <com.daimajia.numberprogressbar.NumberProgressBar
         android:id="@+id/numberbar3"
         style="@style/NumberProgressBar_Relax_Blue"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
+
         android:layout_marginStart="20dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginBottom="71dp"
+        android:layout_marginBottom="20dp"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -48,18 +50,19 @@
         app:layout_constraintTop_toBottomOf="@+id/numberbar2"
         app:progress_current="9"
         app:progress_reached_bar_height="6dp"
-        app:progress_reached_color="#98db81"
-        app:progress_text_color="#98db81" />
+        app:progress_reached_color="@color/cpb_red"
+        app:progress_text_color="@color/cpb_red" />
 
     <com.daimajia.numberprogressbar.NumberProgressBar
         android:id="@+id/numberbar2"
         style="@style/NumberProgressBar_Relax_Blue"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
+
         android:layout_marginStart="20dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="5dp"
+
         app:layout_constraintBottom_toTopOf="@+id/numberbar3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -67,63 +70,158 @@
         app:layout_constraintTop_toBottomOf="@+id/numberbar4"
         app:progress_current="9"
         app:progress_reached_bar_height="6dp"
-        app:progress_reached_color="#FED70E"
-        app:progress_text_color="#FED70E" />
+        app:progress_reached_color="@color/OrangeText"
+        app:progress_text_color="@color/OrangeText" />
 
     <com.daimajia.numberprogressbar.NumberProgressBar
         android:id="@+id/numberbar4"
         style="@style/NumberProgressBar_Relax_Blue"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
+
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginBottom="21dp"
+        android:layout_marginBottom="5dp"
+
         app:layout_constraintBottom_toTopOf="@+id/numberbar2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/numberbar5"
         app:progress_current="35"
         app:progress_reached_bar_height="6dp"
-        app:progress_reached_color="#CDA67F"
-        app:progress_text_color="#CDA67F" />
+        app:progress_reached_color="@color/primaryYellow"
+        app:progress_text_color="@color/primaryYellow" />
+
 
     <com.daimajia.numberprogressbar.NumberProgressBar
         android:id="@+id/numberbar5"
         style="@style/NumberProgressBar_Relax_Blue"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
+
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="5dp"
+
         app:layout_constraintBottom_toTopOf="@+id/numberbar4"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/numberbar6"
-        app:progress_current="25"
+
         app:progress_reached_bar_height="6dp"
-        app:progress_reached_color="#56B7F1"
-        app:progress_text_color="#56B7F1" />
+        app:progress_reached_color="@color/cpb_green"
+        app:progress_text_color="@color/cpb_green" />
 
     <com.daimajia.numberprogressbar.NumberProgressBar
         android:id="@+id/numberbar6"
         style="@style/NumberProgressBar_Relax_Blue"
-        android:layout_height="10dp"
-        android:layout_margin="20dp"
+        android:layout_height="wrap_content"
+
         android:layout_marginStart="20dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginBottom="29dp"
+        android:layout_marginBottom="5dp"
+
         app:layout_constraintBottom_toTopOf="@+id/numberbar5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/piechart"
-        app:progress_current="15"
-        app:progress_reached_bar_height="6dp"
-        app:progress_reached_color="#F5545C"
-        app:progress_text_color="#F5545C"
+
+
+        app:progress_reached_bar_height="7dp"
+        app:progress_reached_color="@color/cpb_blue"
+        app:progress_text_color="@color/cpb_blue"
         app:progress_text_visibility="visible" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp"
+
+        android:fontFamily="@font/east_djakarta"
+        android:text="@string/Ch1Name"
+        android:textColor="@color/cpb_blue"
+        android:textSize="12sp"
+
+        app:layout_constraintBottom_toTopOf="@+id/numberbar6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/piechart"
+        app:layout_constraintVertical_bias="0.0"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp"
+
+        android:fontFamily="@font/east_djakarta"
+
+        android:text="@string/Ch2Name"
+        android:textColor="@color/cpb_green"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/numberbar5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/numberbar6" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+
+
+        android:fontFamily="@font/east_djakarta"
+        android:text="@string/Ch3Name"
+        android:textColor="#F8C765"
+
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/numberbar4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/numberbar5" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+
+        android:fontFamily="@font/east_djakarta"
+
+        android:text="@string/Ch4Name"
+        android:textColor="@color/OrangeText"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/numberbar2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/numberbar4" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+
+        android:fontFamily="@font/east_djakarta"
+
+        android:text="@string/Ch5Name"
+        android:textColor="@color/cpb_red"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/numberbar3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/numberbar2" />
 
     <org.eazegraph.lib.charts.PieChart
         android:id="@+id/piechart"

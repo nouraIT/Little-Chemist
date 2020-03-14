@@ -63,10 +63,11 @@ public class Lessons extends AppCompatActivity {
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
+
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent Homepage = new Intent(Lessons.this, slideAdapter.class);
+                Intent Homepage = new Intent(Lessons.this, Ch1.class);
                 startActivity(Homepage);
                 finish();
             }

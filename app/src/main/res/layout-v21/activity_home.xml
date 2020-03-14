@@ -8,39 +8,13 @@
     tools:context=".Home"
 
     >
-<!--    android:background="@drawable/sand_bg"-->
-<!--    android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen" -->
-
-<!--    <pl.droidsonroids.gif.GifImageView-->
-<!--        android:id="@+id/gif"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:layout_marginStart="25dp"-->
-<!--        android:layout_marginLeft="25dp"-->
-<!--        android:layout_marginEnd="19dp"-->
-<!--        android:layout_marginRight="19dp"-->
-<!--        android:background="@color/white"-->
-<!--        android:src="@drawable/bubbles"-->
-<!--        app:layout_constraintBottom_toBottomOf="@+id/imageView"-->
-<!--        app:layout_constraintEnd_toEndOf="@+id/imageView"-->
-<!--        app:layout_constraintHorizontal_bias="0.625"-->
-<!--        app:layout_constraintStart_toStartOf="@+id/imageView"-->
-<!--        app:layout_constraintTop_toTopOf="@+id/imageView"-->
-<!--        app:layout_constraintVertical_bias="0.507" />-->
-
-<!--    <pl.droidsonroids.gif.GifImageView-->
-<!--        android:id="@+id/gif"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:background="@color/white"-->
-<!--        android:src="@drawable/bubbles"-->
-<!--        app:layout_constraintVertical_bias="0.507" />-->
 
     <androidx.cardview.widget.CardView
         android:layout_width="330dp"
         android:layout_height="470dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="6dp"
+        android:layout_marginStart="6dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -50,62 +24,7 @@
         <!--  [purple 4a47a7 ] blue >>> 008DFF Orange >> E06E4A    white E4F3F1F1-->
 
 
-        <!--        <androidx.cardview.widget.CardView-->
-        <!--            android:id="@+id/cardviewchapters"-->
-        <!--            android:layout_width="298dp"-->
-        <!--            android:layout_height="134dp"-->
 
-        <!--            android:layout_marginLeft="40dp"-->
-        <!--            android:layout_marginTop="50dp"-->
-        <!--            android:layout_marginBottom="192dp"-->
-        <!--            app:cardBackgroundColor="#4a47a7"-->
-        <!--            app:cardCornerRadius="20dp"-->
-
-        <!--            app:layout_constraintBottom_toBottomOf="parent"-->
-        <!--            app:layout_constraintEnd_toEndOf="parent"-->
-        <!--            app:layout_constraintHorizontal_bias="0.496"-->
-        <!--            app:layout_constraintStart_toStartOf="parent"-->
-        <!--            app:layout_constraintTop_toBottomOf="@+id/logoHome"-->
-        <!--            app:layout_constraintVertical_bias="0.24">-->
-
-        <!--            <TextView-->
-        <!--                android:layout_width="wrap_content"-->
-        <!--                android:layout_height="wrap_content"-->
-        <!--                android:layout_gravity="center_horizontal"-->
-        <!--                android:layout_marginTop="10dp"-->
-        <!--                android:elevation="2dp"-->
-        <!--                android:text="@string/little_chemist"-->
-        <!--                android:textColor="@color/white"-->
-        <!--                android:textSize="25sp" />-->
-
-
-        <!--            <ProgressBar-->
-        <!--                android:id="@+id/content_pro"-->
-        <!--                style="@style/Widget.AppCompat.ProgressBar.Horizontal"-->
-        <!--                android:layout_width="220dp"-->
-        <!--                android:layout_height="72dp"-->
-
-        <!--                android:layout_gravity="start"-->
-
-        <!--                android:layout_marginStart="15dp"-->
-        <!--                android:layout_marginTop="35dp"-->
-        <!--                android:progress="40" />-->
-
-        <!--            <ImageView-->
-        <!--                android:id="@+id/progressIcon"-->
-        <!--                android:layout_width="53dp"-->
-        <!--                android:layout_height="64dp"-->
-
-        <!--                android:layout_gravity="end"-->
-
-        <!--                android:layout_marginTop="30dp"-->
-        <!--                android:layout_marginEnd="5dp"-->
-
-        <!--                android:contentDescription="@string/progressBar"-->
-        <!--                android:src="@drawable/testtube" />-->
-
-
-        <!--        </androidx.cardview.widget.CardView>-->
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardviewchapters"
@@ -164,9 +83,11 @@
             android:layout_gravity="center"
             android:layout_marginTop="85dp"
             android:padding="8dp"
+
             app:egLegendTextSize="18sp"
             app:egUsePieRotation="true"
             app:egValueTextSize="36sp"
+
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -206,3 +127,90 @@
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <!--    android:background="@drawable/sand_bg"-->
+    <!--    android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen" -->
+
+    <!--    <pl.droidsonroids.gif.GifImageView-->
+    <!--        android:id="@+id/gif"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        android:layout_marginStart="25dp"-->
+    <!--        android:layout_marginLeft="25dp"-->
+    <!--        android:layout_marginEnd="19dp"-->
+    <!--        android:layout_marginRight="19dp"-->
+    <!--        android:background="@color/white"-->
+    <!--        android:src="@drawable/bubbles"-->
+    <!--        app:layout_constraintBottom_toBottomOf="@+id/imageView"-->
+    <!--        app:layout_constraintEnd_toEndOf="@+id/imageView"-->
+    <!--        app:layout_constraintHorizontal_bias="0.625"-->
+    <!--        app:layout_constraintStart_toStartOf="@+id/imageView"-->
+    <!--        app:layout_constraintTop_toTopOf="@+id/imageView"-->
+    <!--        app:layout_constraintVertical_bias="0.507" />-->
+
+    <!--    <pl.droidsonroids.gif.GifImageView-->
+    <!--        android:id="@+id/gif"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        android:background="@color/white"-->
+    <!--        android:src="@drawable/bubbles"-->
+    <!--        app:layout_constraintVertical_bias="0.507" />-->
+
+
+    <!--        <androidx.cardview.widget.CardView-->
+    <!--            android:id="@+id/cardviewchapters"-->
+    <!--            android:layout_width="298dp"-->
+    <!--            android:layout_height="134dp"-->
+
+    <!--            android:layout_marginLeft="40dp"-->
+    <!--            android:layout_marginTop="50dp"-->
+    <!--            android:layout_marginBottom="192dp"-->
+    <!--            app:cardBackgroundColor="#4a47a7"-->
+    <!--            app:cardCornerRadius="20dp"-->
+
+    <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--            app:layout_constraintEnd_toEndOf="parent"-->
+    <!--            app:layout_constraintHorizontal_bias="0.496"-->
+    <!--            app:layout_constraintStart_toStartOf="parent"-->
+    <!--            app:layout_constraintTop_toBottomOf="@+id/logoHome"-->
+    <!--            app:layout_constraintVertical_bias="0.24">-->
+
+    <!--            <TextView-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_gravity="center_horizontal"-->
+    <!--                android:layout_marginTop="10dp"-->
+    <!--                android:elevation="2dp"-->
+    <!--                android:text="@string/little_chemist"-->
+    <!--                android:textColor="@color/white"-->
+    <!--                android:textSize="25sp" />-->
+
+
+    <!--            <ProgressBar-->
+    <!--                android:id="@+id/content_pro"-->
+    <!--                style="@style/Widget.AppCompat.ProgressBar.Horizontal"-->
+    <!--                android:layout_width="220dp"-->
+    <!--                android:layout_height="72dp"-->
+
+    <!--                android:layout_gravity="start"-->
+
+    <!--                android:layout_marginStart="15dp"-->
+    <!--                android:layout_marginTop="35dp"-->
+    <!--                android:progress="40" />-->
+
+    <!--            <ImageView-->
+    <!--                android:id="@+id/progressIcon"-->
+    <!--                android:layout_width="53dp"-->
+    <!--                android:layout_height="64dp"-->
+
+    <!--                android:layout_gravity="end"-->
+
+    <!--                android:layout_marginTop="30dp"-->
+    <!--                android:layout_marginEnd="5dp"-->
+
+    <!--                android:contentDescription="@string/progressBar"-->
+    <!--                android:src="@drawable/testtube" />-->
+
+
+    <!--        </androidx.cardview.widget.CardView>-->

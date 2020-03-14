@@ -1,57 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
 
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".Chapters">
 
-
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
+<!--    android:rotationY="180"
+-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clslider"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="0dp"
+        android:layout_height="match_parent">
 
-        android:minHeight="?attr/actionBarSize"
-        android:theme="@style/MyApp.ActionBarTheme2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-        <!--chapters number -->
-        <TextView
-            android:id="@+id/chNum"
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:textColor="@color/white"
-            android:textSize="30sp"
-            android:fontFamily="@font/roboto_bold"
-            android:text="chapter number"
-            />
-        <!--  android:textAppearance="@android:style/TextAppearance.WindowTitle"-->
-    </androidx.appcompat.widget.Toolbar>
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="0dp"
+
+            android:minHeight="?attr/actionBarSize"
+            android:theme="@style/MyApp.ActionBarTheme2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            <!--chapters number -->
+            <TextView
+                android:id="@+id/chNum"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="chapter number"
+                />
+            <!--  android:textAppearance="@android:style/TextAppearance.WindowTitle"-->
+        </androidx.appcompat.widget.Toolbar>
 
 
 
-    <ImageView
-        android:id="@+id/chapterDrawing"
-        android:layout_width="230dp"
+        <ImageView
+            android:id="@+id/chapterDrawing"
+            android:layout_width="230dp"
 
-        android:layout_height="223dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="22dp"
+            android:layout_height="223dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="22dp"
 
-        android:layout_marginEnd="8dp"
-        android:elevation="-10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginEnd="8dp"
+            android:elevation="-10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
 
-        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
-    <LinearLayout
+        <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="240dp"
 
@@ -151,6 +160,7 @@
     </LinearLayout>
 
     </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
