@@ -11,6 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 
+import com.example.little_chemist.ARCards;
 import com.example.little_chemist.Chapters;
 import com.example.little_chemist.DatabaseHelper;
 import com.example.little_chemist.R;
@@ -210,13 +211,19 @@ public class Ch1 extends AppCompatActivity {
         lsn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 statue = student.getLsnLock("2");
                 if (statue.equals("unlocked") || statue.equals("completed") ) {
+                    Thread thread = new Thread(new Runnable(){
 
-                    Intent n = new Intent(Ch1.this, lab.class);
+                        public void run(){
+
+                    Intent n = new Intent(Ch1.this, ARCards.class);
                     n.putExtra("lesson", 12);
                     startActivity(n);
-
+                        }
+                    });
+                    thread.start();
                 } else
                     Toast.makeText(getApplicationContext(), "Locked", Toast.LENGTH_LONG).show();
 

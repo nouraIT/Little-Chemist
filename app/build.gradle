@@ -69,7 +69,6 @@ dependencies {
     implementation "androidx.recyclerview:recyclerview:1.1.0"
 
 
-
     //slider view
     implementation 'com.github.blackfizz:eazegraph:1.2.2@aar'
     implementation 'com.nineoldandroids:library:2.4.0'
@@ -95,8 +94,6 @@ dependencies {
     implementation 'com.github.dmytrodanylyk.circular-progress-button:library:1.1.3'
 
 
-
-
     //Viro Media
 //    implementation project(':gvr_common')
 //    implementation project(':arcore_client')
@@ -111,12 +108,71 @@ dependencies {
 //    implementation 'com.amazonaws:aws-android-sdk-cognitoidentityprovider:2.7.7'
 
 
+}
+sceneform.asset('sampledata/sodium.fbx',
+        'default',
+        'sampledata/sodium.sfa',
+        'src/main/assets/sodium',
+        ['sampledata/sodium.fbx'])
+sceneform.asset('sampledata/argon.fbx',
+        'default',
+        'sampledata/argon.sfa',
+        'src/main/assets/argon',
+        ['sampledata/argon.fbx'])
+sceneform.asset('sampledata/bariumatom.fbx',
+        'default',
+        'sampledata/bariumatom.sfa',
+        'src/main/assets/bariumatom',
+        ['sampledata/bariumatom.fbx'])
+sceneform.asset('sampledata/calcium.fbx',
+        'default',
+        'sampledata/calcium.sfa',
+        'src/main/assets/calcium',
+        ['sampledata/calcium.fbx'])
+sceneform.asset('sampledata/chlorineatom.fbx',
+        'default',
+        'sampledata/chlorineatom.sfa',
+        'src/main/assets/chlorineatom',
+        ['sampledata/chlorineatom.fbx'])
+
+sceneform.asset('sampledata/hydrogen.fbx',
+        'default',
+        'sampledata/hydrogen.sfa',
+        'src/main/assets/hydrogen',
+        ['sampledata/hydrogen.fbx'])
+
+sceneform.asset('sampledata/Lithiumatom.fbx',
+        'default',
+        'sampledata/Lithiumatom.sfa',
+        'src/main/assets/Lithiumatom',
+        ['sampledata/Lithiumatom.fbx'])
+
+sceneform.asset('sampledata/neonn.fbx',
+        'default',
+        'sampledata/neonn.sfa',
+        'src/main/assets/neonn',
+        ['sampledata/neonn.fbx'])
+
+////////////////////////////////////////////////
+sceneform.asset('sampledata/fluorineatom.fbx',
+        'default',
+        'sampledata/fluorineatom.sfa',
+        'src/main/assets/fluorineatom',
+        ['sampledata/fluorineatom.fbx'])
+
+sceneform.asset('sampledata/magnesiumatomm.fbx',
+        'default',
+        'sampledata/magnesiumatomm.sfa',
+        'src/main/assets/magnesiumatomm',
+        ['sampledata/magnesiumatomm.fbx'])
+
+sceneform.asset('sampledata/heliumatom.fbx',
+        'default',
+        'sampledata/heliumatom.sfa',
+        'src/main/assets/heliumatom',
+        ['sampledata/heliumatom.fbx'])
+
+repositories {
+    mavenCentral()
 
 }
-
-
-//sceneform.asset('sampledata/model.obj',
-//        'default',
-//        'sampledata/model.sfa',
-//        'src/main/assets/model')
-
