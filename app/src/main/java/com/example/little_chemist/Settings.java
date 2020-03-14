@@ -36,20 +36,6 @@ public class Settings extends AppCompatActivity {
     boolean arabicFlag ;
 
 
-//    public void onResume(){
-//        super.onResume();
-//        //setContentView(R.layout.activity_settings);
-////        String name = pref.getString("username", null);
-////        System.out.println("name is hrnejknfjrfj "+name);
-//
-//        //pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
-//        //editor = pref.edit();
-//        //boolean arabicFlag = pref.getBoolean("arabic",false);
-//
-//
-//
-//    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,12 +43,8 @@ public class Settings extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_settings);
 
-        //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarCustom);
-
-        //setSupportActionBar(toolbar);
-        //final String UserNameStr= getIntent().getStringExtra("UserName");
         Student student = (Student) getIntent().getSerializableExtra("student");
-//
+
 
         pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
         editor = pref.edit();
@@ -82,7 +64,7 @@ public class Settings extends AppCompatActivity {
 //        static String name;
 //        name = student.GetUserName();
 
-        profileName.setText(name);
+        profileName.setText(name.toUpperCase());
 
 
 
@@ -208,7 +190,7 @@ public class Settings extends AppCompatActivity {
         Delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //TODO Delete account
+
                 AlertDialog.Builder alert = new AlertDialog.Builder(Settings.this);
                 final EditText edittext = new EditText(Settings.this);
                 alert.setMessage(getText(R.string.confirmDeleteAcc));
@@ -227,10 +209,9 @@ public class Settings extends AppCompatActivity {
                             finish();
                         }
 
-                        else{
-                            //error msg
-                            //TODO Add ELSE IN CASE NO ID
-                        }
+//                        else{
+//                            //error msg
+//                        }
                     }
                 });
 

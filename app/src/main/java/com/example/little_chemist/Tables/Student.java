@@ -14,6 +14,7 @@ public class Student implements Serializable {
 
     //TODO save the score of each chapter in the DB but the total score will be saved here
 
+
     //static int i = 0 ;
     public Student(String name, String pass, int arabic){
         UserName = name;
@@ -25,9 +26,9 @@ public class Student implements Serializable {
                 "11:locked,12:locked,13:locked,14:locked,15:locked,16:locked,17:locked,18:locked,19:locked,20:locked," +
                 "21:locked,22:locked,23:locked,24:locked,25:locked,";
     }
-    public Student(int id,int score,String QL,String CHl,String LL,String username,String Pass,String SQ,String SA,int lang) {
+    public Student(int id,String QL,String CHl,String LL,String username,String Pass,String SQ,String SA,int lang) {
         this.Id=id;
-        this.TotalScore =score;
+//        this.TotalScore =score;
         this.UserName = username;
         this.Password= Pass;
         this.QZLocks=QL;
@@ -113,7 +114,7 @@ public class Student implements Serializable {
 
 
     public void changeLang(int arabic){
-        //TODO save the language setting here ?
+
         Arabic = arabic;
         helper.changeLang(UserName,arabic);
 
@@ -142,8 +143,6 @@ public class Student implements Serializable {
 //    }
 
     public String getLsnLock(String num){
-
-        //TODO fix this, this doesn't tell us which lsn belong to which chapter
 
         //completed
 //        LSNLocks ="1:unlocked,2:locked,3:locked,4:locked,5:locked";
@@ -198,6 +197,8 @@ public class Student implements Serializable {
 
     public String getProgress() {
 
+        //TODO fix this, it's not done
+
         //these are chapters
         String progress ;//= "c1:0,c2:0,c3:0,c4:0,c5:0,";
         int ch[] = new int[5];
@@ -236,6 +237,10 @@ public class Student implements Serializable {
         }
         //"1:0,2:0,3:0,4:0,5:0,"
         progress = "c1:"+ch[0]+",c2:"+ch[1]+",c3:"+ch[2]+",c4:"+ch[3]+",c5:"+ch[4]+",";
+
+
+
+
 
         return progress;
     }

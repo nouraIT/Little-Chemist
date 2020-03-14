@@ -35,6 +35,7 @@ public class lab extends AppCompatActivity {
     private boolean isHitting;
 //    private ModelLoader modelLoader;
 
+//TODO Add reset button to lab
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

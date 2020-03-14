@@ -127,15 +127,15 @@
                             />
 
                         <TextView
-                            android:layout_width="98dp"
+                            android:layout_width="97dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="start"
                             android:layout_marginStart="2dp"
-                            android:layout_marginTop="-16dp"
-
-                            android:fontFamily="@font/aref_menna"
+                            android:layout_marginTop="-5dp"
 
                             android:alpha="0.5"
+
+                            android:fontFamily="@font/aref_menna"
                             android:text="@string/Ch2Lsn1"
                             android:textColor="@color/Black"
                             android:textSize="16sp"
@@ -150,6 +150,7 @@
 
                             android:contentDescription="@string/Ch2Lsn1" />
 
+<!--TODO add an image for the first lesson ^-->
 
                     </LinearLayout>
                     ></androidx.cardview.widget.CardView>

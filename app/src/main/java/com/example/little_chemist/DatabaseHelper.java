@@ -26,7 +26,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         private static final String TABLE_STUDENT = "Student";
         private static final String COLUMN_ID = "Id";
-        private static final String COLUMN_SCORE = "TotalScore";
+//        private static final String COLUMN_SCORE = "TotalScore";
         private static final String COLUMN_QZLOCKS = "QZLocks";
         private static final String COLUMN_CHLOCKS = "CHLocks";
         private static final String COLUMN_LSNLOCKS = "LSNLocks";
@@ -76,7 +76,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String SQL_CREATE_STUDENT=
             "CREATE TABLE "+FeedEntry.TABLE_STUDENT +" ("+
                     FeedEntry.COLUMN_ID + "  INTEGER PRIMARY KEY," +
-                    FeedEntry.COLUMN_SCORE + " INTEGER," +   //TODO fix this
+//                    FeedEntry.COLUMN_SCORE + " INTEGER," +
                     FeedEntry.COLUMN_QZLOCKS + " TEXT," +
                     FeedEntry.COLUMN_CHLOCKS + " TEXT," +
                     FeedEntry.COLUMN_LSNLOCKS + " TEXT," +
@@ -167,14 +167,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     "11:unlocked,12:unlocked,13:unlocked,14:unlocked,15:unlocked,16:unlocked,17:unlocked,18:unlocked,19:unlocked,20:unlocked," +
                     "21:unlocked,22:unlocked,23:unlocked,24:unlocked,25:unlocked,";;
         }
-
-        student = new Student( (count+1), (student.GetTotalScore())
-                ,(qz),(ch),(ls),(student.GetUserName()),(student.GetPassword()),
+//, (student.GetTotalScore())
+        student = new Student( (count+1) ,(qz),(ch),(ls),(student.GetUserName()),(student.GetPassword()),
                 (student.GetSecQ()),(student.GetSecA()),(student.GetLang()) );
 
         ContentValues contentvalues=new ContentValues();
         contentvalues.put(FeedEntry.COLUMN_ID,count+1);
-        contentvalues.put(FeedEntry.COLUMN_SCORE, student.GetTotalScore());
+//        contentvalues.put(FeedEntry.COLUMN_SCORE, student.GetTotalScore());
         contentvalues.put(FeedEntry.COLUMN_QZLOCKS, qz);
         contentvalues.put(FeedEntry.COLUMN_CHLOCKS, ch);
         contentvalues.put(FeedEntry.COLUMN_LSNLOCKS, ls);
@@ -311,7 +310,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         db = this.getReadableDatabase();
         //query="SELECT UserName,Password FROM  "+FeedEntry.TABLE_NAME;
-        String query ="SELECT UserName,SecQ,SecA FROM Student"; //TODO add where
+        String query ="SELECT UserName,SecQ,SecA FROM Student";
+
 
         Cursor cursor=db.rawQuery(query,null);
         String[] sec = new String[2];
@@ -454,16 +454,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 if (un.contentEquals(username)) {
 
                     id = cursor.getInt(0);
-                    score= cursor.getInt(1);
-                    QLocks= cursor.getString(2);
-                    Chlocks= cursor.getString(3);
-                    LesLocks= cursor.getString(4);
-                    un= cursor.getString(5);
-                    Pass= cursor.getString(6);
-                    SQ= cursor.getString(7);
-                    SA= cursor.getString(8);
-                    lang = cursor.getInt(9);
-                    student= new Student(id,score,QLocks,Chlocks,LesLocks,un,Pass,SQ,SA,lang);
+//                    score= cursor.getInt(1);
+                    QLocks= cursor.getString(1);
+                    Chlocks= cursor.getString(2);
+                    LesLocks= cursor.getString(3);
+                    un= cursor.getString(4);
+                    Pass= cursor.getString(5);
+                    SQ= cursor.getString(6);
+                    SA= cursor.getString(7);
+                    lang = cursor.getInt(8);
+                    student= new Student(id,QLocks,Chlocks,LesLocks,un,Pass,SQ,SA,lang);
 
                     break;
                 }

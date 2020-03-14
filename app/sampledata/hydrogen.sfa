@@ -140,14 +140,14 @@
   },
   samplers: [
     {
-      file: 'sampledata\\hydrogen.fbm\\150.png',
+      file: 'sampledata/hydrogen.fbm/150.png',
       name: '150',
-      pipeline_name: 'hydrogen.fbm\\150.png',
+      pipeline_name: 'hydrogen.fbm/150.png',
     },
     {
-      file: 'sampledata\\hydrogen.fbm\\154.png',
+      file: 'sampledata/hydrogen.fbm/154.png',
       name: '154',
-      pipeline_name: 'hydrogen.fbm\\154.png',
+      pipeline_name: 'hydrogen.fbm/154.png',
     },
   ],
   version: '0.54:2',

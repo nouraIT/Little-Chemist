@@ -89,9 +89,8 @@ public class Ch1 extends AppCompatActivity {
 //            lin.setBackgroundResource(R.drawable.unlocked_lsn);
             }
             else if(statue.equals("completed")) {
-                lsns[i].setCardBackgroundColor((R.drawable.completed_lsn));
-                //TODO change this to a check symbol
-                locks[i].setImageDrawable(getResources().getDrawable(R.drawable.padlock));
+                lsns[i].setCardBackgroundColor(getResources().getColor((R.color.Completed)));
+                locks[i].setImageDrawable(getResources().getDrawable(R.drawable.tick_mark));
             }
             else {
                 lsns[i].setCardBackgroundColor(getResources().getColor((R.color.Locked)));
@@ -100,6 +99,16 @@ public class Ch1 extends AppCompatActivity {
             }
 
         }
+
+
+        statue = student.getQzLock("1");
+
+        System.out.println(statue);
+        if(statue.equals("unlocked"))
+            quiz.setCardBackgroundColor(getResources().getColor((R.color.logoLightRed)));
+        else
+            quiz.setCardBackgroundColor(getResources().getColor((R.color.Completed)));
+
 
 //        statue = student.getLsnLock("1");
 //        lockpad = findViewById(R.id.lockicon1);
@@ -180,17 +189,6 @@ public class Ch1 extends AppCompatActivity {
 //            lsn5.setCardBackgroundColor(getResources().getColor((R.color.Completed)));
 //        else
 //            lsn5.setCardBackgroundColor(getResources().getColor((R.color.Locked)));
-
-
-        statue = student.getQzLock("1");
-
-        System.out.println(statue);
-        if(statue.equals("unlocked"))
-            quiz.setCardBackgroundColor(getResources().getColor((R.color.logoLightRed)));
-//                    R.drawable.unfinished_quiz);
-        else
-            quiz.setCardBackgroundColor(getResources().getColor((R.color.Completed)));
-
 
         // ======================== Lessons btns ========================
 

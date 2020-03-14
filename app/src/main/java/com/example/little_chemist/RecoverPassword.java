@@ -218,7 +218,6 @@ public class RecoverPassword extends AppCompatActivity {
                // System.out.println(spinnerSelected);
                 int q = parseInt(question[0]);
                 if(!(q == spinnerSelected))
-                    //TODO make the error under the spinner
 
                     SecurityAn.setError(getText(R.string.SecurityQwrong));
                 else

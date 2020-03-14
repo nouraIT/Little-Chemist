@@ -242,7 +242,6 @@ public class SignUp extends AppCompatActivity {
                     editor.putString("username", UserNameStr); // Storing string
                     editor.putString("password", PasswordStr); // Storing string
 
-//todo sign in and sign up create string for sign up and sign in
 
                     editor.apply();
 

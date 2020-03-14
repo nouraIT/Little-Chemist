@@ -65,95 +65,39 @@ public class Ch3 extends AppCompatActivity {
 
             // ======================== Lessons colors ========================
 
-        statue = student.getLsnLock("1");
-        lockpad = findViewById(R.id.lockicon1);
+        int i ;
+        CardView[] lsns = {lsn1,lsn2,lsn3,lsn4,lsn5};
+        ImageView[] locks = {findViewById(R.id.lockicon1) , findViewById(R.id.lockicon2), findViewById(R.id.lockicon3), findViewById(R.id.lockicon4), findViewById(R.id.lockicon5)};
 
-        System.out.println(statue);
+        for(i =0;i<5;i++){
 
-        if(statue.equals("unlocked")) {
-            lsn1.setCardBackgroundColor(getResources().getColor((R.color.primaryYellow)));
-            lockpad.setImageDrawable(getResources().getDrawable(R.drawable.padlock));
+            statue = student.getLsnLock(String.valueOf(i+1));
+            if(statue.equals("unlocked")) {
+                lsns[i].setCardBackgroundColor(getResources().getColor((R.color.primaryYellow)));
+                locks[i].setImageDrawable(getResources().getDrawable(R.drawable.padlock));
 //            lin.setBackgroundResource(R.drawable.unlocked_lsn);
-        }
-        else if(statue.equals("completed")) {
-            lsn1.setCardBackgroundColor((R.drawable.completed_lsn));
-            lockpad.setImageDrawable(getResources().getDrawable(R.drawable.padlock));
-        }
-        else {
-            lsn1.setCardBackgroundColor(getResources().getColor((R.color.Locked)));
-            lockpad.setImageDrawable(getResources().getDrawable(R.drawable.lock));
+            }
+            else if(statue.equals("completed")) {
+                lsns[i].setCardBackgroundColor(getResources().getColor((R.color.Completed)));
+                locks[i].setImageDrawable(getResources().getDrawable(R.drawable.tick_mark));
+            }
+            else {
+                lsns[i].setCardBackgroundColor(getResources().getColor((R.color.Locked)));
+                locks[i].setImageDrawable(getResources().getDrawable(R.drawable.lock));
+
+            }
 
         }
 
 
-        statue = student.getLsnLock("2");
-        lockpad = findViewById(R.id.lockicon2);
-
-        if(statue.equals("unlocked")) {
-            lsn2.setCardBackgroundColor(getResources().getColor((R.color.primaryYellow)));
-            lockpad.setImageDrawable(getResources().getDrawable(R.drawable.padlock));
-
-        }
-        else if(statue.equals("completed")) {
-            lsn2.setCardBackgroundColor(getResources().getColor((R.color.Completed)));
-            lockpad.setImageDrawable(getResources().getDrawable(R.drawable.padlock));
-        }
-        else
-            lsn2.setCardBackgroundColor(getResources().getColor((R.color.Locked)));
-
-
-        statue = student.getLsnLock("3");
-        lockpad = findViewById(R.id.lockicon3);
-
-        if(statue.equals("unlocked")) {
-            lsn3.setCardBackgroundColor(getResources().getColor((R.color.primaryYellow)));
-            lockpad.setImageDrawable(getResources().getDrawable(R.drawable.padlock));
-        }
-        else if(statue.equals("completed")) {
-            lsn3.setCardBackgroundColor(getResources().getColor((R.color.Completed)));
-            lockpad.setImageDrawable(getResources().getDrawable(R.drawable.padlock));
-        }
-        else
-            lsn3.setCardBackgroundColor(getResources().getColor((R.color.Locked)));
-
-
-
-        statue = student.getLsnLock("4");
-        lockpad = findViewById(R.id.lockicon4);
-
-        if(statue.equals("unlocked")) {
-            lsn4.setCardBackgroundColor(getResources().getColor((R.color.primaryYellow)));
-            lockpad.setImageDrawable(getResources().getDrawable(R.drawable.padlock));
-        }
-        else if(statue.equals("completed")) {
-            lsn4.setCardBackgroundColor(getResources().getColor((R.color.Completed)));
-            lockpad.setImageDrawable(getResources().getDrawable(R.drawable.padlock));
-        }
-        else
-            lsn4.setCardBackgroundColor(getResources().getColor((R.color.Locked)));
-
-
-        statue = student.getLsnLock("5");
-        lockpad = findViewById(R.id.lockicon5);
-
-        if(statue.equals("unlocked")) {
-            lsn5.setCardBackgroundColor(getResources().getColor((R.color.primaryYellow)));
-            lockpad.setImageDrawable(getResources().getDrawable(R.drawable.padlock));
-        }
-        else if(statue.equals("completed"))
-            lsn5.setCardBackgroundColor(getResources().getColor((R.color.Completed)));
-        else
-            lsn5.setCardBackgroundColor(getResources().getColor((R.color.Locked)));
-
-
-        statue = student.getQzLock("1");
+        statue = student.getQzLock("3");
 
         System.out.println(statue);
         if(statue.equals("unlocked"))
             quiz.setCardBackgroundColor(getResources().getColor((R.color.logoLightRed)));
-//                    R.drawable.unfinished_quiz);
         else
             quiz.setCardBackgroundColor(getResources().getColor((R.color.Completed)));
+
 
 
         // ======================== Lessons btns ========================

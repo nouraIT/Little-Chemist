@@ -111,9 +111,10 @@
             android:layout_marginTop="20dp"
             android:fontFamily="@font/aref_menna"
 
-            android:text="@string/prompt_username"
+            android:text="USERNAME"
             android:textColor="@color/darkpruple"
-            android:textSize="20sp" />
+            android:textSize="30sp"
+            tools:ignore="HardcodedText" />
 
     </LinearLayout>
 

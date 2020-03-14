@@ -10,8 +10,6 @@
     tools:context=".MainActivity"
     tools:showIn="@layout/activity_main">
 
-    <!--    TODO find better color-->
-
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/imageview"
         android:layout_width="0dp"

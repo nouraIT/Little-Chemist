@@ -38,7 +38,6 @@ public class Home extends AppCompatActivity {
     public static boolean AlreadyGreeted = false;
     static Student student = new Student();
 
-//TODO *Add reset button to lab
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
