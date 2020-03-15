@@ -12,6 +12,14 @@
         Many scientists attempted to arrange the elements, but Dmitri Mendeleev is given credit for creating the first chart. However, although his chart was not complete.
     </string>
 
+    <string-array name="C5L1E2M">
+        <item>What is the name of the scientist how create the first chart of the Periodic Table</item>
+        <item>Robert Boyle</item>
+        <item>Dmitri Mendeleev</item>
+        <item>Hennig Brand</item>
+        <item>Marie Curie</item>
+    </string-array>
+
     <string name="C5L1S3">
         A property is a specific characteristic that helps us identify something. For example, the color of gold is property. Dmitri Mendeleev used the properties of elements and their weights (or masses) to arrange a table of all the elements.
     </string>
@@ -19,6 +27,14 @@
     <string name="C5L1S4">
         The periodic table tells us what elements will combine to make molecules, how much they weigh, how many protons, electrons and neutrons they contain and whether they are solid, liquid or gas at room temperature.
     </string>
+
+    <string-array name="C5L1E4M">
+        <item>The periodic table tells us ___.</item>
+        <item>Only the weigh and room temperature of elements</item>
+        <item>The matter status and what elements will combine to make molecules</item>
+        <item>The number of protons, electrons and neutrons</item>
+        <item>All above</item>
+    </string-array>
 
 
     <!--         LESSON 1            -->
