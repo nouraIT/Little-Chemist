@@ -1,14 +1,21 @@
 package com.example.little_chemist;
 
+import android.content.Context;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.little_chemist.kotlin.Intrinsics;
+
+import java.util.Arrays;
 
 import alirezat775.lib.carouselview.CarouselAdapter;
 import alirezat775.lib.carouselview.CarouselModel;
@@ -18,6 +25,12 @@ public class adapter extends CarouselAdapter {
     private final int EMPTY_ITEM = 0;
     private final int NORMAL_ITEM = 1;
     private CarouselViewHolder vh;
+    private String[] option = new String[5];
+    private double Score=0;
+    private String [] correctanswer = new String [5];
+    Context context ;
+    private String Qcontent [];
+    private char Qkey;
 
     @Nullable
     private adapter.OnClick onClick;
@@ -29,6 +42,18 @@ public class adapter extends CarouselAdapter {
     }
 
 //    ------------------------------------------------------------------------------------
+
+    public adapter(){
+
+    }
+
+    public adapter(Context context, int key){
+        this.context = context;
+//        Qcontent = new String[5];
+//        String stringkey= String.valueOf(key);
+//        Qkey= stringkey.charAt(0);
+
+    }
 
     public final adapter.OnClick getOnClick() {
         return this.onClick;
@@ -51,8 +76,15 @@ public class adapter extends CarouselAdapter {
     public CarouselViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         Intrinsics.checkParameterIsNotNull(parent, "parent");
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
+        //View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.itm, parent, false);
         CarouselViewHolder holder;
         View v;
+
+//        v = inflater.inflate(R.layout.itm, parent, false);
+//        Intrinsics.checkExpressionValueIsNotNull(v, "v");
+//        this.vh = (new adapter.MyViewHolder(v));
+//        holder = this.vh;
+
         if (viewType == this.NORMAL_ITEM) {
             v = inflater.inflate(R.layout.itm, parent, false);
             Intrinsics.checkExpressionValueIsNotNull(v, "v");
@@ -86,6 +118,7 @@ public class adapter extends CarouselAdapter {
         return holder;
     }
 
+
     // $FF: synthetic method
     // $FF: bridge method
 
@@ -116,7 +149,64 @@ public class adapter extends CarouselAdapter {
                 }
             }
 // here change item color
-            ((adapter.MyViewHolder)var5).getTitle().setText((CharSequence)String.valueOf(model.getId()));
+
+            ((adapter.MyViewHolder)var5).getTitle().setText((CharSequence)String.valueOf(model.getQuestion()));
+            ((adapter.MyViewHolder)var5).getBtn1().setText((CharSequence)String.valueOf(model.getOp1()));
+            ((adapter.MyViewHolder)var5).getBtn2().setText((CharSequence)String.valueOf(model.getOp2()));
+            ((adapter.MyViewHolder)var5).getBtn3().setText((CharSequence)String.valueOf(model.getOp3()));
+            ((adapter.MyViewHolder)var5).getBtn4().setText((CharSequence)String.valueOf(model.getOp4()));
+            correctanswer[var5.getAdapterPosition()] = model.getCorrectop();
+
+
+
+            ((adapter.MyViewHolder)var5).getBtn1().setOnClickListener(new View.OnClickListener(){
+
+                @Override
+                public void onClick(View view) {
+                    int pos = var5.getAdapterPosition();
+                    option[pos] = (String) ((MyViewHolder)var5).getBtn1().getText();
+                    ((adapter.MyViewHolder)var5).getBtn1().setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#4a47a7")));
+                    ((adapter.MyViewHolder)var5).getBtn1().setTextColor(ColorStateList.valueOf(Color.parseColor("#FFFFFF")));
+
+//                    ((adapter.MyViewHolder)var5).getBtn2().setEnabled(false);
+//                    ((adapter.MyViewHolder)var5).getBtn3().setEnabled(false);
+//                    ((adapter.MyViewHolder)var5).getBtn4().setEnabled(false);
+                }
+            });
+
+            ((adapter.MyViewHolder)var5).getBtn2().setOnClickListener(new View.OnClickListener(){
+
+                @Override
+                public void onClick(View view) {
+                    int pos = var5.getAdapterPosition();
+                    option[pos] = (String) ((MyViewHolder)var5).getBtn2().getText();
+                    ((adapter.MyViewHolder)var5).getBtn2().setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#4a47a7")));
+                    ((adapter.MyViewHolder)var5).getBtn2().setTextColor(ColorStateList.valueOf(Color.parseColor("#FFFFFF")));
+                }
+            });
+
+            ((adapter.MyViewHolder)var5).getBtn3().setOnClickListener(new View.OnClickListener(){
+
+                @Override
+                public void onClick(View view) {
+                    int pos = var5.getAdapterPosition();
+                    option[pos] = (String) ((MyViewHolder)var5).getBtn3().getText();
+                    ((adapter.MyViewHolder)var5).getBtn3().setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#4a47a7")));
+                    ((adapter.MyViewHolder)var5).getBtn3().setTextColor(ColorStateList.valueOf(Color.parseColor("#FFFFFF")));
+                }
+            });
+
+            ((adapter.MyViewHolder)var5).getBtn4().setOnClickListener(new View.OnClickListener(){
+
+                @Override
+                public void onClick(View view) {
+                    int pos = var5.getAdapterPosition();
+                    option[pos] = (String) ((MyViewHolder)var5).getBtn4().getText();
+                    ((adapter.MyViewHolder)var5).getBtn4().setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#4a47a7")));
+                    ((adapter.MyViewHolder)var5).getBtn4().setTextColor(ColorStateList.valueOf(Color.parseColor("#FFFFFF")));
+                }
+            });
+
 
         } else {
             this.vh = holder;
@@ -148,6 +238,42 @@ public class adapter extends CarouselAdapter {
 
     }
 
+//    public double score (String [] soption, String[] correctoption){
+//        double score =0;
+//        int count =0;
+//        int subscore = 0;
+//        if (Arrays.equals(soption, correctoption)){
+//            score = 100;
+//            return score;
+//        }else {
+//            for(int i=0; i < soption.length; i++){
+//
+//                if (soption[i].equals(correctoption[i])){
+//                    count++;
+//                }
+//            }
+//            if (count == correctoption.length-1){
+//                score = 100;
+//                return score;
+//            }else{
+//                int totalq= soption.length-1;
+//                subscore = totalq - count;
+//                score = subscore * 20;
+//                //14.2857143
+//            }
+//        }
+//        return score;
+//    }
+
+
+    public String[] getOption(){
+        return option;
+    }
+
+    public String[] getCorrectanswer(){
+        return correctanswer;
+    }
+
 
 //    ------------------------------------------------------------------------------------
 
@@ -156,24 +282,66 @@ public class adapter extends CarouselAdapter {
     public final class MyViewHolder extends CarouselViewHolder {
         @NonNull
         private TextView title;
+        private Button btn1, btn2, btn3, btn4;
 
         @NonNull
         public final TextView getTitle() {
             return this.title;
         }
 
+        @NonNull
+        public final Button getBtn1(){return this.btn1;}
+
+        @NonNull
+        public final Button getBtn2(){return this.btn2;}
+
+        @NonNull
+        public final Button getBtn3(){return this.btn3;}
+
+        @NonNull
+        public final Button getBtn4(){return this.btn4;}
+
         public final void setTitle(@NonNull TextView var1) {
             Intrinsics.checkParameterIsNotNull(var1, "<set-?>");
             this.title = var1;
         }
 
+        public final void setBtn1(@NonNull Button var2){
+            Intrinsics.checkParameterIsNotNull(var2, "<set-?>");
+            this.btn1 = var2;
+        }
+
+        public final void setBtn2(@NonNull Button var3){
+            Intrinsics.checkParameterIsNotNull(var3, "<set-?>");
+            this.btn2 = var3;
+        }
+
+        public final void setBtn3(@NonNull Button var4){
+            Intrinsics.checkParameterIsNotNull(var4, "<set-?>");
+            this.btn3 = var4;
+        }
+
+        public final void setBtn4(@NonNull Button var5){
+            Intrinsics.checkParameterIsNotNull(var5, "<set-?>");
+            this.btn3 = var5;
+        }
+
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
+
             Intrinsics.checkParameterIsNotNull(itemView, "itemView");
             TextView textview = itemView.findViewById(R.id.item_text);
             Intrinsics.checkExpressionValueIsNotNull(textview, "itemView.item_text");
+            Button btnc1 = itemView.findViewById(R.id.chos1btn);
+            Button btnc2 = itemView.findViewById(R.id.chos2btn);
+            Button btnc3 = itemView.findViewById(R.id.chos3btn);
+            Button btnc4 = itemView.findViewById(R.id.chos4btn);
 
             this.title = textview;
+            this.btn1 = btnc1;
+            this.btn2 = btnc2;
+            this.btn3 = btnc3;
+            this.btn4 = btnc4;
 
 //            this.title.setOnClickListener((View.OnClickListener)(new View.OnClickListener() {
 //                public final void onClick(View it) {

@@ -10,6 +10,7 @@ import com.example.little_chemist.DatabaseHelper;
 import com.example.little_chemist.R;
 import com.example.little_chemist.Tables.Quiz;
 import com.example.little_chemist.Tables.Student;
+import com.example.little_chemist.quizQ;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -226,7 +227,7 @@ public class Ch3 extends AppCompatActivity {
                 statue = student.getQzLock("1");
                 if (statue.equals("unlocked") || statue.equals("completed") ) {
 
-                    Intent n = new Intent(Ch3.this, Quiz.class);
+                    Intent n = new Intent(Ch3.this, quizQ.class);
                     n.putExtra("ChapterNumber",3);
                     startActivity(n);
                 }

@@ -163,7 +163,62 @@
 
 
     <!--        Quiz Questions           -->
+    <string-array name="C2Quiz_Q1">
 
+        <item name="Q1">C2نواة الذرة تقوم ب؟</item>
+        <item name="A1">الانقسام</item>
+        <item name="A2">تكبر في الحجم</item>
+        <item name="A3">تتجمد</item>
+        <item name="A4">قياس حجمها</item>
+        <item name="CA1">الانقسام</item>
+
+
+    </string-array>
+    <string-array name="C2Quiz_Q2">
+
+        <item name="Q2">C2الإلكترونات?</item>
+        <item name="A1">ضخمة وتتحرك ببطء شديد.</item>
+        <item name="A2">التحرك بسرعة كبيرة وصغيرة جدا.</item>
+        <item name="A3">ليس لديهم طاقة على الإطلاق.</item>
+        <item name="A4">يمكن رؤيتها باستخدام عدسة مكبرة.</item>
+        <item name="CA2">التحرك بسرعة كبيرة وصغيرة جدا.</item>
+
+
+    </string-array>
+    <string-array name="C2Quiz_Q3">
+
+        <item name="Q3">C2كم عدد الإلكترونات الموجودة في الذرة؟</item>
+        <item name="A1">هناك 5 إلكترونات في كل ذرة.</item>
+        <item name="A2">لا تحتوي الذرات على إلكترونات.</item>
+        <item name="A3">كميات مختلفة من الإلكترونات.</item>
+        <item name="A4">لا يزيد عن 10 إلكترونات.</item>
+        <item name="CA3">كميات مختلفة من الإلكترونات.</item>
+
+
+    </string-array>
+
+    <string-array name="C2Quiz_Q4">
+
+        <item name="Q4">C2كيف تترابط الذرات معًا؟</item>
+        <item name="A1">يتشاركون إلكتروناتهم.</item>
+        <item name="A2">الذرات لا ترتبط ببعضها البعض.</item>
+        <item name="A3">واحد يصبح أصغر بحيث يمكن أن يصلح داخل الآخر.</item>
+        <item name="A4">يفقدون كل إلكتروناتهم.</item>
+        <item name="CA4">يتشاركون إلكتروناتهم.</item>
+
+
+    </string-array>
+    <string-array name="C2Quiz_Q5">
+
+        <item name="Q5">C2نظائر عنصر تختلف في _____.</item>
+        <item name="A1">عدد البروتونات.</item>
+        <item name="A2">عدد الإلكترونات.</item>
+        <item name="A3">الأرقام الذرية.</item>
+        <item name="A4">الكتل الذرية.</item>
+        <item name="CA5">الكتل الذرية.</item>
+
+
+    </string-array>
 
 
     <!--         Quiz Total Answers          -->

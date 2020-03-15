@@ -169,7 +169,6 @@ public class Lessons extends AppCompatActivity {
                 nextBtn.setEnabled(true);
                 preBtn.setEnabled(true);
                 preBtn.setVisibility(View.VISIBLE);
-
                 nextBtn.setText(getText(R.string.finishBtn));
                 preBtn.setText(getText(R.string.backBtn));
 

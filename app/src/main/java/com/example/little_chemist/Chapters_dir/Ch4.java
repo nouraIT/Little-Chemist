@@ -12,6 +12,7 @@ import com.example.little_chemist.Tables.Quiz;
 import com.example.little_chemist.Tables.Student;
 import com.example.little_chemist.View_lesson.Lessons;
 import com.example.little_chemist.View_lesson.lab;
+import com.example.little_chemist.quizQ;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -232,7 +233,7 @@ public class Ch4 extends AppCompatActivity {
                 statue = student.getQzLock("1");
                 if (statue.equals("unlocked") || statue.equals("completed") ) {
 
-                    Intent n = new Intent(Ch4.this, Quiz.class);
+                    Intent n = new Intent(Ch4.this, quizQ.class);
                 n.putExtra("lesson",47);
                 n.putExtra("ChapterNumber",4);
                 startActivity(n);

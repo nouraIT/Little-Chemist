@@ -40,6 +40,7 @@
                     android:gravity="center"
                     android:textColor="@android:color/white"
                     android:textSize="22sp"
+                    android:text="here"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -51,28 +52,32 @@
                     android:layout_width="280dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="50dp"
-                    android:layout_gravity="center"/>
+                    android:layout_gravity="center"
+                    android:text=""/>
 
                 <Button
                     android:id="@+id/chos2btn"
                     android:layout_width="280dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:layout_gravity="center"/>
+                    android:layout_gravity="center"
+                    android:text=""/>
 
                 <Button
                     android:id="@+id/chos3btn"
                     android:layout_width="280dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:layout_gravity="center"/>
+                    android:layout_gravity="center"
+                    android:text=""/>
 
                 <Button
                     android:id="@+id/chos4btn"
                     android:layout_width="280dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:layout_gravity="center"/>
+                    android:layout_gravity="center"
+                    android:text=""/>
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
