@@ -168,6 +168,13 @@ public class adapter extends CarouselAdapter {
                     ((adapter.MyViewHolder)var5).getBtn1().setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#4a47a7")));
                     ((adapter.MyViewHolder)var5).getBtn1().setTextColor(ColorStateList.valueOf(Color.parseColor("#FFFFFF")));
 
+                    ((adapter.MyViewHolder)var5).getBtn2().setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#FFCCCCCC")));
+                    ((adapter.MyViewHolder)var5).getBtn2().setTextColor(ColorStateList.valueOf(Color.parseColor("#000000")));
+                    ((adapter.MyViewHolder)var5).getBtn3().setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#FFCCCCCC")));
+                    ((adapter.MyViewHolder)var5).getBtn3().setTextColor(ColorStateList.valueOf(Color.parseColor("#000000")));
+                    ((adapter.MyViewHolder)var5).getBtn4().setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#FFCCCCCC")));
+                    ((adapter.MyViewHolder)var5).getBtn4().setTextColor(ColorStateList.valueOf(Color.parseColor("#000000")));
+
 //                    ((adapter.MyViewHolder)var5).getBtn2().setEnabled(false);
 //                    ((adapter.MyViewHolder)var5).getBtn3().setEnabled(false);
 //                    ((adapter.MyViewHolder)var5).getBtn4().setEnabled(false);
@@ -182,6 +189,13 @@ public class adapter extends CarouselAdapter {
                     option[pos] = (String) ((MyViewHolder)var5).getBtn2().getText();
                     ((adapter.MyViewHolder)var5).getBtn2().setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#4a47a7")));
                     ((adapter.MyViewHolder)var5).getBtn2().setTextColor(ColorStateList.valueOf(Color.parseColor("#FFFFFF")));
+
+                    ((adapter.MyViewHolder)var5).getBtn1().setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#FFCCCCCC")));
+                    ((adapter.MyViewHolder)var5).getBtn1().setTextColor(ColorStateList.valueOf(Color.parseColor("#000000")));
+                    ((adapter.MyViewHolder)var5).getBtn3().setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#FFCCCCCC")));
+                    ((adapter.MyViewHolder)var5).getBtn3().setTextColor(ColorStateList.valueOf(Color.parseColor("#000000")));
+                    ((adapter.MyViewHolder)var5).getBtn4().setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#FFCCCCCC")));
+                    ((adapter.MyViewHolder)var5).getBtn4().setTextColor(ColorStateList.valueOf(Color.parseColor("#000000")));
                 }
             });
 
@@ -193,6 +207,13 @@ public class adapter extends CarouselAdapter {
                     option[pos] = (String) ((MyViewHolder)var5).getBtn3().getText();
                     ((adapter.MyViewHolder)var5).getBtn3().setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#4a47a7")));
                     ((adapter.MyViewHolder)var5).getBtn3().setTextColor(ColorStateList.valueOf(Color.parseColor("#FFFFFF")));
+
+                    ((adapter.MyViewHolder)var5).getBtn2().setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#FFCCCCCC")));
+                    ((adapter.MyViewHolder)var5).getBtn2().setTextColor(ColorStateList.valueOf(Color.parseColor("#000000")));
+                    ((adapter.MyViewHolder)var5).getBtn1().setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#FFCCCCCC")));
+                    ((adapter.MyViewHolder)var5).getBtn1().setTextColor(ColorStateList.valueOf(Color.parseColor("#000000")));
+                    ((adapter.MyViewHolder)var5).getBtn4().setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#FFCCCCCC")));
+                    ((adapter.MyViewHolder)var5).getBtn4().setTextColor(ColorStateList.valueOf(Color.parseColor("#000000")));
                 }
             });
 
@@ -204,6 +225,13 @@ public class adapter extends CarouselAdapter {
                     option[pos] = (String) ((MyViewHolder)var5).getBtn4().getText();
                     ((adapter.MyViewHolder)var5).getBtn4().setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#4a47a7")));
                     ((adapter.MyViewHolder)var5).getBtn4().setTextColor(ColorStateList.valueOf(Color.parseColor("#FFFFFF")));
+
+                    ((adapter.MyViewHolder)var5).getBtn2().setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#FFCCCCCC")));
+                    ((adapter.MyViewHolder)var5).getBtn2().setTextColor(ColorStateList.valueOf(Color.parseColor("#000000")));
+                    ((adapter.MyViewHolder)var5).getBtn3().setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#FFCCCCCC")));
+                    ((adapter.MyViewHolder)var5).getBtn3().setTextColor(ColorStateList.valueOf(Color.parseColor("#000000")));
+                    ((adapter.MyViewHolder)var5).getBtn1().setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#FFCCCCCC")));
+                    ((adapter.MyViewHolder)var5).getBtn1().setTextColor(ColorStateList.valueOf(Color.parseColor("#000000")));
                 }
             });
 
