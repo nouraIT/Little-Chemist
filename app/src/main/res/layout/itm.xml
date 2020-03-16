@@ -3,28 +3,84 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/ll"
-    android:layout_width="250dp"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
     >
 
 <!--        TODO maybe add a card view ? -->
+<androidx.cardview.widget.CardView
+    android:id="@+id/cardviewquiz"
+    android:layout_width="295dp"
+    android:layout_height="418dp"
+    app:cardBackgroundColor="@color/colorIcons"
+    >
+<!--        app:cardCornerRadius="50dp"-->
+        <LinearLayout
+            android:id="@+id/optextandbtn"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
         <TextView
             android:id="@+id/item_text"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_margin="12dp"
-
             android:fontFamily="@font/roboto_bold"
-
-            android:gravity="center"
+            android:gravity="center_horizontal"
             android:text="here"
-
-            android:textAllCaps="true"
+            android:textAllCaps="false"
             android:textColor="@color/colorPrimary"
-            android:textSize="22sp"
-/>
+            android:textSize="22sp" />
+
+                <Button
+                    android:id="@+id/chos1btn"
+                    android:layout_width="270dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="50dp"
+                    android:layout_gravity="center"
+                    android:text="button"
+                    android:backgroundTint="@color/TransparentWhite"
+                    android:background="@drawable/rounded_button"
+                    android:textAllCaps="false"/>
+
+                <Button
+                    android:id="@+id/chos2btn"
+                    android:layout_width="270dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_gravity="center"
+                    android:text="button"
+                    android:backgroundTint="@color/TransparentWhite"
+                    android:background="@drawable/rounded_button"
+                    android:textAllCaps="false"/>
+
+                <Button
+                    android:id="@+id/chos3btn"
+                    android:layout_width="270dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_gravity="center"
+                    android:text="button"
+                    android:backgroundTint="@color/TransparentWhite"
+                    android:background="@drawable/rounded_button"
+                    android:textAllCaps="false"/>
+
+                <Button
+                    android:id="@+id/chos4btn"
+                    android:layout_width="270dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_gravity="center"
+                    android:text="button"
+                    android:backgroundTint="@color/TransparentWhite"
+                    android:background="@drawable/rounded_button"
+                    android:textAllCaps="false"/>
+
+        </LinearLayout>
+
+</androidx.cardview.widget.CardView>
 
 <!--        corner radius 25dp-->
 <!--        android:shadowColor="#000"-->

@@ -38,10 +38,10 @@ For example, have you ever tried mixing oil and water? They stay separate no mat
         A <b>chemical equation</b> is a way to represent a chemical reaction using element symbols. <b>Chemical equations</b> have two sides: the <b>reactant side</b> and the <b>product side.</b>
 
     </string>
-    <string name="C2L4E1">
-        <!-- drag and drop -->
-        which side is the reactant side and which side is the product side?
-    </string>
+<!--    <string name="C2L4E1">-->
+<!--        &lt;!&ndash; drag and drop &ndash;&gt;-->
+<!--        which side is the reactant side and which side is the product side?-->
+<!--    </string>-->
 
     <string name="C2L4S2">
         There is only one atom of each element in the equation, unless the element has a <b>coefficient</b> or a <b>subscript</b> with it.
@@ -58,13 +58,14 @@ For example, have you ever tried mixing oil and water? They stay separate no mat
     <string name="C2L4S3">
         A subscript tells how many atoms of that element there are. The <b>coefficients</b> are multiplied by every element or its <b>subscript</b> to determine the number of atoms.
     </string>
-    <string-array name="C2L4E3M">
-        <!--Image-->
-        <!--Multiple choice-->
-        <item>Is there a <b>coefficients</b> in this equation?</item>
-        <item>YES</item>
-        <item>NO</item>
-    </string-array>
+
+<!--    <string-array name="C2L4E3M">-->
+<!--        &lt;!&ndash;Image&ndash;&gt;-->
+<!--        &lt;!&ndash;Multiple choice&ndash;&gt;-->
+<!--        <item>Is there a <b>coefficients</b> in this equation?</item>-->
+<!--        <item>YES</item>-->
+<!--        <item>NO</item>-->
+<!--    </string-array>-->
 
     <string name="C2L4S4">
         So how do we balance an equation? To start, we count the number of atoms of each element. Once we know the total number of atoms of each element, we can change or add <b>coefficients</b> to make the sides balance. Important: We can <b>NEVER</b> change or add <b>subscripts</b>!
@@ -74,6 +75,8 @@ For example, have you ever tried mixing oil and water? They stay separate no mat
         <item>To balance an equation we have to</item>
         <item>Change or add subscripts</item>
         <item>Change or add coefficients</item>
+        <item>Both</item>
+        <item>We don\'t have to do anything</item>
     </string-array>
 
     <string name="C2L4S5">
@@ -84,6 +87,8 @@ For example, have you ever tried mixing oil and water? They stay separate no mat
         <item>What did we do in previous equation?</item>
         <item>We added coefficients</item>
         <item>We added subscripts</item>
+        <item>Both</item>
+        <item>Nothing</item>
     </string-array>
 
     <string name="C2L4S6">
@@ -91,22 +96,22 @@ For example, have you ever tried mixing oil and water? They stay separate no mat
         First let\'s count the atoms on the reactant and product side separately in the original equation
 
     </string>
-    <string-array name="C2L4E6M">
-        <!--Multiple choice-->
-        <item>We have to balance this equation</item>
-        <item>YES, of course!</item>
-        <item>NO, it is already balanced</item>
-    </string-array>
+<!--    <string-array name="C2L4E6M">-->
+<!--        &lt;!&ndash;Multiple choice&ndash;&gt;-->
+<!--        <item>We have to balance this equation</item>-->
+<!--        <item>YES, of course!</item>-->
+<!--        <item>NO, it is already balanced</item>-->
+<!--    </string-array>-->
 
     <string name="C2L4S7">
         C2H6 + O → CO2 +H2O
         Second based on the previous step determine what coefficients need to be added or changed to make the products and reactants balanced
     </string>
-    <string-array name="C2L4E7M">
-        <item>We need to be add or change coefficients to make the products and reactants balanced</item>
-        <item>True</item>
-        <item>False</item>
-    </string-array>
+<!--    <string-array name="C2L4E7M">-->
+<!--        <item>We need to be add or change coefficients to make the products and reactants balanced</item>-->
+<!--        <item>True</item>-->
+<!--        <item>False</item>-->
+<!--    </string-array>-->
 
     <string name="C2L4S8">
         Thirdو after determining your coefficients, recount the atoms to make sure that they balance
@@ -119,6 +124,8 @@ For example, have you ever tried mixing oil and water? They stay separate no mat
         <item>When we change on the coefficients we have to make sure that</item>
         <item>The products and the reactants are equals</item>
         <item>The products and the reactants are different</item>
+        <item>The number of the coefficients are equals</item>
+        <item>The number of the subscripts are equals</item>
     </string-array>
 
 <!--&lt;!&ndash; REMOVE THIS SEGMENT&ndash;&gt;-->
@@ -152,6 +159,14 @@ For example, have you ever tried mixing oil and water? They stay separate no mat
         Plain water is right in the middle of the scale with a pH of 7. This is called a neutral pH
     </string>
 
+    <string-array name="C2L5E3M">
+        <item>If know that the apple juice has pH equals to 3 this make the apple juice</item>
+        <item>Alkaline</item>
+        <item>Acidic</item>
+        <item>Neutral</item>
+        <item>None</item>
+    </string-array>
+
     <string name="C2L5S4">
         If you want to try things with high <b>acidic pH</b>, first take a cup of milk, milke has a pH between 6 and 7,so it\'s just a little more <b>acidic</b> than water.
         If you drank some coffee, you\'d be down to a pH of 5. Also if you had some orange juice, you\'d be looking at a pH around 3, and lemon juice has a pH of 2
@@ -161,12 +176,73 @@ For example, have you ever tried mixing oil and water? They stay separate no mat
         Now let\'s take a look at things that are more basic or alkaline than water. The first step up from tap water is…sea water! the pH would be about 8.
         Moving on up the pH scale, baking soda is next at a pH around 9.5. Moving on up the pH scale, we start moving into dangerous cleaning chemicals, like bleach. Bleach has a pH of around 13.5.
     </string>
+    <string-array name="C2L5E5M">
+        <item>Form this items which one this the most basic or alkaline?</item>
+        <item>Hand soap with pH equals to 10</item>
+        <item>Egg with pH equals to 8</item>
+        <item>Bleach soap with pH equals to 13.5</item>
+        <item>baking soda with pH equals to 9.5</item>
+    </string-array>
 
     <!--         LESSON 5            -->
 
 
     <!--        Quiz Questions           -->
+    <string-array name="C2Quiz_Q1">
 
+        <item name="Q1">The nucleus of an atom is?C2</item>
+        <item name="A1">Split apart.</item>
+        <item name="A2">Made larger.</item>
+        <item name="A3">Frozen.</item>
+        <item name="A4">Weighed.</item>
+        <item name="CA1">Split apart.</item>
+
+
+    </string-array>
+    <string-array name="C2Quiz_Q2">
+
+        <item name="Q2">Electrons?C2</item>
+        <item name="A1">are huge and move very slowly.</item>
+        <item name="A2">move extremely fast and are very tiny.</item>
+        <item name="A3">have no energy at all.</item>
+        <item name="A4">can be seen using a magnifying glass.</item>
+        <item name="CA2">move extremely fast and are very tiny.</item>
+
+
+    </string-array>
+    <string-array name="C2Quiz_Q3">
+
+        <item name="Q3">How many electrons are in an atom?C2</item>
+        <item name="A1">There are 5 electrons in every atom.</item>
+        <item name="A2">Atoms do not have electrons in them.</item>
+        <item name="A3">different amounts of electrons.</item>
+        <item name="A4">no more than 10 electrons.</item>
+        <item name="CA3">different amounts of electrons.</item>
+
+
+    </string-array>
+
+    <string-array name="C2Quiz_Q4">
+
+        <item name="Q4">How do atoms bond together?C2</item>
+        <item name="A1">They share their electrons.</item>
+        <item name="A2">Atoms do not bond together.</item>
+        <item name="A3">One gets smaller so it can fit inside the other.</item>
+        <item name="A4">They lose all their electrons.</item>
+        <item name="CA4">They share their electrons.</item>
+
+
+    </string-array>
+    <string-array name="C2Quiz_Q5">
+
+        <item name="Q5">Isotopes of an element differ in _____.C2</item>
+        <item name="A1">number of protons.</item>
+        <item name="A2">number of electrons.</item>
+        <item name="A3">atomic numbers.</item>
+        <item name="A4">atomic masses.</item>
+        <item name="CA5">atomic masses</item>
+
+    </string-array>
 
 
     <!--         Quiz Total Answers          -->

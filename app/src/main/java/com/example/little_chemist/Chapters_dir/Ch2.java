@@ -192,7 +192,7 @@ public class Ch2 extends AppCompatActivity {
                 statue = student.getQzLock("1");
                 if (statue.equals("unlocked") || statue.equals("completed") ) {
 
-                    Intent n = new Intent(Ch2.this, Quiz.class);
+                    Intent n = new Intent(Ch2.this, quizQ.class);
                     n.putExtra("ChapterNumber",2);
                     startActivity(n);
                 }

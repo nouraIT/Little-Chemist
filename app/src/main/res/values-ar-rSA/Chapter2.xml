@@ -36,10 +36,10 @@
     <string name="C2L4S1">
         المعادلة الكيميائية أو معادلة التفاعل عبارة عن تمثيل للتفاعل الكيميائي بواسطة مجموعة من الرموز والصيغ الكيميائية التي تعبر عن المواد الداخلة في التفاعل والخارجة منه والإلكترونات التي تكتسب أو تفقد من ذرات العناصر المتفاعلة.
     </string>
-    <string name="C2L4E1">
-        <!-- drag and drop -->
-        أي جانب هو الجانب المتفاعل وأي جانب هو جانب المنتج؟
-    </string>
+<!--    <string name="C2L4E1">-->
+<!--        &lt;!&ndash; drag and drop &ndash;&gt;-->
+<!--        أي جانب هو الجانب المتفاعل وأي جانب هو جانب المنتج؟-->
+<!--    </string>-->
 
     <string name="C2L4S2">
         هناك ذرة واحدة فقط من كل عنصر في المعادلة ، ما لم يكن للعامل معامل أو حرف منخفض به.
@@ -56,13 +56,13 @@
     <string name="C2L4S3">
         يُبيِّن حرف منخفض عدد ذرات هذا العنصر. يتم ضرب المعاملات بواسطة كل عنصر أو بالحرف المنخفض لهذا العنصر لتحديد عدد الذرات.
     </string>
-    <string-array name="C2L4E3M">
-        <!--Image-->
-        <!--Multiple choice-->
-        <item>هل هناك معاملات في هذه المعادلة؟</item>
-        <item>نعم</item>
-        <item>لا</item>
-    </string-array>
+<!--    <string-array name="C2L4E3M">-->
+<!--        &lt;!&ndash;Image&ndash;&gt;-->
+<!--        &lt;!&ndash;Multiple choice&ndash;&gt;-->
+<!--        <item>هل هناك معاملات في هذه المعادلة؟</item>-->
+<!--        <item>نعم</item>-->
+<!--        <item>لا</item>-->
+<!--    </string-array>-->
 
     <string name="C2L4S4">
         فكيف نوازن بين المعادلة؟ للبدء ، نحسب عدد ذرات كل عنصر. بمجرد معرفة إجمالي عدد ذرات كل عنصر ، يمكننا تغيير أو إضافة معاملات لجعل التوازن بين الجانبين. هام: لا يمكننا أبدًا تغيير أو إضافة حرف منخفض!
@@ -72,6 +72,8 @@
         <item>لوزن معادلة يجب علينا ان نقوم بـ</item>
         <item>تغيير أو إضافة حرف منخفض</item>
         <item>تغيير أو إضافة معاملات</item>
+        <item>كلاهما</item>
+        <item>لا نحتاج لتغير اي شيء</item>
     </string-array>
 
     <string name="C2L4S5">
@@ -82,29 +84,32 @@
         <item>ماذا فعلنا في المعادلة السابقة؟</item>
         <item>أضفنا المعاملات</item>
         <item>أضفنا الاشتراكات</item>
+        <item>كلاهما</item>
+        <item>لا شيء</item>
     </string-array>
+
 
     <string name="C2L4S6">
         C2H6 + O → CO2 +H2O
         أولاً ، دعونا نحسب الذرات على جانب المنتج والمفاعل بشكل منفصل في المعادلة الأصلية
 
     </string>
-    <string-array name="C2L4E6M">
-        <!--Multiple choice-->
-        <item>علينا أن نوازن هذه المعادلة</item>
-        <item>نعم بالطبع!</item>
-        <item>لا ، إنه متوازن بالفعل</item>
-    </string-array>
+<!--    <string-array name="C2L4E6M">-->
+<!--        &lt;!&ndash;Multiple choice&ndash;&gt;-->
+<!--        <item>علينا أن نوازن هذه المعادلة</item>-->
+<!--        <item>نعم بالطبع!</item>-->
+<!--        <item>لا ، إنه متوازن بالفعل</item>-->
+<!--    </string-array>-->
 
     <string name="C2L4S7">
         C2H6 + O → CO2 +H2O
         ثانياً ، بناءً على الخطوة السابقة ، حدد المعاملات التي يجب إضافتها أو تغييرها لجعل المنتجات والمواد المتفاعلة متوازنة
     </string>
-    <string-array name="C2L4E7M">
-        <item>نحتاج إلى إضافة أو تغيير المعاملات لجعل المنتجات والمواد المتفاعلة متوازنة</item>
-        <item>صحيح</item>
-        <item>خطأ</item>
-    </string-array>
+<!--    <string-array name="C2L4E7M">-->
+<!--        <item>نحتاج إلى إضافة أو تغيير المعاملات لجعل المنتجات والمواد المتفاعلة متوازنة</item>-->
+<!--        <item>صحيح</item>-->
+<!--        <item>خطأ</item>-->
+<!--    </string-array>-->
 
     <string name="C2L4S8">
         ثالثًا ، بعد تحديد معاملاتك ، أعد فرز الذرات للتأكد من توازنها
@@ -116,6 +121,8 @@
         <item>عندما نغير على معاملات علينا التأكد من ان</item>
         <item>المواد الناتجة والمواد المتفاعلة متساوية</item>
         <item>المواد الناتجة والمواد المتفاعلة مختلفة</item>
+        <item>يجب ان يكون عدد المعاملات متساوية</item>
+        <item>يجب ان يكون الحرف المنخفض متساوي</item>
     </string-array>
 
     <!--    &lt;!&ndash; REMOVE THIS SEGMENT&ndash;&gt;-->
@@ -163,7 +170,62 @@
 
 
     <!--        Quiz Questions           -->
+    <string-array name="C2Quiz_Q1">
 
+        <item name="Q1">C2نواة الذرة تقوم ب؟</item>
+        <item name="A1">الانقسام</item>
+        <item name="A2">تكبر في الحجم</item>
+        <item name="A3">تتجمد</item>
+        <item name="A4">قياس حجمها</item>
+        <item name="CA1">الانقسام</item>
+
+
+    </string-array>
+    <string-array name="C2Quiz_Q2">
+
+        <item name="Q2">C2الإلكترونات?</item>
+        <item name="A1">ضخمة وتتحرك ببطء شديد.</item>
+        <item name="A2">التحرك بسرعة كبيرة وصغيرة جدا.</item>
+        <item name="A3">ليس لديهم طاقة على الإطلاق.</item>
+        <item name="A4">يمكن رؤيتها باستخدام عدسة مكبرة.</item>
+        <item name="CA2">التحرك بسرعة كبيرة وصغيرة جدا.</item>
+
+
+    </string-array>
+    <string-array name="C2Quiz_Q3">
+
+        <item name="Q3">C2كم عدد الإلكترونات الموجودة في الذرة؟</item>
+        <item name="A1">هناك 5 إلكترونات في كل ذرة.</item>
+        <item name="A2">لا تحتوي الذرات على إلكترونات.</item>
+        <item name="A3">كميات مختلفة من الإلكترونات.</item>
+        <item name="A4">لا يزيد عن 10 إلكترونات.</item>
+        <item name="CA3">كميات مختلفة من الإلكترونات.</item>
+
+
+    </string-array>
+
+    <string-array name="C2Quiz_Q4">
+
+        <item name="Q4">C2كيف تترابط الذرات معًا؟</item>
+        <item name="A1">يتشاركون إلكتروناتهم.</item>
+        <item name="A2">الذرات لا ترتبط ببعضها البعض.</item>
+        <item name="A3">واحد يصبح أصغر بحيث يمكن أن يصلح داخل الآخر.</item>
+        <item name="A4">يفقدون كل إلكتروناتهم.</item>
+        <item name="CA4">يتشاركون إلكتروناتهم.</item>
+
+
+    </string-array>
+    <string-array name="C2Quiz_Q5">
+
+        <item name="Q5">C2نظائر عنصر تختلف في _____.</item>
+        <item name="A1">عدد البروتونات.</item>
+        <item name="A2">عدد الإلكترونات.</item>
+        <item name="A3">الأرقام الذرية.</item>
+        <item name="A4">الكتل الذرية.</item>
+        <item name="CA5">الكتل الذرية.</item>
+
+
+    </string-array>
 
 
     <!--         Quiz Total Answers          -->
