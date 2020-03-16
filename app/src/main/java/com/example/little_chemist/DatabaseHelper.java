@@ -86,20 +86,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     FeedEntry.COLUMN_SECA +" TEXT,"+
                     FeedEntry.COLUMN_LANG +" INTEGER)" ;
 
-    private static final String SQL_CREATE_CHAPTER=
-            "CREATE TABLE "+FeedEntry.TABLE_CHAPTER +" ("+
-                    FeedEntry.COLUMN_CHID + "  INTEGER PRIMARY KEY," +
-                    FeedEntry.COLUMN_CHNAME + " TEXT," +
-                    FeedEntry.COLUMN_CHLOCK + " TEXT)" ;
-
-    private static final String SQL_CREATE_LESSON=
-            "CREATE TABLE "+FeedEntry.TABLE_LESSON +" ("+
-                    FeedEntry.COLUMN_LSNID + "  INTEGER PRIMARY KEY," +
-                    FeedEntry.COLUMN_LSNNAME + " TEXT," +
-                    FeedEntry.COLUMN_LSNLOCK + " TEXT," +
-                    FeedEntry.COLUMN_EXERCISE + " TEXT," +
-                    FeedEntry.COLUMN_CONTENT + " TEXT,"+
-                    FeedEntry.COLUMN_CH + " INTEGER, FOREIGN KEY ("+FeedEntry.COLUMN_CH+") REFERENCES "+FeedEntry.TABLE_CHAPTER+"("+FeedEntry.COLUMN_CHID+"))";
+//    private static final String SQL_CREATE_CHAPTER=
+//            "CREATE TABLE "+FeedEntry.TABLE_CHAPTER +" ("+
+//                    FeedEntry.COLUMN_CHID + "  INTEGER PRIMARY KEY," +
+//                    FeedEntry.COLUMN_CHNAME + " TEXT," +
+//                    FeedEntry.COLUMN_CHLOCK + " TEXT)" ;
+//
+//    private static final String SQL_CREATE_LESSON=
+//            "CREATE TABLE "+FeedEntry.TABLE_LESSON +" ("+
+//                    FeedEntry.COLUMN_LSNID + "  INTEGER PRIMARY KEY," +
+//                    FeedEntry.COLUMN_LSNNAME + " TEXT," +
+//                    FeedEntry.COLUMN_LSNLOCK + " TEXT," +
+//                    FeedEntry.COLUMN_EXERCISE + " TEXT," +
+//                    FeedEntry.COLUMN_CONTENT + " TEXT,"+
+//                    FeedEntry.COLUMN_CH + " INTEGER, FOREIGN KEY ("+FeedEntry.COLUMN_CH+") REFERENCES "+FeedEntry.TABLE_CHAPTER+"("+FeedEntry.COLUMN_CHID+"))";
 
     private static final String SQL_CREATE_QUIZ=
             "CREATE TABLE "+FeedEntry.TABLE_QUIZ +" ("+
@@ -121,8 +121,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(SQL_CREATE_STUDENT);
-        db.execSQL(SQL_CREATE_CHAPTER);
-        db.execSQL(SQL_CREATE_LESSON);
+//        db.execSQL(SQL_CREATE_CHAPTER);
+//        db.execSQL(SQL_CREATE_LESSON);
         db.execSQL(SQL_CREATE_QUIZ);
         //db.close();
 
@@ -188,42 +188,42 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.close();
     }
 
-    public void InsertChapters(Chapter chapter){
+//    public void InsertChapters(Chapter chapter){
+//
+//        db=getWritableDatabase();
+//        //To get , how many column in ur table
+//        String query="SELECT * FROM "+FeedEntry.TABLE_CHAPTER;
+//        Cursor cursor=db.rawQuery(query,null);
+//        int count=cursor.getCount();
+//
+//        ContentValues contentvalues=new ContentValues();
+//        contentvalues.put(FeedEntry.COLUMN_CHID,count+1);
+//        contentvalues.put(FeedEntry.COLUMN_CHNAME, chapter.GetChapterName());
+//        contentvalues.put(FeedEntry.COLUMN_CHLOCK, chapter.GetLockChapter());
+//
+//        db.insert(FeedEntry.TABLE_CHAPTER,null,contentvalues);
+//        db.close();
+//    }
 
-        db=getWritableDatabase();
-        //To get , how many column in ur table
-        String query="SELECT * FROM "+FeedEntry.TABLE_CHAPTER;
-        Cursor cursor=db.rawQuery(query,null);
-        int count=cursor.getCount();
-
-        ContentValues contentvalues=new ContentValues();
-        contentvalues.put(FeedEntry.COLUMN_CHID,count+1);
-        contentvalues.put(FeedEntry.COLUMN_CHNAME, chapter.GetChapterName());
-        contentvalues.put(FeedEntry.COLUMN_CHLOCK, chapter.GetLockChapter());
-
-        db.insert(FeedEntry.TABLE_CHAPTER,null,contentvalues);
-        db.close();
-    }
-
-    public void InsertLessons(Lesson lesson){
-
-        db=getWritableDatabase();
-        //To get , how many column in ur table
-        String query="SELECT * FROM "+FeedEntry.TABLE_LESSON;
-        Cursor cursor=db.rawQuery(query,null);
-        int count=cursor.getCount();
-
-        ContentValues contentvalues=new ContentValues();
-        contentvalues.put(FeedEntry.COLUMN_LSNID,count+1);
-        contentvalues.put(FeedEntry.COLUMN_LSNNAME, lesson.GetLessonName());
-        contentvalues.put(FeedEntry.COLUMN_LSNLOCK, lesson.GetLockLesson());
-        contentvalues.put(FeedEntry.COLUMN_EXERCISE, lesson.GetExercise());
-        contentvalues.put(FeedEntry.COLUMN_CH, lesson.GetChID());
-        contentvalues.put(FeedEntry.COLUMN_CONTENT, lesson.GetContent());
-
-        db.insert(FeedEntry.TABLE_LESSON,null,contentvalues);
-        db.close();
-    }
+//    public void InsertLessons(Lesson lesson){
+//
+//        db=getWritableDatabase();
+//        //To get , how many column in ur table
+//        String query="SELECT * FROM "+FeedEntry.TABLE_LESSON;
+//        Cursor cursor=db.rawQuery(query,null);
+//        int count=cursor.getCount();
+//
+//        ContentValues contentvalues=new ContentValues();
+//        contentvalues.put(FeedEntry.COLUMN_LSNID,count+1);
+//        contentvalues.put(FeedEntry.COLUMN_LSNNAME, lesson.GetLessonName());
+//        contentvalues.put(FeedEntry.COLUMN_LSNLOCK, lesson.GetLockLesson());
+//        contentvalues.put(FeedEntry.COLUMN_EXERCISE, lesson.GetExercise());
+//        contentvalues.put(FeedEntry.COLUMN_CH, lesson.GetChID());
+//        contentvalues.put(FeedEntry.COLUMN_CONTENT, lesson.GetContent());
+//
+//        db.insert(FeedEntry.TABLE_LESSON,null,contentvalues);
+//        db.close();
+//    }
 
     public void InsertQuizzes(Quiz quiz){
 

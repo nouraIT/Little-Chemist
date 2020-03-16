@@ -11,8 +11,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.view.animation.AlphaAnimation;
-import android.view.animation.Animation;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -22,8 +20,6 @@ import org.eazegraph.lib.charts.PieChart;
 import org.eazegraph.lib.models.PieModel;
 
 import java.util.Locale;
-
-import pl.droidsonroids.gif.GifImageView;
 
 
 public class Home extends AppCompatActivity {
@@ -36,7 +32,7 @@ public class Home extends AppCompatActivity {
     DatabaseHelper helper = new DatabaseHelper(Home.this);
     public static boolean alreadyRecreated = false;
     public static boolean AlreadyGreeted = false;
-    static Student student = new Student();
+    static Student student ;//= new Student();
 
 
     @Override
@@ -126,11 +122,11 @@ public class Home extends AppCompatActivity {
                     @Override
                     public void run(){
 
-                Intent n = new Intent(Home.this, Chapters.class);
-                //n.putExtra("student",student);
-                startActivity(n);
-                //finish();
-                    }
+                    Intent n = new Intent(Home.this, Chapters.class);
+                    //n.putExtra("student",student);
+                    startActivity(n);
+                    //finish();
+                        }
                 });
                 thread.start();
             }
@@ -157,7 +153,7 @@ public class Home extends AppCompatActivity {
         PieChart mPieChart = (PieChart) findViewById(R.id.piechart);
 
 
-        String progress = student.getProgress();
+        String progress = student.viewScore();
         //"1:0,2:0,3:0,4:0,5:0,"
         int []chvalue = new int[5];
 

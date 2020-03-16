@@ -5,13 +5,11 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.ProgressBar;
 
 import com.daimajia.numberprogressbar.NumberProgressBar;
 import com.example.little_chemist.Tables.Student;
@@ -68,7 +66,7 @@ public class Quiz_score extends AppCompatActivity {
         progressBar4 = findViewById(R.id.numberbar2);
         progressBar5 = findViewById(R.id.numberbar3);
 
-        String progress = student.getProgress();
+        String progress = student.viewScore();
         //"1:0,2:0,3:0,4:0,5:0,"
         int []chvalue = new int[5];
 

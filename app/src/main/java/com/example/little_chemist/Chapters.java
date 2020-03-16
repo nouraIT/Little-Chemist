@@ -211,19 +211,19 @@ public class Chapters extends AppCompatActivity {
 
         }else if(R.id.cardviewch3==card00.getId()){
             statue = student.getChLock("3");
-           // if (statue.equals("unlocked") || statue.equals("completed") ) {
+            if (statue.equals("unlocked") || statue.equals("completed") ) {
                 n = new Intent(Chapters.this, Ch3.class);
                 startActivity(n);
-           // }
-           // else
+            }
+            else
                 Toast.makeText(getApplicationContext(), "Locked", Toast.LENGTH_LONG).show();
 
         }else if(R.id.cardviewch4==card00.getId()){
             statue = student.getChLock("4");
-            //if (statue.equals("unlocked") || statue.equals("completed") ) {
+            if (statue.equals("unlocked") || statue.equals("completed") ) {
                 n = new Intent(Chapters.this, Ch4.class);
                 startActivity(n);
-            //}else
+            }else
                 Toast.makeText(getApplicationContext(), "Locked", Toast.LENGTH_LONG).show();
 
 

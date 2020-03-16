@@ -25,7 +25,7 @@ import java.io.Serializable;
 public class LoginPage extends AppCompatActivity implements Serializable {
 
         Student student = new Student();
-       DatabaseHelper helper=new DatabaseHelper(this);
+        DatabaseHelper helper=new DatabaseHelper(this);
         TextInputLayout UserNameET, PasswordET;
         String UserNameStr,PasswordStr;
 
@@ -56,8 +56,6 @@ public class LoginPage extends AppCompatActivity implements Serializable {
             final Button loginButton = findViewById(R.id.login);
             UserNameET= findViewById(R.id.userName);
             PasswordET= findViewById(R.id.password);
-
-            //UserNameET.setError(null);
 
             //_____________________________________
             UserNameET.getEditText().addTextChangedListener(new TextWatcher() {
@@ -124,12 +122,8 @@ public class LoginPage extends AppCompatActivity implements Serializable {
                 @Override
                 public void onClick(View v) {
                     UserNameStr=UserNameET.getEditText().getText().toString().trim();
-                    //Passing Password
 
                     PasswordStr=PasswordET.getEditText().getText().toString().trim();
-
-                    //UserNameET.setError(null);
-                    //PasswordET.setError(null);
 
 
                    String dbPassword= helper.checkPassword(UserNameStr);
@@ -145,11 +139,7 @@ public class LoginPage extends AppCompatActivity implements Serializable {
                         editor.putString("username", UserNameStr); // Storing string
                         editor.putString("password", PasswordStr); // Storing string
 
-
                         editor.apply();
-
-
-
 
                         Intent loginIntent=new Intent(LoginPage.this,Home.class);
                         //Send Data
@@ -181,57 +171,6 @@ public class LoginPage extends AppCompatActivity implements Serializable {
             startActivity(SignUpIntent);
         }
     }
-
-
-
-//
-//        public  void onBtnLoginInClick(View v){
-//
-//
-//            if(v.getId()==R.id.login){
-//
-//                UserNameET= findViewById(R.id.username);
-//                UserNameStr=UserNameET.getEditText().getText().toString().trim();
-//                //Passing Password
-//                PasswordET= findViewById(R.id.password);
-//                PasswordStr=PasswordET.getEditText().getText().toString().trim();
-//
-//               // UserNameET.setError(null);
-//
-//            if(UserNameStr.isEmpty()) {
-//                UserNameET.setError(getText(R.string.null_username));
-//                return;
-//            }
-//
-//            if(PasswordStr.isEmpty()){
-//                PasswordET.setError(getText(R.string.null_password));
-//                return;
-//            }
-//
-//
-//            //Send UserName to Database to find it, and return Password
-//            String dbPassword= helper.checkPassword(UserNameStr);
-//            //To compare it with Current Password from user input
-//            if(dbPassword.equals(PasswordStr)){
-//                Intent loginIntent=new Intent(this,Home.class);
-//                //Send Data
-//                loginIntent.putExtra("UserName",UserNameStr);
-//                loginIntent.putExtra("Password",PasswordStr);
-//                //loginIntent.putExtra("Welcome",)
-//                String welcome = getString(R.string.welcome) +" "+ UserNameStr ;
-//                Toast.makeText(getApplicationContext(), welcome, Toast.LENGTH_LONG).show();
-//
-//                startActivity(loginIntent);
-//
-//            }else {
-//                UserNameET.setError(getText(R.string.IncorrectAccount));
-//                PasswordET.setError(getText(R.string.IncorrectAccount));
-//            }
-//
-//
-//        }
-//    }// on btn login
-
 
 
 

@@ -192,26 +192,48 @@ public class Settings extends AppCompatActivity {
             public void onClick(View view) {
 
                 AlertDialog.Builder alert = new AlertDialog.Builder(Settings.this);
+
                 final EditText edittext = new EditText(Settings.this);
+                edittext.setHint("Password");
+
                 alert.setMessage(getText(R.string.confirmDeleteAcc));
                 alert.setTitle(getText(R.string.delete_account));
-                alert.setView(edittext);
+//                alert.setView(edittext);
                 alert.setPositiveButton(getText(R.string.yes), new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        String password = edittext.getText().toString();
-                        if (password.equals(pass)){
-                            helper.DeleteStudent(studentId);
-                            Intent intent = new Intent(Settings.this,
-                                    LoginPage.class);
-                            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                            startActivity(intent);
-                            finish();
-                        }
+                        AlertDialog.Builder alert = new AlertDialog.Builder(Settings.this);
+            //TODO fix dis
+//                        String password = edittext.getText().toString();
+                        alert.setMessage(getText(R.string.confirmDeleteAcc));
+                        alert.setTitle(getText(R.string.delete_account));
+                        alert.setView(edittext);
+                        alert.setPositiveButton(getText(R.string.yes), new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                String password = edittext.getText().toString();
+                                if (password.equals(pass)){
+                                    helper.DeleteStudent(studentId);
+                                    Intent intent = new Intent(Settings.this,
+                                            LoginPage.class);
+                                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                    startActivity(intent);
+                                    finish();
+                                }
 
 //                        else{
 //                            //error msg
 //                        }
+                            }
+                        });
+
+                        alert.setNegativeButton(getText(R.string.no), new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+
+                            }
+                        });
+
                     }
                 });
 
