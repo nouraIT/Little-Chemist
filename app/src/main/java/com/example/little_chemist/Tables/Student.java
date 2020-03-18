@@ -7,11 +7,13 @@ import com.example.little_chemist.MainActivity;
 import java.io.Serializable;
 
 
-public class Student implements Serializable {
-    int Id, TotalScore;
+public class Student extends AppCompatActivity implements Serializable {
+    int Id;
+    String Scores;
+    double TotalScore, ScoresA[]= new double[5];
     String UserName,Password, QZLocks, CHLocks, LSNLocks, SecQ, SecA;
     int Arabic;
-    DatabaseHelper helper;// = new DatabaseHelper();
+    DatabaseHelper helper = new DatabaseHelper(Student.this);
 
     //TODO save the score of each chapter in the DB but the total score will be saved here
 
@@ -27,9 +29,27 @@ public class Student implements Serializable {
                 "11:locked,12:locked,13:locked,14:locked,15:locked,16:locked,17:locked,18:locked,19:locked,20:locked," +
                 "21:locked,22:locked,23:locked,24:locked,25:locked,";
     }
-    public Student(int id,String QL,String CHl,String LL,String username,String Pass,String SQ,String SA,int lang) {
+    public Student(int id,String scores,String QL,String CHl,String LL,String username,String Pass,String SQ,String SA,int lang) {
         this.Id=id;
-//        this.TotalScore =score;
+
+        //scores = "c1:0,c2:0..."
+        int ch = 1;
+
+        for(int i =0;i<5;i++){
+//            scores="c1:100,c2:70,c3:40,c4:9,c5:0,";
+//            String ch = 'c'+(i+1)+"" ;
+            System.out.println(scores);
+            int first = scores.indexOf("c"+(ch)+":");
+            ch++;
+            System.out.println(first);
+            int last = scores.indexOf(",",first);
+            System.out.println(last);
+
+            System.out.println(scores.substring(first+4,last));
+            ScoresA[i] = Double.parseDouble(scores.substring(first+3,last));
+        }
+
+        this.TotalScore =0;
         this.UserName = username;
         this.Password= Pass;
         this.QZLocks=QL;
@@ -64,8 +84,17 @@ public class Student implements Serializable {
         return Password;
     }
 
-    public void SetTotalScore(int totalscore) { this.TotalScore=totalscore;}
-    public int GetTotalScore() { return TotalScore;}
+    public void SetTotalScore(int quizID , double score) {
+//TODO should save it in a string too and save it in the database
+        this.ScoresA[quizID-1] = score; //minus 1 because it's an array
+        this.TotalScore+=score;
+    }
+    public double[] GetTotalScore() {
+//        Scores="";
+//        for(int i =0;i<5;i++)
+//            Scores+="c"+(i+1)+this.ScoresA[i]+",";
+        return ScoresA;
+    }
 
 
     // a QZLOCK is gonna look something like this [ch1:completed, ch2:Unlocked, ch3:Locked]

@@ -1,6 +1,7 @@
 package com.example.little_chemist;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -14,6 +15,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.example.little_chemist.Chapters_dir.Ch1;
+import com.example.little_chemist.Tables.Quiz;
+import com.example.little_chemist.Tables.Student;
 import com.example.little_chemist.kotlin.Intrinsics;
 
 import java.lang.reflect.Array;
@@ -42,6 +45,10 @@ public class quizQ extends AppCompatActivity {
     private String[][] Question = new String[5][];
     private double Score =0;
 
+    int QuizID;
+    Student student;
+    DatabaseHelper helper = new DatabaseHelper(quizQ.this);
+
 
 
     public quizQ(){
@@ -59,7 +66,12 @@ public class quizQ extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.quizes);
 
+        //get student info
+        SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
+        String name = pref.getString("username", null); // getting String
+        student = helper.getStudent(name);
 
+        //toolbar stuff
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -72,14 +84,16 @@ public class quizQ extends AppCompatActivity {
                 finish();
             }
         });
-// RecyclerView
+
+
+        // RecyclerView
         recyclerimage();
 
 
 //CarouselView
 
         Bundle bundle=getIntent().getExtras();
-        int QuizID = bundle.getInt("ChapterNumber");
+        QuizID = bundle.getInt("ChapterNumber");
         final adapter adapter = new adapter(this,QuizID);
         AppCompatActivity appcomp = this;
         CarouselView carouselview = findViewById(R.id.carousel_view1);
@@ -128,7 +142,7 @@ public class quizQ extends AppCompatActivity {
 
                 if(position != 0 ) {
                     int count = position - 1;
-                    mImage.set(count, R.drawable.tick_mark);
+                    mImage.set(count, R.drawable.tick_mark); //TODO should only happen if student answers
                     initRecyclerView();
                     if (position == 4){
                         positioneqfive = true;
@@ -136,7 +150,7 @@ public class quizQ extends AppCompatActivity {
                 }
 
                 if (position != 4 && positioneqfive){
-                        mImage.set(4, R.drawable.tick_mark);
+                        mImage.set(4, R.drawable.tick_mark); //TODO should only happen if student answers
                         initRecyclerView();
 
                 }
@@ -246,6 +260,7 @@ public class quizQ extends AppCompatActivity {
         int subscore = 0;
         if (Arrays.equals(soption, correctoption)){
             score = 100;
+            student.SetTotalScore(QuizID,score);
             return score;
         }else {
             for(int i=0; i < soption.length; i++){
@@ -261,6 +276,7 @@ public class quizQ extends AppCompatActivity {
                 score = subscore * 20;
                 //14.2857143
         }
+        student.SetTotalScore(QuizID,score); //TODO make sure this saves it to the database
         return score;
     }
 

@@ -153,36 +153,40 @@ public class Home extends AppCompatActivity {
         PieChart mPieChart = (PieChart) findViewById(R.id.piechart);
 
 
-        String progress = student.viewScore();
-        //"1:0,2:0,3:0,4:0,5:0,"
-        int []chvalue = new int[5];
+//        String progress = student.viewScore();
+//        //"1:0,2:0,3:0,4:0,5:0,"
+//        int []chvalue = new int[5];
+//
+////        System.out.println(progress);
+//
+//        for(int i =0;i<5;i++){
+//
+//            int startIndex = progress.indexOf("c"+String.valueOf(i+1));
+//            int endIndex = progress.indexOf(",",startIndex);
+//
+////            System.out.println(startIndex+" and "+endIndex);
+//
+//            chvalue[i] = Integer.parseInt( progress.substring(startIndex + 3 , endIndex ));
+//
+//
+//            if(chvalue[i] == 0) {
+//                chvalue[i] = 1;
+////                System.out.println(i+" "+chvalue[i]);
+//
+//            }
+//
+//        }
 
-//        System.out.println(progress);
 
-        for(int i =0;i<5;i++){
-
-            int startIndex = progress.indexOf("c"+String.valueOf(i+1));
-            int endIndex = progress.indexOf(",",startIndex);
-
-//            System.out.println(startIndex+" and "+endIndex);
-
-            chvalue[i] = Integer.parseInt( progress.substring(startIndex + 3 , endIndex ));
+        double[] scores = student.GetTotalScore();
 
 
-            if(chvalue[i] == 0) {
-                chvalue[i] = 1;
-//                System.out.println(i+" "+chvalue[i]);
 
-            }
-
-        }
-
-
-        mPieChart.addPieSlice(new PieModel(getString(R.string.Ch1Name), chvalue[0], Color.parseColor("#ff0099cc") ));
-        mPieChart.addPieSlice(new PieModel(getString(R.string.Ch2Name), chvalue[1], Color.parseColor("#ff99cc00") ));
-        mPieChart.addPieSlice(new PieModel(getString(R.string.Ch3Name), chvalue[2], Color.parseColor("#F3CB4E") ));
-        mPieChart.addPieSlice(new PieModel(getString(R.string.Ch4Name), chvalue[3], Color.parseColor("#E36F3A")  ));
-        mPieChart.addPieSlice(new PieModel(getString(R.string.Ch5Name), chvalue[4], Color.parseColor("#DF3241") ));
+        mPieChart.addPieSlice(new PieModel(getString(R.string.Ch1Name), (float)scores[0], Color.parseColor("#ff0099cc") ));
+        mPieChart.addPieSlice(new PieModel(getString(R.string.Ch2Name), (float)scores[1], Color.parseColor("#ff99cc00") ));
+        mPieChart.addPieSlice(new PieModel(getString(R.string.Ch3Name), (float)scores[2], Color.parseColor("#F3CB4E") ));
+        mPieChart.addPieSlice(new PieModel(getString(R.string.Ch4Name), (float)scores[3], Color.parseColor("#E36F3A")  ));
+        mPieChart.addPieSlice(new PieModel(getString(R.string.Ch5Name), (float) scores[4], Color.parseColor("#DF3241") ));
 
 //        mPieChart.addPieSlice(new PieModel(getString(R.string.Ch1Name), chvalue[0], (R.color.cpb_blue) ));
 //        mPieChart.addPieSlice(new PieModel(getString(R.string.Ch2Name), chvalue[1], (R.color.cpb_green) ));

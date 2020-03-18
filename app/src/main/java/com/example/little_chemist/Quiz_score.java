@@ -66,42 +66,43 @@ public class Quiz_score extends AppCompatActivity {
         progressBar4 = findViewById(R.id.numberbar2);
         progressBar5 = findViewById(R.id.numberbar3);
 
-        String progress = student.viewScore();
-        //"1:0,2:0,3:0,4:0,5:0,"
-        int []chvalue = new int[5];
+//        String progress = student.viewScore();
+//        //"1:0,2:0,3:0,4:0,5:0,"
+//        int []chvalue = new int[5];
+//
+////        System.out.println(progress);
+//
+//        for(int i =0;i<5;i++){
+//
+//            int startIndex = progress.indexOf("c"+String.valueOf(i+1));
+//            int endIndex = progress.indexOf(",",startIndex);
+//
+////            System.out.println(startIndex+" and "+endIndex);
+//
+//            chvalue[i] = Integer.parseInt( progress.substring(startIndex + 3 , endIndex ));
+//
+//
+//            if(chvalue[i] == 0) {
+//                chvalue[i] = 1;
+////                System.out.println(i+" "+chvalue[i]);
+//
+//            }
+//
+//        }
 
-//        System.out.println(progress);
+        double[] scores = student.GetTotalScore();
 
-        for(int i =0;i<5;i++){
+        mPieChart.addPieSlice(new PieModel(getString(R.string.Ch1Name), (float) scores[0], Color.parseColor("#ff0099cc") ));
+        mPieChart.addPieSlice(new PieModel(getString(R.string.Ch2Name), (float) scores[1], Color.parseColor("#ff99cc00") ));
+        mPieChart.addPieSlice(new PieModel(getString(R.string.Ch3Name), (float) scores[2], Color.parseColor("#F3CB4E") ));
+        mPieChart.addPieSlice(new PieModel(getString(R.string.Ch4Name), (float) scores[3], Color.parseColor("#E36F3A")  ));
+        mPieChart.addPieSlice(new PieModel(getString(R.string.Ch5Name), (float) scores[4], Color.parseColor("#DF3241") ));
 
-            int startIndex = progress.indexOf("c"+String.valueOf(i+1));
-            int endIndex = progress.indexOf(",",startIndex);
-
-//            System.out.println(startIndex+" and "+endIndex);
-
-            chvalue[i] = Integer.parseInt( progress.substring(startIndex + 3 , endIndex ));
-
-
-            if(chvalue[i] == 0) {
-                chvalue[i] = 1;
-//                System.out.println(i+" "+chvalue[i]);
-
-            }
-
-        }
-
-
-        mPieChart.addPieSlice(new PieModel(getString(R.string.Ch1Name), chvalue[0], Color.parseColor("#ff0099cc") ));
-        mPieChart.addPieSlice(new PieModel(getString(R.string.Ch2Name), chvalue[1], Color.parseColor("#ff99cc00") ));
-        mPieChart.addPieSlice(new PieModel(getString(R.string.Ch3Name), chvalue[2], Color.parseColor("#F3CB4E") ));
-        mPieChart.addPieSlice(new PieModel(getString(R.string.Ch4Name), chvalue[3], Color.parseColor("#E36F3A")  ));
-        mPieChart.addPieSlice(new PieModel(getString(R.string.Ch5Name), chvalue[4], Color.parseColor("#DF3241") ));
-
-        progressBar1.setProgress(chvalue[0]);
-        progressBar2.setProgress(chvalue[1]);
-        progressBar3.setProgress(chvalue[2]);
-        progressBar4.setProgress(chvalue[3]);
-        progressBar5.setProgress(chvalue[4]);
+        progressBar1.setProgress((int) scores[0]);
+        progressBar2.setProgress((int) scores[1]);
+        progressBar3.setProgress((int) scores[2]);
+        progressBar4.setProgress((int) scores[3]);
+        progressBar5.setProgress((int) scores[4]);
 
 
         mPieChart.startAnimation();

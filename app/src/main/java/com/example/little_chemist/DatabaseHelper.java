@@ -26,7 +26,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         private static final String TABLE_STUDENT = "Student";
         private static final String COLUMN_ID = "Id";
-//        private static final String COLUMN_SCORE = "TotalScore";
+        private static final String COLUMN_SCORE = "Scores";
         private static final String COLUMN_QZLOCKS = "QZLocks";
         private static final String COLUMN_CHLOCKS = "CHLocks";
         private static final String COLUMN_LSNLOCKS = "LSNLocks";
@@ -76,7 +76,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String SQL_CREATE_STUDENT=
             "CREATE TABLE "+FeedEntry.TABLE_STUDENT +" ("+
                     FeedEntry.COLUMN_ID + "  INTEGER PRIMARY KEY," +
-//                    FeedEntry.COLUMN_SCORE + " INTEGER," +
+                    FeedEntry.COLUMN_SCORE + " TEXT," +
                     FeedEntry.COLUMN_QZLOCKS + " TEXT," +
                     FeedEntry.COLUMN_CHLOCKS + " TEXT," +
                     FeedEntry.COLUMN_LSNLOCKS + " TEXT," +
@@ -86,20 +86,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     FeedEntry.COLUMN_SECA +" TEXT,"+
                     FeedEntry.COLUMN_LANG +" INTEGER)" ;
 
-//    private static final String SQL_CREATE_CHAPTER=
-//            "CREATE TABLE "+FeedEntry.TABLE_CHAPTER +" ("+
-//                    FeedEntry.COLUMN_CHID + "  INTEGER PRIMARY KEY," +
-//                    FeedEntry.COLUMN_CHNAME + " TEXT," +
-//                    FeedEntry.COLUMN_CHLOCK + " TEXT)" ;
-//
-//    private static final String SQL_CREATE_LESSON=
-//            "CREATE TABLE "+FeedEntry.TABLE_LESSON +" ("+
-//                    FeedEntry.COLUMN_LSNID + "  INTEGER PRIMARY KEY," +
-//                    FeedEntry.COLUMN_LSNNAME + " TEXT," +
-//                    FeedEntry.COLUMN_LSNLOCK + " TEXT," +
-//                    FeedEntry.COLUMN_EXERCISE + " TEXT," +
-//                    FeedEntry.COLUMN_CONTENT + " TEXT,"+
-//                    FeedEntry.COLUMN_CH + " INTEGER, FOREIGN KEY ("+FeedEntry.COLUMN_CH+") REFERENCES "+FeedEntry.TABLE_CHAPTER+"("+FeedEntry.COLUMN_CHID+"))";
+    private static final String SQL_CREATE_CHAPTER=
+            "CREATE TABLE "+FeedEntry.TABLE_CHAPTER +" ("+
+                    FeedEntry.COLUMN_CHID + "  INTEGER PRIMARY KEY," +
+                    FeedEntry.COLUMN_CHNAME + " TEXT," +
+                    FeedEntry.COLUMN_CHLOCK + " TEXT)" ;
+
+    private static final String SQL_CREATE_LESSON=
+            "CREATE TABLE "+FeedEntry.TABLE_LESSON +" ("+
+                    FeedEntry.COLUMN_LSNID + "  INTEGER PRIMARY KEY," +
+                    FeedEntry.COLUMN_LSNNAME + " TEXT," +
+                    FeedEntry.COLUMN_LSNLOCK + " TEXT," +
+                    FeedEntry.COLUMN_EXERCISE + " TEXT," +
+                    FeedEntry.COLUMN_CONTENT + " TEXT,"+
+                    FeedEntry.COLUMN_CH + " INTEGER, FOREIGN KEY ("+FeedEntry.COLUMN_CH+") REFERENCES "+FeedEntry.TABLE_CHAPTER+"("+FeedEntry.COLUMN_CHID+"))";
 
     private static final String SQL_CREATE_QUIZ=
             "CREATE TABLE "+FeedEntry.TABLE_QUIZ +" ("+
@@ -121,8 +121,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(SQL_CREATE_STUDENT);
-//        db.execSQL(SQL_CREATE_CHAPTER);
-//        db.execSQL(SQL_CREATE_LESSON);
+        db.execSQL(SQL_CREATE_CHAPTER);
+        db.execSQL(SQL_CREATE_LESSON);
         db.execSQL(SQL_CREATE_QUIZ);
         //db.close();
 
@@ -153,14 +153,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Cursor cursor=db.rawQuery(query,null);
         int count=cursor.getCount();
 
-        String ch,ls,qz;
+        String ch,ls,qz,scores;
+        scores="c1:0,c2:0,c3:0,c4:0,c5:0,";
         qz="1:unlocked,2:unlocked,3:unlocked,4:unlocked,5:unlocked,";
         ch="1:unlocked,2:locked,3:locked,4:locked,5:locked,";
         ls="1:unlocked,2:locked,3:locked,4:locked,5:locked,6:locked,7:locked,8:locked,9:locked,10:locked," +
                 "11:locked,12:locked,13:locked,14:locked,15:locked,16:locked,17:locked,18:locked,19:locked,20:locked," +
-                "21:locked,22:locked,23:locked,24:locked,25:locked,";;
+                "21:locked,22:locked,23:locked,24:locked,25:locked,";
 
         if(student.GetUserName().equals("admin") ||student.GetUserName().equals("Admin") ){
+            scores="c1:100,c2:70,c3:40,c4:9,c5:0,";
             qz="1:completed,2:unlocked,3:unlocked,4:unlocked,5:unlocked,";
             ch="1:completed,2:unlocked,3:unlocked,4:unlocked,5:unlocked,";
             ls="1:completed,2:unlocked,3:unlocked,4:unlocked,5:unlocked,6:ununlocked,7:unlocked,8:unlocked,9:unlocked,10:unlocked," +
@@ -168,12 +170,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     "21:unlocked,22:unlocked,23:unlocked,24:unlocked,25:unlocked,";;
         }
 //, (student.GetTotalScore())
-        student = new Student( (count+1) ,(qz),(ch),(ls),(student.GetUserName()),(student.GetPassword()),
+        student = new Student( (count+1) ,scores,(qz),(ch),(ls),(student.GetUserName()),(student.GetPassword()),
                 (student.GetSecQ()),(student.GetSecA()),(student.GetLang()) );
 
         ContentValues contentvalues=new ContentValues();
         contentvalues.put(FeedEntry.COLUMN_ID,count+1);
-//        contentvalues.put(FeedEntry.COLUMN_SCORE, student.GetTotalScore());
+        contentvalues.put(FeedEntry.COLUMN_SCORE, scores);
         contentvalues.put(FeedEntry.COLUMN_QZLOCKS, qz);
         contentvalues.put(FeedEntry.COLUMN_CHLOCKS, ch);
         contentvalues.put(FeedEntry.COLUMN_LSNLOCKS, ls);
@@ -444,8 +446,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         //String currentStudent=null;
 
         Cursor cursor = db.rawQuery(query, null);
-        String un,QLocks,Chlocks,LesLocks,Pass,SQ,SA;
-        int id,score,lang;
+        String un,QLocks,Chlocks,LesLocks,Pass,SQ,SA,score;
+        int id,lang;
 
 
         if (cursor.moveToFirst()) {
@@ -454,16 +456,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 if (un.contentEquals(username)) {
 
                     id = cursor.getInt(0);
-//                    score= cursor.getInt(1);
-                    QLocks= cursor.getString(1);
-                    Chlocks= cursor.getString(2);
-                    LesLocks= cursor.getString(3);
-                    un= cursor.getString(4);
-                    Pass= cursor.getString(5);
-                    SQ= cursor.getString(6);
-                    SA= cursor.getString(7);
-                    lang = cursor.getInt(8);
-                    student= new Student(id,QLocks,Chlocks,LesLocks,un,Pass,SQ,SA,lang);
+                    score= cursor.getString(1);
+                    QLocks= cursor.getString(2);
+                    Chlocks= cursor.getString(3);
+                    LesLocks= cursor.getString(4);
+                    un= cursor.getString(5);
+                    Pass= cursor.getString(6);
+                    SQ= cursor.getString(7);
+                    SA= cursor.getString(8);
+                    lang = cursor.getInt(9);
+                    student= new Student(id,score,QLocks,Chlocks,LesLocks,un,Pass,SQ,SA,lang);
 
                     break;
                 }
