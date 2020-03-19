@@ -49,6 +49,10 @@
     <string name="C3L2S6">Atoms are not all the same, there are 118 different types of atoms,\n called elements. 92 Of these elements are natural\n and the rest are man-made. </string>
     <string name="C3L2S7">Examples ot element that you might recognise are like oxygen, aluminum and iron.</string>
     <!--    TODO add an image here -->
+    <string name="C3L2S8"><b>Solution</b> is when substances cannot be distinguished easily from one another.\n like mixing salt with water or baking a cake</string>
+    <!--    TODO add an image here -->
+    <string name="C3L2S9"><b>Mixtures</b> is a substance in which two or more substances are mixed but not chemically joined together,\n that means a chemical reaction has not taken place.\n like a bag of M&amp;Ms</string>
+    <!--    TODO add an image here -->
 
     <!--         LESSON 2  exercises          -->
 
@@ -56,11 +60,7 @@
 
     <!--         LESSON 3 is a lab
 
-    there could be a bowl and the student would mix shit together and then they'll be asked to see if they can separate it this describes what a solution is
-
-    same thing with a salad that is to describe what a Mixtures is
-
-    hydrogen and Oxygen creating water that describes a Compound
+    EXPLOSION
 
                  LESSON 3 is a lab -->
 
