@@ -192,6 +192,7 @@ public class Settings extends AppCompatActivity {
             public void onClick(View view) {
 
                 AlertDialog.Builder alert = new AlertDialog.Builder(Settings.this);
+                AlertDialog.Builder alert2 = new AlertDialog.Builder(Settings.this);
 
                 final EditText edittext = new EditText(Settings.this);
                 edittext.setHint("Password");
@@ -202,13 +203,13 @@ public class Settings extends AppCompatActivity {
                 alert.setPositiveButton(getText(R.string.yes), new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        AlertDialog.Builder alert = new AlertDialog.Builder(Settings.this);
             //TODO fix dis
+
 //                        String password = edittext.getText().toString();
-                        alert.setMessage(getText(R.string.confirmDeleteAcc));
-                        alert.setTitle(getText(R.string.delete_account));
-                        alert.setView(edittext);
-                        alert.setPositiveButton(getText(R.string.yes), new DialogInterface.OnClickListener() {
+                        alert2.setMessage(getText(R.string.confirmDeleteAcc));
+                        alert2.setTitle(getText(R.string.delete_account));
+                        alert2.setView(edittext);
+                        alert2.setPositiveButton(getText(R.string.yes), new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 String password = edittext.getText().toString();
