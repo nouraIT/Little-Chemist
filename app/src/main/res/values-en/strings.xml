@@ -105,6 +105,7 @@
     <string name="scores">Scores</string>
     <string name="backBtn">Back</string>
     <string name="QuizScore">Quiz score</string>
+    <string name="add_a_neutron">Add A Neutron</string>
 
 
 </resources>

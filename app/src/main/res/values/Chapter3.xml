@@ -83,7 +83,7 @@
 
 
     <!--        Quiz Questions           -->
-    <string-array name="c3Quiz_Questions">
+    <string-array name="C3Quiz_Questions">
 
         <item name="Q1">Why is salt important to your body\'s health?</item>
         <item name="Q2">Too much salt can cause _____.</item>

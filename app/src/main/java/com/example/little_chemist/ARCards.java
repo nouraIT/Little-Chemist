@@ -51,7 +51,7 @@ public class ARCards extends AppCompatActivity {
     private String string;
     private ModelRenderable andyRenderable;
     private ModelRenderable mObjRenderable;
-
+private  String text;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 //        super.onCreate(savedInstanceState);
@@ -61,8 +61,16 @@ public class ARCards extends AppCompatActivity {
         arFragment = (CustomARfragment) getSupportFragmentManager().findFragmentById(R.id.arFragment);
         textView = findViewById(R.id.textview);
         Button Reset = findViewById(R.id.reset);
+        Button next = findViewById(R.id.next);
         arFragment.getArSceneView().getScene().addOnUpdateListener(this::onUpdate);
         Reset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+// Reset Code
+                recreate();
+            }
+        });
+        next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 // Reset Code
@@ -77,7 +85,7 @@ public class ARCards extends AppCompatActivity {
         Frame frame = arFragment.getArSceneView().getArFrame();
         Collection<AugmentedImage> images = frame.getUpdatedTrackables(AugmentedImage.class);
         for (AugmentedImage image : images) {
-            textView.setText(R.string.scan);
+           // textView.setText(R.string.scan);
             if (image.getTrackingMethod() == AugmentedImage.TrackingMethod.FULL_TRACKING) {
 
                 RelativeLayout gallery = findViewById(R.id.gallery);
@@ -87,46 +95,57 @@ public class ARCards extends AppCompatActivity {
                 switch (name) {
                     case "argon.png":
                         string = "argon.sfb";
+                        text=getString(R.string.argon2);
                         callAR();
                         break;
                     case "bromine.png":
                         string = "bariumatom.sfb";
+                        text=getString(R.string.bromine2);
                         callAR();
                         break;
                     case "calcium.png":
                         string = "calcium.sfb";
+                        text=getString(R.string.calcium2);
                         callAR();
                         break;
                     case "chlorine.png":
                         string = "chlorineatom.sfb";
+                        text=getString(R.string.chlorine2);
                         callAR();
                         break;
                     case "fluorine.png":
                         string = "fluorineatom.sfb";
+                        text=getString(R.string.fluorine2);
                         callAR();
                         break;
                     case "helium.png":
                         string = "heliumatom.sfb";
+                        text=getString(R.string.helium2);
                         callAR();
                         break;
                     case "hydrogen.png":
                         string = "hydrogen.sfb";
+                        text=getString(R.string.hydrogen2);
                         callAR();
                         break;
                     case "lithium.png":
                         string = "Lithiumatom.sfb";
+                        text=getString(R.string.lithium2);
                         callAR();
                         break;
                     case "magnesium.png":
                         string = "magnesiumatomm.sfb";
+                        text=getString(R.string.magnesium2);
                         callAR();
                         break;
                     case "neon.png":
                         string = "neonn.sfb";
+                        text=getString(R.string.neon2);
                         callAR();
                         break;
                     case "sodium.png":
                         string = "sodium.sfb";
+                        text=getString(R.string.sodium2);
                         callAR();
                         break;
                 }
@@ -146,7 +165,7 @@ public class ARCards extends AppCompatActivity {
 
             textView.setText(R.string.Look);
 //Timer t = new Timer();
-
+            textView.setText(text);
 
 
         }
