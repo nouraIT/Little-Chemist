@@ -150,7 +150,7 @@
 
 
     <!-- _______________ AR MSGs  _______________ -->
-    <string name="scan">Scan The Card!</string>
+    <string name="scan">Scan The Card After Finding a Plane</string>
     <string name="cards">Cards</string>
     <string name="ok">Okay</string>
     <string name="prepare">Please Prepare The Following Cards</string>
