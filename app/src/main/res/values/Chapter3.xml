@@ -44,7 +44,7 @@
     <!--    TODO add an image here -->
     <string name="C3L2S4">All solids, liquids and gases are made of atoms\n "the Building Blocks of Matter"\n atoms are the simplest form of matter and cannot be broken down.</string>
     <!--    TODO add an image here -->
-    <string name="C3L2S4">Atoms are extremely tiny and are unable to be seen with the human eye,\nbut they are all around us\n and even in us!</string>
+    <string name="C3L2S4.2">Atoms are extremely tiny and are unable to be seen with the human eye,\nbut they are all around us\n and even in us!</string>
     <!--    TODO add an image here -->
     <string name="C3L2S5">Atoms are not all the same, there are 118 different types of atoms,\n called elements. 92 Of these elements are natural\n and the rest are man-made. </string>
     <string name="C3L2S6">Examples ot element that you might recongize are like oxygen, aluminum and iron.</string>
@@ -75,7 +75,7 @@
     <!--         LESSON 5            -->
 
     <!--        Quiz Questions           -->
-    <string-array name="Quiz_Questions">
+    <string-array name="C3Quiz_Questions">
 
         <item name="Q1">Why is salt important to your body's health?</item>
         <item name="Q2">Too much salt can cause _____.</item>
@@ -134,7 +134,7 @@
     </string-array>
 
     <!--         Quiz correct Answers          -->
-    <string-array name="Quiz_Correct">
+    <string-array name="C3Quiz_Correct">
 
         <item name="CA1">All of these answers are correct</item>
         <item name="CA2">high blood pressure</item>

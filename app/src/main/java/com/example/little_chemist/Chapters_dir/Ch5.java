@@ -1,5 +1,6 @@
 package com.example.little_chemist.Chapters_dir;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
@@ -13,6 +14,7 @@ import com.example.little_chemist.Tables.Quiz;
 import com.example.little_chemist.Tables.Student;
 import com.example.little_chemist.quizQ;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -123,15 +125,30 @@ public class Ch5 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 statue = student.getLsnLock("2");
+                String s1,s2,s3,s4;
+                s1= getString(R.string.cards);
+                s2=getString(R.string.hydrogen1);
+                s3=getString(R.string.lithium1);
+                s4=getString(R.string.sodium1);
                 if (statue.equals("unlocked") || statue.equals("completed") ) {
-                    Thread thread = new Thread(new Runnable(){
+                    AlertDialog alertDialog = new AlertDialog.Builder(Ch5.this).create();
+                    alertDialog.setTitle(getText(R.string.cards));
+                    alertDialog.setMessage(s1 +"\n"+ s2 +"\n"+ s3 +"\n"+ s4);
+                    alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, getText(R.string.ok),
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.dismiss();
+                                    Thread thread = new Thread(new Runnable() {
 
-                        public void run(){
-                    Intent n = new Intent(Ch5.this, ARCards.class);
-                startActivity(n);
-                        }
-                    });
-                    thread.start();
+                                        public void run() {
+                                            Intent n = new Intent(Ch5.this, ARCards.class);
+                                            startActivity(n);
+                                        }
+                                    });
+                                    thread.start();
+                                }
+                            });
+                    alertDialog.show();
                 } else
                     Toast.makeText(getApplicationContext(), "Locked", Toast.LENGTH_LONG).show();
             }
@@ -140,16 +157,31 @@ public class Ch5 extends AppCompatActivity {
         lsn3.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 statue = student.getLsnLock("3");
+                String s1,s2,s3,s4;
+                s1= getString(R.string.cards);
+               // s2=getString(R.string.barium1);
+                s3=getString(R.string.calcium1);
+                s4=getString(R.string.magnesium1);
                 if (statue.equals("unlocked") || statue.equals("completed") ) {
-                    Thread thread = new Thread(new Runnable(){
+                    AlertDialog alertDialog = new AlertDialog.Builder(Ch5.this).create();
+                    alertDialog.setTitle(getText(R.string.cards));
+                    alertDialog.setMessage(s1 +"\n"+ s3 +"\n"+ s4);
+                    alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, getText(R.string.ok),
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.dismiss();
+                                    Thread thread = new Thread(new Runnable() {
 
-                        public void run(){
-                    Intent n = new Intent(Ch5.this, ARCards.class);
-                startActivity(n);
-                        }
-                    });
-                    thread.start();
-                }else
+                                        public void run() {
+                                            Intent n = new Intent(Ch5.this, ARCards.class);
+                                            startActivity(n);
+                                        }
+                                    });
+                                    thread.start();
+                                }
+                            });
+                    alertDialog.show();
+                } else
                     Toast.makeText(getApplicationContext(), "Locked", Toast.LENGTH_LONG).show();
             }
         });
@@ -157,16 +189,31 @@ public class Ch5 extends AppCompatActivity {
         lsn4.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 statue = student.getLsnLock("4");
+                String s1,s2,s3,s4;
+                s1= getString(R.string.cards);
+                s2=getString(R.string.fluorine1);
+                s3=getString(R.string.chlorine1);
+                s4=getString(R.string.bromine1);
                 if (statue.equals("unlocked") || statue.equals("completed") ) {
-                    Thread thread = new Thread(new Runnable(){
+                    AlertDialog alertDialog = new AlertDialog.Builder(Ch5.this).create();
+                    alertDialog.setTitle(getText(R.string.cards));
+                    alertDialog.setMessage(s1 +"\n"+ s2 +"\n"+ s3 +"\n"+ s4);
+                    alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, getText(R.string.ok),
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.dismiss();
+                                    Thread thread = new Thread(new Runnable() {
 
-                        public void run(){
-                    Intent n = new Intent(Ch5.this, ARCards.class);
-                startActivity(n);
-                        }
-                    });
-                    thread.start();
-                }else
+                                        public void run() {
+                                            Intent n = new Intent(Ch5.this, ARCards.class);
+                                            startActivity(n);
+                                        }
+                                    });
+                                    thread.start();
+                                }
+                            });
+                    alertDialog.show();
+                } else
                     Toast.makeText(getApplicationContext(), "Locked", Toast.LENGTH_LONG).show();
             }
         });
@@ -174,16 +221,31 @@ public class Ch5 extends AppCompatActivity {
         lsn5.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 statue = student.getLsnLock("5");
+                String s1,s2,s3,s4;
+                s1= getString(R.string.cards);
+                s2=getString(R.string.argon1);
+                s3=getString(R.string.helium1);
+                s4=getString(R.string.neon1);
                 if (statue.equals("unlocked") || statue.equals("completed") ) {
-                    Thread thread = new Thread(new Runnable(){
+                    AlertDialog alertDialog = new AlertDialog.Builder(Ch5.this).create();
+                    alertDialog.setTitle(getText(R.string.cards));
+                    alertDialog.setMessage(s1 +"\n"+ s2 +"\n"+ s3 +"\n"+ s4);
+                    alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, getText(R.string.ok),
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.dismiss();
+                                    Thread thread = new Thread(new Runnable() {
 
-                        public void run(){
-                    Intent n = new Intent(Ch5.this, ARCards.class);
-                startActivity(n);
-                        }
-                    });
-                    thread.start();
-                }else
+                                        public void run() {
+                                            Intent n = new Intent(Ch5.this, ARCards.class);
+                                            startActivity(n);
+                                        }
+                                    });
+                                    thread.start();
+                                }
+                            });
+                    alertDialog.show();
+                } else
                     Toast.makeText(getApplicationContext(), "Locked", Toast.LENGTH_LONG).show();
             }
         });

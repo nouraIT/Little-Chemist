@@ -150,11 +150,45 @@
 
 
     <!-- _______________ AR MSGs  _______________ -->
-    <string name="scan" >Scan The Card!</string>
-    <string name="tryAgain" >Try Again!</string>
-    <string name="problem" >If You Could Not Find It Please Press Reset</string>
-    <string name="Look" >A wild Atom Has Appeared! Look For It!</string>
+    <string name="scan">Scan The Card!</string>
+    <string name="cards">Cards</string>
+    <string name="ok">Okay</string>
+    <string name="prepare">Please Prepare The Following Cards</string>
+    <string name="tryAgain">Try Again!</string>
+    <string name="problem">If You Could Not Find It Please Press Reset</string>
+    <string name="Look">A wild Atom Has Appeared! Look For It!</string>
     <string name="reset">Reset</string>
+    <string name="add_a_neutron">Add A Neutron</string>
+    <string name="tap_call">Tap Once To Call an Atom After Finding a Plane</string>
+    <string name="split_atom">CLick The Button to Add a Neutron to The Atom and See What Happens!!</string>
+    <string name="tap_call2">Tap Once To Call an Molecule After Finding a Plane</string>
 
+    <string name="hydrogen1">The Hydrogen Card</string>
+    <string name="hydrogen2">Hydrogen is The First Element in The Periodic Table</string>
+    <string name="lithium1">The Lithium Card.</string>
+    <string name="lithium2">The Lithium\’s Atomic Number is Three and its Symbol is Li</string>
+    <string name="sodium1">The Sodium Card</string>
+    <string name="sodium2">The Sodium\'s Atomic Number is 11 and its Symbol is Na</string>
+
+    <string name="barium1">The Barium Card</string>
+    <string name="barium2">The Barium\’s Atomic Number is 56 and its symbol is Ba</string>
+    <string name="calcium1">The Calcium Card</string>
+    <string name="calcium2">The Calcium\’s atomic number is 20 and its symbol is Ca</string>
+    <string name="magnesium1">The Magnesium Card</string>
+    <string name="magnesium2">The Magnesium\’s Atomic Number is 12 and its Symbol is Mg</string>
+
+    <string name="fluorine1">The Fluorine Card</string>
+    <string name="fluorine2">The Fluorine\’s Atomic Number is 9 and its Symbol is F</string>
+    <string name="chlorine1">The Chlorine Card</string>
+    <string name="chlorine2">The Chlorine\’s atomic number is 17 and its symbol is Cl</string>
+    <string name="bromine1">The Bromine Card</string>
+    <string name="bromine2">The Bromine\’s Atomic Number is 35 and its Symbol is Br</string>
+
+    <string name="argon1">The Argon Card</string>
+    <string name="argon2">The Argon\’s Atomic Number is 18 and its Symbol is Ar</string>
+    <string name="helium1">The Helium Card</string>
+    <string name="helium2">The Helium\’s Atomic Number is 2 and its Symbol is He</string>
+    <string name="neon1">The Neon Card</string>
+    <string name="neon2">The Neon\’s Atomic Number is 10 and its Symbol is Ne</string>
 
 </resources>

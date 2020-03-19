@@ -46,7 +46,7 @@ dependencies {
     implementation 'com.google.ar.sceneform.ux:sceneform-ux:1.15.0'
     implementation 'com.karumi:dexter:6.0.2'
     implementation 'com.google.android.material:material:1.1.0'
-
+    implementation "com.google.ar.sceneform:animation:1.15.0"
 //    implementation "com.facebook.react:react-native:0.20.1"
 //    implementation 'com.android.support:appcompat-v7:28'
 //    implementation 'com.android.support:design:28'
@@ -92,7 +92,6 @@ dependencies {
     //carousel-view
     implementation 'com.github.alirezat775:carousel-view:1.0.0'
     implementation 'com.github.dmytrodanylyk.circular-progress-button:library:1.1.3'
-
 
 
 }
@@ -161,7 +160,16 @@ sceneform.asset('sampledata/heliumatom.fbx',
         'sampledata/heliumatom.sfa',
         'src/main/assets/heliumatom',
         ['sampledata/heliumatom.fbx'])
-
+sceneform.asset('sampledata/splitatom.fbx',
+        'default',
+        'sampledata/splitatom.sfa',
+        'src/main/assets/splitatom',
+        ['sampledata/splitatom.fbx'])
+sceneform.asset('sampledata/scenem.fbx',
+        'default',
+        'sampledata/scenem.sfa',
+        'src/main/assets/scenem',
+        ['sampledata/scenem.fbx'])
 repositories {
     mavenCentral()
 

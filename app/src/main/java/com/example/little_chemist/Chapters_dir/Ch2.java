@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.example.little_chemist.Chapters;
 import com.example.little_chemist.DatabaseHelper;
+import com.example.little_chemist.LabLesson2;
 import com.example.little_chemist.R;
 import com.example.little_chemist.Tables.Quiz;
 import com.example.little_chemist.Tables.Student;
@@ -120,7 +121,7 @@ public class Ch2 extends AppCompatActivity {
                 statue = student.getLsnLock("2");
                 if (statue.equals("unlocked") || statue.equals("completed") ) {
 
-                    Intent n = new Intent(Ch2.this, lab.class);
+                    Intent n = new Intent(Ch2.this, LabLesson2.class);
                     startActivity(n);
                     //  finish();
 
