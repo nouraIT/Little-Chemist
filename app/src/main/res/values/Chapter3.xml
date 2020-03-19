@@ -60,17 +60,12 @@
 
     <!--         LESSON 3 is a lab
 
-    EXPLOSION
-
+    EXPLOSION?
                  LESSON 3 is a lab -->
 
 
-    <!--         LESSON 4
-
-  states of matter
-
-
-    might be a lab-->
+    <!-- LESSON 4
+    states of matter -->
 
 
     <!--         LESSON 5            -->
@@ -79,7 +74,6 @@
     <string name="C3L5S2">The study of biochemistry has helped people in many ways.\n Scientists have been able to detect a wide variety of diseases by studying the chemical properties of blood.</string>
     <string name="C3L5S3">it also helped scientists understand Corona Virus (COVID-19) even better </string>
     <!--    TODO add an image here -->
-
     <!--         LESSON 5            -->
 
     <!--        Quiz Questions           -->

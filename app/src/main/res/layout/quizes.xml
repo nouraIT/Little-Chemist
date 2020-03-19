@@ -124,8 +124,6 @@
         app:layout_constraintTop_toBottomOf="@+id/carousel_view1" />
 
 
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 

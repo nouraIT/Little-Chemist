@@ -38,14 +38,14 @@ public class Student extends AppCompatActivity implements Serializable {
         for(int i =0;i<5;i++){
 //            scores="c1:100,c2:70,c3:40,c4:9,c5:0,";
 //            String ch = 'c'+(i+1)+"" ;
-            System.out.println(scores);
+//            System.out.println(scores);
             int first = scores.indexOf("c"+(ch)+":");
             ch++;
-            System.out.println(first);
+//            System.out.println(first);
             int last = scores.indexOf(",",first);
-            System.out.println(last);
+//            System.out.println(last);
 
-            System.out.println(scores.substring(first+4,last));
+//            System.out.println(scores.substring(first+4,last));
             ScoresA[i] = Double.parseDouble(scores.substring(first+3,last));
         }
 
