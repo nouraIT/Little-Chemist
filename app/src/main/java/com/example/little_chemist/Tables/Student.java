@@ -45,7 +45,7 @@ public class Student extends AppCompatActivity implements Serializable {
             int last = scores.indexOf(",",first);
             System.out.println(last);
 
-            System.out.println(scores.substring(first+4,last));
+          System.out.println(scores.substring(first+4,last));
             ScoresA[i] = Double.parseDouble(scores.substring(first+3,last));
         }
 
