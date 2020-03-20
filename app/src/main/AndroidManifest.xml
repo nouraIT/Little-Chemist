@@ -18,7 +18,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LabLesson2"></activity>
+        <activity android:name=".LabLesson3"></activity>
+        <activity android:name=".LabLesson2" />
         <activity android:name=".LabLesson1" />
         <activity android:name=".ARCards" />
         <activity android:name=".View_lesson.ex_multiple_choice" />

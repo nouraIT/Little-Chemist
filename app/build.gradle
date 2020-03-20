@@ -165,11 +165,32 @@ sceneform.asset('sampledata/splitatom.fbx',
         'sampledata/splitatom.sfa',
         'src/main/assets/splitatom',
         ['sampledata/splitatom.fbx'])
-sceneform.asset('sampledata/scenem.fbx',
+sceneform.asset('sampledata/cyclodextrin.fbx',
         'default',
-        'sampledata/scenem.sfa',
-        'src/main/assets/scenem',
-        ['sampledata/scenem.fbx'])
+        'sampledata/cyclodextrin.sfa',
+        'src/main/assets/cyclodextrin',
+        ['sampledata/cyclodextrin.fbx'])
+sceneform.asset('sampledata/molecule.fbx',
+        'default',
+        'sampledata/molecule.sfa',
+        'src/main/assets/molecule',
+        ['sampledata/molecule.fbx'])
+
+sceneform.asset('sampledata/gas.fbx',
+        'default',
+        'sampledata/gas.sfa',
+        'src/main/assets/gas',
+        ['sampledata/gas.fbx'])
+sceneform.asset('sampledata/liquid.fbx',
+        'default',
+        'sampledata/liquid.sfa',
+        'src/main/assets/liquid',
+        ['sampledata/liquid.fbx'])
+sceneform.asset('sampledata/solid.fbx',
+        'default',
+        'sampledata/solid.sfa',
+        'src/main/assets/solid',
+        ['sampledata/solid.fbx'])
 repositories {
     mavenCentral()
 

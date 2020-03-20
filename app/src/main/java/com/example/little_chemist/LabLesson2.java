@@ -71,7 +71,7 @@ public class LabLesson2 extends AppCompatActivity {
     private void createModel(Anchor anchor, CustomARfragment arFragment) {
 
         ModelRenderable.builder()
-                .setSource(this, Uri.parse("scenem.sfb"))
+                .setSource(this, Uri.parse("molecule.sfb"))
                 .build()
                 .thenAccept(modelRenderable -> {
                     AnchorNode anchorNode = new AnchorNode(anchor);
@@ -79,6 +79,7 @@ public class LabLesson2 extends AppCompatActivity {
                     skeletonNode.setParent(anchorNode);
                     skeletonNode.setRenderable(modelRenderable);
                     arFragment.getArSceneView().getScene().addChild(anchorNode);
+                    textView.setText(R.string.co2);
 
 
                 })
