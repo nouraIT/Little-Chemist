@@ -12,6 +12,7 @@
 
 
     <color name="OrangeText">#E4592E</color>
+    <color name="HomeButton">#4a47a7</color>
 
     <color name="Locked">#949494</color>
     <color name="UnlockedLsn">#FDCE54</color>

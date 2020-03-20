@@ -102,8 +102,11 @@
     <string name="nextQ">Next Question</string>
     <string name="previous_question">Previous Question</string>
     <string name="nextBtn">Next</string>
+    <string name="finishBtn">Finish</string>
     <string name="scores">Scores</string>
     <string name="backBtn">Back</string>
+    <string name="getEx">Get Exercise</string>
+
     <string name="QuizScore">Quiz score</string>
     <string name="add_a_neutron">Add A Neutron</string>
     <string name="done">Done</string>

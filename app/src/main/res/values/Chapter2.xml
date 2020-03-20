@@ -4,33 +4,27 @@
 
     <!--         LESSON 1            -->
 
-    <string name="C2L1S1_1" translatable="false"><b>Heterogeneous mixture</b>  is a substance that can be easily separated into its parts, and those parts retain their original properties.
+    <string name="C2L1S1" translatable="false"><b>Heterogeneous mixture</b>  is a substance that can be easily separated into its parts, and those parts retain their original properties.
 For example, have you ever tried mixing oil and water? They stay separate no matter how hard you try to mix them.
 </string>
 
-    <string name="C2L1S1_2" >There are more examples of<b>Heterogeneous mixture</b> such as:
-•Mixed nuts
-•Fruit salad
-•Pizza
+    <string name="C2L1S2" >There are more examples of<b> Heterogeneous mixture</b> such as: \n
+•Mixed nuts \n
+•Fruit salad \n
+•Pizza \n
 •Chocolate chip cookies
 
 </string>
-
-    <string-array name="C2L1E1M"> <item>Which of the following is a Heterogeneous mixture?</item>
+    <string-array name="C2L1S2E1M"> <item>Which of the following is a Heterogeneous mixture?</item>
         <item>Chicken noodle soup</item>
         <item>Chocolate Milk</item>
         <item>Sand and water</item>
         <item>Fruit Juice</item>
-
 </string-array>
+    <string-array name="C2L1A">
+        <item>Chicken noodle soup</item>
+    </string-array>
     <!--         LESSON 1            -->
-
-
-
-    <!--         LESSON 3            -->
-
-
-    <!--         LESSON 3            -->
 
 
     <!--         LESSON 4            -->
@@ -46,7 +40,7 @@ For example, have you ever tried mixing oil and water? They stay separate no mat
     <string name="C2L4S2">
         There is only one atom of each element in the equation, unless the element has a <b>coefficient</b> or a <b>subscript</b> with it.
     </string>
-    <string-array name="C2L4E2M">
+    <string-array name="C2L4S2E1M">
         <!--Multiple choice-->
         <item>How many atoms for each element in this equation?</item>
         <item>TOW atoms</item>
@@ -70,7 +64,7 @@ For example, have you ever tried mixing oil and water? They stay separate no mat
     <string name="C2L4S4">
         So how do we balance an equation? To start, we count the number of atoms of each element. Once we know the total number of atoms of each element, we can change or add <b>coefficients</b> to make the sides balance. Important: We can <b>NEVER</b> change or add <b>subscripts</b>!
     </string>
-    <string-array name="C2L4E4M">
+    <string-array name="C2L4S4E2M">
         <!--Multiple choice-->
         <item>To balance an equation we have to</item>
         <item>Change or add subscripts</item>
@@ -82,7 +76,7 @@ For example, have you ever tried mixing oil and water? They stay separate no mat
     <string name="C2L4S5">
         Let\'s take a look for an equation before and after balancing
     </string>
-    <string-array name="C2L4E5M">
+    <string-array name="C2L4S5E3M">
         <!--Multiple choice-->
         <item>What did we do in previous equation?</item>
         <item>We added coefficients</item>
@@ -92,9 +86,8 @@ For example, have you ever tried mixing oil and water? They stay separate no mat
     </string-array>
 
     <string name="C2L4S6">
-        C2H6 + O → CO2 +H2O
+        C2H6 + O → CO2 +H2O \n
         First let\'s count the atoms on the reactant and product side separately in the original equation
-
     </string>
 <!--    <string-array name="C2L4E6M">-->
 <!--        &lt;!&ndash;Multiple choice&ndash;&gt;-->
@@ -104,7 +97,7 @@ For example, have you ever tried mixing oil and water? They stay separate no mat
 <!--    </string-array>-->
 
     <string name="C2L4S7">
-        C2H6 + O → CO2 +H2O
+        C2H6 + O → CO2 +H2O \n
         Second based on the previous step determine what coefficients need to be added or changed to make the products and reactants balanced
     </string>
 <!--    <string-array name="C2L4E7M">-->
@@ -114,13 +107,12 @@ For example, have you ever tried mixing oil and water? They stay separate no mat
 <!--    </string-array>-->
 
     <string name="C2L4S8">
-        Thirdو after determining your coefficients, recount the atoms to make sure that they balance
+        Thirdو after determining your coefficients, recount the atoms to make sure that they balance \n\n
 
-        2C2H6 + 7O → 4CO2 +6H2O
+        2C2H6 + 7O → 4CO2 +6H2O \n
         Both sides have the same number of atoms of each element so the equation is balanced
-
     </string>
-    <string-array name="C2L4E8M">
+    <string-array name="C2L4S8E4M">
         <item>When we change on the coefficients we have to make sure that</item>
         <item>The products and the reactants are equals</item>
         <item>The products and the reactants are different</item>
@@ -128,6 +120,12 @@ For example, have you ever tried mixing oil and water? They stay separate no mat
         <item>The number of the subscripts are equals</item>
     </string-array>
 
+    <string-array name="C2L4A">
+        <item>ONE atom</item>
+        <item>Change or add coefficients</item>
+        <item>We added coefficients</item>
+        <item>The products and the reactants are equals</item>
+    </string-array>
 <!--&lt;!&ndash; REMOVE THIS SEGMENT&ndash;&gt;-->
 <!--    <string name="C2L4S9">-->
 <!--        Another Example-->
@@ -150,16 +148,16 @@ For example, have you ever tried mixing oil and water? They stay separate no mat
     </string>
 
     <string name="C2L5S2">
-        Have you ever tasted a lemon and puckered up? Lemons have that puckery taste because they\'re <b>acidic</b>, just like vinegar and some other foods.
+        Have you ever tasted a lemon and puckered up? Lemons have that puckery taste because they\'re <b>acidic</b>, just like vinegar and some other foods. \n
         Scientists use the <b>pH scale</b> to describe whether something is <b>acidic</b> or <b>basic</b>. <b>Basic</b> is the opposite of <b>acidic</b>.
     </string>
 
     <string name="C2L5S3">
-        The <b>pH scale</b> goes from 0 to 14: 0 is the most acidic and 14 is the most <b>basic</b>, or <b>alkaline</b>.
+        The <b>pH scale</b> goes from 0 to 14: 0 is the most acidic and 14 is the most <b>basic</b>, or <b>alkaline</b>. \n
         Plain water is right in the middle of the scale with a pH of 7. This is called a neutral pH
     </string>
 
-    <string-array name="C2L5E3M">
+    <string-array name="C2L5S3E1M">
         <item>If know that the apple juice has pH equals to 3 this make the apple juice</item>
         <item>Alkaline</item>
         <item>Acidic</item>
@@ -168,20 +166,24 @@ For example, have you ever tried mixing oil and water? They stay separate no mat
     </string-array>
 
     <string name="C2L5S4">
-        If you want to try things with high <b>acidic pH</b>, first take a cup of milk, milke has a pH between 6 and 7,so it\'s just a little more <b>acidic</b> than water.
+        If you want to try things with high <b>acidic pH</b>, first take a cup of milk, milke has a pH between 6 and 7,so it\'s just a little more <b>acidic</b> than water. \n
         If you drank some coffee, you\'d be down to a pH of 5. Also if you had some orange juice, you\'d be looking at a pH around 3, and lemon juice has a pH of 2
     </string>
 
     <string name="C2L5S5">
-        Now let\'s take a look at things that are more basic or alkaline than water. The first step up from tap water is…sea water! the pH would be about 8.
+        Now let\'s take a look at things that are more basic or alkaline than water. The first step up from tap water is…sea water! the pH would be about 8. \n
         Moving on up the pH scale, baking soda is next at a pH around 9.5. Moving on up the pH scale, we start moving into dangerous cleaning chemicals, like bleach. Bleach has a pH of around 13.5.
     </string>
-    <string-array name="C2L5E5M">
+    <string-array name="C2L5S5E2M">
         <item>Form this items which one this the most basic or alkaline?</item>
         <item>Hand soap with pH equals to 10</item>
         <item>Egg with pH equals to 8</item>
         <item>Bleach soap with pH equals to 13.5</item>
         <item>baking soda with pH equals to 9.5</item>
+    </string-array>
+    <string-array name="C2L5A">
+        <item>Acidic</item>
+        <item>Bleach soap with pH equals to 13.5</item>
     </string-array>
 
     <!--         LESSON 5            -->

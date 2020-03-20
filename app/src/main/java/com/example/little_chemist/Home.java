@@ -21,6 +21,9 @@ import org.eazegraph.lib.models.PieModel;
 
 import java.util.Locale;
 
+import info.hoang8f.widget.FButton;
+import pl.droidsonroids.gif.GifImageView;
+
 
 public class Home extends AppCompatActivity {
 
@@ -50,6 +53,12 @@ public class Home extends AppCompatActivity {
 //        });
 //        thread.start();
 
+        FButton disabledBtn = findViewById(R.id.homeBtn) ;
+        disabledBtn.setButtonColor(getResources().getColor(R.color.HomeButton));
+        disabledBtn.setShadowColor(getResources().getColor(R.color.gray));
+        disabledBtn.setShadowEnabled(true);
+        disabledBtn.setShadowHeight(7);
+        disabledBtn.setCornerRadius(30);
 
         SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
         String name = pref.getString("username", null); // getting String
@@ -116,7 +125,7 @@ public class Home extends AppCompatActivity {
         });
 
 
-        chapters.setOnClickListener(new View.OnClickListener(){
+        disabledBtn.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
                 Thread thread = new Thread(new Runnable(){
                     @Override

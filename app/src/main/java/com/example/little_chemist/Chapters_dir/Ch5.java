@@ -12,6 +12,7 @@ import com.example.little_chemist.DatabaseHelper;
 import com.example.little_chemist.R;
 import com.example.little_chemist.Tables.Quiz;
 import com.example.little_chemist.Tables.Student;
+import com.example.little_chemist.View_lesson.Lessons;
 import com.example.little_chemist.quizQ;
 
 import android.content.DialogInterface;
@@ -112,7 +113,8 @@ public class Ch5 extends AppCompatActivity {
 
                     public void run(){
 
-                Intent n = new Intent(Ch5.this, ARCards.class);
+                Intent n = new Intent(Ch5.this, Lessons.class);
+                n.putExtra("lesson",51);
                 startActivity(n);
                     }
                 });

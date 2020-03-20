@@ -89,7 +89,9 @@
     <string name="Ch5Lsn4">المجموعة السابعة عشر</string>
     <string name="Ch5Lsn5">المجموعة الثامنة عشر</string>
     <string name="nextQ">السؤال التالي</string>
+    <string name="getEx">ابدأ التمرين</string>
     <string name="nextBtn">التالي</string>
+    <string name="finishBtn">انهاء</string>
     <string name="previous_question">السؤال السابق</string>
     <string name="scores">مجموع النقاط</string>
     <string name="backBtn">الخلف</string>
