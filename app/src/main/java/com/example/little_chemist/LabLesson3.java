@@ -2,6 +2,7 @@ package com.example.little_chemist;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 //import android.se.omapi.Session;
@@ -13,6 +14,9 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.example.little_chemist.Chapters_dir.Ch2;
+import com.example.little_chemist.Chapters_dir.Ch3;
+import com.example.little_chemist.Chapters_dir.Ch4;
 import com.google.ar.core.Anchor;
 import com.google.ar.core.AugmentedImage;
 import com.google.ar.core.AugmentedImageDatabase;
@@ -47,7 +51,7 @@ import android.widget.Button;
 
 public class LabLesson3 extends AppCompatActivity {
     int count=0;
-    private CustomARfragment arFragment;
+    private ARfragment4 arFragment;
     private TextView textView;
     private ModelAnimator modelAnimator;
     private PointerDrawable pointer = new PointerDrawable();
@@ -64,9 +68,30 @@ public class LabLesson3 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lab_lesson3);
         Button Reset = findViewById(R.id.reset);
-        arFragment = (CustomARfragment) getSupportFragmentManager().findFragmentById(R.id.arFragment);
+        arFragment = (ARfragment4) getSupportFragmentManager().findFragmentById(R.id.arFragment);
         textView = findViewById(R.id.textview);
         textView.setText(R.string.tap_call3);
+        //Button Reset = findViewById(R.id.reset);
+        Button next = findViewById(R.id.next);
+        Reset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+// Reset Code
+                recreate();
+            }
+        });
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                //System.out.println(m);
+
+                //TODO change lesson status
+                Intent h = new Intent(LabLesson3.this, Ch4.class);
+                startActivity(h);
+
+            }
+        });
         arFragment.setOnTapArPlaneListener((hitResult, plane, motionEvent) -> {
             createModel(hitResult.createAnchor(),arFragment);
         });
@@ -78,7 +103,7 @@ public class LabLesson3 extends AppCompatActivity {
             }
         });
     }
-    private void createModel(Anchor anchor, CustomARfragment arFragment) {
+    private void createModel(Anchor anchor, ARfragment4 arFragment) {
 
         ModelRenderable.builder()
                 .setSource(this, Uri.parse("cyclodextrin.sfb"))

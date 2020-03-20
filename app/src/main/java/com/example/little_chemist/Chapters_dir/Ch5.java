@@ -126,7 +126,7 @@ public class Ch5 extends AppCompatActivity {
             public void onClick(View v) {
                 statue = student.getLsnLock("2");
                 String s1,s2,s3,s4;
-                s1= getString(R.string.cards);
+                s1= getString(R.string.prepare);
                 s2=getString(R.string.hydrogen1);
                 s3=getString(R.string.lithium1);
                 s4=getString(R.string.sodium1);
@@ -158,7 +158,7 @@ public class Ch5 extends AppCompatActivity {
             public void onClick(View view) {
                 statue = student.getLsnLock("3");
                 String s1,s2,s3,s4;
-                s1= getString(R.string.cards);
+                s1= getString(R.string.prepare);
                // s2=getString(R.string.barium1);
                 s3=getString(R.string.calcium1);
                 s4=getString(R.string.magnesium1);
@@ -190,7 +190,7 @@ public class Ch5 extends AppCompatActivity {
             public void onClick(View view) {
                 statue = student.getLsnLock("4");
                 String s1,s2,s3,s4;
-                s1= getString(R.string.cards);
+                s1= getString(R.string.prepare);
                 s2=getString(R.string.fluorine1);
                 s3=getString(R.string.chlorine1);
                 s4=getString(R.string.bromine1);
@@ -222,7 +222,7 @@ public class Ch5 extends AppCompatActivity {
             public void onClick(View view) {
                 statue = student.getLsnLock("5");
                 String s1,s2,s3,s4;
-                s1= getString(R.string.cards);
+                s1= getString(R.string.prepare);
                 s2=getString(R.string.argon1);
                 s3=getString(R.string.helium1);
                 s4=getString(R.string.neon1);

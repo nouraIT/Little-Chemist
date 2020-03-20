@@ -1,5 +1,6 @@
 package com.example.little_chemist.Chapters_dir;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -24,6 +25,7 @@ import com.example.little_chemist.View_lesson.lab;
 import com.example.little_chemist.View_lesson.ex_multiple_choice;
 import com.example.little_chemist.quizQ;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
@@ -212,17 +214,28 @@ public class Ch1 extends AppCompatActivity {
             public void onClick(View v) {
 
                 statue = student.getLsnLock("2");
+                String s1;
+                s1= getString(R.string.prepare2);
+
                 if (statue.equals("unlocked") || statue.equals("completed") ) {
-                    Thread thread = new Thread(new Runnable(){
+                    AlertDialog alertDialog = new AlertDialog.Builder(Ch1.this).create();
+                    alertDialog.setTitle(getText(R.string.cards));
+                    alertDialog.setMessage(s1);
+                    alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, getText(R.string.ok),
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.dismiss();
+                                    Thread thread = new Thread(new Runnable() {
 
-                        public void run(){
-
-                    Intent n = new Intent(Ch1.this, ARCards.class);
-                    n.putExtra("lesson", 12);
-                    startActivity(n);
-                        }
-                    });
-                    thread.start();
+                                        public void run() {
+                                            Intent n = new Intent(Ch1.this, ARCards.class);
+                                            startActivity(n);
+                                        }
+                                    });
+                                    thread.start();
+                                }
+                            });
+                    alertDialog.show();
                 } else
                     Toast.makeText(getApplicationContext(), "Locked", Toast.LENGTH_LONG).show();
 

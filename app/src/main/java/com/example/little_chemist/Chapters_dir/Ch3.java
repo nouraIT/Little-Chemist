@@ -7,6 +7,8 @@ import androidx.cardview.widget.CardView;
 
 import com.example.little_chemist.Chapters;
 import com.example.little_chemist.DatabaseHelper;
+import com.example.little_chemist.LabLesson4;
+import com.example.little_chemist.LabLesson5;
 import com.example.little_chemist.R;
 import com.example.little_chemist.Tables.Quiz;
 import com.example.little_chemist.Tables.Student;
@@ -134,8 +136,14 @@ public class Ch3 extends AppCompatActivity {
                 if (statue.equals("unlocked") || statue.equals("completed") ) {
 
 
-                    Intent n = new Intent(Ch3.this, Ch1.class);
-                startActivity(n);
+                    Thread thread = new Thread(new Runnable() {
+
+                        public void run() {
+                            Intent n = new Intent(Ch3.this, LabLesson5.class);
+                            startActivity(n);
+                        }
+                    });
+                    thread.start();
                 }else
                     Toast.makeText(getApplicationContext(), "Locked", Toast.LENGTH_LONG).show();
 
@@ -147,8 +155,14 @@ public class Ch3 extends AppCompatActivity {
                 statue = student.getLsnLock("4");
                 if (statue.equals("unlocked") || statue.equals("completed") ) {
 
-                    Intent n = new Intent(Ch3.this, Ch1.class);
-                    startActivity(n);
+                    Thread thread = new Thread(new Runnable() {
+
+                        public void run() {
+                            Intent n = new Intent(Ch3.this, LabLesson4.class);
+                            startActivity(n);
+                        }
+                    });
+                    thread.start();
               //  finish();
                 }else
                     Toast.makeText(getApplicationContext(), "Locked", Toast.LENGTH_LONG).show();

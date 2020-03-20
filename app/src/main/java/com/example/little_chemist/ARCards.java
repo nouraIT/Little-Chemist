@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.example.little_chemist.Chapters_dir.Ch5;
 import com.google.ar.core.Anchor;
 import com.google.ar.core.AugmentedImage;
 import com.google.ar.core.AugmentedImageDatabase;
@@ -52,6 +53,8 @@ public class ARCards extends AppCompatActivity {
     private ModelRenderable andyRenderable;
     private ModelRenderable mObjRenderable;
 private  String text;
+//private  int  m=0;
+    static int m =0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 //        super.onCreate(savedInstanceState);
@@ -62,6 +65,7 @@ private  String text;
         textView = findViewById(R.id.textview);
         Button Reset = findViewById(R.id.reset);
         Button next = findViewById(R.id.next);
+
         textView.setText(R.string.scan);
         arFragment.getArSceneView().getScene().addOnUpdateListener(this::onUpdate);
         Reset.setOnClickListener(new View.OnClickListener() {
@@ -75,7 +79,15 @@ private  String text;
             @Override
             public void onClick(View view) {
 // Reset Code
-                recreate();
+                //System.out.println(m);
+                if (m < 3) {
+                    m++;
+                    recreate();
+                }
+                else
+                {Intent h = new Intent(ARCards.this, Ch5.class);
+                startActivity(h);}
+
             }
         });
     }
@@ -166,6 +178,7 @@ private  String text;
 
             textView.setText(R.string.Look);
 //Timer t = new Timer();
+            //TODO add timer
             textView.setText(text);
 
 

@@ -106,6 +106,8 @@
     <string name="backBtn">Back</string>
     <string name="QuizScore">Quiz score</string>
     <string name="add_a_neutron">Add A Neutron</string>
+    <string name="done">Done</string>
+    <string name="prepare2">Please Prepare Any 3 Cards From The Booklet</string>
 
 
 </resources>

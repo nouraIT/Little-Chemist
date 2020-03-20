@@ -160,7 +160,7 @@
     <string name="reset">Reset</string>
     <string name="add_a_neutron">Add A Neutron</string>
     <string name="tap_call">Tap Once To Call an Atom After Finding a Plane</string>
-    <string name="split_atom">CLick The Button to Add a Neutron to The Atom and See What Happens!!</string>
+    <string name="split_atom">Click The Button to Add a Neutron to The Atom and See What Happens!!</string>
     <string name="tap_call2">Tap Once To Call an Molecule After Finding a Plane</string>
     <string name="tap_call3">Tap Once To Call an Polymer After Finding a Plane</string>
     <string name="tap_call4">Tap Once To Call The Shapes of Matter</string>
@@ -194,5 +194,7 @@
     <string name="helium2">The Helium\’s Atomic Number is 2 and its Symbol is He</string>
     <string name="neon1">The Neon Card</string>
     <string name="neon2">The Neon\’s Atomic Number is 10 and its Symbol is Ne</string>
+    <string name="done">Done</string>
+    <string name="prepare2">Please Prepare Any 3 Cards From The Booklet</string>
 
 </resources>

@@ -121,8 +121,14 @@ public class Ch2 extends AppCompatActivity {
                 statue = student.getLsnLock("2");
                 if (statue.equals("unlocked") || statue.equals("completed") ) {
 
-                    Intent n = new Intent(Ch2.this, LabLesson2.class);
-                    startActivity(n);
+                    Thread thread = new Thread(new Runnable() {
+
+                        public void run() {
+                            Intent n = new Intent(Ch2.this, LabLesson2.class);
+                            startActivity(n);
+                        }
+                    });
+                    thread.start();
                     //  finish();
 
 
