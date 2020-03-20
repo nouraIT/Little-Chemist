@@ -150,7 +150,7 @@
 
 
     <!-- _______________ AR MSGs  _______________ -->
-    <string name="scan">Scan The Card!</string>
+    <string name="scan">Scan The Card After Finding a Plane</string>
     <string name="cards">Cards</string>
     <string name="ok">Okay</string>
     <string name="prepare">Please Prepare The Following Cards</string>
@@ -162,6 +162,10 @@
     <string name="tap_call">Tap Once To Call an Atom After Finding a Plane</string>
     <string name="split_atom">CLick The Button to Add a Neutron to The Atom and See What Happens!!</string>
     <string name="tap_call2">Tap Once To Call an Molecule After Finding a Plane</string>
+    <string name="tap_call3">Tap Once To Call an Polymer After Finding a Plane</string>
+    <string name="tap_call4">Tap Once To Call The Shapes of Matter</string>
+    <string name="cyclodextrin">Cyclodextrins are cyclic oligosaccharides used for the improvement of water-solubility of drugs</string>
+    <string name="co2">This is the Molecule of CO2</string>
 
     <string name="hydrogen1">The Hydrogen Card</string>
     <string name="hydrogen2">Hydrogen is The First Element in The Periodic Table</string>

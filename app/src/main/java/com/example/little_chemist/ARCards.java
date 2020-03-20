@@ -62,6 +62,7 @@ private  String text;
         textView = findViewById(R.id.textview);
         Button Reset = findViewById(R.id.reset);
         Button next = findViewById(R.id.next);
+        textView.setText(R.string.scan);
         arFragment.getArSceneView().getScene().addOnUpdateListener(this::onUpdate);
         Reset.setOnClickListener(new View.OnClickListener() {
             @Override
