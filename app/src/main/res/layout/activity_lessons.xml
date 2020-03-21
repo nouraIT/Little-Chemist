@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/lesson_background"
+    android:background="@drawable/quizbackground"
     tools:context=".View_lesson.Lessons">
 
 
@@ -32,8 +32,9 @@
         android:background="@drawable/circle_btn_empty"
         android:elevation="20dp"
 
+        android:fontFamily="@font/dk_sugary_pancake"
         android:text="@string/backBtn"
-        android:textColor="@color/Black"
+        android:textColor="@android:color/secondary_text_light"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/slidePage" />
@@ -73,8 +74,9 @@
 
         android:background="@drawable/circle_btn_empty"
         android:elevation="20dp"
+        android:fontFamily="@font/dk_sugary_pancake"
         android:text="@string/nextBtn"
-        android:textColor="@color/design_default_color_on_secondary"
+        android:textColor="@android:color/secondary_text_light"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/slidePage" />
@@ -88,6 +90,7 @@
         android:fontFamily="@font/dk_sugary_pancake"
         android:text="TextView"
         android:textAlignment="center"
+        android:textColor="@color/cpb_white"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/slidePage"
         app:layout_constraintEnd_toEndOf="parent"

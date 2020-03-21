@@ -1,30 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-
     <!--         LESSON 1            -->
+    <string name="C3L1S1" ><b> الملح </b> يُعرف بأنه مكون تضيفه إلى طعامك ولكنه أكثر من ذلك.</string>
+    <string name="C3L1S2" >توجد على الأرض وهي مكونة من عنصرين: الصوديوم <b> Na </b> والكلوريد <b> Cl </b>.</string>
+    <string name="C3L1S3" >الاسم العلمي للملح هو <b> كلوريد الصوديوم </b> (NaCl)</string>
+    <!--    TODO add an image here -->
+    <string name="C3L1S4" >الملح مهم جدًا لجسمك</string>
+    <!--    TODO add an image here -->
+    <string name="C3L1S5" >كمية ملح صحية \n -تساعد الجسم على التحكم في الكمية المناسبة من الماء والسوائل التي تحتاجها. \n -يساعد قلبك على ضخ الدم بمعدل صحي - يساعد عضلاتك وأعصابك على العمل بشكل صحيح. \n</string>
+    <string name="C3L1S6" >يعد الملح أيضًا مطهرًا طبيعيًا ، مما يعني أنه يمكن أن يقتل الجراثيم. \n إذا كنت مصابًا بالتهاب في الحلق ، فقد تكون قد غرغت بالماء المالح لتهدئته وشفائه  \n ويمكن أن يساعد أيضًا في التئام الجروح أو القروح الجسم.</string>
+    <!--    TODO add an image here -->
+    <string name="C3L1S7" >الملح يبدو رائعا أليس كذلك؟  \n ولكن ماذا لو كان لديك الكثير من الملح؟</string>
+    <!--    TODO add an image here -->
+    <string name="C3L1S8" >سيؤدي ذلك إلى ضخ قلبك ودمك بشكل أسرع وأكثر صعوبة لإزالة الملح الإضافي الذي لا يحتاجه جسمك \ n هذا يجعل ضغط الدم مرتفعًا جدًا بمرور الوقت ويمكن أن يجعلك غير صحي.</string>
+    <!--    TODO add an image here -->
+
+    <!--         LESSON 1  exercises          -->
+    <string-array name="C3L1S1E1M">
+        <item>الاسم العلمي الملح</item>
+        <item>H2O</item>
+        <item>NaCl</item>
+        <item>Fe</item>
+        <item>NO3</item>
+    </string-array>
 
 
-    <!--         LESSON 1            -->
+    <string-array name="C3L1A">
+        <item>NaCl</item>
+        <!--        <item>Chromatography</item>-->
+    </string-array>
+    <!--     ========================     LESSON 1  END ========================          -->
+
+
 
 
 
     <!--         LESSON 2            -->
+    <string name="C3L2S1"><b> المادة </b> هي لبنات البناء في العالم.</string>
+    <!--    TODO add an image here -->
+    <string name="C3L2S2">تخيل أنك تخبز كعكة.\n تقوم بخلط مكونات الكيك معًا ثم تقليبها معًا ، \n تبدأ في المزج في خليط واحد ، \n ولن تتمكن من اختيار المكونات الأصلية للوصفة.\n لماذا يحدث هذا؟ \n هذا بسبب كيفية عمل <b> المادة </b> عندما تتلامس مع أشكال أخرى من المادة.</string>
+    <!--    TODO add an image here -->
+    <string name="C3L2S3">يمكن أن تأتي المادة على شكل \n مادة صلبة أو سائلة أو غازية.</string>
+    <!--    TODO add an image here -->
+    <string name="C3L2S4">جميع المواد الصلبة والسوائل والغازات مصنوعة من الذرات \n "اللبنات الأساسية للمادة" \n الذرات هي أبسط شكل للمادة ولا يمكن تفكيكها.</string>
+    <!--    TODO add an image here -->
+    <string name="C3L2S5">الذرات صغيرة جدًا ولا يمكن رؤيتها بالعين البشرية ، \n ولكنها موجودة من حولنا \n وحتى فينا!</string>
+    <!--    TODO add an image here -->
+    <string name="C3L2S6"> الذرات ليست متشابهة ، فهناك 118 نوعًا مختلفًا من الذرات ، \n تسمى العناصر. 92 من هذه العناصر طبيعية\n والباقي من صنع الإنسان.</string>
+    <string name="C3L2S7">من أمثلة العناصر التي قد تتعرف عليها مثل الأكسجين والألمنيوم والحديد.</string>
+    <!--    TODO add an image here -->
+    <string name="C3L2S8"><b> الحل </b> هو عندما لا يمكن تمييز المواد بسهولة عن بعضها البعض. \n مثل خلط الملح بالماء أو خبز كعكة</string>
+    <!--    TODO add an image here -->
+    <string name="C3L2S9"> <b> المزائج </b> هي مادة يتم فيها مزج مادتين أو أكثر ولكن لا يتم ربطهما كيميائيًا معًا ، \ n وهذا يعني عدم حدوث تفاعل كيميائي. \ n مثل كيس M Ms</string>
+    <!--    TODO add an image here -->
+
+    <!--         LESSON 2  exercises          -->
+
+    <!--     ========================     LESSON 2  END ========================          -->
+
+    <!--         LESSON 3 is a lab
+
+    EXPLOSION
+
+                 LESSON 3 is a lab -->
 
 
-    <!--         LESSON 2            -->
+    <!--         LESSON 4
 
 
-    <!--         LESSON 3            -->
 
 
-    <!--         LESSON 3            -->
-
-
-    <!--         LESSON 4            -->
-
-
-    <!--         LESSON 4            -->
+    might be a lab-->
 
 
     <!--         LESSON 5            -->
@@ -32,4 +78,77 @@
 
     <!--         LESSON 5            -->
 
+
+
+
+
+    <!--        Quiz Questions           -->
+    <string-array name="C3Quiz_Questions">
+
+        <item name="Q1">Why is salt important to your body\'s health?</item>
+        <item name="Q2">Too much salt can cause _____.</item>
+        <item name="Q3">Salt is a natural mineral made of _____.</item>
+        <item name="Q4"> </item>
+        <item name="Q5"> </item>
+        <item name="Q6"> </item>
+
+
+    </string-array>
+    <!--         Quiz Total Answers          -->
+
+    <string-array name="C3Quiz_Q1">
+        <item name="Q1">Why is salt important to your body\'s health?</item>
+        <item name="A1">A healthy amount helps your muscles to function properly</item>
+        <item name="A2">A healthy amount helps to regulate the amount of water in your body</item>
+        <item name="A3">A healthy amount helps you to have good blood pressure</item>
+        <item name="A4">All of these answers are correct</item>
+        <item name="CA1">All of these answers are correct</item>
+    </string-array>
+
+    <string-array name="C3Quiz_Q2">
+        <item name="Q2">Too much salt can cause _____.</item>
+        <item name="A1">high blood pressure</item>
+        <item name="A2">you to catch a cold</item>
+        <item name="A3">you to run very fast</item>
+        <item name="A4">your fingernails to chip </item>
+        <item name="CA2">high blood pressure</item>
+    </string-array>
+
+    <string-array name="C3Quiz_Q3">
+        <item name="Q3">Salt is a natural mineral made of _____.</item>
+        <item name="A1">chlorine and calcium</item>
+        <item name="A2">sodium and chloride</item>
+        <item name="A3">oxygen and carbon dioxide</item>
+        <item name="A4">soil</item>
+        <item name="CA3">sodium and chloride</item>
+    </string-array>
+
+    <string-array name="C3Quiz_Q4">
+        <item name="Q4"> </item>
+        <item name="A1"> </item>
+        <item name="A2"> </item>
+        <item name="A3"> </item>
+        <item name="A4"> </item>
+        <item name="CA4"> </item>
+    </string-array>
+
+    <string-array name="C3Quiz_Q5">
+        <item name="Q5"> </item>
+        <item name="A1"> </item>
+        <item name="A2"> </item>
+        <item name="A3"> </item>
+        <item name="A4"> </item>
+        <item name="CA5"> </item>
+    </string-array>
+
+    <!--         Quiz correct Answers          -->
+    <string-array name="C3Quiz_Correct">
+
+        <item name="C3A1">All of these answers are correct</item>
+        <item name="C3A2">high blood pressure</item>
+        <item name="C3A3">sodium and chloride</item>
+        <item name="C3A4"> </item>
+        <item name="C3A5"> </item>
+
+    </string-array>
 </resources>

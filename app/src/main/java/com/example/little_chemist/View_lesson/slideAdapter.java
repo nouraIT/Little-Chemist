@@ -50,7 +50,9 @@ public class slideAdapter extends PagerAdapter {
         this.context = context;
         lessonKey=Integer.toString(value) ;
         chapterNum = lessonKey.charAt(0) ;
+        //System.out.println(chapterNum);
         lessonNum= lessonKey.charAt(1) ;
+        //System.out.println(lessonNum);
         cleanContent = new String[content.length] ;
         cleanImg = new String[content.length] ;
         AcEx = new Intent[ex.length] ;
@@ -73,15 +75,35 @@ public class slideAdapter extends PagerAdapter {
 
 
     public String[] content ={
-            "C1L1S1","C1L1S2","C1L1S3","C1L1S4","C1L1S5","C1L1S6","C1L1S7","C1L3S1","C1L3S2","C1L3S3","C1L3S4","C1L4S1","C1L4S2"
+             "C1L1S1","C1L1S2","C1L1S3","C1L1S4","C1L1S5", "C1L1S6"
+            ,"C1L3S1","C1L3S2","C1L3S3","C1L3S4"
+            ,"C1L4S1","C1L4S2" , "C1L4S3" , "C1L4S4"
+            ,"C2L1S1","C2L1S2"
+            ,"C2L4S1","C2L4S2","C2L4S3","C2L4S4","C2L4S5","C2L4S6","C2L4S7","C2L4S8"
+            ,"C2L5S1","C2L5S2" , "C2L5S3" ,"C2L5S4" , "C2L5S5"
+            ,"C3L1S1","C3L1S2","C3L1S3","C3L1S4","C3L1S5","C3L1S6","C3L1S7","C3L1S8"
+            ,"C3L2S1","C3L2S2","C3L2S3","C3L2S4","C3L2S5","C3L2S6","C3L2S7","C3L2S8","C3L2S9"
+            ,"C4L1S1","C4L1S2","C4L1S3","C4L1S4"
+            ,"C4L2S1","C4L2S2","C4L2S3","C4L2S4"
             ,"C4L3S1","C4L3S2","C4L3S3","C4L3S4","C4L3S5"
             ,"C4L5S1","C4L5S2","C4L5S3","C4L5S4"
+            ,"C5L1S1","C5L1S2","C5L1S3","C5L1S4"
+
+
 
     };
 
     public String[] ex ={
-            "C1L1S1ED","C1L1S2ED","C1L1S4ED","C1L3S3E1M", "C1L3S4E2M" , "C1L4S1E1M","C1L4S2E2M"
+            "C1L1S1ED","C1L1S2ED","C1L1S5ED"
+            ,"C1L3S3E1M", "C1L3S4E2M"
+            ,"C1L4S2E1M","C1L4S4E2M"
+            ,"C2L1S2E1M"
+            ,"C2L4S2E1M","C2L4S4E2M","C2L4S5E3M","C2L4S8E4M"
+            ,"C2L5S3E1M","C2L5S5E2M"
+            ,"C3L1S1E1M"
             ,"C4L5S1E1M","C4L5S3E2M"
+            ,"C5L1E1M","C5L1E2M"
+
     };
 
 
@@ -118,12 +140,14 @@ public class slideAdapter extends PagerAdapter {
         slideEx = view.findViewById(R.id.ex) ;
         btnAmim = AnimationUtils.loadAnimation(this.context, R.anim.button_anim) ;
 
-         //n;
+
         //set the button ex visible
         int index=0 ;
         for(int i=0;i<ex.length;i++){
-           tempEx = ex[i].substring(0,ex.length-3) ;
-            System.out.println(tempEx) ;
+            //System.out.println(ex[i]);
+           tempEx = ex[i].substring(0,6) ;
+            //System.out.println(tempEx);
+
             if (cleanContent[position].equals(tempEx)){
                 if(tempEx.equals("C1L1S1")){
                     AcEx[index] = new Intent(view.getContext(), ex_DragAndDrop.class);
@@ -146,9 +170,8 @@ public class slideAdapter extends PagerAdapter {
                     }
                 });
 
-                System.out.println(tempEx);
+               //System.out.println("hi");
                 slideEx.setVisibility(View.VISIBLE);
-
                 slideEx.setAnimation(btnAmim) ;
 
                 index++ ;
@@ -185,6 +208,10 @@ public class slideAdapter extends PagerAdapter {
     public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
         container.removeView((ConstraintLayout)object);
 
+    }
+
+    public Context getContext(){
+        return this.context ;
     }
 
 

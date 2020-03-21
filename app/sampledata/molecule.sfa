@@ -666,7 +666,7 @@
     file: 'sampledata/molecule.fbx',
     name: 'molecule',
     recenter: 'root',
-    scale: 9.765625,
+    scale: 20.765625,
   },
   version: '0.54:2',
 }

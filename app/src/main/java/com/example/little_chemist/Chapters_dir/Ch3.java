@@ -7,7 +7,10 @@ import androidx.cardview.widget.CardView;
 
 import com.example.little_chemist.Chapters;
 import com.example.little_chemist.DatabaseHelper;
+import com.example.little_chemist.LabLesson4;
+import com.example.little_chemist.LabLesson5;
 import com.example.little_chemist.R;
+import com.example.little_chemist.Tables.Lesson;
 import com.example.little_chemist.Tables.Quiz;
 import com.example.little_chemist.Tables.Student;
 import com.example.little_chemist.View_lesson.Lessons;
@@ -107,8 +110,7 @@ public class Ch3 extends AppCompatActivity {
         lsn1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Intent n = new Intent(Ch3.this, Lessons.class);
-                n.putExtra("lesson", 21);
-
+                n.putExtra("lesson", 31);
                 startActivity(n);
               //  finish();
             }
@@ -121,8 +123,7 @@ public class Ch3 extends AppCompatActivity {
                 if (statue.equals("unlocked") || statue.equals("completed") ) {
 
                     Intent n = new Intent(Ch3.this, Lessons.class);
-                    n.putExtra("lesson", 22);
-
+                    n.putExtra("lesson", 32);
                     startActivity(n);
               //  finish();
                 } else{
@@ -139,10 +140,14 @@ public class Ch3 extends AppCompatActivity {
                 if (statue.equals("unlocked") || statue.equals("completed") ) {
 
 
-                    Intent n = new Intent(Ch3.this, Lessons.class);
-                    n.putExtra("lesson", 23);
+                    Thread thread = new Thread(new Runnable() {
 
-                    startActivity(n);
+                        public void run() {
+                            Intent n = new Intent(Ch3.this, LabLesson5.class);
+                            startActivity(n);
+                        }
+                    });
+                    thread.start();
                 }else
                     Toast.makeText(getApplicationContext(), "Locked", Toast.LENGTH_LONG).show();
 
@@ -154,10 +159,14 @@ public class Ch3 extends AppCompatActivity {
                 statue = student.getLsnLock("4");
                 if (statue.equals("unlocked") || statue.equals("completed") ) {
 
-                    Intent n = new Intent(Ch3.this, Lessons.class);
-                    n.putExtra("lesson", 24);
+                    Thread thread = new Thread(new Runnable() {
 
-                    startActivity(n);
+                        public void run() {
+                            Intent n = new Intent(Ch3.this, LabLesson4.class);
+                            startActivity(n);
+                        }
+                    });
+                    thread.start();
               //  finish();
                 }else
                     Toast.makeText(getApplicationContext(), "Locked", Toast.LENGTH_LONG).show();
@@ -169,9 +178,7 @@ public class Ch3 extends AppCompatActivity {
             public void onClick(View view) {
                 statue = student.getLsnLock("5");
                 if (statue.equals("unlocked") || statue.equals("completed") ) {
-                    Intent n = new Intent(Ch3.this, Lessons.class);
-                    n.putExtra("lesson", 25);
-
+                    Intent n = new Intent(Ch3.this, Ch1.class);
                     startActivity(n);
                 }else
                     Toast.makeText(getApplicationContext(), "Locked", Toast.LENGTH_LONG).show();

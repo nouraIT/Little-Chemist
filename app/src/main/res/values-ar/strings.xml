@@ -93,6 +93,8 @@
     <string name="Ch5Lsn5">المجوعة الثامنة عشر</string>
     <string name="nextQ">السؤال التالي</string>
     <string name="nextBtn">التالي</string>
+    <string name="finishBtn">انهاء</string>
+    <string name="getEx">ابدأ التمرين</string>
     <string name="previous_question">السؤال السابق</string>
     <string name="scores">مجموع النقاط</string>
     <string name="backBtn">الخلف</string>

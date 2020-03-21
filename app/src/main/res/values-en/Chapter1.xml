@@ -3,104 +3,65 @@
 
 
   <!--         LESSON 1            -->
-  <string name="C1L1S1" ><b>Matter</b> is composed of indivisible building blocks.</string>
-  <string name="C1L1S2"><b>Atom</b> is the smallest possible amount of matter that still counts as a chemical element.</string>
-
+  <string name="C1L1S1" ><b>Matter</b> is composed of indivisible building blocks. \n <b>Atom</b> is the smallest possible amount of matter that still counts as a chemical element.</string>
+  <string name="C1L1S2"><b>The Atom</b> consists of: \n - one Nucleus \n - Multiple Protons \n - Multiple Neutrons \n - Multiple Electrons \n </string>
+  <string name="C1L1S3"><b>The Nucleus</b> is the center of the atom \n It is made up of protons and neutrons and is surrounded by the electron cloud.</string>
   <string name="C1L1S1E">Organize these building blocks in any shape to create an atom</string>
-
-  <string name="C1L1S3" ><b>The Atom</b> consists of: \n
-- one Nucleus \n
-- Multiple Protons \n
-- Multiple Neutrons \n
-    - Multiple Electrons </string>
- <string name="C1L1S4"><b>The Nucleus</b> is the center of the atom \n
-   It is made up of protons and neutrons and is surrounded by the electron cloud.
-</string>
-
-
-  <string name="C1L1S2E">Drag and drop the elements to their right place</string>
-
-  <string name="C1L1S5">The concept of <b>The Atom</b> was studied by many scientists, including Newton, Dalton.</string>
-    <string name="C1L1S6"><b>Isaac Newton</b> suggested that atoms are held together with attractions, otherwise known as forces.
-</string>
-  <string name="C1L1S7"><b>John Dalton</b> proposed the atomic theory.\n\n
-<b>Atomic theory</b>is a scientific theory of the nature of matter, which states that matter is composed of discrete units called atoms.
-</string>
-
-  <string name="C1L1S4E">Match each scientist with his discovery</string>
-
+  <string name="C1L1S4" > The concept of <b>The Atom</b> was studied by many scientists, including Newton, Dalton.</string>
+  <string name="C1L1S5"><b>Isaac Newton</b> suggested that atoms are held together with attractions, otherwise known as forces.</string>
+  <string name="C1L1S3E">Drag and drop the elements to their right place</string>
+  <string name="C1L1S6"><b>John Dalton</b> proposed the atomic theory.\n\n <b>Atomic theory</b> is a scientific theory of the nature of matter, which states that matter is composed of discrete units called atoms.</string>
+  <string name="C1L1S6E">Match each scientist with his discovery</string>
   <!--         LESSON 1            -->
 
 
 
-
-
-
   <!--         LESSON 3            -->
-  <string name="C1L3S1">What Are<b>Isotopes</b> </string>
-  <string name="C1L3S2" ><b>Isotopes</b>  are atoms with the same number of protons and electrons, but a different number of neutrons.\n
-For example, imagine a piece of wood, every piece has different patterns but it\’s all wood.
-</string>
-  <string name="C1L3S3">That means that if we had two pieces of wood, their atoms would be<b>Isotopes</b> </string>
-
-  <string-array name="C1L3S3EM">
+  <string name="C1L3S1">What Are<b> Isotopes</b> </string>
+  <string name="C1L3S2" ><b>Isotopes</b>  are atoms with the same number of protons and electrons, but a different number of neutrons.\n For example, imagine a piece of wood, every piece has different patterns but it\’s all wood.</string>
+  <string name="C1L3S3">That means that if we had two pieces of wood, their atoms would be <b>Isotopes</b> </string>
+  <string-array name="C1L3S3E1M">
     <item>What part of the atom determines if its an Isotope or not?</item>
     <item> Protons</item>
     <item>Electrons</item>
     <item>Neutrons</item>
   </string-array>
-
-  <string name="C1L3S4"><b>Atomic mass</b> is calculated by adding the number of protons and neutrons in the atom.
-
-</string>
-
-  <string name="C1L3S4EM">Calculate the mass of helium</string>
-
+  <string name="C1L3S4"><b>Atomic mass</b> is calculated by adding the number of protons and neutrons in the atom. </string>
+  <string name="C1L3S4E2M">Calculate the mass of helium</string>
+  <!-- Answer lesson 3 -->
   <string-array name="C1L3A">
     <item>Protons</item>
   </string-array>
-
-
   <!--         LESSON 3            -->
 
 
   <!--         LESSON 4            -->
-  <string name="C1L4S1" ><b>Heisenberg Uncertainty Principle</b> Which states that you cannot measure everything exactly.
-    For example: Imagine that you\’re throwing a ball in the air, and you want to measure how fast it\'s going and its altitude -
-    it\'s not possible to know both the exact speed and exact location. In order to know exactly how high the ball are, it would have to stop.
-    However, if it stops, then you can\'t measure how fast its flying because at that moment it\'s not actually moving.
-    That\'s what the Heisenberg Uncertainty Principle is saying - sometimes we can\'t measure one thing without making it impossible to measure another.
-</string>
-
-  <string-array name="C1L4S1EM">
+  <string name="C1L4S1" ><b>Heisenberg Uncertainty Principle</b> Which states that you cannot measure everything exactly.</string>
+  <string-array name="C1L4S2E1M">
     <item>According to the Heisenberg Uncertainty Principle, what can\'t you know?</item>
     <item>Where you are </item>
     <item>How fast you are going.</item>
     <item>Your exact age</item>
     <item >Where you are and how fast you are going at the same time</item>
   </string-array>
-
-  <string name="C1L4S2">Well, let\'s go back to you throwing the ball and compare the ball to the smallest part of an atom. You can\'t even see an atom, so you can\'t really see the smallest part of an atom without some pretty serious equipment. But let\'s pretend anyway that the ball is the smallest piece of a particle, a quantum. It\'s difficult to find exactly where the ball is because its moving, but we can sort of guess.
-We also want to see how fast the ball, the quantum, is flying. We can guess that pretty close. However, we can\'t find how fast the quantum, or smallest piece, is going if we\'re also trying to find out exactly where it is.
-
-</string>
-
-  <string-array name="C1L4S2EM">
+  <string name="C1L4S2">Imagine that you\’re throwing a ball in the air, and you want to measure how fast it\'s going and its altitude - it\'s not possible to know both the exact speed and exact location. In order to know exactly how high the ball are, it would have to stop. That\'s what the Heisenberg Uncertainty Principle is saying .</string>
+  <string name="C1L4S3">Well, let\'s go back to you throwing the ball and compare the ball to the smallest part of an atom. You can\'t even see an atom, so you can\'t really see the smallest part of an atom without some pretty serious equipment.</string>
+  <string name="C1L4S4">But let\'s pretend anyway that the ball is the smallest piece of a particle, a quantum. It\'s difficult to find exactly where the ball is because its moving, but we can sort of guess.</string>
+  <string name="C1L4S5">We also want to see how fast the ball, the quantum, is flying. We can guess that pretty close. However, we can\'t find how fast the quantum, or smallest piece, is going if we\'re also trying to find out exactly where it is.
+  </string>
+  <string-array name="C1L4S5E2M">
     <item>What is the smallest particle of any substance called?</item>
     <item>Atom</item>
     <item>Molecule</item>
     <item >Quantum</item>
     <item>Quazer</item>
   </string-array>
-
-
-  <!--A-->
-<string-array name="C1L4A">
-  <item>Where you are and how fast you are going at the same time</item>
-  <item>Quantum</item>
-</string-array>
-
-<!--         LESSON 4            -->
+  <!--Answer lesson 4-->
+  <string-array name="C1L4A">
+    <item>Where you are and how fast you are going at the same time</item>
+    <item>Quantum</item>
+  </string-array>
+  <!--         LESSON 4            -->
 
 
 

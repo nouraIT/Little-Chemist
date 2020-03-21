@@ -4,9 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background1"
+    android:background="@drawable/quizbackground"
     tools:context=".View_lesson.ex_multiple_choice">
 
+
+    <TextView
+        android:id="@+id/lessonTitle2"
+        android:layout_width="271dp"
+        android:layout_height="52dp"
+        android:fontFamily="@font/dk_sugary_pancake"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textColor="@color/cpb_white"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -30,6 +45,7 @@
         android:layout_marginTop="111dp"
         android:layout_marginEnd="49dp"
         android:layout_marginBottom="111dp"
+        app:cardCornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -44,6 +60,7 @@
                 android:id="@+id/exNum"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/dk_sugary_pancake"
                 android:padding="10dp"
                 android:textColor="@color/colorAccent"
                 android:textSize="18sp" />
@@ -53,40 +70,55 @@
                 android:layout_width="match_parent"
                 android:layout_height="126dp"
                 android:layout_margin="15dp"
-                android:fontFamily="@font/roboto_bold"
+                android:fontFamily="@font/dk_sugary_pancake"
                 android:textSize="24sp" />
 
-            <Button
+            <br.com.simplepass.loadingbutton.customViews.CircularProgressButton
                 android:id="@+id/a1"
-                android:layout_width="match_parent"
+                android:layout_width="237dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="50dp"
-                android:layout_marginEnd="50dp"
-                android:layout_marginBottom="5dp" />
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="7dp"
+                android:background="@drawable/ch1_bg"
+                android:backgroundTintMode="add"
+                android:fontFamily="@font/dk_sugary_pancake"
+                android:imeOptions="actionDone"
+                android:src="@drawable/done"
+                app:cpb_colorProgress="@color/Black"
+                tools:layout_editor_absoluteY="197dp" />
 
-            <Button
+            <br.com.simplepass.loadingbutton.customViews.CircularProgressButton
                 android:id="@+id/a2"
-                android:layout_width="match_parent"
+                android:layout_width="237dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="50dp"
-                android:layout_marginEnd="50dp"
-                android:layout_marginBottom="5dp" />
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="7dp"
+                android:background="@drawable/ch1_bg"
+                android:fontFamily="@font/dk_sugary_pancake"
+                android:src="@drawable/done"
+                tools:layout_editor_absoluteY="197dp" />
 
-            <Button
+            <br.com.simplepass.loadingbutton.customViews.CircularProgressButton
                 android:id="@+id/a3"
-                android:layout_width="match_parent"
+                android:layout_width="242dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="50dp"
-                android:layout_marginEnd="50dp"
-                android:layout_marginBottom="5dp" />
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="7dp"
+                android:background="@drawable/ch1_bg"
+                android:fontFamily="@font/dk_sugary_pancake"
+                android:src="@drawable/done"
+                tools:layout_editor_absoluteY="197dp" />
 
-            <Button
+            <br.com.simplepass.loadingbutton.customViews.CircularProgressButton
                 android:id="@+id/a4"
-                android:layout_width="match_parent"
+                android:layout_width="242dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="50dp"
-                android:layout_marginEnd="50dp"
-                android:layout_marginBottom="5dp" />
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="7dp"
+                android:background="@drawable/ch1_bg"
+                android:fontFamily="@font/dk_sugary_pancake"
+                android:src="@drawable/done"
+                tools:layout_editor_absoluteY="197dp" />
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>

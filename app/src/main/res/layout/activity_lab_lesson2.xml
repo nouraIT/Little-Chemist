@@ -9,7 +9,7 @@
 
     <fragment
         android:id="@+id/arFragment"
-        android:name="com.example.little_chemist.CustomARfragment"
+        android:name="com.example.little_chemist.ARfragment3"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -37,8 +37,19 @@
         android:layout_marginEnd="169dp"
         android:layout_marginBottom="14dp"
 
+        android:layout_toStartOf="@+id/next"
         android:text="@string/reset" />
 
 
+    <Button
+        android:id="@+id/next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="13dp"
+        android:text="@string/done" />
 
 </RelativeLayout>

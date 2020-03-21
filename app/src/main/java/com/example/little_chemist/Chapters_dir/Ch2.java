@@ -111,8 +111,7 @@ public class Ch2 extends AppCompatActivity {
         lsn1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Intent n = new Intent(Ch2.this, Lessons.class);
-                n.putExtra("lesson", 16);
-
+                n.putExtra("lesson",21);
                 startActivity(n);
               //  finish();
             }
@@ -124,8 +123,14 @@ public class Ch2 extends AppCompatActivity {
                 statue = student.getLsnLock("2");
                 if (statue.equals("unlocked") || statue.equals("completed") ) {
 
-                    Intent n = new Intent(Ch2.this, LabLesson2.class);
-                    startActivity(n);
+                    Thread thread = new Thread(new Runnable() {
+
+                        public void run() {
+                            Intent n = new Intent(Ch2.this, LabLesson2.class);
+                            startActivity(n);
+                        }
+                    });
+                    thread.start();
                     //  finish();
 
 
@@ -160,7 +165,8 @@ public class Ch2 extends AppCompatActivity {
                 statue = student.getLsnLock("4");
                 if (statue.equals("unlocked") || statue.equals("completed") ) {
 
-                    Intent n = new Intent(Ch2.this, lab.class);
+                    Intent n = new Intent(Ch2.this, Lessons.class);
+                    n.putExtra("lesson",24);
                     startActivity(n);
                     //  finish();
 
@@ -178,7 +184,8 @@ public class Ch2 extends AppCompatActivity {
                 statue = student.getLsnLock("5");
                 if (statue.equals("unlocked") || statue.equals("completed") ) {
 
-                    Intent n = new Intent(Ch2.this, lab.class);
+                    Intent n = new Intent(Ch2.this, Lessons.class);
+                    n.putExtra("lesson",25);
                     startActivity(n);
                     //  finish();
 
