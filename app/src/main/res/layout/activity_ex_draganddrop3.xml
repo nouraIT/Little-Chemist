@@ -79,40 +79,33 @@
 
                     <LinearLayout
                         android:id="@+id/dropArea1"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-
-                        android:layout_gravity="center"
-
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:elevation="5dp"
                         android:background="@drawable/drop_area"
 
-                        android:orientation="vertical"
 
+                        android:orientation="horizontal" />
+
+                    <TextView
+                        android:id="@+id/text1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="atomic theory"
+                        android:textSize="20sp"
+                        android:backgroundTint="@color/TransparentWhite"
+                        android:fontFamily="@font/aref_menna"
+                        android:layout_marginTop="2dp"
                         />
-
-                        <TextView
-                            android:id="@+id/text1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="atomic theory"
-                            android:textSize="20sp"
-                            android:backgroundTint="@color/TransparentWhite"
-                            android:fontFamily="@font/aref_menna"
-                            android:layout_marginTop="2dp"
-
-                            />
 
                     <LinearLayout
                         android:id="@+id/dropArea2"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:layout_gravity="center"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
                         android:layout_marginTop="7dp"
                         android:background="@drawable/drop_area"
-
-                        android:orientation="vertical"
-
-                        />
+                        android:elevation="5dp"
+                        android:orientation="horizontal" />
 
                     <TextView
                         android:id="@+id/text2"
@@ -143,20 +136,18 @@
                     android:orientation="vertical"
                     android:weightSum="2">
 
-                    <ImageView
+                    <de.hdodenhof.circleimageview.CircleImageView
                         android:id="@+id/s1"
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-
-
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:layout_gravity="center"
                         android:src="@drawable/c1l1s5" />
 
-                    <ImageView
+                    <de.hdodenhof.circleimageview.CircleImageView
                         android:id="@+id/s2"
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-
-                        android:layout_marginTop="40dp"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:layout_gravity="center"
 
                         android:src="@drawable/c1l1s6" />
 

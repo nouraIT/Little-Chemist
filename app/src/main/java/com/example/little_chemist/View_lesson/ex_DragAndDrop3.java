@@ -53,6 +53,7 @@ public class ex_DragAndDrop3 extends AppCompatActivity{
         findViewById(R.id.s2).setOnTouchListener(new ex_DragAndDrop3.MyTouchListener());
         findViewById(R.id.dropArea1).setOnDragListener(new ex_DragAndDrop3.MyDragListener());
         findViewById(R.id.dropArea2).setOnDragListener(new ex_DragAndDrop3.MyDragListener());
+        findViewById(R.id.dragArea3).setOnDragListener(new ex_DragAndDrop3.MyDragListener());
         dropArea = findViewById(R.id.dropArea1);
         dropArea2 = findViewById(R.id.dropArea2);
         text1 = findViewById(R.id.text1);
@@ -71,7 +72,7 @@ public class ex_DragAndDrop3 extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 Intent n = new Intent(ex_DragAndDrop3.this, Lessons.class);
-                n.putExtra("lesson",16) ;
+                n.putExtra("lesson",11) ;
                 startActivity(n);
 
             }
