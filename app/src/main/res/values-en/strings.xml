@@ -111,6 +111,10 @@
     <string name="add_a_neutron">Add A Neutron</string>
     <string name="done">Done</string>
     <string name="prepare2">Please Prepare Any 3 Cards From The Booklet</string>
+    <string name="gas">Gas</string>
+    <string name="selectgas">Select The Gas Type</string>
+    <string name="liquid">Liquid</string>
+    <string name="selectliquid">Select The Liquid Type</string>
 
 
 </resources>
