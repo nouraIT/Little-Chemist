@@ -186,11 +186,15 @@ sceneform.asset('sampledata/liquid.fbx',
         'sampledata/liquid.sfa',
         'src/main/assets/liquid',
         ['sampledata/liquid.fbx'])
-//sceneform.asset('sampledata/solid.fbx',
+//sceneform.asset('sampledata/soliddd.fbx',
 //        'default',
-//        'sampledata/solid.sfa',
-//        'src/main/assets/solid',
-//        ['sampledata/solid.fbx'])
+//        'sampledata/soliddd.sfa',
+//        'src/main/assets/soliddd',
+//        ['sampledata/soliddd.fbx'])
+//sceneform.asset('sampledata/lab.fbx',
+//        'default',
+//        'sampledata/lab.sfa',
+//        'src/main/res/raw/lab')
 repositories {
     mavenCentral()
 
