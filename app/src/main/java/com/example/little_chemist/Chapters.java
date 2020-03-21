@@ -41,6 +41,7 @@ public class Chapters extends AppCompatActivity {
     private int mCurrent ;
     LayoutInflater layoutInflater;
     ConstraintLayout cl;
+    TextView chaptertxt ;
 
     private TextView[] mDotsText ;
     private com.example.little_chemist.chaptersAdapter adapter ;

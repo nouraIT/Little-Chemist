@@ -110,7 +110,7 @@ public class Ch4 extends AppCompatActivity {
 
         lsn1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                Intent n = new Intent(Ch4.this, lab.class);
+                Intent n = new Intent(Ch4.this, Lessons.class);
                 n.putExtra("lesson",41);
                 startActivity(n);
               //  finish();

@@ -64,16 +64,6 @@ public class Lessons extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent Homepage = new Intent(Lessons.this, Ch1.class);
-                startActivity(Homepage);
-                finish();
-            }
-        });
-
-
         Context con = Lessons.this;
 
         layoutInflater = (LayoutInflater) con.getSystemService(Chapters.LAYOUT_INFLATER_SERVICE) ;
@@ -94,6 +84,28 @@ public class Lessons extends AppCompatActivity {
         mSlidsView.addOnPageChangeListener(viewListener);
 
         lessonName = findViewById(R.id.lessonTitle) ;
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            Intent n ;
+            @Override
+            public void onClick(View v) {
+                if(Integer.toString(lessonkey).charAt(0)=='1')
+                    n = new Intent(Lessons.this, Ch1.class);
+                if(Integer.toString(lessonkey).charAt(0)=='2')
+                    n = new Intent(Lessons.this, Ch2.class);
+                if(Integer.toString(lessonkey).charAt(0)=='3')
+                    n = new Intent(Lessons.this, Ch3.class);
+                if(Integer.toString(lessonkey).charAt(0)=='4')
+                    n = new Intent(Lessons.this, Ch4.class);
+                if(Integer.toString(lessonkey).charAt(0)=='5')
+                    n = new Intent(Lessons.this, Ch5.class);
+                startActivity(n);
+                finish();
+            }
+        });
+
+
+
 
         lessonName.setText(getString(R.string.lesson1));
         setLessontitle(lessonkey);

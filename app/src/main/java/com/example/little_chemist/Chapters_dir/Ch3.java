@@ -10,8 +10,10 @@ import com.example.little_chemist.DatabaseHelper;
 import com.example.little_chemist.LabLesson4;
 import com.example.little_chemist.LabLesson5;
 import com.example.little_chemist.R;
+import com.example.little_chemist.Tables.Lesson;
 import com.example.little_chemist.Tables.Quiz;
 import com.example.little_chemist.Tables.Student;
+import com.example.little_chemist.View_lesson.Lessons;
 import com.example.little_chemist.quizQ;
 
 import android.content.Intent;
@@ -107,7 +109,8 @@ public class Ch3 extends AppCompatActivity {
 
         lsn1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                Intent n = new Intent(Ch3.this, Ch1.class);
+                Intent n = new Intent(Ch3.this, Lessons.class);
+                n.putExtra("lesson", 31);
                 startActivity(n);
               //  finish();
             }
@@ -119,8 +122,9 @@ public class Ch3 extends AppCompatActivity {
                 statue = student.getLsnLock("2");
                 if (statue.equals("unlocked") || statue.equals("completed") ) {
 
-                    Intent n = new Intent(Ch3.this, Ch1.class);
-                startActivity(n);
+                    Intent n = new Intent(Ch3.this, Lessons.class);
+                    n.putExtra("lesson", 32);
+                    startActivity(n);
               //  finish();
                 } else{
 

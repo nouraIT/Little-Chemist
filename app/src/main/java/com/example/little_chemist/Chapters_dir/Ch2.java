@@ -17,6 +17,7 @@ import com.example.little_chemist.LabLesson2;
 import com.example.little_chemist.R;
 import com.example.little_chemist.Tables.Quiz;
 import com.example.little_chemist.Tables.Student;
+import com.example.little_chemist.View_lesson.Lessons;
 import com.example.little_chemist.View_lesson.lab;
 import com.example.little_chemist.quizQ;
 
@@ -109,7 +110,8 @@ public class Ch2 extends AppCompatActivity {
 
         lsn1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                Intent n = new Intent(Ch2.this, Ch1.class);
+                Intent n = new Intent(Ch2.this, Lessons.class);
+                n.putExtra("lesson",21);
                 startActivity(n);
               //  finish();
             }
@@ -163,7 +165,8 @@ public class Ch2 extends AppCompatActivity {
                 statue = student.getLsnLock("4");
                 if (statue.equals("unlocked") || statue.equals("completed") ) {
 
-                    Intent n = new Intent(Ch2.this, lab.class);
+                    Intent n = new Intent(Ch2.this, Lessons.class);
+                    n.putExtra("lesson",24);
                     startActivity(n);
                     //  finish();
 
@@ -181,7 +184,8 @@ public class Ch2 extends AppCompatActivity {
                 statue = student.getLsnLock("5");
                 if (statue.equals("unlocked") || statue.equals("completed") ) {
 
-                    Intent n = new Intent(Ch2.this, lab.class);
+                    Intent n = new Intent(Ch2.this, Lessons.class);
+                    n.putExtra("lesson",25);
                     startActivity(n);
                     //  finish();
 
