@@ -114,7 +114,6 @@
                         android:text="@string/discovery2"
                         android:textSize="25sp"
 
-                        android:layout_gravity="center"
                         android:fontFamily="@font/aref_menna"
                         android:layout_marginTop="2dp"
 
