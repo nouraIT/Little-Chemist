@@ -4780,7 +4780,7 @@
     file: 'sampledata/gas.fbx',
     name: 'gas',
     recenter: 'root',
-    scale: 5.5522220000000004,
+    scale: 25.5522220000000004,
   },
   version: '0.54:2',
 }
