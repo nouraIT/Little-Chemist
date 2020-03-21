@@ -24,7 +24,9 @@
         <activity android:name=".LabLesson1" />
         <activity android:name=".ARCards" />
         <activity android:name=".View_lesson.ex_multiple_choice"/>
-        <activity android:name=".View_lesson.ex_DragAndDrop"/>
+        <activity android:name=".View_lesson.ex_DragAndDrop1"/>
+        <activity android:name=".View_lesson.ex_DragAndDrop2"/>
+        <activity android:name=".View_lesson.ex_DragAndDrop3"/>
         <activity android:name=".View_lesson.slideAdapter" />
         <activity android:name=".View_lesson.Lessons" />
         <activity android:name=".View_lesson.lab" />

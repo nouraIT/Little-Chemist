@@ -2,8 +2,6 @@ package com.example.little_chemist.View_lesson;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,20 +9,13 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.content.Intent;
 
 
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewpager.widget.PagerAdapter;
 
-import com.example.little_chemist.Chapters_dir.Ch1;
-import com.example.little_chemist.Chapters_dir.Ch2;
-import com.example.little_chemist.Chapters_dir.Ch3;
-import com.example.little_chemist.Chapters_dir.Ch4;
-import com.example.little_chemist.Chapters_dir.Ch5;
 import com.example.little_chemist.R;
 
 public class slideAdapter extends PagerAdapter {
@@ -94,7 +85,7 @@ public class slideAdapter extends PagerAdapter {
     };
 
     public String[] ex ={
-            "C1L1S1ED","C1L1S2ED","C1L1S5ED"
+            "C1L1S1ED","C1L1S2ED","C1L1S6ED"
             ,"C1L3S3E1M", "C1L3S4E2M"
             ,"C1L4S2E1M","C1L4S4E2M"
             ,"C2L1S2E1M"
@@ -150,9 +141,13 @@ public class slideAdapter extends PagerAdapter {
 
             if (cleanContent[position].equals(tempEx)){
                 if(tempEx.equals("C1L1S1")){
-                    AcEx[index] = new Intent(view.getContext(), ex_DragAndDrop.class);
+                    AcEx[index] = new Intent(view.getContext(), ex_DragAndDrop1.class);
 //                    AcEx[index].putExtra("exKey", tempEx);
 //                    BtnEx[index] = view.findViewById(R.id.ex);
+                }
+                else if(tempEx.equals("C1L1S6")){
+                    AcEx[index] = new Intent(view.getContext(), ex_DragAndDrop3.class);
+
                 }
                 else {
                     tempEx = ex[i];
