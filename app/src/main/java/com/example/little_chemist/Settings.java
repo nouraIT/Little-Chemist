@@ -12,6 +12,7 @@ import android.graphics.Color;
 import android.graphics.ColorFilter;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.View;
 import java.sql.SQLException;
 import java.util.Locale;
@@ -19,10 +20,12 @@ import java.util.Objects;
 
 import android.app.Activity;
 import android.content.res.Configuration;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import com.example.little_chemist.Tables.Student;
@@ -195,7 +198,16 @@ public class Settings extends AppCompatActivity {
                 AlertDialog.Builder alert2 = new AlertDialog.Builder(Settings.this);
 
                 final EditText edittext = new EditText(Settings.this);
-                edittext.setHint("Password");
+                edittext.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+                edittext.setHint(getText((R.string.prompt_password)));
+                edittext.setTextSize(13);
+                edittext.setSingleLine();
+                FrameLayout container = new FrameLayout(Settings.this);
+                FrameLayout.LayoutParams params = new  FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                params.setMarginStart(60);//Margin= (50); // remember to scale correctly
+                params.setMarginEnd(80);//= (50);
+                edittext.setLayoutParams(params);
+                container.addView(edittext);
 
                 alert.setMessage(getText(R.string.confirmDeleteAcc));
                 alert.setTitle(getText(R.string.delete_account));
@@ -203,37 +215,42 @@ public class Settings extends AppCompatActivity {
                 alert.setPositiveButton(getText(R.string.yes), new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-            //TODO fix dis
 
-//                        String password = edittext.getText().toString();
-                        alert2.setMessage(getText(R.string.confirmDeleteAcc));
-                        alert2.setTitle(getText(R.string.delete_account));
-                        alert2.setView(edittext);
-                        alert2.setPositiveButton(getText(R.string.yes), new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {
-                                String password = edittext.getText().toString();
-                                if (password.equals(pass)){
-                                    helper.DeleteStudent(studentId);
-                                    Intent intent = new Intent(Settings.this,
-                                            LoginPage.class);
-                                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                                    startActivity(intent);
-                                    finish();
+                            alert2.setMessage(getText(R.string.enterDeleteAcc));
+                            alert2.setTitle(getText(R.string.delete_account));
+                            alert2.setView(container);
+                            alert2.setPositiveButton(getText(R.string.yes), new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+                                    String password = edittext.getText().toString();
+
+                                    if (password.equals(pass)) {
+                                        helper.DeleteStudent(studentId);
+                                        Intent intent = new Intent(Settings.this,
+                                                LoginPage.class);
+                                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                        startActivity(intent);
+                                        finish();
+                                    } else {
+
+//                                        alert2.setMessage(getText(R.string.passNotMatch));
+//                                        alert2.setTitle(getText(R.string.delete_account));
+////                                        TODO set a wrong pass msg
+//
+//                                        alert2.show();
+                                    }
                                 }
+                            });
 
-//                        else{
-//                            //error msg
-//                        }
-                            }
-                        });
 
-                        alert.setNegativeButton(getText(R.string.no), new DialogInterface.OnClickListener() {
+                        alert2.setNegativeButton(getText(R.string.no), new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
 
                             }
                         });
+                        alert2.show();
+
 
                     }
                 });

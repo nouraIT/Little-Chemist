@@ -96,7 +96,7 @@
             android:layout_height="144dp"
 
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="35dp"
+            android:layout_marginTop="55dp"
 
             android:src="@drawable/profile"
             app:civ_border_color="#FF000000"
@@ -120,7 +120,7 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="325dp"
-        android:layout_height="451dp"
+        android:layout_height="410dp"
         android:layout_marginStart="6dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="6dp"
@@ -132,13 +132,13 @@
         app:layout_constraintTop_toBottomOf="@+id/linear">
 
 
-        <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="26dp"
-            android:layout_height="33dp"
-            android:layout_marginStart="95dp"
-            android:layout_marginTop="57dp"
-            app:srcCompat="@drawable/arabic" />
+<!--        <ImageView-->
+<!--            android:id="@+id/imageView3"-->
+<!--            android:layout_width="26dp"-->
+<!--            android:layout_height="33dp"-->
+<!--            android:layout_marginStart="95dp"-->
+<!--            android:layout_marginTop="57dp"-->
+<!--            app:srcCompat="@drawable/arabic" />-->
 
 
         <LinearLayout
@@ -201,18 +201,18 @@
 
         </LinearLayout>
 
-        <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="30dp"
-            android:layout_height="32dp"
-            android:layout_marginStart="188dp"
-            android:layout_marginTop="57dp"
-            app:srcCompat="@drawable/english" />
+<!--        <ImageView-->
+<!--            android:id="@+id/imageView4"-->
+<!--            android:layout_width="30dp"-->
+<!--            android:layout_height="32dp"-->
+<!--            android:layout_marginStart="188dp"-->
+<!--            android:layout_marginTop="57dp"-->
+<!--            app:srcCompat="@drawable/english" />-->
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="30dp"
             android:orientation="horizontal">
 
             <TextView
@@ -220,11 +220,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
-                android:layout_gravity="center_horizontal"
-                android:layout_marginStart="10dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="30dp"
                 android:layout_marginTop="17dp"
-
                 android:layout_marginEnd="8dp"
+                android:layout_marginBottom="17dp"
+
                 android:elevation="9dp"
                 android:fontFamily="@font/aref_menna"
                 android:text="@string/languages"
@@ -234,16 +235,17 @@
 
             <Button
                 android:id="@+id/arBtn"
-                android:layout_width="76dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
-                android:layout_gravity="center_horizontal"
+                android:layout_gravity="center"
                 android:layout_marginStart="8dp"
-
+                android:layout_marginBottom="17dp"
                 android:layout_marginTop="17dp"
-                android:layout_marginEnd="8dp"
-                android:background="@drawable/circle_btn_empty"
-                android:backgroundTint="@android:color/transparent"
+                android:layout_marginEnd="4dp"
+
+                android:background="?android:attr/panelBackground"
+                android:backgroundTint="?android:attr/panelBackground"
                 android:fontFamily="@font/aref_menna"
                 android:text="العربية"
                 android:textColor="@color/colorAccent"
@@ -254,18 +256,19 @@
                 android:id="@+id/enBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
 
-
-                android:layout_marginStart="8dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="17dp"
+                android:layout_marginStart="4dp"
                 android:layout_marginTop="17dp"
-                android:layout_marginEnd="8dp"
+                android:layout_marginEnd="30dp"
 
                 android:background="?android:attr/panelBackground"
                 android:backgroundTint="?android:attr/panelBackground"
                 android:fontFamily="@font/aref_menna"
                 android:text="English"
                 android:textColor="@color/colorAccent"
+                android:textSize="20sp"
                 tools:ignore="HardcodedText" />
         </LinearLayout>
 

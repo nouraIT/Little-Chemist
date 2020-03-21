@@ -11,6 +11,8 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -25,16 +27,16 @@ public class ex_multiple_choice extends AppCompatActivity {
 
     public String chnum ;
     public String lessonnum ;
-    public int lessonkey ;
-    public int segmentN ;
+    public int lessonkey,segmentN,ex ;
     public TextView lessonName ;
-    public int ex ;
     public TextView Q;
     public CircularProgressButton[] a ;
     public TextView exNum ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_ex_multiple_choice);
 
         Toolbar toolbar = findViewById(R.id.toolbar);

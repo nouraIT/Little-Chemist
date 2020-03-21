@@ -12,7 +12,7 @@
     <string name="download_booklet">Download Booklet</string>
     <string name="delete_account">Delete Account</string>
     <string name="confirmDeleteAcc">Are you sure you want to Delete your account forever ?</string>
-    <string name="enterDeleteAcc">Please enter your password to delete your account</string>
+    <string name="enterDeleteAcc">Enter your password to delete your account forever</string>
 
 
     <!--  _______________  app name and general  _______________-->

@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.little_chemist.Tables.Student;
@@ -63,13 +64,6 @@ public class Home extends AppCompatActivity {
         SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
         String name = pref.getString("username", null); // getting String
         student = helper.getStudent(name);
-        //SharedPreferences.Editor editor = pref.edit();
-
-        //the users info
-//        Student student = (Student) getIntent().getSerializableExtra("student");
-//        editor.putString("username", student.GetUserName()); // Storing string
-//        editor.putString("password", student.GetPassword()); // Storing string
-        //editor.commit();
 
         set = findViewById(R.id.settings);
         chapters = findViewById(R.id.cardviewchapters);
@@ -159,11 +153,9 @@ public class Home extends AppCompatActivity {
             }
         });
 
-        PieChart mPieChart = (PieChart) findViewById(R.id.piechart);
 
 
-//        String progress = student.viewScore();
-//        //"1:0,2:0,3:0,4:0,5:0,"
+        //"1:0,2:0,3:0,4:0,5:0,"
 //        int []chvalue = new int[5];
 //
 ////        System.out.println(progress);
@@ -183,26 +175,24 @@ public class Home extends AppCompatActivity {
 ////                System.out.println(i+" "+chvalue[i]);
 //
 //            }
-//
+
 //        }
+        int progress = student.viewProgress();
+        System.out.println(progress);
+        ProgressBar progressbar = findViewById(R.id.content_pro);
+        progressbar.setProgress(progress,true);
 
 
+
+
+        PieChart mPieChart = (PieChart) findViewById(R.id.piechart);
         double[] scores = student.GetTotalScore();
-
-
 
         mPieChart.addPieSlice(new PieModel(getString(R.string.Ch1Name), (float)scores[0], Color.parseColor("#ff0099cc") ));
         mPieChart.addPieSlice(new PieModel(getString(R.string.Ch2Name), (float)scores[1], Color.parseColor("#ff99cc00") ));
         mPieChart.addPieSlice(new PieModel(getString(R.string.Ch3Name), (float)scores[2], Color.parseColor("#F3CB4E") ));
         mPieChart.addPieSlice(new PieModel(getString(R.string.Ch4Name), (float)scores[3], Color.parseColor("#E36F3A")  ));
         mPieChart.addPieSlice(new PieModel(getString(R.string.Ch5Name), (float) scores[4], Color.parseColor("#DF3241") ));
-
-//        mPieChart.addPieSlice(new PieModel(getString(R.string.Ch1Name), chvalue[0], (R.color.cpb_blue) ));
-//        mPieChart.addPieSlice(new PieModel(getString(R.string.Ch2Name), chvalue[1], (R.color.cpb_green) ));
-//        mPieChart.addPieSlice(new PieModel(getString(R.string.Ch3Name), chvalue[2], (R.color.primaryYellow) ));
-//        mPieChart.addPieSlice(new PieModel(getString(R.string.Ch4Name), chvalue[3], (R.color.OrangeText) ));
-//        mPieChart.addPieSlice(new PieModel(getString(R.string.Ch5Name), chvalue[4], (R.color.cpb_red) ));
-
 
         mPieChart.startAnimation();
 

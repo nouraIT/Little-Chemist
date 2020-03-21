@@ -51,7 +51,7 @@ public class slideAdapter extends PagerAdapter {
         lessonKey=Integer.toString(value) ;
         chapterNum = lessonKey.charAt(0) ;
         //System.out.println(chapterNum);
-        lessonNum= lessonKey.charAt(1) ;
+        lessonNum= lessonKey.charAt(1) ; //it was 1
         //System.out.println(lessonNum);
         cleanContent = new String[content.length] ;
         cleanImg = new String[content.length] ;
@@ -149,12 +149,19 @@ public class slideAdapter extends PagerAdapter {
             //System.out.println(tempEx);
 
             if (cleanContent[position].equals(tempEx)){
-                //System.out.println("helloo") ;
-                tempEx=ex[i] ;
-                AcEx[index] = new Intent(view.getContext(), ex_multiple_choice.class);
-                AcEx[index].putExtra("exKey",tempEx) ;
-                BtnEx[index]=view.findViewById(R.id.ex) ;
-                Intent n = AcEx[index] ;
+                if(tempEx.equals("C1L1S1")){
+                    AcEx[index] = new Intent(view.getContext(), ex_DragAndDrop.class);
+//                    AcEx[index].putExtra("exKey", tempEx);
+//                    BtnEx[index] = view.findViewById(R.id.ex);
+                }
+                else {
+                    tempEx = ex[i];
+                    AcEx[index] = new Intent(view.getContext(), ex_multiple_choice.class);
+                }
+                    AcEx[index].putExtra("exKey", tempEx);
+                    BtnEx[index] = view.findViewById(R.id.ex);
+                    Intent n = AcEx[index];
+
 
                 BtnEx[index].setOnClickListener(new View.OnClickListener() {
                     @Override
