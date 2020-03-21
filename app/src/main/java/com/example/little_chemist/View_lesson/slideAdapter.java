@@ -51,7 +51,7 @@ public class slideAdapter extends PagerAdapter {
         lessonKey=Integer.toString(value) ;
         chapterNum = lessonKey.charAt(0) ;
         //System.out.println(chapterNum);
-        lessonNum= lessonKey.charAt(1) ;
+        lessonNum= lessonKey.charAt(1) ; //it was 1
         //System.out.println(lessonNum);
         cleanContent = new String[content.length] ;
         cleanImg = new String[content.length] ;

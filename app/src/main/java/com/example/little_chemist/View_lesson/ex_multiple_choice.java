@@ -27,10 +27,8 @@ public class ex_multiple_choice extends AppCompatActivity {
 
     public String chnum ;
     public String lessonnum ;
-    public int lessonkey ;
-    public int segmentN ;
+    public int lessonkey,segmentN,ex ;
     public TextView lessonName ;
-    public int ex ;
     public TextView Q;
     public CircularProgressButton[] a ;
     public TextView exNum ;

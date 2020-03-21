@@ -13,6 +13,8 @@ import android.view.MenuItem;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
@@ -25,6 +27,8 @@ import com.example.little_chemist.R;
 public class ex_DragAndDrop extends AppCompatActivity {
 
     LinearLayout dropArea;
+    public int segmentN,ex ;
+    Button reset,finish;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,9 +56,37 @@ public class ex_DragAndDrop extends AppCompatActivity {
         findViewById(R.id.c3).setOnTouchListener(new MyTouchListener());
         findViewById(R.id.c4).setOnTouchListener(new MyTouchListener());
         findViewById(R.id.dropArea1).setOnDragListener(new MyDragListener());
-        findViewById(R.id.dropArea2).setOnDragListener(new MyDragListener());
+//        findViewById(R.id.dropArea2).setOnDragListener(new MyDragListener());
         findViewById(R.id.dropArea3).setOnDragListener(new MyDragListener());
         dropArea = findViewById(R.id.dropArea);
+
+//        String temp ;
+//        Bundle bundle=getIntent().getExtras();
+//        String exKey=bundle.getString("exKey");
+//        temp = String.valueOf(exKey.charAt(5)) ;
+//        segmentN = Integer.parseInt(temp) ;
+//        temp = String.valueOf(exKey.charAt(7)) ;
+//        ex = Integer.parseInt(temp) ;
+
+        reset = findViewById(R.id.reset) ;
+        finish = findViewById(R.id.finish);
+
+        reset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                recreate();
+            }
+        });
+
+        finish.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent n = new Intent(ex_DragAndDrop.this, Lessons.class);
+                n.putExtra("lesson",11) ;
+                startActivity(n);
+
+            }
+        });
 
     }
 
@@ -100,34 +132,40 @@ public class ex_DragAndDrop extends AppCompatActivity {
                     v.setBackgroundDrawable(normalShape);
                     break;
                 case DragEvent.ACTION_DROP:
-
+//|| v.getId()==R.id.dropArea2
                     if( ((currentIV==R.id.c1 || currentIV==R.id.c2 || currentIV==R.id.c4)
-                        && (v.getId()==R.id.dropArea1 || v.getId()==R.id.dropArea2 || v.getId()==dropArea.getId()) )
-                    || (currentIV==R.id.c3 && (v.getId()==R.id.dropArea3))){
+                        && (v.getId()==R.id.dropArea1 )
+                    || (currentIV==R.id.c3 && v.getId()==R.id.dropArea3)) ){
                         correctAns++;
                     }
                     else if( ((currentIV==R.id.c1 || currentIV==R.id.c2 || currentIV==R.id.c4)
-                            && (v.getId()==R.id.dropArea3) )
+                            && (v.getId()==R.id.dropArea3) ) //|| v.getId()==R.id.dropArea2
                                 || (currentIV==R.id.c3
-                            && (v.getId()==R.id.dropArea1 || v.getId()==R.id.dropArea2 || v.getId()==dropArea.getId() ))){
+                            && v.getId()==R.id.dropArea1 )){
                         correctAns--;
                     }
 
-                    // Dropped, reassign View to ViewGroup
                     View view = (View) event.getLocalState();
                     ViewGroup owner = (ViewGroup) view.getParent();
                     owner.removeView(view);
-                    LinearLayout container = (LinearLayout) v;
-                    container.addView(view);
+
+                    if(v.getId()==R.id.dropArea1) {
+                        GridLayout container = (GridLayout) v;
+                        container.setColumnCount(2);
+                        container.addView(view);
+                    }
+                    else {
+                        LinearLayout container = (LinearLayout) v;
+                        container.addView(view);
+                    }
                     view.setVisibility(View.VISIBLE);
                     break;
-//                case DragEvent is correct
+
                 case DragEvent.ACTION_DRAG_ENDED:
                     if(correctAns==3) {
-//                        System.out.println("RIGHT SHAPE");
+                        v.setBackgroundDrawable(normalShape);
                         dropArea.setBackgroundDrawable(rightShape);
-                        //TODO add reset btn
-                        //TODO show a button here
+                        finish.setVisibility(View.VISIBLE);
                     }else {
                         dropArea.setBackgroundDrawable(enterShape);
                         v.setBackgroundDrawable(normalShape);

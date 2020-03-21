@@ -47,7 +47,9 @@
                 android:layout_height="wrap_content"
                 android:padding="10dp"
                 android:textColor="@color/colorAccent"
-                android:textSize="18sp" />
+                android:text="Exercise 1"
+                android:textSize="18sp"
+                tools:ignore="HardcodedText" />
 
             <TextView
                 android:id="@+id/Q"
@@ -56,12 +58,13 @@
                 android:layout_margin="15dp"
                 android:fontFamily="@font/roboto_bold"
                 android:text="Drag the building blocks to create an atom"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                tools:ignore="HardcodedText" />
 
             <LinearLayout
                 android:id="@+id/dropArea"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
 
                 android:layout_gravity="center"
                 android:layout_marginStart="100dp"
@@ -73,26 +76,37 @@
 
                 >
 
-                <LinearLayout
+                <GridLayout
                     android:id="@+id/dropArea1"
-                    android:layout_width="100dp"
-                    android:layout_height="50dp"
-                    android:layout_marginStart="2dp"
-                    android:layout_marginEnd="2dp"
-                    android:layout_marginTop="2dp"
-                    android:layout_marginBottom="2dp"
-                    android:orientation="horizontal" />
+                    android:layout_width="106dp"
+                    android:layout_height="108dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="4dp"
+                    android:gravity="center"
+                    android:numColumns="2"
+                    android:stretchMode="none"
+                    />
 
-                <LinearLayout
-                    android:id="@+id/dropArea2"
-                    android:layout_width="100dp"
-                    android:layout_height="50dp"
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/dropArea1"-->
+<!--                    android:layout_width="100dp"-->
+<!--                    android:layout_height="50dp"-->
+<!--                    android:layout_marginStart="2dp"-->
+<!--                    android:layout_marginEnd="2dp"-->
+<!--                    android:layout_marginTop="2dp"-->
+<!--                    android:layout_marginBottom="2dp"-->
+<!--                    android:orientation="horizontal" />-->
 
-                    android:layout_marginStart="2dp"
-                    android:layout_marginEnd="2dp"
-                    android:layout_marginTop="2dp"
-                    android:layout_marginBottom="2dp"
-                    android:orientation="horizontal" />
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/dropArea2"-->
+<!--                    android:layout_width="100dp"-->
+<!--                    android:layout_height="50dp"-->
+
+<!--                    android:layout_marginStart="2dp"-->
+<!--                    android:layout_marginEnd="2dp"-->
+<!--                    android:layout_marginTop="2dp"-->
+<!--                    android:layout_marginBottom="2dp"-->
+<!--                    android:orientation="horizontal" />-->
 
             </LinearLayout>
 
@@ -104,7 +118,7 @@
                 android:elevation="4dp"
                 android:weightSum="4"
 
-                android:layout_marginTop="80dp"
+                android:layout_marginTop="40dp"
                 android:layout_marginStart="70dp"
                 android:layout_marginEnd="70dp"
                 >
@@ -156,8 +170,39 @@
                     />
             </LinearLayout>
 
+            <Button
+                android:id="@+id/reset"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_gravity="center"
+                android:layout_marginStart="100dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="100dp"
+
+                android:text="@string/reset"
+
+                android:background="?android:attr/panelBackground"
+                android:backgroundTint="?android:attr/panelBackground"
+                />
+
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/finish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/circle_btn"
+        android:text="@string/finishBtn"
+        android:textColor="@color/darkpruple"
+
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
