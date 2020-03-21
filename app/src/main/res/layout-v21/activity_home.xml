@@ -25,15 +25,15 @@
         <!--  [purple 4a47a7 ] blue >>> 008DFF Orange >> E06E4A    white E4F3F1F1-->
 
 
-<!--        <androidx.cardview.widget.CardView-->
-<!--            android:id="@+id/cardviewchapters"-->
-<!--            android:layout_width="246dp"-->
-<!--            android:layout_height="78dp"-->
-<!--            android:layout_gravity="center_horizontal"-->
-<!--            android:layout_marginTop="55dp"-->
-<!--            android:background="?android:attr/scrollbarThumbVertical"-->
-<!--            app:cardBackgroundColor="@color/HomeButton"-->
-<!--            app:cardCornerRadius="20dp">-->
+        <!--        <androidx.cardview.widget.CardView-->
+        <!--            android:id="@+id/cardviewchapters"-->
+        <!--            android:layout_width="246dp"-->
+        <!--            android:layout_height="78dp"-->
+        <!--            android:layout_gravity="center_horizontal"-->
+        <!--            android:layout_marginTop="55dp"-->
+        <!--            android:background="?android:attr/scrollbarThumbVertical"-->
+        <!--            app:cardBackgroundColor="@color/HomeButton"-->
+        <!--            app:cardCornerRadius="20dp">-->
 
         <ProgressBar
             android:id="@+id/content_pro"
@@ -56,7 +56,7 @@
             android:text="@string/little_chemist"
             android:textColor="@color/white"
             android:textSize="20sp" />
-<!--        </androidx.cardview.widget.CardView>-->
+        <!--        </androidx.cardview.widget.CardView>-->
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -98,13 +98,14 @@
         android:layout_width="61dp"
         android:layout_height="35dp"
 
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="24dp"
+        android:layout_marginEnd="60dp"
 
 
+        android:layout_marginBottom="95dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/gear_purple" />
+        app:srcCompat="@drawable/gear_purple"
+        fbutton:layout_constraintBottom_toTopOf="@+id/cardView3" />
 
     <ImageView
         android:id="@+id/logoHome"

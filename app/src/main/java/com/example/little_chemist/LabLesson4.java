@@ -94,7 +94,7 @@ public class LabLesson4 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lab_lesson4);
         arFragment = (ARfragment5) getSupportFragmentManager().findFragmentById(R.id.arFragment);
-        textView = findViewById(R.id.textview);
+//        textView = findViewById(R.id.textview);
         Button Reset = findViewById(R.id.reset);
         Reset.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -172,19 +172,20 @@ public class LabLesson4 extends AppCompatActivity {
     private void initializeGallery() {
         LinearLayout gallery = findViewById(R.id.gallery_layout);
 
-        ImageView andy = new ImageView(this);
-        andy.setImageResource(R.drawable.c1);
-        andy.setTooltipText(getString(R.string.gas));
-        andy.setContentDescription(getString(R.string.selectgas));
-        andy.setOnClickListener(view ->{addObject(Uri.parse("gas.sfb"));});
-        gallery.addView(andy);
+        ImageView gas = findViewById(R.id.image1);
+        gas.setImageResource(R.drawable.c1);
+        gas.setTooltipText(getString(R.string.gas));
+        gas.setOnClickListener(view ->{addObject(Uri.parse("gas.sfb"));});
+        gas.setPadding(5,5,5,5);
+        //gallery.addView(gas);
 
-        ImageView cabin = new ImageView(this);
-        cabin.setImageResource(R.drawable.c2);
-        cabin.setTooltipText(getString(R.string.liquid));
-        cabin.setContentDescription(getString(R.string.selectliquid));
-        cabin.setOnClickListener(view ->{addObject(Uri.parse("liquid.sfb"));});
-        gallery.addView(cabin);
+        ImageView liquid = findViewById(R.id.image2);
+        liquid.setImageResource(R.drawable.c2);
+        liquid.setTooltipText(getString(R.string.liquid));
+        liquid.setOnClickListener(view ->{addObject(Uri.parse("liquid.sfb"));});
+        liquid.setPadding(5,5,5,5);
+
+        //gallery.addView(liquid);
 //
 //        ImageView house = new ImageView(this);
 //        house.setImageResource(R.drawable.house_thumb);
