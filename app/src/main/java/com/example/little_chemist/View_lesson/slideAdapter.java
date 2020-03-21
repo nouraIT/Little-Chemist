@@ -118,18 +118,26 @@ public class slideAdapter extends PagerAdapter {
         slideEx = view.findViewById(R.id.ex) ;
         btnAmim = AnimationUtils.loadAnimation(this.context, R.anim.button_anim) ;
 
-
+         //n;
         //set the button ex visible
         int index=0 ;
         for(int i=0;i<ex.length;i++){
            tempEx = ex[i].substring(0,ex.length-3) ;
             System.out.println(tempEx) ;
             if (cleanContent[position].equals(tempEx)){
-                tempEx=ex[i] ;
-                AcEx[index] = new Intent(view.getContext(), ex_multiple_choice.class);
-                AcEx[index].putExtra("exKey",tempEx) ;
-                BtnEx[index]=view.findViewById(R.id.ex) ;
-                Intent n = AcEx[index] ;
+                if(tempEx.equals("C1L1S1")){
+                    AcEx[index] = new Intent(view.getContext(), ex_DragAndDrop.class);
+//                    AcEx[index].putExtra("exKey", tempEx);
+//                    BtnEx[index] = view.findViewById(R.id.ex);
+                }
+                else {
+                    tempEx = ex[i];
+                    AcEx[index] = new Intent(view.getContext(), ex_multiple_choice.class);
+                }
+                    AcEx[index].putExtra("exKey", tempEx);
+                    BtnEx[index] = view.findViewById(R.id.ex);
+                    Intent n = AcEx[index];
+
 
                 BtnEx[index].setOnClickListener(new View.OnClickListener() {
                     @Override

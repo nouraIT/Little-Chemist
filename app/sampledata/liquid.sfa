@@ -4938,14 +4938,14 @@
   },
   samplers: [
     {
-      file: 'sampledata\\liquid.fbm\\145.png',
-      name: '145',
-      pipeline_name: 'liquid.fbm\\145.png',
+      file: 'sampledata/liquid.fbm/149.png',
+      name: '149',
+      pipeline_name: 'liquid.fbm/149.png',
     },
     {
-      file: 'sampledata\\liquid.fbm\\149.png',
-      name: '149',
-      pipeline_name: 'liquid.fbm\\149.png',
+      file: 'sampledata/liquid.fbm/145.png',
+      name: '145',
+      pipeline_name: 'liquid.fbm/145.png',
     },
   ],
   version: '0.54:2',

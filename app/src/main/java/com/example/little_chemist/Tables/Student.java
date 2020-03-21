@@ -15,10 +15,6 @@ public class Student extends AppCompatActivity implements Serializable {
     int Arabic;
     DatabaseHelper helper = new DatabaseHelper(Student.this);
 
-    //TODO save the score of each chapter in the DB but the total score will be saved here
-
-
-    //static int i = 0 ;
     public Student(String name, String pass, int arabic){
         UserName = name;
         Password = pass;
@@ -33,20 +29,12 @@ public class Student extends AppCompatActivity implements Serializable {
         this.Id=id;
 
         //scores = "c1:0,c2:0..."
-        int ch = 1;
+        int ch = 1,first,last;
 
         for(int i =0;i<5;i++){
-//            scores="c1:100,c2:70,c3:40,c4:9,c5:0,";
-//            String ch = 'c'+(i+1)+"" ;
-//            System.out.println(scores);
-            int first = scores.indexOf("c"+(ch)+":");
+            first = scores.indexOf("c"+(ch)+":");
             ch++;
-//            System.out.println(first);
-            int last = scores.indexOf(",",first);
-//            System.out.println(last);
-
-//            System.out.println(scores.substring(first+4,last));
-//          System.out.println(scores.substring(first+4,last));
+            last = scores.indexOf(",",first);
             ScoresA[i] = Double.parseDouble(scores.substring(first+3,last));
         }
 
@@ -98,7 +86,7 @@ public class Student extends AppCompatActivity implements Serializable {
     }
 
 
-    // a QZLOCK is gonna look something like this [ch1:completed, ch2:Unlocked, ch3:Locked]
+    // a QZLOCK [1:completed, 2:Unlocked, 3:Locked]
     public void SetQZLocks(String qzlocks) { this.QZLocks=qzlocks;}
     public String GetQZLocks() {return QZLocks;}
 
@@ -121,13 +109,6 @@ public class Student extends AppCompatActivity implements Serializable {
 
     }
 
-//    public void changeLang(int arabic){
-//
-//        Arabic = arabic;
-//        helper.changeLang(UserName,arabic);
-//
-//    }
-
     public int GetLang(){
 
         return Arabic; //1 means arabic
@@ -136,105 +117,46 @@ public class Student extends AppCompatActivity implements Serializable {
 
     public String getLsnLock(String num){
 
-        //completed
-//        LSNLocks ="1:unlocked,2:locked,3:locked,4:locked,5:locked";
-
-//        System.out.println(LSNLocks+ " " );
-
-
         int lsnIndex = LSNLocks.indexOf(num);
         int endIndex = LSNLocks.indexOf(",",lsnIndex);
+        return LSNLocks.substring(lsnIndex+2,endIndex);
 
-//        System.out.println(lsnIndex+ " " + endIndex);
-
-        String statue = LSNLocks.substring(lsnIndex+2,endIndex);
-//        if(statue!=null)
-            return statue;
-
-
-//        return null;
     }
 
     public String getChLock(String num) {
-//        System.out.println(LSNLocks+ " " );
-
         int lsnIndex = CHLocks.indexOf(num);
         int endIndex = CHLocks.indexOf(",",lsnIndex);
 
-//        System.out.println(lsnIndex+ " " + endIndex);
+        return CHLocks.substring(lsnIndex+2,endIndex);
 
-        String statue = CHLocks.substring(lsnIndex+2,endIndex);
-//        if(statue!=null)
-        return statue;
-
-
-//        return null;
     }
 
     public String getQzLock(String num) {
-//        System.out.println(QZLocks+ " " );
-
-         //statue = null;
-
         int lsnIndex = QZLocks.indexOf(num);
         int endIndex = QZLocks.indexOf(",",lsnIndex);
-
-//        System.out.println(lsnIndex+ " " + endIndex);
-
-        String statue = QZLocks.substring(lsnIndex+2,endIndex);
-
-        return statue;
-
+        return QZLocks.substring(lsnIndex+2,endIndex);
     }
 
-    public String viewScore() {
-
-        //TODO fix this, it's not done
-
-        //these are chapters
-        String progress ;//= "c1:0,c2:0,c3:0,c4:0,c5:0,";
-        int ch[] = new int[5];
-
-        int lsnPro[] = new int[25];
-        int qzPro[] =new int [5];
-
-        int chpaterCounter=0;
-        int chapterNumber=0;
+    public int viewProgress() {
+        int pro=0;
 
         //there are 25 lesson, 5 lessons for each chapter
         for(int i =0;i<25;i++){
 
-            //count each completed lesson with 1 point
+            //count each completed lesson with 3 point
             if(getLsnLock(String.valueOf(i+1)).equals("completed")){
-                lsnPro[i]++;
-            }
-            chpaterCounter++;
-//            System.out.println("i is "+i);
-            if(chpaterCounter==5) {
-//                System.out.println("i is "+i+" the rest is "+lsnPro[i]+" "+lsnPro[i-4]+" "+lsnPro[i-3]+" "+lsnPro[i-2]+" "+lsnPro[i-1]);
-                ch[chapterNumber++]= lsnPro[i]+lsnPro[i-4]+lsnPro[i-3]+lsnPro[i-2]+lsnPro[i-1] ;
-                chpaterCounter=0;
+                pro+=3;
             }
         }
 
-
-        chapterNumber=0;
         //there 5 quizzes, one in each chapter
         for(int i =0;i<5;i++){
             if(getQzLock(String.valueOf(i+1)).equals("completed")){
-                qzPro[i]+=5;
-                ch[chapterNumber++]= qzPro[i] ;
-
+                pro+=5;
             }
         }
-        //"1:0,2:0,3:0,4:0,5:0,"
-        progress = "c1:"+ch[0]+",c2:"+ch[1]+",c3:"+ch[2]+",c4:"+ch[3]+",c5:"+ch[4]+",";
 
-
-
-
-
-        return progress;
+        return pro;
     }
 
 
