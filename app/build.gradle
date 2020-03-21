@@ -115,11 +115,11 @@ dependencies {
 
 
 }
-//sceneform.asset('sampledata/diaa.fbx',
+//sceneform.asset('sampledata/solid.obj',
 //        'default',
-//        'sampledata/diaa.sfa',
-//        'src/main/assets/diaaa',
-//        ['sampledata/diaa.fbx'])
+//        'sampledata/solid.sfa',
+//        'src/main/assets/solid',
+//        ['sampledata/solid.obj'])
 sceneform.asset('sampledata/sodium.fbx',
         'default',
         'sampledata/sodium.sfa',

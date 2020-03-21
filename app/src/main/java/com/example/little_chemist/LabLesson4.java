@@ -10,61 +10,35 @@ import android.widget.TextView;
 
 import android.app.AlertDialog;
 import android.graphics.Rect;
-import android.net.Uri;
-import android.os.Bundle;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.ar.core.*;
 import com.google.ar.sceneform.AnchorNode;
 import com.google.ar.sceneform.rendering.ModelRenderable;
-import com.google.ar.sceneform.ux.ArFragment;
 import com.google.ar.sceneform.ux.TransformableNode;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.constraintlayout.solver.widgets.Rectangle;
-
-import android.os.Handler;
 import android.util.Log;
 import android.view.MotionEvent;
-import android.view.View;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
+
 
 import java.lang.ref.WeakReference;
 import java.util.List;
-import java.util.Timer;
 import com.google.ar.core.Anchor;
 import com.google.ar.core.Frame;
 import com.google.ar.core.HitResult;
 import com.google.ar.core.Trackable;
 import com.google.ar.core.TrackingState;
-import com.google.ar.sceneform.AnchorNode;
-import com.google.ar.sceneform.SkeletonNode;
-import com.google.ar.sceneform.animation.ModelAnimator;
-import com.google.ar.sceneform.rendering.ModelRenderable;
 
-import java.lang.ref.WeakReference;
-import java.util.List;
+
 
 public class LabLesson4 extends AppCompatActivity {
-    int count=0;
+
     private ARfragment5 arFragment;
     private TextView textView;
-    private ModelAnimator modelAnimator;
     private PointerDrawable pointer = new PointerDrawable();
     private boolean isTracking;
     private boolean isHitting;
-    private boolean appeared = false;
-    private Button button;
-    private String string;
-    private ModelRenderable andyRenderable;
-    private ModelRenderable mObjRenderable;
     private int i=0;
 
     //for net movement along x-axis
@@ -78,9 +52,7 @@ public class LabLesson4 extends AppCompatActivity {
     //Position
     private float ballDownY;
     private float ballDownX;
-    //Initialize Class
-    private Handler handler = new Handler();
-    private Timer timer = new Timer();
+
     //Images
     private ImageView net = null;
     private ImageView ball = null;
