@@ -8,15 +8,12 @@ import android.os.Bundle;
 import android.view.DragEvent;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.GridLayout;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -24,18 +21,19 @@ import androidx.core.content.ContextCompat;
 
 import com.example.little_chemist.R;
 
-public class ex_DragAndDrop extends AppCompatActivity {
+public class ex_DragAndDrop3 extends AppCompatActivity{
 
-    LinearLayout dropArea;
-    public int segmentN,ex ;
     Button reset,finish;
+    LinearLayout dropArea, dropArea2;
+    int currentIV = 0,correctAns =0;
+    TextView text1,text2 ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_ex_draganddrop);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        setContentView(R.layout.activity_ex_draganddrop3);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -45,29 +43,20 @@ public class ex_DragAndDrop extends AppCompatActivity {
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent Homepage = new Intent(ex_DragAndDrop.this, slideAdapter.class);
+                Intent Homepage = new Intent(ex_DragAndDrop3.this, slideAdapter.class);
                 startActivity(Homepage);
                 finish();
             }
         });
 
-        findViewById(R.id.c1).setOnTouchListener(new MyTouchListener());
-        findViewById(R.id.c2).setOnTouchListener(new MyTouchListener());
-        findViewById(R.id.c3).setOnTouchListener(new MyTouchListener());
-        findViewById(R.id.c4).setOnTouchListener(new MyTouchListener());
-        findViewById(R.id.dropArea1).setOnDragListener(new MyDragListener());
-//        findViewById(R.id.dropArea2).setOnDragListener(new MyDragListener());
-        findViewById(R.id.dropArea3).setOnDragListener(new MyDragListener());
-        dropArea = findViewById(R.id.dropArea);
-
-//        String temp ;
-//        Bundle bundle=getIntent().getExtras();
-//        String exKey=bundle.getString("exKey");
-//        temp = String.valueOf(exKey.charAt(5)) ;
-//        segmentN = Integer.parseInt(temp) ;
-//        temp = String.valueOf(exKey.charAt(7)) ;
-//        ex = Integer.parseInt(temp) ;
-
+        findViewById(R.id.s1).setOnTouchListener(new ex_DragAndDrop3.MyTouchListener());
+        findViewById(R.id.s2).setOnTouchListener(new ex_DragAndDrop3.MyTouchListener());
+        findViewById(R.id.dropArea1).setOnDragListener(new ex_DragAndDrop3.MyDragListener());
+        findViewById(R.id.dropArea2).setOnDragListener(new ex_DragAndDrop3.MyDragListener());
+        dropArea = findViewById(R.id.dropArea1);
+        dropArea2 = findViewById(R.id.dropArea2);
+        text1 = findViewById(R.id.text1);
+        text2 = findViewById(R.id.text2);
         reset = findViewById(R.id.reset) ;
         finish = findViewById(R.id.finish);
 
@@ -81,16 +70,14 @@ public class ex_DragAndDrop extends AppCompatActivity {
         finish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent n = new Intent(ex_DragAndDrop.this, Lessons.class);
-                n.putExtra("lesson",11) ;
+                Intent n = new Intent(ex_DragAndDrop3.this, Lessons.class);
+                n.putExtra("lesson",16) ;
                 startActivity(n);
 
             }
         });
-
     }
 
-    int currentIV = 0;
 
     private final class MyTouchListener implements View.OnTouchListener {
         public boolean onTouch(View view, MotionEvent motionEvent) {
@@ -108,11 +95,10 @@ public class ex_DragAndDrop extends AppCompatActivity {
             }
         }
     }
-    int correctAns =0;
     class MyDragListener implements View.OnDragListener {
-        Drawable enterShape = ContextCompat.getDrawable(ex_DragAndDrop.this, R.drawable.drop_area);
-        Drawable normalShape = ContextCompat.getDrawable(ex_DragAndDrop.this, R.drawable.normalshape);
-        Drawable rightShape = ContextCompat.getDrawable(ex_DragAndDrop.this, R.drawable.rightshape);
+        Drawable enterShape = ContextCompat.getDrawable(ex_DragAndDrop3.this, R.drawable.drop_area);
+        Drawable normalShape = ContextCompat.getDrawable(ex_DragAndDrop3.this, R.drawable.normalshape);
+        Drawable rightShape = ContextCompat.getDrawable(ex_DragAndDrop3.this, R.drawable.rightshape);
 
         @Override
         public boolean onDrag(View v, DragEvent event) {
@@ -132,16 +118,20 @@ public class ex_DragAndDrop extends AppCompatActivity {
                     v.setBackgroundDrawable(normalShape);
                     break;
                 case DragEvent.ACTION_DROP:
-//|| v.getId()==R.id.dropArea2
-                    if( ((currentIV==R.id.c1 || currentIV==R.id.c2 || currentIV==R.id.c4)
-                        && (v.getId()==R.id.dropArea1 )
-                    || (currentIV==R.id.c3 && v.getId()==R.id.dropArea3)) ){
+                    if( currentIV==R.id.s1 && v.getId()==R.id.dropArea2 ){
+
+                        v.setBackgroundDrawable(normalShape);
+                        dropArea2.setBackgroundDrawable(rightShape);
                         correctAns++;
                     }
-                    else if( ((currentIV==R.id.c1 || currentIV==R.id.c2 || currentIV==R.id.c4)
-                            && (v.getId()==R.id.dropArea3) ) //|| v.getId()==R.id.dropArea2
-                                || (currentIV==R.id.c3
-                            && v.getId()==R.id.dropArea1 )){
+                    else if(currentIV==R.id.s2 && v.getId()==R.id.dropArea1){
+
+                        v.setBackgroundDrawable(normalShape);
+                        dropArea.setBackgroundDrawable(rightShape);
+                        correctAns++;
+                    }
+                    else {
+                        v.setBackgroundDrawable(normalShape);
                         correctAns--;
                     }
 
@@ -149,32 +139,20 @@ public class ex_DragAndDrop extends AppCompatActivity {
                     ViewGroup owner = (ViewGroup) view.getParent();
                     owner.removeView(view);
 
-                    if(v.getId()==R.id.dropArea1) {
-                        GridLayout container = (GridLayout) v;
-                        container.setColumnCount(2);
-                        container.addView(view);
-                    }
-                    else {
-                        LinearLayout container = (LinearLayout) v;
-                        container.addView(view);
-                    }
+                    LinearLayout container = (LinearLayout) v;
+                    container.addView(view);
+
                     view.setVisibility(View.VISIBLE);
                     break;
 
                 case DragEvent.ACTION_DRAG_ENDED:
-                    if(correctAns==3) {
-                        v.setBackgroundDrawable(normalShape);
-                        dropArea.setBackgroundDrawable(rightShape);
+                    if(correctAns==2)
                         finish.setVisibility(View.VISIBLE);
-                    }else {
-                        dropArea.setBackgroundDrawable(enterShape);
-                        v.setBackgroundDrawable(normalShape);
-                    }
+
                 default:
                     break;
             }
             return true;
         }
     }
-
 }
