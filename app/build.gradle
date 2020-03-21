@@ -115,6 +115,11 @@ dependencies {
 
 
 }
+//sceneform.asset('sampledata/diaa.fbx',
+//        'default',
+//        'sampledata/diaa.sfa',
+//        'src/main/assets/diaaa',
+//        ['sampledata/diaa.fbx'])
 sceneform.asset('sampledata/sodium.fbx',
         'default',
         'sampledata/sodium.sfa',
@@ -204,11 +209,11 @@ sceneform.asset('sampledata/liquid.fbx',
         'sampledata/liquid.sfa',
         'src/main/assets/liquid',
         ['sampledata/liquid.fbx'])
-//sceneform.asset('sampledata/solid.fbx',
+
+//sceneform.asset('sampledata/lab.fbx',
 //        'default',
-//        'sampledata/solid.sfa',
-//        'src/main/assets/solid',
-//        ['sampledata/solid.fbx'])
+//        'sampledata/lab.sfa',
+//        'src/main/res/raw/lab')
 repositories {
     mavenCentral()
 
