@@ -4934,7 +4934,7 @@
     file: 'sampledata/liquid.fbx',
     name: 'liquid',
     recenter: 'root',
-    scale: 9.1095450000000007,
+    scale: 15.1095450000000007,
   },
   samplers: [
     {

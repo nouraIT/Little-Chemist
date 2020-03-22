@@ -146,14 +146,14 @@ public class LabLesson4 extends AppCompatActivity {
         LinearLayout gallery = findViewById(R.id.gallery_layout);
 
         ImageView andy = new ImageView(this);
-        andy.setImageResource(R.drawable.c1);
+        andy.setImageResource(R.drawable.gas);
         andy.setTooltipText(getString(R.string.gas));
         andy.setContentDescription(getString(R.string.selectgas));
         andy.setOnClickListener(view ->{addObject(Uri.parse("gas.sfb"));});
         gallery.addView(andy);
 
         ImageView cabin = new ImageView(this);
-        cabin.setImageResource(R.drawable.c2);
+        cabin.setImageResource(R.drawable.liq);
         cabin.setTooltipText(getString(R.string.liquid));
         cabin.setContentDescription(getString(R.string.selectliquid));
         cabin.setOnClickListener(view ->{addObject(Uri.parse("liquid.sfb"));});
