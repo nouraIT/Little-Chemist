@@ -178,7 +178,8 @@ public class Ch3 extends AppCompatActivity {
             public void onClick(View view) {
                 statue = student.getLsnLock("5");
                 if (statue.equals("unlocked") || statue.equals("completed") ) {
-                    Intent n = new Intent(Ch3.this, Ch1.class);
+                    Intent n = new Intent(Ch3.this, Lessons.class);
+                    n.putExtra("lesson", 35);
                     startActivity(n);
                 }else
                     Toast.makeText(getApplicationContext(), "Locked", Toast.LENGTH_LONG).show();

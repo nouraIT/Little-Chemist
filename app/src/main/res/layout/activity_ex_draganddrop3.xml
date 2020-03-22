@@ -83,15 +83,14 @@
                         android:layout_height="90dp"
                         android:elevation="5dp"
                         android:background="@drawable/drop_area"
-
-
+                        android:gravity="center"
                         android:orientation="horizontal" />
 
                     <TextView
                         android:id="@+id/text1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="atomic theory"
+                        android:text="@string/discovery1"
                         android:textSize="20sp"
                         android:backgroundTint="@color/TransparentWhite"
                         android:fontFamily="@font/aref_menna"
@@ -103,6 +102,7 @@
                         android:layout_width="90dp"
                         android:layout_height="90dp"
                         android:layout_marginTop="7dp"
+                        android:gravity="center"
                         android:background="@drawable/drop_area"
                         android:elevation="5dp"
                         android:orientation="horizontal" />
@@ -111,10 +111,9 @@
                         android:id="@+id/text2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="forces"
+                        android:text="@string/discovery2"
                         android:textSize="25sp"
 
-                        android:layout_gravity="center"
                         android:fontFamily="@font/aref_menna"
                         android:layout_marginTop="2dp"
 
@@ -127,7 +126,6 @@
                     android:layout_width="80dp"
                     android:layout_height="wrap_content"
 
-
                     android:layout_marginStart="60dp"
                     android:layout_marginTop="40dp"
                     android:layout_marginEnd="40dp"
@@ -136,20 +134,28 @@
                     android:orientation="vertical"
                     android:weightSum="2">
 
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        android:id="@+id/s1"
-                        android:layout_width="75dp"
-                        android:layout_height="75dp"
-                        android:layout_gravity="center"
-                        android:src="@drawable/c1l1s5" />
 
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        android:id="@+id/s2"
-                        android:layout_width="75dp"
-                        android:layout_height="75dp"
-                        android:layout_gravity="center"
-
-                        android:src="@drawable/c1l1s6" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/s1"
+                            android:layout_width="75dp"
+                            android:layout_height="75dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/c1l1s5" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="40dp">
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/s2"
+                            android:layout_width="75dp"
+                            android:layout_height="75dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/c1l1s6" />
+                    </LinearLayout>
 
 
                 </LinearLayout>

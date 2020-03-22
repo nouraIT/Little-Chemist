@@ -63,5 +63,201 @@
     </string-array>
     <!--         LESSON 5            -->
 
+    <!--        Quiz Questions           -->
+    <string-array name="Quiz_Questions">
+
+        <item name="Q1">Finish this statement: A molecule is a group of _____ bonded together.</item>
+        <item name="Q2">The atoms that make up a water molecule are _____.?</item>
+        <item name="Q3">Liquid + energy = _____.</item>
+        <item name="Q4">The _____ is also called ”Mickey Mouse Molecule”.</item>
+        <item name="Q5">In a molecule, elements are held together by _____.</item>
+        <item name="Q6">Which of the following is the BEST definition of organic chemistry?</item>
+        <item name="Q7">Which is not an application for food chemistry?</item>
+        <item name="Q8">Lipids help to enhance the _____ of food. Select the best answer.</item>
+        <item name="Q9">Food chemistry is the study of _____. Select the best answer.</item>
+        <item name="Q10">Which of the following are the smallest building blocks of matter?</item>
+        <item name="Q11">What makes polymers different from other molecules?</item>
+        <item name="Q12">Each atom that makes up a molecule is from a specific type of _____.</item>
+        <item name="Q13">What is forensic chemistry?</item>
+        <item name="Q14">What is NOT TRUE about DNA?</item>
+        <item name="Q15">Where does a forensic chemist usually do his/her work?</item>
+
+
+    </string-array>
+    <!--         Quiz Total Answers          -->
+    <string-array name="C4Quiz_Q1">
+
+        <item name="Q1">Finish this statement: A molecule is a group of _____ bonded together.</item>
+        <item name="A1">Compounds</item>
+        <item name="A2">People</item>
+        <item name="A3">Atoms</item>
+        <item name="A4">Chemicals</item>
+        <item name="CA1">Atoms</item>
+
+
+    </string-array>
+    <string-array name="C4Quiz_Q2">
+
+        <item name="Q2">The atoms that make up a water molecule are _____.</item>
+        <item name="A1">2 - Hydrogen, 1 – Oxygen</item>
+        <item name="A2">1 - Hydrogen, 2 – Oxygen</item>
+        <item name="A3">3 - Hydrogen, 2 – Oxygen</item>
+        <item name="A4">1 - Hydrogen, 1 – Oxygen</item>
+        <item name="CA2">1 - Hydrogen, 2 – Oxygen</item>
+
+
+    </string-array>
+    <string-array name="C4Quiz_Q3">
+
+        <item name="Q3">Liquid + energy = _____.</item>
+        <item name="A1">solid (freezing)</item>
+        <item name="A2">gas(evaporation)</item>
+        <item name="A3">gas(condensation)</item>
+        <item name="A4">solid(melting)</item>
+        <item name="CA3">gas(evaporation)</item>
+
+
+    </string-array>
+
+    <string-array name="C4Quiz_Q4">
+
+        <item name="Q4">The _____ is also called ”Mickey Mouse Molecule”.</item>
+        <item name="A1">H2O</item>
+        <item name="A2">O3</item>
+        <item name="A3">CaO</item>
+        <item name="A4">NO2</item>
+        <item name="CA4">H2O</item>
+
+
+    </string-array>
+    <string-array name="C4Quiz_Q5">
+
+        <item name="Q5">In a molecule, elements are held together by _____.</item>
+        <item name="A1">Super glue</item>
+        <item name="A2">Chemical bonds</item>
+        <item name="A3">Oxygen</item>
+        <item name="A4">Physical tension</item>
+        <item name="CA5">Chemical bonds</item>
+
+
+    </string-array>
+
+    <string-array name="C4Quiz_Q6">
+
+        <item name="Q5">Which of the following is the BEST definition of organic chemistry?</item>
+        <item name="A1">A study of all elements</item>
+        <item name="A2">A study of caffeine</item>
+        <item name="A3">A study of radioactive elements</item>
+        <item name="A4">A study of carbon-containing molecules</item>
+        <item name="CA5">A study of carbon-containing molecules</item>
+
+
+    </string-array>
+
+    <string-array name="C4Quiz_Q7">
+
+        <item name="Q5">Where does a forensic chemist usually do his/her work?</item>
+        <item name="A1">at the crime scene</item>
+        <item name="A2">in a laboratory</item>
+        <item name="A3">in the car on the way to the scene</item>
+        <item name="A4">in the car after leaving the scene</item>
+        <item name="CA5">in a laboratory</item>
+
+
+    </string-array>
+    <string-array name="C4Quiz_Q8">
+
+        <item name="Q5">Which is not an application for food chemistry</item>
+        <item name="A1">To make new foods.</item>
+        <item name="A2">To test how long food can last before becoming spoiled.</item>
+        <item name="A3">To understand how food chemicals interact with our bodies.</item>
+        <item name="A4">To help live a chemical free lifestyle..</item>
+        <item name="CA5">To help live a chemical free lifestyle</item>
+
+
+    </string-array>
+    <string-array name="C4Quiz_Q9">
+
+        <item name="Q5">Lipids help to enhance the _____ of food. Select the best answer.</item>
+        <item name="A1">Flavor</item>
+        <item name="A2">Energy</item>
+        <item name="A3">Color</item>
+        <item name="A4">Sweetness</item>
+        <item name="CA5">Energy</item>
+
+
+    </string-array>
+    <string-array name="C4Quiz_Q10">
+
+        <item name="Q5">Food chemistry is the study of _____. Select the best answer</item>
+        <item name="A1">chemicals used in pesticides on farms</item>
+        <item name="A2">interactions between chemicals in food</item>
+        <item name="A3">the best foods to serve in a restaurant</item>
+        <item name="A4">chemicals used to increase crop growth.</item>
+        <item name="CA5">interactions between chemicals in food</item>
+
+
+    </string-array>
+    <string-array name="C4Quiz_Q11">
+
+        <item name="Q5">What is NOT TRUE about DNA?</item>
+        <item name="A1">it doesn't help solve a crime</item>
+        <item name="A2">it's a large molecule.</item>
+        <item name="A3">it is unique to each individual</item>
+        <item name="A4">forensic chemistry can help identify it</item>
+        <item name="CA5">it doesn't help solve a crimes</item>
+
+
+    </string-array>
+    <string-array name="C4Quiz_Q12">
+
+        <item name="Q5">Which of the following are the smallest building blocks of matter?</item>
+        <item name="A1">Molecules.</item>
+        <item name="A2">Atoms</item>
+        <item name="A3">Polymers</item>
+        <item name="A4">Monomers</item>
+        <item name="CA5">Atoms</item>
+
+
+    </string-array>
+    <string-array name="C4Quiz_Q13">
+
+        <item name="Q5">What makes polymers different from other molecules?</item>
+        <item name="A1">Polymers are made only of carbon..</item>
+        <item name="A2">Polymers are extremely small.</item>
+        <item name="A3">Polymers are made of repeating units called monomers.</item>
+        <item name="A4">Polymers are only man-made.</item>
+        <item name="CA5">Polymers are made of repeating units called monomers.</item>
+
+
+    </string-array>
+    <string-array name="C4Quiz_Q14">
+
+        <item name="Q5">Each atom that makes up a molecule is from a specific type of _____.</item>
+        <item name="A1">Polymer</item>
+        <item name="A2">Monomer.</item>
+        <item name="A3">carbon chain.</item>
+        <item name="A4">element.</item>
+        <item name="CA5">Polymer</item>
+
+
+    </string-array>
+    <string-array name="C4Quiz_Q15">
+
+        <item name="Q5">What is forensic chemistry?</item>
+        <item name="A1">collecting evidence in a crime</item>
+        <item name="A2">testifying about evidence in a crime.</item>
+        <item name="A3">using chemistry to analyze evidence in a crime</item>
+        <item name="A4">reporting a crim</item>
+        <item name="CA5">using chemistry to analyze evidence in a crime</item>
+
+
+    </string-array>
+
+
+
+
+
+
 
 </resources>

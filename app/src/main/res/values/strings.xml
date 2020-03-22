@@ -201,5 +201,7 @@
     <string name="selectgas">Select The Gas Type</string>
     <string name="liquid">Liquid</string>
     <string name="selectliquid">Select The Liquid Type</string>
+    <string name="discovery1">Atomic Theory</string>
+    <string name="discovery2">Forces</string>
 
 </resources>
