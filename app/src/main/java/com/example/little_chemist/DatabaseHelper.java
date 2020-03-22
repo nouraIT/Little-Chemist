@@ -20,6 +20,8 @@ import java.sql.SQLException;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
+
+
     public static class FeedEntry implements BaseColumns {
 
         //---------------------- Initialise tables ------------------------
@@ -35,6 +37,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         private static final String COLUMN_SECQ = "SecQ";
         private static final String COLUMN_SECA = "SecA";
         private static final String COLUMN_LANG = "Arabic";
+        private static final String COLUMN_IMG = "ImageId";
 
         //-----------------------------------------------
 
@@ -84,7 +87,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     FeedEntry.COLUMN_PASSWORD +" TEXT,"+
                     FeedEntry.COLUMN_SECQ +" TEXT,"+
                     FeedEntry.COLUMN_SECA +" TEXT,"+
-                    FeedEntry.COLUMN_LANG +" INTEGER)" ;
+                    FeedEntry.COLUMN_LANG +" INTEGER," +
+                    FeedEntry.COLUMN_IMG +" INTEGER)" ;
 
     private static final String SQL_CREATE_CHAPTER=
             "CREATE TABLE "+FeedEntry.TABLE_CHAPTER +" ("+
@@ -171,7 +175,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
 //, (student.GetTotalScore())
         student = new Student( (count+1) ,scores,(qz),(ch),(ls),(student.GetUserName()),(student.GetPassword()),
-                (student.GetSecQ()),(student.GetSecA()),(student.GetLang()) );
+                (student.GetSecQ()),(student.GetSecA()),(student.GetLang()), R.drawable.face1);
 
         ContentValues contentvalues=new ContentValues();
         contentvalues.put(FeedEntry.COLUMN_ID,count+1);
@@ -184,6 +188,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentvalues.put(FeedEntry.COLUMN_SECQ, student.GetSecQ());
         contentvalues.put(FeedEntry.COLUMN_SECA, student.GetSecA());
         contentvalues.put(FeedEntry.COLUMN_LANG, student.GetLang());
+        contentvalues.put(FeedEntry.COLUMN_IMG, R.drawable.face1 );
 
 
         db.insert(FeedEntry.TABLE_STUDENT,null,contentvalues);
@@ -397,18 +402,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
+    public void changeImg(String username ,int img) {
+        db = this.getWritableDatabase();
+        String query =" UPDATE Student SET ImageId = '"+img +"' WHERE UserName = '"+username+"' ";
+        db.execSQL(query);
+        db.close();
+    }
 
-
-
-//    public String getLoggedInStudent(String userName) {
-//
-//        Cursor cursor=db.query("Student", new String[]{userName}, null, null, null, null, null);
-//
-//        cursor.moveToFirst();
-//        String user = cursor.getString(cursor.getColumnIndex("UserName"));
-//        cursor.close();
-//        return user;
-//    }
 
     public String getStudentId(String username) {
 
@@ -447,7 +447,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         Cursor cursor = db.rawQuery(query, null);
         String un,QLocks,Chlocks,LesLocks,Pass,SQ,SA,score;
-        int id,lang;
+        int id,lang,img;
 
 
         if (cursor.moveToFirst()) {
@@ -465,7 +465,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     SQ= cursor.getString(7);
                     SA= cursor.getString(8);
                     lang = cursor.getInt(9);
-                    student= new Student(id,score,QLocks,Chlocks,LesLocks,un,Pass,SQ,SA,lang);
+                    img = cursor.getInt(10);
+                    student= new Student(id,score,QLocks,Chlocks,LesLocks,un,Pass,SQ,SA,lang,img);
 
                     break;
                 }
@@ -610,6 +611,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.close();
 
     }
+
+
 
 
 

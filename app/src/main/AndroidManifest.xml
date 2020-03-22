@@ -12,6 +12,7 @@
         android:required="true" />
 
     <application
+        tools:replace="android:icon"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -31,8 +32,10 @@
         <activity android:name=".View_lesson.Lessons" />
         <activity android:name=".View_lesson.lab" />
         <activity android:name=".Quiz_score" />
+        <activity android:name=".Tables.Student" />
         <activity android:name=".RecoverPassword" />
         <activity android:name=".Settings" />
+        <activity android:name=".character_gallery" />
         <activity android:name=".Home" />
         <activity
             android:name=".LoginPage"

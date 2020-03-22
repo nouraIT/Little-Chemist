@@ -8,7 +8,7 @@ import java.io.Serializable;
 
 
 public class Student extends AppCompatActivity implements Serializable {
-    int Id;
+    int Id, ImageId;
     String Scores;
     double TotalScore, ScoresA[]= new double[5];
     String UserName,Password, QZLocks, CHLocks, LSNLocks, SecQ, SecA;
@@ -25,7 +25,7 @@ public class Student extends AppCompatActivity implements Serializable {
                 "11:locked,12:locked,13:locked,14:locked,15:locked,16:locked,17:locked,18:locked,19:locked,20:locked," +
                 "21:locked,22:locked,23:locked,24:locked,25:locked,";
     }
-    public Student(int id,String scores,String QL,String CHl,String LL,String username,String Pass,String SQ,String SA,int lang) {
+    public Student(int id,String scores,String QL,String CHl,String LL,String username,String Pass,String SQ,String SA,int lang, int img) {
         this.Id=id;
 
         //scores = "c1:0,c2:0..."
@@ -48,7 +48,7 @@ public class Student extends AppCompatActivity implements Serializable {
         this.SecA=SA;
         this.Arabic= lang;
 
-
+        ImageId = img;
     }
 
     public Student(){
@@ -102,6 +102,9 @@ public class Student extends AppCompatActivity implements Serializable {
 
     public void SetSecA(String seca) { this.SecA=seca;}
     public String GetSecA() {return SecA;}
+
+    public void SetImageId(int img){    ImageId=img; }
+    public int GetImageId(){ return ImageId;}
 
     //functions
 

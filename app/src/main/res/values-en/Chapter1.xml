@@ -67,7 +67,7 @@
 
 
   <!--        Quiz Questions           -->
-  <string-array name="Quiz_Questions">
+  <string-array name="C1Quiz_Questions">
 
     <item name="Q1">The nucleus of an atom is?</item>
     <item name="Q2">Electrons?</item>

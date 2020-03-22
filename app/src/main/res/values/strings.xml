@@ -203,5 +203,7 @@
     <string name="selectliquid">Select The Liquid Type</string>
     <string name="discovery1">Atomic Theory</string>
     <string name="discovery2">Forces</string>
+    <string name="change_image">Change image</string>
+    <string name="gallery">Gallery</string>
 
 </resources>
