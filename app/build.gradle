@@ -115,11 +115,37 @@ dependencies {
 
 
 }
-//sceneform.asset('sampledata/solid.obj',
-//        'default',
-//        'sampledata/solid.sfa',
-//        'src/main/assets/solid',
-//        ['sampledata/solid.obj'])
+sceneform.asset('sampledata/bluefire.fbx',
+        'default',
+        'sampledata/bluefire.sfa',
+        'src/main/assets/bluefire',
+        ['sampledata/bluefire.fbx'])
+sceneform.asset('sampledata/yellowfire.fbx',
+        'default',
+        'sampledata/yellowfire.sfa',
+        'src/main/assets/yellowfire',
+        ['sampledata/yellowfire.fbx'])
+sceneform.asset('sampledata/purplefire.fbx',
+        'default',
+        'sampledata/purplefire.sfa',
+        'src/main/assets/purplefire',
+        ['sampledata/purplefire.fbx'])
+sceneform.asset('sampledata/orangefire.fbx',
+        'default',
+        'sampledata/orangefire.sfa',
+        'src/main/assets/orangefire',
+        ['sampledata/orangefire.fbx'])
+///
+sceneform.asset('sampledata/redfire.fbx',
+        'default',
+        'sampledata/redfire.sfa',
+        'src/main/assets/redfire',
+        ['sampledata/redfire.fbx'])
+sceneform.asset('sampledata/greenfire.fbx',
+        'default',
+        'sampledata/greenfire.sfa',
+        'src/main/assets/greenfire',
+        ['sampledata/greenfire.fbx'])
 sceneform.asset('sampledata/sodium.fbx',
         'default',
         'sampledata/sodium.sfa',
