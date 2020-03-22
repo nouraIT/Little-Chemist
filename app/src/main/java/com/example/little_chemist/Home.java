@@ -109,7 +109,7 @@ public class Home extends AppCompatActivity {
                     @Override
                     public void run(){
                 Intent n = new Intent(Home.this, Settings.class);
-                //n.putExtra("student",student);
+                n.putExtra("name","home");
                 startActivity(n);
                 //finish();
                     }
@@ -178,7 +178,7 @@ public class Home extends AppCompatActivity {
 
 //        }
         int progress = student.viewProgress();
-        System.out.println(progress);
+//        System.out.println(progress);
         ProgressBar progressbar = findViewById(R.id.content_pro);
         progressbar.setProgress(progress,true);
 

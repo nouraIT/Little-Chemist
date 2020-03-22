@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/homebackgroundnew"
+    tools:context=".character_gallery">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+        android:elevation="1dp"
+
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/MyApp.ActionBarTheme"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/CL"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:elevation="10dp"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:baselineAligned="false">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/toolbarTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_gravity="start"
+                    android:elevation="10dp"
+                    android:fontFamily="@font/dk_sugary_pancake"
+
+                    android:text="@string/gallery"
+                    android:textAppearance="@android:style/TextAppearance.WindowTitle"
+                    android:textColor="@color/darkpruple"
+                    android:textSize="22sp"
+
+                    />
+
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:columnCount="2"
+        android:layout_marginTop="55dp"
+
+        >
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_image1"
+            android:layout_width="135dp"
+            android:layout_height="144dp"
+
+            android:layout_marginStart="35dp"
+            android:layout_gravity="center_horizontal"
+
+            android:src="@drawable/face1"
+            app:civ_border_color="@color/darkpruple"
+            app:civ_border_width="2dp" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_image2"
+            android:layout_width="135dp"
+            android:layout_height="144dp"
+
+            android:layout_gravity="center_horizontal"
+
+            android:src="@drawable/face2"
+            app:civ_border_color="@color/darkpruple"
+            app:civ_border_width="2dp" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_image3"
+            android:layout_width="135dp"
+            android:layout_height="144dp"
+
+            android:layout_marginStart="35dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="35dp"
+
+            android:src="@drawable/face3"
+            app:civ_border_color="@color/darkpruple"
+            app:civ_border_width="2dp" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_image4"
+            android:layout_width="135dp"
+            android:layout_height="144dp"
+
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="35dp"
+
+            android:src="@drawable/face4"
+            app:civ_border_color="@color/darkpruple"
+            app:civ_border_width="2dp" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_image5"
+            android:layout_width="135dp"
+            android:layout_height="144dp"
+
+            android:layout_marginStart="35dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="35dp"
+
+            android:src="@drawable/face5"
+            app:civ_border_color="@color/darkpruple"
+            app:civ_border_width="2dp" />
+
+
+
+    </GridLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

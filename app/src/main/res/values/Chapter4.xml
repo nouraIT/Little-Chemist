@@ -65,7 +65,7 @@
     <!--         LESSON 5            -->
 
     <!--        Quiz Questions           -->
-    <string-array name="Quiz_Questions">
+    <string-array name="C4Quiz_Questions">
 
         <item name="Q1">Finish this statement: A molecule is a group of _____ bonded together.</item>
         <item name="Q2">The atoms that make up a water molecule are _____.?</item>
@@ -202,11 +202,11 @@
     <string-array name="C4Quiz_Q11">
 
         <item name="Q5">What is NOT TRUE about DNA?</item>
-        <item name="A1">it doesn't help solve a crime</item>
-        <item name="A2">it's a large molecule.</item>
+        <item name="A1">it doesn\'t help solve a crime</item>
+        <item name="A2">it\'s a large molecule.</item>
         <item name="A3">it is unique to each individual</item>
         <item name="A4">forensic chemistry can help identify it</item>
-        <item name="CA5">it doesn't help solve a crimes</item>
+        <item name="CA5">it doesn\'t help solve a crimes</item>
 
 
     </string-array>

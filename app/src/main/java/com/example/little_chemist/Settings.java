@@ -13,6 +13,8 @@ import android.graphics.ColorFilter;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.text.InputType;
+import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import java.sql.SQLException;
 import java.util.Locale;
@@ -26,9 +28,13 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.daimajia.androidviewhover.BlurLayout;
 import com.example.little_chemist.Tables.Student;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 
 public class Settings extends AppCompatActivity {
@@ -37,7 +43,10 @@ public class Settings extends AppCompatActivity {
     SharedPreferences.Editor editor ;
     DatabaseHelper helper = new DatabaseHelper(Settings.this);
     boolean arabicFlag ;
-
+    CircleImageView change;
+    Student student ;
+    Button booklet,En,Ara;
+    CardView Delete;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,29 +55,18 @@ public class Settings extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_settings);
 
-        Student student = (Student) getIntent().getSerializableExtra("student");
-
+        //= (Student) getIntent().getSerializableExtra("student");
 
         pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
         editor = pref.edit();
 
         String name = pref.getString("username", null); // getting String
-        //pref.getInt("password", -1); // getting Integer
-        //arabicFlag = helper.checkLang(name);
         String pass = pref.getString("password",null);
-
         String studentId=helper.getStudentId(name);
-
-        //Log.v("00000000000000",studentId);
+        student = helper.getStudent(name);
 
         TextView profileName = findViewById(R.id.profileName);
-        //String userName = loginData.getLoggedInStudent("UserName");
-        //String user = loginData.getLoggedInStudent(userName);
-//        static String name;
-//        name = student.GetUserName();
-
         profileName.setText(name.toUpperCase());
-
 
 
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -76,34 +74,53 @@ public class Settings extends AppCompatActivity {
         Objects.requireNonNull(getSupportActionBar()).setDisplayShowTitleEnabled(false);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-//        ColorFilter colorf = new ColorFilter(R.color.white);
-//
-//        toolbar.getNavigationIcon().setColorFilter(R.color.white);
-
-
-        Button booklet = findViewById(R.id.button5);
-        Button En = findViewById(R.id.enBtn);
-        Button Ara = findViewById(R.id.arBtn);
-        CardView Delete = findViewById(R.id.deleteBtn);
-
-
-
-
-
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Thread thread = new Thread(new Runnable(){
                     @Override
                     public void run(){
-                Intent Homepage = new Intent(Settings.this, Home.class);
-                startActivity(Homepage);
-                //finish();
+                        Intent Homepage = new Intent(Settings.this, Home.class);
+                        startActivity(Homepage);
                     }
                 });
                 thread.start();
             }
         });
+
+        booklet = findViewById(R.id.button5);
+        En = findViewById(R.id.enBtn);
+        Ara = findViewById(R.id.arBtn);
+        Delete = findViewById(R.id.deleteBtn);
+        change = findViewById(R.id.profile_image);
+
+        String Intentname = "test";
+        change.setImageResource(student.GetImageId());
+
+        Bundle bundle = getIntent().getExtras();
+        assert bundle.getString("name") != null;
+        Intentname = bundle.getString("name");
+        int img =0;
+        assert Intentname != null;
+        if(Intentname.equals("img")) {
+            img = bundle.getInt("faceID");
+            //if(img!=0){
+            changeImage(img);
+        }
+
+        BlurLayout sampleLayout = findViewById(R.id.sample);
+        View hover = LayoutInflater.from(Settings.this).inflate(R.layout.hover, null);
+        sampleLayout.setHoverView(hover);
+        TextView change_msg = hover.findViewById(R.id.description);
+
+        change_msg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent characterGallery = new Intent(Settings.this, character_gallery.class);
+                startActivity(characterGallery);
+            }
+        });
+
         En.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -142,6 +159,8 @@ public class Settings extends AppCompatActivity {
 
             }
         });
+
+
 
 
 
@@ -293,6 +312,18 @@ public class Settings extends AppCompatActivity {
                         .show();*/
             }
         });
+
+    }
+
+    public void changeImage(int face){
+//        change = findViewById(R.id.profile_image);
+
+        change.setImageResource(face);
+
+        student.SetImageId(face);
+        helper.changeImg(student.GetUserName(),face);
+//        System.out.println("img id after change is "+student.GetImageId());
+
 
     }
 }

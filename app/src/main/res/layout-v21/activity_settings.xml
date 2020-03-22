@@ -10,6 +10,8 @@
     tools:context=".Settings">
 
 
+
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -81,6 +83,25 @@
 
     </androidx.appcompat.widget.Toolbar>
 
+
+<!--    <Button-->
+<!--        android:id="@+id/changeBtn"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+
+<!--        android:layout_marginTop="200dp"-->
+<!--        android:layout_marginBottom="137dp"-->
+<!--        android:layout_marginEnd="60dp"-->
+<!--        android:background="?android:attr/panelBackground"-->
+<!--        android:backgroundTint="?android:attr/panelBackground"-->
+
+<!--        android:textColor="@color/darkpruple"-->
+<!--        android:textAllCaps="false"-->
+<!--        android:text="@string/change_image"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/cardView"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
     <LinearLayout
         android:id="@+id/linear"
         android:layout_width="match_parent"
@@ -90,17 +111,24 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/profile_image"
-            android:layout_width="135dp"
-            android:layout_height="144dp"
 
+        <com.daimajia.androidviewhover.BlurLayout
+            android:id="@+id/sample"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="55dp"
+            >
 
-            android:src="@drawable/profile"
-            app:civ_border_color="#FF000000"
-            app:civ_border_width="1dp" />
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_image"
+                android:layout_width="165dp"
+                android:layout_height="165dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/face5"
+
+                />
+        </com.daimajia.androidviewhover.BlurLayout>
 
         <TextView
             android:id="@+id/profileName"
@@ -108,23 +136,25 @@
             android:layout_height="wrap_content"
 
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="7dp"
+
+            android:layout_marginBottom="7dp"
             android:fontFamily="@font/dk_sugary_pancake"
 
             android:text="USERNAME"
             android:textColor="@color/darkpruple"
-            android:textSize="30sp"
+            android:textSize="25sp"
             tools:ignore="HardcodedText" />
 
     </LinearLayout>
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
         android:layout_width="325dp"
         android:layout_height="410dp"
         android:layout_marginStart="6dp"
         android:layout_marginTop="12dp"
-        android:layout_marginEnd="6dp"
 
+        android:layout_marginEnd="6dp"
         app:cardCornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -132,13 +162,13 @@
         app:layout_constraintTop_toBottomOf="@+id/linear">
 
 
-<!--        <ImageView-->
-<!--            android:id="@+id/imageView3"-->
-<!--            android:layout_width="26dp"-->
-<!--            android:layout_height="33dp"-->
-<!--            android:layout_marginStart="95dp"-->
-<!--            android:layout_marginTop="57dp"-->
-<!--            app:srcCompat="@drawable/arabic" />-->
+        <!--        <ImageView-->
+        <!--            android:id="@+id/imageView3"-->
+        <!--            android:layout_width="26dp"-->
+        <!--            android:layout_height="33dp"-->
+        <!--            android:layout_marginStart="95dp"-->
+        <!--            android:layout_marginTop="57dp"-->
+        <!--            app:srcCompat="@drawable/arabic" />-->
 
 
         <LinearLayout
@@ -201,13 +231,13 @@
 
         </LinearLayout>
 
-<!--        <ImageView-->
-<!--            android:id="@+id/imageView4"-->
-<!--            android:layout_width="30dp"-->
-<!--            android:layout_height="32dp"-->
-<!--            android:layout_marginStart="188dp"-->
-<!--            android:layout_marginTop="57dp"-->
-<!--            app:srcCompat="@drawable/english" />-->
+        <!--        <ImageView-->
+        <!--            android:id="@+id/imageView4"-->
+        <!--            android:layout_width="30dp"-->
+        <!--            android:layout_height="32dp"-->
+        <!--            android:layout_marginStart="188dp"-->
+        <!--            android:layout_marginTop="57dp"-->
+        <!--            app:srcCompat="@drawable/english" />-->
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -240,9 +270,9 @@
 
                 android:layout_gravity="center"
                 android:layout_marginStart="8dp"
-                android:layout_marginBottom="17dp"
                 android:layout_marginTop="17dp"
                 android:layout_marginEnd="4dp"
+                android:layout_marginBottom="17dp"
 
                 android:background="?android:attr/panelBackground"
                 android:backgroundTint="?android:attr/panelBackground"
@@ -258,17 +288,17 @@
                 android:layout_height="wrap_content"
 
                 android:layout_gravity="center"
-                android:layout_marginBottom="17dp"
                 android:layout_marginStart="4dp"
                 android:layout_marginTop="17dp"
                 android:layout_marginEnd="30dp"
+                android:layout_marginBottom="17dp"
 
                 android:background="?android:attr/panelBackground"
                 android:backgroundTint="?android:attr/panelBackground"
                 android:fontFamily="@font/aref_menna"
                 android:text="English"
                 android:textColor="@color/colorAccent"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 tools:ignore="HardcodedText" />
         </LinearLayout>
 

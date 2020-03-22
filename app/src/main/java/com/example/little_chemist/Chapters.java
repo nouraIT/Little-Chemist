@@ -66,7 +66,6 @@ public class Chapters extends AppCompatActivity {
 
 
         Context con = Chapters.this;
-        //ViewGroup container = (ViewGroup) new View(con);
 
         layoutInflater = (LayoutInflater) con.getSystemService(Chapters.LAYOUT_INFLATER_SERVICE);
         View view = layoutInflater.inflate(R.layout.chapters_slider, null, false);
