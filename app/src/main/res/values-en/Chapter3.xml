@@ -74,6 +74,10 @@
 
 
     <!--         LESSON 5            -->
+    <string name="C3L5S1"><b>Biochemistry</b> is the study of the chemistry of living things.\nBiochemists work to identify the thousands of different chemical compounds and the processesthat occur in living things.\n They seek to understand the roles these play in developing and sustaining life.</string>
+    <!--    TODO add an image here -->
+    <string name="C3L5S2">The study of biochemistry has helped people in many ways.\n Scientists have been able to detect a wide variety of diseases by studying the chemical properties of blood.</string>
+    <string name="C3L5S3">it also helped scientists understand Corona Virus (COVID-19) even better </string>
 
 
     <!--         LESSON 5            -->

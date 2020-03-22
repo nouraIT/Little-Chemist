@@ -74,6 +74,7 @@ public class slideAdapter extends PagerAdapter {
             ,"C2L5S1","C2L5S2" , "C2L5S3" ,"C2L5S4" , "C2L5S5"
             ,"C3L1S1","C3L1S2","C3L1S3","C3L1S4","C3L1S5","C3L1S6","C3L1S7","C3L1S8"
             ,"C3L2S1","C3L2S2","C3L2S3","C3L2S4","C3L2S5","C3L2S6","C3L2S7","C3L2S8","C3L2S9"
+            ,"C3L5S1","C3L5S2","C3L5S3"
             ,"C4L1S1","C4L1S2","C4L1S3","C4L1S4"
             ,"C4L2S1","C4L2S2","C4L2S3","C4L2S4"
             ,"C4L3S1","C4L3S2","C4L3S3","C4L3S4","C4L3S5"
