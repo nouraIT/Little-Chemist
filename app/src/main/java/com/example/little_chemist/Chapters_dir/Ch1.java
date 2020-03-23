@@ -106,7 +106,7 @@ public class Ch1 extends AppCompatActivity {
 
         statue = student.getQzLock("1");
 
-        System.out.println(statue);
+        //System.out.println(statue);
         if(statue.equals("unlocked"))
             quiz.setCardBackgroundColor(getResources().getColor((R.color.logoLightRed)));
         else
@@ -123,6 +123,7 @@ public class Ch1 extends AppCompatActivity {
 
                 Intent n = new Intent(Ch1.this, Lessons.class);
                 n.putExtra("lesson",11);
+                n.putExtra("lessonId",1) ;
                 startActivity(n);
                 // finish();
             }
@@ -170,6 +171,7 @@ public class Ch1 extends AppCompatActivity {
 
                     Intent n = new Intent(Ch1.this, Lessons.class);
                     n.putExtra("lesson", 13);
+                    n.putExtra("lessonId",2) ;
                     startActivity(n);
                     // finish();
                 }else
@@ -185,6 +187,7 @@ public class Ch1 extends AppCompatActivity {
 
                     Intent n = new Intent(Ch1.this, Lessons.class);
                     n.putExtra("lesson", 14);
+                    n.putExtra("lessonId",4) ;
                     startActivity(n);
                 }else
                     Toast.makeText(getApplicationContext(), "Locked", Toast.LENGTH_LONG).show();
@@ -199,6 +202,7 @@ public class Ch1 extends AppCompatActivity {
 
                     Intent n = new Intent(Ch1.this, LabLesson1.class);
                     n.putExtra("lesson", 15);
+                    n.putExtra("lessonId",5) ;
                     startActivity(n);
                 }else
                     Toast.makeText(getApplicationContext(), "Locked", Toast.LENGTH_LONG).show();
