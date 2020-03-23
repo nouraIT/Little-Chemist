@@ -44,6 +44,8 @@ public class quizQ extends AppCompatActivity {
     private String[] Option = new String[5];
     private String[][] Question = new String[5][];
     private double Score =0;
+    private String[] onlyQuestion = new String[5];
+    private String[] whichcontent = new String[5];
 
     int QuizID;
     Student student;
@@ -166,11 +168,11 @@ public class quizQ extends AppCompatActivity {
 //        carousel.add(EmptySampleModel("empty list"))
         String[] QItems;
         int index =0;
-        String [] whichcontent = new String[C1Quiz.length];
+        //String [] whichcontent = new String[C1Quiz.length];
         switch (QuizID){
-            case 1: whichcontent = C1Quiz;
+            case 1:whichcontent = C1Quiz;
             break;
-            case 2: whichcontent = C2Quiz;
+            case 2:whichcontent = C2Quiz;
             break;
             case 3:whichcontent = C3Quiz;
             break;
@@ -185,6 +187,7 @@ public class quizQ extends AppCompatActivity {
             Question[i] = QItems;
             modelQuestion[i] = new model(this,i,Question[i][index],Question[i][index+1],Question[i][index+2],Question[i][index+3],Question[i][index+4],Question[i][index+5]);
             currectanswer[i] = Question[i][index+5];
+            onlyQuestion[i] = Question[i][index];
         }
 
         carousel.add((modelQuestion[0]));
@@ -200,8 +203,12 @@ public class quizQ extends AppCompatActivity {
             public void onClick(View view) {
                 carousel.setCurrentPosition(slidcount+1);
                 if (slidcount == 4){
-                    Intent n = new Intent(quizQ.this, Home.class);
+                    Intent n = new Intent(quizQ.this, QuizResult.class);
                     Option = adapter.getOption();
+                    bundle.putStringArray("option", Option);
+                    bundle.putStringArray("content", onlyQuestion);
+                    bundle.putStringArray("answer", currectanswer);
+                    n.putExtras(bundle);
                     Score = score(Option,currectanswer);
                     startActivity(n);
                 }
