@@ -524,50 +524,60 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
-    public void updateLesson(String username, int Lid,String status,int CHid) {
+    public void updateLesson(String username, int Lid, String status) {
 
-
-        String [] ch = new String[5];
         String Username;
         String LLOCKS= "";
 
         db = this.getReadableDatabase();
         boolean flag=false;
 
-        String q = "SELECT UserName,CHLOCKS,LSNLOCKS FROM Student";
+        String q = "SELECT UserName,LSNLOCKS FROM Student";
         Cursor cursor = db.rawQuery(q, null);
-
+        //this will find the specified student
         if (cursor.moveToFirst()) {
             do {
                 Username = cursor.getString(0);
                 if (Username.contentEquals(username)) {
                     LLOCKS = cursor.getString(1);
+                    flag=true;
                     break;
                 }
             } while (cursor.moveToNext());
         }
 
-
         cursor.close();
 
+        //if the student is found the flag will be true
         if(flag) {
+            int firstIndex =0;
+            int endIndex =0;
+            String oldStatus ="";
+            String lsnNum = "1";
 
-            ch = LLOCKS.split(",");
-            Lid--;
-            ch[Lid] = status;
-            LLOCKS = String.join("", ch);
+            //this loop will change the Lid and the one next to it
+            for (int i=0;i<25;i++){
+                if(i+1 == Lid) {
+                    oldStatus += (i + 1) + ":" + status + ",";
+                    lsnNum = String.valueOf(Integer.parseInt(lsnNum)+1);
+                    i++;
+                    oldStatus += (i + 1) + ":unlocked,";
+                    continue;
+                }
+                firstIndex = LLOCKS.indexOf(lsnNum);
+                lsnNum = String.valueOf(Integer.parseInt(lsnNum)+1);
+                endIndex = LLOCKS.indexOf(",",firstIndex);
+                oldStatus += (i+1)+LLOCKS.substring(firstIndex+2,endIndex)+",";
+            }
+
+            if(!oldStatus.isEmpty())
+                LLOCKS=oldStatus;
 
             db = getWritableDatabase();
             String query = " UPDATE Student SET LSNLOCKS = '" + LLOCKS + "' WHERE UserName = '" + username + "' ";
-
             db.execSQL(query);
         }
-
         db.close();
-
-
-
-
     }
 
     public void updateQuiz(String username,int Qid,String status) {
