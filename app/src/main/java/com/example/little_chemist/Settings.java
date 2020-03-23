@@ -11,6 +11,7 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.ColorFilter;
 import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.InputType;
 import android.view.LayoutInflater;
@@ -58,7 +59,7 @@ public class Settings extends AppCompatActivity {
         //= (Student) getIntent().getSerializableExtra("student");
 
         pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
-        editor = pref.edit();
+//        editor = pref.edit();
 
         String name = pref.getString("username", null); // getting String
         String pass = pref.getString("password",null);
@@ -94,17 +95,25 @@ public class Settings extends AppCompatActivity {
         Delete = findViewById(R.id.deleteBtn);
         change = findViewById(R.id.profile_image);
 
+        int imgID = student.GetImageId();
+        int img =-1;
+
+        int[] faces = {R.drawable.face1, R.drawable.face2, R.drawable.face3, R.drawable.face4, R.drawable.face5};
+
+
         String Intentname = "test";
-        change.setImageResource(student.GetImageId());
+        changeImage(student.GetImageId());  //student.GetImageId()
+//        System.out.println("before anything "+student.GetImageId());
 
         Bundle bundle = getIntent().getExtras();
         assert bundle.getString("name") != null;
         Intentname = bundle.getString("name");
-        int img =0;
         assert Intentname != null;
         if(Intentname.equals("img")) {
-            img = bundle.getInt("faceID");
+            img = pref.getInt("faceID", 0); //bundle.getInt("faceID");
             //if(img!=0){
+//            System.out.println("Id here first "+img);
+
             changeImage(img);
         }
 
@@ -317,13 +326,29 @@ public class Settings extends AppCompatActivity {
 
     public void changeImage(int face){
 //        change = findViewById(R.id.profile_image);
+//        System.out.println("face id is "+face);
+        switch(face){
+            case 700115:
+                change.setImageResource(R.drawable.face1);
+                break;
+            case 700116:
+                change.setImageResource(R.drawable.face2);
+                break;
+            case 700113:
+                change.setImageResource(R.drawable.face3);
+                break;
+            case 700114:
+                change.setImageResource(R.drawable.face4);
+                break;
+            case 700105:
+                change.setImageResource(R.drawable.face5);
+                break;
+            default:
+                change.setImageResource(R.drawable.face1);
+        }
 
-        change.setImageResource(face);
-
-        student.SetImageId(face);
         helper.changeImg(student.GetUserName(),face);
 //        System.out.println("img id after change is "+student.GetImageId());
-
 
     }
 }

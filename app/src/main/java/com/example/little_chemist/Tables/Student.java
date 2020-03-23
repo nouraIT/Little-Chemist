@@ -74,7 +74,7 @@ public class Student extends AppCompatActivity implements Serializable {
     }
 
     public void SetTotalScore(int quizID , double score) {
-//TODO should save it in a string too and save it in the database
+
         this.ScoresA[quizID-1] = score; //minus 1 because it's an array
         this.TotalScore+=score;
     }
