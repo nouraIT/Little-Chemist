@@ -501,15 +501,32 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             } while (cursor.moveToNext());
         }
 
-
         cursor.close();
 
         if(flag) {
 
-            ch = CHLOCKS.split(",");
-            CHID--;
-            ch[CHID] = status;
-            CHLOCKS = String.join("", ch);
+            int firstIndex =0;
+            int endIndex =0;
+            String oldStatus ="";
+            String lsnNum = "1";
+
+            //this loop will change the Lid and the one next to it
+            for (int i=0;i<25;i++){
+                if(i+1 == CHID) {
+                    oldStatus += (i + 1) + ":" + status + ",";
+                    lsnNum = String.valueOf(Integer.parseInt(lsnNum)+1);
+                    i++;
+                    oldStatus += (i + 1) + ":unlocked,";
+                    continue;
+                }
+                firstIndex = CHLOCKS.indexOf(lsnNum);
+                lsnNum = String.valueOf(Integer.parseInt(lsnNum)+1);
+                endIndex = CHLOCKS.indexOf(",",firstIndex);
+                oldStatus += (i+1)+CHLOCKS.substring(firstIndex+2,endIndex)+",";
+            }
+
+            if(!oldStatus.isEmpty())
+                CHLOCKS=oldStatus;
 
             db = getWritableDatabase();
             String query = " UPDATE Student SET CHLOCKS = '" + CHLOCKS + "' WHERE UserName = '" + username + "' ";

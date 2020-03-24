@@ -3,6 +3,7 @@ package com.example.little_chemist;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -14,6 +15,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.little_chemist.Chapters_dir.Ch5;
+import com.example.little_chemist.Tables.Student;
 import com.google.ar.core.Anchor;
 import com.google.ar.core.AugmentedImage;
 import com.google.ar.core.AugmentedImageDatabase;
@@ -53,41 +55,53 @@ public class ARCards extends AppCompatActivity {
     private String string;
     private ModelRenderable andyRenderable;
     private ModelRenderable mObjRenderable;
-private  String text;
+    private  String text;
 //private  int  m=0;
     static int m =0;
+    DatabaseHelper helper = new DatabaseHelper(this);
+    private SharedPreferences pref;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_a_r_cards);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_a_r_cards);
+
         arFragment = (CustomARfragment) getSupportFragmentManager().findFragmentById(R.id.arFragment);
         textView = findViewById(R.id.textview);
         Button Reset = findViewById(R.id.reset);
         Button next = findViewById(R.id.next);
-
         textView.setText(R.string.scan);
         arFragment.getArSceneView().getScene().addOnUpdateListener(this::onUpdate);
+
+        pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
+        String name = pref.getString("username", null);
+        Bundle bundle=getIntent().getExtras();;
+        int Lid =  bundle.getInt("lessonId");
+
+
         Reset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-// Reset Code
+           // Reset Code
                 recreate();
             }
         });
+
+
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-// Reset Code
-                //System.out.println(m);
+
                 if (m < 3) {
                     m++;
                     recreate();
                 }
-                else
-                {Intent h = new Intent(ARCards.this, Ch5.class);
-                startActivity(h);}
+                else{
+                    helper.updateLesson(name, Lid , "completed");
+                    Intent h = new Intent(ARCards.this, Ch5.class);
+                    startActivity(h);
+                }
 
             }
         });
@@ -168,6 +182,7 @@ private  String text;
             }
         }
     }
+
     public void callAR(){
 
         if (!appeared){
@@ -190,8 +205,8 @@ private  String text;
 
         }
     }
-    public void loadDB(Session session, Config config)
-    {
+
+    public void loadDB(Session session, Config config){
         InputStream dbStream = getResources().openRawResource(R.raw.mycard);
         try{
             AugmentedImageDatabase aid= AugmentedImageDatabase.deserialize(session,dbStream);
@@ -202,6 +217,7 @@ private  String text;
         }
 
     }
+
     public void setARFragment(String obj) {
         assert arFragment != null;
 

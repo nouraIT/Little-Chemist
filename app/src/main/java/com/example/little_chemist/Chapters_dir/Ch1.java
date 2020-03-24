@@ -149,6 +149,8 @@ public class Ch1 extends AppCompatActivity {
 
                                         public void run() {
                                             Intent n = new Intent(Ch1.this, ARCards.class);
+                                            n.putExtra("lesson",12);
+                                            n.putExtra("lessonId",2) ;
                                             startActivity(n);
                                         }
                                     });
@@ -171,7 +173,7 @@ public class Ch1 extends AppCompatActivity {
 
                     Intent n = new Intent(Ch1.this, Lessons.class);
                     n.putExtra("lesson", 13);
-                    n.putExtra("lessonId",2) ;
+                    n.putExtra("lessonId",3) ;
                     startActivity(n);
                     // finish();
                 }else

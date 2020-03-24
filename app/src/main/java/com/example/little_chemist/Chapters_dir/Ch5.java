@@ -113,9 +113,11 @@ public class Ch5 extends AppCompatActivity {
 
                     public void run(){
 
-                Intent n = new Intent(Ch5.this, Lessons.class);
-                n.putExtra("lesson",51);
-                startActivity(n);
+                        Intent n = new Intent(Ch5.this, Lessons.class);
+                        n.putExtra("lesson",51);
+                        n.putExtra("lessonId",21);
+                        startActivity(n);
+
                     }
                 });
                 thread.start();
@@ -144,6 +146,8 @@ public class Ch5 extends AppCompatActivity {
 
                                         public void run() {
                                             Intent n = new Intent(Ch5.this, ARCards.class);
+                                            n.putExtra("lesson",52);
+                                            n.putExtra("lessonId",22) ;
                                             startActivity(n);
                                         }
                                     });
@@ -176,6 +180,8 @@ public class Ch5 extends AppCompatActivity {
 
                                         public void run() {
                                             Intent n = new Intent(Ch5.this, ARCards.class);
+                                            n.putExtra("lesson",53);
+                                            n.putExtra("lessonId",23) ;
                                             startActivity(n);
                                         }
                                     });
@@ -208,6 +214,8 @@ public class Ch5 extends AppCompatActivity {
 
                                         public void run() {
                                             Intent n = new Intent(Ch5.this, ARCards.class);
+                                            n.putExtra("lesson",54);
+                                            n.putExtra("lessonId",24) ;
                                             startActivity(n);
                                         }
                                     });
@@ -240,6 +248,8 @@ public class Ch5 extends AppCompatActivity {
 
                                         public void run() {
                                             Intent n = new Intent(Ch5.this, ARCards.class);
+                                            n.putExtra("lesson",55);
+                                            n.putExtra("lessonId",25) ;
                                             startActivity(n);
                                         }
                                     });
