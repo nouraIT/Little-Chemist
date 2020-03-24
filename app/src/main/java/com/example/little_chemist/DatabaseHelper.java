@@ -41,20 +41,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         //-----------------------------------------------
 
-        private static final String TABLE_CHAPTER = "Chapter";
-        private static final String COLUMN_CHID = "chapterID";
-        private static final String COLUMN_CHNAME = "chapterName";
-        private static final String COLUMN_CHLOCK = "lockChapter";
-
-        //-----------------------------------------------
-
-        private static final String TABLE_LESSON = "Lesson";
-        private static final String COLUMN_LSNID = "lessonID";
-        private static final String COLUMN_LSNNAME = "lessonName";
-        private static final String COLUMN_LSNLOCK = "lockLesson";
-        private static final String COLUMN_EXERCISE = "exercise";
-        private static final String COLUMN_CH = "ChId";
-        private static final String COLUMN_CONTENT = "content";
+//        private static final String TABLE_CHAPTER = "Chapter";
+//        private static final String COLUMN_CHID = "chapterID";
+//        private static final String COLUMN_CHNAME = "chapterName";
+//        private static final String COLUMN_CHLOCK = "lockChapter";
+//
+//        //-----------------------------------------------
+//
+//        private static final String TABLE_LESSON = "Lesson";
+//        private static final String COLUMN_LSNID = "lessonID";
+//        private static final String COLUMN_LSNNAME = "lessonName";
+//        private static final String COLUMN_LSNLOCK = "lockLesson";
+//        private static final String COLUMN_EXERCISE = "exercise";
+//        private static final String COLUMN_CH = "ChId";
+//        private static final String COLUMN_CONTENT = "content";
 
         //-----------------------------------------------
 
@@ -90,20 +90,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     FeedEntry.COLUMN_LANG +" INTEGER," +
                     FeedEntry.COLUMN_IMG +" INTEGER)" ;
 
-    private static final String SQL_CREATE_CHAPTER=
-            "CREATE TABLE "+FeedEntry.TABLE_CHAPTER +" ("+
-                    FeedEntry.COLUMN_CHID + "  INTEGER PRIMARY KEY," +
-                    FeedEntry.COLUMN_CHNAME + " TEXT," +
-                    FeedEntry.COLUMN_CHLOCK + " TEXT)" ;
-
-    private static final String SQL_CREATE_LESSON=
-            "CREATE TABLE "+FeedEntry.TABLE_LESSON +" ("+
-                    FeedEntry.COLUMN_LSNID + "  INTEGER PRIMARY KEY," +
-                    FeedEntry.COLUMN_LSNNAME + " TEXT," +
-                    FeedEntry.COLUMN_LSNLOCK + " TEXT," +
-                    FeedEntry.COLUMN_EXERCISE + " TEXT," +
-                    FeedEntry.COLUMN_CONTENT + " TEXT,"+
-                    FeedEntry.COLUMN_CH + " INTEGER, FOREIGN KEY ("+FeedEntry.COLUMN_CH+") REFERENCES "+FeedEntry.TABLE_CHAPTER+"("+FeedEntry.COLUMN_CHID+"))";
+//    private static final String SQL_CREATE_CHAPTER=
+//            "CREATE TABLE "+FeedEntry.TABLE_CHAPTER +" ("+
+//                    FeedEntry.COLUMN_CHID + "  INTEGER PRIMARY KEY," +
+//                    FeedEntry.COLUMN_CHNAME + " TEXT," +
+//                    FeedEntry.COLUMN_CHLOCK + " TEXT)" ;
+//
+//    private static final String SQL_CREATE_LESSON=
+//            "CREATE TABLE "+FeedEntry.TABLE_LESSON +" ("+
+//                    FeedEntry.COLUMN_LSNID + "  INTEGER PRIMARY KEY," +
+//                    FeedEntry.COLUMN_LSNNAME + " TEXT," +
+//                    FeedEntry.COLUMN_LSNLOCK + " TEXT," +
+//                    FeedEntry.COLUMN_EXERCISE + " TEXT," +
+//                    FeedEntry.COLUMN_CONTENT + " TEXT,"+
+//                    FeedEntry.COLUMN_CH + " INTEGER, FOREIGN KEY ("+FeedEntry.COLUMN_CH+") REFERENCES "+FeedEntry.TABLE_CHAPTER+"("+FeedEntry.COLUMN_CHID+"))";
 
     private static final String SQL_CREATE_QUIZ=
             "CREATE TABLE "+FeedEntry.TABLE_QUIZ +" ("+
@@ -125,8 +125,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(SQL_CREATE_STUDENT);
-        db.execSQL(SQL_CREATE_CHAPTER);
-        db.execSQL(SQL_CREATE_LESSON);
+//        db.execSQL(SQL_CREATE_CHAPTER);
+//        db.execSQL(SQL_CREATE_LESSON);
         db.execSQL(SQL_CREATE_QUIZ);
         //db.close();
 
@@ -173,7 +173,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     "11:unlocked,12:unlocked,13:unlocked,14:unlocked,15:unlocked,16:unlocked,17:unlocked,18:unlocked,19:unlocked,20:unlocked," +
                     "21:unlocked,22:unlocked,23:unlocked,24:unlocked,25:unlocked,";;
         }
-//, (student.GetTotalScore())
+
         student = new Student( (count+1) ,scores,(qz),(ch),(ls),(student.GetUserName()),(student.GetPassword()),
                 (student.GetSecQ()),(student.GetSecA()),(student.GetLang()), R.drawable.face1);
 
@@ -211,6 +211,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 //        db.insert(FeedEntry.TABLE_CHAPTER,null,contentvalues);
 //        db.close();
 //    }
+
 
 //    public void InsertLessons(Lesson lesson){
 //
@@ -409,7 +410,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.close();
     }
 
-
     public String getStudentId(String username) {
 
         db = this.getReadableDatabase();
@@ -480,66 +480,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-    public void updateChapter(String username,int CHID,String status) {
-
-        String [] ch = new String[5];
-        String Username, CHLOCKS= "";
-
-        db = this.getReadableDatabase();
-        boolean flag=false;
-
-        String q = "SELECT UserName,CHLOCKS FROM Student";
-        Cursor cursor = db.rawQuery(q, null);
-
-        if (cursor.moveToFirst()) {
-            do {
-                Username = cursor.getString(0);
-                if (Username.contentEquals(username)) {
-                    CHLOCKS = cursor.getString(1);
-                    break;
-                }
-            } while (cursor.moveToNext());
-        }
-
-        cursor.close();
-
-        if(flag) {
-
-            int firstIndex =0;
-            int endIndex =0;
-            String oldStatus ="";
-            String lsnNum = "1";
-
-            //this loop will change the Lid and the one next to it
-            for (int i=0;i<25;i++){
-                if(i+1 == CHID) {
-                    oldStatus += (i + 1) + ":" + status + ",";
-                    lsnNum = String.valueOf(Integer.parseInt(lsnNum)+1);
-                    i++;
-                    oldStatus += (i + 1) + ":unlocked,";
-                    continue;
-                }
-                firstIndex = CHLOCKS.indexOf(lsnNum);
-                lsnNum = String.valueOf(Integer.parseInt(lsnNum)+1);
-                endIndex = CHLOCKS.indexOf(",",firstIndex);
-                oldStatus += (i+1)+CHLOCKS.substring(firstIndex+2,endIndex)+",";
-            }
-
-            if(!oldStatus.isEmpty())
-                CHLOCKS=oldStatus;
-
-            db = getWritableDatabase();
-            String query = " UPDATE Student SET CHLOCKS = '" + CHLOCKS + "' WHERE UserName = '" + username + "' ";
-
-            db.execSQL(query);
-        }
-
-        db.close();
-
-
-
-
-    }
 
     public void updateLesson(String username, int Lid, String status) {
 
@@ -587,7 +527,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 oldStatus += (i+1)+LLOCKS.substring(firstIndex+2,endIndex)+",";
             }
 
-            if(!oldStatus.isEmpty())
+            if(!oldStatus.equals(""))
                 LLOCKS=oldStatus;
 
             db = getWritableDatabase();
@@ -597,9 +537,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.close();
     }
 
+    //TODO merge the chapter and the quiz
     public void updateQuiz(String username,int Qid,String status) {
 
-        String [] ch = new String[5];
         String Username,QZLOCKS= "";
         db = this.getReadableDatabase();
 
@@ -623,11 +563,29 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         cursor.close();
 
         if(flag) {
-            ch = QZLOCKS.split(","); //[1:unlocked,
-            Qid--;
-            ch[Qid] = status;
-            QZLOCKS = String.join("", ch);
 
+            int firstIndex =0;
+            int endIndex =0;
+            String oldStatus ="";
+            String lsnNum = "1";
+
+            //this loop will change the Qid and the one next to it
+            for (int i=0;i<25;i++){
+                if(i+1 == Qid) {
+                    oldStatus += (i + 1) + ":" + status + ",";
+                    lsnNum = String.valueOf(Integer.parseInt(lsnNum)+1);
+                    i++;
+                    oldStatus += (i + 1) + ":unlocked,";
+                    continue;
+                }
+                firstIndex = QZLOCKS.indexOf(lsnNum);
+                lsnNum = String.valueOf(Integer.parseInt(lsnNum)+1);
+                endIndex = QZLOCKS.indexOf(",",firstIndex);
+                oldStatus += (i+1)+QZLOCKS.substring(firstIndex+2,endIndex)+",";
+            }
+
+            if(!oldStatus.equals(""))
+                QZLOCKS=oldStatus;
 
             db = this.getWritableDatabase();
             String query =" UPDATE Student SET QZLOCKS = '"+ QZLOCKS +"' WHERE UserName = '"+username+"' ";
@@ -639,6 +597,65 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
+    public void updateChapter(String username,int CHID,String status) {
+
+        String Username, CHLOCKS= "";
+
+        db = this.getReadableDatabase();
+        boolean flag=false;
+
+        String q = "SELECT UserName,CHLOCKS FROM Student";
+        Cursor cursor = db.rawQuery(q, null);
+
+        if (cursor.moveToFirst()) {
+            do {
+                Username = cursor.getString(0);
+                if (Username.contentEquals(username)) {
+                    CHLOCKS = cursor.getString(1);
+                    break;
+                }
+            } while (cursor.moveToNext());
+        }
+
+        cursor.close();
+
+        if(flag) {
+
+            int firstIndex =0;
+            int endIndex =0;
+            String oldStatus ="";
+            String lsnNum = "1";
+
+            //this loop will change the CHID and the one next to it
+            for (int i=0;i<25;i++){
+                if(i+1 == CHID) {
+                    oldStatus += (i + 1) + ":" + status + ",";
+                    lsnNum = String.valueOf(Integer.parseInt(lsnNum)+1);
+                    i++;
+                    oldStatus += (i + 1) + ":unlocked,";
+                    continue;
+                }
+                firstIndex = CHLOCKS.indexOf(lsnNum);
+                lsnNum = String.valueOf(Integer.parseInt(lsnNum)+1);
+                endIndex = CHLOCKS.indexOf(",",firstIndex);
+                oldStatus += (i+1)+CHLOCKS.substring(firstIndex+2,endIndex)+",";
+            }
+
+            if(!oldStatus.equals(""))
+                CHLOCKS=oldStatus;
+
+            db = getWritableDatabase();
+            String query = " UPDATE Student SET CHLOCKS = '" + CHLOCKS + "' WHERE UserName = '" + username + "' ";
+
+            db.execSQL(query);
+        }
+
+        db.close();
+
+
+
+
+    }
 
 
 
