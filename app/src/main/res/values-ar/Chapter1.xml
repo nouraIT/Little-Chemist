@@ -64,7 +64,7 @@
 
 
     <!--        Quiz Questions           -->
-    <string-array name="Quiz_Questions">
+    <string-array name="C1Quiz_Questions">
 
         <item name="Q1">نواة الذرة تقوم ب؟</item>
         <item name="Q2">الإلكترونات?</item>
@@ -134,7 +134,7 @@
     </string-array>
 
     <!--         Quiz correct Answers          -->
-    <string-array name="Quiz_Correct">
+    <string-array name="C1Quiz_Correct">
 
         <item name="CA1">الانقسام</item>
         <item name="CA2">التحرك بسرعة كبيرة وصغيرة جدا.</item>

@@ -33,12 +33,13 @@
                 android:id="@+id/chNum"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:fontFamily="@font/dk_sugary_pancake"
                 android:gravity="center"
+                android:text="chapter number"
                 android:textColor="@color/white"
                 android:textSize="30sp"
-                android:fontFamily="@font/roboto_bold"
-                android:text="chapter number"
-                />
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="7dp" />
             <!--  android:textAppearance="@android:style/TextAppearance.WindowTitle"-->
         </androidx.appcompat.widget.Toolbar>
 
@@ -134,13 +135,13 @@
                         android:layout_marginTop="-16dp"
 
                         android:alpha="0.5"
+                        android:fontFamily="@font/dk_sugary_pancake"
                         android:text="@string/Ch5Name"
                         android:textAlignment="center"
                         android:textColor="@color/Black"
-                        android:textSize="22sp"
 
 
-                        />
+                        android:textSize="22sp" />
 
                 </LinearLayout>
                 <ImageView

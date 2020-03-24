@@ -6,6 +6,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.drawable.Animatable;
 import android.os.Bundle;
 import android.text.Html;
@@ -20,6 +21,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.little_chemist.DatabaseHelper;
+import com.example.little_chemist.Tables.Student;
 import com.example.little_chemist.Chapters;
 import com.example.little_chemist.Chapters_dir.Ch1;
 import com.example.little_chemist.Chapters_dir.Ch2;
@@ -36,7 +39,7 @@ public class Lessons extends AppCompatActivity {
     private LinearLayout mDots ;
     private TextView[] mDotsText ;
     private slideAdapter slideAdapter ;
-
+    String statue;
     private int lessonkey ;
     private TextView lessonName ;
     private Button nextBtn;
@@ -47,6 +50,10 @@ public class Lessons extends AppCompatActivity {
     LayoutInflater layoutInflater;
     private int NumDots ;
     private String IDEx ;
+    private SharedPreferences pref;
+    private  DatabaseHelper helper ;
+    private  Bundle bundle ;
+
 
     @Override
 
@@ -56,6 +63,8 @@ public class Lessons extends AppCompatActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_lessons);
+
+        helper = new DatabaseHelper(this);
 
 
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -73,7 +82,7 @@ public class Lessons extends AppCompatActivity {
         mSlidsView =  findViewById(R.id.slidePage) ;
         mDots = findViewById(R.id.dots) ;
 
-        Bundle bundle=getIntent().getExtras();
+        bundle=getIntent().getExtras();
         lessonkey=bundle.getInt("lesson");
         slideAdapter = new slideAdapter(this, lessonkey) ;
 
@@ -166,6 +175,7 @@ public class Lessons extends AppCompatActivity {
         @Override
         public void onPageSelected(int position) {
 
+
             addDotsIndicator(position);
             mCurrent = position ;
 
@@ -183,6 +193,16 @@ public class Lessons extends AppCompatActivity {
                 preBtn.setVisibility(View.VISIBLE);
                 nextBtn.setText(getText(R.string.finishBtn));
                 preBtn.setText(getText(R.string.backBtn));
+
+
+                pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
+                String name = pref.getString("username", null); // getting String
+                Student student = helper.getStudent(name);
+                String Lid=""+bundle.getInt("lessonId") ;
+
+                helper.updateLesson(name,Integer.parseInt(Lid),"completed");//,Integer.toString(lessonkey).charAt(0));
+                statue = student.getLsnLock(Lid);
+                System.out.println(statue) ;
 
                 nextBtn.setOnClickListener(new View.OnClickListener() {
                     Intent n ;
@@ -211,6 +231,7 @@ public class Lessons extends AppCompatActivity {
                 nextBtn.setText(getText(R.string.nextBtn));
                 preBtn.setText(getText(R.string.backBtn));
             }
+
 
         };
 

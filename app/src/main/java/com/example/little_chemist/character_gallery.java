@@ -1,6 +1,7 @@
 package com.example.little_chemist;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.view.View;
@@ -18,6 +19,9 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class character_gallery extends AppCompatActivity {
 
     CircleImageView face1,face2,face3,face4,face5;
+    SharedPreferences pref;
+    SharedPreferences.Editor editor ;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +49,9 @@ public class character_gallery extends AppCompatActivity {
             }
         });
 
+        pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
+        editor = pref.edit();
+
 
         face1 = findViewById(R.id.profile_image1);
         face2 = findViewById(R.id.profile_image2);
@@ -57,7 +64,8 @@ public class character_gallery extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent n = new Intent(character_gallery.this,Settings.class);
-                n.putExtra("faceID",R.drawable.face1);
+                editor.putInt("faceID",700115);
+                editor.apply();
                 n.putExtra("name","img");
                 startActivity(n);
                 finish();
@@ -68,7 +76,8 @@ public class character_gallery extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent n = new Intent(character_gallery.this,Settings.class);
-                n.putExtra("faceID",R.drawable.face2);
+                editor.putInt("faceID",700116);
+                editor.apply();
                 n.putExtra("name","img");
                 startActivity(n);
                 finish();
@@ -79,7 +88,8 @@ public class character_gallery extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent n = new Intent(character_gallery.this,Settings.class);
-                n.putExtra("faceID",R.drawable.face3);
+                editor.putInt("faceID",700113);
+                editor.apply();
                 n.putExtra("name","img");
                 startActivity(n);
                 finish();
@@ -90,7 +100,8 @@ public class character_gallery extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent n = new Intent(character_gallery.this,Settings.class);
-                n.putExtra("faceID",R.drawable.face4);
+                editor.putInt("faceID",700114);
+                editor.apply();
                 n.putExtra("name","img");
                 startActivity(n);
                 finish();
@@ -101,7 +112,8 @@ public class character_gallery extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent n = new Intent(character_gallery.this,Settings.class);
-                n.putExtra("faceID",R.drawable.face5);
+                editor.putInt("faceID",700105);
+                editor.apply();
                 n.putExtra("name","img");
                 startActivity(n);
                 finish();

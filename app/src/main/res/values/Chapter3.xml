@@ -1,34 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!--         LESSON 1            -->
-        <string name="C3L1S1" ><b>Salt</b> is known as an ingredient you add to your food but it\’s more than that.</string>
-        <string name="C3L1S2" >it is found on Earth and It\’s made of two elements: sodium <b>Na</b> and chloride <b>Cl</b>.</string>
-        <string name="C3L1S3" >the scientific name for salt is <b> sodium chloride </b> (NaCl)</string>
-        <!--    TODO add an image here -->
-        <string name="C3L1S4" >Salt is very Important to Your Body</string>
-        <!--    TODO add an image here -->
-        <string name="C3L1S5" >A healthy amount of salt \n 1- helps your body to control the right amount of water and fluids that you need. \n 2- helps your heart pump blood at a healthy rate \n 3- helps your muscles and nerves function properly. \n</string>
-        <string name="C3L1S6" >Salt is also a natural disinfectant, which means it can kill germs.\n If you have ever had a sore throat, you may have gargled with salt water to soothe and heal it \n and it can also help wounds or sores heal on your body.</string>
-        <!--    TODO add an image here -->
-        <string name="C3L1S7" >Salt sounds awesome doesn\’t it? \n But what if you had too much salt?</string>
-            <!--    TODO add an image here -->
-        <string name="C3L1S8" >it will cause your heart and blood to pump faster and harder to remove the extra salt that your body doesn\'t need \n This makes your blood pressure too high over time and can make you unhealthy. </string>
-        <!--    TODO add an image here -->
+    <string name="C3L1S1" ><b>Salt</b> is known as an ingredient you add to your food but it\’s more than that.</string>
+    <string name="C3L1S2" >it is found on Earth and It\’s made of two elements: sodium <b>Na</b> and chloride <b>Cl</b>.</string>
+    <string name="C3L1S3" >the scientific name for salt is <b> sodium chloride </b> (NaCl)</string>
+    <!--    TODO add an image here -->
+    <string name="C3L1S4" >Salt is very Important to Your Body</string>
+    <!--    TODO add an image here -->
+    <string name="C3L1S5" >A healthy amount of salt \n 1- helps your body to control the right amount of water and fluids that you need. \n 2- helps your heart pump blood at a healthy rate \n 3- helps your muscles and nerves function properly. \n</string>
+    <string name="C3L1S6" >Salt is also a natural disinfectant, which means it can kill germs.\n If you have ever had a sore throat, you may have gargled with salt water to soothe and heal it \n and it can also help wounds or sores heal on your body.</string>
+    <!--    TODO add an image here -->
+    <string name="C3L1S7" >Salt sounds awesome doesn\’t it? \n But what if you had too much salt?</string>
+    <!--    TODO add an image here -->
+    <string name="C3L1S8" >it will cause your heart and blood to pump faster and harder to remove the extra salt that your body doesn\'t need \n This makes your blood pressure too high over time and can make you unhealthy. </string>
+    <!--    TODO add an image here -->
 
-        <!--         LESSON 1  exercises          -->
-        <string-array name="C3L1S1E1M">
-            <item>Salt scientific name is</item>
-            <item>H2O</item>
-            <item>NaCl</item>
-            <item>Fe</item>
-            <item>NO3</item>
-        </string-array>
+    <!--         LESSON 1  exercises          -->
+    <string-array name="C3L1S4E1M">
+        <item>Salt scientific name is</item>
+        <item>H2O</item>
+        <item>NaCl</item>
+        <item>Fe</item>
+        <item>NO3</item>
+    </string-array>
 
 
-        <string-array name="C3L1A">
-            <item>NaCl</item>
+    <string-array name="C3L1A">
+        <item>NaCl</item>
         <!--        <item>Chromatography</item>-->
-        </string-array>
+    </string-array>
     <!--     ========================     LESSON 1  END ========================          -->
 
 
@@ -49,7 +49,7 @@
     <string name="C3L2S6">Atoms are not all the same, there are 118 different types of atoms,\n called elements. 92 Of these elements are natural\n and the rest are man-made. </string>
     <string name="C3L2S7">Examples ot element that you might recognise are like oxygen, aluminum and iron.</string>
     <!--    TODO add an image here -->
-    <string name="C3L2S8"><b>Solutions</b> is when substances cannot be distinguished easily from one another.\n like mixing salt with water or baking a cake</string>
+    <string name="C3L2S8"><b>Solution</b> is when substances cannot be distinguished easily from one another.\n like mixing salt with water or baking a cake</string>
     <!--    TODO add an image here -->
     <string name="C3L2S9"><b>Mixtures</b> is a substance in which two or more substances are mixed but not chemically joined together,\n that means a chemical reaction has not taken place.\n like a bag of M&amp;Ms</string>
     <!--    TODO add an image here -->
@@ -60,12 +60,17 @@
 
     <!--         LESSON 3 is a lab
 
-    EXPLOSION?
+    EXPLOSION
+
                  LESSON 3 is a lab -->
 
 
-    <!-- LESSON 4
-    states of matter -->
+    <!--         LESSON 4
+
+
+
+
+    might be a lab-->
 
 
     <!--         LESSON 5            -->
@@ -73,17 +78,29 @@
     <!--    TODO add an image here -->
     <string name="C3L5S2">The study of biochemistry has helped people in many ways.\n Scientists have been able to detect a wide variety of diseases by studying the chemical properties of blood.</string>
     <string name="C3L5S3">it also helped scientists understand Corona Virus (COVID-19) even better </string>
-    <!--    TODO add an image here -->
+
+
     <!--         LESSON 5            -->
+
+
+
+
 
     <!--        Quiz Questions           -->
     <string-array name="C3Quiz_Questions">
+
         <item name="Q1">Why is salt important to your body\'s health?</item>
         <item name="Q2">Too much salt can cause _____.</item>
         <item name="Q3">Salt is a natural mineral made of _____.</item>
-        <item name="Q4"> </item>
-        <item name="Q5"> </item>
-        <item name="Q6"> </item>
+        <item name="Q4">Which of the following is an example of a mixture?</item>
+        <item name="Q5">Which of the following is an example of a solution?</item>
+        <item name="Q6">What is an atom?</item>
+        <item name="Q7">How many atom types there exists?</item>
+        <item name="Q8">_____ the study of the chemistry of living things</item>
+        <item name="Q9">Pizza is an example of a _____.</item>
+        <item name="Q10">What are the forms of Matter?</item>
+
+
     </string-array>
     <!--         Quiz Total Answers          -->
 
@@ -115,29 +132,81 @@
     </string-array>
 
     <string-array name="C3Quiz_Q4">
-        <item name="Q4"> </item>
-        <item name="A1"> </item>
-        <item name="A2"> </item>
-        <item name="A3"> </item>
-        <item name="A4"> </item>
-        <item name="CA4"> </item>
+        <item name="Q4">Which of the following is an example of a mixture?</item>
+        <item name="A1">Hot chocolate</item>
+        <item name="A2">Fruit salad</item>
+        <item name="A3">Saltwater</item>
+        <item name="A4">Pancake batter</item>
+        <item name="CA4">Fruit salad</item>
     </string-array>
 
     <string-array name="C3Quiz_Q5">
-        <item name="Q5"> </item>
-        <item name="A1"> </item>
-        <item name="A2"> </item>
-        <item name="A3"> </item>
-        <item name="A4"> </item>
-        <item name="CA5"> </item>
+        <item name="Q5">Which of the following is an example of a solution?</item>
+        <item name="A1">Lemonade</item>
+        <item name="A2">Cereal</item>
+        <item name="A3">Yogurt with fruit</item>
+        <item name="A4">Bowl of candy</item>
+        <item name="CA5">Lemonade</item>
+    </string-array>
+
+    <string-array name="C3Quiz_Q6">
+        <item name="Q6">What is an atom?</item>
+        <item name="A1">A type of solution</item>
+        <item name="A2">A type of mixture</item>
+        <item name="A3">A building block of matter</item>
+        <item name="A4">A molecule</item>
+        <item name="CA6">A building block of matter</item>
+    </string-array>
+
+    <string-array name="C3Quiz_Q7">
+        <item name="Q7">How many atom types there exists?</item>
+        <item name="A1">47</item>
+        <item name="A2">92</item>
+        <item name="A3">Only 1 type</item>
+        <item name="A4">118</item>
+        <item name="CA7">118</item>
+    </string-array>
+
+    <string-array name="C3Quiz_Q8">
+        <item name="Q8">_____ the study of the chemistry of living things</item>
+        <item name="A1">Matter</item>
+        <item name="A2">Forensics chemistry</item>
+        <item name="A3">Biochemistry</item>
+        <item name="A4">Mixtures</item>
+        <item name="CA8">Biochemistry</item>
+    </string-array>
+
+    <string-array name="C3Quiz_Q9">
+        <item name="Q9">Pizza is an example of a _____.</item>
+        <item name="A1">Mixture</item>
+        <item name="A2">Solution</item>
+        <item name="A3">Atom</item>
+        <item name="A4">Matter</item>
+        <item name="CA9">Mixture</item>
+    </string-array>
+
+    <string-array name="C3Quiz_Q10">
+        <item name="Q10">What are the forms of Matter?</item>
+        <item name="A1">Liquid and Gas</item>
+        <item name="A2">Solid and Liquid</item>
+        <item name="A3">Gas and Solid</item>
+        <item name="A4">Solid, Liquid and Gas</item>
+        <item name="CA10">Solid, Liquid and Gas</item>
     </string-array>
 
     <!--         Quiz correct Answers          -->
     <string-array name="C3Quiz_Correct">
+
         <item name="C3A1">All of these answers are correct</item>
         <item name="C3A2">high blood pressure</item>
         <item name="C3A3">sodium and chloride</item>
-        <item name="C3A4"> </item>
-        <item name="C3A5"> </item>
+        <item name="C3A4">Fruit salad</item>
+        <item name="C3A5">Lemonade</item>
+        <item name="C3A6">A building block of matter</item>
+        <item name="C3A7">118</item>
+        <item name="C3A8">Biochemistry</item>
+        <item name="C3A9">Mixture</item>
+        <item name="C3A10">Solid, Liquid and Gas</item>
+
     </string-array>
 </resources>

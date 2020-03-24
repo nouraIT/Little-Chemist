@@ -11,6 +11,7 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.ColorFilter;
 import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.InputType;
 import android.view.LayoutInflater;
@@ -42,11 +43,12 @@ public class Settings extends AppCompatActivity {
     SharedPreferences pref;
     SharedPreferences.Editor editor ;
     DatabaseHelper helper = new DatabaseHelper(Settings.this);
-    boolean arabicFlag ;
     CircleImageView change;
     Student student ;
-    Button booklet,En,Ara;
+    Button booklet,En,Ara, logout;
     CardView Delete;
+    int img =-1;
+    String Intentname = "test";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,19 +57,21 @@ public class Settings extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_settings);
 
-        //= (Student) getIntent().getSerializableExtra("student");
+        //============================= Student =============================
 
         pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
         editor = pref.edit();
-
         String name = pref.getString("username", null); // getting String
         String pass = pref.getString("password",null);
         String studentId=helper.getStudentId(name);
         student = helper.getStudent(name);
-
         TextView profileName = findViewById(R.id.profileName);
         profileName.setText(name.toUpperCase());
 
+        //============================= Student =============================
+
+
+        //============================= Toolbar =============================
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -88,25 +92,34 @@ public class Settings extends AppCompatActivity {
             }
         });
 
+        //============================= Toolbar =============================
+
+
+        //============================= Initializing =============================
+
         booklet = findViewById(R.id.button5);
         En = findViewById(R.id.enBtn);
         Ara = findViewById(R.id.arBtn);
         Delete = findViewById(R.id.deleteBtn);
         change = findViewById(R.id.profile_image);
-
-        String Intentname = "test";
-        change.setImageResource(student.GetImageId());
-
+        logout = findViewById(R.id.logoutBtn);
         Bundle bundle = getIntent().getExtras();
+
+        //============================= Initializing =============================
+
+
+        //============================= Student profile img =============================
+
         assert bundle.getString("name") != null;
         Intentname = bundle.getString("name");
-        int img =0;
+
         assert Intentname != null;
         if(Intentname.equals("img")) {
-            img = bundle.getInt("faceID");
-            //if(img!=0){
+            img = pref.getInt("faceID", 0);
+            helper.changeImg(student.GetUserName(),img);
             changeImage(img);
-        }
+        }else
+            changeImage(student.GetImageId());
 
         BlurLayout sampleLayout = findViewById(R.id.sample);
         View hover = LayoutInflater.from(Settings.this).inflate(R.layout.hover, null);
@@ -120,6 +133,12 @@ public class Settings extends AppCompatActivity {
                 startActivity(characterGallery);
             }
         });
+
+        //============================= Student profile img =============================
+
+
+
+        //============================= Languages =============================
 
         En.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -138,6 +157,7 @@ public class Settings extends AppCompatActivity {
 
             }
         });
+
         Ara.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -161,10 +181,13 @@ public class Settings extends AppCompatActivity {
         });
 
 
+        //============================= Languages =============================
 
 
 
-        Button logout = findViewById(R.id.logoutBtn);
+        //============================= Logout and Delete =============================
+
+
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -200,15 +223,6 @@ public class Settings extends AppCompatActivity {
             }
         });
 
-
-        booklet.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //TODO Direct to booklet
-            }
-        });
-
-
         Delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -235,31 +249,31 @@ public class Settings extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
 
-                            alert2.setMessage(getText(R.string.enterDeleteAcc));
-                            alert2.setTitle(getText(R.string.delete_account));
-                            alert2.setView(container);
-                            alert2.setPositiveButton(getText(R.string.yes), new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialogInterface, int i) {
-                                    String password = edittext.getText().toString();
+                        alert2.setMessage(getText(R.string.enterDeleteAcc));
+                        alert2.setTitle(getText(R.string.delete_account));
+                        alert2.setView(container);
+                        alert2.setPositiveButton(getText(R.string.yes), new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                String password = edittext.getText().toString();
 
-                                    if (password.equals(pass)) {
-                                        helper.DeleteStudent(studentId);
-                                        Intent intent = new Intent(Settings.this,
-                                                LoginPage.class);
-                                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                                        startActivity(intent);
-                                        finish();
-                                    } else {
+                                if (password.equals(pass)) {
+                                    helper.DeleteStudent(studentId);
+                                    Intent intent = new Intent(Settings.this,
+                                            LoginPage.class);
+                                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                    startActivity(intent);
+                                    finish();
+                                } else {
 
 //                                        alert2.setMessage(getText(R.string.passNotMatch));
 //                                        alert2.setTitle(getText(R.string.delete_account));
 ////                                        TODO set a wrong pass msg
 //
 //                                        alert2.show();
-                                    }
                                 }
-                            });
+                            }
+                        });
 
 
                         alert2.setNegativeButton(getText(R.string.no), new DialogInterface.OnClickListener() {
@@ -313,17 +327,42 @@ public class Settings extends AppCompatActivity {
             }
         });
 
+        //============================= Logout and Delete  =============================
+
+
+        //============================= Booklet  =============================
+
+        booklet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //TODO Direct to booklet
+            }
+        });
+        //============================= Booklet  =============================
+
+
     }
 
     public void changeImage(int face){
-//        change = findViewById(R.id.profile_image);
-
-        change.setImageResource(face);
-
-        student.SetImageId(face);
-        helper.changeImg(student.GetUserName(),face);
-//        System.out.println("img id after change is "+student.GetImageId());
-
+        switch(face){
+            case 700115:
+                change.setImageResource(R.drawable.face1);
+                break;
+            case 700116:
+                change.setImageResource(R.drawable.face2);
+                break;
+            case 700113:
+                change.setImageResource(R.drawable.face3);
+                break;
+            case 700114:
+                change.setImageResource(R.drawable.face4);
+                break;
+            case 700105:
+                change.setImageResource(R.drawable.face5);
+                break;
+            default:
+                change.setImageResource(R.drawable.face1);
+        }
 
     }
 }

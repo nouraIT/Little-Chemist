@@ -195,7 +195,7 @@
   </string-array>
 
   <!--         Quiz correct Answers          -->
-  <string-array name="Quiz_Correct">
+  <string-array name="C1Quiz_Correct">
 
     <item name="CA1">Split apart.</item>
     <item name="CA2">move extremely fast and are very tiny.</item>

@@ -84,24 +84,6 @@
     </androidx.appcompat.widget.Toolbar>
 
 
-<!--    <Button-->
-<!--        android:id="@+id/changeBtn"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-
-<!--        android:layout_marginTop="200dp"-->
-<!--        android:layout_marginBottom="137dp"-->
-<!--        android:layout_marginEnd="60dp"-->
-<!--        android:background="?android:attr/panelBackground"-->
-<!--        android:backgroundTint="?android:attr/panelBackground"-->
-
-<!--        android:textColor="@color/darkpruple"-->
-<!--        android:textAllCaps="false"-->
-<!--        android:text="@string/change_image"-->
-<!--        app:layout_constraintBottom_toTopOf="@+id/cardView"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent" />-->
-
     <LinearLayout
         android:id="@+id/linear"
         android:layout_width="match_parent"
@@ -124,10 +106,10 @@
                 android:id="@+id/profile_image"
                 android:layout_width="165dp"
                 android:layout_height="165dp"
-                android:layout_centerInParent="true"
                 android:src="@drawable/face5"
 
                 />
+
         </com.daimajia.androidviewhover.BlurLayout>
 
         <TextView

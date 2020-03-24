@@ -86,7 +86,6 @@ public class LoginPage extends AppCompatActivity implements Serializable {
                 }
             });
 
-
             PasswordET.getEditText().addTextChangedListener(new TextWatcher() {
                 @Override
                 public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -122,11 +121,9 @@ public class LoginPage extends AppCompatActivity implements Serializable {
                 @Override
                 public void onClick(View v) {
                     UserNameStr=UserNameET.getEditText().getText().toString().trim();
-
                     PasswordStr=PasswordET.getEditText().getText().toString().trim();
 
-
-                   String dbPassword= helper.checkPassword(UserNameStr);
+                    String dbPassword= helper.checkPassword(UserNameStr);
                     //To compare it with Current Password from user input
                     if(dbPassword.equals(PasswordStr)){
 
