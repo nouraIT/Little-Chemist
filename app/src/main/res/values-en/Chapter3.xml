@@ -56,24 +56,24 @@
 
     <!--        Quiz Questions           -->
     <string-array name="C3Quiz_Questions">
-        <item name="Q1">Why is salt important to your body\'s health?</item>
+        <item name="Q1">A healthy amount of salt helps ـــــ</item>
         <item name="Q2">Too much salt can cause _____.</item>
         <item name="Q3">Salt is a natural mineral made of _____.</item>
         <item name="Q4">Which of the following is an example of a mixture?</item>
         <item name="Q5">Which of the following is an example of a solution?</item>
         <item name="Q6">What is an atom?</item>
-        <item name="Q7">How many atom types there exists?</item>
-        <item name="Q8">_____ the study of the chemistry of living things</item>
+        <item name="Q7">How many atom types there exist?</item>
+        <item name="Q8">_____ is the study of the chemistry of living things</item>
         <item name="Q9">Pizza is an example of a _____.</item>
         <item name="Q10">What are the forms of Matter?</item>
     </string-array>
     <!--         Quiz Total Answers          -->
 
     <string-array name="C3Quiz_Q1">
-        <item name="Q1">Why is salt important to your body\'s health?</item>
-        <item name="A1">A healthy amount helps your muscles to function properly</item>
-        <item name="A2">A healthy amount helps to regulate the amount of water in your body</item>
-        <item name="A3">A healthy amount helps you to have good blood pressure</item>
+        <item name="Q1">A healthy amount of salt helps ـــــ</item>
+        <item name="A1">your muscles to function properly</item>
+        <item name="A2">to regulate the amount of water in your body</item>
+        <item name="A3">you to have good blood pressure</item>
         <item name="A4">All of these answers are correct</item>
         <item name="CA1">All of these answers are correct</item>
     </string-array>
@@ -124,7 +124,7 @@
     </string-array>
 
     <string-array name="C3Quiz_Q7">
-        <item name="Q7">How many atom types there exists?</item>
+        <item name="Q7">How many atom types there exist?</item>
         <item name="A1">47</item>
         <item name="A2">92</item>
         <item name="A3">Only 1 type</item>
@@ -133,7 +133,7 @@
     </string-array>
 
     <string-array name="C3Quiz_Q8">
-        <item name="Q8">_____ the study of the chemistry of living things</item>
+        <item name="Q8">_____ is the study of the chemistry of living things</item>
         <item name="A1">Matter</item>
         <item name="A2">Forensics chemistry</item>
         <item name="A3">Biochemistry</item>
@@ -161,17 +161,15 @@
 
     <!--         Quiz correct Answers          -->
     <string-array name="C3Quiz_Correct">
-
-        <item name="C3A1">All of these answers are correct</item>
-        <item name="C3A2">high blood pressure</item>
-        <item name="C3A3">sodium and chloride</item>
-        <item name="C3A4">Fruit salad</item>
-        <item name="C3A5">Lemonade</item>
-        <item name="C3A6">A building block of matter</item>
-        <item name="C3A7">118</item>
-        <item name="C3A8">Biochemistry</item>
-        <item name="C3A9">Mixture</item>
-        <item name="C3A10">Solid, Liquid and Gas</item>
-
+        <item name="CA1">All of these answers are correct</item>
+        <item name="CA2">high blood pressure</item>
+        <item name="CA3">sodium and chloride</item>
+        <item name="CA4">Fruit salad</item>
+        <item name="CA5">Lemonade</item>
+        <item name="CA6">A building block of matter</item>
+        <item name="CA7">118</item>
+        <item name="CA8">Biochemistry</item>
+        <item name="CA9">Mixture</item>
+        <item name="CA10">Solid, Liquid and Gas</item>
     </string-array>
 </resources>

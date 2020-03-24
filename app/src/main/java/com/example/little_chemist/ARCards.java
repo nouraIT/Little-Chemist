@@ -33,6 +33,7 @@ import java.lang.annotation.Target;
 import java.util.Collection;
 import java.util.List;
 import java.util.Timer;
+import java.util.TimerTask;
 
 import com.google.ar.core.Session;
 import com.google.ar.sceneform.Node;
@@ -192,8 +193,9 @@ public class ARCards extends AppCompatActivity {
                 appeared = true;
 
             textView.setText(R.string.Look);
-//Timer t = new Timer();
+
             //TODO add timer
+            new Reminder(5);
             textView.setText(text);
 
 
@@ -239,5 +241,28 @@ public class ARCards extends AppCompatActivity {
 
 //        arFragment.getArSceneView().getScene().addOnUpdateListener(this::onUpdate);
 
+    }
+}
+
+
+
+class Reminder {
+    Timer timer;
+
+    public Reminder(int seconds) {
+        timer = new Timer();
+        timer.schedule(new RemindTask(), seconds*1000);
+    }
+
+    class RemindTask extends TimerTask {
+        public void run() {
+            System.out.println("Time's up!");
+            timer.cancel(); //Terminate the timer thread
+        }
+    }
+
+    public static void main(String args[]) {
+        new Reminder(5);
+        System.out.println("Task scheduled.");
     }
 }

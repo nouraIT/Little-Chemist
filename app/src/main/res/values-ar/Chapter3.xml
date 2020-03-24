@@ -30,18 +30,18 @@
     <string name="C3L2S5">الذرات صغيرة جدًا ولا يمكن رؤيتها بالعين البشرية ، \n ولكنها موجودة من حولنا \n وحتى فينا!</string>
     <string name="C3L2S6"> الذرات ليست متشابهة ، فهناك 118 نوعًا مختلفًا من الذرات ، \n تسمى العناصر. 92 من هذه العناصر طبيعية\n والباقي من صنع الإنسان.</string>
     <string name="C3L2S7">من أمثلة العناصر التي قد تتعرف عليها مثل الأكسجين والألمنيوم والحديد.</string>
-    <string name="C3L2S8"><b> الحل </b> هو عندما لا يمكن تمييز المواد بسهولة عن بعضها البعض. \n مثل خلط الملح بالماء أو خبز كعكة</string>
-    <string name="C3L2S9"> <b> المزائج </b> هي مادة يتم فيها مزج مادتين أو أكثر ولكن لا يتم ربطهما كيميائيًا معًا ، \ n وهذا يعني عدم حدوث تفاعل كيميائي. \ n مثل كيس M Ms</string>
+    <string name="C3L2S8"><b> المحلول </b> هو عندما لا يمكن تمييز المواد بسهولة عن بعضها البعض. \n مثل خلط الملح بالماء أو خبز كعكة</string>
+    <string name="C3L2S9"> <b> المخاليط </b> هي مادة يتم فيها مزج مادتين أو أكثر ولكن لا يتم ربطهما كيميائيًا معًا ، \ n وهذا يعني عدم حدوث تفاعل كيميائي. \ n مثل كيس M Ms</string>
     <!--         LESSON 2  exercises          -->
     <string-array name="C3L2S4E1M">
         <item>أنواع المادة هي:</item>
         <item>الغاز</item>
         <item>سائل</item>
         <item>الصلب</item>
-        <item>جميع الخيارات السابقة</item>
+        <item>حميع ما سبق</item>
     </string-array>
     <string-array name="C3L2A">
-        <item>جميع الخيارات السابقة</item>
+        <item>حميع ما سبق</item>
     </string-array>
     <!--     ========================     LESSON 2  END ========================          -->
 
@@ -56,122 +56,121 @@
 
     <!--        Quiz Questions           -->
     <string-array name="C3Quiz_Questions">
-        <item name="Q1">Why is salt important to your body\'s health?</item>
-        <item name="Q2">Too much salt can cause _____.</item>
-        <item name="Q3">Salt is a natural mineral made of _____.</item>
-        <item name="Q4">Which of the following is an example of a mixture?</item>
-        <item name="Q5">Which of the following is an example of a solution?</item>
-        <item name="Q6">What is an atom?</item>
-        <item name="Q7">How many atom types there exists?</item>
-        <item name="Q8">_____ the study of the chemistry of living things</item>
-        <item name="Q9">Pizza is an example of a _____.</item>
-        <item name="Q10">What are the forms of Matter?</item>
+        <item name="Q1">كمية صحية من الملح ــــــ</item>
+        <item name="Q2">الكثرة من الملح قد يسبب _____.</item>
+        <item name="Q3">الملح معدن طبيعي مصنوع من _____.</item>
+        <item name="Q4">أي مما يلي مثال على خليط؟</item>
+        <item name="Q5">أي مما يلي مثال على محلول؟</item>
+        <item name="Q6">ما هي الذرة؟</item>
+        <item name="Q7">كم عدد أنواع الذرات الموجودة؟</item>
+        <item name="Q8">_____ هي دراسة كيمياء الكائنات الحية</item>
+        <item name="Q9">البيتزا مثال على _____.</item>
+        <item name="Q10">ما هي أشكال المادة؟</item>
     </string-array>
     <!--         Quiz Total Answers          -->
 
     <string-array name="C3Quiz_Q1">
-        <item name="Q1">Why is salt important to your body\'s health?</item>
-        <item name="A1">A healthy amount helps your muscles to function properly</item>
-        <item name="A2">A healthy amount helps to regulate the amount of water in your body</item>
-        <item name="A3">A healthy amount helps you to have good blood pressure</item>
-        <item name="A4">All of these answers are correct</item>
-        <item name="CA1">All of these answers are correct</item>
+        <item name="Q1">كمية صحية من الملح تساعد ـــــ</item>
+        <item name="A1">عضلاتك لتعمل بشكل صحيح</item>
+        <item name="A2">لتنظيم كمية الماء في جسمك</item>
+        <item name="A3">أن يكون لديك ضغط دم جيد</item>
+        <item name="A4">حميع ما سبق</item>
+        <item name="CA1">حميع ما سبق</item>
     </string-array>
 
     <string-array name="C3Quiz_Q2">
-        <item name="Q2">Too much salt can cause _____.</item>
-        <item name="A1">high blood pressure</item>
-        <item name="A2">you to catch a cold</item>
-        <item name="A3">you to run very fast</item>
-        <item name="A4">your fingernails to chip </item>
-        <item name="CA2">high blood pressure</item>
+        <item name="Q2">الكثرة من الملح قد يسبب _____.</item>
+        <item name="A1">ضغط دم مرتفع</item>
+        <item name="A2">الاصابة بالبرد</item>
+        <item name="A3">الركض بسرعة</item>
+        <item name="A4">أظافرك إلى رقاقة</item>
+        <item name="CA2">ضغط دم مرتفع</item>
     </string-array>
 
     <string-array name="C3Quiz_Q3">
-        <item name="Q3">Salt is a natural mineral made of _____.</item>
-        <item name="A1">chlorine and calcium</item>
-        <item name="A2">sodium and chloride</item>
-        <item name="A3">oxygen and carbon dioxide</item>
-        <item name="A4">soil</item>
-        <item name="CA3">sodium and chloride</item>
+        <item name="Q3">الملح معدن طبيعي مصنوع من _____.</item>
+        <item name="A1">الكلور والكالسيوم</item>
+        <item name="A2">الصوديوم والكلوريد</item>
+        <item name="A3">الأكسجين وثاني أكسيد الكربون</item>
+        <item name="A4">سماد</item>
+        <item name="CA3">الصوديوم والكلوريد</item>
     </string-array>
 
     <string-array name="C3Quiz_Q4">
-        <item name="Q4">Which of the following is an example of a mixture?</item>
-        <item name="A1">Hot chocolate</item>
-        <item name="A2">Fruit salad</item>
-        <item name="A3">Saltwater</item>
-        <item name="A4">Pancake batter</item>
-        <item name="CA4">Fruit salad</item>
+        <item name="Q4">أي مما يلي مثال على خليط؟</item>
+        <item name="A1">شكولاته ساخنة</item>
+        <item name="A2">سلطة فواكه</item>
+        <item name="A3">ماء و ملح</item>
+        <item name="A4">عجينة البانكيك</item>
+        <item name="CA4">سلطة فواكه</item>
     </string-array>
 
     <string-array name="C3Quiz_Q5">
-        <item name="Q5">Which of the following is an example of a solution?</item>
-        <item name="A1">Lemonade</item>
-        <item name="A2">Cereal</item>
-        <item name="A3">Yogurt with fruit</item>
-        <item name="A4">Bowl of candy</item>
-        <item name="CA5">Lemonade</item>
+        <item name="Q5">أي مما يلي مثال على محلول؟</item>
+        <item name="A1">ليموناضه</item>
+        <item name="A2">حبوب الكورن فلكس</item>
+        <item name="A3">زبادي بالفواكه</item>
+        <item name="A4">صحن حلوى</item>
+        <item name="CA5">ليموناضه</item>
     </string-array>
 
     <string-array name="C3Quiz_Q6">
-        <item name="Q6">What is an atom?</item>
-        <item name="A1">A type of solution</item>
-        <item name="A2">A type of mixture</item>
-        <item name="A3">A building block of matter</item>
-        <item name="A4">A molecule</item>
-        <item name="CA6">A building block of matter</item>
+        <item name="Q6">ما هي الذرة؟</item>
+        <item name="A1">نوع من المحاليل</item>
+        <item name="A2">نوع من الخليط</item>
+        <item name="A3">لبنة المادة</item>
+        <item name="A4">جزيء</item>
+        <item name="CA6">لبنة المادة</item>
     </string-array>
 
     <string-array name="C3Quiz_Q7">
-        <item name="Q7">How many atom types there exists?</item>
-        <item name="A1">47</item>
-        <item name="A2">92</item>
-        <item name="A3">Only 1 type</item>
-        <item name="A4">118</item>
-        <item name="CA7">118</item>
+        <item name="Q7">كم عدد أنواع الذرات الموجودة؟</item>
+        <item name="A1">٤٧</item>
+        <item name="A2">٩٢</item>
+        <item name="A3">نوع واحد فقط</item>
+        <item name="A4">١١٨</item>
+        <item name="CA7">١١٨</item>
     </string-array>
 
     <string-array name="C3Quiz_Q8">
-        <item name="Q8">_____ the study of the chemistry of living things</item>
-        <item name="A1">Matter</item>
-        <item name="A2">Forensics chemistry</item>
-        <item name="A3">Biochemistry</item>
-        <item name="A4">Mixtures</item>
-        <item name="CA8">Biochemistry</item>
+        <item name="Q8">_____ هي دراسة كيمياء الكائنات الحية</item>
+        <item name="A1">المادة</item>
+        <item name="A2">كيمياء الطب الشرعي</item>
+        <item name="A3">الكيمياء الحيوية</item>
+        <item name="A4">خليط</item>
+        <item name="CA8">الكيمياء الحيوية</item>
     </string-array>
 
     <string-array name="C3Quiz_Q9">
-        <item name="Q9">Pizza is an example of a _____.</item>
-        <item name="A1">Mixture</item>
-        <item name="A2">Solution</item>
-        <item name="A3">Atom</item>
-        <item name="A4">Matter</item>
-        <item name="CA9">Mixture</item>
+        <item name="Q9">البيتزا مثال على _____.</item>
+        <item name="A1">خليط</item>
+        <item name="A2">محلول</item>
+        <item name="A3">ذرة</item>
+        <item name="A4">مادة</item>
+        <item name="CA9">خليط</item>
     </string-array>
 
     <string-array name="C3Quiz_Q10">
-        <item name="Q10">What are the forms of Matter?</item>
-        <item name="A1">Liquid and Gas</item>
-        <item name="A2">Solid and Liquid</item>
-        <item name="A3">Gas and Solid</item>
-        <item name="A4">Solid, Liquid and Gas</item>
-        <item name="CA10">Solid, Liquid and Gas</item>
+        <item name="Q10">ما هي أشكال المادة؟</item>
+        <item name="A1">السائل والغاز</item>
+        <item name="A2">صلبة وسائلة</item>
+        <item name="A3">الغاز والصلبة</item>
+        <item name="A4">المواد الصلبة والسائلة والغازية</item>
+        <item name="CA10">المواد الصلبة والسائلة والغازية</item>
     </string-array>
 
     <!--         Quiz correct Answers          -->
     <string-array name="C3Quiz_Correct">
-
-        <item name="C3A1">All of these answers are correct</item>
-        <item name="C3A2">high blood pressure</item>
-        <item name="C3A3">sodium and chloride</item>
-        <item name="C3A4">Fruit salad</item>
-        <item name="C3A5">Lemonade</item>
-        <item name="C3A6">A building block of matter</item>
-        <item name="C3A7">118</item>
-        <item name="C3A8">Biochemistry</item>
-        <item name="C3A9">Mixture</item>
-        <item name="C3A10">Solid, Liquid and Gas</item>
-
+        <item name="CA1">حميع ما سبق</item>
+        <item name="CA2">ضغط دم مرتفع</item>
+        <item name="CA3">الصوديوم والكلوريد</item>
+        <item name="CA4">سلطة فواكه</item>
+        <item name="CA5">ليموناضه</item>
+        <item name="CA6">لبنة المادة</item>
+        <item name="CA7">١١٨</item>
+        <item name="CA8">الكيمياء الحيوية</item>
+        <item name="CA9">خليط</item>
+        <item name="CA10">المواد الصلبة والسائلة والغازية</item>
     </string-array>
+
 </resources>

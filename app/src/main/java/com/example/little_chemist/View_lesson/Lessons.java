@@ -165,7 +165,6 @@ public class Lessons extends AppCompatActivity {
 
     }
 
-
     ViewPager.OnPageChangeListener viewListener = new ViewPager.OnPageChangeListener(){
         @Override
         public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -241,6 +240,7 @@ public class Lessons extends AppCompatActivity {
         }
     };
 
+    //TODO what does this do ?
     public void onBtnExClick(View v) {
         Intent n ;
         String ExID ;
@@ -257,16 +257,13 @@ public class Lessons extends AppCompatActivity {
 //        Toast.makeText(getApplicationContext(),"Not working", Toast.LENGTH_LONG) ;
     }
 
-
-
-
+    //TODO what does this do ?
     public void loadButton(){
         exercise.setVisibility(View.VISIBLE);
         exercise.setAnimation(btnAmim) ;
-
     }
-    //we should change it to string
 
+    //we should change it to string TODO change what ?
     public void setLessontitle(int lessonKey ){
 
         if (lessonKey==11)
