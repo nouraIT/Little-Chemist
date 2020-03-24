@@ -2,6 +2,7 @@ package com.example.little_chemist;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -14,6 +15,8 @@ import android.graphics.Rect;
 import android.net.Uri;
 import android.os.Bundle;
 
+import com.example.little_chemist.Chapters_dir.Ch3;
+import com.example.little_chemist.Chapters_dir.Ch4;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.ar.core.*;
@@ -94,11 +97,24 @@ public class LabLesson4 extends AppCompatActivity {
         arFragment = (ARfragment5) getSupportFragmentManager().findFragmentById(R.id.arFragment);
 //        textView = findViewById(R.id.textview);
         Button Reset = findViewById(R.id.reset);
+        Button next = findViewById(R.id.next);
         Reset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 // Reset Code
                 recreate();
+            }
+        });
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                //System.out.println(m);
+
+                //TODO change lesson status
+                Intent h = new Intent(LabLesson4.this, Ch3.class);
+                startActivity(h);
+
             }
         });
         arFragment.getArSceneView().getScene().addOnUpdateListener(frameTime -> {
@@ -171,14 +187,14 @@ public class LabLesson4 extends AppCompatActivity {
         LinearLayout gallery = findViewById(R.id.gallery_layout);
 
         ImageView gas = findViewById(R.id.image1);
-        gas.setImageResource(R.drawable.c1);
+        gas.setImageResource(R.drawable.gas);
         gas.setTooltipText(getString(R.string.gas));
         gas.setOnClickListener(view ->{addObject(Uri.parse("gas.sfb"));});
         gas.setPadding(5,5,5,5);
         //gallery.addView(gas);
 
         ImageView liquid = findViewById(R.id.image2);
-        liquid.setImageResource(R.drawable.c2);
+        liquid.setImageResource(R.drawable.liq);
         liquid.setTooltipText(getString(R.string.liquid));
         liquid.setOnClickListener(view ->{addObject(Uri.parse("liquid.sfb"));});
         liquid.setPadding(5,5,5,5);

@@ -31,6 +31,7 @@ import java.lang.annotation.Target;
 import java.util.Collection;
 import java.util.List;
 import java.util.Timer;
+import java.util.concurrent.TimeUnit;
 
 import com.google.ar.core.Session;
 import com.google.ar.sceneform.Node;
@@ -179,6 +180,11 @@ private  String text;
             textView.setText(R.string.Look);
 //Timer t = new Timer();
             //TODO add timer
+            try {
+                TimeUnit.SECONDS.sleep(10);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             textView.setText(text);
 
 

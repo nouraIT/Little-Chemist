@@ -115,6 +115,8 @@
     <string name="selectgas">Select The Gas Type</string>
     <string name="liquid">Liquid</string>
     <string name="selectliquid">Select The Liquid Type</string>
+    <string name="tap_call6">Tap To Start A Fire!</string>
+    <string name="thro">Choose the element you want to throw in the fire</string>
 
 
 </resources>

@@ -59,6 +59,7 @@ public class LabLesson1 extends AppCompatActivity {
     private boolean appeared = false;
     private Button button;
     private String string;
+    private DatabaseHelper databaseHelper;
     private ModelRenderable andyRenderable;
     private ModelRenderable mObjRenderable;
     private int i=0;
@@ -86,7 +87,7 @@ public class LabLesson1 extends AppCompatActivity {
 
                 //System.out.println(m);
 
-                    //TODO change lesson status
+
                     Intent h = new Intent(LabLesson1.this, Ch1.class);
                     startActivity(h);
 

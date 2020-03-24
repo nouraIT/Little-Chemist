@@ -128,11 +128,11 @@ sceneform.asset('sampledata/orangefire.fbx',
         'src/main/assets/orangefire',
         ['sampledata/orangefire.fbx'])
 ///
-sceneform.asset('sampledata/redfire.fbx',
-        'default',
-        'sampledata/redfire.sfa',
-        'src/main/assets/redfire',
-        ['sampledata/redfire.fbx'])
+//sceneform.asset('sampledata/redfire.fbx',
+//        'default',
+//        'sampledata/redfire.sfa',
+//        'src/main/assets/redfire',
+//        ['sampledata/redfire.fbx'])
 sceneform.asset('sampledata/greenfire.fbx',
         'default',
         'sampledata/greenfire.sfa',
