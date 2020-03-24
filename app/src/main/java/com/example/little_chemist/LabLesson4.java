@@ -3,6 +3,7 @@ package com.example.little_chemist;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -17,6 +18,7 @@ import android.os.Bundle;
 
 import com.example.little_chemist.Chapters_dir.Ch3;
 import com.example.little_chemist.Chapters_dir.Ch4;
+import com.example.little_chemist.Tables.Student;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.ar.core.*;
@@ -89,7 +91,9 @@ public class LabLesson4 extends AppCompatActivity {
     private TextView score = null;
     //points
     private int points = 0;
-
+    private SharedPreferences pref;
+    private  Bundle bundle ;
+    private DatabaseHelper helper;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -109,9 +113,11 @@ public class LabLesson4 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                //System.out.println(m);
-
-                //TODO change lesson status
+                pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
+                String name = pref.getString("username", null); // getting String
+                Student student = helper.getStudent(name);
+                String Lid=""+bundle.getInt("lessonId") ;
+                helper.updateLesson(name,Integer.parseInt(Lid),"completed");
                 Intent h = new Intent(LabLesson4.this, Ch3.class);
                 startActivity(h);
 
