@@ -222,7 +222,7 @@ private static int n=0;
         yellow.setImageResource(R.drawable.yellow);
         //  gas.setTooltipText(getString(R.string.gas));
         yellow.setOnClickListener(view ->{
-            addnew("yellowfire.sfb");
+            addnew("orangefire.sfb");
         });
         yellow.setPadding(5,5,5,5);
 
@@ -238,7 +238,7 @@ private static int n=0;
         orange.setImageResource(R.drawable.orange);
         //  gas.setTooltipText(getString(R.string.gas));
         orange.setOnClickListener(view ->{
-            addnew("orangefire.sfb");
+            addnew("yellowfire.sfb");
         });
         orange.setPadding(5,5,5,5);
 

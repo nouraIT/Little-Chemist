@@ -1,249 +1,31 @@
 {
   animations: [
     {
+      clips: [
+        {
+          name: 'RootNode (gltf orientation matrix)|RootNode (gltf orientation matrix)|RootNode (gltf orientation m',
+        },
+      ],
       path: 'sampledata/orangefire.fbx',
     },
     {
+      clips: [
+        {
+          name: 'RootNode (gltf orientation matrix)|RootNode (gltf orientation matrix)|RootNode (gltf orientation m',
+        },
+      ],
       path: 'sampledata/orangefire.fbx',
     },
   ],
   materials: [
     {
-      name: 'Material_71',
-      parameters: [
-        {
-          baseColor: [
-            1,
-            1,
-            1,
-            1,
-          ],
-        },
-        {
-          baseColorMap: '165',
-        },
-        {
-          normalMap: null,
-        },
-        {
-          interpolatedColor: null,
-        },
-        {
-          metallic: 0,
-        },
-        {
-          metallicMap: null,
-        },
-        {
-          roughness: 1,
-        },
-        {
-          roughnessMap: null,
-        },
-        {
-          opacity: null,
-        },
-      ],
-      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
-    },
-    {
-      name: 'Material_73',
-      parameters: [
-        {
-          baseColor: [
-            1,
-            1,
-            1,
-            1,
-          ],
-        },
-        {
-          baseColorMap: '176',
-        },
-        {
-          normalMap: null,
-        },
-        {
-          interpolatedColor: null,
-        },
-        {
-          metallic: 0,
-        },
-        {
-          metallicMap: null,
-        },
-        {
-          roughness: 1,
-        },
-        {
-          roughnessMap: null,
-        },
-        {
-          opacity: null,
-        },
-      ],
-      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
-    },
-    {
-      name: 'Material_75',
-      parameters: [
-        {
-          baseColor: [
-            1,
-            1,
-            1,
-            1,
-          ],
-        },
-        {
-          baseColorMap: '186',
-        },
-        {
-          normalMap: null,
-        },
-        {
-          interpolatedColor: null,
-        },
-        {
-          metallic: 0,
-        },
-        {
-          metallicMap: null,
-        },
-        {
-          roughness: 1,
-        },
-        {
-          roughnessMap: null,
-        },
-        {
-          opacity: null,
-        },
-      ],
-      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
-    },
-    {
-      name: 'Material_77',
-      parameters: [
-        {
-          baseColor: [
-            1,
-            1,
-            1,
-            1,
-          ],
-        },
-        {
-          baseColorMap: '195',
-        },
-        {
-          normalMap: null,
-        },
-        {
-          interpolatedColor: null,
-        },
-        {
-          metallic: 0,
-        },
-        {
-          metallicMap: null,
-        },
-        {
-          roughness: 1,
-        },
-        {
-          roughnessMap: null,
-        },
-        {
-          opacity: null,
-        },
-      ],
-      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
-    },
-    {
-      name: 'Material_79',
-      parameters: [
-        {
-          baseColor: [
-            1,
-            1,
-            1,
-            1,
-          ],
-        },
-        {
-          baseColorMap: '204',
-        },
-        {
-          normalMap: null,
-        },
-        {
-          interpolatedColor: null,
-        },
-        {
-          metallic: 0,
-        },
-        {
-          metallicMap: null,
-        },
-        {
-          roughness: 1,
-        },
-        {
-          roughnessMap: null,
-        },
-        {
-          opacity: null,
-        },
-      ],
-      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
-    },
-    {
-      name: 'Material_81',
-      parameters: [
-        {
-          baseColor: [
-            1,
-            1,
-            1,
-            1,
-          ],
-        },
-        {
-          baseColorMap: '213',
-        },
-        {
-          normalMap: null,
-        },
-        {
-          interpolatedColor: null,
-        },
-        {
-          metallic: 0,
-        },
-        {
-          metallicMap: null,
-        },
-        {
-          roughness: 1,
-        },
-        {
-          roughnessMap: null,
-        },
-        {
-          opacity: null,
-        },
-      ],
-      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
-    },
-    {
-      name: 'Material_45',
+      name: 'fire',
       parameters: [
         {
           baseColor: [
             0.80000000000000004,
-            0.047058999999999997,
-            0.019608,
+            0.58955900000000006,
+            0.16830000000000001,
             1,
           ],
         },
@@ -275,7 +57,7 @@
       source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
     },
     {
-      name: 'Material_46',
+      name: 'fire_internal',
       parameters: [
         {
           baseColor: [
@@ -316,7 +98,6 @@
   model: {
     attributes: [
       'Position',
-      'Color',
       'TexCoord',
       'Orientation',
       'BoneIndices',
@@ -326,69 +107,7 @@
     file: 'sampledata/orangefire.fbx',
     name: 'orangefire',
     recenter: 'root',
-    scale: 12.538803,
+    scale: 0.04214400000000001,
   },
-  samplers: [
-    {
-      file: 'sampledata\\orangefire.fbm\\198.png',
-      name: '198',
-      pipeline_name: 'orangefire.fbm\\198.png',
-    },
-    {
-      file: 'sampledata\\orangefire.fbm\\165.png',
-      name: '165',
-      pipeline_name: 'orangefire.fbm\\165.png',
-    },
-    {
-      file: 'sampledata\\orangefire.fbm\\169.png',
-      name: '169',
-      pipeline_name: 'orangefire.fbm\\169.png',
-    },
-    {
-      file: 'sampledata\\orangefire.fbm\\176.png',
-      name: '176',
-      pipeline_name: 'orangefire.fbm\\176.png',
-    },
-    {
-      file: 'sampledata\\orangefire.fbm\\204.png',
-      name: '204',
-      pipeline_name: 'orangefire.fbm\\204.png',
-    },
-    {
-      file: 'sampledata\\orangefire.fbm\\180.png',
-      name: '180',
-      pipeline_name: 'orangefire.fbm\\180.png',
-    },
-    {
-      file: 'sampledata\\orangefire.fbm\\195.png',
-      name: '195',
-      pipeline_name: 'orangefire.fbm\\195.png',
-    },
-    {
-      file: 'sampledata\\orangefire.fbm\\186.png',
-      name: '186',
-      pipeline_name: 'orangefire.fbm\\186.png',
-    },
-    {
-      file: 'sampledata\\orangefire.fbm\\189.png',
-      name: '189',
-      pipeline_name: 'orangefire.fbm\\189.png',
-    },
-    {
-      file: 'sampledata\\orangefire.fbm\\207.png',
-      name: '207',
-      pipeline_name: 'orangefire.fbm\\207.png',
-    },
-    {
-      file: 'sampledata\\orangefire.fbm\\213.png',
-      name: '213',
-      pipeline_name: 'orangefire.fbm\\213.png',
-    },
-    {
-      file: 'sampledata\\orangefire.fbm\\216.png',
-      name: '216',
-      pipeline_name: 'orangefire.fbm\\216.png',
-    },
-  ],
   version: '0.54:2',
 }
