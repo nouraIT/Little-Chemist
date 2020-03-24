@@ -3,6 +3,7 @@ package com.example.little_chemist;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 //import android.se.omapi.Session;
@@ -17,6 +18,7 @@ import android.widget.TextView;
 
 import com.example.little_chemist.Chapters_dir.Ch1;
 import com.example.little_chemist.Chapters_dir.Ch2;
+import com.example.little_chemist.Tables.Student;
 import com.google.ar.core.Anchor;
 import com.google.ar.core.AugmentedImage;
 import com.google.ar.core.AugmentedImageDatabase;
@@ -61,6 +63,9 @@ public class LabLesson2 extends AppCompatActivity {
     private ModelRenderable andyRenderable;
     private ModelRenderable mObjRenderable;
     private int i=0;
+    private SharedPreferences pref;
+    private  Bundle bundle ;
+    private DatabaseHelper helper;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -83,7 +88,11 @@ public class LabLesson2 extends AppCompatActivity {
 
                 //System.out.println(m);
 
-                //TODO change lesson status
+                pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
+                String name = pref.getString("username", null); // getting String
+                Student student = helper.getStudent(name);
+                String Lid=""+bundle.getInt("lessonId") ;
+                helper.updateLesson(name,Integer.parseInt(Lid),"completed");
                 Intent h = new Intent(LabLesson2.this, Ch2.class);
                 startActivity(h);
 

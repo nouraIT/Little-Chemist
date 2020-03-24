@@ -130,7 +130,7 @@ sceneform.asset('sampledata/orangefire.fbx',
         'sampledata/orangefire.sfa',
         'src/main/assets/orangefire',
         ['sampledata/orangefire.fbx'])
-///
+
 sceneform.asset('sampledata/redfire.fbx',
         'default',
         'sampledata/redfire.sfa',

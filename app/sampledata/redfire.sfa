@@ -3,7 +3,7 @@
     {
       clips: [
         {
-          name: 'RootNode (gltf orientation matrix)|RootNode (gltf orientation matrix)Action',
+          name: 'RootNode (gltf orientation matrix)|RootNode (gltf orientation matrix)|RootNode (gltf orientation m',
         },
       ],
       path: 'sampledata/redfire.fbx',
@@ -11,7 +11,7 @@
     {
       clips: [
         {
-          name: 'RootNode (gltf orientation matrix)|RootNode (gltf orientation matrix)Action',
+          name: 'RootNode (gltf orientation matrix)|RootNode (gltf orientation matrix)|RootNode (gltf orientation m',
         },
       ],
       path: 'sampledata/redfire.fbx',
@@ -24,8 +24,8 @@
         {
           baseColor: [
             0.80000000000000004,
-            0.80000000000000004,
-            0.80000000000000004,
+            0.10180500000000001,
+            0.088464000000000001,
             1,
           ],
         },
@@ -107,7 +107,7 @@
     file: 'sampledata/redfire.fbx',
     name: 'redfire',
     recenter: 'root',
-    scale: 0.28214400000000001,
+    scale: 0.04214400000000001,
   },
   version: '0.54:2',
 }

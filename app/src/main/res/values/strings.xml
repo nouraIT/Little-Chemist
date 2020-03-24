@@ -205,5 +205,7 @@
     <string name="discovery2">Forces</string>
     <string name="change_image">Change image</string>
     <string name="gallery">Gallery</string>
+    <string name="tap_call6">Tap To Start A Fire!</string>
+    <string name="thro">Choose the element you want to throw in the fire</string>
 
 </resources>

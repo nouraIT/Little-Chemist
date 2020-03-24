@@ -107,7 +107,7 @@
     file: 'sampledata/purplefire.fbx',
     name: 'purplefire',
     recenter: 'root',
-    scale: 0.28214400000000001,
+    scale: 0.05214400000000001,
   },
   version: '0.54:2',
 }

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 //import android.se.omapi.Session;
@@ -19,6 +20,7 @@ import android.widget.TextView;
 
 import com.example.little_chemist.Chapters_dir.Ch1;
 import com.example.little_chemist.Chapters_dir.Ch5;
+import com.example.little_chemist.Tables.Student;
 import com.google.ar.core.Anchor;
 import com.google.ar.core.AugmentedImage;
 import com.google.ar.core.AugmentedImageDatabase;
@@ -59,11 +61,13 @@ public class LabLesson1 extends AppCompatActivity {
     private boolean appeared = false;
     private Button button;
     private String string;
+    private DatabaseHelper helper;
     private ModelRenderable andyRenderable;
     private ModelRenderable mObjRenderable;
     private int i=0;
     private ARfragment2 arFragment;
-
+    private SharedPreferences pref;
+    private  Bundle bundle ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -83,10 +87,11 @@ public class LabLesson1 extends AppCompatActivity {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                //System.out.println(m);
-
-                    //TODO change lesson status
+                pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
+                String name = pref.getString("username", null); // getting String
+                Student student = helper.getStudent(name);
+                String Lid=""+bundle.getInt("lessonId") ;
+                helper.updateLesson(name,Integer.parseInt(Lid),"completed");
                     Intent h = new Intent(LabLesson1.this, Ch1.class);
                     startActivity(h);
 

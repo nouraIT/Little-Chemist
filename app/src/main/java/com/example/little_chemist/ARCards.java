@@ -34,6 +34,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.concurrent.TimeUnit;
 
 import com.google.ar.core.Session;
 import com.google.ar.sceneform.Node;
@@ -196,6 +197,11 @@ public class ARCards extends AppCompatActivity {
 
             //TODO add timer
             new Reminder(5);
+//            try {
+//                TimeUnit.SECONDS.sleep(10);
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
             textView.setText(text);
 
 
