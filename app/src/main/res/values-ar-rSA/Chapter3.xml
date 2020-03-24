@@ -4,17 +4,11 @@
     <string name="C3L1S1" ><b> الملح </b> يُعرف بأنه مكون تضيفه إلى طعامك ولكنه أكثر من ذلك.</string>
     <string name="C3L1S2" >توجد على الأرض وهي مكونة من عنصرين: الصوديوم <b> Na </b> والكلوريد <b> Cl </b>.</string>
     <string name="C3L1S3" >الاسم العلمي للملح هو <b> كلوريد الصوديوم </b> (NaCl)</string>
-    <!--    TODO add an image here -->
     <string name="C3L1S4" >الملح مهم جدًا لجسمك</string>
-    <!--    TODO add an image here -->
     <string name="C3L1S5" >كمية ملح صحية \n -تساعد الجسم على التحكم في الكمية المناسبة من الماء والسوائل التي تحتاجها. \n -يساعد قلبك على ضخ الدم بمعدل صحي - يساعد عضلاتك وأعصابك على العمل بشكل صحيح. \n</string>
     <string name="C3L1S6" >يعد الملح أيضًا مطهرًا طبيعيًا ، مما يعني أنه يمكن أن يقتل الجراثيم. \n إذا كنت مصابًا بالتهاب في الحلق ، فقد تكون قد غرغت بالماء المالح لتهدئته وشفائه  \n ويمكن أن يساعد أيضًا في التئام الجروح أو القروح الجسم.</string>
-    <!--    TODO add an image here -->
     <string name="C3L1S7" >الملح يبدو رائعا أليس كذلك؟  \n ولكن ماذا لو كان لديك الكثير من الملح؟</string>
-    <!--    TODO add an image here -->
     <string name="C3L1S8" >سيؤدي ذلك إلى ضخ قلبك ودمك بشكل أسرع وأكثر صعوبة لإزالة الملح الإضافي الذي لا يحتاجه جسمك \ n هذا يجعل ضغط الدم مرتفعًا جدًا بمرور الوقت ويمكن أن يجعلك غير صحي.</string>
-    <!--    TODO add an image here -->
-
     <!--         LESSON 1  exercises          -->
     <string-array name="C3L1S4E1M">
         <item>الاسم العلمي للملح</item>
@@ -23,72 +17,46 @@
         <item>Fe</item>
         <item>NO3</item>
     </string-array>
-
-
     <string-array name="C3L1A">
         <item>NaCl</item>
-        <!--        <item>Chromatography</item>-->
     </string-array>
     <!--     ========================     LESSON 1  END ========================          -->
 
 
-
-
-
     <!--         LESSON 2            -->
     <string name="C3L2S1"><b> المادة </b> هي لبنات البناء في العالم.</string>
-    <!--    TODO add an image here -->
     <string name="C3L2S2">تخيل أنك تخبز كعكة.\n تقوم بخلط مكونات الكيك معًا ثم تقليبها معًا ، \n تبدأ في المزج في خليط واحد ، \n ولن تتمكن من اختيار المكونات الأصلية للوصفة.\n لماذا يحدث هذا؟ \n هذا بسبب كيفية عمل <b> المادة </b> عندما تتلامس مع أشكال أخرى من المادة.</string>
-    <!--    TODO add an image here -->
     <string name="C3L2S3">يمكن أن تأتي المادة على شكل \n مادة صلبة أو سائلة أو غازية.</string>
-    <!--    TODO add an image here -->
     <string name="C3L2S4">جميع المواد الصلبة والسوائل والغازات مصنوعة من الذرات \n "اللبنات الأساسية للمادة" \n الذرات هي أبسط شكل للمادة ولا يمكن تفكيكها.</string>
-    <!--    TODO add an image here -->
     <string name="C3L2S5">الذرات صغيرة جدًا ولا يمكن رؤيتها بالعين البشرية ، \n ولكنها موجودة من حولنا \n وحتى فينا!</string>
-    <!--    TODO add an image here -->
     <string name="C3L2S6"> الذرات ليست متشابهة ، فهناك 118 نوعًا مختلفًا من الذرات ، \n تسمى العناصر. 92 من هذه العناصر طبيعية\n والباقي من صنع الإنسان.</string>
     <string name="C3L2S7">من أمثلة العناصر التي قد تتعرف عليها مثل الأكسجين والألمنيوم والحديد.</string>
-    <!--    TODO add an image here -->
     <string name="C3L2S8"><b> الحل </b> هو عندما لا يمكن تمييز المواد بسهولة عن بعضها البعض. \n مثل خلط الملح بالماء أو خبز كعكة</string>
-    <!--    TODO add an image here -->
     <string name="C3L2S9"> <b> المزائج </b> هي مادة يتم فيها مزج مادتين أو أكثر ولكن لا يتم ربطهما كيميائيًا معًا ، \ n وهذا يعني عدم حدوث تفاعل كيميائي. \ n مثل كيس M Ms</string>
-    <!--    TODO add an image here -->
-
     <!--         LESSON 2  exercises          -->
-
+    <string-array name="C3L2S4E1M">
+        <item>أنواع المادة هي:</item>
+        <item>الغاز</item>
+        <item>سائل</item>
+        <item>الصلب</item>
+        <item>جميع الخيارات السابقة</item>
+    </string-array>
+    <string-array name="C3L2A">
+        <item>جميع الخيارات السابقة</item>
+    </string-array>
     <!--     ========================     LESSON 2  END ========================          -->
 
-    <!--         LESSON 3 is a lab
-
-    EXPLOSION
-
-                 LESSON 3 is a lab -->
-
-
-    <!--         LESSON 4
-
-
-
-
-    might be a lab-->
-
+    <!--         LESSON 3 is a lab fire-->
+    <!--         LESSON 4 is a lab states of matter-->
 
     <!--         LESSON 5            -->
     <string name="C3L5S1"><b> الكيمياء الحيوية </b> هي دراسة كيمياء الكائنات الحية. \ n يعمل علماء الكيمياء الحيوية على تحديد آلاف المركبات الكيميائية المختلفة والمعالجة التي تحدث في الكائنات الحية. \ n يسعون إلى فهم الأدوار التي تلعبها هذه في تطوير و إدامة الحياة.</string>
-    <!--    TODO add an image here -->
     <string name="C3L5S2">ساعدت دراسة الكيمياء الحيوية الناس بطرق عديدة. \ n تمكن العلماء من اكتشاف مجموعة متنوعة من الأمراض من خلال دراسة الخصائص الكيميائية للدم.</string>
     <string name="C3L5S3">كما ساعد العلماء على فهم فيروس كورونا (COVID-19) بشكل أفضل</string>
-
-
     <!--         LESSON 5            -->
-
-
-
-
 
     <!--        Quiz Questions           -->
     <string-array name="C3Quiz_Questions">
-
         <item name="Q1">Why is salt important to your body\'s health?</item>
         <item name="Q2">Too much salt can cause _____.</item>
         <item name="Q3">Salt is a natural mineral made of _____.</item>
@@ -97,10 +65,8 @@
         <item name="Q6">What is an atom?</item>
         <item name="Q7">How many atom types there exists?</item>
         <item name="Q8">_____ the study of the chemistry of living things</item>
-        <item name="Q9"> </item>
-        <item name="Q10"> </item>
-
-
+        <item name="Q9">Pizza is an example of a _____.</item>
+        <item name="Q10">What are the forms of Matter?</item>
     </string-array>
     <!--         Quiz Total Answers          -->
 
