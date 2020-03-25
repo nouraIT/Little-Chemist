@@ -135,7 +135,64 @@
 
 
   </string-array>
+  <string-array name="C1Quiz_Q6">
 
+    <item name="Q6">John Dalton proposed _____.</item>
+    <item name="A1">The Atomic Theory.</item>
+    <item name="A2">Gravity.</item>
+    <item name="A3">Atomic Mass.</item>
+    <item name="A4">Electrons.</item>
+    <item name="CA6">The Atomic Theory.</item>
+
+
+  </string-array>
+  <string-array name="C1Quiz_Q7">
+
+    <item name="Q7">Isaac Newton suggested that _____.</item>
+    <item name="A1">Atoms are always far apart.</item>
+    <item name="A2">Atoms are held together.</item>
+    <item name="A3">Atoms have some distance.</item>
+    <item name="A4">Atoms do not exist.</item>
+    <item name="CA7">Atoms are held together.</item>
+
+
+  </string-array>
+
+  <string-array name="C1Quiz_Q8">
+
+    <item name="Q8">Atomic mass is calculated by _____.</item>
+    <item name="A1">Only Electrons.</item>
+    <item name="A2">Protons and neutrons.</item>
+    <item name="A3">It is not calculated.</item>
+    <item name="A4">Only protons.</item>
+    <item name="CA8">Protons and neutrons.</item>
+
+
+  </string-array>
+
+  <string-array name="C1Quiz_Q9">
+
+    <item name="Q9">Isotopes are atoms with the same number of _____.</item>
+    <item name="A1">Only protons.</item>
+    <item name="A2">Protons and Electrons.</item>
+    <item name="A3">Only Electrons.</item>
+    <item name="A4">None of the previous.</item>
+    <item name="CA9">Protons and Electrons.</item>
+
+
+  </string-array>
+
+  <string-array name="C1Quiz_Q10">
+
+    <item name="Q10">Atoms are made of _____.</item>
+    <item name="A1">Building blocks.</item>
+    <item name="A2">Towers.</item>
+    <item name="A3">Sand.</item>
+    <item name="A4">Air.</item>
+    <item name="CA10">Building blocks.</item>
+
+
+  </string-array>
   <!--         Quiz correct Answers          -->
   <string-array name="C1Quiz_Correct">
 
@@ -144,6 +201,11 @@
     <item name="CA3">different amounts of electrons.</item>
     <item name="CA4">They share their electrons.</item>
     <item name="CA5">atomic masses</item>
+    <item name="CA6">The Atomic Theory.</item>
+    <item name="CA7">Atoms are held together.</item>
+    <item name="CA8">Protons and neutrons.</item>
+    <item name="CA9">Protons and Electrons.</item>
+    <item name="CA10">Building blocks.</item>
 
   </string-array>
 
