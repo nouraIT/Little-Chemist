@@ -96,6 +96,7 @@ public class LabLesson2 extends AppCompatActivity {
                 helper.updateLesson(name,Lid,"completed");
                 Intent h = new Intent(LabLesson2.this, Ch2.class);
                 startActivity(h);
+                finish();
 
             }
         });

@@ -131,6 +131,7 @@ private static int n=0;
                 helper.updateLesson(name,Lid,"completed");
                 Intent h = new Intent(LabLesson5.this, Ch3.class);
                 startActivity(h);
+                finish();
 
             }
         });

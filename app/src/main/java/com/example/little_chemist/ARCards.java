@@ -107,7 +107,7 @@ public class ARCards extends AppCompatActivity {
 
                     h = new Intent(ARCards.this, Ch1.class);
                     startActivity(h);
-
+                    finish();
                 }
 
             }
