@@ -33,13 +33,9 @@ import androidx.cardview.widget.CardView;
 
 public class Ch1 extends AppCompatActivity {
     private CardView lsn1, lsn2, lsn3, lsn4, lsn5,quiz;
-//    private ImageView lockpad1 = findViewById(R.id.lockicon1), lockpad2 = findViewById(R.id.lockicon2),lockpad3 = findViewById(R.id.lockicon3),lockpad4 = findViewById(R.id.lockicon4),lockpad5 = findViewById(R.id.lockicon5);
-
-
     SharedPreferences pref;
     DatabaseHelper helper = new DatabaseHelper(Ch1.this);
     String statue;
-    ImageView lockpad;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,6 +78,7 @@ public class Ch1 extends AppCompatActivity {
         int i ;
         CardView[] lsns = {lsn1,lsn2,lsn3,lsn4,lsn5};
         ImageView[] locks = {findViewById(R.id.lockicon1) , findViewById(R.id.lockicon2), findViewById(R.id.lockicon3), findViewById(R.id.lockicon4), findViewById(R.id.lockicon5)};
+        ImageView[] lsnimgs ={findViewById(R.id.lsnimg1), findViewById(R.id.lsnimg2) , findViewById(R.id.lsnimg3) , findViewById(R.id.lsnimg4), findViewById(R.id.lsnimg5)};
 
         for(i =0;i<5;i++){
 
@@ -89,27 +86,35 @@ public class Ch1 extends AppCompatActivity {
             if(statue.equals("unlocked")) {
                 lsns[i].setCardBackgroundColor(getResources().getColor((R.color.primaryYellow)));
                 locks[i].setImageDrawable(getResources().getDrawable(R.drawable.padlock));
-//            lin.setBackgroundResource(R.drawable.unlocked_lsn);
+                lsnimgs[i].setAlpha((float) 0.5);
+
             }
             else if(statue.equals("completed")) {
                 lsns[i].setCardBackgroundColor(getResources().getColor((R.color.Completed)));
                 locks[i].setImageDrawable(getResources().getDrawable(R.drawable.star));
+                lsnimgs[i].setAlpha((float)1);
             }
             else {
                 lsns[i].setCardBackgroundColor(getResources().getColor((R.color.Locked)));
                 locks[i].setImageDrawable(getResources().getDrawable(R.drawable.lock));
+                lsnimgs[i].setAlpha((float) 0.5);
 
             }
         }
 
 
         statue = student.getQzLock("1");
+        ImageView qzimg = findViewById(R.id.qzimg);
 
         //System.out.println(statue);
-        if(statue.equals("unlocked"))
+        if(statue.equals("unlocked")) {
             quiz.setCardBackgroundColor(getResources().getColor((R.color.logoLightRed)));
-        else
+            qzimg.setAlpha((float) 0.5);
+        }
+        else {
             quiz.setCardBackgroundColor(getResources().getColor((R.color.Completed)));
+            qzimg.setAlpha((float)1);
+        }
 
         // ======================== Lessons btns ========================
 

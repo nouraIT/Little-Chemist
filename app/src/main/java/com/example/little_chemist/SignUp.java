@@ -10,6 +10,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
@@ -23,31 +25,30 @@ public class SignUp extends AppCompatActivity {
     int pos;
 
     TextInputLayout ET_UserName ,ET_Password ,ET_ConfirmPassword,SecurityAn;
-
+    Button signupButton , backLogin;
     String UserNameStr, PasswordStr, ConfirmPasswordStr,SecurityA,spinnerSelected;
-     Spinner spinner;
+    Spinner spinner;
+    ArrayAdapter<CharSequence> adapter;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.sign_up);
 
 
-        final Button signupButton = findViewById(R.id.signup);
-
+        signupButton = findViewById(R.id.signup);
+        backLogin = findViewById(R.id.backToLogin);
         spinner = (Spinner) findViewById(R.id.security_questions);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.SecurityQs, R.layout.spinner_text);
-
+        adapter = ArrayAdapter.createFromResource(this, R.array.SecurityQs, R.layout.spinner_text);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
-
 
         ET_UserName = findViewById(R.id.username2);
         ET_Password = findViewById(R.id.password2);
         ET_ConfirmPassword= findViewById(R.id.password22);
         SecurityAn= findViewById(R.id.securityA);
-
-
 
         UserNameStr=ET_UserName.getEditText().getText().toString().trim();
         PasswordStr=ET_Password.getEditText().getText().toString().trim();
@@ -257,6 +258,13 @@ public class SignUp extends AppCompatActivity {
             }//on click
         });
 
+        backLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent n = new Intent(SignUp.this,LoginPage.class);
+                startActivity(n);
+            }
+        });
     }
 
 
@@ -331,129 +339,5 @@ public class SignUp extends AppCompatActivity {
         return true;
     }
 
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item){
-//
-//        switch(item.getItemId()){
-//            case android.R.:
-//                finish();
-//                return true;
-//        }
-//        return super.onOptionsItemSelected(item);
-//    }
-
 
 }
-
-
-
-
-/*
-    //final ProgressBar loadingProgressBar = findViewById(R.id.loading);
-    AppDatabase db;
-
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.sign_up);
-
-
-         db = Room.databaseBuilder(getApplicationContext(),
-                AppDatabase.class, "LittleChemDB").build();
-
-
-        final EditText username = findViewById(R.id.username2);
-        final EditText password = findViewById(R.id.password2);
-        final EditText passwordConf = findViewById(R.id.password22);
-        final Button signupButton = findViewById(R.id.button2);
-
-        final String un = username.getText().toString();
-        final String pass = password.getText().toString();
-        final String passConf = passwordConf.getText().toString();
-
-        //runroom("esraa","1234567");
-
-
-        /*TextWatcher afterTextChangedListener = new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-            }
-
-            public void afterTextChanged(Editable s) {
-                signupButton.setEnabled(true);
-
-            }
-        };
-
-        username.addTextChangedListener(afterTextChangedListener);
-        password.addTextChangedListener(afterTextChangedListener);
-        password.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-
-            @Override
-            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                if (actionId == EditorInfo.IME_ACTION_DONE) {
-                    return true;
-                }
-                return false;
-            }
-        });
-
-
-        signupButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //loadingProgressBar.setVisibility(View.VISIBLE);
-
-                Log.i(" test", "hello hi" );
-
-                if(isUserNameValid(un) && isPasswordValid(pass,passConf)){
-                    runroom(un,pass);
-                    Intent n = new Intent(SignUp.this, Home.class);
-                    startActivity(n);
-                    finish();
-                }
-
-            }
-        });
-
-
-    }
-
-    public void runroom(String un, String pass){
-        User us = new User(un , pass);
-        db.userDao().insertAll(us);
-
-        Log.i("db test", db.userDao().findByName(un).toString() );
-
-    }
-    //public void onChanged(){
-
-    //}
-
-    private boolean isUserNameValid(String username) {
-        if (username == null) {
-            return false;
-        }
-
-        return true;
-        /*
-        if (username.contains("@")) {
-            return Patterns.EMAIL_ADDRESS.matcher(username).matches();
-        } else {
-            return !username.trim().isEmpty();
-        }
-    }
-
-    private boolean isPasswordValid(String password, String passwordConf) {
-        return password != null && password.trim().length() > 5 && password.equals(passwordConf);
-    }
-
-
-
-}
-*/

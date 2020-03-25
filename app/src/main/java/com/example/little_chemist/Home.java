@@ -1,8 +1,8 @@
 package com.example.little_chemist;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
@@ -23,50 +23,42 @@ import org.eazegraph.lib.models.PieModel;
 import java.util.Locale;
 
 import info.hoang8f.widget.FButton;
-import pl.droidsonroids.gif.GifImageView;
 
 
 public class Home extends AppCompatActivity {
 
-    private ImageView set, testScore;
-    private CardView cv ;
-    private CardView chapters;
+    private ImageView set;
+    FButton chapters;
     private  org.eazegraph.lib.charts.PieChart pie ;
     boolean arabicFlag;
     DatabaseHelper helper = new DatabaseHelper(Home.this);
-    public static boolean alreadyRecreated = false;
-    public static boolean AlreadyGreeted = false;
+    public static boolean alreadyRecreated = false , AlreadyGreeted = false;
     static Student student ;//= new Student();
 
 
+    @SuppressLint("CutPasteId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_home);
-        //Body of your click handler
-//        Thread thread = new Thread(new Runnable(){
-//            @Override
-//            public void run(){
-//
-//            }
-//        });
-//        thread.start();
 
-        FButton disabledBtn = findViewById(R.id.homeBtn) ;
-        disabledBtn.setButtonColor(getResources().getColor(R.color.HomeButton));
-        disabledBtn.setShadowColor(getResources().getColor(R.color.gray));
-        disabledBtn.setShadowEnabled(true);
-        disabledBtn.setShadowHeight(7);
-        disabledBtn.setCornerRadius(30);
+        // ========================= initializing  ============================================
+        set = findViewById(R.id.settings);
+        pie = findViewById(R.id.piechart) ;
+        chapters = findViewById(R.id.homeBtn) ;
+        chapters.setButtonColor(getResources().getColor(R.color.HomeButton));
+        chapters.setShadowColor(getResources().getColor(R.color.gray));
+        chapters.setShadowEnabled(true);
+        chapters.setShadowHeight(7);
+        chapters.setCornerRadius(30);
 
         SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
         String name = pref.getString("username", null); // getting String
         student = helper.getStudent(name);
+        // ========================= initializing  ============================================
 
-        set = findViewById(R.id.settings);
-        chapters = findViewById(R.id.cardviewchapters);
 
         //welcome
         if(!AlreadyGreeted) {
@@ -74,8 +66,6 @@ public class Home extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), welcome, Toast.LENGTH_LONG).show();
             AlreadyGreeted = true;
         }
-
-
         //check the lang
         arabicFlag = helper.checkLang(name);
 
@@ -89,7 +79,7 @@ public class Home extends AppCompatActivity {
                 recreate();
                 alreadyRecreated = true;
             }
-        }else{
+        } else{
             Locale locale = new Locale("en");
             Locale.setDefault(locale);
             Configuration config = new Configuration();
@@ -102,6 +92,7 @@ public class Home extends AppCompatActivity {
         }
 
 
+        // ========================= Buttons ============================================
         set.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View view) {
@@ -118,24 +109,21 @@ public class Home extends AppCompatActivity {
             }
         });
 
-
-        disabledBtn.setOnClickListener(new View.OnClickListener(){
+        chapters.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
                 Thread thread = new Thread(new Runnable(){
                     @Override
                     public void run(){
 
-                    Intent n = new Intent(Home.this, Chapters.class);
-                    //n.putExtra("student",student);
-                    startActivity(n);
-                    //finish();
-                        }
+                        Intent n = new Intent(Home.this, Chapters.class);
+                        //n.putExtra("student",student);
+                        startActivity(n);
+                    }
                 });
                 thread.start();
             }
         });
 
-        pie = findViewById(R.id.piechart) ;
         pie.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View view) {
@@ -152,38 +140,13 @@ public class Home extends AppCompatActivity {
                 thread.start();
             }
         });
+        // ========================= Buttons ============================================
 
 
-
-        //"1:0,2:0,3:0,4:0,5:0,"
-//        int []chvalue = new int[5];
-//
-////        System.out.println(progress);
-//
-//        for(int i =0;i<5;i++){
-//
-//            int startIndex = progress.indexOf("c"+String.valueOf(i+1));
-//            int endIndex = progress.indexOf(",",startIndex);
-//
-////            System.out.println(startIndex+" and "+endIndex);
-//
-//            chvalue[i] = Integer.parseInt( progress.substring(startIndex + 3 , endIndex ));
-//
-//
-//            if(chvalue[i] == 0) {
-//                chvalue[i] = 1;
-////                System.out.println(i+" "+chvalue[i]);
-//
-//            }
-
-//        }
+        // ========================= progress and chart  ============================================
         int progress = student.viewProgress();
-//        System.out.println(progress);
         ProgressBar progressbar = findViewById(R.id.content_pro);
         progressbar.setProgress(progress,true);
-
-
-
 
         PieChart mPieChart = (PieChart) findViewById(R.id.piechart);
         double[] scores = student.GetTotalScore();
@@ -195,7 +158,7 @@ public class Home extends AppCompatActivity {
         mPieChart.addPieSlice(new PieModel(getString(R.string.Ch5Name), (float) scores[4], Color.parseColor("#DF3241") ));
 
         mPieChart.startAnimation();
-
+        // ========================= progress and chart  ============================================
 
 
     }

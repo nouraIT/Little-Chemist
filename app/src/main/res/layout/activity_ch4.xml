@@ -142,6 +142,7 @@
                             />
 
                         <ImageView
+                            android:id="@+id/lsnimg1"
                             android:layout_width="70dp"
                             android:layout_height="70dp"
 
@@ -204,6 +205,7 @@
 
                             />
                         <ImageView
+                            android:id="@+id/lsnimg2"
                             android:layout_width="70dp"
                             android:layout_height="70dp"
                             android:alpha="0.5"
@@ -270,6 +272,8 @@
                             />
 
                         <ImageView
+                            android:id="@+id/lsnimg3"
+
                             android:layout_width="70dp"
                             android:layout_height="70dp"
                             android:alpha="0.5"
@@ -351,6 +355,7 @@
                             />
 
                         <ImageView
+                            android:id="@+id/lsnimg4"
                             android:layout_width="70dp"
                             android:layout_height="70dp"
 
@@ -415,6 +420,7 @@
 
                             />
                         <ImageView
+                            android:id="@+id/lsnimg5"
                             android:layout_width="60dp"
                             android:layout_height="60dp"
                             android:layout_marginStart="3dp"
@@ -467,6 +473,8 @@
 
                             />
                         <ImageView
+                            android:id="@+id/qzimg"
+
                             android:layout_width="70dp"
                             android:layout_height="70dp"
                             android:layout_marginTop="10dp"

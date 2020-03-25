@@ -141,6 +141,7 @@
                             />
 
                         <ImageView
+                            android:id="@+id/lsnimg1"
                             android:layout_width="70dp"
                             android:layout_height="70dp"
 
@@ -204,10 +205,11 @@
                         android:fontFamily="@font/dk_sugary_pancake"
                         />
                     <ImageView
+                        android:id="@+id/lsnimg2"
+
                         android:layout_width="70dp"
                         android:layout_height="70dp"
                         android:layout_marginTop="15dp"
-                        android:alpha="0.5"
                         android:background="@drawable/flash"
                         android:contentDescription="@string/Ch1Lsn2" />
 
@@ -269,10 +271,11 @@
                         />
 
                     <ImageView
+                        android:id="@+id/lsnimg3"
+
                         android:layout_width="70dp"
                         android:layout_height="70dp"
                         android:layout_marginTop="15dp"
-                        android:alpha="0.5"
                         android:background="@drawable/twins"
                         android:contentDescription="@string/Ch1Lsn3" />
 
@@ -350,6 +353,8 @@
                         android:textSize="12dp" />
 
                     <ImageView
+                        android:id="@+id/lsnimg4"
+
                         android:layout_width="70dp"
                         android:layout_height="70dp"
 
@@ -416,6 +421,8 @@
                         android:fontFamily="@font/dk_sugary_pancake"
                         />
                     <ImageView
+                        android:id="@+id/lsnimg5"
+
                         android:layout_width="70dp"
                         android:layout_height="70dp"
                         android:alpha="0.5"
@@ -465,6 +472,8 @@
                         android:fontFamily="@font/dk_sugary_pancake"
                         />
                     <ImageView
+                        android:id="@+id/qzimg"
+
                         android:layout_width="70dp"
                         android:layout_height="70dp"
                         android:layout_marginTop="10dp"

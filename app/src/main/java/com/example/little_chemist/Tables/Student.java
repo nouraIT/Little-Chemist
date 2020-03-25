@@ -120,16 +120,22 @@ public class Student extends AppCompatActivity implements Serializable {
 
     public String getLsnLock(String num){
 
+        String status ;
+
         int lsnIndex = LSNLocks.indexOf(num);
         int endIndex = LSNLocks.indexOf(",",lsnIndex);
-        return LSNLocks.substring(lsnIndex+2,endIndex);
 
+        if(num.length()==2)
+            status = LSNLocks.substring(lsnIndex+3,endIndex);
+        else
+            status = LSNLocks.substring(lsnIndex+2,endIndex);
+
+        return status;
     }
 
     public String getChLock(String num) {
         int lsnIndex = CHLocks.indexOf(num);
         int endIndex = CHLocks.indexOf(",",lsnIndex);
-
         return CHLocks.substring(lsnIndex+2,endIndex);
 
     }

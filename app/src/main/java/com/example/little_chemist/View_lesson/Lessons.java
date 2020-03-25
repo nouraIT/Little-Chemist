@@ -222,7 +222,7 @@ public class Lessons extends AppCompatActivity {
                 Student student = helper.getStudent(name);
                 String Lid=""+bundle.getInt("lessonId") ;
 
-                helper.updateLesson(name,Integer.parseInt(Lid),"completed");//,Integer.toString(lessonkey).charAt(0));
+                helper.updateLesson(name,bundle.getInt("lessonId"),"completed");//,Integer.toString(lessonkey).charAt(0));
                 statue = student.getLsnLock(Lid);
                 System.out.println(statue) ;
 

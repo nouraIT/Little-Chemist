@@ -169,7 +169,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             scores="c1:100,c2:70,c3:40,c4:9,c5:0,";
             qz="1:completed,2:unlocked,3:unlocked,4:unlocked,5:unlocked,";
             ch="1:completed,2:unlocked,3:unlocked,4:unlocked,5:unlocked,";
-            ls="1:completed,2:unlocked,3:unlocked,4:unlocked,5:unlocked,6:ununlocked,7:unlocked,8:unlocked,9:unlocked,10:unlocked," +
+            ls="1:completed,2:unlocked,3:unlocked,4:unlocked,5:unlocked,6:unlocked,7:unlocked,8:unlocked,9:unlocked,10:unlocked," +
                     "11:unlocked,12:unlocked,13:unlocked,14:unlocked,15:unlocked,16:unlocked,17:unlocked,18:unlocked,19:unlocked,20:unlocked," +
                     "21:unlocked,22:unlocked,23:unlocked,24:unlocked,25:unlocked,";;
         }
@@ -526,7 +526,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 endIndex = LLOCKS.indexOf(",",firstIndex);
                 System.out.println(LLOCKS.substring(firstIndex+2,endIndex));
 
-                oldStatus += (i+1)+":"+LLOCKS.substring(firstIndex+2,endIndex)+",";
+                if(lsnNum.length()!=2)
+                    oldStatus += (i+1)+":"+LLOCKS.substring(firstIndex+2,endIndex)+",";
+                else
+                    oldStatus += (i+1)+":"+LLOCKS.substring(firstIndex+3,endIndex)+",";
+
             }
 
             if(!oldStatus.equals(""))
