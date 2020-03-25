@@ -61,7 +61,7 @@ public class LabLesson1 extends AppCompatActivity {
     private boolean appeared = false;
     private Button button;
     private String string;
-    private DatabaseHelper helper;
+    private DatabaseHelper helper = new DatabaseHelper(this);
     private ModelRenderable andyRenderable;
     private ModelRenderable mObjRenderable;
     private int i=0;
@@ -90,8 +90,8 @@ public class LabLesson1 extends AppCompatActivity {
                 pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
                 String name = pref.getString("username", null); // getting String
                 Student student = helper.getStudent(name);
-                String Lid=""+bundle.getInt("lessonId") ;
-                helper.updateLesson(name,Integer.parseInt(Lid),"completed");
+                int Lid=bundle.getInt("lessonId") ;
+                helper.updateLesson(name,Lid,"completed");
                     Intent h = new Intent(LabLesson1.this, Ch1.class);
                     startActivity(h);
 
@@ -113,7 +113,7 @@ public class LabLesson1 extends AppCompatActivity {
                     skeletonNode.setRenderable(modelRenderable);
                     arFragment.getArSceneView().getScene().addChild(anchorNode);
                     button= findViewById(R.id.button);
-
+                    textView.setText(R.string.split_atom);
                     button.setOnClickListener(view ->  animate(modelRenderable));
 
 
@@ -126,7 +126,7 @@ public class LabLesson1 extends AppCompatActivity {
     }
 
     private void animate(ModelRenderable modelRenderable) {
-        textView.setText(R.string.split_atom);
+
         if(modelAnimator != null && modelAnimator.isRunning())
             modelAnimator.end();
 

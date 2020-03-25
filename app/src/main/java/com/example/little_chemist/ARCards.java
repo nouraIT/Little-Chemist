@@ -196,7 +196,7 @@ public class ARCards extends AppCompatActivity {
             textView.setText(R.string.Look);
 
             //TODO add timer
-            new Reminder(5);
+            new Reminder(30);
 //            try {
 //                TimeUnit.SECONDS.sleep(10);
 //            } catch (InterruptedException e) {

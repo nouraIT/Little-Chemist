@@ -93,7 +93,7 @@ public class LabLesson4 extends AppCompatActivity {
     private int points = 0;
     private SharedPreferences pref;
     private  Bundle bundle ;
-    private DatabaseHelper helper;
+    private DatabaseHelper helper = new DatabaseHelper(this);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -116,8 +116,8 @@ public class LabLesson4 extends AppCompatActivity {
                 pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
                 String name = pref.getString("username", null); // getting String
                 Student student = helper.getStudent(name);
-                String Lid=""+bundle.getInt("lessonId") ;
-                helper.updateLesson(name,Integer.parseInt(Lid),"completed");
+                int Lid=bundle.getInt("lessonId") ;
+                helper.updateLesson(name,Lid,"completed");
                 Intent h = new Intent(LabLesson4.this, Ch3.class);
                 startActivity(h);
 
