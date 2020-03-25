@@ -31,7 +31,7 @@
     <string name="C3L2S6">Atoms are not all the same, there are 118 different types of atoms,\n called elements. 92 Of these elements are natural\n and the rest are man-made. </string>
     <string name="C3L2S7">Examples ot element that you might recognise are like oxygen, aluminum and iron.</string>
     <string name="C3L2S8"><b>Solution</b> is when substances cannot be distinguished easily from one another.\n like mixing salt with water or baking a cake</string>
-    <string name="C3L2S9"><b>Mixtures</b> is a substance in which two or more substances are mixed but not chemically joined together,\n that means a chemical reaction has not taken place.\n like a bag of M&amp;Ms</string>
+    <string name="C3L2S9"><b>Mixtures</b> is a substance in which two or more substances are mixed but not chemically joined together,\\n that means a chemical reaction has not taken place.\\n like a bag of M&amp;Ms</string>
     <!--         LESSON 2  exercises          -->
     <string-array name="C3L2S4E1M">
         <item>Matter forms are: </item>

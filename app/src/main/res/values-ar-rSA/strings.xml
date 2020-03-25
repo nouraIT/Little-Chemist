@@ -57,7 +57,6 @@
     <string name="nameNotExist">اسم المستخدم غير موجود</string>
     <string name="SecurityAwrong">الإجابة الأمنية لا تتطابق مع الإجابة التي كتبتها عند التسجيل</string>
     <string name="SecurityQwrong">السؤال الامني لا يطابق السؤال الذي اخترته عند التسجيل</string>
-    <string name="action_settings">الإعدادات</string>
     <string name="security_question">السؤال الامني</string>
     <string name="progressBar">مقياس التقدم</string>
     <string name="no">لا</string>
@@ -117,6 +116,38 @@
     <string name="hydrogen2">الهيدروجين هو العنصر الأول في الجدول الدوري</string>
     <string name="lithium1">بطاقة الليثيوم.</string>
     <string name="lithium2">الرقم الذري لليثيوم هو ثلاثة ورمزه هو Li</string>
+    <string name="sodium1">بطاقة الصوديوم</string>
+    <string name="sodium2">الرقم الذري للصوديوم هو 11 ورمزه هو Na</string>
+    <string name="barium1">بطاقة الباريوم</string>
+    <string name="barium2">الرقم الذري للباريوم هو 56 ورمزه هو Ba</string>
+    <string name="calcium1">بطاقة الكالسيوم</string>
+    <string name="calcium2">العدد الذري للكالسيوم 20 ورمزه Ca</string>
+    <string name="magnesium1">بطاقة المغنيسيوم</string>
+    <string name="magnesium2">العدد الذري للمغنيسيوم 12 ورمزه هو Mg</string>
+    <string name="fluorine1">بطاقة الفلورين</string>
+    <string name="fluorine2">الرقم الذري للفلور هو 9 ورمزه هو F</string>
+    <string name="chlorine1">بطاقة الكلور</string>
+    <string name="chlorine2">الرقم الذري للكلور 17 ورمزه Cl</string>
+    <string name="bromine1">بطاقة البروم</string>
+    <string name="bromine2">الرقم الذري للبروم هو 35 ورمزه هو Br</string>
+    <string name="argon1">بطاقة الأرجون</string>
+    <string name="argon2">الرقم الذري للأرجون هو 18 ورمزه هو Ar</string>
+    <string name="helium1">بطاقة الهليوم</string>
+    <string name="helium2">الرقم الذري للهليوم هو 2 ورمزه هوHe</string>
+    <string name="neon1">بطاقة النيون</string>
+    <string name="neon2">العدد الذري للنيون هو 10 ورمزه هو Ne</string>
+    <string name="done">انتهيت</string>
+    <string name="prepare2">يرجى إعداد 3 بطاقات من الملزمة</string>
+    <string name="gas">غاز</string>
+    <string name="selectgas">حدد نوع الغاز</string>
+    <string name="liquid">سائل</string>
+    <string name="selectliquid">حدد نوع السائل</string>
+    <string name="discovery1">النظرية الذرية</string>
+    <string name="discovery2">القوات</string>
+    <string name="change_image">تغيير الصورة</string>
+    <string name="gallery">معرض الصور</string>
+    <string name="tap_call6">انقر لاشعال النار! بعد ظهور النقاط البيضاء</string>
+    <string name="throwFire">اختر العنصر الذي تريد رميه في النار</string>
 
 
     <!-- _______________ error msgs _______________ -->
