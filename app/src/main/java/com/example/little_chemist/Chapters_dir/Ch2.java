@@ -127,6 +127,7 @@ public class Ch2 extends AppCompatActivity {
 
                         public void run() {
                             Intent n = new Intent(Ch2.this, LabLesson2.class);
+                            n.putExtra("lesson",22);
                             startActivity(n);
                         }
                     });

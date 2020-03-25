@@ -20,7 +20,7 @@
     <!--  _______________  app name and general  _______________-->
 
     <string name="little_chemist">Little Chemist</string>
-    <string name="app_name">"Little Chemist"</string>
+    <string name="app_name">Little Chemist</string>
 
     <string name="welcome">Welcome </string>
 

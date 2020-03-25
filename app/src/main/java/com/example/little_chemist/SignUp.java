@@ -13,7 +13,6 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 import com.example.little_chemist.Tables.Student;
 import com.google.android.material.textfield.TextInputLayout;
@@ -33,7 +32,7 @@ public class SignUp extends AppCompatActivity {
         setContentView(R.layout.sign_up);
 
 
-        final Button signupButton = findViewById(R.id.button2);
+        final Button signupButton = findViewById(R.id.signup);
 
         spinner = (Spinner) findViewById(R.id.security_questions);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,

@@ -202,13 +202,23 @@ public class ARCards extends AppCompatActivity {
             textView.setText(R.string.Look);
 
             //TODO add timer
-            new Reminder(30);
+//            new Reminder(30);
 //            try {
 //                TimeUnit.SECONDS.sleep(10);
 //            } catch (InterruptedException e) {
 //                e.printStackTrace();
 //            }
-            textView.setText(text);
+
+            new java.util.Timer().schedule(
+                    new java.util.TimerTask() {
+                        @Override
+                        public void run() {
+                            textView.setText(text);
+                            cancel();
+                        }
+                    },
+                    20000
+            );
 
 
         }
