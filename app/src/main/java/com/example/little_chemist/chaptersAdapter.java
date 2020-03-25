@@ -32,11 +32,11 @@ public class chaptersAdapter extends PagerAdapter {
     };
 
     public int[] chapter_drawings={
-            R.drawable.chapteronegirl,
-            R.drawable.element,
-            R.drawable.flask,
-            R.drawable.dry_tree,
-            R.drawable.periodictable
+            R.drawable.ch1character,
+            R.drawable.ch2character,
+            R.drawable.ch3character,
+            R.drawable.ch4character,
+            R.drawable.ch5character
     };
 
     public int[] chapter_Img={
