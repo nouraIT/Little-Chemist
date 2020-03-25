@@ -12,6 +12,7 @@ import android.graphics.Color;
 import android.graphics.ColorFilter;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.InputType;
 import android.view.LayoutInflater;
@@ -335,7 +336,11 @@ public class Settings extends AppCompatActivity {
         booklet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //TODO Direct to booklet
+                //https://drive.google.com/file/d/1Etqy36ZlNiWqlAxbAj63Nnkfmk0_-NhP/view?usp=sharing
+                Intent httpIntent = new Intent(Intent.ACTION_VIEW);
+                httpIntent.setData(Uri.parse("https://drive.google.com/file/d/1Etqy36ZlNiWqlAxbAj63Nnkfmk0_-NhP/view?usp=sharing"));
+
+                startActivity(httpIntent);
             }
         });
         //============================= Booklet  =============================
