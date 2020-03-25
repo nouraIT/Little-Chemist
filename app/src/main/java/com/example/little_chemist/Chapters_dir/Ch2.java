@@ -147,7 +147,8 @@ public class Ch2 extends AppCompatActivity {
                 statue = student.getLsnLock("3");
                 if (statue.equals("unlocked") || statue.equals("completed") ) {
 
-                    Intent n = new Intent(Ch2.this, lab.class);
+                    Intent n = new Intent(Ch2.this, Lessons.class);
+                    n.putExtra("lesson",23);
                     startActivity(n);
                     //  finish();
 
