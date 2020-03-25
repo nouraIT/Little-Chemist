@@ -115,7 +115,7 @@
         android:layout_marginTop="2dp"
         android:layout_marginEnd="16dp"
         android:background="#00FFFFFF"
-        android:fontFamily="@font/east_djakarta"
+        android:fontFamily="@font/dk_sugary_pancake"
 
         android:text="@string/backBtn"
         android:textColor="@color/Black"

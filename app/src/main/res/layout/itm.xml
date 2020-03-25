@@ -5,7 +5,6 @@
     android:id="@+id/ll"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
     >
 
 <!--        TODO maybe add a card view ? -->
@@ -14,6 +13,7 @@
     android:layout_width="295dp"
     android:layout_height="418dp"
     app:cardBackgroundColor="@color/colorIcons"
+    app:cardCornerRadius="20dp"
     >
 <!--        app:cardCornerRadius="50dp"-->
         <LinearLayout
@@ -27,12 +27,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="12dp"
-            android:fontFamily="@font/roboto_bold"
+            android:fontFamily="@font/dk_sugary_pancake"
             android:gravity="center_horizontal"
             android:text="here"
             android:textAllCaps="false"
-            android:textColor="@color/colorPrimary"
-            android:textSize="22sp" />
+            android:textColor="@color/darkpruple"
+            android:textSize="22sp"
+            android:layout_gravity="center"
+            android:textAlignment="center"/>
 
                 <Button
                     android:id="@+id/chos1btn"
@@ -43,7 +45,8 @@
                     android:text="button"
                     android:backgroundTint="@color/TransparentWhite"
                     android:background="@drawable/rounded_button"
-                    android:textAllCaps="false"/>
+                    android:textAllCaps="false"
+                    android:fontFamily="@font/dk_sugary_pancake"/>
 
                 <Button
                     android:id="@+id/chos2btn"
@@ -54,7 +57,8 @@
                     android:text="button"
                     android:backgroundTint="@color/TransparentWhite"
                     android:background="@drawable/rounded_button"
-                    android:textAllCaps="false"/>
+                    android:textAllCaps="false"
+                    android:fontFamily="@font/dk_sugary_pancake"/>
 
                 <Button
                     android:id="@+id/chos3btn"
@@ -65,7 +69,8 @@
                     android:text="button"
                     android:backgroundTint="@color/TransparentWhite"
                     android:background="@drawable/rounded_button"
-                    android:textAllCaps="false"/>
+                    android:textAllCaps="false"
+                    android:fontFamily="@font/dk_sugary_pancake"/>
 
                 <Button
                     android:id="@+id/chos4btn"
@@ -76,7 +81,8 @@
                     android:text="button"
                     android:backgroundTint="@color/TransparentWhite"
                     android:background="@drawable/rounded_button"
-                    android:textAllCaps="false"/>
+                    android:textAllCaps="false"
+                    android:fontFamily="@font/dk_sugary_pancake"/>
 
         </LinearLayout>
 
