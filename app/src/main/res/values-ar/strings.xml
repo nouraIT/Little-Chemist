@@ -97,5 +97,26 @@
     <string name="previous_question">السؤال السابق</string>
     <string name="scores">مجموع النقاط</string>
     <string name="backBtn">الخلف</string>
+    <string name="enterDeleteAcc">أدخل كلمة المرور الخاصة بك لحذف حسابك إلى الأبد</string>
+    <string name="scan">أمسح البطاقه بعد ظهور النقط البيضاء</string>
+    <string name="cards">البطاقات</string>
+    <string name="ok">حس</string>
+    <string name="prepare">يرجى إعداد البطاقات التالية</string>
+    <string name="tryAgain">حاول مره لخرى!</string>
+    <string name="problem">إذا لم تتمكن من العثور على الذرة ، يرجى الضغط على إعادة التعيين</string>
+    <string name="Look">ظهرت ذرة غريبه! ابحث عنها!</string>
+    <string name="reset">إعادة تعيين</string>
+    <string name="add_a_neutron">أضف نيوترون</string>
+    <string name="tap_call">انقر مرة واحدة لاستدعاء الذرة بعد ظهور النقاط البيضاء</string>
+    <string name="split_atom">انقر الزر لإضافة نيوترون إلى الذرة ونرى ما سيحدث !!</string>
+    <string name="tap_call2">انقر مرة واحدة لاستدعاء جزيء بعد ظهور النقاط البيضاء</string>
+    <string name="tap_call3">انقر مرة واحدة لاستدعاء بوليمر بعد ظهور النقاط البيضاء</string>
+    <string name="tap_call4">انقر مرة واحدة لاستدعاء أشكال المادة</string>
+    <string name="cyclodextrin">السيكلوديكسترينات هي سكريات أولية دائرية تستخدم لتحسين قابلية الأدوية للذوبان في الماء</string>
+    <string name="co2">هذا هو جزيء ثاني اكسيد الكربون</string>
+    <string name="hydrogen1">بطاقة الهيدروجين</string>
+    <string name="hydrogen2">الهيدروجين هو العنصر الأول في الجدول الدوري</string>
+    <string name="lithium1">بطاقة الليثيوم.</string>
+    <string name="lithium2">الرقم الذري لليثيوم هو ثلاثة ورمزه هو Li</string>
 
 </resources>
