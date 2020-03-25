@@ -42,6 +42,7 @@ public class character_gallery extends AppCompatActivity {
                     @Override
                     public void run(){
                         Intent n = new Intent(character_gallery.this, Settings.class);
+                        n.putExtra("name","img");
                         startActivity(n);
                     }
                 });
