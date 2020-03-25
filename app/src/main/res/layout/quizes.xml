@@ -68,8 +68,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintCircleRadius="50dp"
-        android:layout_marginTop="20dp">
+        android:layout_marginTop="20dp"
+        >
+<!--        app:layout_constraintCircleRadius="50dp"-->
+<!--        CornerRadius-->
 
     </alirezat775.lib.carouselview.CarouselView>
 

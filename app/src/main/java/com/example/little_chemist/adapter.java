@@ -15,22 +15,18 @@ import androidx.annotation.Nullable;
 
 import com.example.little_chemist.kotlin.Intrinsics;
 
-import java.util.Arrays;
-
 import alirezat775.lib.carouselview.CarouselAdapter;
 import alirezat775.lib.carouselview.CarouselModel;
 
 public class adapter extends CarouselAdapter {
 
+    private static final String TAG = quizQ.class.getSimpleName();
     private final int EMPTY_ITEM = 0;
     private final int NORMAL_ITEM = 1;
     private CarouselViewHolder vh;
     private String[] option = new String[5];
-    private double Score=0;
     private String [] correctanswer = new String [5];
     Context context ;
-    private String Qcontent [];
-    private char Qkey;
 
     @Nullable
     private adapter.OnClick onClick;
@@ -175,9 +171,7 @@ public class adapter extends CarouselAdapter {
                     ((adapter.MyViewHolder)var5).getBtn4().setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#FFCCCCCC")));
                     ((adapter.MyViewHolder)var5).getBtn4().setTextColor(ColorStateList.valueOf(Color.parseColor("#000000")));
 
-//                    ((adapter.MyViewHolder)var5).getBtn2().setEnabled(false);
-//                    ((adapter.MyViewHolder)var5).getBtn3().setEnabled(false);
-//                    ((adapter.MyViewHolder)var5).getBtn4().setEnabled(false);
+
                 }
             });
 
@@ -189,6 +183,7 @@ public class adapter extends CarouselAdapter {
                     option[pos] = (String) ((MyViewHolder)var5).getBtn2().getText();
                     ((adapter.MyViewHolder)var5).getBtn2().setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#4a47a7")));
                     ((adapter.MyViewHolder)var5).getBtn2().setTextColor(ColorStateList.valueOf(Color.parseColor("#FFFFFF")));
+
 
                     ((adapter.MyViewHolder)var5).getBtn1().setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#FFCCCCCC")));
                     ((adapter.MyViewHolder)var5).getBtn1().setTextColor(ColorStateList.valueOf(Color.parseColor("#000000")));
@@ -266,40 +261,9 @@ public class adapter extends CarouselAdapter {
 
     }
 
-//    public double score (String [] soption, String[] correctoption){
-//        double score =0;
-//        int count =0;
-//        int subscore = 0;
-//        if (Arrays.equals(soption, correctoption)){
-//            score = 100;
-//            return score;
-//        }else {
-//            for(int i=0; i < soption.length; i++){
-//
-//                if (soption[i].equals(correctoption[i])){
-//                    count++;
-//                }
-//            }
-//            if (count == correctoption.length-1){
-//                score = 100;
-//                return score;
-//            }else{
-//                int totalq= soption.length-1;
-//                subscore = totalq - count;
-//                score = subscore * 20;
-//                //14.2857143
-//            }
-//        }
-//        return score;
-//    }
-
 
     public String[] getOption(){
         return option;
-    }
-
-    public String[] getCorrectanswer(){
-        return correctanswer;
     }
 
 

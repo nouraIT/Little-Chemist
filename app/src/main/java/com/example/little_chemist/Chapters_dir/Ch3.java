@@ -84,7 +84,7 @@ public class Ch3 extends AppCompatActivity {
             }
             else if(statue.equals("completed")) {
                 lsns[i].setCardBackgroundColor(getResources().getColor((R.color.Completed)));
-                locks[i].setImageDrawable(getResources().getDrawable(R.drawable.tick_mark));
+                locks[i].setImageDrawable(getResources().getDrawable(R.drawable.star));
             }
             else {
                 lsns[i].setCardBackgroundColor(getResources().getColor((R.color.Locked)));

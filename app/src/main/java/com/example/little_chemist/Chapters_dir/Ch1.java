@@ -93,14 +93,13 @@ public class Ch1 extends AppCompatActivity {
             }
             else if(statue.equals("completed")) {
                 lsns[i].setCardBackgroundColor(getResources().getColor((R.color.Completed)));
-                locks[i].setImageDrawable(getResources().getDrawable(R.drawable.tick_mark));
+                locks[i].setImageDrawable(getResources().getDrawable(R.drawable.star));
             }
             else {
                 lsns[i].setCardBackgroundColor(getResources().getColor((R.color.Locked)));
                 locks[i].setImageDrawable(getResources().getDrawable(R.drawable.lock));
 
             }
-
         }
 
 

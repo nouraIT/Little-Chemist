@@ -1,6 +1,7 @@
 package com.example.little_chemist;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -40,6 +41,29 @@ public class QuizResult extends AppCompatActivity {
         option = b.getStringArray("option");
         Question = b.getStringArray("content");
         Log.d(TAG,"QuizResult onCreate");
+
+        Bundle bundle=getIntent().getExtras();
+        int QuizID = bundle.getInt("ChapterNumber");
+
+        ConstraintLayout Quizlayout = findViewById(R.id.resultlayout);
+        switch (QuizID){
+            case 1:
+                Quizlayout.setBackgroundResource(R.drawable.ch1lessonbackground);
+                break;
+            case 2:
+                Quizlayout.setBackgroundResource(R.drawable.ch2lessonbackground);
+                break;
+            case 3:
+                Quizlayout.setBackgroundResource(R.drawable.ch3lessonbackgrond);
+                break;
+            case 4:
+                Quizlayout.setBackgroundResource(R.drawable.ch4lessonbackground);
+                break;
+            case 5:
+                Quizlayout.setBackgroundResource(R.drawable.ch5lessonbackground);
+                break;
+            default:Quizlayout.setBackgroundResource(R.drawable.ch1lessonbackground);
+        }
 
 //        Log.d(TAG, Arrays.toString(Currectanswer));
 //        Log.d(TAG, Arrays.toString(option));

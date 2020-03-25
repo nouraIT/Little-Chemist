@@ -5,7 +5,7 @@
     android:id="@+id/CRL"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#C75E34"
+    android:background="#FB8252"
     tools:context=".Chapters_dir.Ch4">
 
     <!--    C75E34    -->

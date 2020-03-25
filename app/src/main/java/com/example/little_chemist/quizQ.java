@@ -9,6 +9,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,12 +23,14 @@ import com.example.little_chemist.kotlin.Intrinsics;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.LinkedList;
 
 import alirezat775.lib.carouselview.Carousel;
 import alirezat775.lib.carouselview.CarouselListener;
 import alirezat775.lib.carouselview.CarouselModel;
 import alirezat775.lib.carouselview.CarouselView;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -36,7 +39,7 @@ public class quizQ extends AppCompatActivity {
     //private Boolean hasNextPage = true;
     private static final String TAG = quizQ.class.getSimpleName();
 
-    private ArrayList<Integer> mImage = new ArrayList<Integer>();
+    public ArrayList<Integer> mImage = new ArrayList<Integer>();
     private Button nextbtn, prebtn;
     private int slidcount;
     private model[] modelQuestion = new model[5];
@@ -45,7 +48,7 @@ public class quizQ extends AppCompatActivity {
     private String[][] Question = new String[5][];
     private double Score =0;
     private String[] onlyQuestion = new String[5];
-    private String[] whichcontent = new String[5];
+    //private String[] whichcontent = new String[5];
 
     int QuizID;
     Student student;
@@ -87,6 +90,30 @@ public class quizQ extends AppCompatActivity {
             }
         });
 
+        Bundle bundle=getIntent().getExtras();
+        QuizID = bundle.getInt("ChapterNumber");
+
+        //change background image
+        ConstraintLayout Quizlayout = findViewById(R.id.CRL);
+        switch (QuizID){
+            case 1:
+                Quizlayout.setBackgroundResource(R.drawable.ch1lessonbackground);
+                break;
+            case 2:
+                Quizlayout.setBackgroundResource(R.drawable.ch2lessonbackground);
+                break;
+            case 3:
+                Quizlayout.setBackgroundResource(R.drawable.ch3lessonbackgrond);
+                break;
+            case 4:
+                Quizlayout.setBackgroundResource(R.drawable.ch4lessonbackground);
+                break;
+            case 5:
+                Quizlayout.setBackgroundResource(R.drawable.ch5lessonbackground);
+                break;
+            default:Quizlayout.setBackgroundResource(R.drawable.ch1lessonbackground);
+        }
+
 
         // RecyclerView
         recyclerimage();
@@ -94,8 +121,7 @@ public class quizQ extends AppCompatActivity {
 
 //CarouselView
 
-        Bundle bundle=getIntent().getExtras();
-        QuizID = bundle.getInt("ChapterNumber");
+
         final adapter adapter = new adapter(this,QuizID);
         AppCompatActivity appcomp = this;
         CarouselView carouselview = findViewById(R.id.carousel_view1);
@@ -144,16 +170,29 @@ public class quizQ extends AppCompatActivity {
 
                 if(position != 0 ) {
                     int count = position - 1;
-                    mImage.set(count, R.drawable.tick_mark); //TODO should only happen if student answers
+                    if (adapter.getOption()[count] !=null){
+                    mImage.set(count, R.drawable.tick_mark);
                     initRecyclerView();
+                    }
+                    else {
+                        mImage.set(count, R.drawable.wrong_mark);
+                        initRecyclerView();
+                    }
                     if (position == 4){
                         positioneqfive = true;
                     }
                 }
 
                 if (position != 4 && positioneqfive){
-                        mImage.set(4, R.drawable.tick_mark); //TODO should only happen if student answers
+
+                    if (adapter.getOption()[4] !=null){
+                        mImage.set(4, R.drawable.tick_mark);
                         initRecyclerView();
+                    }
+                    else {
+                        mImage.set(4, R.drawable.wrong_mark);
+                        initRecyclerView();
+                    }
 
                 }
 
@@ -166,9 +205,11 @@ public class quizQ extends AppCompatActivity {
         }));
 
 //        carousel.add(EmptySampleModel("empty list"))
+
+        //find out which chapter quiz
         String[] QItems;
         int index =0;
-        //String [] whichcontent = new String[C1Quiz.length];
+        String [] whichcontent;
         switch (QuizID){
             case 1:whichcontent = C1Quiz;
             break;
@@ -180,10 +221,26 @@ public class quizQ extends AppCompatActivity {
             break;
             case 5:whichcontent = C5Quiz;
             break;
+
+            default:
+                throw new IllegalStateException("Unexpected value: " + QuizID);
         }
 
-        for (int i=0; i<whichcontent.length;i++){
-            QItems = adapter.context.getResources().getStringArray(adapter.context.getResources().getIdentifier(whichcontent[i], "array", adapter.context.getPackageName()));
+        //random
+        int[] Qindex = new int [5];
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        for (int i=0; i<whichcontent.length; i++) {
+            list.add(new Integer(i));
+        }
+
+        Collections.shuffle(list);
+        for (int i=0; i<5; i++) {
+            Qindex[i] = list.get(i);
+        }
+
+        //get from Question string
+        for (int i=0; i<5;i++){
+            QItems = adapter.context.getResources().getStringArray(adapter.context.getResources().getIdentifier(whichcontent[Qindex[i]], "array", adapter.context.getPackageName()));
             Question[i] = QItems;
             modelQuestion[i] = new model(this,i,Question[i][index],Question[i][index+1],Question[i][index+2],Question[i][index+3],Question[i][index+4],Question[i][index+5]);
             currectanswer[i] = Question[i][index+5];
@@ -197,13 +254,25 @@ public class quizQ extends AppCompatActivity {
         carousel.add((modelQuestion[4]));
 
 
+        //next button
         nextbtn.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View view) {
+                boolean YouCantRun = false;
                 carousel.setCurrentPosition(slidcount+1);
                 if (slidcount == 4){
                     Intent n = new Intent(quizQ.this, QuizResult.class);
+                    for (int i=0; i<adapter.getOption().length;i++){
+                        if(adapter.getOption()[i] == null){
+                            YouCantRun = true;
+                            nextbtn.setEnabled(true);
+                            Toast.makeText(quizQ.this, "Sweetie finish all the questions!", Toast.LENGTH_LONG).show();
+                            break;
+//                            getApplicationContext()
+                        }
+                    }
+                    if (YouCantRun == false) {
                     Option = adapter.getOption();
                     bundle.putStringArray("option", Option);
                     bundle.putStringArray("content", onlyQuestion);
@@ -211,11 +280,13 @@ public class quizQ extends AppCompatActivity {
                     n.putExtras(bundle);
                     Score = score(Option,currectanswer);
                     startActivity(n);
+                    }
                 }
 
             }
         });
 
+        //back button
         prebtn.setOnClickListener(new View.OnClickListener(){
 
             @Override
@@ -235,6 +306,7 @@ public class quizQ extends AppCompatActivity {
 
     }
 
+    //recycler view progress bar
     private void recyclerimage(){
 
         Log.d(TAG, "initImageBitmaps: preparing bitmaps.");
@@ -249,7 +321,7 @@ public class quizQ extends AppCompatActivity {
 
     }
 
-    private void initRecyclerView(){
+    public void initRecyclerView(){
 
         Log.d(TAG, "initRecyclerView: init recyclerview");
 
@@ -261,6 +333,7 @@ public class quizQ extends AppCompatActivity {
 
     }
 
+    //calculate the score
     public double score (String [] soption, String[] correctoption){
         double score =0;
         int count =0;
@@ -287,38 +360,27 @@ public class quizQ extends AppCompatActivity {
         return score;
     }
 
+    //Questions array
     public String [] AllQuestion = {
-            "C1Quiz_Q1","C1Quiz_Q2","C1Quiz_Q3","C1Quiz_Q4","C1Quiz_Q5","C2Quiz_Q1","C2Quiz_Q2","C2Quiz_Q3","C2Quiz_Q4","C2Quiz_Q5"
+            "C1Quiz_Q1","C1Quiz_Q2","C1Quiz_Q3","C1Quiz_Q4","C1Quiz_Q5","C1Quiz_Q6","C1Quiz_Q7","C1Quiz_Q8","C1Quiz_Q9","C1Quiz_Q10",
+            "C2Quiz_Q1","C2Quiz_Q2","C2Quiz_Q3","C2Quiz_Q4","C2Quiz_Q5",
+            "C3Quiz_Q1","C3Quiz_Q2","C3Quiz_Q3","C3Quiz_Q4","C3Quiz_Q5","C3Quiz_Q6","C3Quiz_Q7","C3Quiz_Q8","C3Quiz_Q9","C3Quiz_Q10",
+            "C4Quiz_Q1","C4Quiz_Q2","C4Quiz_Q3","C4Quiz_Q4","C4Quiz_Q5","C4Quiz_Q6","C4Quiz_Q7","C4Quiz_Q8","C4Quiz_Q9","C4Quiz_Q10","C4Quiz_Q11","C4Quiz_Q12","C4Quiz_Q13","C4Quiz_Q14","C4Quiz_Q15",
     };
     public String[] C1Quiz = {
-            "C1Quiz_Q1","C1Quiz_Q2","C1Quiz_Q3","C1Quiz_Q4","C1Quiz_Q5"
+            "C1Quiz_Q1","C1Quiz_Q2","C1Quiz_Q3","C1Quiz_Q4","C1Quiz_Q5","C1Quiz_Q6","C1Quiz_Q7","C1Quiz_Q8","C1Quiz_Q9","C1Quiz_Q10"
     };
     public String[] C2Quiz = {
-            "C2Quiz_Q1","C2Quiz_Q2","C2Quiz_Q3","C2Quiz_Q4","C2Quiz_Q5"
+            "C2Quiz_Q1","C2Quiz_Q2","C2Quiz_Q3","C2Quiz_Q4","C2Quiz_Q5"//,"C2Quiz_Q6","C2Quiz_Q7","C2Quiz_Q8","C2Quiz_Q9","C2Quiz_Q10"
     };
     public String[] C3Quiz = {
-            "C1Quiz_Q1","C1Quiz_Q2","C1Quiz_Q3","C1Quiz_Q4","C1Quiz_Q5"
+            "C3Quiz_Q1","C3Quiz_Q2","C3Quiz_Q3","C3Quiz_Q4","C3Quiz_Q5","C3Quiz_Q6","C3Quiz_Q7","C3Quiz_Q8","C3Quiz_Q9","C3Quiz_Q10"
     };
     public String[] C4Quiz = {
-            "C1Quiz_Q1","C1Quiz_Q2","C1Quiz_Q3","C1Quiz_Q4","C1Quiz_Q5"
+            "C4Quiz_Q1","C4Quiz_Q2","C4Quiz_Q3","C4Quiz_Q4","C4Quiz_Q5","C4Quiz_Q6","C4Quiz_Q7","C4Quiz_Q8","C4Quiz_Q9","C4Quiz_Q10","C4Quiz_Q11","C4Quiz_Q12","C4Quiz_Q13","C4Quiz_Q14","C4Quiz_Q15"
     };
     public String[] C5Quiz = {
             "C1Quiz_Q1","C1Quiz_Q2","C1Quiz_Q3","C1Quiz_Q4","C1Quiz_Q5"
     };
 
-
-    public String [] getQuizcontent(int chnum){
-        String [] Quizcontent = new String[5];
-        int index =0 ;
-        for (int i=0; i<AllQuestion.length;i++){
-            if (chnum == AllQuestion[i].charAt(1)){
-                Quizcontent[index] = AllQuestion[i];
-                index++;
-            }
-        }
-        return Quizcontent;
-    }
-
-
 }
-

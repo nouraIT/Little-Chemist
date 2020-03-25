@@ -71,7 +71,7 @@ public class chaptersAdapter extends PagerAdapter {
             else if(lock.equals("locked"))
                 chapter_Lock[i] = R.drawable.lock;
             else
-                chapter_Lock[i] = R.drawable.tick_mark;
+                chapter_Lock[i] = R.drawable.star;
         }
 
     }

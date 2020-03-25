@@ -2,6 +2,7 @@ package com.example.little_chemist.View_lesson;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Context;
@@ -10,6 +11,7 @@ import android.content.SharedPreferences;
 import android.graphics.drawable.Animatable;
 import android.os.Bundle;
 import android.text.Html;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
@@ -113,6 +115,27 @@ public class Lessons extends AppCompatActivity {
             }
         });
 
+        //change background image
+        ConstraintLayout lessonlayout = findViewById(R.id.lessonlayout);
+        char chapternum = Integer.toString(lessonkey).charAt(0);
+        switch (chapternum){
+            case '1':
+                lessonlayout.setBackgroundResource(R.drawable.ch1lessonbackground);
+                break;
+            case '2':
+                lessonlayout.setBackgroundResource(R.drawable.ch2lessonbackground);
+                break;
+            case '3':
+                lessonlayout.setBackgroundResource(R.drawable.ch3lessonbackgrond);
+                break;
+            case '4':
+                lessonlayout.setBackgroundResource(R.drawable.ch4lessonbackground);
+                break;
+            case '5':
+                lessonlayout.setBackgroundResource(R.drawable.ch5lessonbackground);
+                break;
+            default:lessonlayout.setBackgroundResource(R.drawable.ch1lessonbackground);
+        }
 
 
 

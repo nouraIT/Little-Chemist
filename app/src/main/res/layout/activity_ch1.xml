@@ -5,7 +5,7 @@
     android:id="@+id/CRL"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#9af8ee"
+    android:background="#73E5FB"
     tools:context=".Chapters_dir.Ch1">
 <!--#01BEAA-->
 <!--    40C4FF -->
