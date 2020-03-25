@@ -1,12 +1,15 @@
 package com.example.little_chemist;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
@@ -27,7 +30,25 @@ public class RecoverPassword extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_recover_password);
+
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent Homepage = new Intent(RecoverPassword.this, LoginPage.class);
+                startActivity(Homepage);
+                finish();
+            }
+        });
+
 
         final Button Recover = findViewById(R.id.chngPassBtn);
         spinner = (Spinner) findViewById(R.id.security_questions);
@@ -224,9 +245,9 @@ public class RecoverPassword extends AppCompatActivity {
                     if(!question[1].equals(SecurityA))
                         SecurityAn.setError(getText(R.string.SecurityAwrong));
                     else {
+                        //TODO save the new pass
                         helper.recoverPassword(PasswordStr, UserNameStr);
                         Intent loginIntent=new Intent(RecoverPassword.this,Home.class);
-
                         startActivity(loginIntent);
                         finish();
 

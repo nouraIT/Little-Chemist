@@ -36,7 +36,7 @@
                 android:fontFamily="@font/dk_sugary_pancake"
                 android:gravity="center"
                 android:text="chapter number"
-                android:textColor="@color/white"
+                android:textColor="@color/darkpruple"
                 android:textSize="30sp"
                 tools:layout_editor_absoluteX="16dp"
                 tools:layout_editor_absoluteY="7dp" />

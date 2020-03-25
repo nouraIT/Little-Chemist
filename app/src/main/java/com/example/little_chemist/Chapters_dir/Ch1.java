@@ -64,7 +64,7 @@ public class Ch1 extends AppCompatActivity {
             public void onClick(View v) {
                 Intent n = new Intent(Ch1.this, Chapters.class);
                 startActivity(n);
-                finish();
+//                finish();
             }
         });
 

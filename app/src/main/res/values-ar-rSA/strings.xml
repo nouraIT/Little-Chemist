@@ -57,7 +57,6 @@
     <string name="nameNotExist">اسم المستخدم غير موجود</string>
     <string name="SecurityAwrong">الإجابة الأمنية لا تتطابق مع الإجابة التي كتبتها عند التسجيل</string>
     <string name="SecurityQwrong">السؤال الامني لا يطابق السؤال الذي اخترته عند التسجيل</string>
-    <string name="action_settings">الإعدادات</string>
     <string name="security_question">السؤال الامني</string>
     <string name="progressBar">مقياس التقدم</string>
     <string name="no">لا</string>

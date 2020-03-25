@@ -2,7 +2,6 @@
 
     <!--   _______________ setting page _______________ -->
 
-    <string name="action_settings">Settings</string>
     <string name="settings">Settings</string>
 
     <string name="languages">Languages</string>
@@ -18,7 +17,7 @@
     <!--  _______________  app name and general  _______________-->
 
     <string name="little_chemist">Little Chemist</string>
-    <string name="app_name">"Little Chemist"</string>
+    <string name="app_name">Little Chemist</string>
 
     <string name="welcome">Welcome </string>
 
