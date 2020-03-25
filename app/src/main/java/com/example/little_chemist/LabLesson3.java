@@ -73,6 +73,7 @@ public class LabLesson3 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lab_lesson3);
         Button Reset = findViewById(R.id.reset);
+        bundle = getIntent().getExtras();
         arFragment = (ARfragment4) getSupportFragmentManager().findFragmentById(R.id.arFragment);
         textView = findViewById(R.id.textview);
         textView.setText(R.string.tap_call3);

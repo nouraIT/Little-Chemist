@@ -77,7 +77,7 @@ public class ARCards extends AppCompatActivity {
 
         pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
         String name = pref.getString("username", null);
-        Bundle bundle=getIntent().getExtras();;
+        Bundle bundle=getIntent().getExtras();
         int Lid =  bundle.getInt("lessonId");
 
 

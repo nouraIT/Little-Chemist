@@ -102,6 +102,7 @@ private static int n=0;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lab_lesson5);
+        bundle = getIntent().getExtras();
         arFragment = (ARfragment6) getSupportFragmentManager().findFragmentById(R.id.arFragment);
      textView = findViewById(R.id.textview);
         Button Reset = findViewById(R.id.reset);
