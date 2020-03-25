@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.example.little_chemist.Chapters_dir.Ch1;
 import com.example.little_chemist.Chapters_dir.Ch5;
 import com.example.little_chemist.Tables.Student;
 import com.google.ar.core.Anchor;
@@ -100,8 +101,13 @@ public class ARCards extends AppCompatActivity {
                 }
                 else{
                     helper.updateLesson(name, Lid , "completed");
-                    Intent h = new Intent(ARCards.this, Ch5.class);
+                    Intent h;
+                    if(Lid != 2)
+                        h = new Intent(ARCards.this, Ch5.class);
+
+                    h = new Intent(ARCards.this, Ch1.class);
                     startActivity(h);
+
                 }
 
             }
