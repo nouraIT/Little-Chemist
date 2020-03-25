@@ -70,7 +70,7 @@
     <string name="action_settings">Settings</string>
     <string name="security_question">Security Question</string>
     <string name="progressBar">Progress Bar</string>
-    <string name="no">no</string>
+    <string name="no">No</string>
     <string name="login_failed">Login failed</string>
     <string name="confirmLogginOut">Are you sure you want to log out?</string>
     <string name="confirmDeleteAcc">Are you sure you want to Delete your account forever ?</string>
@@ -117,6 +117,26 @@
     <string name="selectliquid">Select The Liquid Type</string>
     <string name="tap_call6">Tap To Start A Fire!</string>
     <string name="thro">Choose the element you want to throw in the fire</string>
+    <string name="enterDeleteAcc">Enter your password to delete your account forever</string>
+    <string name="scan">Scan The Card After The White Dots Appear</string>
+    <string name="cards">Cards</string>
+    <string name="ok">Okay</string>
+    <string name="prepare">Please Prepare The Following Cards</string>
+    <string name="tryAgain">Try Again!</string>
+    <string name="problem">If You Could Not Find The Atom Please Press Reset</string>
+    <string name="Look">A wild Atom Has Appeared! Look For It!</string>
+    <string name="reset">Reset</string>
+    <string name="tap_call">Tap Once To Call an Atom After The White Dots Appear</string>
+    <string name="split_atom">Click The Button to Add a Neutron to The Atom and See What Happens!!</string>
+    <string name="tap_call2">Tap Once To Call an Molecule After The White Dots Appear</string>
+    <string name="tap_call3">Tap Once To Call an Polymer After The White Dots Appear</string>
+    <string name="tap_call4">Tap Once To Call The Shapes of Matter</string>
+    <string name="cyclodextrin">Cyclodextrins are cyclic oligosaccharides used for the improvement of water-solubility of drugs</string>
+    <string name="co2">This is the Molecule of CO2</string>
+    <string name="hydrogen1">The Hydrogen Card</string>
+    <string name="hydrogen2">Hydrogen is The First Element in The Periodic Table</string>
+    <string name="lithium1">The Lithium Card.</string>
+    <string name="lithium2">The Lithium’s Atomic Number is Three and its Symbol is Li</string>
 
 
 </resources>
