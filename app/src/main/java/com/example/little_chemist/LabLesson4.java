@@ -23,6 +23,9 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.ar.core.*;
 import com.google.ar.sceneform.AnchorNode;
+import com.google.ar.sceneform.Camera;
+import com.google.ar.sceneform.Node;
+import com.google.ar.sceneform.Sun;
 import com.google.ar.sceneform.rendering.ModelRenderable;
 import com.google.ar.sceneform.ux.ArFragment;
 import com.google.ar.sceneform.ux.TransformableNode;
@@ -43,6 +46,7 @@ import android.widget.RelativeLayout;
 
 
 import java.lang.ref.WeakReference;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Timer;
 import com.google.ar.core.Anchor;
@@ -99,6 +103,8 @@ public class LabLesson4 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lab_lesson4);
         bundle = getIntent().getExtras();
+        textView = findViewById(R.id.textview);
+        textView.setText(R.string.tap_call7);
         arFragment = (ARfragment5) getSupportFragmentManager().findFragmentById(R.id.arFragment);
 //        textView = findViewById(R.id.textview);
         Button Reset = findViewById(R.id.reset);
@@ -197,14 +203,14 @@ public class LabLesson4 extends AppCompatActivity {
         ImageView gas = findViewById(R.id.image1);
         gas.setImageResource(R.drawable.gas);
         gas.setTooltipText(getString(R.string.gas));
-        gas.setOnClickListener(view ->{addObject(Uri.parse("gas.sfb"));});
+        gas.setOnClickListener(view ->{addnew("gas.sfb");});
         gas.setPadding(5,5,5,5);
         //gallery.addView(gas);
 
         ImageView liquid = findViewById(R.id.image2);
         liquid.setImageResource(R.drawable.liq);
         liquid.setTooltipText(getString(R.string.liquid));
-        liquid.setOnClickListener(view ->{addObject(Uri.parse("liquid.sfb"));});
+        liquid.setOnClickListener(view ->{addnew("liquid.sfb");});
         liquid.setPadding(5,5,5,5);
 
         //gallery.addView(liquid);
@@ -215,6 +221,22 @@ public class LabLesson4 extends AppCompatActivity {
 //        house.setOnClickListener(view ->{addObject(Uri.parse("House.sfb"));});
 //        gallery.addView(house);
 
+    }
+    public void addnew(String obj){
+        List<Node> children = new ArrayList<>(arFragment.getArSceneView().getScene().getChildren());
+        for (Node node : children) {
+            if ( !(node instanceof com.google.ar.sceneform.Camera) && !(node instanceof Sun)){
+                if(((AnchorNode) node).getAnchor() != null ) {
+                    ((AnchorNode) node).getAnchor().detach();
+
+                }
+            }
+            else continue;
+            if ( !(node instanceof Sun)&&!(node instanceof Camera) ){
+                node.setParent(null);
+            }
+        }
+        addObject(Uri.parse(obj));
     }
 
     private void addObject(Uri model) {

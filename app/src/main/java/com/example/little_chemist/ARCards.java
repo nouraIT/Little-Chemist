@@ -217,7 +217,7 @@ public class ARCards extends AppCompatActivity {
                             cancel();
                         }
                     },
-                    20000
+                    10000
             );
 
 
