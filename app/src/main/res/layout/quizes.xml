@@ -87,15 +87,11 @@
 
         android:id="@+id/nextBtn"
         android:layout_width="wrap_content"
-
         android:layout_height="wrap_content"
-
         android:layout_marginStart="16dp"
-
         android:layout_marginTop="2dp"
-        android:layout_marginEnd="40dp"
+        android:layout_marginEnd="5dp"
         android:background="#00FFFFFF"
-
         android:fontFamily="@font/dk_sugary_pancake"
         android:text="@string/nextBtn"
         android:textColor="@color/Black"
@@ -110,12 +106,12 @@
         android:layout_width="wrap_content"
 
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
+        android:layout_marginStart="5dp"
 
         android:layout_marginTop="2dp"
         android:layout_marginEnd="16dp"
         android:background="#00FFFFFF"
-        android:fontFamily="@font/east_djakarta"
+        android:fontFamily="@font/dk_sugary_pancake"
 
         android:text="@string/backBtn"
         android:textColor="@color/Black"
@@ -123,7 +119,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/nextBtn"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/carousel_view1" />
+        app:layout_constraintTop_toBottomOf="@+id/carousel_view1"
+        app:layout_constraintVertical_bias="0.491" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,7 +4,7 @@
 
     <!--         LESSON 1            -->
 
-    <string name="C2L1S1" translatable="false"><b>Heterogeneous mixture</b>  is a substance that can be easily separated into its parts, and those parts retain their original properties.
+    <string name="C2L1S1"><b>Heterogeneous mixture</b>  is a substance that can be easily separated into its parts, and those parts retain their original properties.
 For example, have you ever tried mixing oil and water? They stay separate no matter how hard you try to mix them.
 </string>
 
@@ -25,6 +25,49 @@ For example, have you ever tried mixing oil and water? They stay separate no mat
         <item>Chicken noodle soup</item>
     </string-array>
     <!--         LESSON 1            -->
+
+    <!--         LESSON 3            -->
+    <string name="C2L3S1">Do you know that Atoms mode everything in this world? Even you and me</string>
+
+    <string name="C2L3S2">Atoms like to have just the right amount of electrons to be happy
+    Atoms are nice and help each other out!
+    So when there are some atoms have too many, while other atoms don\'t have enough, they will share electrons with each other.</string>
+
+    <string name="C2L3S3">When Atoms help each other we called this chemical bond
+    And there are two main types of chemical bonds
+    Covalent and Ionic</string>
+
+    <string name="C2L3S4"><b>Covalent Bond</b> happen when both atoms are missing electrons
+    For example, an oxygen atom is missing two electrons and a hydrogen atom is missing one
+    These atoms will team up and share electrons, this bond will give us H2O which is water!
+    </string>
+    <string-array name="C2L3S4E1M">
+        <item>Covalent Bond happens when____.</item>
+        <item>One atom missing electrons and another one have extra electrons</item>
+        <item>Both atoms are missing electrons</item>
+        <item>None of the above</item>
+    </string-array>
+
+    <string name="C2L3S5"><b>Ionic Bonds</b> happen when one atom missing electrons and another one have extra electrons
+    For example, a sodium atom has one extra electron. A chlorine atom is missing one electron. The sodium atom will give its extra electron to the chlorine atom, then we will have NaCl or salt
+    </string>
+
+    <string-array name="C2L3S5E2M">
+        <item>NaCl is an example of</item>
+        <item>Covalent Bonds</item>
+        <item>Ionic Bonds</item>
+        <item>None of the above</item>
+    </string-array>
+
+    <string name="C2L3S6">When two or more atoms bond, they make an entirely new substance called a compound. This substance doesn\'t have the same characteristics as the atoms it was made with.
+    </string>
+
+    <string-array name="C2L3A">
+        <item>Both atoms are missing electrons</item>
+        <item>Ionic Bonds</item>
+    </string-array>
+
+    <!--         LESSON 3            -->
 
 
     <!--         LESSON 4            -->

@@ -170,8 +170,6 @@ public class adapter extends CarouselAdapter {
                     ((adapter.MyViewHolder)var5).getBtn3().setTextColor(ColorStateList.valueOf(Color.parseColor("#000000")));
                     ((adapter.MyViewHolder)var5).getBtn4().setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#FFCCCCCC")));
                     ((adapter.MyViewHolder)var5).getBtn4().setTextColor(ColorStateList.valueOf(Color.parseColor("#000000")));
-
-
                 }
             });
 
