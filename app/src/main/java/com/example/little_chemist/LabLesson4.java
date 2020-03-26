@@ -26,6 +26,7 @@ import com.google.ar.sceneform.AnchorNode;
 import com.google.ar.sceneform.Camera;
 import com.google.ar.sceneform.Node;
 import com.google.ar.sceneform.Sun;
+import com.google.ar.sceneform.rendering.AnimationData;
 import com.google.ar.sceneform.rendering.ModelRenderable;
 import com.google.ar.sceneform.ux.ArFragment;
 import com.google.ar.sceneform.ux.TransformableNode;
@@ -262,12 +263,31 @@ public class LabLesson4 extends AppCompatActivity {
         TransformableNode node = new TransformableNode(arFragment.getTransformationSystem());
 // Maxscale must be greater than minscale
 
-//        node.getScaleController().setMaxScale(0.09f);
+//       node.getScaleController().setMaxScale(0.09f);
         node.getScaleController().setMinScale(0.05f);
         node.setRenderable(renderable);
         node.setParent(anchorNode);
+        SkeletonNode skeletonNode = new SkeletonNode();
+        skeletonNode.setParent(anchorNode);
+        skeletonNode.setRenderable(renderable);
+
+        // node.getName();
         arFragment.getArSceneView().getScene().addChild(anchorNode);
         node.select();
+        if(modelAnimator != null && modelAnimator.isRunning())
+            modelAnimator.end();
+
+        int a = renderable.getAnimationDataCount();
+
+        if(i == a)
+            i=0;
+
+        AnimationData animationData = renderable.getAnimationData(i);
+
+        modelAnimator = new ModelAnimator(animationData,renderable);
+        modelAnimator.setRepeatCount(50);
+        modelAnimator.start();
+        i++;
     }
 
     public void onException(Throwable throwable){

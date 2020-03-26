@@ -3,7 +3,7 @@
     {
       clips: [
         {
-          name: 'Base stack',
+          name: 'node_id132.123|node_id132.123Action',
         },
       ],
       path: 'sampledata/gas.fbx',
@@ -11,7 +11,7 @@
     {
       clips: [
         {
-          name: 'Base stack',
+          name: 'node_id132.123|node_id132.123Action',
         },
       ],
       path: 'sampledata/gas.fbx',
@@ -4780,7 +4780,7 @@
     file: 'sampledata/gas.fbx',
     name: 'gas',
     recenter: 'root',
-    scale: 25.5522220000000004,
+ scale: 5.9522220000000004,
   },
   version: '0.54:2',
 }
