@@ -208,6 +208,7 @@ public class quizQ extends AppCompatActivity {
             }
         }));
 
+
 //        carousel.add(EmptySampleModel("empty list"))
 
         //find out which chapter quiz
@@ -265,30 +266,21 @@ public class quizQ extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 boolean YouCantRun = false;
-                if (slidcount != 4) {
-                    if (slidcount < slidchange){
-                        slidcount = slidchange;
-                        carousel.setCurrentPosition(slidcount+1);
-                        slidcount = slidcount +1;
-                        int slidenum = slidcount-1;
-                        if (adapter.getOption()[slidenum] != null){
-                            mImage.set(slidenum, R.drawable.tick_mark);
-                            initRecyclerView();
-                        }else{
-                            mImage.set(slidenum, R.drawable.wrong_mark);
-                            initRecyclerView();
-                        }
-                    }else {
-                        carousel.setCurrentPosition(slidcount+1);
-                        slidcount = slidcount +1;
-                        int slidenum = slidcount-1;
-                        if (adapter.getOption()[slidenum] != null){
-                            mImage.set(slidenum, R.drawable.tick_mark);
-                            initRecyclerView();
-                        }else{
-                            mImage.set(slidenum, R.drawable.wrong_mark);
-                            initRecyclerView(); }
-                        if (slidcount == 4){
+                int slidenum;
+
+                if (slidcount < 4) {
+                    carousel.setCurrentPosition(slidcount + 1);
+                    slidenum = slidcount;
+                    if (adapter.getOption()[slidenum] != null) {
+                        mImage.set(slidenum, R.drawable.tick_mark);
+                        initRecyclerView();
+                    } else {
+                        mImage.set(slidenum, R.drawable.wrong_mark);
+                        initRecyclerView();
+                    }
+                    slidcount = slidcount + 1;
+                }
+                        if (slidcount == 4 || slidchange == 4){
                             nextbtn.setVisibility(View.VISIBLE);
                             nextbtn.setText(getText(R.string.finishBtn));
                             Intent n = new Intent(quizQ.this, QuizResult.class);
@@ -296,8 +288,7 @@ public class quizQ extends AppCompatActivity {
                                 if(adapter.getOption()[i] == null){
                                     YouCantRun = true;
                                     nextbtn.setEnabled(true);
-                                    inlastslid = true;
-                                    Toast.makeText(quizQ.this, "Sweetie finish all the questions!", Toast.LENGTH_LONG).show();
+                                    Toast.makeText(quizQ.this, "Finish all the questions!", Toast.LENGTH_LONG).show();
                                     break;
 //                            getApplicationContext()
                                 }
@@ -312,42 +303,42 @@ public class quizQ extends AppCompatActivity {
                                 startActivity(n);
                             }
                         }
-                    }
-                    if (slidcount > 0) {
+
+                    if (slidcount == 1) {
                         prebtn.setEnabled(true);
                         prebtn.setVisibility(View.VISIBLE);
                         prebtn.setText(getText(R.string.backBtn));
                     }
-                }
-
             }
         });
 
 
         //back button
         prebtn.setOnClickListener(new View.OnClickListener(){
-            int slidenum =0;
+
 
             @Override
             public void onClick(View view) {
-                if (inlastslid == true){
-                    slidenum = slidcount-1;
+                int slidenum =0;
+                Log.d("in back button slid count", String.valueOf(slidcount));
+                if (slidcount == 4){
+                    slidenum = slidcount;
                     if (adapter.getOption()[slidenum] != null){
-                        mImage.set(slidenum+1, R.drawable.tick_mark);
+                        mImage.set(slidenum, R.drawable.tick_mark);
                         initRecyclerView();
                     }else{
-                        mImage.set(slidenum+1, R.drawable.wrong_mark);
+                        mImage.set(slidenum, R.drawable.wrong_mark);
                         initRecyclerView();
                     }
                 }
                 carousel.setCurrentPosition(slidcount-1);
-                slidcount = slidcount -1;
+                slidcount = slidcount - 1;
                 if (slidcount == 0){
                     prebtn.setEnabled(false);
                     prebtn.setVisibility(View.INVISIBLE);
                     prebtn.setText("");
                 }
-                if (slidcount < 4){
+                if (slidcount-1 < 4){
                     nextbtn.setText(getText(R.string.nextBtn));
                 }
             }

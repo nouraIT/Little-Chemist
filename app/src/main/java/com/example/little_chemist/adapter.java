@@ -27,6 +27,7 @@ public class adapter extends CarouselAdapter {
     private String[] option = new String[5];
     private String [] correctanswer = new String [5];
     Context context ;
+    private int currentposition;
 
     @Nullable
     private adapter.OnClick onClick;
@@ -153,6 +154,8 @@ public class adapter extends CarouselAdapter {
             ((adapter.MyViewHolder)var5).getBtn4().setText((CharSequence)String.valueOf(model.getOp4()));
             correctanswer[var5.getAdapterPosition()] = model.getCorrectop();
 
+            currentposition = var5.getAdapterPosition();
+
 
 
             ((adapter.MyViewHolder)var5).getBtn1().setOnClickListener(new View.OnClickListener(){
@@ -259,6 +262,9 @@ public class adapter extends CarouselAdapter {
 
     }
 
+    public int getCurrentposition() {
+        return currentposition;
+    }
 
     public String[] getOption(){
         return option;
