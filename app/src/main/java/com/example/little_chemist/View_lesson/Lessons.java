@@ -222,9 +222,7 @@ public class Lessons extends AppCompatActivity {
                 Student student = helper.getStudent(name);
                 String Lid=""+bundle.getInt("lessonId") ;
 
-                helper.updateLesson(name,bundle.getInt("lessonId"),"completed");//,Integer.toString(lessonkey).charAt(0));
-                statue = student.getLsnLock(Lid);
-                System.out.println(statue) ;
+
 
                 nextBtn.setOnClickListener(new View.OnClickListener() {
                     Intent n ;
@@ -240,7 +238,11 @@ public class Lessons extends AppCompatActivity {
                             n = new Intent(Lessons.this, Ch4.class);
                         if(Integer.toString(lessonkey).charAt(0)=='5')
                             n = new Intent(Lessons.this, Ch5.class);
-                            startActivity(n);
+
+                        helper.updateLesson(name,bundle.getInt("lessonId"),"completed");//,Integer.toString(lessonkey).charAt(0));
+                        statue = student.getLsnLock(Lid);
+                        System.out.println(statue) ;
+                        startActivity(n);
                         finish();
                     }
                 });

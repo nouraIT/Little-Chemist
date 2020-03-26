@@ -129,7 +129,7 @@ public class Ch1 extends AppCompatActivity {
                 n.putExtra("lesson",11);
                 n.putExtra("lessonId",1) ;
                 startActivity(n);
-                // finish();
+//                finish();
             }
         });
 

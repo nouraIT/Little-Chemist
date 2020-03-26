@@ -511,7 +511,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             int endIndex =0;
             String oldStatus ="";
             String lsnNum = "1";
-            System.out.println(LLOCKS);
+//            System.out.println(LLOCKS);
             //this loop will change the Lid and the one next to it
             for (int i=0;i<25;i++){
                 if(i+1 == Lid) {
@@ -522,20 +522,25 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     continue;
                 }
                 firstIndex = LLOCKS.indexOf(lsnNum);
-                lsnNum = String.valueOf(Integer.parseInt(lsnNum)+1);
                 endIndex = LLOCKS.indexOf(",",firstIndex);
-                System.out.println(LLOCKS.substring(firstIndex+2,endIndex));
+//                System.out.println(LLOCKS.substring(firstIndex+2,endIndex));
 
-                if(lsnNum.length()!=2)
-                    oldStatus += (i+1)+":"+LLOCKS.substring(firstIndex+2,endIndex)+",";
+//                System.out.println("num is "+lsnNum+" and its length is "+lsnNum.length());
+                if(lsnNum.length()!=2) {
+//                    System.out.println("before its in "+(i + 1) + ":" + LLOCKS.substring(firstIndex + 2, endIndex) + ",");
+                    oldStatus += (i + 1) + ":" + LLOCKS.substring(firstIndex + 2, endIndex) + ",";
+                }
                 else
                     oldStatus += (i+1)+":"+LLOCKS.substring(firstIndex+3,endIndex)+",";
+
+                lsnNum = String.valueOf(Integer.parseInt(lsnNum)+1);
+
 
             }
 
             if(!oldStatus.equals(""))
                 LLOCKS=oldStatus;
-
+            System.out.println("after all is done "+LLOCKS);
             db = getWritableDatabase();
             String query = " UPDATE Student SET LSNLOCKS = '" + LLOCKS + "' WHERE UserName = '" + username + "' ";
             db.execSQL(query);

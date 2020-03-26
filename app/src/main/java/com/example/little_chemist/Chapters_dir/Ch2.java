@@ -31,7 +31,6 @@ public class Ch2 extends AppCompatActivity {
     SharedPreferences pref;
     DatabaseHelper helper = new DatabaseHelper(Ch2.this);
     String statue;
-    ImageView lockpad;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,6 +78,7 @@ public class Ch2 extends AppCompatActivity {
         for(i =0;i<5;i++){
 
             statue = student.getLsnLock(String.valueOf(i+6));
+//            System.out.println(student.getLsnLock(String.valueOf(i+6)));
             if(statue.equals("unlocked")) {
                 lsns[i].setCardBackgroundColor(getResources().getColor((R.color.primaryYellow)));
                 locks[i].setImageDrawable(getResources().getDrawable(R.drawable.padlock));
