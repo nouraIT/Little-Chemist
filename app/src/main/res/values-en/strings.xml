@@ -211,6 +211,7 @@
     <string name="tap_call3">Tap Once To Call an Polymer After The White Dots Appear</string>
     <string name="tap_call4">Tap Once To Call The Shapes of Matter</string>
     <string name="tap_call6">Tap To Start A Fire! After the white dots apear</string>
+    <string name="IncorrectPassword">Password is not correct</string>
     <!-- _______________ AR tap calls  _______________ -->
 
 

@@ -32,6 +32,7 @@ import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.daimajia.androidviewhover.BlurLayout;
 import com.example.little_chemist.Tables.Student;
@@ -63,9 +64,10 @@ public class Settings extends AppCompatActivity {
         pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
         editor = pref.edit();
         String name = pref.getString("username", null); // getting String
-        String pass = pref.getString("password",null);
+        String pass ;//= pref.getString("password",null);
         String studentId=helper.getStudentId(name);
         student = helper.getStudent(name);
+        pass=student.GetPassword();
         TextView profileName = findViewById(R.id.profileName);
         profileName.setText(name.toUpperCase());
 
@@ -204,7 +206,7 @@ public class Settings extends AppCompatActivity {
                                 Home.alreadyRecreated = false;
                                 Home.AlreadyGreeted = false;
                                 editor.clear();
-                                editor.commit();
+                                editor.apply();
 
                                 Intent intent = new Intent(Settings.this,
                                         LoginPage.class);
@@ -236,6 +238,7 @@ public class Settings extends AppCompatActivity {
                 edittext.setHint(getText((R.string.prompt_password)));
                 edittext.setTextSize(13);
                 edittext.setSingleLine();
+
                 FrameLayout container = new FrameLayout(Settings.this);
                 FrameLayout.LayoutParams params = new  FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
                 params.setMarginStart(60);//Margin= (50); // remember to scale correctly
@@ -245,10 +248,10 @@ public class Settings extends AppCompatActivity {
 
                 alert.setMessage(getText(R.string.confirmDeleteAcc));
                 alert.setTitle(getText(R.string.delete_account));
-//                alert.setView(edittext);
                 alert.setPositiveButton(getText(R.string.yes), new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
+
 
                         alert2.setMessage(getText(R.string.enterDeleteAcc));
                         alert2.setTitle(getText(R.string.delete_account));
@@ -266,12 +269,11 @@ public class Settings extends AppCompatActivity {
                                     startActivity(intent);
                                     finish();
                                 } else {
-
-//                                        alert2.setMessage(getText(R.string.passNotMatch));
-//                                        alert2.setTitle(getText(R.string.delete_account));
-////                                        TODO set a wrong pass msg
-//
-//                                        alert2.show();
+                                    Toast.makeText(getApplicationContext(), R.string.IncorrectPassword, Toast.LENGTH_LONG).show();
+//                                    alert2.setMessage(getText(R.string.passNotMatch));
+//                                    alert2.setTitle(getText(R.string.delete_account));
+//                                    alert2.show();
+                                    dialogInterface.dismiss();
                                 }
                             }
                         });

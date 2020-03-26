@@ -71,11 +71,13 @@ public class Chapters extends AppCompatActivity {
         View view = layoutInflater.inflate(R.layout.chapters_slider, null, false);
 
         card00 = view.findViewById(R.id.cardviewch1);
-//        cl = view.findViewById(R.id.clslider);
+        cl = view.findViewById(R.id.bigslider);
         mSlidsView = findViewById(R.id.chaptersSlidePage);
         mDots = findViewById(R.id.dots);
         mCardShower = findViewById(R.id.cardShower);
 
+        TextView chNum = view.findViewById(R.id.chNum);
+        ImageView charcter = view.findViewById(R.id.chapterDrawing);
 
 
         //=============================================
@@ -83,14 +85,13 @@ public class Chapters extends AppCompatActivity {
         adapter = new chaptersAdapter(this);
 
         mSlidsView.setAdapter(adapter);
-//        mSlidsView.setRotationY(540);
+
+        ConstraintLayout cl1 = findViewById(R.id.ConstraintLayout);
+
 
 //        if(student.GetLang() == 1) {
-////            mSlidsView.setRotationY(180);
-//
+//            cl1.setRotationY(180);
 //            mSlidsView.setRotationY(180);
-//            cl.setRotationY(180);
-//
 //        }
 
         addDotsIndicator(0);
@@ -181,8 +182,6 @@ public class Chapters extends AppCompatActivity {
 
             mDots.addView(mDotsText[i]);
 
-
-
         }
         if (mDotsText.length>0){
             mDotsText[position].setTextColor(getResources().getColor(R.color.Black));
@@ -193,8 +192,6 @@ public class Chapters extends AppCompatActivity {
     public void onBtnChapterClick(View v){
 
         Intent n ;
-        //System.out.println(card00.getId()+" id is over here "+v.getId() +" and "+R.id.cardviewch1);
-
 
         if(R.id.cardviewch1==card00.getId()){
             n = new Intent(Chapters.this, Ch1.class);
@@ -236,9 +233,7 @@ public class Chapters extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Locked", Toast.LENGTH_LONG).show();
 
         }
-//        else{
-//            n = new Intent(Chapters.this, Chapters.class);
-//        }
+
 
 
     }
@@ -252,51 +247,5 @@ public class Chapters extends AppCompatActivity {
 
 
 
-//
-//card1 = findViewById(R.id.cardviewch1);
-//        card1.setOnClickListener(new View.OnClickListener() {
-//public void onClick(View view) {
-//        Intent n = new Intent(Chapters.this, Ch1.class);
-//        startActivity(n);
-//        // finish();
-//        }
-//        });
-//
-//        card2 = findViewById(R.id.cardviewch2);
-//        card2.setOnClickListener(new View.OnClickListener(){
-//@Override
-//public void onClick(View v) {
-//        Intent n = new Intent(Chapters.this, Ch2.class);
-//        startActivity(n);
-//        // finish();
-//        }
-//        });
-//
-//        card3 = findViewById(R.id.cardviewch3);
-//        card3.setOnClickListener(new View.OnClickListener() {
-//public void onClick(View view) {
-//        Intent n = new Intent(Chapters.this, Ch3.class);
-//        startActivity(n);
-//        // finish();
-//        }
-//        });
-//
-//        card4 = findViewById(R.id.cardviewch4);
-//        card4.setOnClickListener(new View.OnClickListener() {
-//public void onClick(View view) {
-//        Intent n = new Intent(Chapters.this, Ch4.class);
-//        startActivity(n);
-//        //  finish();
-//        }
-//        });
-//
-//        card5 = findViewById(R.id.cardviewch5);
-//        card5.setOnClickListener(new View.OnClickListener() {
-//public void onClick(View view) {
-//        Intent n = new Intent(Chapters.this, Ch5.class);
-//        startActivity(n);
-//        // finish();
-//        }
-//        });
 
 

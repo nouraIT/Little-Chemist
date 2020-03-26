@@ -26,6 +26,7 @@ public class RecoverPassword extends AppCompatActivity {
     Student student = new Student();
     int spinnerSelected;
     DatabaseHelper helper=new DatabaseHelper(this);
+    ArrayAdapter<CharSequence> adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,17 +50,14 @@ public class RecoverPassword extends AppCompatActivity {
             }
         });
 
+        //-------------------------------------------------
 
         final Button Recover = findViewById(R.id.chngPassBtn);
-        spinner = (Spinner) findViewById(R.id.security_questions);
-
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.SecurityQs, android.R.layout.simple_spinner_item);
+        spinner = findViewById(R.id.security_questions);
+        adapter = ArrayAdapter.createFromResource(this,  R.array.SecurityQs, R.layout.spinner_text);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         spinnerSelected = spinner.getSelectedItemPosition();
-
-
 
         ET_Password = findViewById(R.id.newpass);
         ET_UserName = findViewById(R.id.username2);
@@ -234,9 +232,7 @@ public class RecoverPassword extends AppCompatActivity {
 
                 //Send UserName to Database to find it, and return Password
                 String [] question= helper.checkquestion(UserNameStr);
-               // System.out.println(question[1]);
-               // System.out.println(question[0]);
-               // System.out.println(spinnerSelected);
+
                 int q = parseInt(question[0]);
                 if(!(q == spinnerSelected))
 

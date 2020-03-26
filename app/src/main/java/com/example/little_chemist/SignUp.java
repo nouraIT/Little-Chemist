@@ -40,7 +40,8 @@ public class SignUp extends AppCompatActivity {
 
         signupButton = findViewById(R.id.signup);
         backLogin = findViewById(R.id.backToLogin);
-        spinner = (Spinner) findViewById(R.id.security_questions);
+
+        spinner = findViewById(R.id.security_questions);
         adapter = ArrayAdapter.createFromResource(this, R.array.SecurityQs, R.layout.spinner_text);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);

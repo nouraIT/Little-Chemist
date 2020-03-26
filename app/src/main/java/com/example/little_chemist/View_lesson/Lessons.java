@@ -55,8 +55,8 @@ public class Lessons extends AppCompatActivity {
     private SharedPreferences pref;
     private  DatabaseHelper helper ;
     private  Bundle bundle ;
-
-
+    String name;
+    Student student;
     @Override
 
 
@@ -67,7 +67,9 @@ public class Lessons extends AppCompatActivity {
         setContentView(R.layout.activity_lessons);
 
         helper = new DatabaseHelper(this);
-
+        pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
+        name = pref.getString("username", null); // getting String
+        student = helper.getStudent(name);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -76,6 +78,7 @@ public class Lessons extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         Context con = Lessons.this;
+        ConstraintLayout lessonlayout = findViewById(R.id.lessonlayout);
 
         layoutInflater = (LayoutInflater) con.getSystemService(Chapters.LAYOUT_INFLATER_SERVICE) ;
         View view = layoutInflater.inflate(R.layout.chapters_slider,null,false) ;
@@ -91,6 +94,7 @@ public class Lessons extends AppCompatActivity {
         mSlidsView.setAdapter(slideAdapter) ;
 
         addDotsIndicator(0);
+
 
         mSlidsView.addOnPageChangeListener(viewListener);
 
@@ -116,7 +120,6 @@ public class Lessons extends AppCompatActivity {
         });
 
         //change background image
-        ConstraintLayout lessonlayout = findViewById(R.id.lessonlayout);
         char chapternum = Integer.toString(lessonkey).charAt(0);
         switch (chapternum){
             case '1':
@@ -217,9 +220,7 @@ public class Lessons extends AppCompatActivity {
                 preBtn.setText(getText(R.string.backBtn));
 
 
-                pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
-                String name = pref.getString("username", null); // getting String
-                Student student = helper.getStudent(name);
+
                 String Lid=""+bundle.getInt("lessonId") ;
 
 

@@ -4,13 +4,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-
+    android:id="@+id/bigslider"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Chapters">
 
-<!--    android:rotationY="180"
--->
+    <!--    android:rotationY="180"
+    -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/clslider"
         android:layout_width="match_parent"
@@ -62,125 +62,106 @@
             app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
         <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="240dp"
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
 
-        android:layout_marginTop="0dp"
-        android:layout_marginStart="0dp"
-        android:layout_marginEnd="0dp"
-        android:orientation="vertical"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-    <LinearLayout
-        android:paddingTop="50dp"
-        android:paddingBottom="24dp"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        android:layout_weight="3"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-
-
-        >
-
-        <LinearLayout
-            android:layout_weight="1"
+            android:layout_marginTop="0dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="0dp"
             android:orientation="vertical"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
 
-            >
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
 
-            <androidx.cardview.widget.CardView
-                android:onClick="onBtnChapterClick"
-                android:id="@+id/cardviewch1"
+            <LinearLayout
+                android:paddingTop="50dp"
+                android:paddingBottom="24dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:layout_weight="3"
+                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="0dp"
+
+
+                >
 
                 <LinearLayout
-                    android:id="@+id/chapterCard"
+                    android:layout_weight="1"
                     android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="120dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:background="@drawable/ch1_bg"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
 
                     >
 
+                    <androidx.cardview.widget.CardView
+                        android:onClick="onBtnChapterClick"
+                        android:id="@+id/cardviewch1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:id="@+id/chapterCard"
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="120dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:background="@drawable/ch1_bg"
+
+                            >
 
 
-                    <ImageView
-                        android:id="@+id/lockImg"
-                        android:layout_marginEnd="12dp"
-                        android:layout_marginTop="12dp"
-                        android:layout_marginStart="0dp"
-                        android:layout_gravity="end"
-                        android:elevation="5dp"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:src="@drawable/padlock"
 
-                        />
+                            <ImageView
+                                android:id="@+id/lockImg"
+                                android:layout_marginEnd="12dp"
+                                android:layout_marginTop="12dp"
+                                android:layout_marginStart="0dp"
+                                android:layout_gravity="end"
+                                android:elevation="5dp"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:src="@drawable/padlock"
 
-                    <TextView
-                        android:id="@+id/chName"
-                        android:layout_width="147dp"
-                        android:layout_height="69dp"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_marginTop="-16dp"
+                                />
 
-                        android:alpha="0.5"
-                        android:fontFamily="@font/dk_sugary_pancake"
-                        android:text="@string/Ch5Name"
-                        android:textAlignment="center"
-                        android:textColor="@color/Black"
+                            <TextView
+                                android:id="@+id/chName"
+                                android:layout_width="147dp"
+                                android:layout_height="69dp"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="-16dp"
+
+                                android:alpha="0.5"
+                                android:fontFamily="@font/dk_sugary_pancake"
+                                android:text="@string/Ch5Name"
+                                android:textAlignment="center"
+                                android:textColor="@color/Black"
 
 
-                        android:textSize="22sp" />
+                                android:textSize="22sp" />
 
+                        </LinearLayout>
+                        <ImageView
+                            android:id="@+id/chImg"
+                            android:layout_width="90dp"
+                            android:layout_height="90dp"
+
+                            android:alpha="0.6"
+
+                            android:contentDescription="chapterImg" />
+
+
+                        ></androidx.cardview.widget.CardView>
                 </LinearLayout>
-                <ImageView
-                    android:id="@+id/chImg"
-                    android:layout_width="90dp"
-                    android:layout_height="90dp"
-
-                    android:alpha="0.6"
-
-                    android:contentDescription="chapterImg" />
 
 
-                ></androidx.cardview.widget.CardView>
+            </LinearLayout>
+
         </LinearLayout>
-
-
-    </LinearLayout>
-
-    </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-    <!--    <TextView-->
-    <!--        android:id="@+id/chapterName"-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="wrap_content"-->
-
-    <!--        android:layout_marginStart="8dp"-->
-    <!--        android:layout_marginTop="60dp"-->
-    <!--        android:layout_marginEnd="8dp"-->
-
-    <!--        android:fontFamily="@font/roboto_bold"-->
-    <!--        android:text="chapter name"-->
-    <!--        android:textColor="@color/white"-->
-    <!--        android:textSize="2sp"-->
-
-    <!--        app:layout_constraintEnd_toEndOf="parent"-->
-    <!--        app:layout_constraintHorizontal_bias="0.498"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toTopOf="parent" />-->

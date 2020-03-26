@@ -346,15 +346,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public void recoverPassword(String password,String username){
         db = this.getWritableDatabase();
-        //query="SELECT UserName,Password FROM  "+FeedEntry.TABLE_NAME;
-        String query =" UPDATE Student SET Password = '"+password +"' WHERE UserName = '"+username+"' ";
 
+        String query =" UPDATE Student SET Password = '"+password +"' WHERE UserName = '"+username+"' ";
         db.execSQL(query);
         db.close();
-
-        //Cursor cursor=db.rawQuery(query,null);
-        //return cursor.moveToFirst();
-
     }
 
     public boolean checkLang(String Username){
@@ -516,9 +511,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             for (int i=0;i<25;i++){
                 if(i+1 == Lid) {
                     oldStatus += (i + 1) + ":" + status + ",";
-                    lsnNum = String.valueOf(Integer.parseInt(lsnNum)+1);
-                    i++;
-                    oldStatus += (i + 1) + ":unlocked,";
+                    if(i!=24) {
+                        lsnNum = String.valueOf(Integer.parseInt(lsnNum) + 1);
+                        i++;
+                        oldStatus += (i + 1) + ":unlocked,";
+                    }
                     continue;
                 }
                 firstIndex = LLOCKS.indexOf(lsnNum);
@@ -548,7 +545,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.close();
     }
 
-    //TODO merge the chapter and the quiz
+
     public void updateQuiz(String username,int Qid,String status) {
 
         String Username,QZLOCKS= "";
@@ -605,6 +602,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
 
         db.close();
+
+        updateChapter(username,Qid,status);
 
     }
 

@@ -60,8 +60,6 @@ public class Ch4 extends AppCompatActivity {
             }
         });
 
-
-
         lsn1 = findViewById(R.id.cardviewlLSN1);
         lsn2 = findViewById(R.id.cardviewlLSN2);
         lsn3 = findViewById(R.id.cardviewlLSN3);
