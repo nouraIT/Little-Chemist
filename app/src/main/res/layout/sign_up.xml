@@ -52,12 +52,7 @@
                 android:maxLines="1"
                 android:selectAllOnFocus="true"
                 android:textColor="@color/purple"
-
-
-                android:textSize="16sp"
-                android:visibility="visible"
-                tools:targetApi="o"
-                tools:visibility="visible" />
+                android:textSize="16sp"/>
 
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -138,7 +133,7 @@
 
         <Spinner
             android:id="@+id/security_questions"
-            android:layout_width="282dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
             android:layout_marginTop="10dp"
@@ -152,7 +147,7 @@
             app:layout_constraintHorizontal_bias="0.476"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/password22"
-            tools:targetApi="q" />
+            />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/securityA"

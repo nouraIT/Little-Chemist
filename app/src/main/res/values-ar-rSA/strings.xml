@@ -148,6 +148,7 @@
     <string name="gallery">معرض الصور</string>
     <string name="tap_call6">انقر لاشعال النار! بعد ظهور النقاط البيضاء</string>
     <string name="throwFire">اختر العنصر الذي تريد رميه في النار</string>
+    <string name="IncorrectPassword">كلمة المرور غير صحيحة</string>
 
 
     <!-- _______________ error msgs _______________ -->

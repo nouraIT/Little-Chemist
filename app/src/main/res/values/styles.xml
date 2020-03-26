@@ -57,7 +57,7 @@
     </style>
 
     <style name="mySpinnerItemStyle" parent="@android:style/Widget.Spinner">
-        <item name="android:textColor">@color/purple</item>
+        <item name="android:textColor">@color/darkpruple</item>
 
     </style>
 

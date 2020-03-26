@@ -136,6 +136,7 @@
     <string name="null_username">Username should not be empty</string>
     <string name="null_password">Password should not be empty</string>
     <string name="IncorrectAccount">UserName or Passwords is not correct</string>
+    <string name="IncorrectPassword">Password is not correct</string>
     <string name="shortPass">Password should be more than 5 characters</string>
     <string name="passNotMatch">Passwords do not match</string>
     <string name="shortName">Username should be more than 4 characters</string>
