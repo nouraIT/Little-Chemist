@@ -41,13 +41,15 @@ public class quizQ extends AppCompatActivity {
 
     public ArrayList<Integer> mImage = new ArrayList<Integer>();
     private Button nextbtn, prebtn;
-    private int slidcount;
+    private int slidcount = 0;
     private model[] modelQuestion = new model[5];
     private String[] currectanswer = new String[5];
     private String[] Option = new String[5];
     private String[][] Question = new String[5][];
     private double Score =0;
     private String[] onlyQuestion = new String[5];
+    private int slidchange =0;
+    private boolean inlastslid = false;
     //private String[] whichcontent = new String[5];
 
     int QuizID;
@@ -146,7 +148,7 @@ public class quizQ extends AppCompatActivity {
         carousel.addCarouselListener((CarouselListener)(new CarouselListener() {
             boolean positioneqfive = false;
             public void onPositionChange(int position) {
-                slidcount = position;
+                slidchange = position;
                 if (position == 0){
                     nextbtn.setEnabled(true);
                     prebtn.setEnabled(false);
@@ -154,6 +156,7 @@ public class quizQ extends AppCompatActivity {
                     prebtn.setText("");
                 }
                 else if (position == 4){
+                    inlastslid = true;
                     nextbtn.setEnabled(true);
                     prebtn.setEnabled(true);
                     nextbtn.setVisibility(View.VISIBLE);
@@ -163,6 +166,7 @@ public class quizQ extends AppCompatActivity {
                     nextbtn.setEnabled(true);
                     prebtn.setEnabled(true);
                     prebtn.setVisibility(View.VISIBLE);
+                    nextbtn.setText(getText(R.string.nextBtn));
                     prebtn.setText(getText(R.string.backBtn));
                 }
                 Log.d(quizQ.this.getTAG(), "currentPosition : " + position);
@@ -254,45 +258,98 @@ public class quizQ extends AppCompatActivity {
         carousel.add((modelQuestion[4]));
 
 
+
         //next button
         nextbtn.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View view) {
                 boolean YouCantRun = false;
-                carousel.setCurrentPosition(slidcount+1);
-                if (slidcount == 4){
-                    Intent n = new Intent(quizQ.this, QuizResult.class);
-                    for (int i=0; i<adapter.getOption().length;i++){
-                        if(adapter.getOption()[i] == null){
-                            YouCantRun = true;
-                            nextbtn.setEnabled(true);
-                            Toast.makeText(quizQ.this, "Sweetie finish all the questions!", Toast.LENGTH_LONG).show();
-                            break;
+                if (slidcount != 4) {
+                    if (slidcount < slidchange){
+                        slidcount = slidchange;
+                        carousel.setCurrentPosition(slidcount+1);
+                        slidcount = slidcount +1;
+                        int slidenum = slidcount-1;
+                        if (adapter.getOption()[slidenum] != null){
+                            mImage.set(slidenum, R.drawable.tick_mark);
+                            initRecyclerView();
+                        }else{
+                            mImage.set(slidenum, R.drawable.wrong_mark);
+                            initRecyclerView();
+                        }
+                    }else {
+                        carousel.setCurrentPosition(slidcount+1);
+                        slidcount = slidcount +1;
+                        int slidenum = slidcount-1;
+                        if (adapter.getOption()[slidenum] != null){
+                            mImage.set(slidenum, R.drawable.tick_mark);
+                            initRecyclerView();
+                        }else{
+                            mImage.set(slidenum, R.drawable.wrong_mark);
+                            initRecyclerView(); }
+                        if (slidcount == 4){
+                            nextbtn.setVisibility(View.VISIBLE);
+                            nextbtn.setText(getText(R.string.finishBtn));
+                            Intent n = new Intent(quizQ.this, QuizResult.class);
+                            for (int i=0; i<adapter.getOption().length;i++){
+                                if(adapter.getOption()[i] == null){
+                                    YouCantRun = true;
+                                    nextbtn.setEnabled(true);
+                                    inlastslid = true;
+                                    Toast.makeText(quizQ.this, "Sweetie finish all the questions!", Toast.LENGTH_LONG).show();
+                                    break;
 //                            getApplicationContext()
+                                }
+                            }
+                            if (YouCantRun == false) {
+                                Option = adapter.getOption();
+                                bundle.putStringArray("option", Option);
+                                bundle.putStringArray("content", onlyQuestion);
+                                bundle.putStringArray("answer", currectanswer);
+                                n.putExtras(bundle);
+                                Score = score(Option,currectanswer);
+                                startActivity(n);
+                            }
                         }
                     }
-                    if (YouCantRun == false) {
-                    Option = adapter.getOption();
-                    bundle.putStringArray("option", Option);
-                    bundle.putStringArray("content", onlyQuestion);
-                    bundle.putStringArray("answer", currectanswer);
-                    n.putExtras(bundle);
-                    Score = score(Option,currectanswer);
-                    startActivity(n);
+                    if (slidcount > 0) {
+                        prebtn.setEnabled(true);
+                        prebtn.setVisibility(View.VISIBLE);
+                        prebtn.setText(getText(R.string.backBtn));
                     }
                 }
 
             }
         });
 
+
         //back button
         prebtn.setOnClickListener(new View.OnClickListener(){
+            int slidenum =0;
 
             @Override
             public void onClick(View view) {
+                if (inlastslid == true){
+                    slidenum = slidcount-1;
+                    if (adapter.getOption()[slidenum] != null){
+                        mImage.set(slidenum+1, R.drawable.tick_mark);
+                        initRecyclerView();
+                    }else{
+                        mImage.set(slidenum+1, R.drawable.wrong_mark);
+                        initRecyclerView();
+                    }
+                }
                 carousel.setCurrentPosition(slidcount-1);
-
+                slidcount = slidcount -1;
+                if (slidcount == 0){
+                    prebtn.setEnabled(false);
+                    prebtn.setVisibility(View.INVISIBLE);
+                    prebtn.setText("");
+                }
+                if (slidcount < 4){
+                    nextbtn.setText(getText(R.string.nextBtn));
+                }
             }
         });
 
