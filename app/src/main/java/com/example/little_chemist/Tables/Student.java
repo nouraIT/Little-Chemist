@@ -121,7 +121,7 @@ public class Student extends AppCompatActivity implements Serializable {
     public String getLsnLock(String num){
 
         String status ;
-//        System.out.println("inside student "+LSNLocks);
+        System.out.println("inside student "+LSNLocks);
 
         int lsnIndex = LSNLocks.indexOf(num);
         int endIndex = LSNLocks.indexOf(",",lsnIndex);

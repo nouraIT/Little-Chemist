@@ -6,19 +6,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
-
 
 import com.example.little_chemist.Chapters;
 import com.example.little_chemist.DatabaseHelper;
 import com.example.little_chemist.LabLesson2;
 import com.example.little_chemist.R;
-import com.example.little_chemist.Tables.Quiz;
 import com.example.little_chemist.Tables.Student;
 import com.example.little_chemist.View_lesson.Lessons;
-import com.example.little_chemist.View_lesson.lab;
 import com.example.little_chemist.quizQ;
 
 import androidx.appcompat.app.AppCompatActivity;

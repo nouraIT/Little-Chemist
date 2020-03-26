@@ -104,8 +104,8 @@ public class ARCards extends AppCompatActivity {
                     Intent h;
                     if(Lid != 2)
                         h = new Intent(ARCards.this, Ch5.class);
-
-                    h = new Intent(ARCards.this, Ch1.class);
+                    else
+                        h = new Intent(ARCards.this, Ch1.class);
                     startActivity(h);
                     finish();
                 }
@@ -263,28 +263,5 @@ public class ARCards extends AppCompatActivity {
 
 //        arFragment.getArSceneView().getScene().addOnUpdateListener(this::onUpdate);
 
-    }
-}
-
-
-
-class Reminder {
-    Timer timer;
-
-    public Reminder(int seconds) {
-        timer = new Timer();
-        timer.schedule(new RemindTask(), seconds*1000);
-    }
-
-    class RemindTask extends TimerTask {
-        public void run() {
-            System.out.println("Time's up!");
-            timer.cancel(); //Terminate the timer thread
-        }
-    }
-
-    public static void main(String args[]) {
-        new Reminder(5);
-        System.out.println("Task scheduled.");
     }
 }
