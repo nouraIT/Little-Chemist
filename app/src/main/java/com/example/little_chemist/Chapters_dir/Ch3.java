@@ -158,7 +158,8 @@ public class Ch3 extends AppCompatActivity {
 
                         public void run() {
                             Intent n = new Intent(Ch3.this, LabLesson5.class);
-
+                            n.putExtra("lesson", 33);
+                            n.putExtra("lessonId",13);
                             startActivity(n);
                         }
                     });
