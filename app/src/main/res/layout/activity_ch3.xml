@@ -34,7 +34,7 @@
         android:layout_marginTop="28dp"
         android:layout_marginEnd="8dp"
 
-        android:fontFamily="@font/roboto_bold"
+        android:fontFamily="@font/dk_sugary_pancake"
         android:text="@string/Ch3Name"
         android:textColor="@color/white"
         android:textSize="30sp"
@@ -132,7 +132,7 @@
                             android:layout_gravity="start"
                             android:layout_marginStart="2dp"
                             android:layout_marginTop="-15dp"
-
+                            android:fontFamily="@font/dk_sugary_pancake"
                             android:alpha="0.5"
                             android:text="@string/Ch3Lsn1"
                             android:textColor="@color/Black"
@@ -196,7 +196,7 @@
                             android:layout_gravity="start"
                             android:layout_marginTop="-15dp"
                             android:layout_marginStart="2dp"
-
+                            android:fontFamily="@font/dk_sugary_pancake"
                             android:text="@string/Ch3Lsn2"
                             android:textSize="15sp"
                             android:textColor="@color/Black"
@@ -262,7 +262,7 @@
                             android:layout_gravity="start"
                             android:layout_marginTop="-15dp"
                             android:layout_marginStart="2dp"
-
+                            android:fontFamily="@font/dk_sugary_pancake"
                             android:text="@string/Ch3Lsn3"
                             android:textSize="15sp"
                             android:textColor="@color/Black"
@@ -344,7 +344,7 @@
                             android:layout_gravity="start"
                             android:layout_marginStart="2dp"
                             android:layout_marginTop="-15dp"
-
+                            android:fontFamily="@font/dk_sugary_pancake"
                             android:alpha="0.5"
                             android:text="@string/Ch3Lsn4"
                             android:textColor="@color/Black"
@@ -411,7 +411,7 @@
                             android:layout_gravity="start"
                             android:layout_marginStart="2dp"
                             android:layout_marginTop="-19dp"
-
+                            android:fontFamily="@font/dk_sugary_pancake"
                             android:alpha="0.5"
                             android:text="@string/Ch3Lsn5"
                             android:textColor="@color/Black"
@@ -463,7 +463,7 @@
                             android:layout_gravity="start"
                             android:layout_marginTop="15dp"
                             android:layout_marginStart="4dp"
-
+                            android:fontFamily="@font/dk_sugary_pancake"
                             android:text="@string/Quiz"
                             android:textSize="20sp"
                             android:textColor="@color/Black"
