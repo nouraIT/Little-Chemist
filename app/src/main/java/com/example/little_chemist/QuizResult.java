@@ -15,11 +15,15 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.example.little_chemist.Chapters_dir.Ch1;
+import com.example.little_chemist.Chapters_dir.Ch2;
+import com.example.little_chemist.Chapters_dir.Ch3;
+import com.example.little_chemist.Chapters_dir.Ch4;
+import com.example.little_chemist.Chapters_dir.Ch5;
 import com.example.little_chemist.kotlin.Intrinsics;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+
 
 public class QuizResult extends AppCompatActivity {
 
@@ -36,7 +40,7 @@ public class QuizResult extends AppCompatActivity {
     private int pagecount = 0;
     Button backbtn;
     Button nextBtn;
-    int image;
+    private int QuizID;
 
     public QuizResult(){
         Intrinsics.checkExpressionValueIsNotNull(TAG, "QuizResult.class.getSimpleName()");
@@ -58,7 +62,7 @@ public class QuizResult extends AppCompatActivity {
         Log.d(TAG,"QuizResult onCreate");
 
         Bundle bundle=getIntent().getExtras();
-        int QuizID = bundle.getInt("ChapterNumber");
+        QuizID = bundle.getInt("ChapterNumber");
 
         ConstraintLayout Quizlayout = findViewById(R.id.resultlayout);
         switch (QuizID){
@@ -158,7 +162,25 @@ public class QuizResult extends AppCompatActivity {
                 nextBtn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent n = new Intent(QuizResult.this, Home.class);
+                        Intent n;
+                        switch (QuizID){
+                            case 1:
+                                 n = new Intent(QuizResult.this, Ch1.class);
+                                 break;
+                            case 2:
+                                n = new Intent(QuizResult.this, Ch2.class);
+                                break;
+                            case 3:
+                                n = new Intent(QuizResult.this, Ch3.class);
+                                break;
+                            case 4:
+                                n = new Intent(QuizResult.this, Ch4.class);
+                                break;
+                            case 5:
+                                n = new Intent(QuizResult.this, Ch5.class);
+                                break;
+                            default: n = new Intent(QuizResult.this, Home.class);
+                        }
                         startActivity(n);
                         finish();
                     }
