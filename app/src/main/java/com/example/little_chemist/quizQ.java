@@ -298,8 +298,9 @@ public class quizQ extends AppCompatActivity {
                                 bundle.putStringArray("option", Option);
                                 bundle.putStringArray("content", onlyQuestion);
                                 bundle.putStringArray("answer", currectanswer);
-                                n.putExtras(bundle);
                                 Score = score(Option,currectanswer);
+                                bundle.putDouble("score",Score);
+                                n.putExtras(bundle);
                                 startActivity(n);
                             }
                         }

@@ -7,7 +7,7 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/recyclercard"
-        android:layout_width="370dp"
+        android:layout_width="340dp"
         android:layout_height="wrap_content"
         app:cardCornerRadius="10dp"
         android:layout_centerHorizontal="true"
@@ -29,12 +29,15 @@
         android:textSize="20dp"
         android:layout_marginRight="10dp"
         android:padding="10dp"
-        android:textColor="@color/Black"/>
+        android:fontFamily="@font/dk_sugary_pancake"
+        android:textColor="@color/black"/>
     <TextView
         android:id="@+id/Question"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="#8E8E8E"
         android:textSize="18dp"
+        android:fontFamily="@font/dk_sugary_pancake"
         android:paddingBottom="5dp"
         android:paddingTop="5dp"
         android:paddingRight="5dp"
@@ -45,7 +48,7 @@
         android:layout_width="320dp"
         android:layout_height="2dp"
         android:layout_gravity="center"
-        android:background="#c0c0c0"/>
+        android:background="#C5C5C5"/>
 
 <RelativeLayout
     android:layout_width="wrap_content"
@@ -62,7 +65,8 @@
         android:layout_height="wrap_content"
         android:text="Your answer:"
         android:textSize="20dp"
-        android:textColor="@color/gray"
+        android:fontFamily="@font/dk_sugary_pancake"
+        android:textColor="#B5B5B5"
         android:layout_marginRight="20dp"
         android:padding="10dp"
         />
@@ -70,9 +74,11 @@
         android:id="@+id/wronganswer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="#8E8E8E"
         android:textSize="18dp"
         android:paddingBottom="5dp"
         android:paddingTop="5dp"
+        android:fontFamily="@font/dk_sugary_pancake"
         android:paddingRight="5dp"
         android:paddingLeft="10dp"/>
 
@@ -82,14 +88,14 @@
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:src="@drawable/tick_mark"
-        android:layout_marginLeft="310dp"
+        android:layout_marginStart="280dp"
         android:layout_centerVertical="true"/>
 </RelativeLayout>
     <View
         android:layout_width="320dp"
         android:layout_height="2dp"
         android:layout_gravity="center"
-        android:background="#c0c0c0"/>
+        android:background="#C5C5C5"/>
 <RelativeLayout
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
@@ -104,23 +110,27 @@
         android:layout_height="wrap_content"
         android:text="Right answer:"
         android:textSize="20dp"
-        android:textColor="@color/gray"
+        android:fontFamily="@font/dk_sugary_pancake"
+        android:textColor="#B5B5B5"
         android:padding="10dp"
         />
     <TextView
         android:id="@+id/rightanswer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="#8E8E8E"
+        android:textSize="18dp"
         android:paddingBottom="5dp"
         android:paddingTop="5dp"
         android:paddingRight="5dp"
+        android:fontFamily="@font/dk_sugary_pancake"
         android:paddingLeft="10dp"/>
     </LinearLayout>
 
     <ImageView
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_marginLeft="310dp"
+        android:layout_marginStart="280dp"
         android:src="@drawable/tick_mark"
         android:layout_centerVertical="true"
         />
