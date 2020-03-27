@@ -27,7 +27,7 @@ public class QuizResult extends AppCompatActivity {
     private String[] Currectanswer;
     private String[] option;
     private String[] Question;
-    private ArrayList<ResultModel> resultModels = new ArrayList<ResultModel>();;
+    private ArrayList<ResultModel> resultModels = new ArrayList<ResultModel>();
     private ResultAdapter adapter;
     private ViewPager viewPager;
     private ProgressBar progressBar;
