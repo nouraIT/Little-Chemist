@@ -177,16 +177,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 //        student = new Student( (count+1) ,scores,(qz),(ch),(ls),(student.GetUserName()),(student.GetPassword()),
 //                (student.GetSecQ()),(student.GetSecA()),(student.GetLang()), R.drawable.face1);
-//        student = new Student( (count+1) ,scores,(qz),(ch),(ls),(student.GetUserName()),(student.GetPassword()),
-//                (student.GetSecQ()),(student.GetSecA()),(student.GetLang()), R.drawable.face1);
-        // use laststudentid to set student id
         student = new Student((int) (lastStudentID+1),scores,(qz),(ch),(ls),(student.GetUserName()),(student.GetPassword()),//here
                 (student.GetSecQ()),(student.GetSecA()),(student.GetLang()), R.drawable.face1);
         ContentValues contentvalues=new ContentValues();
 //        contentvalues.put(FeedEntry.COLUMN_ID,count+1);//here
         contentvalues.put(FeedEntry.COLUMN_SCORE, scores);
         contentvalues.put(FeedEntry.COLUMN_QZLOCKS, qz);
-        //        contentvalues.put(FeedEntry.COLUMN_ID,count+1);//here
         contentvalues.put(FeedEntry.COLUMN_CHLOCKS, ch);
         contentvalues.put(FeedEntry.COLUMN_LSNLOCKS, ls);
         contentvalues.put(FeedEntry.COLUMN_USERNAME, student.GetUserName());
@@ -197,9 +193,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentvalues.put(FeedEntry.COLUMN_IMG, R.drawable.face1 );
 
 
-        db.insert(FeedEntry.TABLE_STUDENT,null,contentvalues);
+        lastStudentID = db.insert(FeedEntry.TABLE_STUDENT,null,contentvalues);
         db.close();
-        lastStudentID = db.insert(FeedEntry.TABLE_STUDENT,null,contentvalues);//here
     }
 
 //    public void InsertChapters(Chapter chapter){
