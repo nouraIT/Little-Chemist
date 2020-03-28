@@ -4,9 +4,7 @@
 
     <!--         LESSON 1            -->
 
-    <string name="C2L1S1"><b>Heterogeneous mixture</b>  is a substance that can be easily separated into its parts, and those parts retain their original properties.
-For example, have you ever tried mixing oil and water? They stay separate no matter how hard you try to mix them.
-</string>
+    <string name="C2L1S1" translatable="false">"<b>Heterogeneous mixture</b>  is a substance that can be easily separated into its parts, and those parts retain their original properties. For example, have you ever tried mixing oil and water? They stay separate no matter how hard you try to mix them. "</string>
 
     <string name="C2L1S2" >There are more examples of<b> Heterogeneous mixture</b> such as: \n
 •Mixed nuts \n
@@ -25,6 +23,8 @@ For example, have you ever tried mixing oil and water? They stay separate no mat
         <item>Chicken noodle soup</item>
     </string-array>
     <!--         LESSON 1            -->
+
+
 
     <!--         LESSON 3            -->
     <string name="C2L3S1">Do you know that Atoms mode everything in this world? Even you and me</string>
@@ -68,6 +68,8 @@ For example, have you ever tried mixing oil and water? They stay separate no mat
     </string-array>
 
     <!--         LESSON 3            -->
+
+
 
 
     <!--         LESSON 4            -->
@@ -129,7 +131,7 @@ For example, have you ever tried mixing oil and water? They stay separate no mat
     </string-array>
 
     <string name="C2L4S6">
-        C2H6 + O → CO2 +H2O \n\n
+        C2H6 + O → CO2 +H2O \n
         First let\'s count the atoms on the reactant and product side separately in the original equation
     </string>
     <!--    <string-array name="C2L4E6M">-->
@@ -140,7 +142,7 @@ For example, have you ever tried mixing oil and water? They stay separate no mat
     <!--    </string-array>-->
 
     <string name="C2L4S7">
-        C2H6 + O → CO2 +H2O \n\n
+        C2H6 + O → CO2 +H2O \n
         Second based on the previous step determine what coefficients need to be added or changed to make the products and reactants balanced
     </string>
     <!--    <string-array name="C2L4E7M">-->
@@ -152,7 +154,7 @@ For example, have you ever tried mixing oil and water? They stay separate no mat
     <string name="C2L4S8">
         Thirdو after determining your coefficients, recount the atoms to make sure that they balance \n\n
 
-        2C2H6 + 7O → 4CO2 +6H2O \n\n
+        2C2H6 + 7O → 4CO2 +6H2O \n
         Both sides have the same number of atoms of each element so the equation is balanced
     </string>
     <string-array name="C2L4S8E4M">
@@ -232,11 +234,10 @@ For example, have you ever tried mixing oil and water? They stay separate no mat
     <!--         LESSON 5            -->
 
 
-
     <!--        Quiz Questions           -->
     <string-array name="C2Quiz_Q1">
 
-        <item name="Q1">The nucleus of an atom is?C2</item>
+        <item name="Q1">The nucleus of an atom is?</item>
         <item name="A1">Split apart.</item>
         <item name="A2">Made larger.</item>
         <item name="A3">Frozen.</item>
@@ -247,7 +248,7 @@ For example, have you ever tried mixing oil and water? They stay separate no mat
     </string-array>
     <string-array name="C2Quiz_Q2">
 
-        <item name="Q2">Electrons?C2</item>
+        <item name="Q2">Electrons?</item>
         <item name="A1">are huge and move very slowly.</item>
         <item name="A2">move extremely fast and are very tiny.</item>
         <item name="A3">have no energy at all.</item>
@@ -258,7 +259,7 @@ For example, have you ever tried mixing oil and water? They stay separate no mat
     </string-array>
     <string-array name="C2Quiz_Q3">
 
-        <item name="Q3">How many electrons are in an atom?C2</item>
+        <item name="Q3">How many electrons are in an atom?</item>
         <item name="A1">There are 5 electrons in every atom.</item>
         <item name="A2">Atoms do not have electrons in them.</item>
         <item name="A3">different amounts of electrons.</item>
@@ -270,7 +271,7 @@ For example, have you ever tried mixing oil and water? They stay separate no mat
 
     <string-array name="C2Quiz_Q4">
 
-        <item name="Q4">How do atoms bond together?C2</item>
+        <item name="Q4">How do atoms bond together?</item>
         <item name="A1">They share their electrons.</item>
         <item name="A2">Atoms do not bond together.</item>
         <item name="A3">One gets smaller so it can fit inside the other.</item>
@@ -281,7 +282,7 @@ For example, have you ever tried mixing oil and water? They stay separate no mat
     </string-array>
     <string-array name="C2Quiz_Q5">
 
-        <item name="Q5">Isotopes of an element differ in _____.C2</item>
+        <item name="Q5">Isotopes of an element differ in _____.</item>
         <item name="A1">number of protons.</item>
         <item name="A2">number of electrons.</item>
         <item name="A3">atomic numbers.</item>

@@ -53,7 +53,7 @@ public class Lessons extends AppCompatActivity {
     private int NumDots ;
     private String IDEx ;
     private SharedPreferences pref;
-    private  DatabaseHelper helper ;
+    private  DatabaseHelper helper = new DatabaseHelper(this);
     private  Bundle bundle ;
     String name;
     Student student;
@@ -66,7 +66,6 @@ public class Lessons extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_lessons);
 
-        helper = new DatabaseHelper(this);
         pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
         name = pref.getString("username", null); // getting String
         student = helper.getStudent(name);
@@ -242,7 +241,7 @@ public class Lessons extends AppCompatActivity {
 
                         helper.updateLesson(name,bundle.getInt("lessonId"),"completed");//,Integer.toString(lessonkey).charAt(0));
                         statue = student.getLsnLock(Lid);
-                        System.out.println(statue) ;
+//                        System.out.println(statue) ;
                         startActivity(n);
                         finish();
                     }

@@ -155,7 +155,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         //To get , how many column in ur table
         String query="SELECT * FROM "+FeedEntry.TABLE_STUDENT;
         Cursor cursor=db.rawQuery(query,null);
-//        int count=cursor.getCount();
+        int count=cursor.getCount();
+        //TODO count = last id
 
         String ch,ls,qz,scores;
         scores="c1:0,c2:0,c3:0,c4:0,c5:0,";
@@ -166,10 +167,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 "21:locked,22:locked,23:locked,24:locked,25:locked,";
 
         if(student.GetUserName().equals("admin") ||student.GetUserName().equals("Admin") ){
-            scores="c1:100,c2:70,c3:40,c4:9,c5:0,";
+            scores="c1:20,c2:3,c3:0,c4:0,c5:0,";
             qz="1:completed,2:unlocked,3:unlocked,4:unlocked,5:unlocked,";
             ch="1:completed,2:unlocked,3:unlocked,4:unlocked,5:unlocked,";
-            ls="1:completed,2:unlocked,3:unlocked,4:unlocked,5:unlocked,6:unlocked,7:unlocked,8:unlocked,9:unlocked,10:unlocked," +
+            ls="1:completed,2:completed,3:completed,4:completed,5:completed,6:completed,7:unlocked,8:unlocked,9:unlocked,10:unlocked," +
                     "11:unlocked,12:unlocked,13:unlocked,14:unlocked,15:unlocked,16:unlocked,17:unlocked,18:unlocked,19:unlocked,20:unlocked," +
                     "21:unlocked,22:unlocked,23:unlocked,24:unlocked,25:unlocked,";;
         }
@@ -178,7 +179,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 (student.GetSecQ()),(student.GetSecA()),(student.GetLang()), R.drawable.face1);
 
         ContentValues contentvalues=new ContentValues();
-//        contentvalues.put(FeedEntry.COLUMN_ID,count+1);
+        contentvalues.put(FeedEntry.COLUMN_ID,count+1);
         contentvalues.put(FeedEntry.COLUMN_SCORE, scores);
         contentvalues.put(FeedEntry.COLUMN_QZLOCKS, qz);
         contentvalues.put(FeedEntry.COLUMN_CHLOCKS, ch);
@@ -263,6 +264,56 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     //-------------------------- outer methods ----------------------
 
+
+    public void setScore(String username, int ChID, double score){
+        String Username;
+        String Totscores= "";
+
+        //scores = "c1:0,c2:0..."
+        db = this.getReadableDatabase();
+        boolean flag=false;
+//        System.out.println("score is "+score);
+        String q = "SELECT UserName,scores FROM Student";
+        Cursor cursor = db.rawQuery(q, null);
+        //this will find the specified student
+        if (cursor.moveToFirst()) {
+            do {
+                Username = cursor.getString(0);
+                if (Username.contentEquals(username)) {
+                    Totscores = cursor.getString(1);
+                    flag=true;
+                    break;
+                }
+            } while (cursor.moveToNext());
+        }
+
+        cursor.close();
+
+        if(flag) {
+
+            String [] sco = Totscores.split(",");
+
+            //sc= [c1:8 , c2:0 ...];
+            if( sco.length != 0 )
+                sco[ChID-1] = "c"+ChID+":"+score;
+
+            String newScores ="";
+            for(int i=0 ; i<sco.length ; i++){
+//                System.out.println(newScores);
+                newScores+=sco[i]+",";
+            }
+
+            if(!newScores.isEmpty())
+                Totscores=newScores;
+
+//            System.out.println("after all is done "+Totscores);
+
+            db = getWritableDatabase();
+            String query = " UPDATE Student SET scores = '" + Totscores + "' WHERE UserName = '" + username + "' ";
+            db.execSQL(query);
+        }
+        db.close();
+    }
 
     public String checkPassword(String Username){
 
@@ -474,8 +525,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
-
-
     public void updateLesson(String username, int Lid, String status) {
 
         String Username;
@@ -537,7 +586,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
             if(!oldStatus.equals(""))
                 LLOCKS=oldStatus;
-            System.out.println("after all is done "+LLOCKS);
+//            System.out.println("after all is done "+LLOCKS);
             db = getWritableDatabase();
             String query = " UPDATE Student SET LSNLOCKS = '" + LLOCKS + "' WHERE UserName = '" + username + "' ";
             db.execSQL(query);
@@ -575,21 +624,23 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             int firstIndex =0;
             int endIndex =0;
             String oldStatus ="";
-            String lsnNum = "1";
+            String qzNum = "1";
 
             //this loop will change the Qid and the one next to it
-            for (int i=0;i<25;i++){
+            for (int i=0;i<5;i++){
                 if(i+1 == Qid) {
                     oldStatus += (i + 1) + ":" + status + ",";
-                    lsnNum = String.valueOf(Integer.parseInt(lsnNum)+1);
-                    i++;
-                    oldStatus += (i + 1) + ":unlocked,";
+                    if(Qid!=5) {
+                        qzNum = String.valueOf(Integer.parseInt(qzNum) + 1);
+                        i++;
+                        oldStatus += (i + 1) + ":unlocked,";
+                    }
                     continue;
                 }
-                firstIndex = QZLOCKS.indexOf(lsnNum);
-                lsnNum = String.valueOf(Integer.parseInt(lsnNum)+1);
+                firstIndex = QZLOCKS.indexOf(qzNum);
+                qzNum = String.valueOf(Integer.parseInt(qzNum)+1);
                 endIndex = QZLOCKS.indexOf(",",firstIndex);
-                oldStatus += (i+1)+QZLOCKS.substring(firstIndex+2,endIndex)+",";
+                oldStatus += (i+1)+":"+QZLOCKS.substring(firstIndex+2,endIndex)+",";
             }
 
             if(!oldStatus.equals(""))
@@ -600,14 +651,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
             db.execSQL(query);
         }
-
+        updateChapter(username,Qid,status);
         db.close();
 
-        updateChapter(username,Qid,status);
 
     }
 
     public void updateChapter(String username,int CHID,String status) {
+//        System.out.println("in chapter");
 
         String Username, CHLOCKS= "";
 
@@ -622,6 +673,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 Username = cursor.getString(0);
                 if (Username.contentEquals(username)) {
                     CHLOCKS = cursor.getString(1);
+                    flag=true;
                     break;
                 }
             } while (cursor.moveToNext());
@@ -634,21 +686,23 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             int firstIndex =0;
             int endIndex =0;
             String oldStatus ="";
-            String lsnNum = "1";
+            String chNum = "1";
 
             //this loop will change the CHID and the one next to it
-            for (int i=0;i<25;i++){
+            for (int i=0;i<5;i++){
                 if(i+1 == CHID) {
                     oldStatus += (i + 1) + ":" + status + ",";
-                    lsnNum = String.valueOf(Integer.parseInt(lsnNum)+1);
-                    i++;
-                    oldStatus += (i + 1) + ":unlocked,";
+                    if(CHID!=5) {
+                        chNum = String.valueOf(Integer.parseInt(chNum) + 1);
+                        i++;
+                        oldStatus += (i + 1) + ":unlocked,";
+                    }
                     continue;
                 }
-                firstIndex = CHLOCKS.indexOf(lsnNum);
-                lsnNum = String.valueOf(Integer.parseInt(lsnNum)+1);
+                firstIndex = CHLOCKS.indexOf(chNum);
+                chNum = String.valueOf(Integer.parseInt(chNum)+1);
                 endIndex = CHLOCKS.indexOf(",",firstIndex);
-                oldStatus += (i+1)+CHLOCKS.substring(firstIndex+2,endIndex)+",";
+                oldStatus += (i+1)+":"+CHLOCKS.substring(firstIndex+2,endIndex)+",";
             }
 
             if(!oldStatus.equals(""))
@@ -659,15 +713,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
             db.execSQL(query);
         }
-
         db.close();
-
-
-
-
     }
-
-
-
 
 }

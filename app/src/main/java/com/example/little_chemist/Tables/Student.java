@@ -32,9 +32,14 @@ public class Student extends AppCompatActivity implements Serializable {
         int ch = 1,first,last;
 
         for(int i =0;i<5;i++){
-            first = scores.indexOf("c"+(ch)+":");
+//            String index = "c"+(ch);
+//            System.out.println(scores);
+
+            first = scores.indexOf("c"+(ch));
+//            System.out.println(first);
             ch++;
             last = scores.indexOf(",",first);
+//            System.out.println(scores.substring(first+3,last));
             ScoresA[i] = Double.parseDouble(scores.substring(first+3,last));
         }
 
@@ -121,7 +126,7 @@ public class Student extends AppCompatActivity implements Serializable {
     public String getLsnLock(String num){
 
         String status ;
-        System.out.println("inside student "+LSNLocks);
+//        System.out.println("LSN inside student "+LSNLocks);
 
         int lsnIndex = LSNLocks.indexOf(num);
         int endIndex = LSNLocks.indexOf(",",lsnIndex);
@@ -136,6 +141,9 @@ public class Student extends AppCompatActivity implements Serializable {
     }
 
     public String getChLock(String num) {
+
+//        System.out.println("ch inside student "+CHLocks);
+
         int lsnIndex = CHLocks.indexOf(num);
         int endIndex = CHLocks.indexOf(",",lsnIndex);
         return CHLocks.substring(lsnIndex+2,endIndex);
@@ -143,6 +151,9 @@ public class Student extends AppCompatActivity implements Serializable {
     }
 
     public String getQzLock(String num) {
+
+//        System.out.println("quiz inside student "+QZLocks);
+
         int lsnIndex = QZLocks.indexOf(num);
         int endIndex = QZLocks.indexOf(",",lsnIndex);
         return QZLocks.substring(lsnIndex+2,endIndex);
