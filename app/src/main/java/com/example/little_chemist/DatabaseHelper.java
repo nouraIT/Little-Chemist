@@ -71,14 +71,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
     private static final String DATABASE_NAME = "LittleChemist.db";
     SQLiteDatabase db;
-
+    private long lastStudentID=0;
 
 
     //---------------------- create, add and delete tables ------------------------
 
     private static final String SQL_CREATE_STUDENT=
             "CREATE TABLE "+FeedEntry.TABLE_STUDENT +" ("+
-                    FeedEntry.COLUMN_ID + "  INTEGER PRIMARY KEY," +
+                    FeedEntry.COLUMN_ID + "  INTEGER PRIMARY KEY AUTOINCREMENT," +
                     FeedEntry.COLUMN_SCORE + " TEXT," +
                     FeedEntry.COLUMN_QZLOCKS + " TEXT," +
                     FeedEntry.COLUMN_CHLOCKS + " TEXT," +
@@ -175,13 +175,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     "21:unlocked,22:unlocked,23:unlocked,24:unlocked,25:unlocked,";;
         }
 
-        student = new Student( (count+1) ,scores,(qz),(ch),(ls),(student.GetUserName()),(student.GetPassword()),
+//        student = new Student( (count+1) ,scores,(qz),(ch),(ls),(student.GetUserName()),(student.GetPassword()),
+//                (student.GetSecQ()),(student.GetSecA()),(student.GetLang()), R.drawable.face1);
+//        student = new Student( (count+1) ,scores,(qz),(ch),(ls),(student.GetUserName()),(student.GetPassword()),
+//                (student.GetSecQ()),(student.GetSecA()),(student.GetLang()), R.drawable.face1);
+        // use laststudentid to set student id
+        student = new Student((int) (lastStudentID+1),scores,(qz),(ch),(ls),(student.GetUserName()),(student.GetPassword()),//here
                 (student.GetSecQ()),(student.GetSecA()),(student.GetLang()), R.drawable.face1);
-
         ContentValues contentvalues=new ContentValues();
 //        contentvalues.put(FeedEntry.COLUMN_ID,count+1);//here
         contentvalues.put(FeedEntry.COLUMN_SCORE, scores);
         contentvalues.put(FeedEntry.COLUMN_QZLOCKS, qz);
+        //        contentvalues.put(FeedEntry.COLUMN_ID,count+1);//here
         contentvalues.put(FeedEntry.COLUMN_CHLOCKS, ch);
         contentvalues.put(FeedEntry.COLUMN_LSNLOCKS, ls);
         contentvalues.put(FeedEntry.COLUMN_USERNAME, student.GetUserName());
@@ -194,6 +199,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         db.insert(FeedEntry.TABLE_STUDENT,null,contentvalues);
         db.close();
+        lastStudentID = db.insert(FeedEntry.TABLE_STUDENT,null,contentvalues);//here
     }
 
 //    public void InsertChapters(Chapter chapter){
