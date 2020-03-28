@@ -155,7 +155,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         //To get , how many column in ur table
         String query="SELECT * FROM "+FeedEntry.TABLE_STUDENT;
         Cursor cursor=db.rawQuery(query,null);
-        int count=cursor.getCount();
+//        int count=cursor.getCount();
 
         String ch,ls,qz,scores;
         scores="c1:0,c2:0,c3:0,c4:0,c5:0,";
@@ -178,7 +178,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 (student.GetSecQ()),(student.GetSecA()),(student.GetLang()), R.drawable.face1);
 
         ContentValues contentvalues=new ContentValues();
-        contentvalues.put(FeedEntry.COLUMN_ID,count+1);
+//        contentvalues.put(FeedEntry.COLUMN_ID,count+1);
         contentvalues.put(FeedEntry.COLUMN_SCORE, scores);
         contentvalues.put(FeedEntry.COLUMN_QZLOCKS, qz);
         contentvalues.put(FeedEntry.COLUMN_CHLOCKS, ch);
