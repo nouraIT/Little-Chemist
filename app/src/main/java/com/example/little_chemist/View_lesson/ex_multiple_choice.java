@@ -72,7 +72,6 @@ public class ex_multiple_choice extends AppCompatActivity {
                 Intent n = new Intent(ex_multiple_choice.this, Lessons.class );
                 n.putExtra("lesson",lessonkey) ;
                 startActivity(n);
-                finish();
             }
         });
 
@@ -98,14 +97,6 @@ public class ex_multiple_choice extends AppCompatActivity {
 
         }
 
-//        for (int i=len-2; i<4 ;i++){
-//            System.out.println(i) ;
-//            int re = getResources().getIdentifier("a"+i+1 , "id", getPackageName()) ;
-//            a[i]=findViewById(re) ;
-//            if(a[i]==null)
-//                System.out.println("eeee") ;
-//            a[i].setVisibility(View.INVISIBLE);}
-
 
         exNum = findViewById(R.id.exNum) ;
         exNum.setText("Exercise "+ex);
@@ -123,9 +114,10 @@ public class ex_multiple_choice extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         b.startAnimation();
-                        System.out.println("helloo");
                         //b.startMorphAnimation();
-                        b.doneLoadingAnimation(Color.GREEN ,  BitmapFactory.decodeResource(getResources(), R.drawable.done)); }
+                        b.doneLoadingAnimation(Color.GREEN ,  BitmapFactory.decodeResource(getResources(), R.drawable.done));
+                        toolbar.setVisibility(View.VISIBLE);
+                        }
                 });break; } }
         for(int i=1 ;i<QItems.length;i++){
             if(QItems[i].equals(ExtractA)){
@@ -135,9 +127,9 @@ public class ex_multiple_choice extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         b.startAnimation();
-                        System.out.println("helloo");
                         //b.startMorphAnimation();
-                        b.doneLoadingAnimation(Color.RED ,  BitmapFactory.decodeResource(getResources(), R.drawable.x)); }
+                        b.doneLoadingAnimation(Color.RED ,  BitmapFactory.decodeResource(getResources(), R.drawable.x));
+                         }
                 }); }
 
 
@@ -197,7 +189,6 @@ public class ex_multiple_choice extends AppCompatActivity {
                 lessonName.setText(R.string.Ch5Lsn4);
             if (lessonKey==55)
                 lessonName.setText(R.string.Ch5Lsn5);}
-
 
 
 //[do some async task. When it finishes]
