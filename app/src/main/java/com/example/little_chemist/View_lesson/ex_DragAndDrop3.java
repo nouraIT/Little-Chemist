@@ -43,9 +43,9 @@ public class ex_DragAndDrop3 extends AppCompatActivity{
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent Homepage = new Intent(ex_DragAndDrop3.this, slideAdapter.class);
-                startActivity(Homepage);
-                finish();
+                Intent n = new Intent(ex_DragAndDrop3.this, Lessons.class);
+                n.putExtra("lesson",11) ;
+                startActivity(n);
             }
         });
 

@@ -10,7 +10,7 @@ import java.io.Serializable;
 public class Student extends AppCompatActivity implements Serializable {
     int Id, ImageId;
     String Scores;
-    double TotalScore, ScoresA[]= new double[5];
+    double TotalScore, ScoresA[]= new double[5] ;
     String UserName,Password, QZLocks, CHLocks, LSNLocks, SecQ, SecA;
     int Arabic;
     DatabaseHelper helper = new DatabaseHelper(Student.this);

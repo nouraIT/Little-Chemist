@@ -18,6 +18,8 @@ import androidx.viewpager.widget.PagerAdapter;
 
 import com.example.little_chemist.R;
 
+import java.util.Arrays;
+
 public class slideAdapter extends PagerAdapter {
 
     Context context ;
@@ -29,11 +31,15 @@ public class slideAdapter extends PagerAdapter {
     String[] cleanContent ;
     String[] cleanEx ;
     String[] cleanImg;
-    int count =0 ;
+    int countCountent =0 ;
+    int countEx =0 ;
      Animation btnAmim ;
     String tempEx ;
     Intent[] AcEx ;
     Button[] BtnEx ;
+    boolean[] flagsEx ;
+    int indexEx ;
+
 
 
 
@@ -48,17 +54,19 @@ public class slideAdapter extends PagerAdapter {
         cleanImg = new String[content.length] ;
         AcEx = new Intent[ex.length] ;
         BtnEx = new Button[ex.length] ;
+        flagsEx = new boolean[getCountEx()] ;
+        Arrays.fill(flagsEx, false);
 
 
 
 
-        int index = 0 ;
+        int indexx = 0 ;
         for (int i=0 ; i< content.length;i++){
             if((chapterNum==content[i].charAt(1))){
                 if(lessonNum==content[i].charAt(3)){
-                    cleanContent[index]=content[i] ;
-                    cleanImg[index]=content[i].toLowerCase() ;
-                    index ++;}}
+                    cleanContent[indexx]=content[i] ;
+                    cleanImg[indexx]=content[i].toLowerCase() ;
+                    indexx ++;}}
         }
 
 
@@ -86,8 +94,8 @@ public class slideAdapter extends PagerAdapter {
     };
 
     public String[] ex ={
-            "C1L1S1ED","C1L1S2ED","C1L1S6ED"
-            ,"C1L3S3E1M", "C1L3S4E2M"
+            "C1L1S1ED","C1L1S6ED"
+            ,"C1L3S3E1M","C1L3S4E2M"
             ,"C1L4S2E1M","C1L4S4E2M"
             ,"C2L1S2E1M"
             ,"C2L4S2E1M","C2L4S4E2M","C2L4S5E3M","C2L4S8E4M"
@@ -103,16 +111,29 @@ public class slideAdapter extends PagerAdapter {
 
     @Override
     public int getCount() {
-        if (count!= 0)
-            return count ;
-        count =0 ;
+        if (countCountent!= 0)
+            return countCountent ;
+        countCountent =0 ;
         for (int i=0 ; i< content.length;i++){
             if(chapterNum==content[i].charAt(1)){
                 if(lessonNum==content[i].charAt(3)){
-                    count ++ ;}}
+                    countCountent ++ ;}}
         }
 
-        return count  ;
+        return countCountent  ;
+    }
+
+    public int getCountEx(){
+        if (countEx!= 0)
+            return countEx ;
+        countEx =0 ;
+        for (int i=0 ; i< ex.length;i++){
+            if(chapterNum==ex[i].charAt(1)){
+                if(lessonNum==ex[i].charAt(3)){
+                    countEx ++ ;}}
+        }
+
+        return countEx  ;
     }
 
     @Override
@@ -134,7 +155,7 @@ public class slideAdapter extends PagerAdapter {
 
 
         //set the button ex visible
-        int index=0 ;
+        indexEx=0 ;
         for(int i=0;i<ex.length;i++){
             //System.out.println(ex[i]);
            tempEx = ex[i].substring(0,6) ;
@@ -142,35 +163,39 @@ public class slideAdapter extends PagerAdapter {
 
             if (cleanContent[position].equals(tempEx)){
                 if(tempEx.equals("C1L1S1")){
-                    AcEx[index] = new Intent(view.getContext(), ex_DragAndDrop1.class);
+                    AcEx[indexEx] = new Intent(view.getContext(), ex_DragAndDrop1.class);
 //                    AcEx[index].putExtra("exKey", tempEx);
 //                    BtnEx[index] = view.findViewById(R.id.ex);
                 }
                 else if(tempEx.equals("C1L1S6")){
-                    AcEx[index] = new Intent(view.getContext(), ex_DragAndDrop3.class);
+                    AcEx[indexEx] = new Intent(view.getContext(), ex_DragAndDrop3.class);
 
                 }
                 else {
                     tempEx = ex[i];
-                    AcEx[index] = new Intent(view.getContext(), ex_multiple_choice.class);
+                    AcEx[indexEx] = new Intent(view.getContext(), ex_multiple_choice.class);
                 }
-                    AcEx[index].putExtra("exKey", tempEx);
-                    BtnEx[index] = view.findViewById(R.id.ex);
-                    Intent n = AcEx[index];
+                    AcEx[indexEx].putExtra("exKey", tempEx);
+                    BtnEx[indexEx] = view.findViewById(R.id.ex) ;
+                    Intent n = AcEx[indexEx];
 
 
-                BtnEx[index].setOnClickListener(new View.OnClickListener() {
+
+                BtnEx[indexEx].setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        setFlag(indexEx);
+                        System.out.println(flagsEx[indexEx]);
                         view.getContext().startActivity(n);
+
                     }
                 });
 
-               //System.out.println("hi");
+
                 slideEx.setVisibility(View.VISIBLE);
                 slideEx.setAnimation(btnAmim) ;
 
-                index++ ;
+                indexEx++ ;
                break ;
 
            }
@@ -186,17 +211,16 @@ public class slideAdapter extends PagerAdapter {
 
 
 
-
-//        slideheader.setText(slide_header[position]);
-//        slideDes.setText(slide_description[position]);
-
         container.addView(view);
         return view ;
     }
 
+    public boolean[] getFlagsEx(){
+        return flagsEx ;
+    }
 
-    public String getEx(){
-        return tempEx ;
+    public void setFlag(int ind ){
+        flagsEx[ind]= true ;
     }
 
 
@@ -206,9 +230,6 @@ public class slideAdapter extends PagerAdapter {
 
     }
 
-    public Context getContext(){
-        return this.context ;
-    }
 
 
 
