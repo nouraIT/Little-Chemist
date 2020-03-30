@@ -38,6 +38,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         private static final String COLUMN_SECA = "SecA";
         private static final String COLUMN_LANG = "Arabic";
         private static final String COLUMN_IMG = "ImageId";
+        private static final String COLUMN_EXLOCKS ="ExLocks" ;
 
         //-----------------------------------------------
 
@@ -88,7 +89,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     FeedEntry.COLUMN_SECQ +" TEXT,"+
                     FeedEntry.COLUMN_SECA +" TEXT,"+
                     FeedEntry.COLUMN_LANG +" INTEGER," +
-                    FeedEntry.COLUMN_IMG +" INTEGER)" ;
+                    FeedEntry.COLUMN_IMG +" INTEGER," +
+                    FeedEntry.COLUMN_EXLOCKS +"TEXT)";
 
 //    private static final String SQL_CREATE_CHAPTER=
 //            "CREATE TABLE "+FeedEntry.TABLE_CHAPTER +" ("+
@@ -158,14 +160,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 //        int count=cursor.getCount();//here
         //TODO count = last id
 
-        String ch,ls,qz,scores;
+        String ch,ls,qz,scores,ex;
         scores="c1:0,c2:0,c3:0,c4:0,c5:0,";
         qz="1:unlocked,2:unlocked,3:unlocked,4:unlocked,5:unlocked,";
         ch="1:unlocked,2:locked,3:locked,4:locked,5:locked,";
         ls="1:unlocked,2:locked,3:locked,4:locked,5:locked,6:locked,7:locked,8:locked,9:locked,10:locked," +
                 "11:locked,12:locked,13:locked,14:locked,15:locked,16:locked,17:locked,18:locked,19:locked,20:locked," +
                 "21:locked,22:locked,23:locked,24:locked,25:locked,";
-
+        ex="" ;
         if(student.GetUserName().equals("admin") ||student.GetUserName().equals("Admin") ){
             scores="c1:20,c2:3,c3:0,c4:0,c5:0,";
             qz="1:completed,2:unlocked,3:unlocked,4:unlocked,5:unlocked,";
@@ -173,12 +175,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             ls="1:completed,2:completed,3:completed,4:completed,5:completed,6:completed,7:unlocked,8:unlocked,9:unlocked,10:unlocked," +
                     "11:unlocked,12:unlocked,13:unlocked,14:unlocked,15:unlocked,16:unlocked,17:unlocked,18:unlocked,19:unlocked,20:unlocked," +
                     "21:unlocked,22:unlocked,23:unlocked,24:unlocked,25:unlocked,";;
+                    ex="" ;
         }
 
 //        student = new Student( (count+1) ,scores,(qz),(ch),(ls),(student.GetUserName()),(student.GetPassword()),
 //                (student.GetSecQ()),(student.GetSecA()),(student.GetLang()), R.drawable.face1);
         student = new Student((int) (lastStudentID+1),scores,(qz),(ch),(ls),(student.GetUserName()),(student.GetPassword()),//here
-                (student.GetSecQ()),(student.GetSecA()),(student.GetLang()), R.drawable.face1);
+                (student.GetSecQ()),(student.GetSecA()),(student.GetLang()), R.drawable.face1,student.GetExLocks());
         ContentValues contentvalues=new ContentValues();
 //        contentvalues.put(FeedEntry.COLUMN_ID,count+1);//here
         contentvalues.put(FeedEntry.COLUMN_SCORE, scores);
@@ -191,6 +194,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentvalues.put(FeedEntry.COLUMN_SECA, student.GetSecA());
         contentvalues.put(FeedEntry.COLUMN_LANG, student.GetLang());
         contentvalues.put(FeedEntry.COLUMN_IMG, R.drawable.face1 );
+        contentvalues.put(FeedEntry.COLUMN_EXLOCKS, student.GetExLocks());
+
 
 
         lastStudentID = db.insert(FeedEntry.TABLE_STUDENT,null,contentvalues);
@@ -493,7 +498,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         //String currentStudent=null;
 
         Cursor cursor = db.rawQuery(query, null);
-        String un,QLocks,Chlocks,LesLocks,Pass,SQ,SA,score;
+        String un,QLocks,Chlocks,LesLocks,Pass,SQ,SA,score,ExLocks ;
         int id,lang,img;
 
 
@@ -513,7 +518,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     SA= cursor.getString(8);
                     lang = cursor.getInt(9);
                     img = cursor.getInt(10);
-                    student= new Student(id,score,QLocks,Chlocks,LesLocks,un,Pass,SQ,SA,lang,img);
+                    ExLocks =cursor.getString(11) ;
+                    student= new Student(id,score,QLocks,Chlocks,LesLocks,un,Pass,SQ,SA,lang,img ,ExLocks);
 
                     break;
                 }

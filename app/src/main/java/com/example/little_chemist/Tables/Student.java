@@ -11,7 +11,7 @@ public class Student extends AppCompatActivity implements Serializable {
     int Id, ImageId;
     String Scores;
     double TotalScore, ScoresA[]= new double[5] ;
-    String UserName,Password, QZLocks, CHLocks, LSNLocks, SecQ, SecA;
+    String UserName,Password, QZLocks, CHLocks, LSNLocks, SecQ, SecA,ExLocks ;
     int Arabic;
     DatabaseHelper helper = new DatabaseHelper(Student.this);
 
@@ -24,8 +24,9 @@ public class Student extends AppCompatActivity implements Serializable {
         LSNLocks ="1:unlocked,2:locked,3:locked,4:locked,5:locked,6:locked,7:locked,8:locked,9:locked,10:locked," +
                 "11:locked,12:locked,13:locked,14:locked,15:locked,16:locked,17:locked,18:locked,19:locked,20:locked," +
                 "21:locked,22:locked,23:locked,24:locked,25:locked,";
+        ExLocks="" ;
     }
-    public Student(int id,String scores,String QL,String CHl,String LL,String username,String Pass,String SQ,String SA,int lang, int img) {
+    public Student(int id,String scores,String QL,String CHl,String LL,String username,String Pass,String SQ,String SA,int lang, int img,String Ex) {
         this.Id=id;
 
         //scores = "c1:0,c2:0..."
@@ -54,6 +55,7 @@ public class Student extends AppCompatActivity implements Serializable {
         this.Arabic= lang;
 
         ImageId = img;
+        this.ExLocks=Ex;
     }
 
     public Student(){
@@ -107,6 +109,9 @@ public class Student extends AppCompatActivity implements Serializable {
 
     public void SetSecA(String seca) { this.SecA=seca;}
     public String GetSecA() {return SecA;}
+
+    public void SetExLocks(String ex) { this.ExLocks=ex;}
+    public String GetExLocks() {return ExLocks;}
 
     public void SetImageId(int img){    ImageId=img; }
     public int GetImageId(){ return ImageId;}
