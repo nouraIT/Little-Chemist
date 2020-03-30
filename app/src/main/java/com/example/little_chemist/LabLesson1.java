@@ -128,17 +128,17 @@ public class LabLesson1 extends AppCompatActivity {
     }
 
     private void animate(ModelRenderable modelRenderable) {
-
+        //check the modelAnimator status
         if(modelAnimator != null && modelAnimator.isRunning())
             modelAnimator.end();
-
+        //Get animation data from the modelRenderable
         int a = modelRenderable.getAnimationDataCount();
 
         if(i == a)
             i=0;
-
+        //Create AnimationData object to get Animation Data
         AnimationData animationData = modelRenderable.getAnimationData(i);
-
+        //Create ModelAnimator object to start animating
         modelAnimator = new ModelAnimator(animationData,modelRenderable);
         modelAnimator.start();
         i++;

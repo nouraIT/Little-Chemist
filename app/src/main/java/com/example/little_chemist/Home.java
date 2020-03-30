@@ -108,7 +108,7 @@ public class Home extends AppCompatActivity {
                 thread.start();
             }
         });
-
+//chapters is the button that the student clicks to see the content
         chapters.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
                 Thread thread = new Thread(new Runnable(){
