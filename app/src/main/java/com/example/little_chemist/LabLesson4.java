@@ -144,9 +144,15 @@ public class LabLesson4 extends AppCompatActivity {
 
     }
 
+    //==========================================================================
+
+
+    //this method will update the pointer for the user while the user is exploring
+    // to show them if they hit a plane or not
     private void onUpdate() {
         boolean trackingChanged = updateTracking();
         View contentView = findViewById(android.R.id.content);
+
         if (trackingChanged) {
             if (isTracking) {
                 contentView.getOverlay().add(pointer);
@@ -165,6 +171,11 @@ public class LabLesson4 extends AppCompatActivity {
         }
     }
 
+    //==========================================================================
+
+
+    //this will update the attr (isTracking) for the (onUpdate) method
+    // to show if the user is moving or not
     private boolean updateTracking() {
         Frame frame = arFragment.getArSceneView().getArFrame();
         boolean wasTracking = isTracking;
@@ -173,6 +184,19 @@ public class LabLesson4 extends AppCompatActivity {
         return isTracking != wasTracking;
     }
 
+
+    //==========================================================================
+
+
+    //this will update the attr (hitTestChanged) for the (onUpdate) method
+    //Performs frame.HitTest and returns if a hit is detected
+
+    //Performs a ray cast from the user's device in the direction of the given location in the camera view.
+    // Intersections with detected scene geometry are returned,
+    // sorted by distance from the device; the nearest intersection is returned first.
+
+    //it returns a an ordered list of intersections with scene geometry, nearest hit first
+    // i didn't get it, but these are what i found
     private boolean updateHitTest() {
         Frame frame = arFragment.getArSceneView().getArFrame();
         android.graphics.Point pt = getScreenCenter();
@@ -193,11 +217,19 @@ public class LabLesson4 extends AppCompatActivity {
         return wasHitting != isHitting;
     }
 
+    //==========================================================================
+
+
+    //this will just get the center of the screen
     private android.graphics.Point getScreenCenter() {
         View vw = findViewById(android.R.id.content);
         return new android.graphics.Point(vw.getWidth()/2, vw.getHeight()/2);
     }
 
+    //==========================================================================
+
+    //this method will put pics of the obj in the gallery at the bottom
+    // and sets every pic with its 3D model
     private void initializeGallery() {
         LinearLayout gallery = findViewById(R.id.gallery_layout);
 
@@ -223,6 +255,10 @@ public class LabLesson4 extends AppCompatActivity {
 //        gallery.addView(house);
 
     }
+
+    //==========================================================================
+
+    //this method will add a new node for the 3D model
     public void addnew(String obj){
         List<Node> children = new ArrayList<>(arFragment.getArSceneView().getScene().getChildren());
         for (Node node : children) {
@@ -239,7 +275,9 @@ public class LabLesson4 extends AppCompatActivity {
         }
         addObject(Uri.parse(obj));
     }
+    //==========================================================================
 
+    //this method will add the 3D model
     private void addObject(Uri model) {
         Frame frame = arFragment.getArSceneView().getArFrame();
         android.graphics.Point pt = getScreenCenter();
@@ -258,6 +296,9 @@ public class LabLesson4 extends AppCompatActivity {
         }
     }
 
+    //==========================================================================
+
+    //this method will determine where the model will be exactly (sets the coordinates)
     public void addNodeToScene(Anchor anchor, ModelRenderable renderable) {
         AnchorNode anchorNode = new AnchorNode(anchor);
         TransformableNode node = new TransformableNode(arFragment.getTransformationSystem());
@@ -290,6 +331,10 @@ public class LabLesson4 extends AppCompatActivity {
         i++;
     }
 
+
+    //==========================================================================
+
+    //this method is just and exception catcher
     public void onException(Throwable throwable){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage(throwable.getMessage())
@@ -299,54 +344,64 @@ public class LabLesson4 extends AppCompatActivity {
         return;
     }
 
-    public void Render()
-    {
-        changePos();
-        if(Collision(net, ball))
-        {
-            points++; //You dont need findView Textview score for that exists in OnCreate Method
-            this.score.setText("Score:" + points);
-        }
-    }
+    //==========================================================================
 
-    public void changePos() {
 
-        //down
-        ballDownY += 10;
-        if (ball.getY() > screenHeight) {
-            ballDownX = (float) Math.floor((Math.random() * (screenWidth - ball.getWidth())));
-            ballDownY = -100.0f;
+//    public void Render()
+//    {
+//        changePos();
+//        if(Collision(net, ball))
+//        {
+//            points++; //You dont need findView Textview score for that exists in OnCreate Method
+//            this.score.setText("Score:" + points);
+//        }
+//    }
+//    //==========================================================================
+//
+//    public void changePos() {
+//
+//        //down
+//        ballDownY += 10;
+//        if (ball.getY() > screenHeight) {
+//            ballDownX = (float) Math.floor((Math.random() * (screenWidth - ball.getWidth())));
+//            ballDownY = -100.0f;
+//
+//        }
+//        ball.setY(ballDownY);
+//        ball.setX(ballDownX);
+//
+//        //make net follow finger
+//        myLayout.setOnTouchListener(new View.OnTouchListener() {
+//            @Override
+//            public boolean onTouch(View view, MotionEvent event) {
+//                x = event.getX();
+//                y = event.getY();
+//
+//                if (event.getAction() == MotionEvent.ACTION_MOVE) {
+//                    net.setX(x);
+//                    net.setY(y);
+//                }
+//                return true;
+//            }
+//
+//        });
+//
+//    }
+//
+//    //checks if the models intersects
+//    public boolean Collision(ImageView net, ImageView ball){
+//        Rect BallRect = new Rect();
+//        ball.getHitRect(BallRect);
+//        Rect NetRect = new Rect();
+//        net.getHitRect(NetRect);
+//        return BallRect.intersect(NetRect);
+//    }
 
-        }
-        ball.setY(ballDownY);
-        ball.setX(ballDownX);
 
-        //make net follow finger
-        myLayout.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent event) {
-                x = event.getX();
-                y = event.getY();
+    //==========================================================================
 
-                if (event.getAction() == MotionEvent.ACTION_MOVE) {
-                    net.setX(x);
-                    net.setY(y);
-                }
-                return true;
-            }
 
-        });
-
-    }
-
-    public boolean Collision(ImageView net, ImageView ball){
-        Rect BallRect = new Rect();
-        ball.getHitRect(BallRect);
-        Rect NetRect = new Rect();
-        net.getHitRect(NetRect);
-        return BallRect.intersect(NetRect);
-    }
-
+    //class for loading the models
     public class ModelLoader {
         private static final String TAG = "ModelLoader";
         private final WeakReference<LabLesson4> owner;
@@ -378,4 +433,5 @@ public class LabLesson4 extends AppCompatActivity {
             return;
         }
     }
+
 }
