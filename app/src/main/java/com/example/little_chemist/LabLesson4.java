@@ -196,7 +196,7 @@ public class LabLesson4 extends AppCompatActivity {
     // sorted by distance from the device; the nearest intersection is returned first.
 
     //it returns a an ordered list of intersections with scene geometry, nearest hit first
-    // i didn't get it, but these are what i found
+
     private boolean updateHitTest() {
         Frame frame = arFragment.getArSceneView().getArFrame();
         android.graphics.Point pt = getScreenCenter();
@@ -258,7 +258,7 @@ public class LabLesson4 extends AppCompatActivity {
 
     //==========================================================================
 
-    //this method will add a new node for the 3D model
+    //Deleting previous nodes
     public void addnew(String obj){
         List<Node> children = new ArrayList<>(arFragment.getArSceneView().getScene().getChildren());
         for (Node node : children) {

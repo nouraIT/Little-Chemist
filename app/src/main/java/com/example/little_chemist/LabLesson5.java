@@ -351,7 +351,7 @@ private static int n=0;
         });
 
     }
-
+    //checks if the models intersects
     public boolean Collision(ImageView net, ImageView ball){
         Rect BallRect = new Rect();
         ball.getHitRect(BallRect);
