@@ -55,6 +55,9 @@ public class Lessons extends AppCompatActivity {
     private SharedPreferences pref;
     private  DatabaseHelper helper ;
     private  Bundle bundle ;
+    public boolean[] exFlag ;
+
+
     String name;
     Student student;
     @Override
@@ -94,7 +97,6 @@ public class Lessons extends AppCompatActivity {
         mSlidsView.setAdapter(slideAdapter) ;
 
         addDotsIndicator(0);
-
 
         mSlidsView.addOnPageChangeListener(viewListener);
 
@@ -221,7 +223,21 @@ public class Lessons extends AppCompatActivity {
 
 
 
+                boolean checkAllEx = true ;
+                exFlag=slideAdapter.getFlagsEx() ;
+                for(int i=0 ; i<exFlag.length;i++){
+                    System.out.println("less"+exFlag[i]);
+                 if(exFlag[i]== false)
+                     checkAllEx= false ;
+                }
+                System.out.println(checkAllEx);
+                if(checkAllEx==true){
+                pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
+                String name = pref.getString("username", null); // getting String
+                Student student = helper.getStudent(name);
                 String Lid=""+bundle.getInt("lessonId") ;
+                helper.updateLesson(name,bundle.getInt("lessonId"),"completed");//,Integer.toString(lessonkey).charAt(0));
+                   }
 
 
 
@@ -240,9 +256,8 @@ public class Lessons extends AppCompatActivity {
                         if(Integer.toString(lessonkey).charAt(0)=='5')
                             n = new Intent(Lessons.this, Ch5.class);
 
-                        helper.updateLesson(name,bundle.getInt("lessonId"),"completed");//,Integer.toString(lessonkey).charAt(0));
-                        statue = student.getLsnLock(Lid);
-                        System.out.println(statue) ;
+
+
                         startActivity(n);
                         finish();
                     }
@@ -266,30 +281,8 @@ public class Lessons extends AppCompatActivity {
         }
     };
 
-    //TODO what does this do ?
-    public void onBtnExClick(View v) {
-        Intent n ;
-        String ExID ;
-        if (v.getId() == R.id.ex) {
-//            System.out.println("yes");
-//             n = new Intent(Lessons.this, ex_multiple_choice.class);
-//             ExID=slideAdapter.getEx() ;
-//             System.out.println(ExID);
-//            n.putExtra("exKey",ExID) ;
-//             startActivity(n);
 
-        }
-
-//        Toast.makeText(getApplicationContext(),"Not working", Toast.LENGTH_LONG) ;
-    }
-
-    //TODO what does this do ?
-    public void loadButton(){
-        exercise.setVisibility(View.VISIBLE);
-        exercise.setAnimation(btnAmim) ;
-    }
-
-    //we should change it to string TODO change what ?
+    //lesson title
     public void setLessontitle(int lessonKey ){
 
         if (lessonKey==11)

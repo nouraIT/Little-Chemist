@@ -40,12 +40,13 @@ public class ex_DragAndDrop1 extends AppCompatActivity {
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
+
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent Homepage = new Intent(ex_DragAndDrop1.this, slideAdapter.class);
-                startActivity(Homepage);
-                finish();
+                Intent n = new Intent(ex_DragAndDrop1.this, Lessons.class);
+                n.putExtra("lesson",11) ;
+                startActivity(n);
             }
         });
 
@@ -154,6 +155,7 @@ public class ex_DragAndDrop1 extends AppCompatActivity {
                     if(correctAns==3) {
                         v.setBackgroundDrawable(normalShape);
                         dropArea.setBackgroundDrawable(rightShape);
+
                         finish.setVisibility(View.VISIBLE);
                     }else {
                         dropArea.setBackgroundDrawable(enterShape);
