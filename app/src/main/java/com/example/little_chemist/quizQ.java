@@ -54,6 +54,7 @@ public class quizQ extends AppCompatActivity {
 
     int QuizID;
     Student student;
+    String name;
     DatabaseHelper helper = new DatabaseHelper(quizQ.this);
 
 
@@ -75,7 +76,7 @@ public class quizQ extends AppCompatActivity {
 
         //get student info
         SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
-        String name = pref.getString("username", null); // getting String
+        name = pref.getString("username", null); // getting String
         student = helper.getStudent(name);
 
         //toolbar stuff
@@ -389,6 +390,7 @@ public class quizQ extends AppCompatActivity {
         int subscore = 0;
         if (Arrays.equals(soption, correctoption)){
             score = 100;
+            helper.setScore(name,QuizID,score);
             student.SetTotalScore(QuizID,score);
             return score;
         }else {
@@ -405,7 +407,9 @@ public class quizQ extends AppCompatActivity {
                 score = subscore * 20;
                 //14.2857143
         }
-        student.SetTotalScore(QuizID,score); //TODO make sure this saves it to the database
+
+        helper.setScore(name,QuizID,score);
+        student.SetTotalScore(QuizID,score);//TODO make sure this saves it to the database
         return score;
     }
 

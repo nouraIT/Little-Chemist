@@ -7,9 +7,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -20,6 +23,7 @@ import com.example.little_chemist.Chapters_dir.Ch2;
 import com.example.little_chemist.Chapters_dir.Ch3;
 import com.example.little_chemist.Chapters_dir.Ch4;
 import com.example.little_chemist.Chapters_dir.Ch5;
+import com.example.little_chemist.Tables.Student;
 import com.example.little_chemist.kotlin.Intrinsics;
 
 import java.util.ArrayList;
@@ -28,19 +32,22 @@ import java.util.ArrayList;
 public class QuizResult extends AppCompatActivity {
 
     private static final String TAG = QuizResult.class.getSimpleName();
-    private String[] Currectanswer;
-    private String[] option;
-    private String[] Question;
+    private String[] Currectanswer,option,Question;
     private ArrayList<ResultModel> resultModels = new ArrayList<ResultModel>();
     private ResultAdapter adapter;
     private ViewPager viewPager;
     private ProgressBar progressBar;
     private Double score;
     private TextView Score;
-    private int pagecount = 0;
-    Button backbtn;
-    Button nextBtn;
-    private int QuizID;
+    private int pagecount = 0,QuizID;
+    Button backbtn,nextBtn;
+    Bundle b;
+
+    String name,statue;
+    Student student;
+    private SharedPreferences pref;
+    private  DatabaseHelper helper = new DatabaseHelper(this);
+
 
     public QuizResult(){
         Intrinsics.checkExpressionValueIsNotNull(TAG, "QuizResult.class.getSimpleName()");
@@ -53,8 +60,15 @@ public class QuizResult extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_quiz_result);
-        Bundle b=this.getIntent().getExtras();
+
+        pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
+        name = pref.getString("username", null); // getting String
+        student = helper.getStudent(name);
+
+        b=this.getIntent().getExtras();
         Currectanswer = b.getStringArray("answer");
         option = b.getStringArray("option");
         Question = b.getStringArray("content");
@@ -181,6 +195,9 @@ public class QuizResult extends AppCompatActivity {
                                 break;
                             default: n = new Intent(QuizResult.this, Home.class);
                         }
+                        helper.updateQuiz(name,b.getInt("ChapterNumber"),"completed");//,Integer.toString(lessonkey).charAt(0));
+                        statue = student.getLsnLock(String.valueOf(b.getInt("ChapterNumber")));
+//                        System.out.println(statue) ;
                         startActivity(n);
                         finish();
                     }
