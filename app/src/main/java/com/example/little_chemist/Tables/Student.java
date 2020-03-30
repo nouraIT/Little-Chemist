@@ -30,16 +30,10 @@ public class Student extends AppCompatActivity implements Serializable {
 
         //scores = "c1:0,c2:0..."
         int ch = 1,first,last;
-
         for(int i =0;i<5;i++){
-//            String index = "c"+(ch);
-//            System.out.println(scores);
-
             first = scores.indexOf("c"+(ch));
-//            System.out.println(first);
             ch++;
             last = scores.indexOf(",",first);
-//            System.out.println(scores.substring(first+3,last));
             ScoresA[i] = Double.parseDouble(scores.substring(first+3,last));
         }
 
