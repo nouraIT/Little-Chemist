@@ -116,21 +116,25 @@ public class ARCards extends AppCompatActivity {
 
 
     private void onUpdate(FrameTime frameTime) {
-
+// First call the image database
         Frame frame = arFragment.getArSceneView().getArFrame();
         Collection<AugmentedImage> images = frame.getUpdatedTrackables(AugmentedImage.class);
+        //Iterate through the image database
         for (AugmentedImage image : images) {
-           // textView.setText(R.string.scan);
+          // Check if scanned image existed in the image database
             if (image.getTrackingMethod() == AugmentedImage.TrackingMethod.FULL_TRACKING) {
-
+                //Set the scene
                 RelativeLayout gallery = findViewById(R.id.gallery);
                 ArFragment arFragment = (ArFragment) getSupportFragmentManager().findFragmentById(R.id.arFragment);
                 String name = image.getName();
-
+                //check which image was scanned
                 switch (name) {
                     case "argon.png":
+                        //Set string
                         string = "argon.sfb";
+                        //Set the text that appears to the student
                         text=getString(R.string.argon2);
+                        //call the 3D object
                         callAR();
                         break;
                     case "bromine.png":
@@ -191,24 +195,18 @@ public class ARCards extends AppCompatActivity {
     }
 
     public void callAR(){
-
+//Set Flag
         if (!appeared){
 
-            //System.out.println("it works fine here ");
+          // Set the 3D object in the scene
             setARFragment(string);
             if(count++==100)
                 appeared = true;
 
             textView.setText(R.string.Look);
 
-            //TODO add timer
-//            new Reminder(30);
-//            try {
-//                TimeUnit.SECONDS.sleep(10);
-//            } catch (InterruptedException e) {
-//                e.printStackTrace();
-//            }
 
+            //Set Timer for the student to find the atom
             new java.util.Timer().schedule(
                     new java.util.TimerTask() {
                         @Override
@@ -225,8 +223,10 @@ public class ARCards extends AppCompatActivity {
     }
 
     public void loadDB(Session session, Config config){
+        //Choose database to load
         InputStream dbStream = getResources().openRawResource(R.raw.mycard);
         try{
+            //Load the database
             AugmentedImageDatabase aid= AugmentedImageDatabase.deserialize(session,dbStream);
             config.setAugmentedImageDatabase(aid);
         }
@@ -239,11 +239,7 @@ public class ARCards extends AppCompatActivity {
     public void setARFragment(String obj) {
         assert arFragment != null;
 
-//        arFragment.getArSceneView().getScene().addOnUpdateListener((Scene.OnUpdateListener) this); //You can do this anywhere. I do it on activity creation post inflating the fragment
-        //mARFragment = (ArFragment) getSupportFragmentManager().findFragmentById(R.id.ux_fragment);
-        // When you build a Renderable, Sceneform loads its resources in the background while returning
-        // a CompletableFuture. Call thenAccept(), handle(), or check isDone() before calling get().
-
+        //Set Renderable
         ModelRenderable.builder()
                 .setSource(this, Uri.parse(obj))
                 .build()
@@ -254,14 +250,13 @@ public class ARCards extends AppCompatActivity {
                             return null;
                         });
         TransformableNode node = new TransformableNode(arFragment.getTransformationSystem());
-
+        //Node specification
         node.getScaleController().setMaxScale(10.19f);
         node.getScaleController().setMinScale(0.009f);
         node.setRenderable(andyRenderable);
         node.setParent(arFragment.getArSceneView().getScene());
         node.select();
 
-//        arFragment.getArSceneView().getScene().addOnUpdateListener(this::onUpdate);
 
     }
 }
