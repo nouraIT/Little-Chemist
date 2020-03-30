@@ -101,7 +101,6 @@ public class Ch3 extends AppCompatActivity {
         statue = student.getQzLock("3");
         ImageView qzimg = findViewById(R.id.qzimg);
 
-
 //        System.out.println(statue);
         if(statue.equals("unlocked")) {
             quiz.setCardBackgroundColor(getResources().getColor((R.color.logoLightRed)));
@@ -112,8 +111,6 @@ public class Ch3 extends AppCompatActivity {
             qzimg.setAlpha((float)1);
 
         }
-
-
 
         // ======================== Lessons btns ========================
 
@@ -204,6 +201,7 @@ public class Ch3 extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Locked", Toast.LENGTH_LONG).show();
             }
         });
+
         quiz.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 statue = student.getQzLock("1");

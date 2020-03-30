@@ -90,7 +90,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     FeedEntry.COLUMN_SECA +" TEXT,"+
                     FeedEntry.COLUMN_LANG +" INTEGER," +
                     FeedEntry.COLUMN_IMG +" INTEGER," +
-                    FeedEntry.COLUMN_EXLOCKS +"TEXT)";
+                    FeedEntry.COLUMN_EXLOCKS +" TEXT)"; //space ?
 
 //    private static final String SQL_CREATE_CHAPTER=
 //            "CREATE TABLE "+FeedEntry.TABLE_CHAPTER +" ("+
@@ -175,7 +175,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             ls="1:completed,2:completed,3:completed,4:completed,5:completed,6:completed,7:unlocked,8:unlocked,9:unlocked,10:unlocked," +
                     "11:unlocked,12:unlocked,13:unlocked,14:unlocked,15:unlocked,16:unlocked,17:unlocked,18:unlocked,19:unlocked,20:unlocked," +
                     "21:unlocked,22:unlocked,23:unlocked,24:unlocked,25:unlocked,";;
-                    ex="" ;
+            ex="" ;
         }
 
 //        student = new Student( (count+1) ,scores,(qz),(ch),(ls),(student.GetUserName()),(student.GetPassword()),
@@ -256,7 +256,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.insert(FeedEntry.TABLE_QUIZ,null,contentvalues);
         db.close();
     }
-
 
     //-------------------------- Delete ----------------------
 

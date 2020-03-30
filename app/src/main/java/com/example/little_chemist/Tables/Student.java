@@ -47,7 +47,6 @@ public class Student extends AppCompatActivity implements Serializable {
         this.SecQ=SQ;
         this.SecA=SA;
         this.Arabic= lang;
-
         ImageId = img;
         this.ExLocks=Ex;
     }
