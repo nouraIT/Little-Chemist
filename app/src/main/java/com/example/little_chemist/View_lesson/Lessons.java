@@ -256,9 +256,9 @@ public class Lessons extends AppCompatActivity {
                         if(Integer.toString(lessonkey).charAt(0)=='5')
                             n = new Intent(Lessons.this, Ch5.class);
 
-                        helper.updateLesson(name,bundle.getInt("lessonId"),"completed");//,Integer.toString(lessonkey).charAt(0));
-                        statue = student.getLsnLock(Lid);
-//                        System.out.println(statue) ;
+//                        helper.updateLesson(name,bundle.getInt("lessonId"),"completed");//,Integer.toString(lessonkey).charAt(0));
+//                        statue = student.getLsnLock(Lid);
+////                        System.out.println(statue) ;
 
 
                         startActivity(n);
