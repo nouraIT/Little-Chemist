@@ -90,7 +90,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     FeedEntry.COLUMN_SECA +" TEXT,"+
                     FeedEntry.COLUMN_LANG +" INTEGER," +
                     FeedEntry.COLUMN_IMG +" INTEGER," +
-                    FeedEntry.COLUMN_EXLOCKS +" TEXT)"; //space ?
+                    FeedEntry.COLUMN_EXLOCKS +" TEXT)";
 
 //    private static final String SQL_CREATE_CHAPTER=
 //            "CREATE TABLE "+FeedEntry.TABLE_CHAPTER +" ("+
@@ -167,7 +167,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ls="1:unlocked,2:locked,3:locked,4:locked,5:locked,6:locked,7:locked,8:locked,9:locked,10:locked," +
                 "11:locked,12:locked,13:locked,14:locked,15:locked,16:locked,17:locked,18:locked,19:locked,20:locked," +
                 "21:locked,22:locked,23:locked,24:locked,25:locked,";
-        ex="" ;
+        ex="1:unlocked,2:locked,3:locked,4:locked,5:locked,6:locked,7:locked,8:locked,9:locked,10:locked," +
+                "11:locked,12:locked,13:locked,14:locked,15:locked,16:locked,17:locked,18:locked," ;
         if(student.GetUserName().equals("admin") ||student.GetUserName().equals("Admin") ){
             scores="c1:20,c2:3,c3:0,c4:0,c5:0,";
             qz="1:completed,2:unlocked,3:unlocked,4:unlocked,5:unlocked,";
@@ -175,13 +176,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             ls="1:completed,2:completed,3:completed,4:completed,5:completed,6:completed,7:unlocked,8:unlocked,9:unlocked,10:unlocked," +
                     "11:unlocked,12:unlocked,13:unlocked,14:unlocked,15:unlocked,16:unlocked,17:unlocked,18:unlocked,19:unlocked,20:unlocked," +
                     "21:unlocked,22:unlocked,23:unlocked,24:unlocked,25:unlocked,";;
-            ex="" ;
+                    ex="1:unlocked,2:locked,3:locked,4:locked,5:locked,6:locked,7:locked,8:locked,9:locked,10:locked," +
+                            "11:locked,12:locked,13:locked,14:locked,15:locked,16:locked,17:locked,18:locked,";
         }
 
 //        student = new Student( (count+1) ,scores,(qz),(ch),(ls),(student.GetUserName()),(student.GetPassword()),
 //                (student.GetSecQ()),(student.GetSecA()),(student.GetLang()), R.drawable.face1);
         student = new Student((int) (lastStudentID+1),scores,(qz),(ch),(ls),(student.GetUserName()),(student.GetPassword()),//here
-                (student.GetSecQ()),(student.GetSecA()),(student.GetLang()), R.drawable.face1,student.GetExLocks());
+                (student.GetSecQ()),(student.GetSecA()),(student.GetLang()), R.drawable.face1,(ex));
         ContentValues contentvalues=new ContentValues();
 //        contentvalues.put(FeedEntry.COLUMN_ID,count+1);//here
         contentvalues.put(FeedEntry.COLUMN_SCORE, scores);
@@ -194,7 +196,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentvalues.put(FeedEntry.COLUMN_SECA, student.GetSecA());
         contentvalues.put(FeedEntry.COLUMN_LANG, student.GetLang());
         contentvalues.put(FeedEntry.COLUMN_IMG, R.drawable.face1 );
-        contentvalues.put(FeedEntry.COLUMN_EXLOCKS, student.GetExLocks());
+        contentvalues.put(FeedEntry.COLUMN_EXLOCKS, ex);
 
 
 
@@ -561,7 +563,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             int endIndex =0;
             String oldStatus ="";
             String lsnNum = "1";
-//            System.out.println("before the loop "+LLOCKS);
+           System.out.println("before the loop "+LLOCKS);
             //this loop will change the Lid and the one next to it
             for (int i=0;i<25;i++){
                 if(i+1 == Lid) {
@@ -592,7 +594,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
             if(!oldStatus.equals(""))
                 LLOCKS=oldStatus;
-//            System.out.println("after all is done "+LLOCKS);
+           System.out.println("after all is done "+LLOCKS);
             db = getWritableDatabase();
             String query = " UPDATE Student SET LSNLOCKS = '" + LLOCKS + "' WHERE UserName = '" + username + "' ";
             db.execSQL(query);
@@ -717,6 +719,75 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             db = getWritableDatabase();
             String query = " UPDATE Student SET CHLOCKS = '" + CHLOCKS + "' WHERE UserName = '" + username + "' ";
 
+            db.execSQL(query);
+        }
+        db.close();
+    }
+
+    public void updateEx(String username, int ex , String status ){
+
+        String Username;
+        String ELOCKS= "";
+
+        db = this.getReadableDatabase();
+        boolean flag=false;
+
+        String q = "SELECT UserName,EXLOCKS FROM Student";
+        Cursor cursor = db.rawQuery(q, null);
+        //this will find the specified student
+        if (cursor.moveToFirst()) {
+            do {
+                Username = cursor.getString(0);
+                if (Username.contentEquals(username)) {
+                    ELOCKS = cursor.getString(1);
+                    flag=true;
+                    break;
+                }
+            } while (cursor.moveToNext());
+        }
+
+        cursor.close();
+
+        //if the student is found the flag will be true
+        if(flag) {
+            int firstIndex =0;
+            int endIndex =0;
+            String oldStatus ="";
+            String exNum = "1";
+ //          System.out.println("before the loop "+ELOCKS);
+            //this loop will change the Eid and the one next to it
+            for (int i=0;i<18;i++){
+                if(i+1 == ex) {
+                    oldStatus += (i + 1) + ":" + status + ",";
+                    if(i!=17) {
+                        exNum = String.valueOf(Integer.parseInt(exNum) + 1);
+                        i++;
+                        oldStatus += (i + 1) + ":unlocked,";
+                    }
+                    continue;
+                }
+                firstIndex = ELOCKS.indexOf(exNum);
+                endIndex = ELOCKS.indexOf(",",firstIndex);
+//                System.out.println(LLOCKS.substring(firstIndex+2,endIndex));
+//
+//                System.out.println("num is "+lsnNum+" and its length is "+lsnNum.length());
+                if(exNum.length()!=2) {
+//                    System.out.println("before its in "+(i + 1) + ":" + LLOCKS.substring(firstIndex + 2, endIndex) + ",");
+                    oldStatus += (i + 1) + ":" + ELOCKS.substring(firstIndex +2 , endIndex) + ",";
+                }
+                else
+                    oldStatus += (i+1)+":"+ELOCKS.substring(firstIndex+3,endIndex)+",";
+
+                exNum = String.valueOf(Integer.parseInt(exNum)+1);
+
+
+            }
+
+            if(!oldStatus.equals(""))
+                ELOCKS=oldStatus;
+ //          System.out.println("after all is done "+ELOCKS);
+            db = getWritableDatabase();
+            String query = " UPDATE Student SET EXLOCKS = '" + ELOCKS + "' WHERE UserName = '" + username + "' ";
             db.execSQL(query);
         }
         db.close();

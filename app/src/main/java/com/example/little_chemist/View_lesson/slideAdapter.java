@@ -2,6 +2,8 @@ package com.example.little_chemist.View_lesson;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,7 +18,9 @@ import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewpager.widget.PagerAdapter;
 
+import com.example.little_chemist.DatabaseHelper;
 import com.example.little_chemist.R;
+import com.example.little_chemist.Tables.Student;
 
 import java.util.Arrays;
 
@@ -37,13 +41,14 @@ public class slideAdapter extends PagerAdapter {
     String tempEx ;
     Intent[] AcEx ;
     Button[] BtnEx ;
-    boolean[] flagsEx ;
     int indexEx ;
+    int lessonid=0 ;
 
 
 
 
-    public slideAdapter(Context context , int value) {
+
+    public slideAdapter(Context context , int value , int id) {
         this.context = context;
         lessonKey=Integer.toString(value) ;
         chapterNum = lessonKey.charAt(0) ;
@@ -54,8 +59,8 @@ public class slideAdapter extends PagerAdapter {
         cleanImg = new String[content.length] ;
         AcEx = new Intent[ex.length] ;
         BtnEx = new Button[ex.length] ;
-        flagsEx = new boolean[getCountEx()] ;
-        Arrays.fill(flagsEx, false);
+        this.lessonid = id ;
+
 
 
 
@@ -70,13 +75,14 @@ public class slideAdapter extends PagerAdapter {
         }
 
 
+
     }
 
 
     public String[] content ={
              "C1L1S1","C1L1S2","C1L1S3","C1L1S4","C1L1S5", "C1L1S6"
             ,"C1L3S1","C1L3S2","C1L3S3","C1L3S4"
-            ,"C1L4S1","C1L4S2" , "C1L4S3" , "C1L4S4"
+            ,"C1L4S1","C1L4S2" , "C1L4S3" , "C1L4S4","C1L4S5"
             ,"C2L1S1","C2L1S2"
             ,"C2L4S1","C2L4S2","C2L4S3","C2L4S4","C2L4S5","C2L4S6","C2L4S7","C2L4S8"
             ,"C2L5S1","C2L5S2" , "C2L5S3" ,"C2L5S4" , "C2L5S5"
@@ -94,15 +100,15 @@ public class slideAdapter extends PagerAdapter {
     };
 
     public String[] ex ={
-            "C1L1S1ED","C1L1S6ED"
-            ,"C1L3S3E1M","C1L3S4E2M"
-            ,"C1L4S2E1M","C1L4S4E2M"
+            "C1L1S1E1","C1L1S6E2"
+            ,"C1L3S3E1M"
+            ,"C1L4S2E1M","C1L4S5E2M"
             ,"C2L1S2E1M"
             ,"C2L4S2E1M","C2L4S4E2M","C2L4S5E3M","C2L4S8E4M"
             ,"C2L5S3E1M","C2L5S5E2M"
             ,"C3L1S4E1M","C3L2S4E1M"
             ,"C4L5S1E1M","C4L5S3E2M"
-            ,"C5L1E1M","C5L1E2M"
+            ,"C5L1S2E1M","C5L1S4E2M"
 
     };
 
@@ -121,6 +127,36 @@ public class slideAdapter extends PagerAdapter {
         }
 
         return countCountent  ;
+    }
+
+    public int getNumContent(String Coid){
+        for (int i=0 ;i<content.length;i++){
+            if(Coid==content[i])
+                return i+1 ;
+        }
+        return 0 ;
+    }
+
+    public int getNumEx(String Exid){
+        for (int i=0 ;i<ex.length;i++){
+            if(Exid==ex[i])
+                return i+1 ;
+        }
+        return 0 ;
+    }
+
+    public int[] getExByLessonChapter(int Lessonchapterid){
+        int[] exKeys = new int[getCountEx()] ;
+        int index = 0 ;
+        for(int i=0 ;i<ex.length;i++){
+            if(chapterNum==ex[i].charAt(1)){
+                if(lessonNum==ex[i].charAt(3)){
+                    exKeys[index]=i+1 ;
+                    index++ ;
+                }}
+
+        }
+        return exKeys ;
     }
 
     public int getCountEx(){
@@ -154,42 +190,72 @@ public class slideAdapter extends PagerAdapter {
         btnAmim = AnimationUtils.loadAnimation(this.context, R.anim.button_anim) ;
 
 
+
         //set the button ex visible
         indexEx=0 ;
+
         for(int i=0;i<ex.length;i++){
             //System.out.println(ex[i]);
            tempEx = ex[i].substring(0,6) ;
             //System.out.println(tempEx);
 
             if (cleanContent[position].equals(tempEx)){
-                if(tempEx.equals("C1L1S1")){
+                if(ex[i].equals("C1L1S1E1")){
                     AcEx[indexEx] = new Intent(view.getContext(), ex_DragAndDrop1.class);
 //                    AcEx[index].putExtra("exKey", tempEx);
 //                    BtnEx[index] = view.findViewById(R.id.ex);
+                    tempEx = ex[i];
+                    String tem = ex[i] ;
+                    AcEx[indexEx].putExtra("exKey", tempEx);
+                    AcEx[indexEx].putExtra("exNum", getNumEx(tem));
+                    AcEx[indexEx].putExtra("lessonid", 1);
+                    BtnEx[indexEx] = view.findViewById(R.id.ex) ;
+                    Intent n = AcEx[indexEx];
+                    BtnEx[indexEx].setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            view.getContext().startActivity(n);
+
+                        }
+                    });
+
                 }
-                else if(tempEx.equals("C1L1S6")){
+                else if(ex[i].equals("C1L1S6E2")){
                     AcEx[indexEx] = new Intent(view.getContext(), ex_DragAndDrop3.class);
+                    tempEx = ex[i];
+                    AcEx[indexEx].putExtra("exKey", tempEx);
+                    AcEx[indexEx].putExtra("exNum", getNumEx(tempEx));
+                    AcEx[indexEx].putExtra("lessonid", 1);
+                    BtnEx[indexEx] = view.findViewById(R.id.ex) ;
+                    Intent n = AcEx[indexEx];
+                    BtnEx[indexEx].setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            view.getContext().startActivity(n);
+
+                        }
+                    });
 
                 }
                 else {
                     tempEx = ex[i];
                     AcEx[indexEx] = new Intent(view.getContext(), ex_multiple_choice.class);
-                }
                     AcEx[indexEx].putExtra("exKey", tempEx);
+                    AcEx[indexEx].putExtra("exNum", getNumEx(tempEx));
+                    AcEx[indexEx].putExtra("lessonid", lessonid);
                     BtnEx[indexEx] = view.findViewById(R.id.ex) ;
                     Intent n = AcEx[indexEx];
+                    BtnEx[indexEx].setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            view.getContext().startActivity(n);
+
+                        }
+                    });
 
 
+                }
 
-                BtnEx[indexEx].setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        setFlag(indexEx);
-                        System.out.println(flagsEx[indexEx]);
-                        view.getContext().startActivity(n);
-
-                    }
-                });
 
 
                 slideEx.setVisibility(View.VISIBLE);
@@ -215,13 +281,7 @@ public class slideAdapter extends PagerAdapter {
         return view ;
     }
 
-    public boolean[] getFlagsEx(){
-        return flagsEx ;
-    }
 
-    public void setFlag(int ind ){
-        flagsEx[ind]= true ;
-    }
 
 
     @Override

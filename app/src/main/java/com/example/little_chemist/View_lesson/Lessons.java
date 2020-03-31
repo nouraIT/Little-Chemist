@@ -55,7 +55,7 @@ public class Lessons extends AppCompatActivity {
     private SharedPreferences pref;
     private  DatabaseHelper helper ;
     private  Bundle bundle ;
-    public boolean[] exFlag ;
+    public int lessonId ;
 
 
     String name;
@@ -92,7 +92,8 @@ public class Lessons extends AppCompatActivity {
 
         bundle=getIntent().getExtras();
         lessonkey=bundle.getInt("lesson");
-        slideAdapter = new slideAdapter(this, lessonkey) ;
+        lessonId=bundle.getInt("lessonId") ;
+        slideAdapter = new slideAdapter(this, lessonkey,lessonId) ;
 
         mSlidsView.setAdapter(slideAdapter) ;
 
@@ -101,6 +102,8 @@ public class Lessons extends AppCompatActivity {
         mSlidsView.addOnPageChangeListener(viewListener);
 
         lessonName = findViewById(R.id.lessonTitle) ;
+
+
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             Intent n ;
@@ -118,6 +121,7 @@ public class Lessons extends AppCompatActivity {
                     n = new Intent(Lessons.this, Ch5.class);
                 startActivity(n);
                 finish();
+
             }
         });
 
@@ -155,6 +159,8 @@ public class Lessons extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 mSlidsView.setCurrentItem(mCurrent+1);
+
+
             }
         });
 
@@ -173,6 +179,7 @@ public class Lessons extends AppCompatActivity {
     }
 
     public void addDotsIndicator(int position ){
+
 
         mDotsText = new TextView[slideAdapter.getCount()] ;
         mDots.removeAllViews();
@@ -203,6 +210,7 @@ public class Lessons extends AppCompatActivity {
         public void onPageSelected(int position) {
 
 
+
             addDotsIndicator(position);
             mCurrent = position ;
 
@@ -222,22 +230,6 @@ public class Lessons extends AppCompatActivity {
                 preBtn.setText(getText(R.string.backBtn));
 
 
-
-                boolean checkAllEx = true ;
-                exFlag=slideAdapter.getFlagsEx() ;
-                for(int i=0 ; i<exFlag.length;i++){
-                    System.out.println("less"+exFlag[i]);
-                 if(exFlag[i]== false)
-                     checkAllEx= false ;
-                }
-                System.out.println(checkAllEx);
-                if(checkAllEx==true){
-                pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
-                String name = pref.getString("username", null); // getting String
-                Student student = helper.getStudent(name);
-                String Lid=""+bundle.getInt("lessonId") ;
-                helper.updateLesson(name,bundle.getInt("lessonId"),"completed");//,Integer.toString(lessonkey).charAt(0));
-                   }
 
 
 
@@ -259,8 +251,14 @@ public class Lessons extends AppCompatActivity {
 //                        helper.updateLesson(name,bundle.getInt("lessonId"),"completed");//,Integer.toString(lessonkey).charAt(0));
 //                        statue = student.getLsnLock(Lid);
 ////                        System.out.println(statue) ;
-
-
+                        lessonId=bundle.getInt("lessonId") ;
+//                        System.out.println(slideAdapter.getCountEx());
+//                        System.out.println(checkEx(lessonkey));
+                        if(slideAdapter.getCountEx()==checkEx(lessonkey)) {
+                            // get the ex by chapter and lesson and comapare if the number of ex is the same that in db the update the lesson
+                            pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
+                            helper.updateLesson(name, lessonId, "completed");//,Integer.toString(lessonkey).charAt(0));
+                        }
                         startActivity(n);
                         finish();
                     }
@@ -341,5 +339,17 @@ public class Lessons extends AppCompatActivity {
 
 
     }
+
+    public int checkEx(int lessonkey){
+        int[] exKEys = slideAdapter.getExByLessonChapter(lessonkey) ;
+        int count =0 ;
+        for (int i=0 ;i<exKEys.length;i++){
+            String exkeyString =""+exKEys[i] ;
+        if(student.getExLocks(exkeyString).equals("completed"))
+            count ++;
+        }
+        return count ;
+    }
+
 
 }

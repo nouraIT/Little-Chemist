@@ -27,7 +27,6 @@
     <item>Neutrons</item>
   </string-array>
   <string name="C1L3S4"><b>Atomic mass</b> is calculated by adding the number of protons and neutrons in the atom. </string>
-  <string name="C1L3S4E2M">Calculate the mass of helium</string>
   <!-- Answer lesson 3 -->
   <string-array name="C1L3A">
     <item>Protons</item>

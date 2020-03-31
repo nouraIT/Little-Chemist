@@ -2,6 +2,7 @@ package com.example.little_chemist.View_lesson;
 
 import android.content.ClipData;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
@@ -19,13 +20,24 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
 
+import com.example.little_chemist.DatabaseHelper;
 import com.example.little_chemist.R;
+import com.example.little_chemist.Tables.Student;
 
 public class ex_DragAndDrop1 extends AppCompatActivity {
 
     public int segmentN,ex ;
     Button reset,finish;
     LinearLayout dropArea;
+    private SharedPreferences pref;
+    private  DatabaseHelper helper ;
+    private Bundle bundle ;
+
+    String name;
+    Student student ;
+    Toolbar toolbar ;
+    int exNum ;
+
 
 
     @Override
@@ -35,7 +47,7 @@ public class ex_DragAndDrop1 extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_ex_draganddrop);
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -58,6 +70,11 @@ public class ex_DragAndDrop1 extends AppCompatActivity {
         findViewById(R.id.dropArea3).setOnDragListener(new MyDragListener());
         dropArea = findViewById(R.id.dropArea);
 
+        helper = new DatabaseHelper(this);
+
+
+
+
         reset = findViewById(R.id.reset) ;
         finish = findViewById(R.id.finish);
 
@@ -71,8 +88,15 @@ public class ex_DragAndDrop1 extends AppCompatActivity {
         finish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
+                String name = pref.getString("username", null); // getting String
+                Student student = helper.getStudent(name);
+                bundle=getIntent().getExtras();
+                int exNum=bundle.getInt("exNum") ;
+                helper.updateEx(name,exNum,"completed");//,Integer.toString(lessonkey).charAt(0));
                 Intent n = new Intent(ex_DragAndDrop1.this, Lessons.class);
                 n.putExtra("lesson",11) ;
+                n.putExtra("lessonId",1) ;
                 startActivity(n);
 
             }
@@ -155,8 +179,9 @@ public class ex_DragAndDrop1 extends AppCompatActivity {
                     if(correctAns==3) {
                         v.setBackgroundDrawable(normalShape);
                         dropArea.setBackgroundDrawable(rightShape);
-
                         finish.setVisibility(View.VISIBLE);
+                       // toolbar.setVisibility(View.VISIBLE);
+
                     }else {
                         dropArea.setBackgroundDrawable(enterShape);
                         v.setBackgroundDrawable(normalShape);

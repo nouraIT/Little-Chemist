@@ -12,7 +12,7 @@
         Many scientists attempted to arrange the elements, but Dmitri Mendeleev is given credit for creating the first chart. However, although his chart was not complete.
     </string>
 
-    <string-array name="C5L1E1M">
+    <string-array name="C5L1S2E1M">
         <item>What is the name of the scientist how create the first chart of the Periodic Table</item>
         <item>Robert Boyle</item>
         <item>Dmitri Mendeleev</item>
@@ -28,7 +28,7 @@
         The periodic table tells us what elements will combine to make molecules, how much they weigh, how many protons, electrons and neutrons they contain and whether they are solid, liquid or gas at room temperature.
     </string>
 
-    <string-array name="C5L1E2M">
+    <string-array name="C5L1S4E2M">
         <item>The periodic table tells us ___.</item>
         <item>Only the weigh and room temperature of elements</item>
         <item>The matter status and what elements will combine to make molecules</item>
