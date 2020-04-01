@@ -5,7 +5,7 @@
     android:id="@+id/gallery"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".ARCards">
 
     <fragment
         android:id="@+id/arFragment"

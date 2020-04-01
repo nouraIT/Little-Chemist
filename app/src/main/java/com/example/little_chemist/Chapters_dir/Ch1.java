@@ -77,17 +77,17 @@ public class Ch1 extends AppCompatActivity {
 
         int i ;
         CardView[] lsns = {lsn1,lsn2,lsn3,lsn4,lsn5};
-        ImageView[] locks = {findViewById(R.id.lockicon1) , findViewById(R.id.lockicon2), findViewById(R.id.lockicon3), findViewById(R.id.lockicon4), findViewById(R.id.lockicon5)};
-        ImageView[] lsnimgs ={findViewById(R.id.lsnimg1), findViewById(R.id.lsnimg2) , findViewById(R.id.lsnimg3) , findViewById(R.id.lsnimg4), findViewById(R.id.lsnimg5)};
+        ImageView[] locks = {findViewById(R.id.lockicon1) , findViewById(R.id.lockicon2),
+                findViewById(R.id.lockicon3),findViewById(R.id.lockicon4),findViewById(R.id.lockicon5)};
+        ImageView[] lsnimgs ={findViewById(R.id.lsnimg1), findViewById(R.id.lsnimg2),
+                findViewById(R.id.lsnimg3),findViewById(R.id.lsnimg4),findViewById(R.id.lsnimg5)};
 
         for(i =0;i<5;i++){
-
             statue = student.getLsnLock(String.valueOf(i+1));
             if(statue.equals("unlocked")) {
                 lsns[i].setCardBackgroundColor(getResources().getColor((R.color.primaryYellow)));
                 locks[i].setImageDrawable(getResources().getDrawable(R.drawable.padlock));
                 lsnimgs[i].setAlpha((float) 0.5);
-
             }
             else if(statue.equals("completed")) {
                 lsns[i].setCardBackgroundColor(getResources().getColor((R.color.Completed)));
@@ -98,11 +98,8 @@ public class Ch1 extends AppCompatActivity {
                 lsns[i].setCardBackgroundColor(getResources().getColor((R.color.Locked)));
                 locks[i].setImageDrawable(getResources().getDrawable(R.drawable.lock));
                 lsnimgs[i].setAlpha((float) 0.5);
-
             }
         }
-
-
         statue = student.getQzLock("1");
         ImageView qzimg = findViewById(R.id.qzimg);
 
