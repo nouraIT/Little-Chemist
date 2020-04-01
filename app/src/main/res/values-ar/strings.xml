@@ -100,7 +100,7 @@
     <string name="enterDeleteAcc">أدخل كلمة المرور الخاصة بك لحذف حسابك إلى الأبد</string>
     <string name="scan">أمسح البطاقه بعد ظهور النقط البيضاء</string>
     <string name="cards">البطاقات</string>
-    <string name="ok">حس</string>
+    <string name="ok">حسنا</string>
     <string name="prepare">يرجى إعداد البطاقات التالية</string>
     <string name="tryAgain">حاول مره لخرى!</string>
     <string name="problem">إذا لم تتمكن من العثور على الذرة ، يرجى الضغط على إعادة التعيين</string>
@@ -151,6 +151,7 @@
     <string name="tap_call6">انقر لاشعال النار! بعد ظهور النقاط البيضاء</string>
     <string name="throwFire">اختر العنصر الذي تريد رميه في النار</string>
     <string name="IncorrectPassword">كلمة المرور غير صحيحة</string>
+    <string name="C4L5S4">سيقوم الكيميائيون باختبار السائل غير المعروف باستخدام اللوني أو فصل خليط المواد الكيميائية داخل السائل أو الغاز للتعرف عليه.</string>
     <string name="Finishq">يجب عليك انهاء جميع الاسئلة!</string>
     <string name="question">السؤال:</string>
     <string name="Youranswer">اجابتك:</string>

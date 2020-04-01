@@ -134,27 +134,21 @@ public class Chapters extends AppCompatActivity {
 
             addDotsIndicator(position);
             mCurrent = position ;
-//            System.out.println(position);
             switch(position){
                 case 0:
                     card00.setId(R.id.cardviewch1);
-                    //card0.setId(R.id.cardviewch1);
                     break;
                 case 1:
                     card00.setId(R.id.cardviewch2);
-//                    card0.setId(R.id.cardviewch2);
                     break;
                 case 2:
                     card00.setId(R.id.cardviewch3);
-//                    card0.setId(R.id.cardviewch3);
                     break;
                 case 3:
                     card00.setId(R.id.cardviewch4);
-//                    card0.setId(R.id.cardviewch4);
                     break;
                 case 4:
                     card00.setId(R.id.cardviewch5);
-//                    card0.setId(R.id.cardviewch5);
                     break;
             }
 
@@ -223,7 +217,6 @@ public class Chapters extends AppCompatActivity {
             }else
                 Toast.makeText(getApplicationContext(), "Locked", Toast.LENGTH_LONG).show();
 
-
         }else if(R.id.cardviewch5==card00.getId()){
             statue = student.getChLock("5");
             if (statue.equals("unlocked") || statue.equals("completed") ) {
@@ -231,11 +224,7 @@ public class Chapters extends AppCompatActivity {
                 startActivity(n);
             }else
                 Toast.makeText(getApplicationContext(), "Locked", Toast.LENGTH_LONG).show();
-
         }
-
-
-
     }
 
     public void dirc (View v){

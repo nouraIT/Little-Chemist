@@ -88,6 +88,7 @@ public class ARCards extends AppCompatActivity {
         int Lid =  bundle.getInt("lessonId");
 
 
+
         Reset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
