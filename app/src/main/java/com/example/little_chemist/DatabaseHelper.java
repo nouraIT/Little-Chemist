@@ -563,7 +563,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             int endIndex =0;
             String oldStatus ="";
             String lsnNum = "1";
-           System.out.println("before the loop "+LLOCKS);
+            System.out.println("before the loop "+LLOCKS);
             //this loop will change the Lid and the one next to it
             for (int i=0;i<25;i++){
                 if(i+1 == Lid) {
