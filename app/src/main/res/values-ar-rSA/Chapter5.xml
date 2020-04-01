@@ -11,7 +11,7 @@
     <string name="C5L1S2">
         حاول العديد من العلماء ترتيب العناصر ، لكن ديمتري منديليف حصل على التقدير لإنشاء المخطط الأول. على الرغم من أن مخططه لم يكتمل.
     </string>
-    <string-array name="C5L1E2M">
+    <string-array name="C5L1S2E1M">
         <item>ما هو اسم العالم كيف صنع المخطط الأول للجدول الدوري</item>
         <item>روبرت بويل</item>
         <item>دميتري مندليف</item>
@@ -28,7 +28,7 @@
         يوضح لنا الجدول الدوري العناصر التي ستتحد لصنع الجزيئات ، وكم وزنها ، وعدد البروتونات والإلكترونات والنيوترونات التي تحتويها وما إذا كانت صلبة أو سائلة أو غازية في درجة حرارة الغرفة.
     </string>
 
-    <string-array name="C5L1E4M">
+    <string-array name="C5L1S4E2M">
         <item>الجدول الدوري يخبرنا بـ ___.</item>
         <item>وزن ودرجة حرارة الغرفة</item>
         <item>حالة المادة والعناصر التي ستجمعها لصنع الجزيئات</item>
@@ -37,31 +37,117 @@
     </string-array>
 
 
-    <!--         LESSON 1            -->
+    <!--        Quiz Questions           -->
+    <string-array name="C5Quiz_Q1">
+
+        <item name="Q1">العنصر عبارة عن مادة مصنوعة من نوع ____ نوع من الذرة فقط.</item>
+        <item name="A1">أربعة</item>
+        <item name="A2">اثنان</item>
+        <item name="A3">واحد</item>
+        <item name="A4">ثلاثة</item>
+        <item name="CA1">واحد</item>
 
 
+    </string-array>
+    <string-array name="C5Quiz_Q2">
 
-    <!--         LESSON 2            -->
-
-
-    <!--         LESSON 2            -->
-
-
-    <!--         LESSON 3            -->
-
-
-    <!--         LESSON 3            -->
+        <item name = "Q2"> ما اسم العالِم كيفية إنشاء المخطط الأول للجدول الدوري </item>
+        <item name = "A1"> روبرت بويل </item>
+        <item name = "A2"> دميتري مينديليف </item>
+        <item name = "A3"> هينيج براند </item>
+        <item name = "A4"> ماري كوري </item>
+        <item name = "CA2"> دميتري مينديليف </item>
 
 
-    <!--         LESSON 4            -->
+    </string-array>
+    <string-array name="C5Quiz_Q3">
+
+        <item name="Q3">______  تساعدنا في تحديد صفات شيء ما.</item>
+        <item name="A1">الخاصية</item>
+        <item name="A2">مقياس الأس الهيدروجيني</item>
+        <item name="A3">الكتل</item>
+        <item name="A4">قلوية</item>
+        <item name="CA3">الخاصية</item>
 
 
-    <!--         LESSON 4            -->
+    </string-array>
+
+    <string-array name="C5Quiz_Q4">
+
+        <item name="Q4">ما العنصر الأول في الجدول الدوري؟</item>
+        <item name="A1">الفلور</item>
+        <item name="A2">الهيدروجين</item>
+        <item name="A3">الليثيوم</item>
+        <item name="A4">كالسيوم</item>
+        <item name="CA4">الهيدروجين</item>
 
 
-    <!--         LESSON 5            -->
+    </string-array>
+    <string-array name="C5Quiz_Q5">
 
+        <item name="Q5">العدد الذري لليثيوم ____.</item>
+        <item name="A1">20</item>
+        <item name="A2">8</item>
+        <item name="A3">3</item>
+        <item name="A4">50</item>
+        <item name="CA5">3</item>
 
-    <!--         LESSON 5            -->
+    </string-array>
+
+    <string-array name="C5Quiz_Q6">
+
+        <item name="Q5">رمز المغنيسيوم _____.</item>
+        <item name="A1">Mg</item>
+        <item name="A2">Br</item>
+        <item name="A3">Na</item>
+        <item name="A4">Ar</item>
+        <item name="CA5">Mg</item>
+
+    </string-array>
+
+    <string-array name="C5Quiz_Q7">
+
+        <item name="Q5">رمز الهليوم _____.</item>
+        <item name="A1">Cl</item>
+        <item name="A2">F</item>
+        <item name="A3">Ne</item>
+        <item name="A4">He</item>
+        <item name="CA5">He</item>
+
+    </string-array>
+
+    <string-array name="C5Quiz_Q8">
+
+        <item name="Q5">العدد الذري للأرغون هو ____.</item>
+        <item name="A1">6</item>
+        <item name="A2">56</item>
+        <item name="A3">18</item>
+        <item name="A4">9</item>
+        <item name="CA5">18</item>
+
+    </string-array>
+
+    <string-array name="C5Quiz_Q9">
+
+        <item name="Q5">رمز النيون هو _____.</item>
+        <item name="A1">Li</item>
+        <item name="A2">Ne</item>
+        <item name="A3">H</item>
+        <item name="A4">Ar</item>
+        <item name="CA5">Ne</item>
+
+    </string-array>
+
+    <string-array name="C5Quiz_Q10">
+
+        <item name="Q5">رمز الكلور _____.</item>
+        <item name="A1">F</item>
+        <item name="A2">O</item>
+        <item name="A3">Cl</item>
+        <item name="A4">Ba</item>
+        <item name="CA5">Cl</item>
+
+    </string-array>
+
 
 </resources>

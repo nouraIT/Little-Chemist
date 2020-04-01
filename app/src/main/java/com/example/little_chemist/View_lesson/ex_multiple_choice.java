@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -16,7 +17,9 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.little_chemist.DatabaseHelper;
 import com.example.little_chemist.R;
+import com.example.little_chemist.Tables.Student;
 
 import br.com.simplepass.loadingbutton.customViews.CircularProgressButton;
 
@@ -32,6 +35,14 @@ public class ex_multiple_choice extends AppCompatActivity {
     public TextView Q;
     public CircularProgressButton[] a ;
     public TextView exNum ;
+
+    private SharedPreferences pref;
+    private  DatabaseHelper helper ;
+    private Bundle bundle ;
+    private int lessonid ;
+
+    String name;
+    Student student;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,7 +58,7 @@ public class ex_multiple_choice extends AppCompatActivity {
 
 
         String temp ;
-        Bundle bundle=getIntent().getExtras();
+        bundle=getIntent().getExtras();
         String exKey=bundle.getString("exKey");
         temp = String.valueOf(exKey.charAt(5)) ;
         segmentN = Integer.parseInt(temp) ;
@@ -60,6 +71,12 @@ public class ex_multiple_choice extends AppCompatActivity {
         lessonName = findViewById(R.id.lessonTitle2) ;
         setLessontitle(lessonkey);
 
+        helper = new DatabaseHelper(this);
+        pref = this.getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
+        name = pref.getString("username", null); // getting String
+        student = helper.getStudent(name);
+        lessonid = bundle.getInt("lessonid") ;
+
 
 
 
@@ -71,6 +88,8 @@ public class ex_multiple_choice extends AppCompatActivity {
 
                 Intent n = new Intent(ex_multiple_choice.this, Lessons.class );
                 n.putExtra("lesson",lessonkey) ;
+                n.putExtra("lessonId",lessonid) ;
+                System.out.println("ex "+lessonid);
                 startActivity(n);
             }
         });
@@ -117,6 +136,12 @@ public class ex_multiple_choice extends AppCompatActivity {
                         //b.startMorphAnimation();
                         b.doneLoadingAnimation(Color.GREEN ,  BitmapFactory.decodeResource(getResources(), R.drawable.done));
                         toolbar.setVisibility(View.VISIBLE);
+
+                        pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
+                        String name = pref.getString("username", null); // getting String
+                        Student student = helper.getStudent(name);
+                        int exNum=bundle.getInt("exNum") ;
+                        helper.updateEx(name,exNum,"completed");//,Integer.toString(lessonkey).charAt(0));
                         }
                 });break; } }
         for(int i=1 ;i<QItems.length;i++){

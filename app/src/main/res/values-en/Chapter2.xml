@@ -237,57 +237,112 @@
     <!--        Quiz Questions           -->
     <string-array name="C2Quiz_Q1">
 
-        <item name="Q1">The nucleus of an atom is?</item>
-        <item name="A1">Split apart.</item>
-        <item name="A2">Made larger.</item>
-        <item name="A3">Frozen.</item>
-        <item name="A4">Weighed.</item>
-        <item name="CA1">Split apart.</item>
+        <item name="Q1">______ is a substance that can be easily separated into its parts, and those parts retain their original properties.</item>
+        <item name="A1">Alkaline</item>
+        <item name="A2">Acidic</item>
+        <item name="A3">Heterogeneous mixture</item>
+        <item name="A4">Fruit Juice</item>
+        <item name="CA1">Heterogeneous mixture</item>
 
 
     </string-array>
     <string-array name="C2Quiz_Q2">
 
-        <item name="Q2">Electrons?</item>
-        <item name="A1">are huge and move very slowly.</item>
-        <item name="A2">move extremely fast and are very tiny.</item>
-        <item name="A3">have no energy at all.</item>
-        <item name="A4">can be seen using a magnifying glass.</item>
-        <item name="CA2">move extremely fast and are very tiny.</item>
+        <item name="Q2">When Atoms help each other we called this</item>
+        <item name="A1">Covalent Bond</item>
+        <item name="A2">Ionic Bond</item>
+        <item name="A3">Chemical Bond</item>
+        <item name="A4">All above</item>
+        <item name="CA2">All above</item>
 
 
     </string-array>
     <string-array name="C2Quiz_Q3">
 
-        <item name="Q3">How many electrons are in an atom?</item>
-        <item name="A1">There are 5 electrons in every atom.</item>
-        <item name="A2">Atoms do not have electrons in them.</item>
-        <item name="A3">different amounts of electrons.</item>
-        <item name="A4">no more than 10 electrons.</item>
-        <item name="CA3">different amounts of electrons.</item>
+        <item name="Q3">________ happen when one atom missing electrons and another one have extra electrons</item>
+        <item name="A1">Ionic Bond</item>
+        <item name="A2">Heterogeneous mixture</item>
+        <item name="A3">Covalent Bond</item>
+        <item name="A4">Alkaline</item>
+        <item name="CA3">Ionic Bond</item>
 
 
     </string-array>
 
     <string-array name="C2Quiz_Q4">
 
-        <item name="Q4">How do atoms bond together?</item>
-        <item name="A1">They share their electrons.</item>
-        <item name="A2">Atoms do not bond together.</item>
-        <item name="A3">One gets smaller so it can fit inside the other.</item>
-        <item name="A4">They lose all their electrons.</item>
-        <item name="CA4">They share their electrons.</item>
+        <item name="Q4">H2O is an example of? </item>
+        <item name="A1">Acidic</item>
+        <item name="A2">Covalent Bond</item>
+        <item name="A3">Heterogeneous mixture</item>
+        <item name="A4">Ionic Bond</item>
+        <item name="CA4">Covalent Bond</item>
 
 
     </string-array>
     <string-array name="C2Quiz_Q5">
 
-        <item name="Q5">Isotopes of an element differ in _____.</item>
-        <item name="A1">number of protons.</item>
-        <item name="A2">number of electrons.</item>
-        <item name="A3">atomic numbers.</item>
-        <item name="A4">atomic masses.</item>
-        <item name="CA5">atomic masses</item>
+        <item name="Q5">When two or more atoms bond, they make an entirely new substance called a _____.</item>
+        <item name="A1">Compound</item>
+        <item name="A2">Covalent Bond</item>
+        <item name="A3">Chemical Bond</item>
+        <item name="A4">Substance</item>
+        <item name="CA5">Compound</item>
+
+    </string-array>
+
+    <string-array name="C2Quiz_Q6">
+
+        <item name="Q5">Chemical equations have _____ sides</item>
+        <item name="A1">Two</item>
+        <item name="A2">One</item>
+        <item name="A3">Four</item>
+        <item name="A4">Three</item>
+        <item name="CA5">Two</item>
+
+    </string-array>
+
+    <string-array name="C2Quiz_Q7">
+
+        <item name="Q5">There is only one atom of each element in the equation, unless the element has a ______ or a _______</item>
+        <item name="A1">Two, Three</item>
+        <item name="A2">Coefficient, Subscript</item>
+        <item name="A3">Ionic Bond, Covalent Bond</item>
+        <item name="A4">Substance, Compound</item>
+        <item name="CA5">Coefficient, Subscript</item>
+
+    </string-array>
+
+    <string-array name="C2Quiz_Q8">
+
+        <item name="Q5">We can use the ______ to measure how basic (alkaline) or acidic things are.</item>
+        <item name="A1">Substance</item>
+        <item name="A2">Coefficient</item>
+        <item name="A3">Chemical Bond</item>
+        <item name="A4">pH Scale</item>
+        <item name="CA5">pH Scale</item>
+
+    </string-array>
+
+    <string-array name="C2Quiz_Q9">
+
+        <item name="Q5">Plain water is right in the middle of the scale with a pH of 7. This is called a _______.</item>
+        <item name="A1">Acidic</item>
+        <item name="A2">Neutral pH</item>
+        <item name="A3">Basic</item>
+        <item name="A4">Alkaline</item>
+        <item name="CA5">Neutral pH</item>
+
+    </string-array>
+
+    <string-array name="C2Quiz_Q10">
+
+        <item name="Q5">Form this items which one this the most Acidic?</item>
+        <item name="A1">Milk with pH equals to 6</item>
+        <item name="A2">Coffee with pH equals to 5</item>
+        <item name="A3">Orange juice with pH equals to 3</item>
+        <item name="A4">Lemon juice with pH equals to 2</item>
+        <item name="CA5">Lemon juice with pH equals to 2</item>
 
     </string-array>
 
