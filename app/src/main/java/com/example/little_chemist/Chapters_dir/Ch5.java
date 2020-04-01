@@ -164,6 +164,8 @@ public class Ch5 extends AppCompatActivity {
                                 }
                             });
                     alertDialog.show();
+                    alertDialog.getButton(AlertDialog.BUTTON_NEUTRAL).setWidth(WindowManager.LayoutParams.WRAP_CONTENT);
+
                 } else
                     Toast.makeText(getApplicationContext(), "Locked", Toast.LENGTH_LONG).show();
             }

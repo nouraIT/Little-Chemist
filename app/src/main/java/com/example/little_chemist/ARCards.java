@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.net.Uri;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -33,6 +34,7 @@ import java.io.InputStream;
 import java.lang.annotation.Target;
 import java.util.Collection;
 import java.util.List;
+import java.util.Locale;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.concurrent.TimeUnit;
@@ -59,9 +61,12 @@ public class ARCards extends AppCompatActivity {
     private ModelRenderable mObjRenderable;
     private  String text;
 //private  int  m=0;
-    static int m =0;
+    static int m =1;
     DatabaseHelper helper = new DatabaseHelper(this);
     private SharedPreferences pref;
+    public static boolean alreadyRecreated=  false;
+    String name;
+
 
 
     @Override
@@ -76,8 +81,9 @@ public class ARCards extends AppCompatActivity {
         textView.setText(R.string.scan);
         arFragment.getArSceneView().getScene().addOnUpdateListener(this::onUpdate);
 
+
         pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
-        String name = pref.getString("username", null);
+        name = pref.getString("username", null);
         Bundle bundle=getIntent().getExtras();
         int Lid =  bundle.getInt("lessonId");
 
