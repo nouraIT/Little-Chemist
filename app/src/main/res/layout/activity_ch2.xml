@@ -148,7 +148,7 @@
                             android:layout_height="70dp"
 
                             android:alpha="1"
-
+                            android:src="@drawable/heterogeneous_mixture"
                             android:contentDescription="@string/Ch2Lsn1" />
 
 <!--TODO add an image for the first lesson ^-->
