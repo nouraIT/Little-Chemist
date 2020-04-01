@@ -180,17 +180,17 @@ public class QuizResult extends AppCompatActivity {
                                  n = new Intent(QuizResult.this, Ch1.class);
                                  break;
                             case 2:
-                                n = new Intent(QuizResult.this, Ch2.class);
-                                break;
+                                 n = new Intent(QuizResult.this, Ch2.class);
+                                 break;
                             case 3:
-                                n = new Intent(QuizResult.this, Ch3.class);
-                                break;
+                                 n = new Intent(QuizResult.this, Ch3.class);
+                                 break;
                             case 4:
-                                n = new Intent(QuizResult.this, Ch4.class);
-                                break;
+                                 n = new Intent(QuizResult.this, Ch4.class);
+                                 break;
                             case 5:
-                                n = new Intent(QuizResult.this, Ch5.class);
-                                break;
+                                 n = new Intent(QuizResult.this, Ch5.class);
+                                 break;
                             default: n = new Intent(QuizResult.this, Home.class);
                         }
                         helper.updateQuiz(name,b.getInt("ChapterNumber"),"completed");//,Integer.toString(lessonkey).charAt(0));

@@ -20,7 +20,7 @@ import java.sql.SQLException;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-
+    public static boolean[] alreadyTested = {false,false,false,false,false};
 
     public static class FeedEntry implements BaseColumns {
 
@@ -563,12 +563,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             int endIndex =0;
             String oldStatus ="";
             String lsnNum = "1";
+            System.out.println("the lid is "+Lid);
             System.out.println("before the loop "+LLOCKS);
             //this loop will change the Lid and the one next to it
             for (int i=0;i<25;i++){
                 if(i+1 == Lid) {
                     oldStatus += (i + 1) + ":" + status + ",";
                     if(i!=24 && status.equals("completed")) {
+                        System.out.println("i'm not supposed to be here, help ");
                         lsnNum = String.valueOf(Integer.parseInt(lsnNum) + 1);
                         i++;
                         oldStatus += (i + 1) + ":unlocked,";
@@ -577,11 +579,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 }
                 firstIndex = LLOCKS.indexOf(lsnNum);
                 endIndex = LLOCKS.indexOf(",",firstIndex);
-//                System.out.println(LLOCKS.substring(firstIndex+2,endIndex));
-//
-//                System.out.println("num is "+lsnNum+" and its length is "+lsnNum.length());
                 if(lsnNum.length()!=2) {
-//                    System.out.println("before its in "+(i + 1) + ":" + LLOCKS.substring(firstIndex + 2, endIndex) + ",");
                     oldStatus += (i + 1) + ":" + LLOCKS.substring(firstIndex + 2, endIndex) + ",";
                 }
                 else
@@ -604,6 +602,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
     public void updateQuiz(String username,int Qid,String status) {
+//        System.out.println(!alreadyTested[Qid-1]);
+        if(alreadyTested[Qid-1])
+            return;
 
         String Username,QZLOCKS= "";
         db = this.getReadableDatabase();
@@ -661,7 +662,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
         updateChapter(username,Qid,status);
         db.close();
-
+        alreadyTested[Qid-1]=true;
 
     }
 
@@ -812,5 +813,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
         db.close();
     }
+
 
 }
