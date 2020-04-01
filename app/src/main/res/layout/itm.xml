@@ -31,7 +31,6 @@
             android:text="here"
             android:textAllCaps="false"
             android:textColor="@color/darkpruple"
-            android:textSize="22sp"
             android:layout_gravity="center"
             android:textAlignment="center"/>
 
