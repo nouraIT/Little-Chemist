@@ -21,6 +21,7 @@ import com.example.little_chemist.DatabaseHelper;
 import com.example.little_chemist.R;
 import com.example.little_chemist.Tables.Student;
 
+import androidx.constraintlayout.widget.ConstraintLayout;
 import br.com.simplepass.loadingbutton.customViews.CircularProgressButton;
 
 import static com.google.sceneform_animation.cq.br;
@@ -77,6 +78,25 @@ public class ex_multiple_choice extends AppCompatActivity {
         student = helper.getStudent(name);
         lessonid = bundle.getInt("lessonid") ;
 
+        ConstraintLayout exlayout = findViewById(R.id.exlayout);
+        switch (chnum){
+            case "1":
+                exlayout.setBackgroundResource(R.drawable.ch1lessonbackground);
+                break;
+            case "2":
+                exlayout.setBackgroundResource(R.drawable.ch2lessonbackground);
+                break;
+            case "3":
+                exlayout.setBackgroundResource(R.drawable.ch3lessonbackgrond);
+                break;
+            case "4":
+                exlayout.setBackgroundResource(R.drawable.ch4lessonbackground);
+                break;
+            case "5":
+                exlayout.setBackgroundResource(R.drawable.ch5lessonbackground);
+                break;
+            default:exlayout.setBackgroundResource(R.drawable.ch1lessonbackground);
+        }
 
 
 

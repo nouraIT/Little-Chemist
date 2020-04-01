@@ -9,6 +9,6 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:id="@+id/imagerecycler"
-        android:src="@drawable/graycircle"/>
+        android:src="@drawable/ques_mark"/>
 
 </RelativeLayout>

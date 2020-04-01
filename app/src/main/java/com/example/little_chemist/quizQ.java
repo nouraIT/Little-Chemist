@@ -290,7 +290,7 @@ public class quizQ extends AppCompatActivity {
                                 if(adapter.getOption()[i] == null){
                                     YouCantRun = true;
                                     nextbtn.setEnabled(true);
-                                    Toast.makeText(quizQ.this, "Finish all the questions!", Toast.LENGTH_LONG).show();
+                                    Toast.makeText(quizQ.this, getText(R.string.Finishq), Toast.LENGTH_LONG).show();
                                     break;
 //                            getApplicationContext()
                                 }

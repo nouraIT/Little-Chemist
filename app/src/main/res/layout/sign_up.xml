@@ -17,8 +17,10 @@
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
 
         <com.google.android.material.textfield.TextInputLayout
@@ -99,10 +101,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
-            android:textColorHint="@color/darkpruple"
-
             android:layout_marginStart="24dp"
+
             android:layout_marginEnd="24dp"
+            android:textColorHint="@color/darkpruple"
             app:errorEnabled="true"
             app:errorTextAppearance="@style/error_appearance"
 
@@ -135,8 +137,8 @@
             android:layout_width="260dp"
             android:layout_height="wrap_content"
 
-            android:layout_marginTop="10dp"
             android:layout_marginStart="54dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="54dp"
 
             android:entries="@array/SecurityQs"
@@ -145,8 +147,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.476"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/password22"
-            />
+            app:layout_constraintTop_toBottomOf="@+id/password22" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/securityA"
@@ -220,23 +221,18 @@
             app:layout_constraintTop_toBottomOf="@+id/signup"
             app:layout_constraintVertical_bias="1.0" />
 
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="290dp"
-            android:layout_marginEnd="160dp"
-            android:elevation="-20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="210dp"
-                android:layout_marginTop="100dp"
-                android:alpha="0.8"
-                android:elevation="-20dp"
-                android:src="@drawable/ch5character" />
-        </RelativeLayout>
+<!--        <ImageView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="210dp"-->
+<!--            android:layout_marginEnd="256dp"-->
+<!--            android:alpha="0.8"-->
+<!--            android:elevation="-20dp"-->
+<!--            android:src="@drawable/ch5character"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:layout_constraintVertical_bias="1.0" />-->
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
