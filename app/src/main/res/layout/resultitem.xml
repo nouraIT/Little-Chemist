@@ -25,9 +25,8 @@
         android:id="@+id/Qinresult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Question:"
+        android:text="@string/question"
         android:textSize="20dp"
-        android:layout_marginRight="10dp"
         android:padding="10dp"
         android:fontFamily="@font/dk_sugary_pancake"
         android:textColor="@color/black"/>
@@ -63,11 +62,10 @@
         android:id="@+id/wrongan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Your answer:"
+        android:text="@string/Youranswer"
         android:textSize="20dp"
         android:fontFamily="@font/dk_sugary_pancake"
         android:textColor="#B5B5B5"
-        android:layout_marginRight="20dp"
         android:padding="10dp"
         />
     <TextView
@@ -108,7 +106,7 @@
         android:id="@+id/rightan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Right answer:"
+        android:text="@string/Rightanswer"
         android:textSize="20dp"
         android:fontFamily="@font/dk_sugary_pancake"
         android:textColor="#B5B5B5"

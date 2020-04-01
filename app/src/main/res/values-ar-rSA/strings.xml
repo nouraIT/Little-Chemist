@@ -149,7 +149,11 @@
     <string name="tap_call6">انقر لاشعال النار! بعد ظهور النقاط البيضاء</string>
     <string name="throwFire">اختر العنصر الذي تريد رميه في النار</string>
     <string name="IncorrectPassword">كلمة المرور غير صحيحة</string>
-    <string name="tap_call7">انقر لاستدعاء شكل المسألة! بعد ظهور النقاط البيضاء</string>
+    <string name="Finishq">يجب عليك انهاء جميع الاسئلة!</string>
+    <string name="question">السؤال:</string>
+    <string name="Youranswer">اجابتك:</string>
+    <string name="Rightanswer">الاجابة الصحيحة:</string>
+    <string name="tap_call7">انقر لاستدعاء شكل المادة! بعد ظهور النقاط البيضاء</string>
     <string name="C4L5S4">سيقوم الكيميائيون باختبار السائل غير المعروف باستخدام اللوني أو فصل خليط المواد الكيميائية داخل السائل أو الغاز للتعرف عليه.</string>
 
 

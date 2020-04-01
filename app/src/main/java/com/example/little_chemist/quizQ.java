@@ -227,12 +227,11 @@ public class quizQ extends AppCompatActivity {
             break;
             case 5:whichcontent = C5Quiz;
             break;
-
             default:
                 throw new IllegalStateException("Unexpected value: " + QuizID);
         }
 
-        //random
+        //random question
         int[] Qindex = new int [5];
         ArrayList<Integer> list = new ArrayList<Integer>();
         for (int i=0; i<whichcontent.length; i++) {
@@ -244,11 +243,13 @@ public class quizQ extends AppCompatActivity {
             Qindex[i] = list.get(i);
         }
 
-        //get from Question string
+        //get from Question
         for (int i=0; i<5;i++){
-            QItems = adapter.context.getResources().getStringArray(adapter.context.getResources().getIdentifier(whichcontent[Qindex[i]], "array", adapter.context.getPackageName()));
+            QItems = adapter.context.getResources().getStringArray(adapter.context.getResources()
+                    .getIdentifier(whichcontent[Qindex[i]], "array", adapter.context.getPackageName()));
             Question[i] = QItems;
-            modelQuestion[i] = new model(this,i,Question[i][index],Question[i][index+1],Question[i][index+2],Question[i][index+3],Question[i][index+4],Question[i][index+5]);
+            modelQuestion[i] = new model(this,i,Question[i][index],Question[i][index+1],Question[i][index+2]
+                    ,Question[i][index+3],Question[i][index+4],Question[i][index+5]);
             currectanswer[i] = Question[i][index+5];
             onlyQuestion[i] = Question[i][index];
         }
@@ -289,7 +290,7 @@ public class quizQ extends AppCompatActivity {
                                 if(adapter.getOption()[i] == null){
                                     YouCantRun = true;
                                     nextbtn.setEnabled(true);
-                                    Toast.makeText(quizQ.this, "Finish all the questions!", Toast.LENGTH_LONG).show();
+                                    Toast.makeText(quizQ.this, getText(R.string.Finishq), Toast.LENGTH_LONG).show();
                                     break;
 //                            getApplicationContext()
                                 }
@@ -409,22 +410,24 @@ public class quizQ extends AppCompatActivity {
         }
 
         helper.setScore(name,QuizID,score);
-        student.SetTotalScore(QuizID,score);//TODO make sure this saves it to the database
+        student.SetTotalScore(QuizID,score);
         return score;
     }
 
+    //TODO make sure this saves it to the database
     //Questions array
     public String [] AllQuestion = {
             "C1Quiz_Q1","C1Quiz_Q2","C1Quiz_Q3","C1Quiz_Q4","C1Quiz_Q5","C1Quiz_Q6","C1Quiz_Q7","C1Quiz_Q8","C1Quiz_Q9","C1Quiz_Q10",
             "C2Quiz_Q1","C2Quiz_Q2","C2Quiz_Q3","C2Quiz_Q4","C2Quiz_Q5",
             "C3Quiz_Q1","C3Quiz_Q2","C3Quiz_Q3","C3Quiz_Q4","C3Quiz_Q5","C3Quiz_Q6","C3Quiz_Q7","C3Quiz_Q8","C3Quiz_Q9","C3Quiz_Q10",
             "C4Quiz_Q1","C4Quiz_Q2","C4Quiz_Q3","C4Quiz_Q4","C4Quiz_Q5","C4Quiz_Q6","C4Quiz_Q7","C4Quiz_Q8","C4Quiz_Q9","C4Quiz_Q10","C4Quiz_Q11","C4Quiz_Q12","C4Quiz_Q13","C4Quiz_Q14","C4Quiz_Q15",
+            "C5Quiz_Q1","C5Quiz_Q2","C5Quiz_Q3","C5Quiz_Q4","C5Quiz_Q5","C5Quiz_Q6","C5Quiz_Q7","C5Quiz_Q8","C5Quiz_Q9","C5Quiz_Q10"
     };
     public String[] C1Quiz = {
             "C1Quiz_Q1","C1Quiz_Q2","C1Quiz_Q3","C1Quiz_Q4","C1Quiz_Q5","C1Quiz_Q6","C1Quiz_Q7","C1Quiz_Q8","C1Quiz_Q9","C1Quiz_Q10"
     };
     public String[] C2Quiz = {
-            "C2Quiz_Q1","C2Quiz_Q2","C2Quiz_Q3","C2Quiz_Q4","C2Quiz_Q5"//,"C2Quiz_Q6","C2Quiz_Q7","C2Quiz_Q8","C2Quiz_Q9","C2Quiz_Q10"
+            "C2Quiz_Q1","C2Quiz_Q2","C2Quiz_Q3","C2Quiz_Q4","C2Quiz_Q5","C2Quiz_Q6","C2Quiz_Q7","C2Quiz_Q8","C2Quiz_Q9","C2Quiz_Q10"
     };
     public String[] C3Quiz = {
             "C3Quiz_Q1","C3Quiz_Q2","C3Quiz_Q3","C3Quiz_Q4","C3Quiz_Q5","C3Quiz_Q6","C3Quiz_Q7","C3Quiz_Q8","C3Quiz_Q9","C3Quiz_Q10"
@@ -433,7 +436,7 @@ public class quizQ extends AppCompatActivity {
             "C4Quiz_Q1","C4Quiz_Q2","C4Quiz_Q3","C4Quiz_Q4","C4Quiz_Q5","C4Quiz_Q6","C4Quiz_Q7","C4Quiz_Q8","C4Quiz_Q9","C4Quiz_Q10","C4Quiz_Q11","C4Quiz_Q12","C4Quiz_Q13","C4Quiz_Q14","C4Quiz_Q15"
     };
     public String[] C5Quiz = {
-            "C1Quiz_Q1","C1Quiz_Q2","C1Quiz_Q3","C1Quiz_Q4","C1Quiz_Q5"
+            "C5Quiz_Q1","C5Quiz_Q2","C5Quiz_Q3","C5Quiz_Q4","C5Quiz_Q5","C5Quiz_Q6","C5Quiz_Q7","C5Quiz_Q8","C5Quiz_Q9","C5Quiz_Q10"
     };
 
 }

@@ -95,6 +95,14 @@
     <string name="QuizScore">Quiz score</string>
     <string name="nextQ">Next Question</string>
     <string name="previous_question">Previous Question</string>
+    <string name="Finishq">Finish all the questions!</string>
+
+
+    <!--   _______________ quiz result _______________-->
+
+    <string name="question">Question:</string>
+    <string name="Youranswer">Your answer:</string>
+    <string name="Rightanswer">Right answer:</string>
 
 
     <!--   _______________ chapters, quizzes and lessons's symbols _______________-->

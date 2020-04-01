@@ -11,7 +11,7 @@
     <string name="C5L1S2">
         Many scientists attempted to arrange the elements, but Dmitri Mendeleev is given credit for creating the first chart. However, although his chart was not complete.
     </string>
-    <string-array name="C5L1E1M">
+    <string-array name="C5L1S2E1M">
         <item>What is the name of the scientist how create the first chart of the Periodic Table</item>
         <item>Robert Boyle</item>
         <item>Dmitri Mendeleev</item>
@@ -26,7 +26,7 @@
     <string name="C5L1S4">
         The periodic table tells us what elements will combine to make molecules, how much they weigh, how many protons, electrons and neutrons they contain and whether they are solid, liquid or gas at room temperature.
     </string>
-    <string-array name="C5L1E2M">
+    <string-array name="C5L1S4E2M">
         <item>The periodic table tells us ___.</item>
         <item>Only the weigh and room temperature of elements</item>
         <item>The matter status and what elements will combine to make molecules</item>
@@ -34,33 +34,124 @@
         <item>All above</item>
     </string-array>
 
-
-    <!--         LESSON 1            -->
-
-
-
-    <!--         LESSON 2            -->
+    <string-array name="C5L1A">
+        <item>Dmitri Mendeleev</item>
+        <item>All above</item>
+    </string-array>
 
 
-    <!--         LESSON 2            -->
+
+    <!--        Quiz Questions           -->
+    <string-array name="C5Quiz_Q1">
+
+        <item name="Q1">An element is a substance that is made of only ____ kind of atom.</item>
+        <item name="A1">Four</item>
+        <item name="A2">Two</item>
+        <item name="A3">One</item>
+        <item name="A4">Three</item>
+        <item name="CA1">One</item>
 
 
-    <!--         LESSON 3            -->
+    </string-array>
+    <string-array name="C5Quiz_Q2">
+
+        <item name="Q2">What is the name of the scientist how create the first chart of the Periodic Table</item>
+        <item name="A1">Robert Boyle</item>
+        <item name="A2">Dmitri Mendeleev</item>
+        <item name="A3">Hennig Brand</item>
+        <item name="A4">Marie Curie</item>
+        <item name="CA2">Dmitri Mendeleev</item>
 
 
-    <!--         LESSON 3            -->
+    </string-array>
+    <string-array name="C5Quiz_Q3">
+
+        <item name="Q3">The ______ is a specific characteristic that helps us identify something.</item>
+        <item name="A1">Property</item>
+        <item name="A2">pH Scale</item>
+        <item name="A3">Masses</item>
+        <item name="A4">Alkaline</item>
+        <item name="CA3">Property</item>
 
 
-    <!--         LESSON 4            -->
+    </string-array>
+
+    <string-array name="C5Quiz_Q4">
+
+        <item name="Q4">What is the first element in the periodic table?</item>
+        <item name="A1">Fluorine</item>
+        <item name="A2">Hydrogen</item>
+        <item name="A3">Lithium</item>
+        <item name="A4">Calcium</item>
+        <item name="CA4">Hydrogen</item>
 
 
-    <!--         LESSON 4            -->
+    </string-array>
+    <string-array name="C5Quiz_Q5">
 
+        <item name="Q5">The Lithium\'s atomic number is ____.</item>
+        <item name="A1">20</item>
+        <item name="A2">8</item>
+        <item name="A3">3</item>
+        <item name="A4">50</item>
+        <item name="CA5">3</item>
 
-    <!--         LESSON 5            -->
+    </string-array>
 
+    <string-array name="C5Quiz_Q6">
 
-    <!--         LESSON 5            -->
+        <item name="Q5">The Magnesium\'s symbol is _____.</item>
+        <item name="A1">Mg</item>
+        <item name="A2">Br</item>
+        <item name="A3">Na</item>
+        <item name="A4">Ar</item>
+        <item name="CA5">Mg</item>
+
+    </string-array>
+
+    <string-array name="C5Quiz_Q7">
+
+        <item name="Q5">The Helium\'s symbol is _____.</item>
+        <item name="A1">Cl</item>
+        <item name="A2">F</item>
+        <item name="A3">Ne</item>
+        <item name="A4">He</item>
+        <item name="CA5">He</item>
+
+    </string-array>
+
+    <string-array name="C5Quiz_Q8">
+
+        <item name="Q5">The Argon\'s atomic number is ____.</item>
+        <item name="A1">6</item>
+        <item name="A2">56</item>
+        <item name="A3">18</item>
+        <item name="A4">9</item>
+        <item name="CA5">18</item>
+
+    </string-array>
+
+    <string-array name="C5Quiz_Q9">
+
+        <item name="Q5">The Neon\'s symbol is _____.</item>
+        <item name="A1">Li</item>
+        <item name="A2">Ne</item>
+        <item name="A3">H</item>
+        <item name="A4">Ar</item>
+        <item name="CA5">Ne</item>
+
+    </string-array>
+
+    <string-array name="C5Quiz_Q10">
+
+        <item name="Q5">The Chlorine\'s symbol is _____.</item>
+        <item name="A1">F</item>
+        <item name="A2">O</item>
+        <item name="A3">Cl</item>
+        <item name="A4">Ba</item>
+        <item name="CA5">Cl</item>
+
+    </string-array>
 
 
 </resources>

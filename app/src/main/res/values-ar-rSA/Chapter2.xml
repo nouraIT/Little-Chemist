@@ -206,58 +206,113 @@
     <!--        Quiz Questions           -->
     <string-array name="C2Quiz_Q1">
 
-        <item name="Q1">نواة الذرة تقوم ب؟</item>
-        <item name="A1">الانقسام</item>
-        <item name="A2">تكبر في الحجم</item>
-        <item name="A3">تتجمد</item>
-        <item name="A4">قياس حجمها</item>
-        <item name="CA1">الانقسام</item>
+        <item name="Q1">______ هي مادة يمكن فصلها بسهولة إلى أجزائها ، وتحتفظ هذه الأجزاء بخصائصها الأصلية.</item>
+        <item name="A1"> قلوية</item>
+        <item name="A2">حمضي</item>
+        <item name="A3">خليط غير متجانس</item>
+        <item name="A4">عصير الفاكهة</item>
+        <item name="CA1">خليط غير متجانس</item>
 
 
     </string-array>
     <string-array name="C2Quiz_Q2">
 
-        <item name="Q2">C2الإلكترونات?</item>
-        <item name="A1">ضخمة وتتحرك ببطء شديد.</item>
-        <item name="A2">التحرك بسرعة كبيرة وصغيرة جدا.</item>
-        <item name="A3">ليس لديهم طاقة على الإطلاق.</item>
-        <item name="A4">يمكن رؤيتها باستخدام عدسة مكبرة.</item>
-        <item name="CA2">التحرك بسرعة كبيرة وصغيرة جدا.</item>
+        <item name="Q2">عندما تساعد الذرات بعضها البعض نسمي هذا</item>
+        <item name="A1">الروابط التساهمية</item>
+        <item name="A2">الرابطة الأيونية</item>
+        <item name="A3">رابطة كيميائية</item>
+        <item name="A4">جميع ما سبق</item>
+        <item name="CA2">جميع ما سبق</item>
 
 
     </string-array>
     <string-array name="C2Quiz_Q3">
 
-        <item name="Q3">كم عدد الإلكترونات الموجودة في الذرة؟</item>
-        <item name="A1">هناك 5 إلكترونات في كل ذرة.</item>
-        <item name="A2">لا تحتوي الذرات على إلكترونات.</item>
-        <item name="A3">كميات مختلفة من الإلكترونات.</item>
-        <item name="A4">لا يزيد عن 10 إلكترونات.</item>
-        <item name="CA3">كميات مختلفة من الإلكترونات.</item>
+        <item name="Q3">_____ يحدث عندما تفقد ذرة إلكترونات وأخرى تحتوي على إلكترونات إضافية</item>
+        <item name="A1">الرابطة الأيونية</item>
+        <item name="A2">خليط غير متجانس</item>
+        <item name="A3">الروابط التساهمية</item>
+        <item name="A4">قلوية</item>
+        <item name="CA3">الرابطة الأيونية</item>
 
 
     </string-array>
 
     <string-array name="C2Quiz_Q4">
 
-        <item name="Q4">كيف تترابط الذرات معًا؟</item>
-        <item name="A1">يتشاركون إلكتروناتهم.</item>
-        <item name="A2">الذرات لا ترتبط ببعضها البعض.</item>
-        <item name="A3">واحد يصبح أصغر بحيث يمكن أن يصلح داخل الآخر.</item>
-        <item name="A4">يفقدون كل إلكتروناتهم.</item>
-        <item name="CA4">يتشاركون إلكتروناتهم.</item>
+        <item name="Q4">H2O مثال على؟</item>
+        <item name="A1">حمضي</item>
+        <item name="A2">الروابط التساهمية</item>
+        <item name="A3">خليط غير متجانس</item>
+        <item name="A4">الرابطة الأيونية</item>
+        <item name="CA4">الروابط التساهمية</item>
 
 
     </string-array>
     <string-array name="C2Quiz_Q5">
 
-        <item name="Q5">نظائر عنصر تختلف في _____.</item>
-        <item name="A1">عدد البروتونات.</item>
-        <item name="A2">عدد الإلكترونات.</item>
-        <item name="A3">الأرقام الذرية.</item>
-        <item name="A4">الكتل الذرية.</item>
-        <item name="CA5">الكتل الذرية.</item>
+        <item name="Q5">عندما ترتبط ذرتان أو أكثر ، فإنها تصنع مادة جديدة تمامًا تسمى _____.</item>
+        <item name="A1">مركب</item>
+        <item name="A2">الروابط التساهمية</item>
+        <item name="A3">رابطة كيميائية</item>
+        <item name="A4">مادة</item>
+        <item name="CA5">مركب</item>
 
+
+    </string-array>
+
+    <string-array name="C2Quiz_Q6">
+
+        <item name="Q5">المعادلات الكيميائية لها _____ جوانب</item>
+        <item name="A1">اثنان</item>
+        <item name="A2">واحد</item>
+        <item name="A3">أربعة</item>
+        <item name="A4">ثلاثة</item>
+        <item name="CA5">اثنان</item>
+
+    </string-array>
+
+    <string-array name="C2Quiz_Q7">
+
+        <item name="Q5">هناك ذرة واحدة فقط لكل عنصر في المعادلة ، ما لم يكن للعنصر ______ أو _______</item>
+        <item name="A1">اثنان ، ثلاثة</item>
+        <item name="A2">معامل ، منخفض</item>
+        <item name="A3">الرابطة الأيونية ، الرابطة التساهمية</item>
+        <item name="A4">مادة ، مركب</item>
+        <item name="CA5">معامل ، منخفض</item>
+
+    </string-array>
+
+    <string-array name="C2Quiz_Q8">
+
+        <item name="Q5">يمكننا استخدام ______ لقياس مدى أهمية الأشياء الأساسية (القلوية) أو الحمضية.</item>
+        <item name="A1">مادة</item>
+        <item name="A2">معامل</item>
+        <item name="A3">رابطة كيميائية</item>
+        <item name="A4">مقياس درجة الحموضة</item>
+        <item name="CA5">مقياس درجة الحموضة</item>
+
+    </string-array>
+
+    <string-array name="C2Quiz_Q9">
+
+        <item name="Q5">الماء العادي في منتصف المقياس بدرجة حموضة تبلغ 7. وهذا ما يسمى _______.</item>
+        <item name="A1">حمضي</item>
+        <item name="A2">درجة الحموضة المحايدة</item>
+        <item name="A3">أساسي</item>
+        <item name="A4">قلوية</item>
+        <item name="CA5">درجة الحموضة المحايدة</item>
+
+    </string-array>
+
+    <string-array name="C2Quiz_Q10">
+
+        <item name="Q5">من هذه العناصر أيها أكثر حمضية؟</item>
+        <item name="A1">الحليب ذو رقم الهيدروجيني يساوي 6</item>
+        <item name="A2">القهوة ذات رقم الهيدروجيني تساوي 5</item>
+        <item name="A3">عصير البرتقال مع رقم الهيدروجيني يساوي 3</item>
+        <item name="A4">عصير الليمون مع رقم الهيدروجيني يساوي 2</item>
+        <item name="CA5">عصير الليمون مع رقم الهيدروجيني يساوي 2</item>
 
     </string-array>
 

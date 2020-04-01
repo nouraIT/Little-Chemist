@@ -24,7 +24,8 @@ public class Student extends AppCompatActivity implements Serializable {
         LSNLocks ="1:unlocked,2:locked,3:locked,4:locked,5:locked,6:locked,7:locked,8:locked,9:locked,10:locked," +
                 "11:locked,12:locked,13:locked,14:locked,15:locked,16:locked,17:locked,18:locked,19:locked,20:locked," +
                 "21:locked,22:locked,23:locked,24:locked,25:locked,";
-        ExLocks="" ;
+        ExLocks="1:unlocked,2:locked,3:locked,4:locked,5:locked,6:locked,7:locked,8:locked,9:locked,10:locked," +
+                "11:locked,12:locked,13:locked,14:locked,15:locked,16:locked,17:locked,18:locked," ;
     }
     public Student(int id,String scores,String QL,String CHl,String LL,String username,String Pass,String SQ,String SA,int lang, int img,String Ex) {
         this.Id=id;
@@ -104,7 +105,9 @@ public class Student extends AppCompatActivity implements Serializable {
     public String GetSecA() {return SecA;}
 
     public void SetExLocks(String ex) { this.ExLocks=ex;}
-    public String GetExLocks() {return ExLocks;}
+    public String GetExLocks() {
+        return ExLocks ;
+   }
 
     public void SetImageId(int img){    ImageId=img; }
     public int GetImageId(){ return ImageId;}
@@ -177,6 +180,21 @@ public class Student extends AppCompatActivity implements Serializable {
         }
 
         return pro;
+    }
+
+    public String getExLocks(String num){
+        String status ;
+
+        int exIndex = ExLocks.indexOf(num);
+        int endIndex = ExLocks.indexOf(",",exIndex);
+
+        if(num.length()==2)
+            status = ExLocks.substring(exIndex+3,endIndex);
+        else
+            status = ExLocks.substring(exIndex+2,endIndex);
+
+
+        return status;
     }
 
 

@@ -113,6 +113,8 @@ public class Ch1 extends AppCompatActivity {
             qzimg.setAlpha((float)1);
         }
 
+
+
         // ======================== Lessons btns ========================
 
 

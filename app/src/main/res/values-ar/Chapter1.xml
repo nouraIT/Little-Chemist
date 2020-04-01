@@ -60,7 +60,6 @@
     <string name="C1L3S4">يتم حساب الكتلة الذرية عن طريق إضافة البروتونات والنيوترونات في الذرة.
 </string>
 
-    <string name="C1L3S4E2M">احسب كتلة الهيليوم</string>
     <string-array name="C1L3A">
         <item>البروتونات</item>
     </string-array>
