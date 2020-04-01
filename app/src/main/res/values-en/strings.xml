@@ -212,6 +212,11 @@
     <string name="tap_call4">Tap Once To Call The Shapes of Matter</string>
     <string name="tap_call6">Tap To Start A Fire! After the white dots apear</string>
     <string name="IncorrectPassword">Password is not correct</string>
+    <string name="Finishq">Finish all the questions!</string>
+    <string name="question">Question:</string>
+    <string name="Youranswer">Your answer:</string>
+    <string name="Rightanswer">Right answer:</string>
+    <string name="tap_call7">Tap To Call A Matter Shape! After the White Dots Appear</string>
     <!-- _______________ AR tap calls  _______________ -->
 
 
