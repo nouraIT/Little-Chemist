@@ -568,7 +568,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             for (int i=0;i<25;i++){
                 if(i+1 == Lid) {
                     oldStatus += (i + 1) + ":" + status + ",";
-                    if(i!=24) {
+                    if(i!=24 && status.equals("completed")) {
                         lsnNum = String.valueOf(Integer.parseInt(lsnNum) + 1);
                         i++;
                         oldStatus += (i + 1) + ":unlocked,";
@@ -722,6 +722,26 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             db.execSQL(query);
         }
         db.close();
+
+        for(int i =1 ;i<6 ;i++){
+            if(i==CHID){
+                switch(i) {
+                    case 1:
+                        updateLesson(username, 6, "unlocked");
+                        break;
+                    case 2:
+                        updateLesson(username, 11, "unlocked");
+                        break;
+                    case 3:
+                        updateLesson(username, 16, "unlocked");
+                        break;
+                    case 4:
+                        updateLesson(username, 21, "unlocked");
+                        break;
+                }
+            }
+        }
+
     }
 
     public void updateEx(String username, int ex , String status ){
