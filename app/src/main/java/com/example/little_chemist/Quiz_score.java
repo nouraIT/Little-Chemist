@@ -45,6 +45,7 @@ public class Quiz_score extends AppCompatActivity {
             public void onClick(View v) {
                 Intent Homepage = new Intent(Quiz_score.this, Home.class);
                 startActivity(Homepage);
+                finish();
             }
         });
 

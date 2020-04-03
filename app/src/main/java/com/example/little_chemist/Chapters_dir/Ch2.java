@@ -225,7 +225,7 @@ public class Ch2 extends AppCompatActivity {
                     Intent n = new Intent(Ch2.this, quizQ.class);
                     n.putExtra("ChapterNumber",2);
                     startActivity(n);
-//                    finish();
+                    finish();
 
                 }
                 else

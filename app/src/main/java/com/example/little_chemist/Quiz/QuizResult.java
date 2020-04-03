@@ -102,9 +102,9 @@ public class QuizResult extends AppCompatActivity {
         ImageView home = findViewById(R.id.homeicon);
         home.setOnClickListener(new View.OnClickListener(){
         public void onClick(View view) {
-                    Intent n = new Intent(QuizResult.this, Home.class);
-                    startActivity(n);
-        finish();}
+            Intent n = new Intent(QuizResult.this, Home.class);
+            startActivity(n);
+            finish();}
         });
 
         //ProgressBar
