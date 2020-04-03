@@ -8,14 +8,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.provider.BaseColumns;
 
 
-import com.example.little_chemist.Tables.Chapter;
-import com.example.little_chemist.Tables.Lesson;
 import com.example.little_chemist.Tables.Quiz;
 import com.example.little_chemist.Tables.Student;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
-
-import java.sql.SQLException;
 
 
 public class DatabaseHelper extends SQLiteOpenHelper {

@@ -60,14 +60,10 @@ private static int n=0;
     private PointerDrawable pointer = new PointerDrawable();
     private boolean isTracking;
     private boolean isHitting;
-    private boolean appeared = false;
-    private Button button;
-    private String string;
-    private ModelRenderable andyRenderable;
-    private ModelRenderable mObjRenderable;
     private int i=0;
     private ModelLoader modelLoader;
     private RelativeLayout myLayout = null;
+
     //Screen Size
     private int screenWidth;
     private int screenHeight;
@@ -84,6 +80,8 @@ private static int n=0;
     private SharedPreferences pref;
     private  Bundle bundle ;
     private DatabaseHelper helper = new DatabaseHelper(this);
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

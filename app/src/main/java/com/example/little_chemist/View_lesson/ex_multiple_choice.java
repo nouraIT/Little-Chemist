@@ -40,6 +40,17 @@ public class ex_multiple_choice extends AppCompatActivity {
     Student student;
 
     @Override
+    public void onBackPressed() {
+        Intent n = new Intent(ex_multiple_choice.this, Lessons.class );
+        n.putExtra("lesson",lessonkey) ;
+        n.putExtra("lessonId",lessonid) ;
+        n.putExtra("segmentId",segmentN-1) ;
+        System.out.println("ex "+lessonid);
+        startActivity(n);
+        finish();
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
