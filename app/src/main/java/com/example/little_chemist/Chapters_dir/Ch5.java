@@ -284,6 +284,8 @@ public class Ch5 extends AppCompatActivity {
                     Intent n = new Intent(Ch5.this, quizQ.class);
                     n.putExtra("ChapterNumber",5);
                     startActivity(n);
+                    finish();
+
                 }
                 else
                     Toast.makeText(getApplicationContext(), "Locked", Toast.LENGTH_LONG).show();
