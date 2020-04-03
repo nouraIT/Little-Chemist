@@ -83,9 +83,26 @@ public class Chapters extends AppCompatActivity {
         segmentId=bundle.getInt("segmentId") ;
         adapter = new chaptersAdapter(this);
         mSlidsView.setAdapter(adapter);
-        mCurrent = segmentId ;
+        //mCurrent = segmentId ;
         addDotsIndicator(segmentId);
         mSlidsView.setCurrentItem(segmentId);
+        switch(segmentId){
+            case 0:
+                card00.setId(R.id.cardviewch1);
+                break;
+            case 1:
+                card00.setId(R.id.cardviewch2);
+                break;
+            case 2:
+                card00.setId(R.id.cardviewch3);
+                break;
+            case 3:
+                card00.setId(R.id.cardviewch4);
+                break;
+            case 4:
+                card00.setId(R.id.cardviewch5);
+                break;
+        }
 
         ConstraintLayout cl1 = findViewById(R.id.ConstraintLayout);
 
@@ -133,8 +150,8 @@ public class Chapters extends AppCompatActivity {
 
 
             addDotsIndicator(position);
-            if(mCurrent==0)
-                mCurrent = position ;
+            //if(mCurrent==0)
+            mCurrent = position ;
             switch(mCurrent){
                 case 0:
                     card00.setId(R.id.cardviewch1);
