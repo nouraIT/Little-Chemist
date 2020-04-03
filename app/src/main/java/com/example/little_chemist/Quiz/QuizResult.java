@@ -103,7 +103,8 @@ public class QuizResult extends AppCompatActivity {
         home.setOnClickListener(new View.OnClickListener(){
         public void onClick(View view) {
                     Intent n = new Intent(QuizResult.this, Home.class);
-                    startActivity(n); }
+                    startActivity(n);
+        finish();}
         });
 
         //ProgressBar

@@ -289,6 +289,7 @@ public class quizQ extends AppCompatActivity {
                                 bundle.putDouble("score",Score);
                                 n.putExtras(bundle);
                                 startActivity(n);
+                                finish();
                             }
                         }
 
