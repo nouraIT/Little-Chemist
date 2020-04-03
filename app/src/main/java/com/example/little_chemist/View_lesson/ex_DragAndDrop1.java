@@ -97,6 +97,7 @@ public class ex_DragAndDrop1 extends AppCompatActivity {
                 Intent n = new Intent(ex_DragAndDrop1.this, Lessons.class);
                 n.putExtra("lesson",11) ;
                 n.putExtra("lessonId",1) ;
+                n.putExtra("segmentId",0) ;
                 startActivity(n);
 
             }
@@ -134,7 +135,7 @@ public class ex_DragAndDrop1 extends AppCompatActivity {
             int action = event.getAction();
             switch (event.getAction()) {
                 case DragEvent.ACTION_DRAG_STARTED:
-                    // do nothing
+
                     break;
                 case DragEvent.ACTION_DRAG_ENTERED:
                     v.setBackgroundDrawable(enterShape);
@@ -146,7 +147,7 @@ public class ex_DragAndDrop1 extends AppCompatActivity {
                     v.setBackgroundDrawable(normalShape);
                     break;
                 case DragEvent.ACTION_DROP:
-//|| v.getId()==R.id.dropArea2
+
                     if( ((currentIV==R.id.c1 || currentIV==R.id.c2 || currentIV==R.id.c4)
                         && (v.getId()==R.id.dropArea1 )
                     || (currentIV==R.id.c3 && v.getId()==R.id.dropArea3)) ){
