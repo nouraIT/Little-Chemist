@@ -119,6 +119,7 @@ public class ex_multiple_choice extends AppCompatActivity {
                 n.putExtra("lessonId",lessonid) ;
                 n.putExtra("segmentId",segmentN-1) ;
                 startActivity(n);
+                finish();
             }
         });
 
