@@ -75,7 +75,7 @@ public class Lessons extends AppCompatActivity {
         ConstraintLayout lessonlayout = findViewById(R.id.lessonlayout);
 
         layoutInflater = (LayoutInflater) con.getSystemService(Chapters.LAYOUT_INFLATER_SERVICE) ;
-        View view = layoutInflater.inflate(R.layout.chapters_slider,null,false) ;
+       // View view = layoutInflater.inflate(R.layout.chapters_slider,null,false) ;
 
 //        exercise = view.findViewById(R.id.ex) ;
         mSlidsView =  findViewById(R.id.slidePage) ;
