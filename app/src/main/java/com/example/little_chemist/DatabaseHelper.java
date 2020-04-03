@@ -570,7 +570,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 if(i+1 == Lid) {
                     oldStatus += (i + 1) + ":" + status + ",";
                     if(i!=24 && status.equals("completed")) {
-                        System.out.println("i'm not supposed to be here, help ");
+//                        System.out.println("i'm not supposed to be here, help ");
                         lsnNum = String.valueOf(Integer.parseInt(lsnNum) + 1);
                         i++;
                         oldStatus += (i + 1) + ":unlocked,";
@@ -639,11 +639,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             for (int i=0;i<5;i++){
                 if(i+1 == Qid) {
                     oldStatus += (i + 1) + ":" + status + ",";
-                    if(Qid!=5) {
-                        qzNum = String.valueOf(Integer.parseInt(qzNum) + 1);
-                        i++;
-                        oldStatus += (i + 1) + ":unlocked,";
-                    }
+//                    if(Qid!=5) {
+//                        qzNum = String.valueOf(Integer.parseInt(qzNum) + 1);
+//                        i++;
+//                        oldStatus += (i + 1) + ":unlocked,";
+//                    }
                     continue;
                 }
                 firstIndex = QZLOCKS.indexOf(qzNum);

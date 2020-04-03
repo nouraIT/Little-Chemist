@@ -145,10 +145,6 @@ public class ex_multiple_choice extends AppCompatActivity {
                         //b.startMorphAnimation();
                         b.doneLoadingAnimation(Color.GREEN ,  BitmapFactory.decodeResource(getResources(), R.drawable.done));
                         toolbar.setVisibility(View.VISIBLE);
-
-                        pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
-                        String name = pref.getString("username", null); // getting String
-                        Student student = helper.getStudent(name);
                         int exNum=bundle.getInt("exNum") ;
                         helper.updateEx(name,exNum,"completed");//,Integer.toString(lessonkey).charAt(0));
                         }

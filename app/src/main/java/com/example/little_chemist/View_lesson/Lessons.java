@@ -237,6 +237,8 @@ public class Lessons extends AppCompatActivity {
                         lessonId=bundle.getInt("lessonId") ;
                         if(slideAdapter.getCountEx()==checkEx(lessonkey)) {
                             // get the ex by chapter and lesson and comapare if the number of ex is the same that in db the update the lesson
+                            System.out.println("I'm updating the lesson");
+                            System.out.println("Ex string is "+student.GetExLocks());
                             helper.updateLesson(name, lessonId, "completed");
                         }
                         startActivity(n);
