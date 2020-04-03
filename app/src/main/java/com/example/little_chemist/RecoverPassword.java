@@ -23,7 +23,7 @@ public class RecoverPassword extends AppCompatActivity {
     TextInputLayout ET_Password ,ET_ConfirmPassword,SecurityAn,ET_UserName;
     String PasswordStr, ConfirmPasswordStr,SecurityA,UserNameStr;
     Spinner spinner;
-    Student student ;//= new Student();
+    Student student ;
     int spinnerSelected;
     DatabaseHelper helper=new DatabaseHelper(this);
     ArrayAdapter<CharSequence> adapter;

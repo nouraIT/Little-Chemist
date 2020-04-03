@@ -61,7 +61,7 @@ public class ARCards extends AppCompatActivity {
         textView.setText(R.string.scan);
         arFragment.getArSceneView().getScene().addOnUpdateListener(this::onUpdate);
 
-        pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
+        pref = getApplicationContext().getSharedPreferences("MyPref", 0);
         String name = pref.getString("username", null);
         Bundle bundle=getIntent().getExtras();
         int Lid =  bundle.getInt("lessonId");
