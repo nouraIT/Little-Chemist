@@ -128,7 +128,7 @@ public class Ch5 extends AppCompatActivity {
                     }
                 });
                 thread.start();
-//                finish();
+//               finish();
             }
         });
 
