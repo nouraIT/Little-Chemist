@@ -103,7 +103,7 @@ public class SignUp extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 PasswordStr = ET_Password.getEditText().getText().toString().trim();
-                    validatePass();
+                validatePass();
             }
 
             @Override
@@ -117,8 +117,11 @@ public class SignUp extends AppCompatActivity {
                     signupButton.setAlpha(0.6f);
                 }
 
-                if(PasswordStr.length()>=6)
+                if(PasswordStr.length()>5) {
+                    ET_Password.setError(null);
+                    ET_ConfirmPassword.setError(null);
                     validatePass();
+                }
             }
         });
 
@@ -134,10 +137,12 @@ public class SignUp extends AppCompatActivity {
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 ConfirmPasswordStr = ET_ConfirmPassword.getEditText().getText().toString().trim();
                 if (!PasswordStr.equals(ConfirmPasswordStr)) {
-                    ET_Password.setError(getText(R.string.passNotMatch));
+                    ET_ConfirmPassword.setError(getText(R.string.passNotMatch));
                     //return false;
-                }else
+                }else {
                     ET_Password.setError(null);
+                    ET_ConfirmPassword.setError(null);
+                }
 
 
             }
@@ -157,7 +162,7 @@ public class SignUp extends AppCompatActivity {
                     ET_Password.setError(getText(R.string.passNotMatch));
                     //return false;
                 }else
-                    ET_Password.setError(null);
+                    ET_ConfirmPassword.setError(null);
             }
         });
 
@@ -318,14 +323,16 @@ public class SignUp extends AppCompatActivity {
         if (PasswordStr.isEmpty()) {
             ET_Password.setError(getText(R.string.null_password));
             return false;
-        } else if (PasswordStr.length() < 6) {
+        } else if (!(PasswordStr.length() > 5)) {
             ET_Password.setError(getText(R.string.shortPass));
             return false;
         } else if(!ConfirmPasswordStr.equals(PasswordStr)) {
             ET_ConfirmPassword.setError(getText(R.string.passNotMatch));
             return false;
-        } else
-            ET_Password.setError(null);
+        }
+
+        ET_Password.setError(null);
+        ET_ConfirmPassword.setError(null);
         return true;
     }
 
