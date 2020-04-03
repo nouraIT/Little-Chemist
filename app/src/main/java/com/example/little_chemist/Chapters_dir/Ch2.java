@@ -53,6 +53,7 @@ public class Ch2 extends AppCompatActivity {
                 n.putExtra("segmentId",1) ;
                 startActivity(n);
                 finish();
+
             }
         });
 
@@ -140,11 +141,10 @@ public class Ch2 extends AppCompatActivity {
 
                             startActivity(n);
                             finish();
+
                         }
                     });
                     thread.start();
-
-
 
                 } else{
 
@@ -164,7 +164,7 @@ public class Ch2 extends AppCompatActivity {
                     n.putExtra("lessonId",8) ;
 
                     startActivity(n);
-                     finish();
+                    finish();
 
 
                 } else{
@@ -185,7 +185,7 @@ public class Ch2 extends AppCompatActivity {
                     n.putExtra("lessonId",9) ;
 
                     startActivity(n);
-               finish();
+                    finish();
 
 
                 } else{
@@ -206,7 +206,7 @@ public class Ch2 extends AppCompatActivity {
                     n.putExtra("lessonId",10) ;
 
                     startActivity(n);
-                      finish();
+                    finish();
 
 
                 } else{
@@ -225,7 +225,8 @@ public class Ch2 extends AppCompatActivity {
                     Intent n = new Intent(Ch2.this, quizQ.class);
                     n.putExtra("ChapterNumber",2);
                     startActivity(n);
-                    finish();
+//                    finish();
+
                 }
                 else
                     Toast.makeText(getApplicationContext(), "Locked", Toast.LENGTH_LONG).show();

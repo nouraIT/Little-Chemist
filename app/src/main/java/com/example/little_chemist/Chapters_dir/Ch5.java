@@ -55,6 +55,8 @@ public class Ch5 extends AppCompatActivity {
                 Intent n = new Intent(Ch5.this, Chapters.class);
                 n.putExtra("segmentId",4) ;
                 startActivity(n);
+                finish();
+
             }
         });
 
@@ -124,11 +126,10 @@ public class Ch5 extends AppCompatActivity {
                         n.putExtra("lesson",51);
                         n.putExtra("lessonId",21);
                         startActivity(n);
-
+                        finish();
                     }
                 });
                 thread.start();
-               finish();
             }
         });
 
@@ -192,6 +193,7 @@ public class Ch5 extends AppCompatActivity {
                                             n.putExtra("lessonId",23) ;
                                             startActivity(n);
                                             finish();
+
                                         }
                                     });
                                     thread.start();
@@ -227,6 +229,7 @@ public class Ch5 extends AppCompatActivity {
                                             n.putExtra("lessonId",24) ;
                                             startActivity(n);
                                             finish();
+
                                         }
                                     });
                                     thread.start();
@@ -262,6 +265,7 @@ public class Ch5 extends AppCompatActivity {
                                             n.putExtra("lessonId",25) ;
                                             startActivity(n);
                                             finish();
+
                                         }
                                     });
                                     thread.start();
@@ -280,7 +284,6 @@ public class Ch5 extends AppCompatActivity {
                     Intent n = new Intent(Ch5.this, quizQ.class);
                     n.putExtra("ChapterNumber",5);
                     startActivity(n);
-                    finish();
                 }
                 else
                     Toast.makeText(getApplicationContext(), "Locked", Toast.LENGTH_LONG).show();

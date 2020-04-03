@@ -141,6 +141,7 @@ public class Ch1 extends AppCompatActivity {
                                             n.putExtra("lessonId",2) ;
                                             startActivity(n);
                                             finish();
+
                                         }
                                     });
                                     thread.start();
@@ -164,7 +165,7 @@ public class Ch1 extends AppCompatActivity {
                     n.putExtra("lesson", 13);
                     n.putExtra("lessonId",3) ;
                     startActivity(n);
-                   finish();
+                     finish();
                 }else
                     Toast.makeText(getApplicationContext(), "Locked", Toast.LENGTH_LONG).show();
 
@@ -181,6 +182,7 @@ public class Ch1 extends AppCompatActivity {
                     n.putExtra("lessonId",4) ;
                     startActivity(n);
                     finish();
+
                 }else
                     Toast.makeText(getApplicationContext(), "Locked", Toast.LENGTH_LONG).show();
 
@@ -197,6 +199,7 @@ public class Ch1 extends AppCompatActivity {
                     n.putExtra("lessonId",5) ;
                     startActivity(n);
                     finish();
+
                 }else
                     Toast.makeText(getApplicationContext(), "Locked", Toast.LENGTH_LONG).show();
 
@@ -211,6 +214,7 @@ public class Ch1 extends AppCompatActivity {
                     n.putExtra("ChapterNumber", 1);
                     startActivity(n);
                     finish();
+
                 }
                 else
                     Toast.makeText(getApplicationContext(), "Locked", Toast.LENGTH_LONG).show();
