@@ -8,22 +8,15 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.Toast;
 
-
-import com.example.little_chemist.ARCards;
-import com.example.little_chemist.Chapters;
+import com.example.little_chemist.AR.ARCards;
 import com.example.little_chemist.DatabaseHelper;
-import com.example.little_chemist.LabLesson1;
+import com.example.little_chemist.View_lesson.LabLesson1;
 import com.example.little_chemist.R;
-import com.example.little_chemist.Settings;
-import com.example.little_chemist.Tables.Lesson;
 import com.example.little_chemist.Tables.Student;
 import com.example.little_chemist.View_lesson.Lessons;
-import com.example.little_chemist.View_lesson.lab;
-import com.example.little_chemist.View_lesson.ex_multiple_choice;
-import com.example.little_chemist.quizQ;
+import com.example.little_chemist.Quiz.quizQ;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -48,7 +41,6 @@ public class Ch1 extends AppCompatActivity {
         String name = pref.getString("username", null); // getting String
         Student student = helper.getStudent(name);
 
-
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
@@ -61,7 +53,6 @@ public class Ch1 extends AppCompatActivity {
                 Intent n = new Intent(Ch1.this, Chapters.class);
                 n.putExtra("segmentId",1) ;
                 startActivity(n);
-//                finish();
             }
         });
 
@@ -104,7 +95,6 @@ public class Ch1 extends AppCompatActivity {
         statue = student.getQzLock("1");
         ImageView qzimg = findViewById(R.id.qzimg);
 
-        //System.out.println(statue);
         if(statue.equals("unlocked")) {
             quiz.setCardBackgroundColor(getResources().getColor((R.color.logoLightRed)));
             qzimg.setAlpha((float) 0.5);
@@ -114,17 +104,10 @@ public class Ch1 extends AppCompatActivity {
             qzimg.setAlpha((float)1);
         }
 
-
-
         // ======================== Lessons btns ========================
-
-
-
 
         lsn1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-
-
                 Intent n = new Intent(Ch1.this, Lessons.class);
                 n.putExtra("lesson",11);
                 n.putExtra("lessonId",1) ;
@@ -138,13 +121,13 @@ public class Ch1 extends AppCompatActivity {
             public void onClick(View v) {
 
                 statue = student.getLsnLock("2");
-                String s1;
-                s1= getString(R.string.prepare2);
+//                String s1;
+//                s1= getString(R.string.prepare2);
 
                 if (statue.equals("unlocked") || statue.equals("completed") ) {
                     AlertDialog alertDialog = new AlertDialog.Builder(Ch1.this).create();
                     alertDialog.setTitle(getText(R.string.cards));
-                    alertDialog.setMessage(s1);
+                    alertDialog.setMessage(getString(R.string.prepare2));
                     alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, getText(R.string.ok),
                             new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int which) {

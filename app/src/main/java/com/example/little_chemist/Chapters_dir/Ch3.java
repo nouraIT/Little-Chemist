@@ -5,16 +5,13 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
 
 
-import com.example.little_chemist.Chapters;
 import com.example.little_chemist.DatabaseHelper;
-import com.example.little_chemist.LabLesson4;
-import com.example.little_chemist.LabLesson5;
+import com.example.little_chemist.View_lesson.LabLesson4;
+import com.example.little_chemist.View_lesson.LabLesson5;
 import com.example.little_chemist.R;
-import com.example.little_chemist.Tables.Lesson;
-import com.example.little_chemist.Tables.Quiz;
 import com.example.little_chemist.Tables.Student;
 import com.example.little_chemist.View_lesson.Lessons;
-import com.example.little_chemist.quizQ;
+import com.example.little_chemist.Quiz.quizQ;
 
 import android.content.Intent;
 import android.content.SharedPreferences;

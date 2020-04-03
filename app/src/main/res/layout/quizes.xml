@@ -8,7 +8,7 @@
     android:layout_gravity="fill_horizontal"
     android:background="@drawable/quizbackground"
     android:orientation="vertical"
-    tools:context=".quizQ">
+    tools:context=".Quiz.quizQ">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"

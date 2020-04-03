@@ -1,8 +1,7 @@
-package com.example.little_chemist.kotlin;
+package com.example.little_chemist.Quiz;
 
 
 import java.util.Arrays;
-import java.util.List;
 
 @SuppressWarnings("unused")
 public class Intrinsics {

@@ -5,11 +5,11 @@
     android:id="@+id/gallery"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ARCards">
+    tools:context=".AR.ARCards">
 
     <fragment
         android:id="@+id/arFragment"
-        android:name="com.example.little_chemist.CustomARfragment"
+        android:name="com.example.little_chemist.AR.CustomARfragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 

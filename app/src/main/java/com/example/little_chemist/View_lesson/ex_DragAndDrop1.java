@@ -26,7 +26,7 @@ import com.example.little_chemist.Tables.Student;
 
 public class ex_DragAndDrop1 extends AppCompatActivity {
 
-    public int segmentN,ex ;
+    public int ex ,currentIV = 0,correctAns =0;
     Button reset,finish;
     LinearLayout dropArea;
     private SharedPreferences pref;
@@ -36,8 +36,6 @@ public class ex_DragAndDrop1 extends AppCompatActivity {
     String name;
     Student student ;
     Toolbar toolbar ;
-    int exNum ;
-
 
 
     @Override
@@ -69,14 +67,18 @@ public class ex_DragAndDrop1 extends AppCompatActivity {
         findViewById(R.id.dropArea1).setOnDragListener(new MyDragListener());
         findViewById(R.id.dropArea3).setOnDragListener(new MyDragListener());
         dropArea = findViewById(R.id.dropArea);
-
-        helper = new DatabaseHelper(this);
-
-
-
-
         reset = findViewById(R.id.reset) ;
         finish = findViewById(R.id.finish);
+
+        helper = new DatabaseHelper(this);
+        pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
+        name = pref.getString("username", null); // getting String
+        student = helper.getStudent(name);
+        bundle=getIntent().getExtras();
+
+
+
+
 
         reset.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,10 +90,6 @@ public class ex_DragAndDrop1 extends AppCompatActivity {
         finish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
-                String name = pref.getString("username", null); // getting String
-                Student student = helper.getStudent(name);
-                bundle=getIntent().getExtras();
                 int exNum=bundle.getInt("exNum") ;
                 helper.updateEx(name,exNum,"completed");//,Integer.toString(lessonkey).charAt(0));
                 Intent n = new Intent(ex_DragAndDrop1.this, Lessons.class);
@@ -99,13 +97,12 @@ public class ex_DragAndDrop1 extends AppCompatActivity {
                 n.putExtra("lessonId",1) ;
                 n.putExtra("segmentId",0) ;
                 startActivity(n);
-
             }
         });
 
     }
 
-    int currentIV = 0;
+
 
     private final class MyTouchListener implements View.OnTouchListener {
         public boolean onTouch(View view, MotionEvent motionEvent) {
@@ -123,7 +120,6 @@ public class ex_DragAndDrop1 extends AppCompatActivity {
             }
         }
     }
-    int correctAns =0;
     class MyDragListener implements View.OnDragListener {
         Drawable enterShape = ContextCompat.getDrawable(ex_DragAndDrop1.this, R.drawable.drop_area);
         Drawable normalShape = ContextCompat.getDrawable(ex_DragAndDrop1.this, R.drawable.normalshape);

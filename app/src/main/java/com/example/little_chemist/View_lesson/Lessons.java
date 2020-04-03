@@ -8,10 +8,9 @@ import androidx.viewpager.widget.ViewPager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.drawable.Animatable;
+
 import android.os.Bundle;
 import android.text.Html;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
@@ -21,19 +20,16 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.little_chemist.DatabaseHelper;
 import com.example.little_chemist.Tables.Student;
-import com.example.little_chemist.Chapters;
+import com.example.little_chemist.Chapters_dir.Chapters;
 import com.example.little_chemist.Chapters_dir.Ch1;
 import com.example.little_chemist.Chapters_dir.Ch2;
 import com.example.little_chemist.Chapters_dir.Ch3;
 import com.example.little_chemist.Chapters_dir.Ch4;
 import com.example.little_chemist.Chapters_dir.Ch5;
-import com.example.little_chemist.Home;
 import com.example.little_chemist.R;
-import com.example.little_chemist.Tables.Lesson;
 
 public class Lessons extends AppCompatActivity {
 
@@ -41,28 +37,23 @@ public class Lessons extends AppCompatActivity {
     private LinearLayout mDots ;
     private TextView[] mDotsText ;
     private slideAdapter slideAdapter ;
-    private int lessonkey ;
     private TextView lessonName ;
-    private Button nextBtn;
-    private Button preBtn ;
-    private int mCurrent ;
-    private Button exercise ;
-    private Animation btnAmim ;
+    private Button nextBtn,preBtn,exercise ;
+
+    private String name;
+    private int lessonkey ,mCurrent, lessonId;
+
     LayoutInflater layoutInflater;
+    private DatabaseHelper helper ;
+    private Bundle bundle ;
+    private Student student;
     private int NumDots ;
     private String IDEx ;
     private SharedPreferences pref;
-    private  DatabaseHelper helper ;
-    private  Bundle bundle ;
-    public int lessonId ;
+
     public int segmentId =0 ;
 
-
-    String name;
-    Student student;
     @Override
-
-
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -70,7 +61,7 @@ public class Lessons extends AppCompatActivity {
         setContentView(R.layout.activity_lessons);
 
         helper = new DatabaseHelper(this);
-        pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
+        SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
         name = pref.getString("username", null); // getting String
         student = helper.getStudent(name);
 
@@ -86,7 +77,7 @@ public class Lessons extends AppCompatActivity {
         layoutInflater = (LayoutInflater) con.getSystemService(Chapters.LAYOUT_INFLATER_SERVICE) ;
         View view = layoutInflater.inflate(R.layout.chapters_slider,null,false) ;
 
-        exercise = view.findViewById(R.id.ex) ;
+//        exercise = view.findViewById(R.id.ex) ;
         mSlidsView =  findViewById(R.id.slidePage) ;
         mDots = findViewById(R.id.dots) ;
 
@@ -154,14 +145,11 @@ public class Lessons extends AppCompatActivity {
             default:lessonlayout.setBackgroundResource(R.drawable.ch1lessonbackground);
         }
 
-
-
         lessonName.setText(getString(R.string.lesson1));
         setLessontitle(lessonkey);
         nextBtn = findViewById(R.id.nextBtn) ;
         preBtn = findViewById(R.id.preBtn) ;
-        exercise = findViewById(R.id.ex) ;
-
+//        exercise = findViewById(R.id.ex) ;
 
         nextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -213,7 +201,9 @@ public class Lessons extends AppCompatActivity {
     ViewPager.OnPageChangeListener viewListener = new ViewPager.OnPageChangeListener(){
         @Override
         public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
         }
+
         @Override
         public void onPageSelected(int position) {
             addDotsIndicator(position);
@@ -246,7 +236,7 @@ public class Lessons extends AppCompatActivity {
                             n = new Intent(Lessons.this, Ch5.class);
                         lessonId=bundle.getInt("lessonId") ;
                         if(slideAdapter.getCountEx()==checkEx(lessonkey)) {
-                            pref = getApplicationContext().getSharedPreferences("MyPref", 0);
+                            // get the ex by chapter and lesson and comapare if the number of ex is the same that in db the update the lesson
                             helper.updateLesson(name, lessonId, "completed");
                         }
                         startActivity(n);
@@ -265,7 +255,6 @@ public class Lessons extends AppCompatActivity {
 
         }
     };
-
 
     //lesson title
     public void setLessontitle(int lessonKey ){

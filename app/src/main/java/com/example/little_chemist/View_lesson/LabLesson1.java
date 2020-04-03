@@ -1,6 +1,4 @@
-package com.example.little_chemist;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.little_chemist.View_lesson;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,46 +7,23 @@ import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 //import android.se.omapi.Session;
-import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
-import android.webkit.WebStorage;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.example.little_chemist.AR.ARfragment2;
 import com.example.little_chemist.Chapters_dir.Ch1;
-import com.example.little_chemist.Chapters_dir.Ch5;
+import com.example.little_chemist.DatabaseHelper;
+import com.example.little_chemist.AR.PointerDrawable;
+import com.example.little_chemist.R;
 import com.example.little_chemist.Tables.Student;
 import com.google.ar.core.Anchor;
-import com.google.ar.core.AugmentedImage;
-import com.google.ar.core.AugmentedImageDatabase;
-import com.google.ar.core.Config;
-import com.google.ar.core.Frame;
-import com.google.ar.core.HitResult;
-import com.google.ar.core.Plane;
-import com.google.ar.core.Trackable;
 import com.google.ar.sceneform.AnchorNode;
-import com.google.ar.sceneform.FrameTime;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.lang.annotation.Target;
-import java.util.Collection;
-import java.util.List;
-
-import com.google.ar.core.Session;
-import com.google.ar.sceneform.Node;
-import com.google.ar.sceneform.Scene;
 import com.google.ar.sceneform.SkeletonNode;
 import com.google.ar.sceneform.animation.ModelAnimator;
 import com.google.ar.sceneform.rendering.AnimationData;
 import com.google.ar.sceneform.rendering.ModelRenderable;
-import com.google.ar.sceneform.ux.ArFragment;
-import com.google.ar.sceneform.ux.TransformableNode;
-
-import android.os.Bundle;
 
 public class LabLesson1 extends AppCompatActivity {
     int count=0;

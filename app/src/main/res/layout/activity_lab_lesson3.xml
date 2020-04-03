@@ -9,7 +9,7 @@
 
     <fragment
         android:id="@+id/arFragment"
-        android:name="com.example.little_chemist.ARfragment4"
+        android:name="com.example.little_chemist.AR.ARfragment4"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 

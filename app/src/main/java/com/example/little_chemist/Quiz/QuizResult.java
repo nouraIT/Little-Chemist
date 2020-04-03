@@ -1,4 +1,4 @@
-package com.example.little_chemist;
+package com.example.little_chemist.Quiz;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -21,8 +21,10 @@ import com.example.little_chemist.Chapters_dir.Ch2;
 import com.example.little_chemist.Chapters_dir.Ch3;
 import com.example.little_chemist.Chapters_dir.Ch4;
 import com.example.little_chemist.Chapters_dir.Ch5;
+import com.example.little_chemist.DatabaseHelper;
+import com.example.little_chemist.Home;
+import com.example.little_chemist.R;
 import com.example.little_chemist.Tables.Student;
-import com.example.little_chemist.kotlin.Intrinsics;
 
 import java.util.ArrayList;
 
@@ -44,7 +46,7 @@ public class QuizResult extends AppCompatActivity {
     String name,statue;
     Student student;
     private SharedPreferences pref;
-    private  DatabaseHelper helper = new DatabaseHelper(this);
+    private DatabaseHelper helper = new DatabaseHelper(this);
 
 
     public QuizResult(){

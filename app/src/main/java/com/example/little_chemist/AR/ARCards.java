@@ -17,8 +17,8 @@ import android.widget.TextView;
 
 import com.example.little_chemist.Chapters_dir.Ch1;
 import com.example.little_chemist.Chapters_dir.Ch5;
-import com.example.little_chemist.Tables.Student;
-import com.google.ar.core.Anchor;
+import com.example.little_chemist.DatabaseHelper;
+import com.example.little_chemist.R;
 import com.google.ar.core.AugmentedImage;
 import com.google.ar.core.AugmentedImageDatabase;
 import com.google.ar.core.Config;
@@ -34,7 +34,6 @@ import java.io.InputStream;
 import java.lang.annotation.Target;
 import java.util.Collection;
 import java.util.List;
-import java.util.Locale;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.concurrent.TimeUnit;
@@ -81,9 +80,8 @@ public class ARCards extends AppCompatActivity {
         textView.setText(R.string.scan);
         arFragment.getArSceneView().getScene().addOnUpdateListener(this::onUpdate);
 
-
         pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
-        name = pref.getString("username", null);
+        String name = pref.getString("username", null);
         Bundle bundle=getIntent().getExtras();
         int Lid =  bundle.getInt("lessonId");
 

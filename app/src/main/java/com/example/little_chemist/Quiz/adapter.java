@@ -1,9 +1,8 @@
-package com.example.little_chemist;
+package com.example.little_chemist.Quiz;
 
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,7 +12,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.example.little_chemist.kotlin.Intrinsics;
+import com.example.little_chemist.R;
 
 import alirezat775.lib.carouselview.CarouselAdapter;
 import alirezat775.lib.carouselview.CarouselModel;

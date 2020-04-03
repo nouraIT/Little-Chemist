@@ -1,4 +1,4 @@
-package com.example.little_chemist;
+package com.example.little_chemist.Quiz;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,10 +8,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import androidx.annotation.NonNull;
 import androidx.viewpager.widget.PagerAdapter;
+
+import com.example.little_chemist.R;
 
 public class ResultAdapter extends PagerAdapter {
 

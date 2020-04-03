@@ -15,6 +15,7 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.example.little_chemist.Chapters_dir.Chapters;
 import com.example.little_chemist.Tables.Student;
 
 import org.eazegraph.lib.charts.PieChart;
@@ -33,7 +34,7 @@ public class Home extends AppCompatActivity {
     boolean arabicFlag;
     DatabaseHelper helper = new DatabaseHelper(Home.this);
     public static boolean alreadyRecreated = false , AlreadyGreeted = false;
-    static Student student ;//= new Student();
+    Student student ;//= new Student();
 
 
     @SuppressLint("CutPasteId")

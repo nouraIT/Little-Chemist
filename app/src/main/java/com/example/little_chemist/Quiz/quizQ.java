@@ -1,4 +1,4 @@
-package com.example.little_chemist;
+package com.example.little_chemist.Quiz;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -16,15 +15,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.example.little_chemist.Chapters_dir.Ch1;
-import com.example.little_chemist.Tables.Quiz;
+import com.example.little_chemist.DatabaseHelper;
+import com.example.little_chemist.R;
 import com.example.little_chemist.Tables.Student;
-import com.example.little_chemist.kotlin.Intrinsics;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.LinkedList;
 
 import alirezat775.lib.carouselview.Carousel;
 import alirezat775.lib.carouselview.CarouselListener;
@@ -41,23 +38,17 @@ public class quizQ extends AppCompatActivity {
 
     public ArrayList<Integer> mImage = new ArrayList<Integer>();
     private Button nextbtn, prebtn;
-    private int slidcount = 0;
+    private int slidcount = 0,slidchange =0,QuizID;
     private model[] modelQuestion = new model[5];
-    private String[] currectanswer = new String[5];
-    private String[] Option = new String[5];
+    private String[] currectanswer = new String[5], Option = new String[5], onlyQuestion = new String[5];
     private String[][] Question = new String[5][];
     private double Score =0;
-    private String[] onlyQuestion = new String[5];
-    private int slidchange =0;
     private boolean inlastslid = false;
     //private String[] whichcontent = new String[5];
 
-    int QuizID;
     Student student;
     String name;
     DatabaseHelper helper = new DatabaseHelper(quizQ.this);
-
-
 
     public quizQ(){
         Intrinsics.checkExpressionValueIsNotNull(TAG, "quizQ.class.getSimpleName()");
@@ -66,7 +57,6 @@ public class quizQ extends AppCompatActivity {
     public final String getTAG() {
         return this.TAG;
     }
-
 
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -122,9 +112,7 @@ public class quizQ extends AppCompatActivity {
         recyclerimage();
 
 
-//CarouselView
-
-
+        //CarouselView
         final adapter adapter = new adapter(this,QuizID);
         AppCompatActivity appcomp = this;
         CarouselView carouselview = findViewById(R.id.carousel_view1);
@@ -134,13 +122,13 @@ public class quizQ extends AppCompatActivity {
         carousel.autoScroll(false, 1000000000, false);
         carousel.scaleView(true);
 
-        adapter.setOnClickListener((com.example.little_chemist.adapter.OnClick)(new com.example.little_chemist.adapter.OnClick() {
+        adapter.setOnClickListener((com.example.little_chemist.Quiz.adapter.OnClick)(new com.example.little_chemist.Quiz.adapter.OnClick() {
             public void click(@NonNull model model) {
                 Intrinsics.checkParameterIsNotNull(model, "model");
                 carousel.remove((CarouselModel)model);
             }
         }));
-//        carousel.scrollSpeed(100f)
+        //carousel.scrollSpeed(100f)
        // carousel.enableSlider(true);
 
         nextbtn = findViewById(R.id.nextBtn);
@@ -210,8 +198,6 @@ public class quizQ extends AppCompatActivity {
         }));
 
 
-//        carousel.add(EmptySampleModel("empty list"))
-
         //find out which chapter quiz
         String[] QItems;
         int index =0;
@@ -259,7 +245,6 @@ public class quizQ extends AppCompatActivity {
         carousel.add((modelQuestion[2]));
         carousel.add((modelQuestion[3]));
         carousel.add((modelQuestion[4]));
-
 
 
         //next button
@@ -318,8 +303,6 @@ public class quizQ extends AppCompatActivity {
 
         //back button
         prebtn.setOnClickListener(new View.OnClickListener(){
-
-
             @Override
             public void onClick(View view) {
                 int slidenum =0;
@@ -346,15 +329,6 @@ public class quizQ extends AppCompatActivity {
                 }
             }
         });
-
-
-
-//        carousel.add((CarouselModel)(new model(6)));
-//        carousel.add((CarouselModel)(new model(7)));
-//        carousel.add((CarouselModel)(new model(8)));
-//        carousel.add((CarouselModel)(new model(9)));
-//        carousel.add((CarouselModel)(new model(10)));
-
     }
 
     //recycler view progress bar
@@ -414,7 +388,6 @@ public class quizQ extends AppCompatActivity {
         return score;
     }
 
-    //TODO make sure this saves it to the database
     //Questions array
     public String [] AllQuestion = {
             "C1Quiz_Q1","C1Quiz_Q2","C1Quiz_Q3","C1Quiz_Q4","C1Quiz_Q5","C1Quiz_Q6","C1Quiz_Q7","C1Quiz_Q8","C1Quiz_Q9","C1Quiz_Q10",

@@ -7,7 +7,7 @@
     android:id="@+id/bigslider"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Chapters">
+    tools:context=".Chapters_dir.Chapters">
 
     <!--    android:rotationY="180"
     -->

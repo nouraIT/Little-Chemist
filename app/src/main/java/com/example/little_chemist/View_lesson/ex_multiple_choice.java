@@ -29,21 +29,16 @@ import static com.google.sceneform_animation.cq.br;
 public class ex_multiple_choice extends AppCompatActivity {
 
 
-    public String chnum ;
-    public String lessonnum ;
-    public int lessonkey,segmentN,ex ;
-    public TextView lessonName ;
-    public TextView Q;
+    public String chnum,lessonnum ,name;
+    public int lessonid, lessonkey,segmentN,ex ;
+    public TextView exNum, lessonName, Q;
     public CircularProgressButton[] a ;
-    public TextView exNum ;
 
     private SharedPreferences pref;
     private  DatabaseHelper helper ;
     private Bundle bundle ;
-    private int lessonid ;
-
-    String name;
     Student student;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -97,8 +92,6 @@ public class ex_multiple_choice extends AppCompatActivity {
                 break;
             default:exlayout.setBackgroundResource(R.drawable.ch1lessonbackground);
         }
-
-
 
 
 

@@ -5,11 +5,11 @@
     android:id="@+id/gallery"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LabLesson5">
+    tools:context=".View_lesson.LabLesson5">
 
     <fragment
         android:id="@+id/arFragment"
-        android:name="com.example.little_chemist.ARfragment6"
+        android:name="com.example.little_chemist.AR.ARfragment6"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toTopOf="@id/gallery_layout"

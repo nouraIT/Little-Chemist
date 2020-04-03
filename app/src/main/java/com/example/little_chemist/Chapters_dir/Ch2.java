@@ -9,13 +9,12 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.example.little_chemist.Chapters;
 import com.example.little_chemist.DatabaseHelper;
-import com.example.little_chemist.LabLesson2;
+import com.example.little_chemist.View_lesson.LabLesson2;
 import com.example.little_chemist.R;
 import com.example.little_chemist.Tables.Student;
 import com.example.little_chemist.View_lesson.Lessons;
-import com.example.little_chemist.quizQ;
+import com.example.little_chemist.Quiz.quizQ;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;

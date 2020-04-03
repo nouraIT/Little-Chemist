@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/homebackgroundnew"
     android:id="@+id/ConstraintLayout"
-    tools:context=".Chapters"
+    tools:context=".Chapters_dir.Chapters"
     >
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"

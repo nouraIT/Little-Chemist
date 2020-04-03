@@ -103,9 +103,7 @@ public class SignUp extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 PasswordStr = ET_Password.getEditText().getText().toString().trim();
-                    validatePass();
-//
-
+                validatePass();
             }
 
             @Override
@@ -119,8 +117,11 @@ public class SignUp extends AppCompatActivity {
                     signupButton.setAlpha(0.6f);
                 }
 
-                if(PasswordStr.length()>=6)
+                if(PasswordStr.length()>5) {
+                    ET_Password.setError(null);
+                    ET_ConfirmPassword.setError(null);
                     validatePass();
+                }
             }
         });
 
@@ -136,10 +137,12 @@ public class SignUp extends AppCompatActivity {
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 ConfirmPasswordStr = ET_ConfirmPassword.getEditText().getText().toString().trim();
                 if (!PasswordStr.equals(ConfirmPasswordStr)) {
-                    ET_Password.setError(getText(R.string.passNotMatch));
+                    ET_ConfirmPassword.setError(getText(R.string.passNotMatch));
                     //return false;
-                }else
+                }else {
                     ET_Password.setError(null);
+                    ET_ConfirmPassword.setError(null);
+                }
 
 
             }
@@ -159,7 +162,7 @@ public class SignUp extends AppCompatActivity {
                     ET_Password.setError(getText(R.string.passNotMatch));
                     //return false;
                 }else
-                    ET_Password.setError(null);
+                    ET_ConfirmPassword.setError(null);
             }
         });
 
@@ -208,12 +211,10 @@ public class SignUp extends AppCompatActivity {
 
         //-------------------------------------------------
 
-
         signupButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                //System.out.println("heeeeeeeeeeeeeeeeere "+pos);
                 spinnerSelected = spinner.getSelectedItem().toString();
 
                 pos = spinner.getSelectedItemPosition();
@@ -230,8 +231,6 @@ public class SignUp extends AppCompatActivity {
                 if(validateN() && validateName() && validatePass() && validateSecurity() && validateExistence()) {
                     //Insert into Database
                     Student student = new Student(UserNameStr,PasswordStr,0);
-                    //student.SetUserName(UserNameStr);
-                    //student.SetPassword(PasswordStr);
 
                     student.SetSecQ(String.valueOf(pos));
                     student.SetSecA(SecurityA);
@@ -247,10 +246,6 @@ public class SignUp extends AppCompatActivity {
                     editor.apply();
 
                     Intent loginIntent=new Intent(SignUp.this,Home.class);
-                    //Send Data
-                    //loginIntent.putExtra("student",student);
-                    //loginIntent.putExtra("Password",PasswordStr);
-
                     startActivity(loginIntent);
                     finish();
 
@@ -264,6 +259,7 @@ public class SignUp extends AppCompatActivity {
             public void onClick(View v) {
                 Intent n = new Intent(SignUp.this,LoginPage.class);
                 startActivity(n);
+                finish();
             }
         });
     }
@@ -272,10 +268,6 @@ public class SignUp extends AppCompatActivity {
 
     private boolean validateN(){
         if (UserNameStr.isEmpty() || PasswordStr.isEmpty() || ConfirmPasswordStr.isEmpty() || SecurityA.isEmpty()) {
-           // ET_UserName.setError(getText(R.string.null_username));
-            //ET_Password.setError(getText(R.string.null_password));
-           // ET_ConfirmPassword.setError(getText(R.string.null_password));
-            //SecurityAn.setError(getText(R.string.nullSecAnswer));
             return false;
         }
         return true;
@@ -301,7 +293,6 @@ public class SignUp extends AppCompatActivity {
         }
 
     }
-
 
     private boolean validateExistence(){
         if (helper.usernameExist(UserNameStr)) {
@@ -332,11 +323,16 @@ public class SignUp extends AppCompatActivity {
         if (PasswordStr.isEmpty()) {
             ET_Password.setError(getText(R.string.null_password));
             return false;
-        } else if (PasswordStr.length() < 6) {
+        } else if (!(PasswordStr.length() > 5)) {
             ET_Password.setError(getText(R.string.shortPass));
             return false;
-        } else
-            ET_Password.setError(null);
+        } else if(!ConfirmPasswordStr.equals(PasswordStr)) {
+            ET_ConfirmPassword.setError(getText(R.string.passNotMatch));
+            return false;
+        }
+
+        ET_Password.setError(null);
+        ET_ConfirmPassword.setError(null);
         return true;
     }
 
