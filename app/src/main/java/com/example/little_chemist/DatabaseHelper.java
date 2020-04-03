@@ -592,7 +592,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
             if(!oldStatus.equals(""))
                 LLOCKS=oldStatus;
-           System.out.println("after all is done "+LLOCKS);
+            System.out.println("after all is done "+LLOCKS);
             db = getWritableDatabase();
             String query = " UPDATE Student SET LSNLOCKS = '" + LLOCKS + "' WHERE UserName = '" + username + "' ";
             db.execSQL(query);
