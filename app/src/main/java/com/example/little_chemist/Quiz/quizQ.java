@@ -352,7 +352,13 @@ public class quizQ extends AppCompatActivity {
             }
         });
     }
-
+    @Override
+    public void onBackPressed() {
+        Intent n = new Intent(quizQ.this, Chapters.class);
+        n.putExtra("segmentId",0) ;
+        startActivity(n);
+        finish();
+    }
     //recycler view progress bar
     private void recyclerimage(){
 

@@ -21,6 +21,7 @@ import com.example.little_chemist.Chapters_dir.Ch2;
 import com.example.little_chemist.Chapters_dir.Ch3;
 import com.example.little_chemist.Chapters_dir.Ch4;
 import com.example.little_chemist.Chapters_dir.Ch5;
+import com.example.little_chemist.Chapters_dir.Chapters;
 import com.example.little_chemist.DatabaseHelper;
 import com.example.little_chemist.Home;
 import com.example.little_chemist.R;
@@ -148,7 +149,13 @@ public class QuizResult extends AppCompatActivity {
         viewPager.setAdapter(adapter);
         viewPager.addOnPageChangeListener(PageListener);
     }
-
+    @Override
+    public void onBackPressed() {
+        Intent n = new Intent(QuizResult.this, Chapters.class);
+        n.putExtra("segmentId",0) ;
+        startActivity(n);
+        finish();
+    }
     ViewPager.OnPageChangeListener PageListener = new ViewPager.OnPageChangeListener() {
         @Override
         public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
