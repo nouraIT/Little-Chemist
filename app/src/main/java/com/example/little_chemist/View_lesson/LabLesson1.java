@@ -67,9 +67,10 @@ public class LabLesson1 extends AppCompatActivity {
                 String name = pref.getString("username", null); // getting String
                 Student student = helper.getStudent(name);
                 int Lid=bundle.getInt("lessonId") ;
-                helper.updateLesson(name,Lid,"completed");
-                    Intent h = new Intent(LabLesson1.this, Ch1.class);
-                    startActivity(h);
+                if(!student.getLsnLock(String.valueOf(Lid)).equals("completed"))
+                    helper.updateLesson(name,Lid,"completed");
+                Intent h = new Intent(LabLesson1.this, Ch1.class);
+                startActivity(h);
                 finish();
 
             }

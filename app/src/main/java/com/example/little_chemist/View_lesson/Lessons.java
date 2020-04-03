@@ -188,7 +188,7 @@ public class Lessons extends AppCompatActivity {
                     if(Integer.toString(lessonkey).charAt(0)=='5')
                         n = new Intent(Lessons.this, Ch5.class);
                     lessonId=bundle.getInt("lessonId") ;
-                    if(slideAdapter.getCountEx()==checkEx(lessonkey)) {
+                    if(slideAdapter.getCountEx()==checkEx(lessonkey) && !student.getLsnLock(String.valueOf(lessonId)).equals("completed")) {
                         // get the ex by chapter and lesson and comapare if the number of ex is the same that in db the update the lesson
                         helper.updateLesson(name, lessonId, "completed");
                     }
@@ -198,6 +198,7 @@ public class Lessons extends AppCompatActivity {
         }
 
     }
+
 
 
 
@@ -260,12 +261,9 @@ public class Lessons extends AppCompatActivity {
                         if(Integer.toString(lessonkey).charAt(0)=='5')
                             n = new Intent(Lessons.this, Ch5.class);
                         lessonId=bundle.getInt("lessonId") ;
-//                        System.out.println("Ex string is "+student.GetExLocks());
-                        if(slideAdapter.getCountEx()==checkEx(lessonkey)) {
+
+                        if(slideAdapter.getCountEx()==checkEx(lessonkey) && !student.getLsnLock(String.valueOf(lessonId)).equals("completed")) {
                             // get the ex by chapter and lesson and comapare if the number of ex is the same that in db the update the lesson
-//                            System.out.println("I'm updating the lesson");
-//                            System.out.println("I'm updating the lesson");
-//                            System.out.println("Ex string is "+student.GetExLocks());
                             helper.updateLesson(name, lessonId, "completed");
                         }
                         startActivity(n);

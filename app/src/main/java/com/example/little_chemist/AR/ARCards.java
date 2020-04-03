@@ -14,6 +14,7 @@ import com.example.little_chemist.Chapters_dir.Ch1;
 import com.example.little_chemist.Chapters_dir.Ch5;
 import com.example.little_chemist.DatabaseHelper;
 import com.example.little_chemist.R;
+import com.example.little_chemist.Tables.Student;
 import com.google.ar.core.AugmentedImage;
 import com.google.ar.core.AugmentedImageDatabase;
 import com.google.ar.core.Config;
@@ -47,7 +48,7 @@ public class ARCards extends AppCompatActivity {
     static int m =1;
     DatabaseHelper helper = new DatabaseHelper(this);
     private SharedPreferences pref;
-
+    Student student;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +64,7 @@ public class ARCards extends AppCompatActivity {
 
         pref = getApplicationContext().getSharedPreferences("MyPref", 0);
         String name = pref.getString("username", null);
+        student = helper.getStudent(name);
         Bundle bundle=getIntent().getExtras();
         int Lid =  bundle.getInt("lessonId");
 
@@ -86,7 +88,8 @@ public class ARCards extends AppCompatActivity {
                     recreate();
                 }
                 else{
-                    helper.updateLesson(name, Lid , "completed");
+                    if(!student.getLsnLock(String.valueOf(Lid)).equals("completed"))
+                        helper.updateLesson(name, Lid , "completed");
                     Intent h;
                     if(Lid != 2){
                         h = new Intent(ARCards.this, Ch5.class);
