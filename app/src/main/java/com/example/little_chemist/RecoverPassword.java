@@ -132,8 +132,11 @@ public class RecoverPassword extends AppCompatActivity {
                     Recover.setAlpha(0.6f);
                 }
 
-                if(PasswordStr.length()>=6)
+                if(PasswordStr.length()>=6) {
+                    ET_Password.setError(null);
+                    ET_ConfirmPassword.setError(null);
                     validatePass();
+                }
             }
         });
 
@@ -149,10 +152,10 @@ public class RecoverPassword extends AppCompatActivity {
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 ConfirmPasswordStr = ET_ConfirmPassword.getEditText().getText().toString().trim();
                 if (!PasswordStr.equals(ConfirmPasswordStr)) {
-                    ET_Password.setError(getText(R.string.passNotMatch));
+                    ET_ConfirmPassword.setError(getText(R.string.passNotMatch));
                     //return false;
                 }else
-                    ET_Password.setError(null);
+                    ET_ConfirmPassword.setError(null);
 
 
             }
@@ -254,21 +257,6 @@ public class RecoverPassword extends AppCompatActivity {
     }
 
 
-
-
-
-    /*private void CheckData(){
-        String question= helper.checkPassword(UserNameStr);
-        //To compare it with Current Password from user input
-        if(dbPassword.equals(PasswordStr)){
-
-
-        }else {
-
-        }
-
-    }*/
-
     private Boolean validateSecurity(){
 
         if (SecurityA.isEmpty()) {
@@ -284,20 +272,23 @@ public class RecoverPassword extends AppCompatActivity {
 
 
     }
+
     private Boolean validatePass() {
 
         if (PasswordStr.isEmpty()) {
             ET_Password.setError(getText(R.string.null_password));
             return false;
-        } else if (PasswordStr.length() < 6) {
+        } else if (!(PasswordStr.length() > 5)) {
             ET_Password.setError(getText(R.string.shortPass));
             return false;
+        } else if(!ConfirmPasswordStr.equals(PasswordStr)) {
+            ET_ConfirmPassword.setError(getText(R.string.passNotMatch));
+            return false;
         }
-        else
-            ET_Password.setError(null);
 
+        ET_Password.setError(null);
+        ET_ConfirmPassword.setError(null);
         return true;
-
     }
 
     private boolean validateN(){
