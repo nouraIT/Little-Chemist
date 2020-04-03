@@ -32,7 +32,7 @@
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="error_appearance" parent="@android:style/TextAppearance">
-        <item name="android:textColor">@color/primaryPurple</item>
+        <item name="android:textColor">@color/logoDarkRed</item>
         <item name="android:textSize">12sp</item>
         <item name="android:gravity">right</item>
         <item name="android:layout_gravity">right</item>
