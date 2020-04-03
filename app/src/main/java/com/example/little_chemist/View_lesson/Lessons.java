@@ -97,7 +97,6 @@ public class Lessons extends AppCompatActivity {
 
 
 
-
         mSlidsView.addOnPageChangeListener(viewListener);
 
         lessonName = findViewById(R.id.lessonTitle) ;
@@ -171,6 +170,36 @@ public class Lessons extends AppCompatActivity {
         });
 
      // btnAmim = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.button_anim) ;
+
+        if (mCurrent == mDotsText.length - 1){
+            nextBtn.setEnabled(true);
+            preBtn.setEnabled(true);
+            preBtn.setVisibility(View.VISIBLE);
+            nextBtn.setText(getText(R.string.finishBtn));
+            preBtn.setText(getText(R.string.backBtn));
+            nextBtn.setOnClickListener(new View.OnClickListener() {
+                Intent n ;
+                @Override
+                public void onClick(View v) {
+                    if(Integer.toString(lessonkey).charAt(0)=='1')
+                        n = new Intent(Lessons.this, Ch1.class);
+                    if(Integer.toString(lessonkey).charAt(0)=='2')
+                        n = new Intent(Lessons.this, Ch2.class);
+                    if(Integer.toString(lessonkey).charAt(0)=='3')
+                        n = new Intent(Lessons.this, Ch3.class);
+                    if(Integer.toString(lessonkey).charAt(0)=='4')
+                        n = new Intent(Lessons.this, Ch4.class);
+                    if(Integer.toString(lessonkey).charAt(0)=='5')
+                        n = new Intent(Lessons.this, Ch5.class);
+                    lessonId=bundle.getInt("lessonId") ;
+                    if(slideAdapter.getCountEx()==checkEx(lessonkey)) {
+                        // get the ex by chapter and lesson and comapare if the number of ex is the same that in db the update the lesson
+                        helper.updateLesson(name, lessonId, "completed");
+                    }
+                    startActivity(n);
+                    finish();
+                }});
+        }
 
     }
 

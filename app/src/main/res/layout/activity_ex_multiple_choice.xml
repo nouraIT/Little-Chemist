@@ -9,6 +9,22 @@
     tools:context=".View_lesson.ex_multiple_choice">
 
 
+    <Button
+        android:id="@+id/finish2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/circle_btn"
+        android:fontFamily="@font/dk_sugary_pancake"
+        android:text="@string/finishBtn"
+
+        android:textColor="@color/darkpruple"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView2" />
+
     <TextView
         android:id="@+id/lessonTitle2"
         android:layout_width="271dp"
@@ -26,11 +42,11 @@
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="415dp"
+        android:layout_height="71dp"
         android:minHeight="?attr/actionBarSize"
         android:theme="@style/MyApp.ActionBarTheme"
-        android:visibility="invisible"
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
