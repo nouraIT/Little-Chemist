@@ -51,9 +51,9 @@ public class Ch4 extends AppCompatActivity {
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent Homepage = new Intent(Ch4.this, Chapters.class);
-                startActivity(Homepage);
-                finish();
+                Intent n = new Intent(Ch4.this, Chapters.class);
+                n.putExtra("segmentId",3) ;
+                startActivity(n);
             }
         });
 

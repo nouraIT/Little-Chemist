@@ -98,17 +98,17 @@ public class ex_multiple_choice extends AppCompatActivity {
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 Intent n = new Intent(ex_multiple_choice.this, Lessons.class );
                 n.putExtra("lesson",lessonkey) ;
                 n.putExtra("lessonId",lessonid) ;
+                n.putExtra("segmentId",segmentN-1) ;
                 System.out.println("ex "+lessonid);
                 startActivity(n);
             }
         });
 
 
-
+        //extract strings from resources
         String[] QItems = getResources().getStringArray(getResources().getIdentifier(exKey, "array", getPackageName()));
         int len = getResources().getStringArray(getResources().getIdentifier(exKey, "array", getPackageName())).length ;
 
@@ -125,20 +125,16 @@ public class ex_multiple_choice extends AppCompatActivity {
                 break;}
             int re = getResources().getIdentifier("a"+i , "id", getPackageName()) ;
             a[i-1]=findViewById(re) ;
-            a[i-1].setText(QItems[i]);
-
-        }
-
+            a[i-1].setText(QItems[i]); }
 
         exNum = findViewById(R.id.exNum) ;
-        exNum.setText("Exercise "+ex);
-
-
+        String exText =getResources().getString(getResources().getIdentifier("exercise", "string", getPackageName()));
+        exNum.setText(exText+" "+ex);
         String temp1 = exKey.substring(0,4);
         temp1=temp1+"A";
-        System.out.println(temp1);
         String[] An =getResources().getStringArray(getResources().getIdentifier(temp1, "array", getPackageName()));
         String ExtractA = An[ex-1] ;
+
         for(int i=1 ;i<QItems.length;i++){
             if(QItems[i].equals(ExtractA)){
                 CircularProgressButton b = a[i-1] ;
@@ -157,6 +153,7 @@ public class ex_multiple_choice extends AppCompatActivity {
                         helper.updateEx(name,exNum,"completed");//,Integer.toString(lessonkey).charAt(0));
                         }
                 });break; } }
+
         for(int i=1 ;i<QItems.length;i++){
             if(QItems[i].equals(ExtractA)){
                 continue; }
@@ -168,11 +165,7 @@ public class ex_multiple_choice extends AppCompatActivity {
                         //b.startMorphAnimation();
                         b.doneLoadingAnimation(Color.RED ,  BitmapFactory.decodeResource(getResources(), R.drawable.x));
                          }
-                }); }
-
-
-
-    }
+                }); }}
 
 
         public void setLessontitle(int lessonKey ){

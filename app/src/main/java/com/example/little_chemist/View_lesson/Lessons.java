@@ -15,6 +15,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -45,6 +47,11 @@ public class Lessons extends AppCompatActivity {
     private DatabaseHelper helper ;
     private Bundle bundle ;
     private Student student;
+    private int NumDots ;
+    private String IDEx ;
+    private SharedPreferences pref;
+
+    public int segmentId =0 ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,11 +84,19 @@ public class Lessons extends AppCompatActivity {
         bundle=getIntent().getExtras();
         lessonkey=bundle.getInt("lesson");
         lessonId=bundle.getInt("lessonId") ;
-        slideAdapter = new slideAdapter(this, lessonkey,lessonId) ;
+        segmentId=bundle.getInt("segmentId") ;
+
+        slideAdapter = new slideAdapter(this, lessonkey,lessonId ) ;
+
+        //slideAdapter.instantiateItem(mSlidsView,segmentId) ;
 
         mSlidsView.setAdapter(slideAdapter) ;
+        mCurrent = segmentId ;
+        addDotsIndicator(segmentId);
+        mSlidsView.setCurrentItem(segmentId);
 
-        addDotsIndicator(0);
+
+
 
         mSlidsView.addOnPageChangeListener(viewListener);
 
@@ -140,16 +155,26 @@ public class Lessons extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 mSlidsView.setCurrentItem(mCurrent+1);
+
+
             }
         });
+
 
         preBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 mSlidsView.setCurrentItem(mCurrent-1);
+
             }
         });
+
+     // btnAmim = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.button_anim) ;
+
     }
+
+
 
     public void addDotsIndicator(int position ){
 
@@ -183,15 +208,12 @@ public class Lessons extends AppCompatActivity {
         public void onPageSelected(int position) {
             addDotsIndicator(position);
             mCurrent = position ;
-
             if(position==0){
                 nextBtn.setEnabled(true);
                 preBtn.setEnabled(false);
                 preBtn.setVisibility(View.INVISIBLE);
-
                 nextBtn.setText(getText(R.string.nextBtn));
                 preBtn.setText("");
-
             }else if (position == mDotsText.length - 1){
                 nextBtn.setEnabled(true);
                 preBtn.setEnabled(true);
@@ -219,19 +241,14 @@ public class Lessons extends AppCompatActivity {
                         }
                         startActivity(n);
                         finish();
-                    }
-                });
-
+                    }});
             }else{
                 nextBtn.setEnabled(true);
                 preBtn.setEnabled(true);
                 preBtn.setVisibility(View.VISIBLE);
                 nextBtn.setText(getText(R.string.nextBtn));
                 preBtn.setText(getText(R.string.backBtn));
-            }
-
-
-        };
+            } };
 
         @Override
         public void onPageScrollStateChanged(int state) {

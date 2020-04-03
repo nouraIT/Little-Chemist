@@ -146,7 +146,6 @@ public class QuizResult extends AppCompatActivity {
         viewPager = findViewById(R.id.resultviewpager);
         viewPager.setAdapter(adapter);
         viewPager.addOnPageChangeListener(PageListener);
-
     }
 
     ViewPager.OnPageChangeListener PageListener = new ViewPager.OnPageChangeListener() {

@@ -95,6 +95,7 @@ public class ex_DragAndDrop3 extends AppCompatActivity{
                 Intent n = new Intent(ex_DragAndDrop3.this, Lessons.class);
                 n.putExtra("lesson",11) ;
                 n.putExtra("lessonId",1) ;
+                n.putExtra("segmentId",5) ;
                 startActivity(n);
 
             }

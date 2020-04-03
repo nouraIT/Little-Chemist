@@ -36,7 +36,9 @@ public class Chapters extends AppCompatActivity {
     private int mCurrent ;
     LayoutInflater layoutInflater;
     ConstraintLayout cl;
+    private  Bundle bundle ;
     TextView chaptertxt ;
+    public int segmentId=0 ;
 
     private TextView[] mDotsText ;
     private chaptersAdapter adapter ;
@@ -71,15 +73,20 @@ public class Chapters extends AppCompatActivity {
         mDots = findViewById(R.id.dots);
         mCardShower = findViewById(R.id.cardShower);
 
+
+
         TextView chNum = view.findViewById(R.id.chNum);
         ImageView charcter = view.findViewById(R.id.chapterDrawing);
 
 
         //=============================================
-
+        bundle=getIntent().getExtras();
+        segmentId=bundle.getInt("segmentId") ;
         adapter = new chaptersAdapter(this);
-
         mSlidsView.setAdapter(adapter);
+        mCurrent = segmentId ;
+        addDotsIndicator(segmentId);
+        mSlidsView.setCurrentItem(segmentId);
 
         ConstraintLayout cl1 = findViewById(R.id.ConstraintLayout);
 
@@ -89,7 +96,6 @@ public class Chapters extends AppCompatActivity {
 //            mSlidsView.setRotationY(180);
 //        }
 
-        addDotsIndicator(0);
 
         mSlidsView.addOnPageChangeListener(viewListener);
 
