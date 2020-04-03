@@ -43,12 +43,13 @@ public class slideAdapter extends PagerAdapter {
     Button[] BtnEx ;
     int indexEx ;
     int lessonid=0 ;
+    int segment ;
 
 
 
 
 
-    public slideAdapter(Context context , int value , int id) {
+    public slideAdapter(Context context , int value , int id ) {
         this.context = context;
         lessonKey=Integer.toString(value) ;
         chapterNum = lessonKey.charAt(0) ;
@@ -84,6 +85,7 @@ public class slideAdapter extends PagerAdapter {
             ,"C1L3S1","C1L3S2","C1L3S3","C1L3S4"
             ,"C1L4S1","C1L4S2" , "C1L4S3" , "C1L4S4","C1L4S5"
             ,"C2L1S1","C2L1S2"
+            ,"C2L3S1","C2L3S2","C2L3S3","C2L3S4","C2L3S5","C2L3S6"
             ,"C2L4S1","C2L4S2","C2L4S3","C2L4S4","C2L4S5","C2L4S6","C2L4S7","C2L4S8"
             ,"C2L5S1","C2L5S2" , "C2L5S3" ,"C2L5S4" , "C2L5S5"
             ,"C3L1S1","C3L1S2","C3L1S3","C3L1S4","C3L1S5","C3L1S6","C3L1S7","C3L1S8"
@@ -104,6 +106,7 @@ public class slideAdapter extends PagerAdapter {
             ,"C1L3S3E1M"
             ,"C1L4S2E1M","C1L4S5E2M"
             ,"C2L1S2E1M"
+            ,"C2L3S4E1M","C2L3S5E2M"
             ,"C2L4S2E1M","C2L4S4E2M","C2L4S5E3M","C2L4S8E4M"
             ,"C2L5S3E1M","C2L5S5E2M"
             ,"C3L1S4E1M","C3L2S4E1M"
@@ -129,9 +132,9 @@ public class slideAdapter extends PagerAdapter {
         return countCountent  ;
     }
 
-    public int getNumContent(String Coid){
+    public int getNumContent(String Conid){
         for (int i=0 ;i<content.length;i++){
-            if(Coid==content[i])
+            if(Conid==content[i])
                 return i+1 ;
         }
         return 0 ;

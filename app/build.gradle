@@ -105,6 +105,10 @@ dependencies {
     implementation 'com.daimajia.androidanimations:library:1.1.2@aar'
     implementation 'com.daimajia.androidviewhover:library:1.0.4@aar'
 
+    //RTL viewpager
+    implementation 'androidx.viewpager:viewpager:1.0.0'
+    implementation 'com.duolingo.open:rtl-viewpager:2.0.0'
+
     //blurry
 //    implementation 'jp.wasabeef:blurry:3.x.x'
 

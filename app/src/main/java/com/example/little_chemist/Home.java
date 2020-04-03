@@ -57,6 +57,7 @@ public class Home extends AppCompatActivity {
         SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
         String name = pref.getString("username", null); // getting String
         student = helper.getStudent(name);
+
         // ========================= initializing  ============================================
 
 
@@ -116,7 +117,7 @@ public class Home extends AppCompatActivity {
                     public void run(){
 
                         Intent n = new Intent(Home.this, Chapters.class);
-                        //n.putExtra("student",student);
+                        n.putExtra("segmentId",0) ;
                         startActivity(n);
                     }
                 });

@@ -59,6 +59,7 @@ public class Ch1 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent n = new Intent(Ch1.this, Chapters.class);
+                n.putExtra("segmentId",1) ;
                 startActivity(n);
 //                finish();
             }

@@ -41,7 +41,6 @@ public class Lessons extends AppCompatActivity {
     private LinearLayout mDots ;
     private TextView[] mDotsText ;
     private slideAdapter slideAdapter ;
-    String statue;
     private int lessonkey ;
     private TextView lessonName ;
     private Button nextBtn;
@@ -56,6 +55,7 @@ public class Lessons extends AppCompatActivity {
     private  DatabaseHelper helper ;
     private  Bundle bundle ;
     public int lessonId ;
+    public int segmentId =0 ;
 
 
     String name;
@@ -93,11 +93,19 @@ public class Lessons extends AppCompatActivity {
         bundle=getIntent().getExtras();
         lessonkey=bundle.getInt("lesson");
         lessonId=bundle.getInt("lessonId") ;
-        slideAdapter = new slideAdapter(this, lessonkey,lessonId) ;
+        segmentId=bundle.getInt("segmentId") ;
+
+        slideAdapter = new slideAdapter(this, lessonkey,lessonId ) ;
+
+        //slideAdapter.instantiateItem(mSlidsView,segmentId) ;
 
         mSlidsView.setAdapter(slideAdapter) ;
+        mCurrent = segmentId ;
+        addDotsIndicator(segmentId);
+        mSlidsView.setCurrentItem(segmentId);
 
-        addDotsIndicator(0);
+
+
 
         mSlidsView.addOnPageChangeListener(viewListener);
 
@@ -178,6 +186,8 @@ public class Lessons extends AppCompatActivity {
 
     }
 
+
+
     public void addDotsIndicator(int position ){
 
 
@@ -203,36 +213,23 @@ public class Lessons extends AppCompatActivity {
     ViewPager.OnPageChangeListener viewListener = new ViewPager.OnPageChangeListener(){
         @Override
         public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
         }
-
         @Override
         public void onPageSelected(int position) {
-
-
-
             addDotsIndicator(position);
             mCurrent = position ;
-
             if(position==0){
                 nextBtn.setEnabled(true);
                 preBtn.setEnabled(false);
                 preBtn.setVisibility(View.INVISIBLE);
-
                 nextBtn.setText(getText(R.string.nextBtn));
                 preBtn.setText("");
-
             }else if (position == mDotsText.length - 1){
                 nextBtn.setEnabled(true);
                 preBtn.setEnabled(true);
                 preBtn.setVisibility(View.VISIBLE);
                 nextBtn.setText(getText(R.string.finishBtn));
                 preBtn.setText(getText(R.string.backBtn));
-
-
-
-
-
                 nextBtn.setOnClickListener(new View.OnClickListener() {
                     Intent n ;
                     @Override
@@ -247,34 +244,21 @@ public class Lessons extends AppCompatActivity {
                             n = new Intent(Lessons.this, Ch4.class);
                         if(Integer.toString(lessonkey).charAt(0)=='5')
                             n = new Intent(Lessons.this, Ch5.class);
-
-//                        helper.updateLesson(name,bundle.getInt("lessonId"),"completed");//,Integer.toString(lessonkey).charAt(0));
-//                        statue = student.getLsnLock(Lid);
-////                        System.out.println(statue) ;
                         lessonId=bundle.getInt("lessonId") ;
-//                        System.out.println(slideAdapter.getCountEx());
-//                        System.out.println(checkEx(lessonkey));
                         if(slideAdapter.getCountEx()==checkEx(lessonkey)) {
-                            // get the ex by chapter and lesson and comapare if the number of ex is the same that in db the update the lesson
-                            pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
-                            helper.updateLesson(name, lessonId, "completed");//,Integer.toString(lessonkey).charAt(0));
+                            pref = getApplicationContext().getSharedPreferences("MyPref", 0);
+                            helper.updateLesson(name, lessonId, "completed");
                         }
                         startActivity(n);
                         finish();
-                    }
-                });
-
+                    }});
             }else{
                 nextBtn.setEnabled(true);
                 preBtn.setEnabled(true);
                 preBtn.setVisibility(View.VISIBLE);
-
                 nextBtn.setText(getText(R.string.nextBtn));
                 preBtn.setText(getText(R.string.backBtn));
-            }
-
-
-        };
+            } };
 
         @Override
         public void onPageScrollStateChanged(int state) {
