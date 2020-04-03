@@ -38,6 +38,13 @@ public class ex_DragAndDrop3 extends AppCompatActivity{
     Student student;
     Toolbar toolbar ;
 
+    @Override
+    public void onBackPressed() {
+        Intent n = new Intent(ex_DragAndDrop3.this, Lessons.class);
+        n.putExtra("lesson",11) ;
+        startActivity(n);
+        finish();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

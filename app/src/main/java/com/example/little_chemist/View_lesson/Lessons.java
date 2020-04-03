@@ -50,6 +50,23 @@ public class Lessons extends AppCompatActivity {
     public int segmentId =0 ;
 
     @Override
+    public void onBackPressed() {
+        Intent n = new Intent(Lessons.this, Chapters.class);;
+        if(Integer.toString(lessonkey).charAt(0)=='1')
+            n = new Intent(Lessons.this, Ch1.class);
+        if(Integer.toString(lessonkey).charAt(0)=='2')
+            n = new Intent(Lessons.this, Ch2.class);
+        if(Integer.toString(lessonkey).charAt(0)=='3')
+            n = new Intent(Lessons.this, Ch3.class);
+        if(Integer.toString(lessonkey).charAt(0)=='4')
+            n = new Intent(Lessons.this, Ch4.class);
+        if(Integer.toString(lessonkey).charAt(0)=='5')
+            n = new Intent(Lessons.this, Ch5.class);
+        startActivity(n);
+        finish();
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);

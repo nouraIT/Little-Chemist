@@ -25,22 +25,14 @@ import com.google.ar.sceneform.animation.ModelAnimator;
 import com.google.ar.sceneform.rendering.ModelRenderable;
 
 public class LabLesson2 extends AppCompatActivity {
-    int count=0;
+
     private ARfragment3 arFragment;
     private TextView textView;
-    private ModelAnimator modelAnimator;
-    private PointerDrawable pointer = new PointerDrawable();
-    private boolean isTracking;
-    private boolean isHitting;
-    private boolean appeared = false;
-    private Button button;
-    private String string;
-    private ModelRenderable andyRenderable;
-    private ModelRenderable mObjRenderable;
-    private int i=0;
     private SharedPreferences pref;
     private  Bundle bundle ;
     private DatabaseHelper helper = new DatabaseHelper(this);
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,7 +46,7 @@ public class LabLesson2 extends AppCompatActivity {
         Reset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-// Reset Code
+            // Reset Code
                 recreate();
             }
         });

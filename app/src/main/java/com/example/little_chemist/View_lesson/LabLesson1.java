@@ -26,23 +26,17 @@ import com.google.ar.sceneform.rendering.AnimationData;
 import com.google.ar.sceneform.rendering.ModelRenderable;
 
 public class LabLesson1 extends AppCompatActivity {
-    int count=0;
-    static int m =0;
+
     private TextView textView;
     private ModelAnimator modelAnimator;
-    private PointerDrawable pointer = new PointerDrawable();
-    private boolean isTracking;
-    private boolean isHitting;
-    private boolean appeared = false;
     private Button button;
-    private String string;
     private DatabaseHelper helper = new DatabaseHelper(this);
-    private ModelRenderable andyRenderable;
-    private ModelRenderable mObjRenderable;
     private int i=0;
     private ARfragment2 arFragment;
     private SharedPreferences pref;
     private  Bundle bundle ;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
