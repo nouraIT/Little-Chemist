@@ -32,12 +32,12 @@ public class Chapters extends AppCompatActivity {
     private CardView  card00 ;
     private ViewPager mSlidsView ;
     private LinearLayout mCardShower, mDots ;
+
     LayoutInflater layoutInflater;
     ConstraintLayout cl;
     private  Bundle bundle ;
     TextView chaptertxt ;
     public int segmentId=0 ,mCurrent =0;
-
 
     private TextView[] mDotsText ;
     private chaptersAdapter adapter ;
@@ -228,10 +228,10 @@ public class Chapters extends AppCompatActivity {
         }
     }
 
-    public void dirc (View v){
-
-
-    }
+//    public void dirc (View v){
+//
+//
+//    }
 
 }
 

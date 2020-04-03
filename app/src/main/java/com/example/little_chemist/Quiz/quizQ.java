@@ -15,6 +15,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.example.little_chemist.Chapters_dir.Ch1;
+import com.example.little_chemist.Chapters_dir.Ch2;
+import com.example.little_chemist.Chapters_dir.Ch3;
+import com.example.little_chemist.Chapters_dir.Ch4;
+import com.example.little_chemist.Chapters_dir.Ch5;
+import com.example.little_chemist.Chapters_dir.Chapters;
 import com.example.little_chemist.DatabaseHelper;
 import com.example.little_chemist.R;
 import com.example.little_chemist.Tables.Student;
@@ -69,6 +74,9 @@ public class quizQ extends AppCompatActivity {
         name = pref.getString("username", null); // getting String
         student = helper.getStudent(name);
 
+        Bundle bundle=getIntent().getExtras();
+        QuizID = bundle.getInt("ChapterNumber");
+
         //toolbar stuff
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -77,14 +85,27 @@ public class quizQ extends AppCompatActivity {
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent Homepage = new Intent(quizQ.this, Ch1.class);
-                startActivity(Homepage);
+                Intent n = new Intent(quizQ.this, Chapters.class);
+
+                switch(QuizID){
+                    case 1: n = new Intent(quizQ.this, Ch1.class);
+                    break;
+                    case 2: n = new Intent(quizQ.this, Ch2.class);
+                    break;
+                    case 3: n = new Intent(quizQ.this, Ch3.class);
+                    break;
+                    case 4: n = new Intent(quizQ.this, Ch4.class);
+                    break;
+                    case 5: n = new Intent(quizQ.this, Ch5.class);
+                    break;
+                }
+
+                startActivity(n);
                 finish();
             }
         });
 
-        Bundle bundle=getIntent().getExtras();
-        QuizID = bundle.getInt("ChapterNumber");
+
 
         //change background image
         ConstraintLayout Quizlayout = findViewById(R.id.CRL);

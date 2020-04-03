@@ -563,14 +563,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             int endIndex =0;
             String oldStatus ="";
             String lsnNum = "1";
-            System.out.println("the lid is "+Lid);
-            System.out.println("before the loop "+LLOCKS);
+//            System.out.println("the lid is "+Lid);
+//            System.out.println("before the loop "+LLOCKS);
             //this loop will change the Lid and the one next to it
             for (int i=0;i<25;i++){
                 if(i+1 == Lid) {
                     oldStatus += (i + 1) + ":" + status + ",";
                     if(i!=24 && status.equals("completed")) {
-                        System.out.println("i'm not supposed to be here, help ");
+//                        System.out.println("i'm not supposed to be here, help ");
                         lsnNum = String.valueOf(Integer.parseInt(lsnNum) + 1);
                         i++;
                         oldStatus += (i + 1) + ":unlocked,";
@@ -592,7 +592,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
             if(!oldStatus.equals(""))
                 LLOCKS=oldStatus;
-            System.out.println("after all is done "+LLOCKS);
+//            System.out.println("after all is done "+LLOCKS);
             db = getWritableDatabase();
             String query = " UPDATE Student SET LSNLOCKS = '" + LLOCKS + "' WHERE UserName = '" + username + "' ";
             db.execSQL(query);
