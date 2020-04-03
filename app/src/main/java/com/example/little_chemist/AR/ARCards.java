@@ -1,17 +1,12 @@
-package com.example.little_chemist;
+package com.example.little_chemist.AR;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.res.Configuration;
 import android.net.Uri;
-import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
-import android.webkit.WebStorage;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -23,24 +18,13 @@ import com.google.ar.core.AugmentedImage;
 import com.google.ar.core.AugmentedImageDatabase;
 import com.google.ar.core.Config;
 import com.google.ar.core.Frame;
-import com.google.ar.core.HitResult;
-import com.google.ar.core.Plane;
-import com.google.ar.core.Trackable;
-import com.google.ar.sceneform.AnchorNode;
 import com.google.ar.sceneform.FrameTime;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.lang.annotation.Target;
 import java.util.Collection;
-import java.util.List;
-import java.util.Timer;
-import java.util.TimerTask;
-import java.util.concurrent.TimeUnit;
 
 import com.google.ar.core.Session;
-import com.google.ar.sceneform.Node;
-import com.google.ar.sceneform.Scene;
 import com.google.ar.sceneform.rendering.ModelRenderable;
 import com.google.ar.sceneform.ux.ArFragment;
 import com.google.ar.sceneform.ux.TransformableNode;
@@ -59,13 +43,10 @@ public class ARCards extends AppCompatActivity {
     private ModelRenderable andyRenderable;
     private ModelRenderable mObjRenderable;
     private  String text;
-//private  int  m=0;
+    //private  int  m=0;
     static int m =1;
     DatabaseHelper helper = new DatabaseHelper(this);
     private SharedPreferences pref;
-    public static boolean alreadyRecreated=  false;
-    String name;
-
 
 
     @Override
@@ -90,7 +71,7 @@ public class ARCards extends AppCompatActivity {
         Reset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-           // Reset Code
+                // Reset Code
                 recreate();
             }
         });
@@ -126,7 +107,7 @@ public class ARCards extends AppCompatActivity {
         Collection<AugmentedImage> images = frame.getUpdatedTrackables(AugmentedImage.class);
         //Iterate through the image database
         for (AugmentedImage image : images) {
-          // Check if scanned image existed in the image database
+            // Check if scanned image existed in the image database
             if (image.getTrackingMethod() == AugmentedImage.TrackingMethod.FULL_TRACKING) {
                 //Set the scene
                 RelativeLayout gallery = findViewById(R.id.gallery);
@@ -203,7 +184,7 @@ public class ARCards extends AppCompatActivity {
 //Set Flag
         if (!appeared){
 
-          // Set the 3D object in the scene
+            // Set the 3D object in the scene
             setARFragment(string);
             if(count++==100)
                 appeared = true;
