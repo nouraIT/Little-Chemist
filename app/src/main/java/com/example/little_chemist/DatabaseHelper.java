@@ -592,7 +592,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
             if(!oldStatus.equals(""))
                 LLOCKS=oldStatus;
-           System.out.println("after all is done "+LLOCKS);
+            System.out.println("after all is done "+LLOCKS);
             db = getWritableDatabase();
             String query = " UPDATE Student SET LSNLOCKS = '" + LLOCKS + "' WHERE UserName = '" + username + "' ";
             db.execSQL(query);
@@ -639,11 +639,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             for (int i=0;i<5;i++){
                 if(i+1 == Qid) {
                     oldStatus += (i + 1) + ":" + status + ",";
-                    if(Qid!=5) {
-                        qzNum = String.valueOf(Integer.parseInt(qzNum) + 1);
-                        i++;
-                        oldStatus += (i + 1) + ":unlocked,";
-                    }
+//                    if(Qid!=5) {
+//                        qzNum = String.valueOf(Integer.parseInt(qzNum) + 1);
+//                        i++;
+//                        oldStatus += (i + 1) + ":unlocked,";
+//                    }
                     continue;
                 }
                 firstIndex = QZLOCKS.indexOf(qzNum);
