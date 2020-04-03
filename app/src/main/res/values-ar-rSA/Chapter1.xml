@@ -52,19 +52,17 @@
     <string name="C1L3S3">هذا يعني أنه إذا كان لدينا قطعتان من الخشب ، فإن ذراتهما ستكون نظائر </string>
     <string-array name="C1L3S3E1M">
         <item>أي جزء من الذرة يحدد ما إذا كانت نظير أم لا؟</item>
-        <item> 1- البروتونات</item>
-        <item>2- الالكترونات</item>
-        <item>3- نيوترونات</item>
+        <item>  البروتونات</item>
+        <item> الالكترونات</item>
+        <item> نيوترونات</item>
     </string-array>
 
     <string name="C1L3S4">يتم حساب الكتلة الذرية عن طريق إضافة البروتونات والنيوترونات في الذرة.
 </string>
 
-    <string name="C1L3S4E2M">احسب كتلة الهيليوم</string>
     <string-array name="C1L3A">
         <item>البروتونات</item>
     </string-array>
-
     <!--         LESSON 3            -->
 
 
@@ -247,7 +245,7 @@
         <item name="CA5">الكتل الذرية.</item>
         <item name="CA6">النظرية الذرية.</item>
         <item name="CA7">تُعقد الذرات معًا.</item>
-        <item name="CA8">البروتونات والنيوترونات</item>
+        <item name="CA8">البروتونات والنيوترونات.</item>
         <item name="CA9">البروتونات والإلكترونات.</item>
         <item name="CA10">اللبنات.</item>
     </string-array>

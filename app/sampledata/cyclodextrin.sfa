@@ -172,7 +172,7 @@
     file: 'sampledata/cyclodextrin.fbx',
     name: 'cyclodextrin',
     recenter: 'root',
-    scale: 20.7656240000000007,
+    scale: 30.7656240000000007,
   },
   version: '0.54:2',
 }

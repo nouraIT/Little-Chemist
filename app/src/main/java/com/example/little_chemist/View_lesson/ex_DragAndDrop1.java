@@ -57,6 +57,7 @@ public class ex_DragAndDrop1 extends AppCompatActivity {
                 Intent n = new Intent(ex_DragAndDrop1.this, Lessons.class);
                 n.putExtra("lesson",11) ;
                 startActivity(n);
+                finish();
             }
         });
 
@@ -97,6 +98,7 @@ public class ex_DragAndDrop1 extends AppCompatActivity {
                 n.putExtra("lessonId",1) ;
                 n.putExtra("segmentId",0) ;
                 startActivity(n);
+                finish();
             }
         });
 

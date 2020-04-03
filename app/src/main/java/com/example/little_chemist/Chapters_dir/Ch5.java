@@ -111,7 +111,7 @@ public class Ch5 extends AppCompatActivity {
 
 
 
-            // ======================== Lessons btns ========================
+        // ======================== Lessons btns ========================
 
 
         lsn1.setOnClickListener(new View.OnClickListener() {
@@ -172,7 +172,7 @@ public class Ch5 extends AppCompatActivity {
                 statue = student.getLsnLock("3");
                 String s1,s2,s3,s4;
                 s1= getString(R.string.prepare);
-               // s2=getString(R.string.barium1);
+                // s2=getString(R.string.barium1);
                 s3=getString(R.string.calcium1);
                 s4=getString(R.string.magnesium1);
                 if (statue.equals("unlocked") || statue.equals("completed") ) {
@@ -274,8 +274,8 @@ public class Ch5 extends AppCompatActivity {
                 if (statue.equals("unlocked") || statue.equals("completed") ) {
 
                     Intent n = new Intent(Ch5.this, quizQ.class);
-                n.putExtra("ChapterNumber",5);
-                startActivity(n);
+                    n.putExtra("ChapterNumber",5);
+                    startActivity(n);
                 }
                 else
                     Toast.makeText(getApplicationContext(), "Locked", Toast.LENGTH_LONG).show();

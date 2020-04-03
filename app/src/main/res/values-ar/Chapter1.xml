@@ -54,7 +54,7 @@
         <item>أي جزء من الذرة يحدد ما إذا كانت نظير أم لا؟</item>
         <item>البروتونات</item>
         <item>الالكترونات</item>
-        <item>3نيوترونات</item>
+        <item>نيوترونات</item>
     </string-array>
 
     <string name="C1L3S4">يتم حساب الكتلة الذرية عن طريق إضافة البروتونات والنيوترونات في الذرة.
@@ -246,7 +246,7 @@
         <item name="CA5">الكتل الذرية.</item>
         <item name="CA6">النظرية الذرية.</item>
         <item name="CA7">تُعقد الذرات معًا.</item>
-        <item name="CA8">البروتونات والنيوترونات</item>
+        <item name="CA8">البروتونات والنيوترونات.</item>
         <item name="CA9">البروتونات والإلكترونات.</item>
         <item name="CA10">اللبنات.</item>
     </string-array>

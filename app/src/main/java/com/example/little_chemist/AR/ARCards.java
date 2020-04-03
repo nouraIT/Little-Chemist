@@ -43,8 +43,8 @@ public class ARCards extends AppCompatActivity {
     private ModelRenderable andyRenderable;
     private ModelRenderable mObjRenderable;
     private  String text;
-//private  int  m=0;
-    static int m =0;
+    //private  int  m=0;
+    static int m =1;
     DatabaseHelper helper = new DatabaseHelper(this);
     private SharedPreferences pref;
 
@@ -71,7 +71,7 @@ public class ARCards extends AppCompatActivity {
         Reset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-           // Reset Code
+                // Reset Code
                 recreate();
             }
         });
@@ -107,7 +107,7 @@ public class ARCards extends AppCompatActivity {
         Collection<AugmentedImage> images = frame.getUpdatedTrackables(AugmentedImage.class);
         //Iterate through the image database
         for (AugmentedImage image : images) {
-          // Check if scanned image existed in the image database
+            // Check if scanned image existed in the image database
             if (image.getTrackingMethod() == AugmentedImage.TrackingMethod.FULL_TRACKING) {
                 //Set the scene
                 RelativeLayout gallery = findViewById(R.id.gallery);
@@ -184,7 +184,7 @@ public class ARCards extends AppCompatActivity {
 //Set Flag
         if (!appeared){
 
-          // Set the 3D object in the scene
+            // Set the 3D object in the scene
             setARFragment(string);
             if(count++==100)
                 appeared = true;

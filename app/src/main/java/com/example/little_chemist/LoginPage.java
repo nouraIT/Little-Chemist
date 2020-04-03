@@ -148,6 +148,7 @@ public class LoginPage extends AppCompatActivity implements Serializable {
 //                        Toast.makeText(getApplicationContext(), welcome, Toast.LENGTH_LONG).show();
 
                         startActivity(loginIntent);
+                        finish();
 
                     }else {
                         UserNameET.setError(getText(R.string.IncorrectAccount));
