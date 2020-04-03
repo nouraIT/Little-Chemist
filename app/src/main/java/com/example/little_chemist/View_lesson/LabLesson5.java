@@ -114,7 +114,8 @@ private static int n=0;
                 String name = pref.getString("username", null); // getting String
                 Student student = helper.getStudent(name);
                 int Lid = bundle.getInt("lessonId") ;
-                helper.updateLesson(name,Lid,"completed");
+                if(!student.getLsnLock(String.valueOf(Lid)).equals("completed"))
+                    helper.updateLesson(name,Lid,"completed");
                 Intent h = new Intent(LabLesson5.this, Ch3.class);
                 startActivity(h);
                 finish();

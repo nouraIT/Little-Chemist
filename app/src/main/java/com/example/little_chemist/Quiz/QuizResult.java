@@ -195,9 +195,8 @@ public class QuizResult extends AppCompatActivity {
                                  break;
                             default: n = new Intent(QuizResult.this, Home.class);
                         }
-                        helper.updateQuiz(name,b.getInt("ChapterNumber"),"completed");//,Integer.toString(lessonkey).charAt(0));
+                        helper.updateQuiz(name,b.getInt("ChapterNumber"),"completed");
                         statue = student.getLsnLock(String.valueOf(b.getInt("ChapterNumber")));
-//                        System.out.println(statue) ;
                         startActivity(n);
                         finish();
                     }
