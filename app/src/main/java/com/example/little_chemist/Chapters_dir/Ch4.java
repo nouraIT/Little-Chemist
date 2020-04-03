@@ -54,6 +54,8 @@ public class Ch4 extends AppCompatActivity {
                 Intent n = new Intent(Ch4.this, Chapters.class);
                 n.putExtra("segmentId",3) ;
                 startActivity(n);
+                finish();
+
             }
         });
 

@@ -155,8 +155,6 @@ public class Lessons extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 mSlidsView.setCurrentItem(mCurrent+1);
-
-
             }
         });
 
@@ -164,9 +162,7 @@ public class Lessons extends AppCompatActivity {
         preBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 mSlidsView.setCurrentItem(mCurrent-1);
-
             }
         });
 
