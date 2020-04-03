@@ -1,17 +1,8 @@
 package com.example.little_chemist.Tables;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-
-import com.example.little_chemist.Chapters;
-import com.example.little_chemist.Chapters_dir.Ch1;
-import com.example.little_chemist.Home;
-import com.example.little_chemist.R;
-import com.example.little_chemist.SignUp;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 public class Quiz extends AppCompatActivity {
 

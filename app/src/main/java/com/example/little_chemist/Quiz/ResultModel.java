@@ -1,4 +1,4 @@
-package com.example.little_chemist;
+package com.example.little_chemist.Quiz;
 
 public class ResultModel {
     private String Question;

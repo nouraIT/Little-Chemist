@@ -20,19 +20,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LabLesson5"/>
-        <activity android:name=".LabLesson4"/>
-        <activity android:name=".LabLesson3" />
-        <activity android:name=".LabLesson2" />
-        <activity android:name=".LabLesson1" />
-        <activity android:name=".ARCards" />
+        <activity android:name=".View_lesson.LabLesson5"/>
+        <activity android:name=".View_lesson.LabLesson4"/>
+        <activity android:name=".View_lesson.LabLesson3" />
+        <activity android:name=".View_lesson.LabLesson2" />
+        <activity android:name=".View_lesson.LabLesson1" />
+        <activity android:name=".AR.ARCards" />
         <activity android:name=".View_lesson.ex_multiple_choice"/>
         <activity android:name=".View_lesson.ex_DragAndDrop1"/>
         <activity android:name=".View_lesson.ex_DragAndDrop2"/>
         <activity android:name=".View_lesson.ex_DragAndDrop3"/>
         <activity android:name=".View_lesson.slideAdapter" />
         <activity android:name=".View_lesson.Lessons" />
-        <activity android:name=".View_lesson.lab" />
         <activity android:name=".Quiz_score" />
         <activity android:name=".Tables.Student" />
         <activity android:name=".RecoverPassword" />
@@ -42,15 +41,15 @@
         <activity
             android:name=".LoginPage"
             android:label="@string/title_activity_login" />
-        <activity android:name=".chaptersAdapter" />
-        <activity android:name=".Chapters" />
+        <activity android:name=".Chapters_dir.chaptersAdapter" />
+        <activity android:name=".Chapters_dir.Chapters" />
         <activity android:name=".Chapters_dir.Ch1" />
         <activity android:name=".Chapters_dir.Ch2" />
         <activity android:name=".Chapters_dir.Ch3" />
         <activity android:name=".Chapters_dir.Ch4" />
         <activity android:name=".Chapters_dir.Ch5" />
-        <activity android:name=".quizQ" />
-        <activity android:name=".QuizResult"/>
+        <activity android:name=".Quiz.quizQ" />
+        <activity android:name=".Quiz.QuizResult"/>
         <activity
             android:name=".SignUp"
             android:label="@string/sign_up" />

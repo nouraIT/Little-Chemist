@@ -1,7 +1,10 @@
-package com.example.little_chemist;
+package com.example.little_chemist.AR;
+
+import com.example.little_chemist.View_lesson.LabLesson1;
 import com.google.ar.core.Config;
 import com.google.ar.core.Session;
 import com.google.ar.sceneform.ux.ArFragment;
+
 public class ARfragment2 extends ArFragment{
     @Override
     protected Config getSessionConfiguration(Session session) {

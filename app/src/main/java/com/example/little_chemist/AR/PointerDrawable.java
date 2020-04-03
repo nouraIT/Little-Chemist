@@ -1,4 +1,4 @@
-package com.example.little_chemist;
+package com.example.little_chemist.AR;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.ColorFilter;

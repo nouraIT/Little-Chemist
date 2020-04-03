@@ -1,4 +1,4 @@
-package com.example.little_chemist;
+package com.example.little_chemist.Chapters_dir;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -11,24 +11,19 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import android.text.Html;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.content.Intent;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.little_chemist.Chapters_dir.Ch1;
-import com.example.little_chemist.Chapters_dir.Ch2;
-import com.example.little_chemist.Chapters_dir.Ch3;
-import com.example.little_chemist.Chapters_dir.Ch4;
-import com.example.little_chemist.Chapters_dir.Ch5;
+import com.example.little_chemist.DatabaseHelper;
+import com.example.little_chemist.Home;
+import com.example.little_chemist.R;
 import com.example.little_chemist.Tables.Student;
 
 
@@ -44,7 +39,7 @@ public class Chapters extends AppCompatActivity {
     TextView chaptertxt ;
 
     private TextView[] mDotsText ;
-    private com.example.little_chemist.chaptersAdapter adapter ;
+    private chaptersAdapter adapter ;
 
     SharedPreferences pref;
     DatabaseHelper helper = new DatabaseHelper(Chapters.this);

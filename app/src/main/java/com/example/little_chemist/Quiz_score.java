@@ -18,15 +18,11 @@ import org.eazegraph.lib.charts.PieChart;
 import org.eazegraph.lib.models.PieModel;
 
 
-//import me.itangqi.waveloadingview.WaveLoadingView;
-
-
 public class Quiz_score extends AppCompatActivity {
 
     NumberProgressBar progressBar1,progressBar2, progressBar3 ,progressBar4 ,progressBar5 ;
     static Student student = new Student();
     DatabaseHelper helper = new DatabaseHelper(Quiz_score.this);
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,15 +31,11 @@ public class Quiz_score extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_quiz_score);
 
-
         SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
         String name = pref.getString("username", null); // getting String
         student = helper.getStudent(name);
 
-
         Toolbar toolbar = findViewById(R.id.toolbar);
-
-
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -53,11 +45,8 @@ public class Quiz_score extends AppCompatActivity {
             public void onClick(View v) {
                 Intent Homepage = new Intent(Quiz_score.this, Home.class);
                 startActivity(Homepage);
-                // finish();
             }
         });
-
-
 
         PieChart mPieChart = findViewById(R.id.piechart);
         progressBar1 = findViewById(R.id.numberbar6);
@@ -65,30 +54,6 @@ public class Quiz_score extends AppCompatActivity {
         progressBar3 = findViewById(R.id.numberbar4);
         progressBar4 = findViewById(R.id.numberbar2);
         progressBar5 = findViewById(R.id.numberbar3);
-
-//        String progress = student.viewScore();
-//        //"1:0,2:0,3:0,4:0,5:0,"
-//        int []chvalue = new int[5];
-//
-////        System.out.println(progress);
-//
-//        for(int i =0;i<5;i++){
-//
-//            int startIndex = progress.indexOf("c"+String.valueOf(i+1));
-//            int endIndex = progress.indexOf(",",startIndex);
-//
-////            System.out.println(startIndex+" and "+endIndex);
-//
-//            chvalue[i] = Integer.parseInt( progress.substring(startIndex + 3 , endIndex ));
-//
-//
-//            if(chvalue[i] == 0) {
-//                chvalue[i] = 1;
-////                System.out.println(i+" "+chvalue[i]);
-//
-//            }
-//
-//        }
 
         double[] scores = student.GetTotalScore();
 

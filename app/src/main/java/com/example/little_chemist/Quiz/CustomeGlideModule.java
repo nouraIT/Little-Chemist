@@ -1,4 +1,4 @@
-package com.example.little_chemist;
+package com.example.little_chemist.Quiz;
 
 import android.content.Context;
 

@@ -1,4 +1,4 @@
-package com.example.little_chemist;
+package com.example.little_chemist.Chapters_dir;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -9,6 +9,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.little_chemist.DatabaseHelper;
+import com.example.little_chemist.R;
 import com.example.little_chemist.Tables.Student;
 
 import androidx.annotation.NonNull;
@@ -20,10 +22,10 @@ public class chaptersAdapter extends PagerAdapter {
     Context context ;
     LayoutInflater layoutInflater ;
 
-    int chapter_Lock[] = new int[5];
-    String[] chapter_num,chapter_name ;
+    private int[] chapter_Lock = new int[5];
+    private String[] chapter_num,chapter_name ;
 
-    public int[] chapter_bg={
+    private int[] chapter_bg={
             R.drawable.ch1_bg,
             R.drawable.ch2_bg,
             R.drawable.ch3_bg,
@@ -31,7 +33,7 @@ public class chaptersAdapter extends PagerAdapter {
             R.drawable.ch5_bg
     };
 
-    public int[] chapter_drawings={
+    private int[] chapter_drawings={
             R.drawable.ch1character,
             R.drawable.ch2character,
             R.drawable.ch3character,
@@ -39,7 +41,7 @@ public class chaptersAdapter extends PagerAdapter {
             R.drawable.ch5character
     };
 
-    public int[] chapter_Img={
+    private int[] chapter_Img={
             R.drawable.atom,
             R.drawable.element,
             R.drawable.flask,
@@ -47,17 +49,12 @@ public class chaptersAdapter extends PagerAdapter {
             R.drawable.periodictable
     };
 
-    SharedPreferences pref;
-    DatabaseHelper helper ;//= new DatabaseHelper(chaptersAdapter.this);
-    String statue;
-    Student student;
-
     public chaptersAdapter(Context context) {
-        helper = new DatabaseHelper(context);
+        DatabaseHelper helper = new DatabaseHelper(context);
 
-        pref = context.getSharedPreferences("MyPref", 0); // 0 - for private mode
+        SharedPreferences pref = context.getSharedPreferences("MyPref", 0); // 0 - for private mode
         String name = pref.getString("username", null); // getting String
-        student = helper.getStudent(name);
+        Student student = helper.getStudent(name);
 
         this.context = context;
         chapter_num = this.context.getResources().getStringArray(R.array.chapters_numbers);
@@ -76,11 +73,6 @@ public class chaptersAdapter extends PagerAdapter {
 
     }
 
-
-
-
-    Student s = Home.student;
-
     @Override
     public int getCount() {
         return chapter_num.length;
@@ -97,11 +89,8 @@ public class chaptersAdapter extends PagerAdapter {
         layoutInflater = (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE) ;
         View view = layoutInflater.inflate(R.layout.chapters_slider,container,false) ;
 
-
         //chNum
         TextView SlidechapterNum = view.findViewById(R.id.chNum) ;
-        //chapterName
-        //TextView SlidechapterName = view.findViewById(R.id.chapterName) ;
         //chapterDrawing
         ImageView SlidechapterDraw = view.findViewById(R.id.chapterDrawing) ;
         //chapterCard
@@ -113,23 +102,12 @@ public class chaptersAdapter extends PagerAdapter {
         //chImg
         ImageView inCardChapterImg = view.findViewById(R.id.chImg) ;
 
-
-
         SlidechapterNum.setText(chapter_num[position]);
-//        SlidechapterName.setText(chapter_name[position]);
         SlidechapterDraw.setImageResource(chapter_drawings[position]);
         SlideChapterCard.setBackgroundResource(chapter_bg[position]);
         SlideLockImg.setImageResource(chapter_Lock[position]);
         inCardChapterName.setText(chapter_name[position]);
         inCardChapterImg.setImageResource(chapter_Img[position]);
-
-//        ImageView slideImgView = view.findViewById(R.id.slide_img) ;
-//        TextView slideheader = view.findViewById(R.id.slide_header) ;
-//        TextView slideDes = view.findViewById(R.id.slide_description) ;
-//
-//        slideImgView.setImageResource(slide_img[position]);
-//        slideheader.setText(slide_header[position]);
-//        slideDes.setText(slide_description[position]);
 
         container.addView(view);
         return view ;

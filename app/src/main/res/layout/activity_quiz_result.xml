@@ -5,7 +5,7 @@
     android:id="@+id/resultlayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".QuizResult"
+    tools:context=".Quiz.QuizResult"
     android:background="@drawable/quizscorebackground">
 
     <androidx.appcompat.widget.Toolbar

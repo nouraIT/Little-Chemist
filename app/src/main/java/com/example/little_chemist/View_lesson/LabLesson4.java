@@ -1,4 +1,4 @@
-package com.example.little_chemist;
+package com.example.little_chemist.View_lesson;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,15 +12,13 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import android.app.AlertDialog;
-import android.graphics.Rect;
-import android.net.Uri;
-import android.os.Bundle;
 
+import com.example.little_chemist.AR.ARfragment5;
 import com.example.little_chemist.Chapters_dir.Ch3;
-import com.example.little_chemist.Chapters_dir.Ch4;
+import com.example.little_chemist.DatabaseHelper;
+import com.example.little_chemist.AR.PointerDrawable;
+import com.example.little_chemist.R;
 import com.example.little_chemist.Tables.Student;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.ar.core.*;
 import com.google.ar.sceneform.AnchorNode;
 import com.google.ar.sceneform.Camera;
@@ -28,38 +26,24 @@ import com.google.ar.sceneform.Node;
 import com.google.ar.sceneform.Sun;
 import com.google.ar.sceneform.rendering.AnimationData;
 import com.google.ar.sceneform.rendering.ModelRenderable;
-import com.google.ar.sceneform.ux.ArFragment;
 import com.google.ar.sceneform.ux.TransformableNode;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.constraintlayout.solver.widgets.Rectangle;
-
-import android.os.Handler;
 import android.util.Log;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Timer;
+
 import com.google.ar.core.Anchor;
 import com.google.ar.core.Frame;
 import com.google.ar.core.HitResult;
 import com.google.ar.core.Trackable;
 import com.google.ar.core.TrackingState;
-import com.google.ar.sceneform.AnchorNode;
 import com.google.ar.sceneform.SkeletonNode;
 import com.google.ar.sceneform.animation.ModelAnimator;
-import com.google.ar.sceneform.rendering.ModelRenderable;
-
 
 
 public class LabLesson4 extends AppCompatActivity {

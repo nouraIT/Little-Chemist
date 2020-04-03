@@ -1,4 +1,4 @@
-package com.example.little_chemist;
+package com.example.little_chemist.View_lesson;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,7 +14,11 @@ import android.widget.TextView;
 import android.app.AlertDialog;
 import android.graphics.Rect;
 
+import com.example.little_chemist.AR.ARfragment6;
 import com.example.little_chemist.Chapters_dir.Ch3;
+import com.example.little_chemist.DatabaseHelper;
+import com.example.little_chemist.AR.PointerDrawable;
+import com.example.little_chemist.R;
 import com.example.little_chemist.Tables.Student;
 import com.google.ar.core.*;
 import com.google.ar.sceneform.AnchorNode;

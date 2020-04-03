@@ -1,7 +1,7 @@
-package com.example.little_chemist;
+package com.example.little_chemist.Quiz;
 
 import androidx.annotation.NonNull;
-import com.example.little_chemist.kotlin.Intrinsics;
+import com.example.little_chemist.Quiz.Intrinsics;
 import alirezat775.lib.carouselview.CarouselModel;
 
 public final class EmptyModel extends CarouselModel {

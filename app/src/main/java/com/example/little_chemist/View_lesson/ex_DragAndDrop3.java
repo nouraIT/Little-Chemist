@@ -76,6 +76,7 @@ public class ex_DragAndDrop3 extends AppCompatActivity{
         pref = this.getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
         name = pref.getString("username", null); // getting String
         student = helper.getStudent(name);
+        bundle = getIntent().getExtras();
 
 
         reset.setOnClickListener(new View.OnClickListener() {
@@ -88,10 +89,7 @@ public class ex_DragAndDrop3 extends AppCompatActivity{
         finish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
-                String name = pref.getString("username", null); // getting String
-                Student student = helper.getStudent(name);
-                bundle=getIntent().getExtras();
+
                 int exNum =bundle.getInt("exNum") ;
                 helper.updateEx(name,exNum,"completed");//,Integer.toString(lessonkey).charAt(0));
                 Intent n = new Intent(ex_DragAndDrop3.this, Lessons.class);
@@ -120,6 +118,7 @@ public class ex_DragAndDrop3 extends AppCompatActivity{
             }
         }
     }
+
     class MyDragListener implements View.OnDragListener {
         Drawable enterShape = ContextCompat.getDrawable(ex_DragAndDrop3.this, R.drawable.drop_area);
         Drawable normalShape = ContextCompat.getDrawable(ex_DragAndDrop3.this, R.drawable.normalshape);
@@ -127,8 +126,6 @@ public class ex_DragAndDrop3 extends AppCompatActivity{
 
         @Override
         public boolean onDrag(View v, DragEvent event) {
-
-            int action = event.getAction();
             switch (event.getAction()) {
                 case DragEvent.ACTION_DRAG_STARTED:
                     // do nothing
