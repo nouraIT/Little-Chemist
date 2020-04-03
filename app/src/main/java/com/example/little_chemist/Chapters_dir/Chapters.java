@@ -31,8 +31,7 @@ public class Chapters extends AppCompatActivity {
 
     private CardView  card00 ;
     private ViewPager mSlidsView ;
-    private LinearLayout mCardShower ;
-    private LinearLayout mDots ;
+    private LinearLayout mCardShower, mDots ;
     private int mCurrent ;
     LayoutInflater layoutInflater;
     ConstraintLayout cl;

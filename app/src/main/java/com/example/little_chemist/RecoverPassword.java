@@ -23,7 +23,7 @@ public class RecoverPassword extends AppCompatActivity {
     TextInputLayout ET_Password ,ET_ConfirmPassword,SecurityAn,ET_UserName;
     String PasswordStr, ConfirmPasswordStr,SecurityA,UserNameStr;
     Spinner spinner;
-    Student student = new Student();
+    Student student ;//= new Student();
     int spinnerSelected;
     DatabaseHelper helper=new DatabaseHelper(this);
     ArrayAdapter<CharSequence> adapter;
@@ -302,10 +302,6 @@ public class RecoverPassword extends AppCompatActivity {
 
     private boolean validateN(){
         if (UserNameStr.isEmpty() || PasswordStr.isEmpty() || ConfirmPasswordStr.isEmpty() || SecurityA.isEmpty()) {
-            //ET_UserName.setError(getText(R.string.null_username));
-            //ET_Password.setError(getText(R.string.null_password));
-            //ET_ConfirmPassword.setError(getText(R.string.null_password));
-            //SecurityAn.setError(getText(R.string.nullSecAnswer));
             return false;
         }
         return true;
