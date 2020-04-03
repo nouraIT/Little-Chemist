@@ -642,7 +642,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 if(i+1 == Qid) {
                     oldStatus += (i + 1) + ":" + status + ",";
 //                    if(Qid!=5) {
-//                        qzNum = String.valueOf(Integer.parseInt(qzNum) + 1);
+                    qzNum = String.valueOf(Integer.parseInt(qzNum) + 1);
 //                        i++;
 //                        oldStatus += (i + 1) + ":unlocked,";
 //                    }

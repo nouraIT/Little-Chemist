@@ -31,6 +31,14 @@ public class Ch1 extends AppCompatActivity {
     String statue;
 
     @Override
+    public void onBackPressed() {
+        Intent n = new Intent(Ch1.this, Chapters.class);
+        n.putExtra("segmentId",0) ;
+        startActivity(n);
+        finish();
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);

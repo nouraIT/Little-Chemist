@@ -27,8 +27,14 @@ public class Ch4 extends AppCompatActivity {
     SharedPreferences pref;
     DatabaseHelper helper = new DatabaseHelper(Ch4.this);
     String statue;
-    ImageView lockpad;
 
+    @Override
+    public void onBackPressed() {
+        Intent n = new Intent(Ch4.this, Chapters.class);
+        n.putExtra("segmentId",3) ;
+        startActivity(n);
+        finish();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

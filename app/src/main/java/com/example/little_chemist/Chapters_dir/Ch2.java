@@ -28,6 +28,14 @@ public class Ch2 extends AppCompatActivity {
     String statue;
 
     @Override
+    public void onBackPressed() {
+        Intent n = new Intent(Ch2.this, Chapters.class);
+        n.putExtra("segmentId",1) ;
+        startActivity(n);
+        finish();
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
