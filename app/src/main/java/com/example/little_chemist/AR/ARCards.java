@@ -91,10 +91,13 @@ public class ARCards extends AppCompatActivity {
                     if(!student.getLsnLock(String.valueOf(Lid)).equals("completed"))
                         helper.updateLesson(name, Lid , "completed");
                     Intent h;
-                    if(Lid != 2)
+                    if(Lid != 2){
                         h = new Intent(ARCards.this, Ch5.class);
-                    else
+                    m=1;}
+                    else {
                         h = new Intent(ARCards.this, Ch1.class);
+                        m=1;
+                    }
                     startActivity(h);
                     finish();
                 }
