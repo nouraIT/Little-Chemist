@@ -38,18 +38,14 @@ public class Lessons extends AppCompatActivity {
     private TextView[] mDotsText ;
     private slideAdapter slideAdapter ;
     private TextView lessonName ;
-    private Button nextBtn,preBtn,exercise ;
+    private Button nextBtn,preBtn ;
 
     private String name;
     private int lessonkey ,mCurrent, lessonId;
 
-    LayoutInflater layoutInflater;
     private DatabaseHelper helper ;
     private Bundle bundle ;
     private Student student;
-    private int NumDots ;
-    private String IDEx ;
-    private SharedPreferences pref;
 
     public int segmentId =0 ;
 
@@ -71,11 +67,11 @@ public class Lessons extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
-        Context con = Lessons.this;
+//        Context con = Lessons.this;
         ConstraintLayout lessonlayout = findViewById(R.id.lessonlayout);
 
-        layoutInflater = (LayoutInflater) con.getSystemService(Chapters.LAYOUT_INFLATER_SERVICE) ;
-        View view = layoutInflater.inflate(R.layout.chapters_slider,null,false) ;
+//        layoutInflater = (LayoutInflater) con.getSystemService(Chapters.LAYOUT_INFLATER_SERVICE) ;
+//        View view = layoutInflater.inflate(R.layout.chapters_slider,null,false) ;
 
 //        exercise = view.findViewById(R.id.ex) ;
         mSlidsView =  findViewById(R.id.slidePage) ;
