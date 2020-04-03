@@ -21,13 +21,14 @@
     <!--         LESSON 3            -->
     <string name="C4L3S1">Food chemistry involves studying the chemicals that are inside food, how they contribute to our nutrition, and how different foods can be combined or changed to make new foods. </string>
     <string name="C4L3S2">
-        <b>Food Chemistry Applications</b> Through food chemistry we can understand a lot about the foods we eat. Here are a few ways that food scientists may use food chemistry: \n
-        To understand nutritional values of food. For example, are apples a healthy food to eat? \n
-        To make new foods, like snacks, yogurt, gum, ice cream, cereal, soft drinks, juices, and more.
-    </string>
-    <string name="C4L3S3">Carbohydrates are great energy sources for humans and animals too.Table sugar is an example of a carbohydrate. Pizza, bread, and pasta are all examples of foods that are high in carbohydrates.</string>
-    <string name="C4L3S4">Lipids are the fats and oils that come from plants and animals.Fats usually come from animals like beef, chicken, and fish; while oils come from plants like olives and sunflower seeds.</string>
-    <string name="C4L3S5">Protein is an important chemical to the human diet. Protein can come from meat, fish, nuts, dairy, vegetables, oils, and nuts. </string>
+        <item><b>Food Chemistry Applications</b> Through food chemistry we can understand a lot about the foods we eat.</item></string>
+    <string name="C4L3S3"><item> Here are a few ways that food scientists may use food chemistry:</item>
+    <item>\n - To understand nutritional values of food.</item>
+    <item>\n - To make new foods, like snacks, yogurt, gum, and more.</item>
+</string>
+    <string name="C4L3S4">Carbohydrates are great energy sources for humans and animals too.Table sugar is an example of a carbohydrate. Pizza, bread, and pasta are all examples of foods that are high in carbohydrates.</string>
+    <string name="C4L3S5">Lipids are the fats and oils that come from plants and animals.Fats usually come from animals like beef, chicken, and fish; while oils come from plants like olives and sunflower seeds.</string>
+    <string name="C4L3S6">Protein is an important chemical to the human diet. Protein can come from meat, fish, nuts, dairy, vegetables, oils, and nuts. </string>
     <!--         LESSON 3            -->
     
 
@@ -53,7 +54,6 @@
     <string-array name="C4L5S3E2M">
         <item>Chemists would test the unknown liquid using ___?</item>
         <item>Chromatography</item>
-        <item>Glowmatography</item>
         <item>Affinity chromatography</item>
     </string-array>
 

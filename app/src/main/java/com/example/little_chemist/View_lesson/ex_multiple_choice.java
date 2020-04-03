@@ -33,7 +33,7 @@ public class ex_multiple_choice extends AppCompatActivity {
     public int lessonid, lessonkey,segmentN,ex ;
     public TextView exNum, lessonName, Q;
     public CircularProgressButton[] a ;
-
+    public Button finish ;
     private SharedPreferences pref;
     private  DatabaseHelper helper ;
     private Bundle bundle ;
@@ -65,6 +65,7 @@ public class ex_multiple_choice extends AppCompatActivity {
         temp = chnum + lessonnum ;
         lessonkey = Integer.parseInt(temp) ;
         lessonName = findViewById(R.id.lessonTitle2) ;
+        finish = findViewById(R.id.finish2) ;
         setLessontitle(lessonkey);
 
         helper = new DatabaseHelper(this);
@@ -108,6 +109,19 @@ public class ex_multiple_choice extends AppCompatActivity {
             }
         });
 
+        finish.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int exNum=bundle.getInt("exNum") ;
+                helper.updateEx(name,exNum,"completed");//,Integer.toString(lessonkey).charAt(0));
+                Intent n = new Intent(ex_multiple_choice.this, Lessons.class);
+                n.putExtra("lesson",lessonkey) ;
+                n.putExtra("lessonId",lessonid) ;
+                n.putExtra("segmentId",segmentN-1) ;
+                startActivity(n);
+            }
+        });
+
 
         //extract strings from resources
         String[] QItems = getResources().getStringArray(getResources().getIdentifier(exKey, "array", getPackageName()));
@@ -145,7 +159,11 @@ public class ex_multiple_choice extends AppCompatActivity {
                         b.startAnimation();
                         //b.startMorphAnimation();
                         b.doneLoadingAnimation(Color.GREEN ,  BitmapFactory.decodeResource(getResources(), R.drawable.done));
-                        toolbar.setVisibility(View.VISIBLE);
+                        finish.setVisibility(View.VISIBLE);
+
+                        pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
+                        String name = pref.getString("username", null); // getting String
+                        Student student = helper.getStudent(name);
                         int exNum=bundle.getInt("exNum") ;
                         helper.updateEx(name,exNum,"completed");//,Integer.toString(lessonkey).charAt(0));
                         }

@@ -22,13 +22,14 @@
     <!--         LESSON 3            -->
     <string name="C4L3S1">تتضمن كيمياء الأغذية دراسة المواد الكيميائية الموجودة داخل الطعام ، وكيف تساهم في التغذية ، وكيف يمكن الجمع بين الأطعمة المختلفة أو تغييرها لصنع أطعمة جديدة. </string>
     <string name="C4L3S2">
-   من خلال كيمياء الأغذية يمكننا أن نفهم الكثير عن الأطعمة التي نتناولها. فيما يلي بعض الطرق التي قد يستخدمها علماء الأغذية في كيمياء الأغذية:
- ​​لفهم القيم الغذائية للأغذية. على سبيل المثال ، هل التفاح طعام صحي لتناوله؟
-لصنع أطعمة جديدة ، مثل الوجبات الخفيفة والزبادي واللثة والآيس كريم والحبوب والمشروبات الغازية والعصائر ، وأكثر من ذلك
+  من خلال كيمياء الأغذية يمكننا أن نفهم الكثير عن الأطعمة التي نتناولها.
 </string>
-    <string name="C4L3S3">الكربوهيدرات هي مصادر طاقة كبيرة للإنسان والحيوان أيضًا. السكر في الجدول هو مثال على الكربوهيدرات. البيتزا والخبز والمعكرونة كلها أمثلة على الأطعمة التي تحتوي على نسبة عالية من الكربوهيدرات.</string>
-    <string name="C4L3S4">الدهون هي الدهون والزيوت التي تأتي من النباتات والحيوانات. وعادة ما تأتي الدهون من الحيوانات مثل لحوم البقر والدجاج والأسماك. في حين أن الزيوت تأتي من النباتات مثل الزيتون وبذور عباد الشمس.</string>
-    <string name="C4L3S5">البروتين مادة كيميائية مهمة في النظام الغذائي البشري. يمكن أن يأتي البروتين من اللحوم والأسماك والمكسرات ومنتجات الألبان والخضروات والزيوت والمكسرات. </string>
+    <string name="C4L3S3">فيما يلي بعض الطرق التي قد يستخدمها علماء الأغذية في كيمياء الأغذية: \n
+ ​​لفهم القيم الغذائية للأغذية. \n
+لصنع أطعمة جديدة ، مثل الوجبات الخفيفة والزبادي واللثة والآيس كريم والحبوب والمشروبات الغازية والعصائر ، وأكثر من ذلك. </string>
+    <string name="C4L3S4">الكربوهيدرات هي مصادر طاقة كبيرة للإنسان والحيوان أيضًا. السكر في الجدول هو مثال على الكربوهيدرات. البيتزا والخبز والمعكرونة كلها أمثلة على الأطعمة التي تحتوي على نسبة عالية من الكربوهيدرات.</string>
+    <string name="C4L3S5">الدهون هي الدهون والزيوت التي تأتي من النباتات والحيوانات. وعادة ما تأتي الدهون من الحيوانات مثل لحوم البقر والدجاج والأسماك. في حين أن الزيوت تأتي من النباتات مثل الزيتون وبذور عباد الشمس.</string>
+    <string name="C4L3S6">البروتين مادة كيميائية مهمة في النظام الغذائي البشري. يمكن أن يأتي البروتين من اللحوم والأسماك والمكسرات ومنتجات الألبان والخضروات والزيوت والمكسرات. </string>
     <!--         LESSON 3            -->
 
 
@@ -51,7 +52,6 @@
     <string-array name="C4L5S3E2M">
         <item>سيختبر الكيميائيون السائل المجهول باستخدام ___؟</item>
         <item>الاستشراب</item>
-        <item>Glowmatography</item>
         <item>التحليل الكروماتوجرافي الانجذابي</item>
     </string-array>
     <string-array name="C4L5A">
@@ -63,39 +63,35 @@
     <!--        Quiz Questions           -->
     <string-array name="C4Quiz_Questions">
 
-        <item name="Q1">Finish this statement: A molecule is a group of _____ bonded together.</item>
-        <item name="Q2">The atoms that make up a water molecule are _____.?</item>
-        <item name="Q3">Liquid + energy = _____.</item>
-        <item name="Q4">The _____ is also called ”Mickey Mouse Molecule”.</item>
-        <item name="Q5">In a molecule, elements are held together by _____.</item>
-        <item name="Q6">Which of the following is the BEST definition of organic chemistry?</item>
-        <item name="Q7">Which is not an application for food chemistry?</item>
-        <item name="Q8">Lipids help to enhance the _____ of food. Select the best answer.</item>
-        <item name="Q9">Food chemistry is the study of _____. Select the best answer.</item>
-        <item name="Q10">Which of the following are the smallest building blocks of matter?</item>
-        <item name="Q11">What makes polymers different from other molecules?</item>
-        <item name="Q12">Each atom that makes up a molecule is from a specific type of _____.</item>
-        <item name="Q13">What is forensic chemistry?</item>
-        <item name="Q14">What is NOT TRUE about DNA?</item>
-        <item name="Q15">Where does a forensic chemist usually do his/her work?</item>
+        <item name="Q1">الجزيء هو مجموعة من _____ مرتبطة ببعضها البعض.</item>
+        <item name="Q2">الذرات التي يتكون منها جزيء الماء هي _____.؟</item>
+        <item name="Q3">سائل + طاقة = _____.</item>
+        <item name="Q4">ويطلق على _____ أيضًا اسم "Mickey Mouse Molecule".</item>
+        <item name="Q5">في الجزيء ، يتم تثبيت العناصر معًا بواسطة _____.</item>
+        <item name="Q6">أي مما يلي هو أفضل تعريف للكيمياء العضوية؟</item>
+        <item name="Q7">هو ليس تطبيقًا لكيمياء الطعام؟</item>
+        <item name="Q8">تساعد الدهون على تعزيز _____ من الطعام.</item>
+        <item name="Q9">كيمياء الغذاء هي دراسة _____.</item>
+        <item name="Q10">ما هو غير صحيح في الحمض النووي؟</item>
+        <item name="Q11">أين يقوم كيميائي الطب الشرعي عادة بعمله؟</item>
 
 
     </string-array>
     <!--         Quiz Total Answers          -->
     <string-array name="C4Quiz_Q1">
 
-        <item name="Q1">Finish this statement: A molecule is a group of _____ bonded together.</item>
-        <item name="A1">Compounds</item>
-        <item name="A2">People</item>
-        <item name="A3">Atoms</item>
-        <item name="A4">Chemicals</item>
-        <item name="CA1">Atoms</item>
+        <item name="Q1">الجزيء هو مجموعة من _____ مرتبطة ببعضها البعض.</item>
+        <item name="A1">مركب</item>
+        <item name="A2">اشخاص</item>
+        <item name="A3">ذرات</item>
+        <item name="A4">مواد كيميائية</item>
+        <item name="CA1">ذرات</item>
 
 
     </string-array>
     <string-array name="C4Quiz_Q2">
 
-        <item name="Q2">The atoms that make up a water molecule are _____.</item>
+        <item name="Q2">الذرات التي يتكون منها جزيء الماء هي _____.</item>
         <item name="A1">2 - Hydrogen, 1 – Oxygen</item>
         <item name="A2">1 - Hydrogen, 2 – Oxygen</item>
         <item name="A3">3 - Hydrogen, 2 – Oxygen</item>
@@ -106,19 +102,19 @@
     </string-array>
     <string-array name="C4Quiz_Q3">
 
-        <item name="Q3">Liquid + energy = _____.</item>
-        <item name="A1">solid (freezing)</item>
-        <item name="A2">gas(evaporation)</item>
-        <item name="A3">gas(condensation)</item>
-        <item name="A4">solid(melting)</item>
-        <item name="CA3">gas(evaporation)</item>
+        <item name="Q3">سائل + طاقة = _____.</item>
+        <item name="A1">صلب (تجميد)</item>
+        <item name="A2">الغاز (التبخر)</item>
+        <item name="A3">الغاز (التكثيف)</item>
+        <item name="A4">صلب (ذوبان)</item>
+        <item name="CA3">الغاز (التبخر)</item>
 
 
     </string-array>
 
     <string-array name="C4Quiz_Q4">
 
-        <item name="Q4">The _____ is also called ”Mickey Mouse Molecule”.</item>
+        <item name="Q4">ويطلق على _____ أيضًا اسم "Mickey Mouse Molecule".</item>
         <item name="A1">H2O</item>
         <item name="A2">O3</item>
         <item name="A3">CaO</item>
@@ -129,124 +125,80 @@
     </string-array>
     <string-array name="C4Quiz_Q5">
 
-        <item name="Q5">In a molecule, elements are held together by _____.</item>
-        <item name="A1">Super glue</item>
-        <item name="A2">Chemical bonds</item>
-        <item name="A3">Oxygen</item>
-        <item name="A4">Physical tension</item>
-        <item name="CA5">Chemical bonds</item>
+        <item name="Q5">في الجزيء ، يتم تثبيت العناصر معًا بواسطة _____.</item>
+        <item name="A1">صمغ ممتاز</item>
+        <item name="A2">الروابط الكيميائية</item>
+        <item name="A3">الأكسجين</item>
+        <item name="A4">التوتر الجسدي</item>
+        <item name="CA5">الروابط الكيميائية</item>
 
 
     </string-array>
 
     <string-array name="C4Quiz_Q6">
 
-        <item name="Q5">Which of the following is the BEST definition of organic chemistry?</item>
-        <item name="A1">A study of all elements</item>
-        <item name="A2">A study of caffeine</item>
-        <item name="A3">A study of radioactive elements</item>
-        <item name="A4">A study of carbon-containing molecules</item>
-        <item name="CA5">A study of carbon-containing molecules</item>
+        <item name="Q5">أي مما يلي هو أفضل تعريف للكيمياء العضوية؟</item>
+        <item name="A1">دراسة لجميع العناصر</item>
+        <item name="A2">دراسة الكافيين</item>
+        <item name="A3">دراسة العناصر المشعة</item>
+        <item name="A4">دراسة الجزيئات المحتوية على الكربون</item>
+        <item name="CA5">دراسة الجزيئات المحتوية على الكربون</item>
 
 
     </string-array>
 
     <string-array name="C4Quiz_Q7">
 
-        <item name="Q5">Where does a forensic chemist usually do his/her work?</item>
-        <item name="A1">at the crime scene</item>
-        <item name="A2">in a laboratory</item>
-        <item name="A3">in the car on the way to the scene</item>
-        <item name="A4">in the car after leaving the scene</item>
-        <item name="CA5">in a laboratory</item>
+        <item name="Q5">أين يقوم كيميائي الطب الشرعي عادة بعمله؟</item>
+        <item name="A1">في مسرح الجريمة</item>
+        <item name="A2">في المختبر</item>
+        <item name="A3">في السيارة في طريقها إلى مكان الحادث</item>
+        <item name="A4">في السيارة بعد مغادرة المشهد</item>
+        <item name="CA5">في المختبر</item>
 
 
     </string-array>
     <string-array name="C4Quiz_Q8">
 
-        <item name="Q5">Which is not an application for food chemistry</item>
-        <item name="A1">To make new foods.</item>
-        <item name="A2">To test how long food can last before becoming spoiled.</item>
-        <item name="A3">To understand how food chemicals interact with our bodies.</item>
-        <item name="A4">To help live a chemical free lifestyle..</item>
-        <item name="CA5">To help live a chemical free lifestyle</item>
+        <item name="Q5">هو ليس تطبيقًا لكيمياء الطعام</item>
+        <item name="A1">لتحضير أطعمة جديدة.</item>
+        <item name="A2">لاختبار المدة التي يمكن أن يستمر فيها الطعام قبل أن يتلف.</item>
+        <item name="A3">لفهم كيفية تفاعل المواد الكيميائية الغذائية مع أجسامنا.</item>
+        <item name="A4">للمساعدة في عيش حياة خالية من المواد الكيميائية</item>
+        <item name="CA5">للمساعدة في عيش حياة خالية من المواد الكيميائية</item>
 
 
     </string-array>
     <string-array name="C4Quiz_Q9">
 
-        <item name="Q5">Lipids help to enhance the _____ of food. Select the best answer.</item>
-        <item name="A1">Flavor</item>
-        <item name="A2">Energy</item>
-        <item name="A3">Color</item>
-        <item name="A4">Sweetness</item>
-        <item name="CA5">Energy</item>
+        <item name="Q5">تساعد الدهون على تعزيز _____ من الطعام. حدد أفضل إجابة.</item>
+        <item name="A1">نكهة</item>
+        <item name="A2">الطاقة</item>
+        <item name="A3">اللون</item>
+        <item name="A4">الحلاوة</item>
+        <item name="CA5">الطاقة</item>
 
 
     </string-array>
     <string-array name="C4Quiz_Q10">
 
-        <item name="Q5">Food chemistry is the study of _____. Select the best answer</item>
-        <item name="A1">chemicals used in pesticides on farms</item>
-        <item name="A2">interactions between chemicals in food</item>
-        <item name="A3">the best foods to serve in a restaurant</item>
-        <item name="A4">chemicals used to increase crop growth.</item>
-        <item name="CA5">interactions between chemicals in food</item>
+        <item name="Q5">كيمياء الغذاء هي دراسة _____.</item>
+        <item name="A1">المواد الكيميائية المستخدمة في المبيدات الحشرية في المزارع</item>
+        <item name="A2">التفاعلات بين المواد الكيميائية في الغذاء</item>
+        <item name="A3">أفضل الأطعمة التي يمكن تقديمها في المطعم</item>
+        <item name="A4">المواد الكيميائية المستخدمة لزيادة نمو المحاصيل.</item>
+        <item name="CA5">التفاعلات بين المواد الكيميائية في الغذاء</item>
 
 
     </string-array>
     <string-array name="C4Quiz_Q11">
 
-        <item name="Q5">What is NOT TRUE about DNA?</item>
-        <item name="A1">it doesn\'t help solve a crime</item>
-        <item name="A2">it\'s a large molecule.</item>
-        <item name="A3">it is unique to each individual</item>
-        <item name="A4">forensic chemistry can help identify it</item>
-        <item name="CA5">it doesn\'t help solve a crimes</item>
-
-
-    </string-array>
-    <string-array name="C4Quiz_Q12">
-
-        <item name="Q5">Which of the following are the smallest building blocks of matter?</item>
-        <item name="A1">Molecules.</item>
-        <item name="A2">Atoms</item>
-        <item name="A3">Polymers</item>
-        <item name="A4">Monomers</item>
-        <item name="CA5">Atoms</item>
-
-
-    </string-array>
-    <string-array name="C4Quiz_Q13">
-
-        <item name="Q5">What makes polymers different from other molecules?</item>
-        <item name="A1">Polymers are made only of carbon..</item>
-        <item name="A2">Polymers are extremely small.</item>
-        <item name="A3">Polymers are made of repeating units called monomers.</item>
-        <item name="A4">Polymers are only man-made.</item>
-        <item name="CA5">Polymers are made of repeating units called monomers.</item>
-
-
-    </string-array>
-    <string-array name="C4Quiz_Q14">
-
-        <item name="Q5">Each atom that makes up a molecule is from a specific type of _____.</item>
-        <item name="A1">Polymer</item>
-        <item name="A2">Monomer.</item>
-        <item name="A3">carbon chain.</item>
-        <item name="A4">element.</item>
-        <item name="CA5">Polymer</item>
-
-
-    </string-array>
-    <string-array name="C4Quiz_Q15">
-
-        <item name="Q5">What is forensic chemistry?</item>
-        <item name="A1">collecting evidence in a crime</item>
-        <item name="A2">testifying about evidence in a crime.</item>
-        <item name="A3">using chemistry to analyze evidence in a crime</item>
-        <item name="A4">reporting a crime</item>
-        <item name="CA5">using chemistry to analyze evidence in a crime</item>
+        <item name="Q5">ما هو غير صحيح في الحمض النووي؟</item>
+        <item name="A1">لا يساعد على حل الجريمة</item>
+        <item name="A2">إنه جزيء كبير.</item>
+        <item name="A3">إنه فريد لكل فرد</item>
+        <item name="A4">يمكن أن تساعد كيمياء الطب الشرعي في التعرف عليها</item>
+        <item name="CA5">لا يساعد على حل الجرائم</item>
 
 
     </string-array>

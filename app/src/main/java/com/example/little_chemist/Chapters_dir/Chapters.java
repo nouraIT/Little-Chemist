@@ -60,6 +60,7 @@ public class Chapters extends AppCompatActivity {
         String name = pref.getString("username", null); // getting String
         student = helper.getStudent(name);
 
+
         Context con = Chapters.this;
 
         layoutInflater = (LayoutInflater) con.getSystemService(Chapters.LAYOUT_INFLATER_SERVICE);
