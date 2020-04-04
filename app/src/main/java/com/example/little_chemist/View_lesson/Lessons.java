@@ -38,20 +38,33 @@ public class Lessons extends AppCompatActivity {
     private TextView[] mDotsText ;
     private slideAdapter slideAdapter ;
     private TextView lessonName ;
-    private Button nextBtn,preBtn,exercise ;
+    private Button nextBtn,preBtn ;
 
     private String name;
     private int lessonkey ,mCurrent, lessonId;
 
-    LayoutInflater layoutInflater;
     private DatabaseHelper helper ;
     private Bundle bundle ;
     private Student student;
-    private int NumDots ;
-    private String IDEx ;
-    private SharedPreferences pref;
 
     public int segmentId =0 ;
+
+    @Override
+    public void onBackPressed() {
+        Intent n = new Intent(Lessons.this, Chapters.class);;
+        if(Integer.toString(lessonkey).charAt(0)=='1')
+            n = new Intent(Lessons.this, Ch1.class);
+        if(Integer.toString(lessonkey).charAt(0)=='2')
+            n = new Intent(Lessons.this, Ch2.class);
+        if(Integer.toString(lessonkey).charAt(0)=='3')
+            n = new Intent(Lessons.this, Ch3.class);
+        if(Integer.toString(lessonkey).charAt(0)=='4')
+            n = new Intent(Lessons.this, Ch4.class);
+        if(Integer.toString(lessonkey).charAt(0)=='5')
+            n = new Intent(Lessons.this, Ch5.class);
+        startActivity(n);
+        finish();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,11 +84,11 @@ public class Lessons extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
-        Context con = Lessons.this;
+//        Context con = Lessons.this;
         ConstraintLayout lessonlayout = findViewById(R.id.lessonlayout);
 
-        layoutInflater = (LayoutInflater) con.getSystemService(Chapters.LAYOUT_INFLATER_SERVICE) ;
-        View view = layoutInflater.inflate(R.layout.chapters_slider,null,false) ;
+//        layoutInflater = (LayoutInflater) con.getSystemService(Chapters.LAYOUT_INFLATER_SERVICE) ;
+//        View view = layoutInflater.inflate(R.layout.chapters_slider,null,false) ;
 
 //        exercise = view.findViewById(R.id.ex) ;
         mSlidsView =  findViewById(R.id.slidePage) ;
@@ -154,8 +167,6 @@ public class Lessons extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 mSlidsView.setCurrentItem(mCurrent+1);
-
-
             }
         });
 
@@ -163,9 +174,7 @@ public class Lessons extends AppCompatActivity {
         preBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 mSlidsView.setCurrentItem(mCurrent-1);
-
             }
         });
 
@@ -192,7 +201,7 @@ public class Lessons extends AppCompatActivity {
                     if(Integer.toString(lessonkey).charAt(0)=='5')
                         n = new Intent(Lessons.this, Ch5.class);
                     lessonId=bundle.getInt("lessonId") ;
-                    if(slideAdapter.getCountEx()==checkEx(lessonkey)) {
+                    if(slideAdapter.getCountEx()==checkEx(lessonkey) && !student.getLsnLock(String.valueOf(lessonId)).equals("completed")) {
                         // get the ex by chapter and lesson and comapare if the number of ex is the same that in db the update the lesson
                         helper.updateLesson(name, lessonId, "completed");
                     }
@@ -202,6 +211,7 @@ public class Lessons extends AppCompatActivity {
         }
 
     }
+
 
 
 
@@ -264,12 +274,9 @@ public class Lessons extends AppCompatActivity {
                         if(Integer.toString(lessonkey).charAt(0)=='5')
                             n = new Intent(Lessons.this, Ch5.class);
                         lessonId=bundle.getInt("lessonId") ;
-//                        System.out.println("Ex string is "+student.GetExLocks());
-                        if(slideAdapter.getCountEx()==checkEx(lessonkey)) {
+
+                        if(slideAdapter.getCountEx()==checkEx(lessonkey) && !student.getLsnLock(String.valueOf(lessonId)).equals("completed")) {
                             // get the ex by chapter and lesson and comapare if the number of ex is the same that in db the update the lesson
-//                            System.out.println("I'm updating the lesson");
-//                            System.out.println("I'm updating the lesson");
-//                            System.out.println("Ex string is "+student.GetExLocks());
                             helper.updateLesson(name, lessonId, "completed");
                         }
                         startActivity(n);

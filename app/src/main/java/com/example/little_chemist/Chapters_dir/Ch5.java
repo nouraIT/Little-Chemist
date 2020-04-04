@@ -29,8 +29,14 @@ public class Ch5 extends AppCompatActivity {
     SharedPreferences pref;
     DatabaseHelper helper = new DatabaseHelper(Ch5.this);
     String statue;
-    ImageView lockpad;
 
+    @Override
+    public void onBackPressed() {
+        Intent n = new Intent(Ch5.this, Chapters.class);
+        n.putExtra("segmentId",4) ;
+        startActivity(n);
+        finish();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +61,8 @@ public class Ch5 extends AppCompatActivity {
                 Intent n = new Intent(Ch5.this, Chapters.class);
                 n.putExtra("segmentId",4) ;
                 startActivity(n);
+                finish();
+
             }
         });
 
@@ -124,11 +132,10 @@ public class Ch5 extends AppCompatActivity {
                         n.putExtra("lesson",51);
                         n.putExtra("lessonId",21);
                         startActivity(n);
-
+                        finish();
                     }
                 });
                 thread.start();
-//                finish();
             }
         });
 
@@ -156,6 +163,7 @@ public class Ch5 extends AppCompatActivity {
                                             n.putExtra("lesson",52);
                                             n.putExtra("lessonId",22) ;
                                             startActivity(n);
+                                            finish();
                                         }
                                     });
                                     thread.start();
@@ -190,6 +198,8 @@ public class Ch5 extends AppCompatActivity {
                                             n.putExtra("lesson",53);
                                             n.putExtra("lessonId",23) ;
                                             startActivity(n);
+                                            finish();
+
                                         }
                                     });
                                     thread.start();
@@ -224,6 +234,8 @@ public class Ch5 extends AppCompatActivity {
                                             n.putExtra("lesson",54);
                                             n.putExtra("lessonId",24) ;
                                             startActivity(n);
+                                            finish();
+
                                         }
                                     });
                                     thread.start();
@@ -258,6 +270,8 @@ public class Ch5 extends AppCompatActivity {
                                             n.putExtra("lesson",55);
                                             n.putExtra("lessonId",25) ;
                                             startActivity(n);
+                                            finish();
+
                                         }
                                     });
                                     thread.start();
@@ -276,6 +290,8 @@ public class Ch5 extends AppCompatActivity {
                     Intent n = new Intent(Ch5.this, quizQ.class);
                     n.putExtra("ChapterNumber",5);
                     startActivity(n);
+                    finish();
+
                 }
                 else
                     Toast.makeText(getApplicationContext(), "Locked", Toast.LENGTH_LONG).show();

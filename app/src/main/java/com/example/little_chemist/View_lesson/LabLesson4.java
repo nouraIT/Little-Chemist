@@ -54,35 +54,31 @@ public class LabLesson4 extends AppCompatActivity {
     private PointerDrawable pointer = new PointerDrawable();
     private boolean isTracking;
     private boolean isHitting;
-    private boolean appeared = false;
-    private Button button;
-    private String string;
-    private ModelRenderable andyRenderable;
-    private ModelRenderable mObjRenderable;
     private int i=0;
 
     //for net movement along x-axis
     public float x = 0;
     public float y = 0;
     private ModelLoader modelLoader;
-    private RelativeLayout myLayout = null;
-    //Screen Size
-    private int screenWidth;
-    private int screenHeight;
-    //Position
-    private float ballDownY;
-    private float ballDownX;
-
-    //Images
-    private ImageView net = null;
-    private ImageView ball = null;
-    //score
-    private TextView score = null;
-    //points
-    private int points = 0;
+//    //Screen Size
+//    private int screenWidth;
+//    private int screenHeight;
+//    //Position
+//    private float ballDownY;
+//    private float ballDownX;
+//
+//    //Images
+//    private ImageView net = null;
+//    private ImageView ball = null;
+//    //score
+//    private TextView score = null;
+//    //points
+//    private int points = 0;
     private SharedPreferences pref;
     private  Bundle bundle ;
     private DatabaseHelper helper = new DatabaseHelper(this);
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -109,7 +105,8 @@ public class LabLesson4 extends AppCompatActivity {
                 String name = pref.getString("username", null); // getting String
                 Student student = helper.getStudent(name);
                 int Lid=bundle.getInt("lessonId") ;
-                helper.updateLesson(name,Lid,"completed");
+                if(!student.getLsnLock(String.valueOf(Lid)).equals("completed"))
+                    helper.updateLesson(name,Lid,"completed");
                 Intent h = new Intent(LabLesson4.this, Ch3.class);
                 startActivity(h);
                 finish();

@@ -1,9 +1,8 @@
 package com.example.little_chemist.View_lesson;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,32 +11,22 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewpager.widget.PagerAdapter;
 
-import com.example.little_chemist.DatabaseHelper;
 import com.example.little_chemist.R;
-import com.example.little_chemist.Tables.Student;
-
-import java.util.Arrays;
 
 public class slideAdapter extends PagerAdapter {
 
     Context context ;
     LayoutInflater layoutInflater ;
     String lessonKey ;
-    char chapterNum ;
-    char lessonNum ;
+    char chapterNum,lessonNum ;
     Button slideEx ;
-    String[] cleanContent ;
-    String[] cleanEx ;
-    String[] cleanImg;
-    int countCountent =0 ;
-    int countEx =0 ;
-     Animation btnAmim ;
+    String[] cleanContent,cleanEx,cleanImg;
+    int countCountent =0,countEx =0 ;
+    Animation btnAmim ;
     String tempEx ;
     Intent[] AcEx ;
     Button[] BtnEx ;
@@ -218,8 +207,10 @@ public class slideAdapter extends PagerAdapter {
                         @Override
                         public void onClick(View v) {
                             view.getContext().startActivity(n);
+                            ((Activity) view.getContext()).finish();
 
                         }
+
                     });
 
                 }
@@ -235,6 +226,7 @@ public class slideAdapter extends PagerAdapter {
                         @Override
                         public void onClick(View v) {
                             view.getContext().startActivity(n);
+                            ((Activity) view.getContext()).finish();
 
                         }
                     });
@@ -243,6 +235,7 @@ public class slideAdapter extends PagerAdapter {
                 else {
                     tempEx = ex[i];
                     AcEx[indexEx] = new Intent(view.getContext(), ex_multiple_choice.class);
+
                     AcEx[indexEx].putExtra("exKey", tempEx);
                     AcEx[indexEx].putExtra("exNum", getNumEx(tempEx));
                     AcEx[indexEx].putExtra("lessonid", lessonid);
@@ -252,7 +245,7 @@ public class slideAdapter extends PagerAdapter {
                         @Override
                         public void onClick(View v) {
                             view.getContext().startActivity(n);
-
+                            ((Activity) view.getContext()).finish();
                         }
                     });
 

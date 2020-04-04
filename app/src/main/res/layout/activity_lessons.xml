@@ -43,7 +43,7 @@
     <com.duolingo.open.rtlviewpager.RtlViewPager
         android:id="@+id/slidePage"
         android:layout_width="413dp"
-        android:layout_height="484dp"
+        android:layout_height="550dp"
         android:layout_marginBottom="76dp"
         android:elevation="10dp"
         app:layout_constraintBottom_toBottomOf="parent"

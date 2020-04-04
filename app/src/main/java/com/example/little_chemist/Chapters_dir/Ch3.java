@@ -28,7 +28,14 @@ public class Ch3 extends AppCompatActivity {
     SharedPreferences pref;
     DatabaseHelper helper = new DatabaseHelper(Ch3.this);
     String statue;
-    ImageView lockpad;
+
+    @Override
+    public void onBackPressed() {
+        Intent n = new Intent(Ch3.this, Chapters.class);
+        n.putExtra("segmentId",2) ;
+        startActivity(n);
+        finish();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +61,8 @@ public class Ch3 extends AppCompatActivity {
                 Intent n = new Intent(Ch3.this, Chapters.class);
                 n.putExtra("segmentId",2) ;
                 startActivity(n);
+                finish();
+
             }
         });
 
@@ -118,7 +127,7 @@ public class Ch3 extends AppCompatActivity {
                 n.putExtra("lessonId",11) ;
 
                 startActivity(n);
-              //  finish();
+                finish();
             }
         });
 
@@ -133,7 +142,7 @@ public class Ch3 extends AppCompatActivity {
                     n.putExtra("lessonId",12) ;
 
                     startActivity(n);
-              //  finish();
+                finish();
                 } else{
 
                     Toast.makeText(getApplicationContext(), "Locked", Toast.LENGTH_LONG).show();
@@ -155,6 +164,8 @@ public class Ch3 extends AppCompatActivity {
                             n.putExtra("lesson", 33);
                             n.putExtra("lessonId",13);
                             startActivity(n);
+                            finish();
+
                         }
                     });
                     thread.start();
@@ -176,6 +187,8 @@ public class Ch3 extends AppCompatActivity {
                             n.putExtra("lesson", 34);
                             n.putExtra("lessonId",14) ;
                             startActivity(n);
+                            finish();
+
                         }
                     });
                     thread.start();
@@ -194,6 +207,8 @@ public class Ch3 extends AppCompatActivity {
                     n.putExtra("lesson", 35);
                     n.putExtra("lessonId",15) ;
                     startActivity(n);
+                    finish();
+
                 }else
                     Toast.makeText(getApplicationContext(), "Locked", Toast.LENGTH_LONG).show();
             }
@@ -207,6 +222,8 @@ public class Ch3 extends AppCompatActivity {
                     Intent n = new Intent(Ch3.this, quizQ.class);
                     n.putExtra("ChapterNumber",3);
                     startActivity(n);
+                    finish();
+
                 }
                 else
                     Toast.makeText(getApplicationContext(), "Locked", Toast.LENGTH_LONG).show();

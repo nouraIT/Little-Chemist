@@ -28,6 +28,14 @@ public class Ch2 extends AppCompatActivity {
     String statue;
 
     @Override
+    public void onBackPressed() {
+        Intent n = new Intent(Ch2.this, Chapters.class);
+        n.putExtra("segmentId",1) ;
+        startActivity(n);
+        finish();
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
@@ -52,6 +60,8 @@ public class Ch2 extends AppCompatActivity {
                 Intent n = new Intent(Ch2.this, Chapters.class);
                 n.putExtra("segmentId",1) ;
                 startActivity(n);
+                finish();
+
             }
         });
 
@@ -120,7 +130,7 @@ public class Ch2 extends AppCompatActivity {
                 n.putExtra("lessonId",6) ;
 
                 startActivity(n);
-              //  finish();
+                finish();
             }
         });
 
@@ -138,11 +148,11 @@ public class Ch2 extends AppCompatActivity {
                             n.putExtra("lessonId",7) ;
 
                             startActivity(n);
+                            finish();
+
                         }
                     });
                     thread.start();
-                    //  finish();
-
 
                 } else{
 
@@ -162,7 +172,7 @@ public class Ch2 extends AppCompatActivity {
                     n.putExtra("lessonId",8) ;
 
                     startActivity(n);
-                    //  finish();
+                    finish();
 
 
                 } else{
@@ -183,7 +193,7 @@ public class Ch2 extends AppCompatActivity {
                     n.putExtra("lessonId",9) ;
 
                     startActivity(n);
-                    //  finish();
+                    finish();
 
 
                 } else{
@@ -204,7 +214,7 @@ public class Ch2 extends AppCompatActivity {
                     n.putExtra("lessonId",10) ;
 
                     startActivity(n);
-                    //  finish();
+                    finish();
 
 
                 } else{
@@ -223,6 +233,8 @@ public class Ch2 extends AppCompatActivity {
                     Intent n = new Intent(Ch2.this, quizQ.class);
                     n.putExtra("ChapterNumber",2);
                     startActivity(n);
+                    finish();
+
                 }
                 else
                     Toast.makeText(getApplicationContext(), "Locked", Toast.LENGTH_LONG).show();

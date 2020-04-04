@@ -22,6 +22,14 @@ public class character_gallery extends AppCompatActivity {
     SharedPreferences pref;
     SharedPreferences.Editor editor ;
 
+    @Override
+    public void onBackPressed() {
+        Intent n = new Intent(character_gallery.this, Settings.class);
+        n.putExtra("name","img");
+        startActivity(n);
+        finish();
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +52,7 @@ public class character_gallery extends AppCompatActivity {
                         Intent n = new Intent(character_gallery.this, Settings.class);
                         n.putExtra("name","img");
                         startActivity(n);
+                        finish();
                     }
                 });
                 thread.start();

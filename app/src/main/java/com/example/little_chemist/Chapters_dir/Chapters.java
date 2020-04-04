@@ -37,7 +37,7 @@ public class Chapters extends AppCompatActivity {
     ConstraintLayout cl;
     private  Bundle bundle ;
     TextView chaptertxt ;
-    public int segmentId=0 ,mCurrent =0;
+    public int chapterIndicator =0 ,mCurrent =0;
 
     private TextView[] mDotsText ;
     private chaptersAdapter adapter ;
@@ -72,21 +72,19 @@ public class Chapters extends AppCompatActivity {
         mDots = findViewById(R.id.dots);
         mCardShower = findViewById(R.id.cardShower);
 
-
-
         TextView chNum = view.findViewById(R.id.chNum);
         ImageView charcter = view.findViewById(R.id.chapterDrawing);
 
 
         //=============================================
         bundle=getIntent().getExtras();
-        segmentId=bundle.getInt("segmentId") ;
+        chapterIndicator =bundle.getInt("segmentId") ;
         adapter = new chaptersAdapter(this);
         mSlidsView.setAdapter(adapter);
         //mCurrent = segmentId ;
-        addDotsIndicator(segmentId);
-        mSlidsView.setCurrentItem(segmentId);
-        switch(segmentId){
+        addDotsIndicator(chapterIndicator);
+        mSlidsView.setCurrentItem(chapterIndicator);
+        switch(chapterIndicator){
             case 0:
                 card00.setId(R.id.cardviewch1);
                 break;
@@ -104,7 +102,7 @@ public class Chapters extends AppCompatActivity {
                 break;
         }
 
-        ConstraintLayout cl1 = findViewById(R.id.ConstraintLayout);
+//        ConstraintLayout cl1 = findViewById(R.id.ConstraintLayout);
 
 
 //        if(student.GetLang() == 1) {
@@ -133,9 +131,6 @@ public class Chapters extends AppCompatActivity {
     }//on create
 
 
-
-
-
     ViewPager.OnPageChangeListener viewListener = new ViewPager.OnPageChangeListener(){
 
         @Override
@@ -150,8 +145,9 @@ public class Chapters extends AppCompatActivity {
 
 
             addDotsIndicator(position);
-            //if(mCurrent==0)
-            mCurrent = position ;
+//            if(mCurrent==0)
+                mCurrent = position ;
+
             switch(mCurrent){
                 case 0:
                     card00.setId(R.id.cardviewch1);

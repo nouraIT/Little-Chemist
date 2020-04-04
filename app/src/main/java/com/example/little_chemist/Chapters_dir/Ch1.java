@@ -31,6 +31,14 @@ public class Ch1 extends AppCompatActivity {
     String statue;
 
     @Override
+    public void onBackPressed() {
+        Intent n = new Intent(Ch1.this, Chapters.class);
+        n.putExtra("segmentId",0) ;
+        startActivity(n);
+        finish();
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -53,6 +61,7 @@ public class Ch1 extends AppCompatActivity {
                 Intent n = new Intent(Ch1.this, Chapters.class);
                 n.putExtra("segmentId",0) ;
                 startActivity(n);
+                finish();
             }
         });
 
@@ -112,7 +121,7 @@ public class Ch1 extends AppCompatActivity {
                 n.putExtra("lesson",11);
                 n.putExtra("lessonId",1) ;
                 startActivity(n);
-//                finish();
+                finish();
             }
         });
 
@@ -139,6 +148,8 @@ public class Ch1 extends AppCompatActivity {
                                             n.putExtra("lesson",12);
                                             n.putExtra("lessonId",2) ;
                                             startActivity(n);
+                                            finish();
+
                                         }
                                     });
                                     thread.start();
@@ -162,7 +173,7 @@ public class Ch1 extends AppCompatActivity {
                     n.putExtra("lesson", 13);
                     n.putExtra("lessonId",3) ;
                     startActivity(n);
-                    // finish();
+                     finish();
                 }else
                     Toast.makeText(getApplicationContext(), "Locked", Toast.LENGTH_LONG).show();
 
@@ -178,6 +189,8 @@ public class Ch1 extends AppCompatActivity {
                     n.putExtra("lesson", 14);
                     n.putExtra("lessonId",4) ;
                     startActivity(n);
+                    finish();
+
                 }else
                     Toast.makeText(getApplicationContext(), "Locked", Toast.LENGTH_LONG).show();
 
@@ -193,6 +206,8 @@ public class Ch1 extends AppCompatActivity {
                     n.putExtra("lesson", 15);
                     n.putExtra("lessonId",5) ;
                     startActivity(n);
+                    finish();
+
                 }else
                     Toast.makeText(getApplicationContext(), "Locked", Toast.LENGTH_LONG).show();
 
@@ -206,6 +221,8 @@ public class Ch1 extends AppCompatActivity {
                     Intent n = new Intent(Ch1.this, quizQ.class);
                     n.putExtra("ChapterNumber", 1);
                     startActivity(n);
+                    finish();
+
                 }
                 else
                     Toast.makeText(getApplicationContext(), "Locked", Toast.LENGTH_LONG).show();

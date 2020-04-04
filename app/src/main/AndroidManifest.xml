@@ -57,7 +57,8 @@
             android:screenOrientation="locked"/>
         <activity
             android:name=".LoginPage"
-            android:label="@string/title_activity_login" />
+            android:label="@string/title_activity_login"
+            android:screenOrientation="locked"/>
         <activity android:name=".Chapters_dir.chaptersAdapter"
             android:screenOrientation="locked"/>
         <activity android:name=".Chapters_dir.Chapters"
@@ -78,6 +79,7 @@
             android:screenOrientation="locked"/>
         <activity
             android:name=".SignUp"
+            android:screenOrientation="locked"
             android:label="@string/sign_up" />
         <activity
             android:name=".MainActivity"

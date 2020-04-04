@@ -8,14 +8,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.provider.BaseColumns;
 
 
-import com.example.little_chemist.Tables.Chapter;
-import com.example.little_chemist.Tables.Lesson;
 import com.example.little_chemist.Tables.Quiz;
 import com.example.little_chemist.Tables.Student;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
-
-import java.sql.SQLException;
 
 
 public class DatabaseHelper extends SQLiteOpenHelper {
@@ -533,6 +527,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
+
+    // ========================== update locks ==========================
     public void updateLesson(String username, int Lid, String status) {
 
         String Username;
@@ -569,9 +565,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             for (int i=0;i<25;i++){
                 if(i+1 == Lid) {
                     oldStatus += (i + 1) + ":" + status + ",";
-                    if(i!=24 && status.equals("completed")) {
 //                        System.out.println("i'm not supposed to be here, help ");
                         lsnNum = String.valueOf(Integer.parseInt(lsnNum) + 1);
+                    if(i!=24 && status.equals("completed")) { //TODO it reset when re doing it
                         i++;
                         oldStatus += (i + 1) + ":unlocked,";
                     }
@@ -602,7 +598,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
     public void updateQuiz(String username,int Qid,String status) {
-//        System.out.println(!alreadyTested[Qid-1]);
+        System.out.println(alreadyTested[Qid-1]);
         if(alreadyTested[Qid-1])
             return;
 
@@ -640,7 +636,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 if(i+1 == Qid) {
                     oldStatus += (i + 1) + ":" + status + ",";
 //                    if(Qid!=5) {
-//                        qzNum = String.valueOf(Integer.parseInt(qzNum) + 1);
+                    qzNum = String.valueOf(Integer.parseInt(qzNum) + 1);
 //                        i++;
 //                        oldStatus += (i + 1) + ":unlocked,";
 //                    }

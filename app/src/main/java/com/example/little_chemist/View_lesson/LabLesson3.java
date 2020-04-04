@@ -27,22 +27,14 @@ import com.google.ar.sceneform.rendering.ModelRenderable;
 import android.view.View;
 
 public class LabLesson3 extends AppCompatActivity {
-    int count=0;
+
     private ARfragment4 arFragment;
     private TextView textView;
-    private ModelAnimator modelAnimator;
-    private PointerDrawable pointer = new PointerDrawable();
-    private boolean isTracking;
-    private boolean isHitting;
-    private boolean appeared = false;
-    private Button button;
-    private String string;
-    private ModelRenderable andyRenderable;
-    private ModelRenderable mObjRenderable;
-    private int i=0;
     private SharedPreferences pref;
     private  Bundle bundle ;
     private DatabaseHelper helper = new DatabaseHelper(this);
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,7 +61,8 @@ public class LabLesson3 extends AppCompatActivity {
                 String name = pref.getString("username", null); // getting String
                 Student student = helper.getStudent(name);
                 int Lid=bundle.getInt("lessonId") ;
-                helper.updateLesson(name,Lid,"completed");
+                if(!student.getLsnLock(String.valueOf(Lid)).equals("completed"))
+                    helper.updateLesson(name,Lid,"completed");
                 Intent h = new Intent(LabLesson3.this, Ch4.class);
                 startActivity(h);
                 finish();
