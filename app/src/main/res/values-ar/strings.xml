@@ -38,6 +38,7 @@
     <string name="recover_password">تغيير كلمه المرور</string>
 
     <string name="new_password">كلمه المرور الجديده</string>
+    <string name="login">تسجيل الدخول</string>
     <string name="nullSecQuestion">لم تختر سؤلا</string>
     <string name="nullSecAnswer">لا يمكن ان يكون حقل الاجابه فارغا</string>
     <string name="shortAnswer">يجب ان تتكون الاجابه من 3 احرف على الاقل</string>
@@ -159,5 +160,12 @@
     <string name="Rightanswer">الاجابة الصحيحة:</string>
     <string name="tap_call7">انقر لاستدعاء شكل المادة! بعد ظهور النقاط البيضاء</string>
     <string name="C1L3S4E2M">احسب كتلة الهيليوم</string>
+    <string name="instruction1">اهلا بك في الكيميائي الصغير!</string>
+    <string name="instruction2">هنا بعض النصائح لتساعدك على البدء</string>
+    <string name="instruction3">عندما يكون لون الدرس <font color='#FFFF00'>اصفر</font>, يعني انه مفتوح لكن غير مكتمل </string>
+    <!--    <string name="instruction3"><![CDATA[When a lesson is <font color=\'#cc0029\'>YELLOW</font> , it means its unlocked but not completed ]]></string>-->
+    <string name="instruction4">عندما يكون لون الدرس <font color='#32CD32'>اخضر</font>, يعني انه مكتمل </string>
+    <string name="instruction5">عندما يكون لون الدرس<font color='#696969'>رمادي</font>, يعني انه مغلق  </string>
+    <string name="booklet">انتقل إلى الإعدادات لتنزيل الكتيب</string>
 
 </resources>

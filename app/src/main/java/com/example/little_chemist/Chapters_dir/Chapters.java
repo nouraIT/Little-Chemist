@@ -1,12 +1,15 @@
 package com.example.little_chemist.Chapters_dir;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.text.HtmlCompat;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
@@ -46,7 +49,7 @@ public class Chapters extends AppCompatActivity {
     DatabaseHelper helper = new DatabaseHelper(Chapters.this);
     String statue;
     Student student;
-
+    public static boolean alreadyRecreated = false , AlreadyGreeted = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +58,32 @@ public class Chapters extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         setContentView(R.layout.activity_chapters);
+//////////////////////////////////////////////////////////////////////
+if(!AlreadyGreeted){
+    AlreadyGreeted = true;
+        String s1, s2, s3, s4,s5;
+        s1 = getString(R.string.instruction1);
+        s2 = getString(R.string.instruction2);
+        s3 = getString(R.string.instruction3);
+        s4 = getString(R.string.instruction4);
+        s5 = getString(R.string.instruction5);
 
+        AlertDialog alertDialog = new AlertDialog.Builder(Chapters.this).create();
+        alertDialog.setTitle(getText(R.string.welcome));
+        alertDialog.setMessage( "\n"  +s1 + "\n"  + "\n" + s2 + "\n" + "\n" + s3+ "\n"  + "\n"+s4+ "\n"  + "\n"+ s5);
+        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, getText(R.string.ok),
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+
+
+                    }
+                });
+        alertDialog.show();
+
+    }
+
+ /////////////////////////////////////////////////////////////////////
         pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
         String name = pref.getString("username", null); // getting String
         student = helper.getStudent(name);

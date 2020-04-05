@@ -1,8 +1,10 @@
 package com.example.little_chemist;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
@@ -15,6 +17,8 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.example.little_chemist.AR.ARCards;
+import com.example.little_chemist.Chapters_dir.Ch5;
 import com.example.little_chemist.Chapters_dir.Chapters;
 import com.example.little_chemist.Tables.Student;
 
@@ -67,6 +71,7 @@ public class Home extends AppCompatActivity {
             String welcome = getString(R.string.welcome) + " " + name;
             Toast.makeText(getApplicationContext(), welcome, Toast.LENGTH_LONG).show();
             AlreadyGreeted = true;
+
         }
         //check the lang
         arabicFlag = helper.checkLang(name);

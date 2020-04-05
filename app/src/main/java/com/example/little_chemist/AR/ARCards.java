@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.example.little_chemist.Chapters_dir.Ch1;
 import com.example.little_chemist.Chapters_dir.Ch5;
+import com.example.little_chemist.Chapters_dir.Chapters;
 import com.example.little_chemist.DatabaseHelper;
 import com.example.little_chemist.R;
 import com.example.little_chemist.Tables.Student;
@@ -106,7 +107,13 @@ public class ARCards extends AppCompatActivity {
         });
     }
 
-
+    @Override
+    public void onBackPressed() {
+        Intent n = new Intent(ARCards.this, Chapters.class);
+        n.putExtra("segmentId",0) ;
+        startActivity(n);
+        finish();
+    }
     private void onUpdate(FrameTime frameTime) {
 // First call the image database
         Frame frame = arFragment.getArSceneView().getArFrame();
