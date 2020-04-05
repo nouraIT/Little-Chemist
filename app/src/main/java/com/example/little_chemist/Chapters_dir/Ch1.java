@@ -128,12 +128,12 @@ public class Ch1 extends AppCompatActivity {
         lsn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                //Get student progress
                 statue = student.getLsnLock("2");
-//                String s1;
-//                s1= getString(R.string.prepare2);
 
+                //Check lesson status
                 if (statue.equals("unlocked") || statue.equals("completed") ) {
+                    //Message to student
                     AlertDialog alertDialog = new AlertDialog.Builder(Ch1.this).create();
                     alertDialog.setTitle(getText(R.string.cards));
                     alertDialog.setMessage(getString(R.string.prepare2));
@@ -147,6 +147,7 @@ public class Ch1 extends AppCompatActivity {
                                             Intent n = new Intent(Ch1.this, ARCards.class);
                                             n.putExtra("lesson",12);
                                             n.putExtra("lessonId",2) ;
+                                            //Start lesson
                                             startActivity(n);
                                             finish();
 
