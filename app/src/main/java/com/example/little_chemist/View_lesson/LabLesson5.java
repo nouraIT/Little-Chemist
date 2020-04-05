@@ -65,8 +65,8 @@ private static int n=0;
     private RelativeLayout myLayout = null;
 
     //Screen Size
-    private int screenWidth;
-    private int screenHeight;
+    int screenWidth;
+    int screenHeight;
     //Position
     private float ballDownY;
     private float ballDownX;

@@ -8,7 +8,6 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.provider.BaseColumns;
 
 
-import com.example.little_chemist.Tables.Quiz;
 import com.example.little_chemist.Tables.Student;
 
 
@@ -53,10 +52,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         //-----------------------------------------------
 
-        private static final String TABLE_QUIZ = "Quiz" ;//quizIC quizName LockQuiz
-        private static final String COLUMN_QUIZID = "quizID";
-        private static final String COLUMN_QUIZNAME = "quizName";
-        private static final String COLUMN_LOCKQUIZ = "LockQuiz";
+//        private static final String TABLE_QUIZ = "Quiz" ;//quizIC quizName LockQuiz
+//        private static final String COLUMN_QUIZID = "quizID";
+//        private static final String COLUMN_QUIZNAME = "quizName";
+//        private static final String COLUMN_LOCKQUIZ = "LockQuiz";
 
 
 
@@ -101,11 +100,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 //                    FeedEntry.COLUMN_CONTENT + " TEXT,"+
 //                    FeedEntry.COLUMN_CH + " INTEGER, FOREIGN KEY ("+FeedEntry.COLUMN_CH+") REFERENCES "+FeedEntry.TABLE_CHAPTER+"("+FeedEntry.COLUMN_CHID+"))";
 
-    private static final String SQL_CREATE_QUIZ=
-            "CREATE TABLE "+FeedEntry.TABLE_QUIZ +" ("+
-                    FeedEntry.COLUMN_QUIZID + "  INTEGER PRIMARY KEY," +
-                    FeedEntry.COLUMN_QUIZNAME + " TEXT," +
-                    FeedEntry.COLUMN_LOCKQUIZ + " TEXT)" ;
+//    private static final String SQL_CREATE_QUIZ=
+//            "CREATE TABLE "+FeedEntry.TABLE_QUIZ +" ("+
+//                    FeedEntry.COLUMN_QUIZID + "  INTEGER PRIMARY KEY," +
+//                    FeedEntry.COLUMN_QUIZNAME + " TEXT," +
+//                    FeedEntry.COLUMN_LOCKQUIZ + " TEXT)" ;
 
 
     private static final String SQL_DELETE_ENTRIES =
@@ -123,7 +122,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(SQL_CREATE_STUDENT);
 //        db.execSQL(SQL_CREATE_CHAPTER);
 //        db.execSQL(SQL_CREATE_LESSON);
-        db.execSQL(SQL_CREATE_QUIZ);
+//        db.execSQL(SQL_CREATE_QUIZ);
         //db.close();
 
     }
@@ -236,22 +235,22 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 //        db.close();
 //    }
 
-    public void InsertQuizzes(Quiz quiz){
-
-        db=getWritableDatabase();
-        //To get , how many column in ur table
-        String query="SELECT * FROM "+FeedEntry.TABLE_QUIZ;
-        Cursor cursor=db.rawQuery(query,null);
-        int count=cursor.getCount();
-
-        ContentValues contentvalues=new ContentValues();
-        contentvalues.put(FeedEntry.COLUMN_QUIZID,count+1);
-        contentvalues.put(FeedEntry.COLUMN_QUIZNAME, quiz.GetQuizName());
-        contentvalues.put(FeedEntry.COLUMN_LOCKQUIZ, quiz.GetLockQuiz());
-
-        db.insert(FeedEntry.TABLE_QUIZ,null,contentvalues);
-        db.close();
-    }
+//    public void InsertQuizzes(Quiz quiz){
+//
+//        db=getWritableDatabase();
+//        //To get , how many column in ur table
+//        String query="SELECT * FROM "+FeedEntry.TABLE_QUIZ;
+//        Cursor cursor=db.rawQuery(query,null);
+//        int count=cursor.getCount();
+//
+//        ContentValues contentvalues=new ContentValues();
+//        contentvalues.put(FeedEntry.COLUMN_QUIZID,count+1);
+//        contentvalues.put(FeedEntry.COLUMN_QUIZNAME, quiz.GetQuizName());
+//        contentvalues.put(FeedEntry.COLUMN_LOCKQUIZ, quiz.GetLockQuiz());
+//
+//        db.insert(FeedEntry.TABLE_QUIZ,null,contentvalues);
+//        db.close();
+//    }
 
     //-------------------------- Delete ----------------------
 
@@ -529,6 +528,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
     // ========================== update locks ==========================
+
+
     public void updateLesson(String username, int Lid, String status) {
 
         String Username;
@@ -567,7 +568,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     oldStatus += (i + 1) + ":" + status + ",";
 //                        System.out.println("i'm not supposed to be here, help ");
                         lsnNum = String.valueOf(Integer.parseInt(lsnNum) + 1);
-                    if(i!=24 && status.equals("completed")) { //TODO it reset when re doing it
+                    if(i!=24 && status.equals("completed")) { 
                         i++;
                         oldStatus += (i + 1) + ":unlocked,";
                     }

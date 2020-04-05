@@ -84,13 +84,7 @@ public class Lessons extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
-//        Context con = Lessons.this;
         ConstraintLayout lessonlayout = findViewById(R.id.lessonlayout);
-
-//        layoutInflater = (LayoutInflater) con.getSystemService(Chapters.LAYOUT_INFLATER_SERVICE) ;
-//        View view = layoutInflater.inflate(R.layout.chapters_slider,null,false) ;
-
-//        exercise = view.findViewById(R.id.ex) ;
         mSlidsView =  findViewById(R.id.slidePage) ;
         mDots = findViewById(R.id.dots) ;
 
