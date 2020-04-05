@@ -136,7 +136,7 @@ public class Ch1 extends AppCompatActivity {
                     //Message to student
                     AlertDialog alertDialog = new AlertDialog.Builder(Ch1.this).create();
                     alertDialog.setTitle(getText(R.string.cards));
-                    alertDialog.setMessage(getString(R.string.prepare2));
+                    alertDialog.setMessage(getString(R.string.prepare2) + "\n" + getString(R.string.booklet));
                     alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, getText(R.string.ok),
                             new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int which) {
