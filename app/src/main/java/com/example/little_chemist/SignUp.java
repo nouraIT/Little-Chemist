@@ -241,7 +241,7 @@ public class SignUp extends AppCompatActivity {
 
                     editor.putString("username", UserNameStr); // Storing string
                     editor.putString("password", PasswordStr); // Storing string
-
+                    editor.putBoolean("RanBefore",false);
 
                     editor.apply();
 

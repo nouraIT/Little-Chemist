@@ -49,44 +49,46 @@ public class Chapters extends AppCompatActivity {
     DatabaseHelper helper = new DatabaseHelper(Chapters.this);
     String statue;
     Student student;
-    public static boolean alreadyRecreated = false , AlreadyGreeted = false;
+    //public static boolean alreadyRecreated = false , AlreadyGreeted = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
         setContentView(R.layout.activity_chapters);
-//////////////////////////////////////////////////////////////////////
-if(!AlreadyGreeted){
-    AlreadyGreeted = true;
-        String s1, s2, s3, s4,s5;
-        s1 = getString(R.string.instruction1);
-        s2 = getString(R.string.instruction2);
-        s3 = getString(R.string.instruction3);
-        s4 = getString(R.string.instruction4);
-        s5 = getString(R.string.instruction5);
 
-        AlertDialog alertDialog = new AlertDialog.Builder(Chapters.this).create();
-        alertDialog.setTitle(getText(R.string.welcome));
-        alertDialog.setMessage( "\n"  +s1 + "\n"  + "\n" + s2 + "\n" + "\n" + s3+ "\n"  + "\n"+s4+ "\n"  + "\n"+ s5);
-        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, getText(R.string.ok),
-                new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss();
-
-
-                    }
-                });
-        alertDialog.show();
-
-    }
-
- /////////////////////////////////////////////////////////////////////
         pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
         String name = pref.getString("username", null); // getting String
         student = helper.getStudent(name);
+
+        //////////////////////////////////////////////////////////////////////
+
+        if(isFirstTime()){
+//            student.AlreadyGreeted = true;
+                String s1, s2, s3, s4,s5;
+                s1 = getString(R.string.instruction1);
+                s2 = getString(R.string.instruction2);
+                s3 = getString(R.string.instruction3);
+                s4 = getString(R.string.instruction4);
+                s5 = getString(R.string.instruction5);
+
+                AlertDialog alertDialog = new AlertDialog.Builder(Chapters.this).create();
+                alertDialog.setTitle(getText(R.string.welcome));
+                alertDialog.setMessage( "\n"  +s1 + "\n"  + "\n" + s2 + "\n" + "\n" + s3+ "\n"  + "\n"+s4+ "\n"  + "\n"+ s5);
+                alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, getText(R.string.ok),
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        });
+                alertDialog.show();
+
+            }
+
+        /////////////////////////////////////////////////////////////////////
+
+
 
 
         Context con = Chapters.this;
@@ -158,13 +160,24 @@ if(!AlreadyGreeted){
 
     }//on create
 
+    private boolean isFirstTime() {
+//        SharedPreferences preferences = getPreferences(MODE_PRIVATE);
+        boolean ranBefore = pref.getBoolean("RanBefore", false);
+        if (!ranBefore) {
+            // first time
+            SharedPreferences.Editor editor = pref.edit();
+            editor.putBoolean("RanBefore", true);
+            editor.apply();
+        }
+        return !ranBefore;
+    }
+
 
     ViewPager.OnPageChangeListener viewListener = new ViewPager.OnPageChangeListener(){
 
         @Override
         public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-//            if(student.GetLang() == 1)
-//                cl.setRotationY(180);
+
 
         }
 
@@ -269,10 +282,6 @@ if(!AlreadyGreeted){
         }
     }
 
-//    public void dirc (View v){
-//
-//
-//    }
 
 }
 

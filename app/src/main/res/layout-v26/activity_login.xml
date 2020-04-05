@@ -102,10 +102,11 @@
 
                     android:inputType="textPassword"
 
+                    android:nextFocusForward="@id/login"
                     android:selectAllOnFocus="true"
+
+
                     android:textColor="@color/purple"
-
-
                     android:textSize="16sp" />
 
 

@@ -14,6 +14,7 @@ public class Student extends AppCompatActivity implements Serializable {
     String UserName,Password, QZLocks, CHLocks, LSNLocks, SecQ, SecA,ExLocks ;
     int Arabic;
     DatabaseHelper helper = new DatabaseHelper(Student.this);
+    public static boolean AlreadyGreeted = false;
 
     public Student(String name, String pass, int arabic){
         UserName = name;

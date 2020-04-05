@@ -23,12 +23,12 @@
     <string name="app_name">Little Chemist</string>
 
     <string name="welcome">Welcome </string>
-<string name="instruction1">Welcome to Little Chemist!</string>
+    <string name="instruction1">Welcome to Little Chemist!</string>
     <string name="instruction2">Here are some tips to get you started</string>
-    <string name="instruction3">When a lesson is <font color='#FFFF00'>YELLOW</font>, it means its unlocked but not completed </string>
+    <string name="instruction3">When a lesson is <font color='#FFFF00'>YELLOW</font>, it means it is unlocked but not completed </string>
 <!--    <string name="instruction3"><![CDATA[When a lesson is <font color=\'#cc0029\'>YELLOW</font> , it means its unlocked but not completed ]]></string>-->
-    <string name="instruction4">When a lesson is <font color='#32CD32'>GREEN</font>, it means its completed </string>
-    <string name="instruction5">When a lesson is <font color='#696969'>GREY</font>, it means its locked  </string>
+    <string name="instruction4">When a lesson is <font color='#32CD32'>GREEN</font>, it means it is completed </string>
+    <string name="instruction5">When a lesson is <font color='#696969'>GREY</font>, it means it is locked  </string>
     <!--   _______________ chapters  _______________-->
 
     <string name="chapter_1">Chapter 1</string>
