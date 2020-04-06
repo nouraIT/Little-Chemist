@@ -29,6 +29,9 @@
 <!--    <string name="instruction3"><![CDATA[When a lesson is <font color=\'#cc0029\'>YELLOW</font> , it means its unlocked but not completed ]]></string>-->
     <string name="instruction4">When a lesson is <font color='#32CD32'>GREEN</font>, it means it is completed </string>
     <string name="instruction5">When a lesson is <font color='#696969'>GREY</font>, it means it is locked  </string>
+
+    <string name="buttonDes1">You can click on <b>"Little Chemist"</b> to view chapters</string>
+    <string name="buttonDes2">Or for viewing a score of quiz click on the <b>wheel</b></string>
     <!--   _______________ chapters  _______________-->
 
     <string name="chapter_1">Chapter 1</string>
@@ -231,7 +234,6 @@
     <string name="C1L3S4E2M">Calculate the mass of helium</string>
     <string name="booklet">Go to the Settings to download the booklet</string>
     <!-- _______________ AR tap calls  _______________ -->
-
 
 
 </resources>

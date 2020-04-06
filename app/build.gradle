@@ -109,7 +109,13 @@ dependencies {
     implementation 'androidx.viewpager:viewpager:1.0.0'
     implementation 'com.duolingo.open:rtl-viewpager:2.0.0'
 
-    //blurry
+
+    //window pop up tooltip
+    implementation 'com.github.douglasjunior:android-simple-tooltip:0.2.3'
+    implementation 'com.github.vihtarb:tooltip:0.1.9'
+
+
+    //blurryy
 //    implementation 'jp.wasabeef:blurry:3.x.x'
 
 

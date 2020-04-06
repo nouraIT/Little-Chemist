@@ -1,10 +1,12 @@
 package com.example.little_chemist;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.text.Editable;
@@ -16,6 +18,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 
+import com.example.little_chemist.Chapters_dir.Ch1;
 import com.example.little_chemist.Tables.Student;
 import com.google.android.material.textfield.TextInputLayout;
 
@@ -245,9 +248,25 @@ public class SignUp extends AppCompatActivity {
 
                     editor.apply();
 
+                    AlertDialog alertDialog = new AlertDialog.Builder(SignUp.this).create();
+                    alertDialog.setTitle("Little Chemist");
+                    alertDialog.setMessage(getString(R.string.instruction1) + "\n" + getString(R.string.buttonDes1) + "\n" + getString(R.string.buttonDes2));
+                    alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, getText(R.string.ok),
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.dismiss();
+                                    Thread thread = new Thread(new Runnable() {
+                                        public void run() {
+
                     Intent loginIntent=new Intent(SignUp.this,Home.class);
                     startActivity(loginIntent);
                     finish();
+                                        }
+                                    });
+                                    thread.start();
+                                }
+                            });
+                    alertDialog.show();
 
                 }
 

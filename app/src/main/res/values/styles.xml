@@ -72,5 +72,11 @@
     </style>
 
 
+    <style name="Tooltip">
+        <item name="android:text">TESSSSSS</item>
+        <item name="android:textSize">16sp</item>
+        <item name="backgroundColor">#B0EF3171</item>
+        <item name="cornerRadius">10dp</item>
+    </style>
 
 </resources>

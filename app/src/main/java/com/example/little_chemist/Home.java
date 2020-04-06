@@ -10,6 +10,8 @@ import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.text.SpannableString;
+import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -21,6 +23,8 @@ import com.example.little_chemist.AR.ARCards;
 import com.example.little_chemist.Chapters_dir.Ch5;
 import com.example.little_chemist.Chapters_dir.Chapters;
 import com.example.little_chemist.Tables.Student;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.tooltip.Tooltip;
 
 import org.eazegraph.lib.charts.PieChart;
 import org.eazegraph.lib.models.PieModel;
@@ -28,6 +32,9 @@ import org.eazegraph.lib.models.PieModel;
 import java.util.Locale;
 
 import info.hoang8f.widget.FButton;
+import io.github.douglasjunior.androidSimpleTooltip.SimpleTooltip;
+
+import static com.google.sceneform_animation.b.v;
 
 
 public class Home extends AppCompatActivity {
@@ -39,6 +46,7 @@ public class Home extends AppCompatActivity {
     DatabaseHelper helper = new DatabaseHelper(Home.this);
     public static boolean alreadyRecreated = false , AlreadyGreeted = false;
     Student student ;//= new Student();
+    SharedPreferences pref ;
 
 
     @SuppressLint("CutPasteId")
@@ -59,11 +67,12 @@ public class Home extends AppCompatActivity {
         chapters.setShadowHeight(7);
         chapters.setCornerRadius(30);
 
-        SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
+        pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
         String name = pref.getString("username", null); // getting String
         student = helper.getStudent(name);
 
         // ========================= initializing  ============================================
+
 
 
         //welcome
@@ -98,7 +107,19 @@ public class Home extends AppCompatActivity {
             }
         }
 
-
+//        if(isFirstTime()){
+//            AlertDialog alertDialog = new AlertDialog.Builder(Home.this).create();
+//            alertDialog.setTitle("Little Chemist");
+//            alertDialog.setMessage(getString(R.string.instruction1) + "\n" + getString(R.string.buttonDes1) + "\n" + getString(R.string.buttonDes2));
+//            alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, getText(R.string.ok),
+//                    new DialogInterface.OnClickListener() {
+//                        public void onClick(DialogInterface dialog, int which) {
+//                            dialog.dismiss();
+//                        }
+//                    });
+//            alertDialog.show();
+//
+//        }
         // ========================= Buttons ============================================
         set.setOnClickListener(new View.OnClickListener() {
 
@@ -115,21 +136,26 @@ public class Home extends AppCompatActivity {
                 thread.start();
             }
         });
+
+
 //chapters is the button that the student clicks to see the content
         chapters.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
                 Thread thread = new Thread(new Runnable(){
                     @Override
                     public void run(){
-
                         Intent n = new Intent(Home.this, Chapters.class);
                         n.putExtra("segmentId",0) ;
                         startActivity(n);
+
+
                     }
                 });
                 thread.start();
             }
         });
+
+
 
         pie.setOnClickListener(new View.OnClickListener() {
 
@@ -168,6 +194,18 @@ public class Home extends AppCompatActivity {
         // ========================= progress and chart  ============================================
 
 
+    }
+
+    private boolean isFirstTime() {
+//        SharedPreferences preferences = getPreferences(MODE_PRIVATE);
+        boolean ranBefore = pref.getBoolean("RanBefore", false);
+        if (!ranBefore) {
+            // first time
+            SharedPreferences.Editor editor = pref.edit();
+            editor.putBoolean("RanBefore", true);
+            editor.apply();
+        }
+        return !ranBefore;
     }
 
 
