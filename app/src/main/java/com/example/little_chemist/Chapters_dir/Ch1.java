@@ -115,6 +115,7 @@ public class Ch1 extends AppCompatActivity {
 
         // ======================== Lessons btns ========================
 
+
         lsn1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Intent n = new Intent(Ch1.this, Lessons.class);
@@ -122,15 +123,13 @@ public class Ch1 extends AppCompatActivity {
                 n.putExtra("lessonId",1) ;
                 startActivity(n);
                 finish();
-            }
-        });
+            }});
 
         lsn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //Get student progress
                 statue = student.getLsnLock("2");
-
                 //Check lesson status
                 if (statue.equals("unlocked") || statue.equals("completed") ) {
                     //Message to student
@@ -142,7 +141,6 @@ public class Ch1 extends AppCompatActivity {
                                 public void onClick(DialogInterface dialog, int which) {
                                     dialog.dismiss();
                                     Thread thread = new Thread(new Runnable() {
-
                                         public void run() {
                                             Intent n = new Intent(Ch1.this, ARCards.class);
                                             n.putExtra("lesson",12);
@@ -150,7 +148,6 @@ public class Ch1 extends AppCompatActivity {
                                             //Start lesson
                                             startActivity(n);
                                             finish();
-
                                         }
                                     });
                                     thread.start();
@@ -159,59 +156,46 @@ public class Ch1 extends AppCompatActivity {
                     alertDialog.show();
                 } else
                     Toast.makeText(getApplicationContext(), "Locked", Toast.LENGTH_LONG).show();
-
-
-
-            }
-        });
+            }});
 
         lsn3.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 statue = student.getLsnLock("3");
                 if (statue.equals("unlocked") || statue.equals("completed") ) {
-
                     Intent n = new Intent(Ch1.this, Lessons.class);
                     n.putExtra("lesson", 13);
                     n.putExtra("lessonId",3) ;
                     startActivity(n);
-                     finish();
+                    finish();
                 }else
                     Toast.makeText(getApplicationContext(), "Locked", Toast.LENGTH_LONG).show();
-
             }
         });
-
         lsn4.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 statue = student.getLsnLock("4");
                 if (statue.equals("unlocked") || statue.equals("completed") ) {
-
                     Intent n = new Intent(Ch1.this, Lessons.class);
                     n.putExtra("lesson", 14);
                     n.putExtra("lessonId",4) ;
                     startActivity(n);
                     finish();
-
                 }else
                     Toast.makeText(getApplicationContext(), "Locked", Toast.LENGTH_LONG).show();
 
             }
         });
-
         lsn5.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 statue = student.getLsnLock("5");
                 if (statue.equals("unlocked") || statue.equals("completed") ) {
-
                     Intent n = new Intent(Ch1.this, LabLesson1.class);
                     n.putExtra("lesson", 15);
                     n.putExtra("lessonId",5) ;
                     startActivity(n);
                     finish();
-
                 }else
                     Toast.makeText(getApplicationContext(), "Locked", Toast.LENGTH_LONG).show();
-
             }
         });
         quiz.setOnClickListener(new View.OnClickListener() {

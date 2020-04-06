@@ -102,10 +102,6 @@ public class Chapters extends AppCompatActivity {
         mDots = findViewById(R.id.dots);
         mCardShower = findViewById(R.id.cardShower);
 
-        TextView chNum = view.findViewById(R.id.chNum);
-        ImageView charcter = view.findViewById(R.id.chapterDrawing);
-
-
         //=============================================
         bundle=getIntent().getExtras();
         chapterIndicator =bundle.getInt("segmentId") ;
