@@ -70,6 +70,7 @@
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="20dp"/>
 
+<!--    hello-->
 <!--    <alirezat775.lib.carouselview.CarouselView-->
 <!--        android:id="@+id/carousel_view1"-->
 

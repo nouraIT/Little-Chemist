@@ -484,6 +484,7 @@ public class quizQ extends AppCompatActivity {
         student.SetTotalScore(QuizID,score);
         return score;
     }
+    //hello
 
     //Questions array
     public String [] AllQuestion = {
