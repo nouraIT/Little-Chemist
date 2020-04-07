@@ -120,19 +120,17 @@
                 android:layout_marginStart="48dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="48dp"
-                android:layout_marginBottom="64dp"
                 android:alpha="0.8"
                 android:background="@drawable/circle_btn"
                 android:enabled="true"
                 android:text="@string/title_activity_login"
                 android:textColor="@color/darkpruple"
                 android:textColorHint="@color/darkpruple"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/forgotPassBtn"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.497"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/password"
-                app:layout_constraintVertical_bias="0.184" />
+                app:layout_constraintTop_toBottomOf="@+id/password" />
 
 
             <TextView
@@ -171,7 +169,7 @@
                 android:id="@+id/forgotPassBtn"
                 android:layout_width="186dp"
                 android:layout_height="35dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="16dp"
                 android:background="#00090808"
 
                 android:text="@string/forgot_password"
