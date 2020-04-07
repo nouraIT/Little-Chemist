@@ -170,9 +170,6 @@ public class QuizAdapter extends PagerAdapter {
         return view;
     }
 
-   /* public void makeItZero(){
-        opsSel=0;
-    }*/
 
     public void Button(int [] pos, int sul) {
         //opsSel=0;
