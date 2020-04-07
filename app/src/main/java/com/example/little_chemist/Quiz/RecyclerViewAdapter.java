@@ -50,7 +50,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         GlideApp.with(mContext)
                 .load(mImage.get(position))
-                .placeholder(R.drawable.graycircle)
+                .placeholder(R.drawable.ques_mark)
                 .into(holder.image);
 
     }

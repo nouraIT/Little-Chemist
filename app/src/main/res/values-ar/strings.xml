@@ -169,5 +169,6 @@
     <string name="booklet">انتقل إلى الإعدادات لتنزيل الكتيب</string>
     <string name="buttonDes1"> انقر على كلمة "Little Chemist" لبدئ عدض الفصول</string>
     <string name="buttonDes2">أو انقر على العجلة لعرض نتائج الاختبار</string>
+    <string name="QuizResult">نتيجة الأختبار</string>
 
 </resources>
