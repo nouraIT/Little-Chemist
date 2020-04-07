@@ -36,7 +36,9 @@ public class slideAdapter extends PagerAdapter {
 
 
 
+    public slideAdapter(){
 
+    }
 
     public slideAdapter(Context context , int value , int id ) {
         this.context = context;
