@@ -140,14 +140,13 @@
 
 
                             />
-                        <!-- TODO not sure of the image src -->
                         <ImageView
                             android:id="@+id/lsnimg1"
                             android:layout_width="70dp"
                             android:layout_height="70dp"
                             android:layout_marginTop="15dp"
                             android:alpha="1"
-                            android:background="@drawable/salt"
+                            android:src="@drawable/salt"
                             android:contentDescription="@string/Ch3Lsn1" />
 
 

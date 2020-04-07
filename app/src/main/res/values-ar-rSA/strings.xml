@@ -156,6 +156,7 @@
     <string name="tap_call7">انقر لاستدعاء شكل المادة! بعد ظهور النقاط البيضاء</string>
     <string name="C4L5S4">سيقوم الكيميائيون باختبار السائل غير المعروف باستخدام اللوني أو فصل خليط المواد الكيميائية داخل السائل أو الغاز للتعرف عليه.</string>
     <string name="exercise">التمرين</string>
+    <string name="QuizResult">نتيجة الأختبار</string>
 
     <string name="instruction1">اهلا بك في الكيميائي الصغير!</string>
     <string name="instruction2">هنا بعض النصائح لتساعدك على البدء</string>

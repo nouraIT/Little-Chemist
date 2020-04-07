@@ -103,6 +103,7 @@
     <string name="nextQ">Next Question</string>
     <string name="previous_question">Previous Question</string>
     <string name="Finishq">Finish all the questions!</string>
+    <string name="QuizResult">Quiz Result</string>
 
 
     <!--   _______________ quiz result _______________-->

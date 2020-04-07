@@ -117,7 +117,6 @@
 
     <!-- _______________ registration _______________ -->
 
-    <string name="login">Login</string>
     <string name="title_activity_login">Sign in</string>
     <string name="action_sign_in_short">Sign in</string>
 
@@ -228,6 +227,7 @@
     <string name="Youranswer">Your answer:</string>
     <string name="Rightanswer">Right answer:</string>
     <string name="tap_call7">Tap To Call A Matter Shape! After the White Dots Appear</string>
+    <string name="QuizResult">Quiz Result</string>
     <string name="C1L3S4E2M">Calculate the mass of helium</string>
     <string name="booklet">Go to the Settings to download the booklet</string>
     <!-- _______________ AR tap calls  _______________ -->

@@ -151,7 +151,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String query="SELECT * FROM "+FeedEntry.TABLE_STUDENT;
         Cursor cursor=db.rawQuery(query,null);
 //        int count=cursor.getCount();//here
-        //TODO count = last id
 
         String ch,ls,qz,scores,ex;
         scores="c1:0,c2:0,c3:0,c4:0,c5:0,";

@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="fill_horizontal"
-    android:background="@drawable/quizbackground"
+    android:background="@drawable/ch1lessonbackground"
     android:orientation="vertical"
     tools:context=".Quiz.quizQ">
 
@@ -45,81 +45,82 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
         android:layout_marginTop="50dp"
-        android:layout_marginRight="70dp"
-        android:layout_marginLeft="70dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginEnd="70dp"
         android:layout_marginBottom="9dp"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/carousel_view1"
+        app:layout_constraintBottom_toTopOf="@+id/quizpager"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+<!--    android:layout_marginStart="70dp"-->
+<!--    android:layout_marginEnd="70dp"-->
 
-
-    <alirezat775.lib.carouselview.CarouselView
-        android:id="@+id/carousel_view1"
-
+    <com.duolingo.open.rtlviewpager.RtlViewPager
+        android:id="@+id/quizpager"
         android:layout_width="475dp"
         android:layout_height="418dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="20dp"
-        >
-<!--        app:layout_constraintCircleRadius="50dp"-->
-<!--        CornerRadius-->
+        android:layout_marginTop="20dp"/>
 
-    </alirezat775.lib.carouselview.CarouselView>
+<!--    <alirezat775.lib.carouselview.CarouselView-->
+<!--        android:id="@+id/carousel_view1"-->
 
-<!--    <androidx.viewpager.widget.ViewPager-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="400dp"-->
+<!--        android:layout_width="475dp"-->
+<!--        android:layout_height="418dp"-->
 <!--        app:layout_constraintBottom_toBottomOf="parent"-->
 <!--        app:layout_constraintEnd_toEndOf="parent"-->
 <!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent" />-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        >-->
+<!--&lt;!&ndash;        app:layout_constraintCircleRadius="50dp"&ndash;&gt;-->
+<!--&lt;!&ndash;        CornerRadius&ndash;&gt;-->
+
+<!--    </alirezat775.lib.carouselview.CarouselView>-->
+
 
     <Button
 
         android:id="@+id/nextBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="75dp"
         android:layout_marginTop="2dp"
-        android:layout_marginEnd="5dp"
-        android:background="#00FFFFFF"
+        android:layout_marginEnd="160dp"
+        android:background="@drawable/circle_btn"
         android:fontFamily="@font/dk_sugary_pancake"
-        android:text="@string/nextBtn"
-        android:textColor="@color/Black"
+        android:text="@string/finishBtn"
+        android:visibility="invisible"
+        android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/preBtn"
-        app:layout_constraintTop_toBottomOf="@+id/carousel_view1" />
+        app:layout_constraintTop_toBottomOf="@+id/quizpager"
+        app:layout_constraintVertical_bias="0.491" />
 
     <Button
         android:id="@+id/preBtn"
         android:layout_width="wrap_content"
 
         android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
 
         android:layout_marginTop="2dp"
-        android:layout_marginEnd="16dp"
         android:background="#00FFFFFF"
         android:fontFamily="@font/dk_sugary_pancake"
-
-        android:text="@string/backBtn"
         android:textColor="@color/Black"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/nextBtn"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/carousel_view1"
+        app:layout_constraintTop_toBottomOf="@+id/quizpager"
         app:layout_constraintVertical_bias="0.491" />
 
 

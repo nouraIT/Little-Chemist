@@ -1,7 +1,11 @@
 package com.example.little_chemist.Quiz;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -21,6 +25,7 @@ import com.example.little_chemist.Chapters_dir.Ch4;
 import com.example.little_chemist.Chapters_dir.Ch5;
 import com.example.little_chemist.Chapters_dir.Chapters;
 import com.example.little_chemist.DatabaseHelper;
+import com.example.little_chemist.Home;
 import com.example.little_chemist.R;
 import com.example.little_chemist.Tables.Student;
 
@@ -35,6 +40,7 @@ import alirezat775.lib.carouselview.CarouselView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
 
 public class quizQ extends AppCompatActivity {
 
@@ -45,11 +51,19 @@ public class quizQ extends AppCompatActivity {
     private Button nextbtn, prebtn;
     private int slidcount = 0,slidchange =0,QuizID;
     private model[] modelQuestion = new model[5];
+    private ArrayList<model> ModelQuestion = new ArrayList<model>();
     private String[] currectanswer = new String[5], Option = new String[5], onlyQuestion = new String[5];
     private String[][] Question = new String[5][];
+    private String[] option = new String[5];
     private double Score =0;
+    private QuizAdapter quizadapter;
+    private ViewPager viewPager;
+    private int pagecount = 0;
     private boolean inlastslid = false;
+    private CarouselView carouselview;
     //private String[] whichcontent = new String[5];
+    private int [] ansrPos= new int[5];
+    private int [] ansrPosV2= new int[5];
 
     Student student;
     String name;
@@ -105,8 +119,6 @@ public class quizQ extends AppCompatActivity {
             }
         });
 
-
-
         //change background image
         ConstraintLayout Quizlayout = findViewById(R.id.CRL);
         switch (QuizID){
@@ -132,91 +144,96 @@ public class quizQ extends AppCompatActivity {
         // RecyclerView
         recyclerimage();
 
-
-        //CarouselView
-        final adapter adapter = new adapter(this,QuizID);
-        AppCompatActivity appcomp = this;
-        CarouselView carouselview = findViewById(R.id.carousel_view1);
-        final Carousel carousel = new Carousel(appcomp,carouselview,adapter);
-
-        carousel.setOrientation(carouselview.HORIZONTAL, false, true);
-        carousel.autoScroll(false, 1000000000, false);
-        carousel.scaleView(true);
-
-        adapter.setOnClickListener((com.example.little_chemist.Quiz.adapter.OnClick)(new com.example.little_chemist.Quiz.adapter.OnClick() {
-            public void click(@NonNull model model) {
-                Intrinsics.checkParameterIsNotNull(model, "model");
-                carousel.remove((CarouselModel)model);
-            }
-        }));
-        //carousel.scrollSpeed(100f)
-       // carousel.enableSlider(true);
-
         nextbtn = findViewById(R.id.nextBtn);
         prebtn = findViewById(R.id.preBtn);
 
-        carousel.addCarouselListener((CarouselListener)(new CarouselListener() {
-            boolean positioneqfive = false;
-            public void onPositionChange(int position) {
-                slidchange = position;
-                if (position == 0){
-                    nextbtn.setEnabled(true);
-                    prebtn.setEnabled(false);
-                    prebtn.setVisibility(View.INVISIBLE);
-                    prebtn.setText("");
-                }
-                else if (position == 4){
-                    inlastslid = true;
-                    nextbtn.setEnabled(true);
-                    prebtn.setEnabled(true);
-                    nextbtn.setVisibility(View.VISIBLE);
-                    nextbtn.setText(getText(R.string.finishBtn));
+        //_______________________CarouselView_____________________________________//
+//        final adapter adapter = new adapter(this,QuizID);
+//        AppCompatActivity appcomp = this;
+//        carouselview = findViewById(R.id.carousel_view1);
+//        final Carousel carousel = new Carousel(appcomp,carouselview,adapter);
+//
+//        carousel.setOrientation(carouselview.HORIZONTAL, false, true);
+//        carousel.autoScroll(false, 0, false);
+//        carousel.scaleView(true);
+//        carousel.scrollSpeed(8000f);
+//        carousel.pauseAutoScroll();
+//        Log.d("pppppppppppppppppppp", String.valueOf(carouselview.isAutoScroll()));
+//
+//        adapter.setOnClickListener((com.example.little_chemist.Quiz.adapter.OnClick)(new com.example.little_chemist.Quiz.adapter.OnClick() {
+//            public void click(@NonNull model model) {
+//                Intrinsics.checkParameterIsNotNull(model, "model");
+//                carousel.remove((CarouselModel)model);
+//            }
+//        }));
+//        //carousel.scrollSpeed(100f)
+//       // carousel.enableSlider(true);
+//
+//
+//        carousel.addCarouselListener((CarouselListener)(new CarouselListener() {
+//            boolean positioneqfive = false;
+//            public void onPositionChange(int position) {
+//                slidchange = position;
+//                if (position == 0){
+//                    nextbtn.setEnabled(true);
+//                    prebtn.setEnabled(false);
+//                    prebtn.setVisibility(View.INVISIBLE);
+//                    prebtn.setText("");
+//                }
+//                else if (position == 4){
+//                    inlastslid = true;
+//                    nextbtn.setEnabled(true);
+//                    prebtn.setEnabled(true);
+//                    nextbtn.setVisibility(View.VISIBLE);
+//                    nextbtn.setText(getText(R.string.finishBtn));
+//
+//                } else {
+//                    nextbtn.setEnabled(true);
+//                    prebtn.setEnabled(true);
+//                    prebtn.setVisibility(View.VISIBLE);
+//                    nextbtn.setText(getText(R.string.nextBtn));
+//                    prebtn.setText(getText(R.string.backBtn));
+//                }
+//                Log.d(quizQ.this.getTAG(), "currentPosition : " + position);
+//
+//
+//                if(position != 0 ) {
+//                    int count = position - 1;
+//                    if (adapter.getOption()[count] !=null){
+//                    mImage.set(count, R.drawable.tick_mark);
+//                    initRecyclerView();
+//                    }
+//                    else {
+//                        mImage.set(count, R.drawable.wrong_mark);
+//                        initRecyclerView();
+//                    }
+//                    if (position == 4){
+//                        positioneqfive = true;
+//                    }
+//                }
+//
+//                if (position != 4 && positioneqfive){
+//
+//                    if (adapter.getOption()[4] !=null){
+//                        mImage.set(4, R.drawable.tick_mark);
+//                        initRecyclerView();
+//                    }
+//                    else {
+//                        mImage.set(4, R.drawable.wrong_mark);
+//                        initRecyclerView();
+//                    }
+//
+//                }
+//
+//            }
+//
+//            public void onScroll(int dx, int dy) {
+//                carousel.pauseAutoScroll();
+//                Log.d(quizQ.this.getTAG(), "onScroll dx : " + dx + " -- dy : " + dx);
+//            }
+//        }));
+        //_______________________CarouselView_____________________________________//
 
-                } else {
-                    nextbtn.setEnabled(true);
-                    prebtn.setEnabled(true);
-                    prebtn.setVisibility(View.VISIBLE);
-                    nextbtn.setText(getText(R.string.nextBtn));
-                    prebtn.setText(getText(R.string.backBtn));
-                }
-                Log.d(quizQ.this.getTAG(), "currentPosition : " + position);
-
-
-                if(position != 0 ) {
-                    int count = position - 1;
-                    if (adapter.getOption()[count] !=null){
-                    mImage.set(count, R.drawable.tick_mark);
-                    initRecyclerView();
-                    }
-                    else {
-                        mImage.set(count, R.drawable.wrong_mark);
-                        initRecyclerView();
-                    }
-                    if (position == 4){
-                        positioneqfive = true;
-                    }
-                }
-
-                if (position != 4 && positioneqfive){
-
-                    if (adapter.getOption()[4] !=null){
-                        mImage.set(4, R.drawable.tick_mark);
-                        initRecyclerView();
-                    }
-                    else {
-                        mImage.set(4, R.drawable.wrong_mark);
-                        initRecyclerView();
-                    }
-
-                }
-
-            }
-
-            public void onScroll(int dx, int dy) {
-                carousel.pauseAutoScroll();
-                Log.d(quizQ.this.getTAG(), "onScroll dx : " + dx + " -- dy : " + dx);
-            }
-        }));
 
 
         //find out which chapter quiz
@@ -252,20 +269,35 @@ public class quizQ extends AppCompatActivity {
 
         //get from Question
         for (int i=0; i<5;i++){
-            QItems = adapter.context.getResources().getStringArray(adapter.context.getResources()
-                    .getIdentifier(whichcontent[Qindex[i]], "array", adapter.context.getPackageName()));
+            QItems = quizQ.this.getResources().getStringArray(quizQ.this.getResources()
+                    .getIdentifier(whichcontent[Qindex[i]], "array", quizQ.this.getPackageName()));
             Question[i] = QItems;
-            modelQuestion[i] = new model(this,i,Question[i][index],Question[i][index+1],Question[i][index+2]
-                    ,Question[i][index+3],Question[i][index+4],Question[i][index+5]);
+            ModelQuestion.add(new model(this,i,Question[i][index],Question[i][index+1],Question[i][index+2]
+                   ,Question[i][index+3],Question[i][index+4],Question[i][index+5]));
+//            modelQuestion[i] = new model(this,i,Question[i][index],Question[i][index+1],Question[i][index+2]
+//                    ,Question[i][index+3],Question[i][index+4],Question[i][index+5]);
             currectanswer[i] = Question[i][index+5];
             onlyQuestion[i] = Question[i][index];
         }
 
-        carousel.add((modelQuestion[0]));
-        carousel.add((modelQuestion[1]));
-        carousel.add((modelQuestion[2]));
-        carousel.add((modelQuestion[3]));
-        carousel.add((modelQuestion[4]));
+        //_________________________view pager____________________//
+        quizadapter = new QuizAdapter(this,ModelQuestion);
+        viewPager = findViewById(R.id.quizpager);
+        viewPager.setAdapter(quizadapter);
+        viewPager.addOnPageChangeListener(PageListener);
+        //_________________________view pager____________________//
+        //DetailOnPageChangeListener detailOnPageChangeListener=new DetailOnPageChangeListener();
+        //Log.d("Nooooooooooooooooooo", detailOnPageChangeListener.allpage());
+        //ansrPos[detailOnPageChangeListener.getCurrentPage()]=quizadapter.getOpsSel();
+
+        //_______________________CarouselView_____________________________________//
+//        carousel.add((modelQuestion[0]));
+//        carousel.add((modelQuestion[1]));
+//        carousel.add((modelQuestion[2]));
+//        carousel.add((modelQuestion[3]));
+//        carousel.add((modelQuestion[4]));
+        //_______________________CarouselView_____________________________________//
+
 
 
         //next button
@@ -273,27 +305,40 @@ public class quizQ extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
+                //viewPager.setCurrentItem(pagecount+1);
                 boolean YouCantRun = false;
                 int slidenum;
 
-                if (slidcount < 4) {
-                    carousel.setCurrentPosition(slidcount + 1);
-                    slidenum = slidcount;
-                    if (adapter.getOption()[slidenum] != null) {
+                if (pagecount < 4) {
+                    //carouselview.setCurrentPosition(slidcount + 1);
+                    //----------------------------
+                    String [] arr=quizadapter.getOption();
+                    if (quizadapter.getSSelected() != null){
+                        Log.d("saved option Arrays", "if nem 1");
+                        if (pagecount != -1){
+                            Log.d("getOpsSel", String.valueOf(quizadapter.getOpsSel()));
+                            if (quizadapter.getOpsSel() != 0 && arr[pagecount].equals(quizadapter.getSSelected())){
+                                Log.d("saved option Arrays", "if nem 3");
+                                ansrPos[pagecount]=quizadapter.getOpsSel();}}
+                        quizadapter.Button(ansrPos,pagecount);}
+                    //-----------------------------
+                    viewPager.setCurrentItem(pagecount + 1);
+                    slidenum = pagecount;
+                    if (quizadapter.getOption()[slidenum] != null) {
                         mImage.set(slidenum, R.drawable.tick_mark);
                         initRecyclerView();
                     } else {
                         mImage.set(slidenum, R.drawable.wrong_mark);
                         initRecyclerView();
                     }
-                    slidcount = slidcount + 1;
+                    //slidcount = slidcount + 1;
                 }
-                        if (slidcount == 4 || slidchange == 4){
+                        if (slidcount == 4 || pagecount == 4){
                             nextbtn.setVisibility(View.VISIBLE);
                             nextbtn.setText(getText(R.string.finishBtn));
                             Intent n = new Intent(quizQ.this, QuizResult.class);
-                            for (int i=0; i<adapter.getOption().length;i++){
-                                if(adapter.getOption()[i] == null){
+                            for (int i=0; i<quizadapter.getOption().length;i++){
+                                if(quizadapter.getOption()[i] == null){
                                     YouCantRun = true;
                                     nextbtn.setEnabled(true);
                                     Toast.makeText(quizQ.this, getText(R.string.Finishq), Toast.LENGTH_LONG).show();
@@ -302,7 +347,7 @@ public class quizQ extends AppCompatActivity {
                                 }
                             }
                             if (YouCantRun == false) {
-                                Option = adapter.getOption();
+                                Option = quizadapter.getOption();
                                 bundle.putStringArray("option", Option);
                                 bundle.putStringArray("content", onlyQuestion);
                                 bundle.putStringArray("answer", currectanswer);
@@ -314,7 +359,7 @@ public class quizQ extends AppCompatActivity {
                             }
                         }
 
-                    if (slidcount == 1) {
+                    if (pagecount == 1) {
                         prebtn.setEnabled(true);
                         prebtn.setVisibility(View.VISIBLE);
                         prebtn.setText(getText(R.string.backBtn));
@@ -327,11 +372,25 @@ public class quizQ extends AppCompatActivity {
         prebtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
+                //----------------------------
+                String [] arr=quizadapter.getOption();
+                if (quizadapter.getSSelected() != null){
+                    Log.d("saved option Arrays", "if nem 1");
+                    if (pagecount != -1){
+                        Log.d("saved option Arrays", String.valueOf(quizadapter.getOpsSel()));
+                        if (quizadapter.getOpsSel() != 0 && arr[pagecount].equals(quizadapter.getSSelected())){
+                            Log.d("saved option Arrays", "if nem 3");
+                            ansrPos[pagecount]=quizadapter.getOpsSel();}}
+                    quizadapter.Button(ansrPos,pagecount);
+                    //quizadapter.makeItZero();
+                    }
+                //-----------------------------
+                //viewPager.setCurrentItem(pagecount-1);
                 int slidenum =0;
                 Log.d("in back button slid count", String.valueOf(slidcount));
-                if (slidcount == 4){
-                    slidenum = slidcount;
-                    if (adapter.getOption()[slidenum] != null){
+                if (pagecount == 4){
+                    slidenum = pagecount;
+                    if (quizadapter.getOption()[slidenum] != null){
                         mImage.set(slidenum, R.drawable.tick_mark);
                         initRecyclerView();
                     }else{
@@ -339,14 +398,15 @@ public class quizQ extends AppCompatActivity {
                         initRecyclerView();
                     }
                 }
-                carousel.setCurrentPosition(slidcount-1);
-                slidcount = slidcount - 1;
-                if (slidcount == 0){
+                viewPager.setCurrentItem(pagecount-1);
+                //carouselview.setCurrentPosition(slidcount - 1);
+                //slidcount = slidcount - 1;
+                if (pagecount == 0){
                     prebtn.setEnabled(false);
                     prebtn.setVisibility(View.INVISIBLE);
                     prebtn.setText("");
                 }
-                if (slidcount-1 < 4){
+                if (pagecount-1 < 4){
                     nextbtn.setText(getText(R.string.nextBtn));
                 }
             }
@@ -359,6 +419,15 @@ public class quizQ extends AppCompatActivity {
         startActivity(n);
         finish();
     }
+
+//    View.OnClickListener pauseOnClickListener = new View.OnClickListener() {
+//        @Override
+//        public void onClick(View v) {
+//            //carouselview.pauseCarousel();
+//            carouselview.pauseAutoScroll();
+//        }
+//    };
+
     //recycler view progress bar
     private void recyclerimage(){
 
@@ -438,6 +507,121 @@ public class quizQ extends AppCompatActivity {
     };
     public String[] C5Quiz = {
             "C5Quiz_Q1","C5Quiz_Q2","C5Quiz_Q3","C5Quiz_Q4","C5Quiz_Q5","C5Quiz_Q6","C5Quiz_Q7","C5Quiz_Q8","C5Quiz_Q9","C5Quiz_Q10"
+    };
+
+    ViewPager.OnPageChangeListener PageListener = new ViewPager.OnPageChangeListener() {
+        int postionNow;
+        int lastop;
+        boolean scrollState = false;
+
+        @Override
+        public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+            postionNow=position;
+        }
+
+        @Override
+        public void onPageSelected(int position) {
+
+            pagecount = position;
+            boolean positioneqfive = false;
+
+            if (position == 0) {
+                nextbtn.setEnabled(false);
+                prebtn.setEnabled(false);
+                prebtn.setVisibility(View.INVISIBLE);
+                nextbtn.setText(getText(R.string.nextBtn));
+                prebtn.setText("");
+
+
+            } else if (position == 4) {
+                nextbtn.setEnabled(true);
+                prebtn.setEnabled(false);
+                prebtn.setVisibility(View.INVISIBLE);
+                nextbtn.setVisibility(View.VISIBLE);
+                nextbtn.setText(getText(R.string.finishBtn));
+                prebtn.setText("");
+
+            } else {
+                nextbtn.setEnabled(false);
+                prebtn.setEnabled(false);
+                prebtn.setVisibility(View.INVISIBLE);
+                nextbtn.setVisibility(View.INVISIBLE);
+                nextbtn.setText(getText(R.string.nextBtn));
+                prebtn.setText(getText(R.string.backBtn));
+            }
+            if(position != 0 ) {
+                int count = position - 1;
+                if (quizadapter.getOption()[count] !=null){
+                    mImage.set(count, R.drawable.tick_mark);
+                    initRecyclerView();
+                   // quizadapter.getSelected().setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#4a47a7")));
+                }
+                else {
+                    mImage.set(count, R.drawable.wrong_mark);
+                    initRecyclerView();
+                   // quizadapter.getSelected().setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#4a47a7")));
+                }
+                if (position == 4){
+                    positioneqfive = true;
+                }
+            }
+
+            if (position != 4 && positioneqfive){
+
+                if (quizadapter.getOption()[4] !=null){
+                    mImage.set(4, R.drawable.tick_mark);
+                    initRecyclerView();
+                }
+                else {
+                    mImage.set(4, R.drawable.wrong_mark);
+                    initRecyclerView();
+                }
+
+            }
+
+            //quizadapter.getQuestion().setTextColor(ColorStateList.valueOf(Color.parseColor("#8847a7")));
+//            if (quizadapter.getSelected() != null){
+//                quizadapter.getSelected().setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#4a47a7")));
+//                quizadapter.getSelected().setTextColor(ColorStateList.valueOf(Color.parseColor("#FFFFFF")));
+//            }
+            String [] arr=quizadapter.getOption();
+//            quizadapter.getSSelected() != null
+            //int [] sledPos= new int[5];
+
+           // quizadapter.makeItZero();
+            if (quizadapter.getSSelected() != null){
+                if (position-1 != -1){
+                if (quizadapter.getOpsSel() != 0 && arr[position-1].equals(quizadapter.getSSelected())){
+                ansrPos[position-1]=quizadapter.getOpsSel();}}
+
+               // if (ansrPos[position] == 0 && arr[position] != null ){
+//                if (quizadapter.getOpsSel() != 0){
+//                    ansrPos[position]=quizadapter.getOpsSel();}
+                ansrPos[4]=lastop;
+                quizadapter.Button(ansrPos,position);
+                //quizadapter.Button(quizadapter.getOpsSel(),position);
+               // quizadapter.myViewHolder.Button(quizadapter.getOpsSel(),quizadapter.getSSelected());
+                //quizadapter.getSelected().setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#4a47a7")));
+                //quizadapter.getSelected().setTextColor(ColorStateList.valueOf(Color.parseColor("#FFFFFF")));
+
+            }
+
+        }
+
+        @Override
+        public void onPageScrollStateChanged(int state) {
+
+            if (state == ViewPager.SCROLL_STATE_IDLE) {
+                if (postionNow==4){
+                    scrollState=true;
+                }
+                if(scrollState && postionNow == 3 && quizadapter.getOpsSel() != 0){
+                    lastop=quizadapter.getOpsSel();
+                    scrollState=false;
+                }
+            }
+        }
+
     };
 
 }

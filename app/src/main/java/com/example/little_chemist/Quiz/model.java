@@ -31,26 +31,6 @@ public final class model extends CarouselModel {
         this.correctop = correctop;
     }
 
-    public String getcho1(){
-        String cho1 = "Text1";
-        return cho1;
-    }
-
-    public String getcho2(){
-        String cho2 = "Text2";
-        return cho2;
-    }
-
-    public String getcho3(){
-        String cho3 = "Text3";
-        return cho3;
-    }
-
-    public String getcho4(){
-        String cho4 = "Text4";
-        return cho4;
-    }
-
     public String getQuestion() {
         return question;
     }
