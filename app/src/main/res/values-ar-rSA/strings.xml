@@ -165,6 +165,11 @@
     <string name="instruction4">عندما يكون لون الدرس <font color='#32CD32'>اخضر</font>, يعني انه مكتمل </string>
     <string name="instruction5">عندما يكون لون الدرس<font color='#696969'>رمادي</font>, يعني انه مغلق  </string>
     <string name="booklet">انتقل إلى الإعدادات لتنزيل الكتيب</string>
+    <string name="buttonDes1">" انقر على كلمة Little Chemist لبدئ عدض الفصول"</string>
+    <string name="buttonDes2">أو انقر على العجلة لعرض نتائج الاختبار</string>
+    <string name="C1L3S4E2M">احسب كتلة الهيليوم</string>
+    <string name="C4L3S6">البروتين مادة كيميائية مهمة في النظام الغذائي البشري. يمكن أن يأتي البروتين من اللحوم والأسماك والمكسرات ومنتجات الألبان والخضروات والزيوت والمكسرات.</string>
+    <string name="login">تسجيل الدخول</string>
     <!-- _______________ error msgs _______________ -->
 
 

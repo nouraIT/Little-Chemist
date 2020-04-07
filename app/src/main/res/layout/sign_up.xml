@@ -22,6 +22,24 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
 
+        <TextView
+            android:id="@+id/LoginTitle"
+            android:layout_width="155dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|clip_vertical|fill_horizontal"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="@font/east_djakarta"
+            android:text="@string/sign_up"
+
+            android:textAlignment="center"
+            android:textColor="@color/ic_launcher_background"
+
+            android:textSize="36sp"
+            app:layout_constraintBottom_toTopOf="@+id/username2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/username2"
@@ -29,7 +47,7 @@
             android:layout_height="wrap_content"
 
             android:layout_marginStart="24dp"
-            android:layout_marginTop="152dp"
+            android:layout_marginTop="190dp"
             android:layout_marginEnd="24dp"
 
             android:textColorHint="@color/darkpruple"
@@ -38,6 +56,7 @@
             app:errorTextAppearance="@style/error_appearance"
 
 
+            app:layout_constraintBottom_toTopOf="@+id/password2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -66,17 +85,17 @@
             android:layout_marginStart="24dp"
             android:layout_marginEnd="24dp"
 
+            android:layout_marginBottom="12dp"
+
             android:textColorHint="@color/darkpruple"
 
             app:errorEnabled="true"
 
             app:errorTextAppearance="@style/error_appearance"
-
-            app:layout_constraintBottom_toTopOf="@+id/signup"
+            app:layout_constraintBottom_toTopOf="@+id/password22"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/username2"
-            app:layout_constraintVertical_bias="0.0"
             tools:layout_conversion_absoluteHeight="45dp"
             tools:layout_conversion_absoluteWidth="363dp">
 
@@ -155,17 +174,15 @@
             android:layout_height="wrap_content"
 
             android:layout_marginStart="59dp"
-            android:layout_marginLeft="59dp"
 
             android:layout_marginTop="8dp"
 
             android:layout_marginEnd="59dp"
-            android:layout_marginRight="59dp"
 
             android:textColorHint="@color/darkpruple"
-
             app:errorEnabled="true"
             app:errorTextAppearance="@style/error_appearance"
+            app:layout_constraintBottom_toTopOf="@+id/signup"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/security_questions">
@@ -197,23 +214,24 @@
             android:background="@drawable/circle_btn"
             android:text="@string/sign_up_button"
             android:textColor="@color/darkpruple"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/backToLogin"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/securityA"
 
-            app:layout_constraintVertical_bias="0.16000003" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/securityA" />
 
         <Button
             android:id="@+id/backToLogin"
             android:layout_width="186dp"
             android:layout_height="35dp"
+            android:layout_marginBottom="60dp"
+
             android:background="#00090808"
+
+
             android:text="@string/title_activity_login"
-
             android:textColor="@color/darkpruple"
-
-
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
