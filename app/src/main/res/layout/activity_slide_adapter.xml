@@ -9,8 +9,8 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardviewchapters"
-        android:layout_width="295dp"
-        android:layout_height="500dp"
+        android:layout_width="285dp"
+        android:layout_height="456dp"
         android:layout_marginTop="60dp"
         android:layout_marginBottom="90dp"
         app:cardBackgroundColor="@color/colorIcons"
@@ -33,40 +33,37 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:weightSum="2"
-            >
+            android:weightSum="2">
 
 
-
-        <TextView
-            android:id="@+id/slide_description"
-            android:layout_width="262dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="200dp"
-            android:layout_marginBottom="10dp"
-            android:elevation="30dp"
-            android:fontFamily="@font/dk_sugary_pancake"
-            android:text="TextView"
-            android:textAlignment="center"
-            android:textColor="@color/design_default_color_on_secondary" />
-
+            <TextView
+                android:id="@+id/slide_description"
+                android:layout_width="262dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="200dp"
+                android:layout_marginBottom="10dp"
+                android:elevation="30dp"
+                android:fontFamily="@font/dk_sugary_pancake"
+                android:text="TextView"
+                android:textAlignment="center"
+                android:textColor="@color/design_default_color_on_secondary" />
 
 
-        <Button
-            android:id="@+id/ex"
-            android:layout_width="118dp"
-            android:layout_height="38dp"
-            android:layout_marginStart="85dp"
-            android:layout_marginTop="50dp"
-            android:background="@drawable/ch5_bg"
-            android:elevation="30dp"
-            android:fontFamily="@font/dk_sugary_pancake"
-            android:onClick="onBtnExClick"
-            android:text="@string/getEx"
-            android:textAlignment="center"
-            android:textColor="#FFFFFF"
-            android:visibility="invisible" />
+            <Button
+                android:id="@+id/ex"
+                android:layout_width="118dp"
+                android:layout_height="38dp"
+                android:layout_marginStart="85dp"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/ch5_bg"
+                android:elevation="30dp"
+                android:fontFamily="@font/dk_sugary_pancake"
+                android:onClick="onBtnExClick"
+                android:text="@string/getEx"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:visibility="invisible" />
 
         </LinearLayout>
 

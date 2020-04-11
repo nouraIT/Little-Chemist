@@ -245,14 +245,14 @@ public class Lessons extends AppCompatActivity {
                 nextBtn.setEnabled(true);
                 preBtn.setEnabled(false);
                 preBtn.setVisibility(View.INVISIBLE);
-                nextBtn.setText(getText(R.string.nextBtn));
+               // nextBtn.setText(getText(R.string.nextBtn));
                 preBtn.setText("");
             }else if (position == mDotsText.length - 1){
                 nextBtn.setEnabled(true);
                 preBtn.setEnabled(true);
                 preBtn.setVisibility(View.VISIBLE);
-                nextBtn.setText(getText(R.string.finishBtn));
-                preBtn.setText(getText(R.string.backBtn));
+               // nextBtn.setText(getText(R.string.finishBtn));
+              //  preBtn.setText(getText(R.string.backBtn));
                 nextBtn.setOnClickListener(new View.OnClickListener() {
                     Intent n ;
                     @Override
@@ -280,8 +280,8 @@ public class Lessons extends AppCompatActivity {
                 nextBtn.setEnabled(true);
                 preBtn.setEnabled(true);
                 preBtn.setVisibility(View.VISIBLE);
-                nextBtn.setText(getText(R.string.nextBtn));
-                preBtn.setText(getText(R.string.backBtn));
+               // nextBtn.setText(getText(R.string.nextBtn));
+               // preBtn.setText(getText(R.string.backBtn));
             } };
 
         @Override
