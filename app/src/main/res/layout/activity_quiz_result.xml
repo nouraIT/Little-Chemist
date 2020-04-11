@@ -31,7 +31,7 @@
         android:maxLines="1"
         android:text="@string/QuizResult"
         android:textAppearance="@android:style/TextAppearance.WindowTitle"
-        android:textColor="@color/white"
+        android:textColor="@color/darkpruple"
         android:textSize="30sp"
         android:visibility="visible"
         app:layout_constraintEnd_toStartOf="@+id/homeicon"
