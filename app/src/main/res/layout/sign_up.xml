@@ -30,11 +30,11 @@
             android:layout_marginBottom="16dp"
             android:fontFamily="@font/east_djakarta"
             android:text="@string/sign_up"
+
             android:textAlignment="center"
-
             android:textColor="@color/ic_launcher_background"
-            android:textSize="36sp"
 
+            android:textSize="36sp"
             app:layout_constraintBottom_toTopOf="@+id/username2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.939"
@@ -48,7 +48,7 @@
             android:layout_height="wrap_content"
 
             android:layout_marginStart="24dp"
-            android:layout_marginTop="160dp"
+            android:layout_marginTop="190dp"
             android:layout_marginEnd="24dp"
 
             android:textColorHint="@color/darkpruple"
@@ -224,7 +224,6 @@
             android:id="@+id/backToLogin"
             android:layout_width="186dp"
             android:layout_height="35dp"
-            android:layout_marginTop="8dp"
             android:layout_marginBottom="60dp"
 
             android:background="#00090808"
