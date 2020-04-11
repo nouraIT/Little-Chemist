@@ -232,9 +232,11 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="300dp"
         android:padding="8dp"
+
         app:egLegendTextSize="18sp"
         app:egUsePieRotation="true"
         app:egValueTextSize="36sp"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

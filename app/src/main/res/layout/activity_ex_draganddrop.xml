@@ -45,9 +45,9 @@
                 android:layout_height="wrap_content"
                 android:padding="10dp"
                 android:textColor="@color/colorAccent"
-                android:text="Exercise 1"
+                android:text="@string/exercise1"
                 android:textSize="18sp"
-                tools:ignore="HardcodedText" />
+                />
 
             <TextView
                 android:id="@+id/Q"

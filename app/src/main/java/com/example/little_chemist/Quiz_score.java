@@ -57,6 +57,10 @@ public class Quiz_score extends AppCompatActivity {
         progressBar5 = findViewById(R.id.numberbar3);
 
         double[] scores = student.GetTotalScore();
+        for(int i=0;i<5;i++){
+            if(scores[i] == 0.0)
+                scores[i]=1;
+        }
 
         mPieChart.addPieSlice(new PieModel("Ch1: "+getString(R.string.Ch1Name), (float) scores[0], Color.parseColor("#ff0099cc") ));
         mPieChart.addPieSlice(new PieModel("Ch2: "+getString(R.string.Ch2Name), (float) scores[1], Color.parseColor("#ff99cc00") ));
