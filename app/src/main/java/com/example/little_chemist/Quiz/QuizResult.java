@@ -202,7 +202,9 @@ public class QuizResult extends AppCompatActivity {
                                  break;
                             default: n = new Intent(QuizResult.this, Home.class);
                         }
-                        helper.updateQuiz(name,b.getInt("ChapterNumber"),"completed");
+
+                        if(score >= 60.0)
+                            helper.updateQuiz(name,b.getInt("ChapterNumber"),"completed");
                         statue = student.getLsnLock(String.valueOf(b.getInt("ChapterNumber")));
                         startActivity(n);
                         finish();
