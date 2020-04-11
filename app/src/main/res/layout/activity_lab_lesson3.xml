@@ -36,14 +36,14 @@
         android:layout_marginStart="8dp"
         android:layout_marginEnd="169dp"
         android:layout_marginBottom="14dp"
-
+        android:fontFamily="@font/dk_sugary_pancake"
         android:text="@string/reset" />
 
     <Button
         android:id="@+id/next"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
+        android:fontFamily="@font/dk_sugary_pancake"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="15dp"

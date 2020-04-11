@@ -37,7 +37,8 @@
         android:layout_marginEnd="169dp"
         android:layout_marginBottom="14dp"
         android:layout_toStartOf="@+id/next"
-        android:text="@string/reset" />
+        android:text="@string/reset"
+        android:fontFamily="@font/dk_sugary_pancake"/>
 
     <Button
         android:id="@+id/next"
@@ -47,6 +48,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="15dp"
         android:layout_marginBottom="11dp"
-        android:text="@string/nextBtn" />
+        android:text="@string/nextBtn"
+        android:fontFamily="@font/dk_sugary_pancake"/>
 
 </RelativeLayout>

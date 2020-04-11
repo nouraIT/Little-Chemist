@@ -171,6 +171,14 @@
     <string name="C4L3S6">البروتين مادة كيميائية مهمة في النظام الغذائي البشري. يمكن أن يأتي البروتين من اللحوم والأسماك والمكسرات ومنتجات الألبان والخضروات والزيوت والمكسرات.</string>
     <string name="login">تسجيل الدخول</string>
     <string name="Cancel">ألغاء</string>
+    <string name="exercise1">التمرين ١</string>
+    <string name="ch1">فصل١</string>
+    <string name="ch4">فصل٤</string>
+    <string name="ch5">فصل٥</string>
+    <string name="ch3">فصل٣</string>
+    <string name="ch2">فصل٢</string>
+    <string name="MutibleQ2">طابق كل عالم مع اكتشافه</string>
+    <string name="MutibleQ1">اسحب المكعبات لإنشاء ذرة</string>
     <!-- _______________ error msgs _______________ -->
 
 

@@ -42,9 +42,6 @@
             android:name=".View_lesson.ex_multiple_choice"
             android:screenOrientation="locked" />
         <activity
-            android:name=".View_lesson.ex_DragAndDrop1"
-            android:screenOrientation="locked" />
-        <activity
             android:name=".View_lesson.ex_DragAndDrop3"
             android:screenOrientation="locked" />
         <activity

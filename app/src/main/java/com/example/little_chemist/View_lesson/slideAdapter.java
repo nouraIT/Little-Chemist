@@ -36,7 +36,9 @@ public class slideAdapter extends PagerAdapter {
 
 
 
+    public slideAdapter(){
 
+    }
 
     public slideAdapter(Context context , int value , int id ) {
         this.context = context;
@@ -91,7 +93,7 @@ public class slideAdapter extends PagerAdapter {
     };
 
     public String[] ex ={
-            "C1L1S1E1","C1L1S6E2"
+            "C1L1S6E2"
             ,"C1L3S3E1M"
             ,"C1L4S2E1M","C1L4S5E2M"
             ,"C2L1S2E1M"
@@ -192,29 +194,29 @@ public class slideAdapter extends PagerAdapter {
             //System.out.println(tempEx);
 
             if (cleanContent[position].equals(tempEx)){
-                if(ex[i].equals("C1L1S1E1")){
-                    AcEx[indexEx] = new Intent(view.getContext(), ex_DragAndDrop1.class);
-//                    AcEx[index].putExtra("exKey", tempEx);
-//                    BtnEx[index] = view.findViewById(R.id.ex);
-                    tempEx = ex[i];
-                    String tem = ex[i] ;
-                    AcEx[indexEx].putExtra("exKey", tempEx);
-                    AcEx[indexEx].putExtra("exNum", getNumEx(tem));
-                    AcEx[indexEx].putExtra("lessonid", 1);
-                    BtnEx[indexEx] = view.findViewById(R.id.ex) ;
-                    Intent n = AcEx[indexEx];
-                    BtnEx[indexEx].setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            view.getContext().startActivity(n);
-                            ((Activity) view.getContext()).finish();
-
-                        }
-
-                    });
-
-                }
-                else if(ex[i].equals("C1L1S6E2")){
+//                if(ex[i].equals("C1L1S1E1")){
+//                    AcEx[indexEx] = new Intent(view.getContext(), ex_DragAndDrop1.class);
+////                    AcEx[index].putExtra("exKey", tempEx);
+////                    BtnEx[index] = view.findViewById(R.id.ex);
+//                    tempEx = ex[i];
+//                    String tem = ex[i] ;
+//                    AcEx[indexEx].putExtra("exKey", tempEx);
+//                    AcEx[indexEx].putExtra("exNum", getNumEx(tem));
+//                    AcEx[indexEx].putExtra("lessonid", 1);
+//                    BtnEx[indexEx] = view.findViewById(R.id.ex) ;
+//                    Intent n = AcEx[indexEx];
+//                    BtnEx[indexEx].setOnClickListener(new View.OnClickListener() {
+//                        @Override
+//                        public void onClick(View v) {
+//                            view.getContext().startActivity(n);
+//                            ((Activity) view.getContext()).finish();
+//
+//                        }
+//
+//                    });
+//
+//                }
+                if(ex[i].equals("C1L1S6E2")){
                     AcEx[indexEx] = new Intent(view.getContext(), ex_DragAndDrop3.class);
                     tempEx = ex[i];
                     AcEx[indexEx].putExtra("exKey", tempEx);

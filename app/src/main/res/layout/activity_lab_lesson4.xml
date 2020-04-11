@@ -38,7 +38,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-
+        android:fontFamily="@font/dk_sugary_pancake"
         android:text="@string/reset"
         app:layout_constraintBottom_toTopOf="@+id/gallery_layout"
         app:layout_constraintStart_toStartOf="parent" />
@@ -50,7 +50,7 @@
 
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-
+        android:fontFamily="@font/dk_sugary_pancake"
         android:layout_marginBottom="88dp"
         android:text="@string/done"
         app:layout_constraintBottom_toBottomOf="@+id/arFragment"

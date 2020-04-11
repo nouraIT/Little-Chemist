@@ -49,7 +49,11 @@ public class chaptersAdapter extends PagerAdapter {
             R.drawable.periodictable
     };
 
+    public chaptersAdapter(){
+
+    }
     public chaptersAdapter(Context context) {
+        //super();
         DatabaseHelper helper = new DatabaseHelper(context);
 
         SharedPreferences pref = context.getSharedPreferences("MyPref", 0); // 0 - for private mode

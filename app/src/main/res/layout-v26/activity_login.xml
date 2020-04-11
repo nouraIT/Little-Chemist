@@ -20,7 +20,7 @@
             android:layout_width="155dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center|clip_vertical|fill_horizontal"
-            android:layout_marginTop="250dp"
+            android:layout_marginTop="220dp"
             android:fontFamily="@font/east_djakarta"
             android:text="@string/login"
             android:textAlignment="center"
@@ -31,7 +31,8 @@
             android:layout_width="match_parent"
             android:layout_height="333dp"
 
-            android:layout_marginTop="0dp">
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="5dp">
 
 
             <com.google.android.material.textfield.TextInputLayout
@@ -156,7 +157,9 @@
                 android:weightSum="2"
                 android:orientation="horizontal"
 
-                android:layout_marginStart="40dp"
+                android:layout_marginStart="80dp"
+                android:layout_marginEnd="50dp"
+
                 android:gravity="center_horizontal"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

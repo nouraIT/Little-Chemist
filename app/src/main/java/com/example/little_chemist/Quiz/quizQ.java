@@ -525,6 +525,7 @@ public class quizQ extends AppCompatActivity {
             "C5Quiz_Q1", "C5Quiz_Q2", "C5Quiz_Q3", "C5Quiz_Q4", "C5Quiz_Q5", "C5Quiz_Q6", "C5Quiz_Q7", "C5Quiz_Q8", "C5Quiz_Q9", "C5Quiz_Q10"
     };
 
+    private boolean positioneqfive = false;
     ViewPager.OnPageChangeListener PageListener = new ViewPager.OnPageChangeListener() {
         int postionNow;
         int lastop;
@@ -540,7 +541,6 @@ public class quizQ extends AppCompatActivity {
         public void onPageSelected(int position) {
 
             pagecount = position;
-            boolean positioneqfive = false;
 
             if (position == 0) {
                 nextbtn.setEnabled(false);
@@ -557,7 +557,7 @@ public class quizQ extends AppCompatActivity {
                 nextbtn.setVisibility(View.VISIBLE);
                 nextbtn.setText(getText(R.string.finishBtn));
                 prebtn.setText("");
-
+                positioneqfive = true;
             } else {
                 nextbtn.setEnabled(false);
                 prebtn.setEnabled(false);
@@ -577,12 +577,10 @@ public class quizQ extends AppCompatActivity {
                     initRecyclerView();
                     // quizadapter.getSelected().setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#4a47a7")));
                 }
-                if (position == 4) {
-                    positioneqfive = true;
-                }
             }
 
-            if (position != 4 && positioneqfive) {
+
+            if (positioneqfive && position != 4) {
 
                 if (quizadapter.getOption()[4] != null) {
                     mImage.set(4, R.drawable.tick_mark);

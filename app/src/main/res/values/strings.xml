@@ -37,8 +37,16 @@
     <string name="chapter_1">Chapter 1</string>
     <string name="chapter_2">Chapter 2</string>
     <string name="chapter_3">Chapter 3</string>
-    <string name="chapter_5">chapter 5</string>
     <string name="chapter_4">chapter 4</string>
+    <string name="chapter_5">chapter 5</string>
+
+
+    <string name="ch1">Ch1</string>
+    <string name="ch2">Ch2</string>
+    <string name="ch3">Ch3</string>
+    <string name="ch4">Ch4</string>
+    <string name="ch5">Ch5</string>
+
 
     <string name="chapters">Chapters</string>
 
@@ -121,6 +129,7 @@
     <string name="scores">Scores</string>
     <string name="progressBar">Progress Bar</string>
     <string name="exercise">Exercise</string>
+    <string name="exercise1">Exercise 1</string>
 
     <!-- _______________ registration _______________ -->
 
