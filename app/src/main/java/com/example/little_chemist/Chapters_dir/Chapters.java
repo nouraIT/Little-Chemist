@@ -241,7 +241,6 @@ public class Chapters extends AppCompatActivity {
         if(R.id.cardviewch1==card00.getId()){
             n = new Intent(Chapters.this, Ch1.class);
             startActivity(n);
-
         }else if(R.id.cardviewch2==card00.getId()){
             statue = student.getChLock("2");
             if (statue.equals("unlocked") || statue.equals("completed") ) {
@@ -250,7 +249,6 @@ public class Chapters extends AppCompatActivity {
             }
             else
                 Toast.makeText(getApplicationContext(), "Locked", Toast.LENGTH_LONG).show();
-
         }else if(R.id.cardviewch3==card00.getId()){
             statue = student.getChLock("3");
             if (statue.equals("unlocked") || statue.equals("completed") ) {
@@ -259,7 +257,6 @@ public class Chapters extends AppCompatActivity {
             }
             else
                 Toast.makeText(getApplicationContext(), "Locked", Toast.LENGTH_LONG).show();
-
         }else if(R.id.cardviewch4==card00.getId()){
             statue = student.getChLock("4");
             if (statue.equals("unlocked") || statue.equals("completed") ) {
@@ -267,7 +264,6 @@ public class Chapters extends AppCompatActivity {
                 startActivity(n);
             }else
                 Toast.makeText(getApplicationContext(), "Locked", Toast.LENGTH_LONG).show();
-
         }else if(R.id.cardviewch5==card00.getId()){
             statue = student.getChLock("5");
             if (statue.equals("unlocked") || statue.equals("completed") ) {
