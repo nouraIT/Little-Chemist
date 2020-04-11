@@ -152,7 +152,7 @@ public class Ch5 extends AppCompatActivity {
                     AlertDialog alertDialog = new AlertDialog.Builder(Ch5.this).create();
                     alertDialog.setTitle(getText(R.string.cards));
                     alertDialog.setMessage(s1 +"\n"+ s2 +"\n"+ s3 +"\n"+ s4);
-                    alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, getText(R.string.ok),
+                    alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, getText(R.string.ok),
                             new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int which) {
                                     dialog.dismiss();
@@ -168,6 +168,13 @@ public class Ch5 extends AppCompatActivity {
                                     });
                                     thread.start();
                                 }
+                            });
+                    alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL,getString(R.string.Cancel),
+                            new DialogInterface.OnClickListener(){
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.dismiss();
+
+                                };
                             });
                     alertDialog.show();
                 } else
@@ -187,7 +194,7 @@ public class Ch5 extends AppCompatActivity {
                     AlertDialog alertDialog = new AlertDialog.Builder(Ch5.this).create();
                     alertDialog.setTitle(getText(R.string.cards));
                     alertDialog.setMessage(s1 +"\n"+ s3 +"\n"+ s4);
-                    alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, getText(R.string.ok),
+                    alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, getText(R.string.ok),
                             new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int which) {
                                     dialog.dismiss();
@@ -204,6 +211,13 @@ public class Ch5 extends AppCompatActivity {
                                     });
                                     thread.start();
                                 }
+                            });
+                    alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL,getString(R.string.Cancel),
+                            new DialogInterface.OnClickListener(){
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.dismiss();
+
+                                };
                             });
                     alertDialog.show();
                 } else
@@ -223,7 +237,7 @@ public class Ch5 extends AppCompatActivity {
                     AlertDialog alertDialog = new AlertDialog.Builder(Ch5.this).create();
                     alertDialog.setTitle(getText(R.string.cards));
                     alertDialog.setMessage(s1 +"\n"+ s2 +"\n"+ s3 +"\n"+ s4);
-                    alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, getText(R.string.ok),
+                    alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, getText(R.string.ok),
                             new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int which) {
                                     dialog.dismiss();
@@ -240,6 +254,13 @@ public class Ch5 extends AppCompatActivity {
                                     });
                                     thread.start();
                                 }
+                            });
+                    alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL,getString(R.string.Cancel),
+                            new DialogInterface.OnClickListener(){
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.dismiss();
+
+                                };
                             });
                     alertDialog.show();
                 } else
@@ -259,7 +280,7 @@ public class Ch5 extends AppCompatActivity {
                     AlertDialog alertDialog = new AlertDialog.Builder(Ch5.this).create();
                     alertDialog.setTitle(getText(R.string.cards));
                     alertDialog.setMessage(s1 +"\n"+ s2 +"\n"+ s3 +"\n"+ s4);
-                    alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, getText(R.string.ok),
+                    alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, getText(R.string.ok),
                             new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int which) {
                                     dialog.dismiss();
@@ -276,6 +297,13 @@ public class Ch5 extends AppCompatActivity {
                                     });
                                     thread.start();
                                 }
+                            });
+                    alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL,getString(R.string.Cancel),
+                            new DialogInterface.OnClickListener(){
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.dismiss();
+
+                                };
                             });
                     alertDialog.show();
                 } else
