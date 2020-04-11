@@ -231,7 +231,12 @@
     <string name="C1L3S4E2M">Calculate the mass of helium</string>
     <string name="booklet">Go to the Settings to download the booklet</string>
     <string name="login">Login</string>
+    <string name="Cancel">Cancel</string>
     <!-- _______________ AR tap calls  _______________ -->
+
+    <!-- _________-Multible choic_________-->
+    <string name="MutibleQ1">Drag the building blocks to create an atom</string>
+    <string name="MutibleQ2">Match each scientist with his discovery</string>
 
 
 

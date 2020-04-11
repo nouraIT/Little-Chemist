@@ -33,6 +33,7 @@ public class QuizAdapter extends PagerAdapter {
         this.context = context;
         this.Models = Models;
     }
+    //push
 
     @Override
     public int getCount() {

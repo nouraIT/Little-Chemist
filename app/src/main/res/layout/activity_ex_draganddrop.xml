@@ -55,7 +55,6 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
                 android:fontFamily="@font/roboto_bold"
-                android:text="Drag the building blocks to create an atom"
                 android:textSize="15sp"
                 tools:ignore="HardcodedText" />
 
