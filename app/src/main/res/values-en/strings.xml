@@ -238,6 +238,11 @@
     <string name="MutibleQ1">Drag the building blocks to create an atom</string>
     <string name="MutibleQ2">Match each scientist with his discovery</string>
     <string name="exercise1">Exercise 1</string>
+    <string name="ch1">Ch1</string>
+    <string name="ch4">Ch4</string>
+    <string name="ch5">Ch5</string>
+    <string name="ch3">Ch3</string>
+    <string name="ch2">Ch2</string>
 
 
 </resources>

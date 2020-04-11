@@ -62,18 +62,17 @@ public class Quiz_score extends AppCompatActivity {
                 scores[i]=1;
         }
 
-        mPieChart.addPieSlice(new PieModel("Ch1: "+getString(R.string.Ch1Name), (float) scores[0], Color.parseColor("#ff0099cc") ));
-        mPieChart.addPieSlice(new PieModel("Ch2: "+getString(R.string.Ch2Name), (float) scores[1], Color.parseColor("#ff99cc00") ));
-        mPieChart.addPieSlice(new PieModel("Ch3: "+getString(R.string.Ch3Name), (float) scores[2], Color.parseColor("#F3CB4E") ));
-        mPieChart.addPieSlice(new PieModel("Ch4: "+getString(R.string.Ch4Name), (float) scores[3], Color.parseColor("#E36F3A")  ));
-        mPieChart.addPieSlice(new PieModel("Ch5: "+getString(R.string.Ch5Name), (float) scores[4], Color.parseColor("#DF3241") ));
+        mPieChart.addPieSlice(new PieModel(getString(R.string.ch5)+": "+getString(R.string.Ch5Name), (float) scores[4], Color.parseColor("#DF3241") ));
+        mPieChart.addPieSlice(new PieModel(getString(R.string.ch1)+": "+getString(R.string.Ch1Name), (float) scores[0], Color.parseColor("#ff0099cc") ));
+        mPieChart.addPieSlice(new PieModel(getString(R.string.ch2)+": "+getString(R.string.Ch2Name), (float) scores[1], Color.parseColor("#ff99cc00") ));
+        mPieChart.addPieSlice(new PieModel(getString(R.string.ch3)+": "+getString(R.string.Ch3Name), (float) scores[2], Color.parseColor("#F3CB4E") ));
+        mPieChart.addPieSlice(new PieModel(getString(R.string.ch4)+": "+getString(R.string.Ch4Name), (float) scores[3], Color.parseColor("#E36F3A")  ));
 
         progressBar1.setProgress((int) scores[0]);
         progressBar2.setProgress((int) scores[1]);
         progressBar3.setProgress((int) scores[2]);
         progressBar4.setProgress((int) scores[3]);
         progressBar5.setProgress((int) scores[4]);
-
 
         mPieChart.startAnimation();
 
