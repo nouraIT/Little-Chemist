@@ -30,10 +30,8 @@
             android:layout_marginBottom="16dp"
             android:fontFamily="@font/east_djakarta"
             android:text="@string/sign_up"
-
             android:textAlignment="center"
             android:textColor="@color/ic_launcher_background"
-
             android:textSize="36sp"
             app:layout_constraintBottom_toTopOf="@+id/username2"
             app:layout_constraintEnd_toEndOf="parent"

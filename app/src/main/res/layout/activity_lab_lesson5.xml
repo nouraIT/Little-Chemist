@@ -40,7 +40,7 @@
 
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-
+        android:fontFamily="@font/dk_sugary_pancake"
         android:layout_marginBottom="120dp"
         android:text="@string/done"
         app:layout_constraintBottom_toBottomOf="@+id/arFragment"
@@ -54,7 +54,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-
+        android:fontFamily="@font/dk_sugary_pancake"
         android:layout_marginStart="4dp"
         android:layout_marginBottom="24dp"
         android:text="@string/reset"

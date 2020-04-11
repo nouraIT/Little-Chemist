@@ -33,7 +33,7 @@
         android:text="TextView"
 
         android:textAlignment="center"
-        android:textColor="@color/cpb_white"
+        android:textColor="@color/darkpruple"
         android:textSize="24sp"
         android:layout_marginTop="42dp"
         app:layout_constraintBottom_toTopOf="@+id/toolbar"
