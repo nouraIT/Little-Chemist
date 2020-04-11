@@ -237,7 +237,7 @@
     <!-- _________-Multible choic_________-->
     <string name="MutibleQ1">Drag the building blocks to create an atom</string>
     <string name="MutibleQ2">Match each scientist with his discovery</string>
-
+    <string name="exercise1">Exercise 1</string>
 
 
 </resources>
