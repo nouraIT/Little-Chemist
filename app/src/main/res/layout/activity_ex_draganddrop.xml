@@ -55,6 +55,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
                 android:fontFamily="@font/roboto_bold"
+                android:text="@string/MutibleQ1"
                 android:textSize="15sp"
                 tools:ignore="HardcodedText" />
 

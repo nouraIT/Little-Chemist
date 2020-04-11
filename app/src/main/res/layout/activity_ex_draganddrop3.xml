@@ -55,7 +55,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
                 android:fontFamily="@font/roboto_bold"
-                android:text="Match each scientist with his discovery"
+                android:text="@string/MutibleQ2"
                 android:textSize="15sp"
                 tools:ignore="HardcodedText" />
 
