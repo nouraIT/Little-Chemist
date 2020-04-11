@@ -12,22 +12,21 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraint"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="414dp"
+        android:layout_height="623dp"
+        android:layout_marginTop="36dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/LoginTitle"
             android:layout_width="155dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center|clip_vertical|fill_horizontal"
-            android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
             android:fontFamily="@font/east_djakarta"
             android:text="@string/sign_up"
@@ -38,6 +37,8 @@
 
             app:layout_constraintBottom_toTopOf="@+id/username2"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.939"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="1.0" />
 
@@ -182,7 +183,6 @@
             android:textColorHint="@color/darkpruple"
             app:errorEnabled="true"
             app:errorTextAppearance="@style/error_appearance"
-            app:layout_constraintBottom_toTopOf="@+id/signup"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/security_questions">
@@ -235,39 +235,20 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/signup"
-            app:layout_constraintVertical_bias="1.0" />
-
-        <TextView
-            android:id="@+id/signUp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="110dp"
-            android:layout_marginTop="26dp"
-            android:layout_marginEnd="171dp"
-            android:layout_marginBottom="66dp"
-            android:fontFamily="@font/east_djakarta"
-            android:text="@string/sign_up"
-            android:textColor="#FBFBFB"
-            android:textSize="36sp"
-            app:layout_constraintBottom_toTopOf="@+id/username2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toStartOf="parent" />
 
 
         <!--        <ImageView-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="210dp"-->
-<!--            android:layout_marginEnd="256dp"-->
-<!--            android:alpha="0.8"-->
-<!--            android:elevation="-20dp"-->
-<!--            android:src="@drawable/ch5character"-->
-<!--            app:layout_constraintBottom_toBottomOf="parent"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintTop_toTopOf="parent"-->
-<!--            app:layout_constraintVertical_bias="1.0" />-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="210dp"-->
+        <!--            android:layout_marginEnd="256dp"-->
+        <!--            android:alpha="0.8"-->
+        <!--            android:elevation="-20dp"-->
+        <!--            android:src="@drawable/ch5character"-->
+        <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintTop_toTopOf="parent"-->
+        <!--            app:layout_constraintVertical_bias="1.0" />-->
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

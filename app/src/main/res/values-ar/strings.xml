@@ -171,4 +171,8 @@
     <string name="buttonDes2">أو انقر على العجلة لعرض نتائج الاختبار</string>
     <string name="QuizResult">نتيجة الأختبار</string>
 
+    <!-- _________-Multible choic_________-->
+    <string name="MutibleQ1">اسحب المكعبات لإنشاء ذرة</string>
+    <string name="MutibleQ2">طابق كل عالم مع اكتشافه</string>
+
 </resources>

@@ -237,4 +237,10 @@
     <!-- _______________ AR tap calls  _______________ -->
 
 
+    <!-- _________-Multible choic_________-->
+    <string name="MutibleQ1">Drag the building blocks to create an atom</string>
+    <string name="MutibleQ2">Match each scientist with his discovery</string>
+
+
+
 </resources>
