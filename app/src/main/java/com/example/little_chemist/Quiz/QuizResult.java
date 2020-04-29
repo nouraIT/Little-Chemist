@@ -111,7 +111,7 @@ public class QuizResult extends AppCompatActivity {
         //ProgressBar
         progressBar = findViewById(R.id.resultprogressbar);
         progressBar.setProgress(score.intValue());
-        Score = findViewById(R.id.score);
+        Score = findViewById(R.id.scoreBtn);
         Score.setText(String.valueOf(score.intValue()));
 
 

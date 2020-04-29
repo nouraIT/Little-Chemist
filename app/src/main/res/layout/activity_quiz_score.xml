@@ -8,6 +8,199 @@
     tools:context=".Quiz_score">
 
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView3"
+        android:layout_width="288dp"
+        android:layout_height="448dp"
+        android:layout_marginTop="154dp"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+
+        <!--  [purple 4a47a7 ] blue >>> 008DFF Orange >> E06E4A    white E4F3F1F1-->
+
+
+        <!--        <androidx.cardview.widget.CardView-->
+        <!--            android:id="@+id/cardviewchapters"-->
+        <!--            android:layout_width="246dp"-->
+        <!--            android:layout_height="78dp"-->
+        <!--            android:layout_gravity="center_horizontal"-->
+        <!--            android:layout_marginTop="55dp"-->
+        <!--            android:background="?android:attr/scrollbarThumbVertical"-->
+        <!--            app:cardBackgroundColor="@color/HomeButton"-->
+        <!--            app:cardCornerRadius="20dp">-->
+
+        <!--        </androidx.cardview.widget.CardView>-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/dk_sugary_pancake"
+                android:text="@string/chapters"
+                android:textAlignment="center"
+                android:textSize="24sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+
+                android:fontFamily="@font/east_djakarta"
+                android:text="@string/Ch1Name"
+                android:textColor="@color/cpb_blue"
+                android:textSize="12sp"
+
+                />
+
+            <com.daimajia.numberprogressbar.NumberProgressBar
+                android:id="@+id/numberbar6"
+                style="@style/NumberProgressBar_Relax_Blue"
+                android:layout_height="wrap_content"
+
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="5dp"
+
+
+                app:progress_reached_bar_height="7dp"
+                app:progress_reached_color="@color/cpb_blue"
+                app:progress_text_color="@color/cpb_blue"
+                app:progress_text_visibility="visible" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+
+                android:fontFamily="@font/east_djakarta"
+
+                android:text="@string/Ch2Name"
+                android:textColor="@color/cpb_green"
+                android:textSize="12sp" />
+
+            <com.daimajia.numberprogressbar.NumberProgressBar
+                android:id="@+id/numberbar5"
+                style="@style/NumberProgressBar_Relax_Blue"
+                android:layout_height="wrap_content"
+
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="5dp"
+
+                app:progress_reached_bar_height="6dp"
+                app:progress_reached_color="@color/cpb_green"
+                app:progress_text_color="@color/cpb_green" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+
+
+                android:fontFamily="@font/east_djakarta"
+                android:text="@string/Ch3Name"
+                android:textColor="#F8C765"
+
+                android:textSize="12sp" />
+
+            <com.daimajia.numberprogressbar.NumberProgressBar
+                android:id="@+id/numberbar4"
+                style="@style/NumberProgressBar_Relax_Blue"
+                android:layout_height="wrap_content"
+
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="5dp"
+
+                app:progress_current="35"
+                app:progress_reached_bar_height="6dp"
+                app:progress_reached_color="@color/primaryYellow"
+                app:progress_text_color="@color/primaryYellow" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+
+                android:fontFamily="@font/east_djakarta"
+
+                android:text="@string/Ch4Name"
+                android:textColor="@color/OrangeText"
+                android:textSize="12sp" />
+
+            <com.daimajia.numberprogressbar.NumberProgressBar
+                android:id="@+id/numberbar2"
+                style="@style/NumberProgressBar_Relax_Blue"
+                android:layout_height="wrap_content"
+
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="5dp"
+
+                app:progress_current="9"
+                app:progress_reached_bar_height="6dp"
+                app:progress_reached_color="@color/OrangeText"
+                app:progress_text_color="@color/OrangeText" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+
+                android:fontFamily="@font/east_djakarta"
+
+                android:text="@string/Ch5Name"
+                android:textColor="@color/cpb_red"
+                android:textSize="12sp" />
+
+            <com.daimajia.numberprogressbar.NumberProgressBar
+                android:id="@+id/numberbar3"
+                style="@style/NumberProgressBar_Relax_Blue"
+                android:layout_height="wrap_content"
+
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+
+                app:progress_current="9"
+                app:progress_reached_bar_height="6dp"
+                app:progress_reached_color="@color/cpb_red"
+                app:progress_text_color="@color/cpb_red" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -32,214 +225,5 @@
 
     </androidx.appcompat.widget.Toolbar>
 
-
-    <com.daimajia.numberprogressbar.NumberProgressBar
-        android:id="@+id/numberbar3"
-        style="@style/NumberProgressBar_Relax_Blue"
-        android:layout_height="wrap_content"
-
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="20dp"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/numberbar2"
-        app:progress_current="9"
-        app:progress_reached_bar_height="6dp"
-        app:progress_reached_color="@color/cpb_red"
-        app:progress_text_color="@color/cpb_red" />
-
-    <com.daimajia.numberprogressbar.NumberProgressBar
-        android:id="@+id/numberbar2"
-        style="@style/NumberProgressBar_Relax_Blue"
-        android:layout_height="wrap_content"
-
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="5dp"
-
-        app:layout_constraintBottom_toTopOf="@+id/numberbar3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/numberbar4"
-        app:progress_current="9"
-        app:progress_reached_bar_height="6dp"
-        app:progress_reached_color="@color/OrangeText"
-        app:progress_text_color="@color/OrangeText" />
-
-    <com.daimajia.numberprogressbar.NumberProgressBar
-        android:id="@+id/numberbar4"
-        style="@style/NumberProgressBar_Relax_Blue"
-        android:layout_height="wrap_content"
-
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="5dp"
-
-        app:layout_constraintBottom_toTopOf="@+id/numberbar2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/numberbar5"
-        app:progress_current="35"
-        app:progress_reached_bar_height="6dp"
-        app:progress_reached_color="@color/primaryYellow"
-        app:progress_text_color="@color/primaryYellow" />
-
-
-    <com.daimajia.numberprogressbar.NumberProgressBar
-        android:id="@+id/numberbar5"
-        style="@style/NumberProgressBar_Relax_Blue"
-        android:layout_height="wrap_content"
-
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="5dp"
-
-        app:layout_constraintBottom_toTopOf="@+id/numberbar4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/numberbar6"
-
-        app:progress_reached_bar_height="6dp"
-        app:progress_reached_color="@color/cpb_green"
-        app:progress_text_color="@color/cpb_green" />
-
-    <com.daimajia.numberprogressbar.NumberProgressBar
-        android:id="@+id/numberbar6"
-        style="@style/NumberProgressBar_Relax_Blue"
-        android:layout_height="wrap_content"
-
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="5dp"
-
-        app:layout_constraintBottom_toTopOf="@+id/numberbar5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/piechart"
-
-
-        app:progress_reached_bar_height="7dp"
-        app:progress_reached_color="@color/cpb_blue"
-        app:progress_text_color="@color/cpb_blue"
-        app:progress_text_visibility="visible" />
-
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="start"
-
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="20dp"
-
-        android:fontFamily="@font/east_djakarta"
-        android:text="@string/Ch1Name"
-        android:textColor="@color/cpb_blue"
-        android:textSize="12sp"
-
-        app:layout_constraintBottom_toTopOf="@+id/numberbar6"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/piechart"
-        app:layout_constraintVertical_bias="0.0"/>
-
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="start"
-
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="20dp"
-
-        android:fontFamily="@font/east_djakarta"
-
-        android:text="@string/Ch2Name"
-        android:textColor="@color/cpb_green"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toTopOf="@+id/numberbar5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/numberbar6" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="start"
-
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-
-
-        android:fontFamily="@font/east_djakarta"
-        android:text="@string/Ch3Name"
-        android:textColor="#F8C765"
-
-        android:textSize="12sp"
-        app:layout_constraintBottom_toTopOf="@+id/numberbar4"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/numberbar5" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="start"
-
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-
-        android:fontFamily="@font/east_djakarta"
-
-        android:text="@string/Ch4Name"
-        android:textColor="@color/OrangeText"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toTopOf="@+id/numberbar2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/numberbar4" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="start"
-
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-
-        android:fontFamily="@font/east_djakarta"
-
-        android:text="@string/Ch5Name"
-        android:textColor="@color/cpb_red"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toTopOf="@+id/numberbar3"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/numberbar2" />
-
-    <org.eazegraph.lib.charts.PieChart
-        android:id="@+id/piechart"
-        android:layout_width="379dp"
-        android:layout_height="233dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="69dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="300dp"
-        android:padding="8dp"
-
-        app:egLegendTextSize="18sp"
-        app:egUsePieRotation="true"
-        app:egValueTextSize="36sp"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

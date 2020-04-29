@@ -82,7 +82,7 @@
             android:progressDrawable="@drawable/circle"/>
 
             <TextView
-                android:id="@+id/score"
+                android:id="@+id/scoreBtn"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_alignParentEnd="true"

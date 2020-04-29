@@ -66,18 +66,6 @@
 
         </LinearLayout>
 
-        <org.eazegraph.lib.charts.PieChart
-            android:id="@+id/piechart"
-            android:layout_width="wrap_content"
-            android:layout_height="188dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="50dp"
-            android:elevation="30dp"
-            android:padding="8dp"
-            app:egLegendTextSize="18sp"
-            app:egUsePieRotation="true"
-            app:egValueTextSize="36sp" />
-
         <info.hoang8f.widget.FButton
 
             android:id="@+id/homeBtn"
@@ -92,6 +80,29 @@
             fbutton:shadowColor="@color/gray"
             fbutton:shadowEnabled="true"
             fbutton:shadowHeight="5dp" />
+
+        <info.hoang8f.widget.FButton
+
+            android:id="@+id/scoreBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="86dp"
+
+            android:layout_gravity="center"
+            android:fontFamily="@font/dk_sugary_pancake"
+            android:text="@string/QuizScore"
+            android:textColor="@color/cardview_dark_background"
+            fbutton:cornerRadius="70dp"
+            fbutton:fButtonColor="@color/Unlocked"
+            fbutton:shadowColor="@color/gray"
+            fbutton:shadowEnabled="true"
+            fbutton:shadowHeight="5dp" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="150dp"
+            android:layout_height="270dp"
+            android:layout_gravity="bottom|center"
+            fbutton:srcCompat="@drawable/chapteronegirlcrop" />
 
     </androidx.cardview.widget.CardView>
 

@@ -1,17 +1,13 @@
 package com.example.little_chemist;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.text.SpannableString;
-import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -19,12 +15,8 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.example.little_chemist.AR.ARCards;
-import com.example.little_chemist.Chapters_dir.Ch5;
 import com.example.little_chemist.Chapters_dir.Chapters;
 import com.example.little_chemist.Tables.Student;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.tooltip.Tooltip;
 
 import org.eazegraph.lib.charts.PieChart;
 import org.eazegraph.lib.models.PieModel;
@@ -32,9 +24,6 @@ import org.eazegraph.lib.models.PieModel;
 import java.util.Locale;
 
 import info.hoang8f.widget.FButton;
-import io.github.douglasjunior.androidSimpleTooltip.SimpleTooltip;
-
-import static com.google.sceneform_animation.b.v;
 
 
 public class Home extends AppCompatActivity {
@@ -42,6 +31,7 @@ public class Home extends AppCompatActivity {
     private ImageView set;
     FButton chapters;
     private  org.eazegraph.lib.charts.PieChart pie ;
+    FButton score ;
     boolean arabicFlag;
     DatabaseHelper helper = new DatabaseHelper(Home.this);
     public static boolean alreadyRecreated = false , AlreadyGreeted = false;
@@ -59,13 +49,14 @@ public class Home extends AppCompatActivity {
 
         // ========================= initializing  ============================================
         set = findViewById(R.id.settings);
-        pie = findViewById(R.id.piechart) ;
+        //pie = findViewById(R.id.piechart) ;
         chapters = findViewById(R.id.homeBtn) ;
         chapters.setButtonColor(getResources().getColor(R.color.HomeButton));
         chapters.setShadowColor(getResources().getColor(R.color.gray));
         chapters.setShadowEnabled(true);
         chapters.setShadowHeight(7);
         chapters.setCornerRadius(30);
+        score = findViewById(R.id.scoreBtn);
 
         pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
         String name = pref.getString("username", null); // getting String
@@ -157,7 +148,7 @@ public class Home extends AppCompatActivity {
 
 
 
-        pie.setOnClickListener(new View.OnClickListener() {
+        score.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View view) {
                 Thread thread = new Thread(new Runnable(){
@@ -175,29 +166,29 @@ public class Home extends AppCompatActivity {
         });
         // ========================= Buttons ============================================
 
-
-        // ========================= progress and chart  ============================================
-        int progress = student.viewProgress();
-        ProgressBar progressbar = findViewById(R.id.content_pro);
-        progressbar.setProgress(progress,true);
-
-        PieChart mPieChart = (PieChart) findViewById(R.id.piechart);
-        double[] scores = student.GetTotalScore();
-
-        for(int i=0;i<5;i++){
-            if(scores[i] == 0.0)
-                scores[i]=1;
-        }
-
-        mPieChart.addPieSlice(new PieModel(getString(R.string.ch5)+": "+getString(R.string.Ch5Name), (float) scores[4], Color.parseColor("#DF3241") ));
-        mPieChart.addPieSlice(new PieModel(getString(R.string.ch1)+": "+getString(R.string.Ch1Name), (float) scores[0], Color.parseColor("#ff0099cc") ));
-        mPieChart.addPieSlice(new PieModel(getString(R.string.ch2)+": "+getString(R.string.Ch2Name), (float) scores[1], Color.parseColor("#ff99cc00") ));
-        mPieChart.addPieSlice(new PieModel(getString(R.string.ch3)+": "+getString(R.string.Ch3Name), (float) scores[2], Color.parseColor("#F3CB4E") ));
-        mPieChart.addPieSlice(new PieModel(getString(R.string.ch4)+": "+getString(R.string.Ch4Name), (float) scores[3], Color.parseColor("#E36F3A")  ));
-
-        mPieChart.startAnimation();
-        // ========================= progress and chart  ============================================
-
+//
+//        // ========================= progress and chart  ============================================
+//        int progress = student.viewProgress();
+//        ProgressBar progressbar = findViewById(R.id.content_pro);
+//        progressbar.setProgress(progress,true);
+//
+//        PieChart mPieChart = (PieChart) findViewById(R.id.piechart);
+//        double[] scores = student.GetTotalScore();
+//
+//        for(int i=0;i<5;i++){
+//            if(scores[i] == 0.0)
+//                scores[i]=1;
+//        }
+//
+//        mPieChart.addPieSlice(new PieModel(getString(R.string.ch5)+": "+getString(R.string.Ch5Name), (float) scores[4], Color.parseColor("#DF3241") ));
+//        mPieChart.addPieSlice(new PieModel(getString(R.string.ch1)+": "+getString(R.string.Ch1Name), (float) scores[0], Color.parseColor("#ff0099cc") ));
+//        mPieChart.addPieSlice(new PieModel(getString(R.string.ch2)+": "+getString(R.string.Ch2Name), (float) scores[1], Color.parseColor("#ff99cc00") ));
+//        mPieChart.addPieSlice(new PieModel(getString(R.string.ch3)+": "+getString(R.string.Ch3Name), (float) scores[2], Color.parseColor("#F3CB4E") ));
+//        mPieChart.addPieSlice(new PieModel(getString(R.string.ch4)+": "+getString(R.string.Ch4Name), (float) scores[3], Color.parseColor("#E36F3A")  ));
+//
+//        mPieChart.startAnimation();
+//        // ========================= progress and chart  ============================================
+//
 
     }
 
